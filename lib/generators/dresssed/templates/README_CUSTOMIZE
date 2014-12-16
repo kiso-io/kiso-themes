@@ -1,0 +1,25 @@
+===============================================================================
+
+You're ready to customize your theme!
+
+The theme can now be fully customized in:
+
+  app/assets/stylesheets/dresssed.css.scss
+
+Some setup you must do manually if you haven't yet:
+
+  * Ensure `gem 'sass-rails'` has been added to your Gemfile, and is
+    not in the `assets` group.
+
+  * Port any changes you made to dresssed.css.scss. Remove
+    app/assets/stylesheets/dresssed.css.
+
+  * Ensure app/assets/stylesheets/dresssed.css.scss is loaded in
+    application.css with `require_tree .` or `require dresssed`.
+
+  * Lastly, restart your server if it's already running.
+
+We really appreciate your business here at Kantan, thanks for buying!
+
+                                             Any problem? dresssed@kantan.io
+===============================================================================

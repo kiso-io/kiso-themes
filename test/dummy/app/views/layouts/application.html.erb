@@ -1,0 +1,32 @@
+<% content_for :navbar, render("layouts/user_nav") %>
+
+<%= render :layout => "layouts/base" do %>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-7">
+        <h2><%= @title %></h2>
+        <%= yield :description %>
+      </div>
+      <div class="col-md-2">
+        <%= yield :actions %>
+      </div>
+    </div>
+  </div><!-- /.page-header -->
+
+  <div class="row">
+    <div id="content" class="col-md-9">
+      <%= yield %>
+    </div> <!-- /#content -->
+
+    <div id="sidebar" class="col-md-3">
+      <h6>Menu</h6>
+      <p></p>
+
+      <ul class="nav nav-tabs nav-stacked nav-caret-left">
+        <%= activatable_li_tag_with_link "Sub menu", nil %>
+        <%= activatable_li_tag_with_link "Another menu", "#" %>
+        <%= activatable_li_tag_with_link "A last one", "#" %>
+      </ul>
+    </div> <!-- /#sidebar -->
+  </div> <!-- /.row -->
+<% end %>

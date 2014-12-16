@@ -1,0 +1,6 @@
+- content_for :navbar do
+  = form_tag "?", :class => "navbar-form hidden-sm navbar-search" do
+    = text_field_tag :query, params[:query], :class => "search-query"
+
+= render :layout => "layouts/base" do
+  = yield

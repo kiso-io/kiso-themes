@@ -1,0 +1,22 @@
+// BASIC TABS
+// ----------
+
+.nav-tabs {
+  border-color: $borderColor;
+  border-bottom: none;
+}
+
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover {
+  border-color: $borderColor;
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  font-weight: bold;
+  color: $textColor;
+  #gradient {
+    @include gradient-vertical($white, $backgroundColor);
+  }
+  border-color: $borderColor $borderColor $backgroundColor $borderColor;
+}

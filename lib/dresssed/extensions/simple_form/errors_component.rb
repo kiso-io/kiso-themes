@@ -1,0 +1,13 @@
+module Dresssed
+  module SimpleForm
+    # Custom SimpleForm component to render errors with a fancy icon.
+    module ErrorTag
+      def error_tag
+        return unless has_errors?
+        template.content_tag(:span, template.icon_tag("remove") + " " + error_text, :class => "help-block")
+      end
+    end
+  end
+end
+
+SimpleForm::Inputs::Base.send(:include, Dresssed::SimpleForm::ErrorTag)

@@ -1,0 +1,33 @@
+<% @title = "Sign up" %>
+
+<%= form_for resource, :as => resource_name, :url => registration_path(resource_name),
+                       :html => { :class => "form-horizontal col-md-5", :novalidate => true } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="sheet form-sheet">
+    <div class="sheet-inner">
+      <%= f.form_group :email do |f| %>
+        <%= f.label :email, :class => "form-label" %>
+        <%= f.email_field :email, :autofocus => true, :class => "col-md-3" %>
+        <%= f.error_messages %>
+      <% end %>
+
+      <%= f.form_group :password do |f| %>
+        <%= f.label :password, :class => "form-label" %>
+        <%= f.password_field :password, :class => "col-md-3" %>
+        <%= f.error_messages %>
+      <% end %>
+
+      <%= f.form_group :password_confirmation do |f| %>
+        <%= f.label :password_confirmation, :class => "form-label" %>
+        <%= f.password_field :password_confirmation, :class => "col-md-3" %>
+        <%= f.error_messages %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Sign up", :class => 'btn btn-primary' %>
+    <%= link_to "Sign in", new_session_path(resource_name), :class => 'btn' %>
+  </div>
+<% end %>

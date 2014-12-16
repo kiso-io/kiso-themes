@@ -1,0 +1,71 @@
+<% @title = "Pricing" %>
+
+<div class="hero-unit">
+  <h1>Low prices, big value.</h1>
+  <h2>Coffee buzz for the price of a latte.</h2>
+</div>
+
+<section id="pricing">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="col-md-3"></th>
+        <th>
+          <h3>Free</h3>
+          <b class="caret"></b>
+        </th>
+        <th class="highlighted">
+          <h3>Small</h3>
+          <b class="caret"></b>
+        </th>
+        <th>
+          <h3>Big</h3>
+          <b class="caret"></b>
+        </th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large' %></td>
+        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large btn-info' %></td>
+        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large' %></td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <th>
+          <h4>Space</h4>
+          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </th>
+        <td><strong>0</strong> MB</td>
+        <td class="highlighted"><strong>200</strong> MB</td>
+        <td><strong>300</strong> MB</td>
+      </tr>
+      <tr>
+        <th>
+          <h4>Fun</h4>
+          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </th>
+        <td>Low</td>
+        <td class="highlighted">Medium</td>
+        <td>High</td>
+      </tr>
+      <tr>
+        <th>
+          <h4>Projects</h4>
+          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </th>
+        <td><strong>10</strong> projects</td>
+        <td class="highlighted"><strong>100</strong> projects</td>
+        <td><strong>Infinite!</strong></td>
+      </tr>
+      <tr>
+        <th><h4>Price</h4></th>
+        <td>Free</td>
+        <td class="highlighted"><strong>$12</strong>/month</td>
+        <td><strong>$29</strong>/month</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,232 @@
+.form-actions {
+  background: transparent;
+  border-top: none;
+  margin-top: 0;
+
+  input[type="submit"] {
+    margin-bottom: 0;
+  }
+}
+
+
+// Labels
+// ------
+
+.form-label {
+  color: $quietColor;
+  text-transform: uppercase;
+  font-size: $baseFontSize - 2px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+
+// Place holders
+// -------------
+
+:-moz-placeholder {
+  color: $quietColor;
+}
+::-webkit-input-placeholder {
+  color: $quietColor;
+}
+
+
+// Help inline pills
+// -----------------
+
+.help-block {
+  padding: 1px 6px 0 6px;
+  margin-left: 9px;
+
+  background: $textColor;
+  color: $white;
+  border-radius:3px;
+  vertical-align: middle;
+  font-size: $baseFontSize - 3px;
+  line-height: $baseFontSize + 4px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.help-block::before {
+  @include horizontal-caret(left, 10px, 9px, $textColor);
+  border-right: 9px solid $textColor;
+  margin-left: -14px;
+  margin-right: 6px;
+  margin-top: -1px;
+}
+
+.form-group {
+  overflow: hidden;
+}
+
+.form-group.has-warning .help-block,
+.form-group.has-error .help-block,
+.form-group.has-success .help-block {
+  color: $white;
+}
+
+.form-group.has-warning {
+  label.form-label    { color: $warningText; }
+  .help-block         { background: $warningText; }
+  .help-block::before { border-right-color: $warningText; }
+}
+
+.form-group.has-error {
+  label.form-label    { color: $errorText; }
+  .help-block         { background: $errorText; }
+  .help-block::before { border-right-color: $errorText; }
+}
+
+.form-group.has-success {
+  label.form-label    { color: $successText; }
+  .help-block         { background: $successText; }
+  .help-block::before { border-right-color: $successText; }
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+  border-color: $errorText;
+}
+
+.form-inline .has-feedback .form-control-feedback,
+.navbar-form .has-feedback .form-control-feedback {
+    top: 19px;
+}
+
+
+// Rails field errors
+// ------------------
+.field_with_errors {
+  display: inline;
+}
+
+.uneditable-input {
+  display: block;
+  background-color: #ffffff;
+  border-color: #eee;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+  cursor: not-allowed;
+}
+
+label {
+  display: block;
+}
+
+input,textarea {
+  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+  @include transition(border linear 0.2s,box-shadow linear 0.2s);
+  outline: none;
+}
+
+input, textarea, select, .uneditable-input {
+  padding: 4px;
+  color: #444455;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  min-height: 32px;
+}
+
+input[type='checkbox'] {
+  width: auto;
+}
+
+input:focus,
+textarea:focus {
+  border-color:rgba(82, 168, 236, 0.8);
+  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(82, 168, 236, 0.6));
+  outline:0;
+}
+
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid {
+  color:#b94a48;
+  border-color:#ee5f5b;
+}
+
+input:focus:required:invalid:focus,
+textarea:focus:required:invalid:focus,
+select:focus:required:invalid:focus {
+  border-color:#e9322d;
+  @include box-shadow(0 0 6px #f8b9b7);
+}
+
+.box {
+  margin-top: 1em;
+}
+
+
+// Remove all border-radius:for inputs with both prepend and append
+.input-group {
+  input,
+  select,
+  .uneditable-input {
+    border-radius:0;
+  }
+  .btn {
+    height: 34px;
+  }
+
+  .input-group-btn:first-child>.btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+}
+
+.form-horizontal {
+
+  .form-control {
+    display: inline;
+  }
+
+  .controls {
+    margin-left: 160px;
+
+    .help-inline {
+      display: inline-block;
+      margin-left: 123px;
+      margin-bottom: 0;
+      color: #888899;
+    }
+
+    .help-block {
+      float: right;
+      position: relative;
+      margin-right: -7px;
+    }
+  }
+
+  .uneditable-input {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+  .form-inline {
+    .checkbox {
+      input {
+        margin-top: -6px;
+      }
+    }
+  }
+}
+
+.well {
+  input[type='text'] {
+    width: 100%;
+  }
+}

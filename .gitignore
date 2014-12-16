@@ -1,0 +1,12 @@
+.DS_Store
+.bundle/
+log/*.log
+pkg/
+app/assets/stylesheets/dresssed/*.css
+app/assets/stylesheets/dresssed/*.css.erb
+test/dummy/db/*.sqlite3
+test/dummy/log/*.log
+test/dummy/tmp/
+test/dummy/.sass-cache
+test/dummy/public/assets
+bin

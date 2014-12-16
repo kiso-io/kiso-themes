@@ -1,0 +1,52 @@
+<% @title = "Edit #{resource_name.to_s.humanize}" %>
+<div class='col-sm-12 col-md-12'>
+<%= form_for resource, :as => resource_name, :url => registration_path(resource_name),  :html => { :method => :put, :novalidate => true, :class => "form-horizontal" } do |f| %>
+
+
+      <%= f.error_notification %>
+
+      <%= f.form_group :email do |f| %>
+        <%= f.label :email, :class => "col-xs-1 col-sm-4 col-md-4 form-label" %>
+        <div class="controls">
+          <%= f.email_field :email, :required => true, :autofocus => true, :class => "col-md-8" %>
+          <%= f.error_messages %>
+        </div>
+      <% end %>
+
+      <%= f.form_group :password do |f| %>
+        <%= f.label :password, :class => "col-xs-1 col-sm-4 col-md-4 form-label" %>
+        <div class="controls">
+          <%= f.email_field :password, :class => "col-md-8" %>
+          <%= f.error_messages %>
+          <div class="help-inline">
+            Leave it blank if you don't want to change it.
+          </div>
+        </div>
+      <% end %>
+
+      <%= f.form_group :password_confirmation do |f| %>
+        <%= f.label :password_confirmation, :class => "col-xs-1 col-sm-4 col-md-4 form-label" %>
+        <div class="controls">
+          <%= f.email_field :password_confirmation, :class => "col-md-8" %>
+          <%= f.error_messages %>
+        </div>
+      <% end %>
+
+      <%= f.form_group :current_password do |f| %>
+        <%= f.label :current_password, :class => "col-xs-1 col-sm-4 col-md-4 form-label" %>
+        <div class="controls">
+          <%= f.email_field :current_password, :class => "col-md-8" %>
+          <%= f.error_messages %>
+          <div class="help-inline">
+            We need your current password to confirm your changes.
+          </div>
+        </div>
+      <% end %>
+
+      <div class="form-actions col-md-offset-4">
+        <%= f.submit "Update", :class => 'btn btn-primary' %>
+        <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete, :class => "btn btn-danger" %>
+      </div>
+
+<% end %>
+</div>

@@ -1,0 +1,22 @@
+<% @title = "Resend unlock instructions" %>
+
+<%= form_for resource, :as => resource_name, :url => unlock_path(resource_name),
+                       :html => { :method => :post, :class => "form-horizontal col-md-6" } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="sheet form-sheet form-inputs">
+    <div class="sheet-inner">
+      <%= f.form_group :email do |f| %>
+        <%= f.label :email, :class => "form-label" %>
+        <%= f.email_field :email, :autofocus => true, :class => "col-md3" %>
+        <%= f.error_messages %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Resend unlock instructions", :class => 'btn btn-primary' %>
+    or
+    <%= link_to "Sign in", new_session_path(resource_name), :class => 'btn' %>
+  </div>
+<% end %>

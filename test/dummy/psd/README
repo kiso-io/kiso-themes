@@ -1,0 +1,32 @@
+= Gimlet Dresssed Theme PSD files
+
+== Requirements & Usage
+
+To open the included PSD files, you will need Photoshop CS4
+or more recent.
+
+To be able to fully edit types in PSDs, download and
+install the following font on your system:
+
+  http://www.google.com/webfonts/specimen/Droid+Sans
+
+To replace an image from the theme. Save the web version 
+of the PSD in your app, under
+app/assets/images/dresssed/<PSD_PATH>.
+
+Eg.: to replace the logo using the blue style.
+
+  Save psd/blue/logo.psd to
+  app/assets/images/dresssed/blue/logo.png
+
+
+== Where is the logo?
+
+PSDs related to a particular style are under the directory
+named based on the given style. The logo for the blue style
+is at psd/blue/logo.psd
+
+
+--
+http://dresssed.com/themes/gimlet
+Copyright 2012 (c) Coded Inc.

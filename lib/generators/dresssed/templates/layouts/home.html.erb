@@ -1,0 +1,11 @@
+<% content_for :navbar do %>
+  <li>
+    <%= form_tag "?", :class => "navbar-form hidden-sm navbar-search", role:'search' do %>
+      <%= text_field_tag :query, params[:query], :class => "search-query" %>
+    <% end %>
+  </li>
+<% end %>
+
+<%= render :layout => "layouts/base" do %>
+  <%= yield %>
+<% end %>

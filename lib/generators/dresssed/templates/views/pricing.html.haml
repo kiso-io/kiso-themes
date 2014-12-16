@@ -1,0 +1,69 @@
+- @title = "Pricing"
+
+.hero-unit
+  %h1 Low prices, big value.
+  %h2 Coffee buzz for the price of a latte.
+
+%section#pricing
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.col-md-3
+        %th
+          %h3 Free
+          %b.caret
+        %th.highlighted
+          %h3 Small
+          %b.caret
+        %th
+          %h3 Big
+          %b.caret
+    %tfoot
+      %tr
+        %td
+        %td= link_to "Sign Up", '#', :class => 'btn btn-large'
+        %td= link_to "Sign Up", '#', :class => 'btn btn-large btn-info'
+        %td= link_to "Sign Up", '#', :class => 'btn btn-large'
+    %tbody
+      %tr
+        %th
+          %h4 Space
+          %p.muted Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        %td
+          %strong 0
+          MB
+        %td.highlighted
+          %strong 200
+          MB
+        %td
+          %strong 300
+          MB
+      %tr
+        %th
+          %h4 Fun
+          %p.muted Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        %td Low
+        %td.highlighted Medium
+        %td High
+      %tr
+        %th
+          %h4 Projects
+          %p.muted Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        %td
+          %strong 10
+          projects
+        %td.highlighted
+          %strong 100
+          projects
+        %td
+          %strong Infinite!
+      %tr
+        %th
+          %h4 Price
+        %td Free
+        %td.highlighted
+          %strong $12
+          \/month
+        %td
+          %strong $29
+          \/month
