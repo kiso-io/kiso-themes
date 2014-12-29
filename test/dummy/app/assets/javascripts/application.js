@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require dresssed
 //= require_tree .
+//= require_self
+
+$(document).ready(function(){
+  prettyPrint();
+})

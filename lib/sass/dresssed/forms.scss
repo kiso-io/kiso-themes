@@ -1,25 +1,9 @@
-.form-actions {
-  background: transparent;
-  border-top: none;
-  margin-top: 0;
-
-  input[type="submit"] {
-    margin-bottom: 0;
-  }
+.form-control {
+  border-radius: $generalBorderRadius;
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
 }
-
-
-// Labels
-// ------
-
-.form-label {
-  color: $quietColor;
-  text-transform: uppercase;
-  font-size: $baseFontSize - 2px;
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
 
 // Place holders
 // -------------
@@ -27,74 +11,86 @@
 :-moz-placeholder {
   color: $quietColor;
 }
+
 ::-webkit-input-placeholder {
   color: $quietColor;
 }
 
-
-// Help inline pills
-// -----------------
-
-.help-block {
-  padding: 1px 6px 0 6px;
-  margin-left: 9px;
-
-  background: $textColor;
-  color: $white;
-  border-radius:3px;
-  vertical-align: middle;
-  font-size: $baseFontSize - 3px;
-  line-height: $baseFontSize + 4px;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-  text-transform: uppercase;
-  display: inline-block;
+// Form States
+.has-warning .help-block,
+.has-warning .control-label,
+.has-warning .radio,
+.has-warning .checkbox,
+.has-warning .radio-inline,
+.has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label {
+  color: $warningText;
 }
 
-.help-block::before {
-  @include horizontal-caret(left, 10px, 9px, $textColor);
-  border-right: 9px solid $textColor;
-  margin-left: -14px;
-  margin-right: 6px;
-  margin-top: -1px;
+.has-warning .form-control {
+  border-color: $warningText;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
-.form-group {
-  overflow: hidden;
+.has-warning .form-control:focus {
+  border-color: $warningText;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $warningText;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $warningText;
 }
 
-.form-group.has-warning .help-block,
-.form-group.has-error .help-block,
-.form-group.has-success .help-block {
-  color: $white;
+.has-warning .form-control-feedback {
+  color: $warningText;
 }
 
-.form-group.has-warning {
-  label.form-label    { color: $warningText; }
-  .help-block         { background: $warningText; }
-  .help-block::before { border-right-color: $warningText; }
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+  color: $errorText;
 }
 
-.form-group.has-error {
-  label.form-label    { color: $errorText; }
-  .help-block         { background: $errorText; }
-  .help-block::before { border-right-color: $errorText; }
-}
-
-.form-group.has-success {
-  label.form-label    { color: $successText; }
-  .help-block         { background: $successText; }
-  .help-block::before { border-right-color: $successText; }
-}
-
-.form-group.has-error input,
-.form-group.has-error select,
-.form-group.has-error textarea {
+.has-error .form-control {
   border-color: $errorText;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
-.form-inline .has-feedback .form-control-feedback,
-.navbar-form .has-feedback .form-control-feedback {
-    top: 19px;
+.has-error .form-control:focus {
+  border-color: $errorText;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $errorText;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $errorText;
+}
+
+.has-error .form-control-feedback {
+  color: $errorText;
+}
+
+
+.has-success .help-block,
+.has-success .control-label,
+.has-success .radio,
+.has-success .checkbox,
+.has-success .radio-inline,
+.has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+  color: $successText;
+}
+
+.has-success .form-control {
+  border-color: $successText;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-success .form-control:focus {
+  border-color: $successText;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $successText;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $successText;
+}
+
+.has-success .form-control-feedback {
+  color: $successText;
 }
 
 
@@ -104,34 +100,11 @@
   display: inline;
 }
 
-.uneditable-input {
-  display: block;
-  background-color: #ffffff;
-  border-color: #eee;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
-  cursor: not-allowed;
-}
-
-label {
-  display: block;
-}
-
-input,textarea {
+input,
+textarea {
   @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
   @include transition(border linear 0.2s,box-shadow linear 0.2s);
   outline: none;
-}
-
-input, textarea, select, .uneditable-input {
-  padding: 4px;
-  color: #444455;
-  border: 1px solid #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  min-height: 32px;
 }
 
 input[type='checkbox'] {
@@ -141,7 +114,6 @@ input[type='checkbox'] {
 input:focus,
 textarea:focus {
   border-color:rgba(82, 168, 236, 0.8);
-  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(82, 168, 236, 0.6));
   outline:0;
 }
 
@@ -161,72 +133,4 @@ select:focus:required:invalid:focus {
 
 .box {
   margin-top: 1em;
-}
-
-
-// Remove all border-radius:for inputs with both prepend and append
-.input-group {
-  input,
-  select,
-  .uneditable-input {
-    border-radius:0;
-  }
-  .btn {
-    height: 34px;
-  }
-
-  .input-group-btn:first-child>.btn {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-  }
-}
-
-.form-horizontal {
-
-  .form-control {
-    display: inline;
-  }
-
-  .controls {
-    margin-left: 160px;
-
-    .help-inline {
-      display: inline-block;
-      margin-left: 123px;
-      margin-bottom: 0;
-      color: #888899;
-    }
-
-    .help-block {
-      float: right;
-      position: relative;
-      margin-right: -7px;
-    }
-  }
-
-  .uneditable-input {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-}
-
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px)
-and (orientation : portrait) {
-  .form-inline {
-    .checkbox {
-      input {
-        margin-top: -6px;
-      }
-    }
-  }
-}
-
-.well {
-  input[type='text'] {
-    width: 100%;
-  }
 }

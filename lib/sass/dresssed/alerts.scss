@@ -2,3 +2,27 @@
 .alert .close {
   top: 0;
 }
+
+.alert-danger {
+  background-color: $errorBackground;
+  border-color: #ebccd1;
+  color: $errorText;
+}
+
+.alert-success {
+  background-color: $successBackground;
+  border-color: $successText;
+  color: $successText;
+}
+
+.alert-warning {
+  background-color: $warningBackground;
+  border-color: $warningText;
+  color: $warningText;
+}
+
+.alert-info {
+  background-color: $infoBackground;
+  border-color: $infoText;
+  color: $infoText;
+}

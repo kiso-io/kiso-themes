@@ -1,15 +1,11 @@
 .btn {
-  padding: 4px 14px;
-  @include buttonBackground(lighten($backgroundColor, 10%), darken($backgroundColor, 3%), lighten($textColor, 10%), 0 1px 1px rgba(255,255,255,.75));
+  background: #fff;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.14),inset 0 1px 0 rgba(255,255,255,0.2);
+  border: 1px solid darken($backgroundColor, 10%);
+  border-radius:4px;
 
-  font-style: normal;
-  font-family: $baseFontFamily;
-
-  border-radius:30px;
-  border-color: $borderColor;
-  border-bottom-color: darken($borderColor, 10%);
-  outline: none;
-  @include transition(all 0.5s ease);
+  @include transition(all 0.15s ease);
 }
 
 .btn-warning,
@@ -33,19 +29,22 @@
   color: rgba(255,255,255,.75);
 }
 
+.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+  background: white;
+}
+
 // Set the backgrounds
 // -------------------------
 .btn-primary {
-  @include buttonBackground(lighten($primaryButtonBackground, 20%), $primaryButtonBackground);
+  @include buttonBackground(#428bca, #428bca);
   color: $primaryButtonText;
-  font-weight: bold;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .btn-primary:hover {
-  @include buttonBackground(lighten($callToActionBackgroundColor, 10%), darken($callToActionBackgroundColor, 10%));
+  @include buttonBackground(darken(#428bca, 10%), darken(#428bca, 10%));
   color: darken($primaryButtonText, 10%);
-  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
 }
 
 .btn-primary:focus,
@@ -85,20 +84,48 @@ fieldset[disabled] .btn-primary.active {
 
 // Warning appears are orange
 .btn-warning {
-  @include buttonBackground(lighten($orange, 15%), $orange);
+  @include buttonBackground($warning, $warning);
+  border-color: $warning;
+  border-bottom-color: darken($warning, 10%);
+
+  &:hover {
+    @include buttonBackground(darken($warning, 10%), darken($warning, 10%));
+  }
 }
+
 // Danger and error appear as red
 .btn-danger {
-  @include buttonBackground(#ee5f5b, #bd362f);
+  @include buttonBackground($danger, $danger);
+  border-color: $danger;
+  border-bottom-color: darken($danger, 10%);
+
+  &:hover {
+    @include buttonBackground(darken($danger, 10%), darken($danger, 10%));
+  }
 }
+
 // Success appears as green
 .btn-success {
-  @include buttonBackground(#62c462, #51a351);
+  @include buttonBackground($success, $success);
+  border-color: $success;
+  border-bottom-color: darken($success, 10%);
+
+  &:hover {
+    @include buttonBackground(darken($success, 10%), darken($success, 10%));
+  }
 }
+
 // Info appears as a neutral blue
 .btn-info {
-  @include buttonBackground(#5bc0de, #2f96b4);
+  @include buttonBackground($info, $info);
+  border-color: $info;
+  border-bottom-color: darken($info, 10%);
+
+  &:hover {
+    @include buttonBackground(darken($info, 10%), darken($info, 10%));
+  }
 }
+
 // Inverse appears as dark gray
 .btn-inverse {
   @include buttonBackground(#454545, #262626);
@@ -120,7 +147,7 @@ fieldset[disabled] .btn-primary.active {
     color: $callToActionTextColor;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 
-    font-family: $headerFontFamily;
+    font-family: $font-family-serif;
     font-weight: bold;
 
     @include box-shadow(none);
@@ -145,23 +172,129 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
+// Outline Buttons
 
-// Button sizes
-// ------------
-
-.btn-large {
-  padding: 9px 16px;
-  border-radius:$largeButtonBorderRadius;
+.btn-outline-default {
+    color: $textColor;
+    background-color: transparent;
+    border-color: #ededed
 }
 
-.btn-small {
-  padding: 3px 9px;
-}
-.btn-small .caret {
-  margin-top: 6px;
+.btn-outline-default.active,
+.btn-outline-default:active,
+.btn-outline-default:focus,
+.btn-outline-default:hover,
+.open .btn-outline-default.dropdown-toggle {
+    color: $textColor;
+    background-color: #fff;
+    outline: none;
 }
 
-.btn-mini {
-  padding: 1px 7px;
-  font-size: $baseFontSize - 3px;
+.btn-outline-primary {
+    color: $textColor;
+    background-color: transparent;
+    border-color: $primary;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active,
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.open .btn-outline-primary.dropdown-toggle {
+    color: white;
+    background-color: #428bca;
+    text-shadow: none;
+    outline: none;
+}
+
+.btn-outline-success {
+    color: $textColor;
+    background: transparent;;
+    border-color: $success;
+    text-shadow: none;
+}
+
+.btn-outline-success.active,
+.btn-outline-success:active,
+.btn-outline-success:focus,
+.btn-outline-success:hover {
+    color: white;
+    background: $success;
+    text-shadow: none;
+    outline: none;
+}
+
+.open .btn-outline-success.dropdown-toggle {
+    color: $gray;
+    background: $red;
+    text-shadow: none;
+}
+
+.btn-outline-info {
+    color: $textColor;
+    background: transparent;
+    border-color: $info;
+    text-shadow: none;
+}
+
+.btn-outline-info.active,
+.btn-outline-info:active,
+.btn-outline-info:focus,
+.btn-outline-info:hover,
+.open .btn-outline-info.dropdown-toggle {
+    color: white;
+    background: $info;
+    text-shadow: none;
+    outline: none;
+}
+
+.btn-outline-warning {
+    color: $textColor;
+    background: transparent;
+    border-color: $warning;
+}
+
+.btn-outline-warning.active,
+.btn-outline-warning:active,
+.btn-outline-warning:focus,
+.btn-outline-warning:hover,
+.open .btn-outline-warning.dropdown-toggle {
+    color: white;
+    background: $warning;
+    text-shadow: none;
+    outline: none;
+}
+
+.btn-outline-danger {
+    color: $textColor;
+    background: transparent;
+    border-color: $danger;
+}
+
+.btn-outline-danger.active,
+.btn-outline-danger:active,
+.btn-outline-danger:focus,
+.btn-outline-danger:hover,
+.open .btn-outline-danger.dropdown-toggle {
+    color: white;
+    background: $danger;
+    text-shadow: none;
+    outline: none;
+}
+
+.btn-outline-link {
+    color: $textColor;
+    background: transparent;
+}
+
+.btn-outline-link.active,
+.btn-outline-link:active,
+.btn-outline-link:focus,
+.btn-outline-link:hover,
+.open .btn-outline-dark.dropdown-toggle {
+    color: $textColor;
+    background: #fff;
+    text-shadow: none;
+    text-decoration: underline;
+    outline: none;
 }

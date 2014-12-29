@@ -34,10 +34,10 @@
 
 .pagination a:hover,
 .pagination .active a {
-  @include gradient-vertical(#fff, $backgroundColor);
+
   border: solid 1px $borderColor;
   @include box-shadow(0 1px 0 #fff);
-  padding: 4px 6px;
+  padding: 4px 7px;
 }
 
 .pagination .active a {

@@ -1,13 +1,20 @@
+// Import Bootstrap rules using your variables.
+// CSS Reset
+// Core variables and mixins
+@import "twitter/bootstrap/variables";
+@import "twitter/bootstrap/mixins";
+
 // Dresssed Theme config file
 // ==========================
 @import "dresssed/styles/defaults";
 
+
 // STYLE
 // -----
 // Pick one style. Just one. Comment or remove the other ones.
-// @import "dresssed/styles/blue";
+@import "dresssed/styles/blue";
 // @import "dresssed/styles/black";
-@import "dresssed/styles/amber";
+// @import "dresssed/styles/amber";
 
 
 // VARIABLE OVERRIDES
@@ -116,10 +123,6 @@
 // You can optionally remove some imports to end up with a tidier file. But keep in mind some
 // rules in a file might depend on rules in another one.
 
-// Core variables and mixins
-@import "twitter/bootstrap/variables";
-@import "twitter/bootstrap/mixins";
-
 // Reset and dependencies
 @import "twitter/bootstrap/normalize";
 @import "twitter/bootstrap/print";
@@ -166,7 +169,6 @@
 // Utility classes
 @import "twitter/bootstrap/utilities";
 @import "twitter/bootstrap/responsive-utilities";
-@import "font_awesome/font-awesome";
 
 
 // Import Dresssed rules.
@@ -184,6 +186,7 @@
 @import "dresssed/tables";
 @import "dresssed/code";
 @import "dresssed/forms";
+@import "dresssed/addons";
 
 // Buttons
 @import "dresssed/buttons";
@@ -197,6 +200,7 @@
 @import "dresssed/navs/stacked-pills";
 @import "dresssed/navs/tabbable";
 @import "dresssed/breadcrumbs";
+@import "dresssed/list-groups";
 
 // Misc navs
 @import "dresssed/navbar";
@@ -212,22 +216,31 @@
 @import "dresssed/labels";
 @import "dresssed/thumbnails";
 @import "dresssed/jumbotron";
+@import "dresssed/panels";
+@import "dresssed/progress-bars";
 @import "dresssed/sprites";
+@import "dresssed/extensions";
 
 // Font Awesome
 @import "font_awesome/font-awesome";
-
-
 
 // CUSTOM RULES
 // ------------
 // Optionally override any rule here. Or do so in another file.
 // ...
 
-// Uncomment to change the logo in the left corner of the top navbar.
-/* .navbar .brand {
-  background-image: asset-url('logo.png');
+// Uncomment to change the logo and its size in the left corner of the top navbar.
+/* .navbar-brand {
+  background-image: url('logo.png');
   width: 105px;
   height: 24px;
+}
+*/
+
+// If you don't have a logo yet and prefer to use text instead, uncomment this one:
+/* .navbar-brand {
+  background-image: none;
+  text-indent: 0;
+  width: auto;
 }
 */

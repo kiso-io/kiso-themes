@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title><%= [@title, app_name].compact.join(" - ") %></title>
     <%= csrf_meta_tags %>
-    
+
     <!-- Ensure devices display responsive pages properly -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,7 +14,10 @@
     <![endif]-->
 
     <!-- Le fonts -->
-    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Droid+Sans:400,700" %>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:100,200,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Le styles -->
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -23,27 +26,12 @@
     <!-- Le fav and touch icons -->
     <%= favicon_link_tag %>
     <%# favicon_link_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
-    
+
     <%= yield :head %>
   </head>
-  <body>
-    <header>
-      <%= render "layouts/navbar" %>
-      <%= yield :header %>
-      <hr />
-    </header>
-    
-    <%= yield :banner %>
+  <body class='<%= @body_class %>'>
 
-    <div id="main">
-      <div class="container">
-        <%= render "layouts/flashes" %>
-
-        <%= yield %>
-      </div> <!-- /.container -->
-    </div> <!-- /#main -->
-    
-    <%= render "layouts/footer" %>
+    <%= yield %>
 
     <!-- Le javascript
     ================================================== -->

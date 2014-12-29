@@ -38,11 +38,11 @@
 // $activeBackgroundColor: darken($backgroundColor, 5%);
 
 // Typography
-// $baseFontSize:          13px;
+// $font-size-base:          13px;
 // $baseLineHeight:        18px;
-// $baseFontFamily:        Arial, Helvetica, sans-serif;
-// $headerFontFamily:      "Droid Sans", Arial, Helvetica, sans-serif;
-// $fixedFontFamily:       "Andale Mono", "Lucida Console", monospace;
+// $font-family-sans-serif:        Arial, Helvetica, sans-serif;
+// $font-family-serif:      "Droid Sans", Arial, Helvetica, sans-serif;
+// $font-family-monospace:       "Andale Mono", "Lucida Console", monospace;
 
 // Buttons
 // $primaryButtonBackground:     $altBackgroundColor;
@@ -212,7 +212,7 @@
 @import "dresssed/sheets";
 @import "dresssed/labels";
 @import "dresssed/thumbnails";
-@import "dresssed/hero-unit";
+@import "dresssed/jumbotron";
 @import "dresssed/sprites";
 
 // Font Awesome

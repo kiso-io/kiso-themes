@@ -1,0 +1,28 @@
+.circular-avatar {
+  border-radius: 100%;
+}
+
+.avatar-notification {
+  background: $brand-primary;
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  border: 3px solid white;
+  border-radius: 100%;
+
+  &.warning {
+    background: $brand-warning;
+  }
+  &.info {
+    background: $brand-info;
+  }
+  &.danger {
+    background: $brand-danger;
+  }
+  &.success {
+    background: $brand-success;
+  }
+}

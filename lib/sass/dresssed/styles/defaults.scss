@@ -6,8 +6,8 @@
 // --------------------------------------------------
 
 // Colors
-$altTextColor:          #663c16;
-$altBackgroundColor:    #d0ab5f;
+$altTextColor:          #fff;
+$altBackgroundColor:    #2866AA;
 
 // Links
 $linkColor:             #08c;
@@ -23,28 +23,48 @@ $grayLighter:           #eee;
 $white:                 #fff;
 
 // Accent colors
-$blue:                  #049cdb;
-$blueDark:              #0064cd;
+$blue:                  #67809F;
+$blueDark:              #03C9A9;
 $green:                 #46a546;
-$red:                   #9d261d;
+$red:                   #DD2C43;
 $yellow:                #ffc40d;
-$orange:                #f89406;
+$orange:                #F27935;
 $pink:                  #c3325f;
 $purple:                #7a43b6;
 
+// States
+
+$primary: $altBackgroundColor;
+$warning: $orange;
+$danger:  $red;
+$success: $blueDark;
+$info:    $blue;
+
+$brand-primary: $primary;
+$brand-success: $success;
+$brand-info:    $info;
+$brand-warning: $warning;
+$brand-danger:  $danger;
+
 // Typography
-$baseFontSize:          13px;
-$baseLineHeight:        18px;
-$baseFontFamily:        Arial, Helvetica, sans-serif;
-$headerFontFamily:      "Droid Sans", Arial, Helvetica, sans-serif;
-$fixedFontFamily:       "Andale Mono", "Lucida Console", monospace;
+$font-size-base:        16px;
+$baseLineHeight:        22px;
+
+$font-family-sans-serif:  "Avenir", "Lato", Arial, Helvetica, sans-serif;
+$font-family-serif:       "Source Sans Pro", Arial, Helvetica, sans-serif;
+$font-family-monospace:   "Andale Mono", "Lucida Console", monospace;
+
+$line-height-base:        (22/14);
+$line-height-computed:    floor(($font-size-base * $line-height-base));
+
+$input-height-base:       ($line-height-computed + ($padding-base-vertical * 2) + 2);
 
 // Buttons
 $primaryButtonBackground:     $altBackgroundColor;
 $primaryButtonText:           $altTextColor;
 $callToActionBackgroundColor: $altBackgroundColor;
 $callToActionTextColor:       $altTextColor;
-$buttonBorderRadius:          30px;
+$buttonBorderRadius:          4px;
 $largeButtonBorderRadius:     $buttonBorderRadius;
 $buttonTransparentBorder:     rgba(0, 0, 0, 0.35);
 
@@ -70,8 +90,8 @@ $placeholderText:         $grayLight;
 $hrBorder:                $grayLighter;
 
 // Navbar
-$navbarHeight:                    58px;
-$navbarBackground:                $grayDarker;
+$navbarHeight:                    50px;
+$navbarBackground:                white;
 $navbarBackgroundHighlight:       $grayDark;
 $navbarLinkBackgroundHover:       transparent;
 
@@ -79,16 +99,19 @@ $navbarText:                      $grayLight;
 $navbarLinkColor:                 $grayLight;
 $navbarLinkColorHover:            $white;
 
+$navBorderRadius: 2px;
+$generalBorderRadius: 2px;
+
 // Form states and alerts
-$warningText:             #c09853;
+$warningText:             $orange;
 $warningBackground:       #fcf8e3;
 $warningBorder:           darken(adjust-hue($warningBackground, -10), 3%);
 
-$errorText:               #b94a48;
+$errorText:               $red;
 $errorBackground:         #f2dede;
 $errorBorder:             darken(adjust-hue($errorBackground, -10), 3%);
 
-$successText:             #468847;
+$successText:             darken($success, 10%);
 $successBackground:       #dff0d8;
 $successBorder:           darken(adjust-hue($successBackground, -10), 5%);
 
@@ -96,18 +119,7 @@ $infoText:                #3a87ad;
 $infoBackground:          #d9edf7;
 $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%);
 
-
-
-// GRID
-// --------------------------------------------------
-
-// Default 940px grid
-$gridColumns:             12;
-$gridColumnWidth:         60px;
-$gridGutterWidth:         20px;
-$gridRowWidth:            ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1));
-
-// Fluid grid
-$fluidGridColumnWidth:    6.382978723%;
-$fluidGridGutterWidth:    2.127659574%;
+$primaryText:                #3a87ad;
+$primaryBackground:          #d9edf7;
+$primaryBorder:              darken(adjust-hue($primaryBackground, -10), 7%);
 

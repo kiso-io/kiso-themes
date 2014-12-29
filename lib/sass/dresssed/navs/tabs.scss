@@ -1,22 +1,28 @@
 // BASIC TABS
 // ----------
 
-.nav-tabs {
-  border-color: $borderColor;
+.nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857;
+  border: 1px solid transparent;
+  border-radius: $navBorderRadius $navBorderRadius 0 0;
+}
+
+.nav-tabs > li > a:hover {
+  background: $backgroundColor;
+}
+
+.nav-tabs.nav-tabs-line > li a,
+.nav-tabs.nav-tabs-line > li a:hover {
+  border: none;
+  background: transparent;
+}
+
+.nav-tabs.nav-tabs-line > li a:hover {
   border-bottom: none;
 }
 
-.nav-tabs > li > a,
-.nav-tabs > li > a:hover {
-  border-color: $borderColor;
-}
-
-.nav-tabs > .active > a,
-.nav-tabs > .active > a:hover {
-  font-weight: bold;
-  color: $textColor;
-  #gradient {
-    @include gradient-vertical($white, $backgroundColor);
-  }
-  border-color: $borderColor $borderColor $backgroundColor $borderColor;
+.nav-tabs.nav-tabs-line > li.active {
+  background: transparent;
+  border-bottom: 1px solid blue;
 }

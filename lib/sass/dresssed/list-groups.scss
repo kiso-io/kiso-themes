@@ -1,0 +1,16 @@
+// List Groups
+.list-group-item.active {
+  background-color: $linkColor;
+  color: darken($linkColor, 30%);
+  border: none;
+}
+
+.list-group-item.active:hover {
+  background-color: $linkColorHover;
+  border: none;
+  @include transition(all 0.2s ease);
+
+  a {
+    color: darken($navbarBackgroundHighlight, 20%);
+  }
+}

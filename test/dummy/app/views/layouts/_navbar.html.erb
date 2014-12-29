@@ -1,36 +1,72 @@
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
   <div class="navbar-inner">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-      </div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <%= activatable_li_tag_with_link "Home", root_path %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <%= activatable_li_tag_with_link "Home", root_path %>
+        <%= dropdown_menu "Styles" do %>
+          <%= activatable_li_tag_with_link "Kitchen Sink", kitchen_sink_path %>
+          <%= activatable_li_tag_with_link "Bootstrap Scaffolding", css_path %>
+          <%= activatable_li_tag_with_link "Bootstrap Components", components_path %>
+          <%= activatable_li_tag_with_link "Bootstrap Javascript", javascript_path %>
+        <% end %>
+      </ul>
 
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                 Styles
-                 <b class="caret"></b>
-              </a>
+      <ul class="nav navbar-nav navbar-right">
+        <%= yield :navbar %>
+        <li class="dropdown no-padding">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-bell"></i>
+            <span class="badge badge-sm">2</span>
+            <span class="visible-xs-inline">Notifications</span>
+          </a>
+          <!-- dropdown -->
+          <ul class="dropdown-menu">
+            <li>
+              <div class="panel">
+                <div class="panel-heading">
+                  <strong>You have <span>13</span> notifications</strong>
+                </div>
+                <div class="list-group">
+                  <a href="#" class="media list-group-item">
+                    <span class="pull-left thumb-sm">
+                      <img src="http://fillmurray.com/32/32" class="img-circle">
+                    </span>
+                    <span class="media-body">
+                      <p>My name is Inigo Montoya.</p>
+                      <small class="text-muted">10 minutes ago</small>
+                    </span>
+                  </a>
+                  <a href="" class="media list-group-item">
+                    <span class="media-body">
+                      <p>New update available</p>
+                      <small class="text-muted">12 hours ago</small>
+                    </span>
+                  </a>
+                </div>
+                <div class="panel-footer text-sm">
+                  <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                  <a href="#">View all Notifications</a>
+                </div>
+              </div>
             </li>
-
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <%= yield :navbar %>
-        </ul>
-
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container -->
+          </ul>
+          <!-- / dropdown -->
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
   </div><!-- /.navbar-inner -->
 </nav>
+
+

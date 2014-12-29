@@ -1,37 +1,17 @@
-// Headers
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  color: $headerColor;
-  text-rendering: optimizelegibility;
+// Body
+body {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  background: $backgroundColor;
+  color: $textColor;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: $line-height-base;
 }
 
-h1, h2, h3, h4, h5 {
-  color: $headerColor;
-
-  small {
-    font-weight: normal;
-    color: $quietColor;
-  }
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family-serif;
 }
-
-h6 {
-  color: $quietColor;
-}
-
-h1, h2, h3 {
-  font-family: $headerFontFamily;
-}
-
-h2, h3 {
-  font-weight: normal;
-}
-
-h6{font-size:11px; text-transform:uppercase;}
-
-h1 small{font-size:18px;}
-h2 small{font-size:18px;}
-h3 small{font-size:14px;}
 
 a {
   color:$linkColor;
@@ -57,16 +37,20 @@ blockquote {
 // Page header
 .page-header {
   border: none;
+  margin: 0 0 1em 0;
+  padding: 1em 1em 1em 0.5em;
+  border-bottom: 1px solid $borderColor;
+  background: white;
 
-  background: transparent url($dividerImagePath) bottom repeat-x;
+  small {
+    display: block;
+  }
 }
-
 
 // Lists
 ul.checks {
-  list-style: url($checkIconPath);
 
-  font-family: $headerFontFamily;
+  font-family: $font-family-serif;
   font-style: italic;
 
   margin: 10px 0 0 0;
@@ -106,4 +90,39 @@ p.highlight {
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1em;
   }
+}
+
+.text-xs-left { text-align: left; }
+.text-xs-right { text-align: right; }
+.text-xs-center { text-align: center; }
+.text-xs-justify { text-align: justify; }
+
+@media (min-width: $screen-sm-min) {
+    .text-sm-left { text-align: left; }
+    .text-sm-right { text-align: right; }
+    .text-sm-center { text-align: center; }
+    .text-sm-justify { text-align: justify; }
+}
+
+@media (min-width: $screen-md-min) {
+    .text-md-left { text-align: left; }
+    .text-md-right { text-align: right; }
+    .text-md-center { text-align: center; }
+    .text-md-justify { text-align: justify; }
+}
+
+@media (min-width: $screen-lg-min) {
+   .text-lg-left { text-align: left; }
+   .text-lg-right { text-align: right; }
+   .text-lg-center { text-align: center; }
+   .text-lg-justify { text-align: justify; }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and ( min-device-pixel-ratio: 1.25),
+only screen and ( min-resolution: 200dpi),
+only screen and ( min-resolution: 1.25dppx)
+{
+    -webkit-font-smoothing: subpixel-antialiased;
 }

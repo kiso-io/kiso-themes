@@ -25,6 +25,9 @@ gem 'simple_form', '~> 3.1.0.rc2', github: 'plataformatec/simple_form', branch: 
 
 gem 'dresssed-ives', :path => '../../'
 
+gem 'guard'
+gem 'guard-livereload'
+
 group :test do
   gem 'mocha'
 end

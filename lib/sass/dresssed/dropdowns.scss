@@ -2,9 +2,70 @@
 .dropdown.open .dropdown-toggle:hover,
 .dropdown.open.active .dropdown-toggle:hover {
   color: $white;
-  background: $linkColor;
+  background: $navbarLinkBackgroundActive;
+}
+
+.dropdown.no-padding > ul.dropdown-menu {
+  padding: 0;
+}
+
+.dropdown-toggle > i {
+  margin-top: 2px;
+}
+
+.dropdown-toggle > i + .badge {
+  color: red;
+  position: absolute;
+  top: 4px;
+  right: 1px;
+  background: whitesmoke;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: $linkColorHover;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  color: white;
+  text-decoration: none;
+  outline: 0;
+  background-color: $navbarLinkBackgroundActive;
+}
+
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+  color: $quietColor;
+}
+
+.dropdown-menu {
+  .panel {
+    width: 290px;
+    margin-bottom: 0;
+
+    .panel-heading {
+      font-weight: normal;
+      text-transform: inherit;
+      background: rgb(239, 243, 247);
+    }
+
+    .media {
+      margin-top: 0;
+
+      .media-body {
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: lighten($navbarLinkBackgroundActive, 20%);
+  border-color: #337ab7;
 }
 
 .caret {
-  border-top-color: $linkColor;
+  border-top-color: lighten($quietColor, 15%);
 }

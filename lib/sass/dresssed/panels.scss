@@ -1,0 +1,70 @@
+.panel {
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.10);
+
+  h1.page-header {
+    margin: 0;
+  }
+
+  .panel-heading {
+    text-transform: uppercase;
+    font-family: $font-family-serif;
+    font-size: $font-size-base;
+    font-weight: 700;
+    background: white;
+    color: $textColor;
+    padding: 1em 1em;
+
+    .glyphicon {
+      min-width: 25px;
+      top: 3px;
+      padding-top: 2px;
+      margin-right: 5px;
+      border-right: 1px solid #ddd;
+    }
+
+    .btn-group {
+      top: -3px;
+
+      button {
+        border: none;
+        box-shadow: none;
+        top: -5px;
+      }
+
+      .dropdown-menu {
+        font-size: $font-size-base - 3;
+      }
+    }
+  }
+
+  .panel-body {
+    background: #F8F9FA;
+    margin: 0;
+  }
+
+  .panel-footer {
+    line-height: 1;
+  }
+}
+
+.panel-primary {
+  border-color: $primary;
+}
+
+.panel-success {
+  border-color: $success;
+}
+
+.panel-info {
+  border-color: $info;
+}
+
+.panel-warning {
+  border-color: $warning;
+}
+
+.panel-danger {
+  border-color: $danger;
+}

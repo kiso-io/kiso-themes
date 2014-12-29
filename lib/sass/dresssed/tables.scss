@@ -2,28 +2,40 @@
   &, th, td, thead, tbody {
     border-color: $borderColor;
   }
-
   thead th {
-    font-size: $baseFontSize - 2px;
+    font-size: $font-size-base - 2px;
     font-weight: normal;
-
     color: $quietColor;
     border-bottom: 2px solid $borderColor;
-
     padding-top: 4px;
     padding-bottom: 4px;
   }
+  tbody {
+    tr.success td {
+      background: $success;
+      color: white;
+    }
+    tr.danger td {
+      background: $danger;
+      color: white;
+    }
+    tr.warning td {
+      background: $warning;
+      color: white;
+    }
+    tr.info td {
+      background: $info;
+      color: white;
+    }
+  }
 }
-
 .table-striped {
   tbody {
-    tr:nth-child(odd) td,
-    tr:nth-child(odd) th {
+    tr:nth-child(odd) td, tr:nth-child(odd) th {
       background-color: lighten($backgroundColor, 2%);
     }
   }
 }
-
 .table-bordered {
   thead th {
     border-bottom-width: 1px;
@@ -35,30 +47,40 @@
     border-color: $borderColor;
   }
 }
-
 // Hover effect
 .table {
-  tbody tr:hover td,
-  tbody tr:hover th {
+  tbody tr:hover td, tbody tr:hover th {
     background-color: $activeBackgroundColor;
   }
 }
-
+.table-hover > tbody > tr.success:hover > td {
+  background: darken($success, 10%);
+  color: white;
+}
+.table-hover > tbody > tr.warning:hover > td {
+  background: darken($warning, 10%);
+  color: white;
+}
+.table-hover > tbody > tr.danger:hover > td {
+  background: darken($danger, 10%);
+  color: white;
+}
+.table-hover > tbody > tr.info:hover > td {
+  background: darken($info, 10%);
+  color: white;
+}
 .table td.actions {
   text-align: right;
 }
-
 .table td.actions a {
   @include opacity(40);
-
   margin-left: 2px;
-
   i {
-    font-size: $baseFontSize + 2px;
+    font-size: $font-size-base + 2px;
   }
-
   &:hover {
-    text-decoration: none;
     @include opacity(100);
+    text-decoration: none;
   }
 }
+
