@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default box-shadow" role="navigation">
   <div class="navbar-inner">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -24,8 +24,31 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form class="navbar-form" role="search">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+        </li>
         <%= yield :navbar %>
-        <li class="dropdown no-padding">
+        <li class='navbar-item'>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked=""> <i class="fa fa-home"></i>
+            </label>
+            <label class="btn btn-default">
+              <input type="radio" name="options" id="option2" autocomplete="off"> <i class="fa fa-envelope"></i>
+            </label>
+            <label class="btn btn-default">
+              <input type="radio" name="options" id="option3" autocomplete="off"> <i class="fa fa-user"></i>
+            </label>
+          </div>
+        </li>
+        <li class="dropdown notifications">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-bell"></i>
             <span class="badge badge-sm">2</span>
@@ -36,12 +59,12 @@
             <li>
               <div class="panel">
                 <div class="panel-heading">
-                  <strong>You have <span>13</span> notifications</strong>
+                  <strong>You have <span>2</span> notifications</strong>
                 </div>
                 <div class="list-group">
                   <a href="#" class="media list-group-item">
-                    <span class="pull-left thumb-sm">
-                      <img src="http://fillmurray.com/32/32" class="img-circle">
+                    <span class="pull-left">
+                      <img src="http://fillmurray.com/32/32" class="media-object img-circle">
                     </span>
                     <span class="media-body">
                       <p>My name is Inigo Montoya.</p>
@@ -50,12 +73,17 @@
                   </a>
                   <a href="" class="media list-group-item">
                     <span class="media-body">
-                      <p>New update available</p>
+                      <div>
+                        <p>You've reached your space quota!</p>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only">100% Complete</span></div>
+                        </div>
+                      </div>
                       <small class="text-muted">12 hours ago</small>
                     </span>
                   </a>
                 </div>
-                <div class="panel-footer text-sm">
+                <div class="panel-footer">
                   <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
                   <a href="#">View all Notifications</a>
                 </div>
