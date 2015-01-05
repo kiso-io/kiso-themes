@@ -32,11 +32,11 @@ h4 {font-size: 1.333em;}
 small, .font_small {font-size: 0.75em;}
 
 a {
-  color:$linkColor;
+  color:$link-color;
   text-decoration:none;
 
   &:hover {
-    color: $linkColorHover;
+    color: $link-color-hover;
   }
 }
 

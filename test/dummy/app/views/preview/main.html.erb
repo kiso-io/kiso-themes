@@ -1,0 +1,7 @@
+<%= render partial: "side_menu" %>
+<div class='main-content'>
+  <h1 class="page-header"><%= raw @title.gsub('_', ' ').titleize %></h1>
+  <div class='container-fluid'>
+    <%= render file: "preview/elements/#{@section}" %>
+  </div>
+</div>

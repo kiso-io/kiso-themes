@@ -2,7 +2,7 @@
 // -------------
 
 .nav-pills.nav-stacked > li.active > a {
-  background: $linkColor;
+  background: $link-color;
   filter: none;
   color: $white;
   @include box-shadow(0 1px 3px rgba(0,0,0,.25));
@@ -16,8 +16,8 @@
 
 .nav-pills.nav-stacked.nav-caret-left > .active {
   &::before {
-    @include horizontal-caret(left, $baseLineHeight, 9px, $linkColor);
-    border-right: 9px solid $linkColor;
+    @include horizontal-caret(left, $baseLineHeight, 9px, $link-color);
+    border-right: 9px solid $link-color;
     margin-top: 4px;
     margin-left: -12px;
 
@@ -37,8 +37,8 @@
 
 .nav-pills.nav-stacked.nav-caret-right > .active {
   &::before {
-    @include horizontal-caret(right, $baseLineHeight, 9px, $linkColor);
-    border-left: 9px solid $linkColor;
+    @include horizontal-caret(right, $baseLineHeight, 9px, $link-color);
+    border-left: 9px solid $link-color;
 
     margin-top: 1px;
     margin-right: -8px;

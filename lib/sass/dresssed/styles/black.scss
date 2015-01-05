@@ -18,8 +18,8 @@ $footerBackgroundColor: #2a2a2a;
 $activeBackgroundColor: darken($backgroundColor, 5%);
 
 // Links
-$linkColor:             lighten($textColor, 25%);
-$linkColorHover:        darken($linkColor, 10%);
+$link-color:             lighten($textColor, 25%);
+$link-color-hover:        darken($link-color, 10%);
 
 // Buttons
 

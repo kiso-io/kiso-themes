@@ -5,5 +5,9 @@ Dummy::Application.routes.draw do
   get '/css' => 'home#css'
   get '/components' => 'home#components'
   get '/javascript' => 'home#javascript'
-  root :to => 'home#index'
+
+  get 'preview/main' => 'preview#main'
+  get 'preview/:section' => 'preview#main', as: :element
+
+  root :to => 'preview#index'
 end

@@ -1,17 +1,5 @@
-<% content_for :navbar, render("layouts/user_nav") %>
-<header>
-  <%= render "layouts/navbar" %>
-  <%= yield :header %>
-</header>
-
-
-<%= yield :banner %>
-
 <div id="main">
-  <%= render "layouts/flashes" %>
   <%= render :layout => "layouts/base" do %>
     <%= yield %>
   <% end %>
 </div> <!-- /#main -->
-
-<%= render "layouts/footer" %>

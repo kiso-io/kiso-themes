@@ -1,0 +1,41 @@
+<div class="nav-side-menu">
+  <div class="brand">Brand Logo</div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+  <div class="menu-list">
+    <ul id="menu-content" class="menu-content collapse">
+      <% @elements.each do |el| %>
+        <% if el[:children].any? %>
+          <li data-toggle="collapse" data-target="#<%= el[:target_name] %>" class="<%= "collapsed" unless @section.downcase.include?(el[:parent_name].downcase) %> <%= "active" if @section.downcase.include?(el[:parent_name].downcase) %>">
+            <a href="#"><i class="fa <%=el[:icon]%> fa-lg"></i><%= el[:display_name] %><span class="arrow"></span></a>
+          </li>
+          <ul class="sub-menu collapse <%= "in" if @section.downcase.include?(el[:parent_name].downcase ) %>" id="<%= el[:target_name] %>">
+            <% el[:children].each do |child_el| %>
+              <%=activatable_li_tag_with_link child_el[:display_name], element_path(File.join(el[:parent_name],child_el[:child_name])) %>
+            <% end %>
+          </ul>
+        <% else %>
+          <%=activatable_li_tag el[:display_name], element_path(el[:parent_name]) do %>
+            <% @is_active = @section.downcase.include?(el[:parent_name].downcase) ? 'active' : '' %>
+            <%= link_to element_path(el[:parent_name]), class: @is_active do %>
+              <i class="fa <%=el[:icon]%> fa-lg"></i>
+              <%= el[:display_name].titleize %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <li>
+        <a href="#">
+          <i class="fa fa-user fa-lg"></i> Profile
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa fa-users fa-lg"></i> Users
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -10,8 +10,8 @@ $altTextColor:          #fff;
 $altBackgroundColor:    #2866AA;
 
 // Links
-$linkColor:             #08c;
-$linkColorHover:        darken($linkColor, 15%);
+$link-color:             #08c;
+$link-color-hover:        darken($link-color, 15%);
 
 // Grays
 $black:                 #000;
@@ -90,7 +90,7 @@ $placeholderText:         $grayLight;
 $hrBorder:                $grayLighter;
 
 // Navbar
-$navbar-height:                   55px;
+$navbar-height:                   50px;
 $navbarBackground:                white;
 $navbarBackgroundHighlight:       $grayDark;
 $navbarLinkBackgroundHover:       transparent;

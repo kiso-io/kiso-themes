@@ -22,8 +22,8 @@
 // Optionally override any variables here to customize the theme.
 
 // Links colors
-// $linkColor:             #08c;
-// $linkColorHover:        darken($linkColor, 15%);
+// $link-color:             #08c;
+// $link-color-hover:        darken($link-color, 15%);
 
 // Text colors
 // $textColor:             #3c545a;
@@ -204,6 +204,7 @@
 
 // Misc navs
 @import "dresssed/navbar";
+@import "dresssed/sidenav";
 @import "dresssed/pagination";
 @import "dresssed/pager";
 
@@ -218,6 +219,7 @@
 @import "dresssed/jumbotron";
 @import "dresssed/panels";
 @import "dresssed/progress-bars";
+@import "dresssed/modals";
 @import "dresssed/sprites";
 @import "dresssed/extensions";
 

@@ -18,4 +18,22 @@
 
 $(document).ready(function(){
   prettyPrint();
-})
+
+  $('.size-mobile').on('click', function(){
+    sizeiframe(480, true);
+  });
+
+  $('.size-tablet').on('click', function(){
+    sizeiframe(820, true);
+  });
+
+  $('.size-laptop').on('click', function(){
+    sizeiframe(document.body.clientWidth, true);
+  });
+});
+
+function sizeiframe(size) {
+    var $sgViewport = $('#sg-viewport');
+    $('#sg-gen-container,#sg-viewport').addClass("vp-animate");
+    $sgViewport.width(size);
+}

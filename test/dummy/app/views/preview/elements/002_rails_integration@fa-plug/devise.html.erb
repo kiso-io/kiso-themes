@@ -1,0 +1,142 @@
+<div class="row">
+<div class="col-lg-6">
+  <div class="panel panel-info">
+    <div class="panel-heading">Devise Sign In
+    </div>
+    <div class="panel-body">
+      <form accept-charset="UTF-8" action="/users/sign_in" class="form-horizontal" id="new_user" method="post">
+        <div class="sheet form-sheet">
+          <div class="sheet-inner">
+            <div class="form-group ">
+              <label class="form-label" for="user_email">Email</label>
+              <input id="user_email" name="user[email]" type="email" value="">
+            </div>
+            <div class="form-group ">
+              <label class="form-label" for="user_password">Password</label>
+              <input id="user_password" name="user[password]" type="password">
+            </div> </div>
+          </div>
+          <div class="form-sheet-footer">
+            <label class="checkbox" for="user_remember_me">
+              <input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"> Remember me
+            </label> </div>
+            <div class="form-actions">
+              <input class="btn btn-primary" name="commit" type="submit" value="Sign in">
+              or
+              <a class="btn" href="/users/sign_up">Sign up</a>
+              for an account.
+            </div>
+          </form>
+          <div class="col-sm-1 col-md-4">
+            <div class="box">
+              <h6>Help</h6>
+              <ul>
+                <li><a href="/users/password/new">Forgot your password?</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">Devise Sign up
+        </div>
+        <div class="panel-body">
+          <form accept-charset="UTF-8" action="/users" class="form-horizontal" id="new_user" method="post" novalidate="novalidate">
+            <div class="sheet form-sheet">
+              <div class="sheet-inner">
+                <div class="form-group ">
+                  <label class="form-label" for="user_email">Email</label>
+                  <input id="user_email" name="user[email]" type="email" value="">
+                </div>
+                <div class="form-group ">
+                  <label class="form-label" for="user_password">Password</label>
+                  <input id="user_password" name="user[password]" type="password">
+                </div>
+                <div class="form-group ">
+                  <label class="form-label" for="user_password_confirmation">Password confirmation</label>
+                  <input id="user_password_confirmation" name="user[password_confirmation]" type="password">
+                </div> </div>
+              </div>
+              <div class="form-actions">
+                <input class="btn btn-primary" name="commit" type="submit" value="Sign up">
+                <a class="btn" href="/users/sign_in">Sign in</a>
+              </div>
+            </form>
+            <div class="col-sm-1 col-md-4">
+              <div class="box">
+                <h6>Help</h6>
+                <ul>
+                  <li><a href="/users/password/new">Forgot your password?</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- /row -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="panel panel-info">
+          <div class="panel-heading">Devise Edit User
+          </div>
+          <div class="panel-body">
+            <form accept-charset="UTF-8" action="/users" class="form-horizontal" id="edit_user" method="post" novalidate="novalidate">
+              <div class="form-group ">
+                <label class="col-md-4 control-label" for="user_email">Email</label>
+                <input class="col-md-7" id="user_email" name="user[email]" required="required" type="email" value="test@example.com">
+              </div>
+              <div class="form-group ">
+                <label class="col-md-4 control-label" for="user_password">Password</label>
+                <input class="col-md-7" id="user_password" name="user[password]" type="email">
+              </div>
+              <div class="help-block col-md-offset-4">
+                Leave it blank if you don't want to change it.
+              </div>
+              <div class="form-group ">
+                <label class="col-md-4 control-label" for="user_password_confirmation">Password confirmation</label>
+                <input class="col-md-7" id="user_password_confirmation" name="user[password_confirmation]" type="password">
+              </div>
+              <div class="form-group ">
+                <label class="col-md-4 control-label" for="user_current_password">Current password</label>
+                <input class="col-md-7" id="user_current_password" name="user[current_password]" type="password">
+              </div>
+              <div class="help-block col-md-offset-4">
+                We need your current password to confirm your changes.
+              </div>
+              <div class="form-actions col-md-offset-4">
+                <input class="btn btn-primary" name="commit" type="submit" value="Update">
+                <a class="btn btn-danger" confirm="Are you sure?" data-method="delete" href="/users" rel="nofollow">Cancel my account</a>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Devise Forgot Password
+          </div>
+          <div class="panel-body">
+            <form accept-charset="UTF-8" action="/users/password" class="form-horizontal" id="new_user" method="post">
+              <div class="sheet form-sheet form-inputs">
+                <div class="sheet-inner">
+                  <div class="form-group ">
+                    <label class="form-label" for="user_email">Email</label>
+                    <input id="user_email" name="user[email]" type="email" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <input class="btn btn-primary" name="commit" type="submit" value="Send me reset password instructions">
+                or
+                <a class="btn" href="/users/sign_in">Sign in</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

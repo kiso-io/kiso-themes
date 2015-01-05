@@ -25,8 +25,8 @@ $footerBackgroundColor: #16333f;
 $activeBackgroundColor: darken($backgroundColor, 5%);
 
 // Links
-$linkColor:             lighten($linkColor, 5%);
-$linkColorHover:        lighten($linkColor, 10%);
+$link-color:             lighten($link-color, 5%);
+$link-color-hover:        lighten($link-color, 10%);
 
 // Buttons
 $buttonTransparentBorder:     rgba(8, 23, 28, 0.35);

@@ -1,13 +1,13 @@
 .navbar {
-  border-radius:0;
+  border-radius: 0;
 
   .navbar-brand {
     text-transform: uppercase;
   }
 
   .navbar-item {
-    padding-top:13px;
-    padding-bottom:10px;
+    padding-top: 13px;
+    padding-bottom: 10px;
   }
 
   .navbar-nav {
@@ -21,9 +21,9 @@
 
 .user-profile {
   .dropdown-toggle {
-    padding-top: 8px;
     height: $navbar-height;
     line-height: $line-height-base;
+    padding-top: 8px;
 
     img {
       margin-right: 1em;

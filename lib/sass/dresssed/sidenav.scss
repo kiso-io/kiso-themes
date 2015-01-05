@@ -1,0 +1,225 @@
+$sub-menu-item-height: 40px;
+
+.nav-side-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 300px;
+  height: 100%;
+  color: $link-color;
+  background-color: #2e353d;
+
+  .brand {
+    display: block;
+    text-align: center;
+    background-color: #23282e;
+    font-size: 14px;
+    line-height: 50px;
+  }
+
+  .toggle-btn {
+    display: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: transparent;
+  }
+
+  li {
+    position: inherit;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: pointer;
+    background-color: transparent;
+    line-height: 65px;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: $link-color;
+
+      &:hover {
+        padding: 0;
+        color: white;
+        background-color: #4f5b69;
+        @include prefix(transition, all 200ms ease);
+      }
+
+      i {
+        width: 20px;
+        padding-right: 30px;
+        padding-left: 10px;
+      }
+    }
+
+    &:hover {
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.nav-side-menu ul:not(collapsed) .arrow:before,
+.nav-side-menu li:not(collapsed) .arrow:before {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  content: '\f107';
+  color: #6d747a;
+  font-family: FontAwesome;
+  @include prefix(transition, all 150ms ease-in-out);
+  @include prefix(transform, rotate(0deg));
+}
+
+.nav-side-menu ul.collapsed .arrow:before,
+.nav-side-menu li.collapsed .arrow:before {
+  @include prefix(transform, rotate(-90deg));
+}
+
+.nav-side-menu ul.active:not(collapsed) .arrow:before,
+.nav-side-menu li.active:not(collapsed) .arrow:before {
+  @include prefix(transform, rotate(0deg));
+}
+
+.nav-side-menu ul.active.collapsed .arrow:before,
+.nav-side-menu li.active.collapsed .arrow:before {
+  @include prefix(transform, rotate(-90deg));
+}
+
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  color: white;
+  border-left: 3px solid $brand-primary;
+  background-color: transparent;
+  font-weight: bold;
+
+  a {
+    color: white;
+  }
+}
+
+.nav-side-menu ul li[data-toggle='collapse'] a i {
+  padding-right: 35px;
+}
+
+.nav-side-menu ul li[data-toggle='collapse']:not(.collapsed) {
+  color: white;
+  border-left: 3px solid $brand-primary;
+}
+
+.nav-side-menu ul li.collapsed a,
+.nav-side-menu ul li:not([data-toggle]) a:not(.active) {
+  padding-left: 3px;
+}
+
+.nav-side-menu ul li.active a:hover {
+  border: none;
+}
+
+.nav-side-menu ul .sub-menu li a:hover {
+  border: none;
+  background-color: transparent;
+}
+
+.nav-side-menu ul .sub-menu.collapse.in {
+  border-left: 3px solid $brand-primary;
+}
+
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: $brand-primary;
+  background-color: transparent;
+  font-weight: bold;
+
+  a {
+    color: white;
+  }
+}
+
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  height: $sub-menu-item-height;
+  margin-left: -10px;
+  opacity: 0;
+  border: none;
+  border-bottom: 1px solid $text-color;
+  line-height: $sub-menu-item-height;
+  @include prefix(transition, all 150ms ease-in-out);
+
+  &:hover {
+    height: $sub-menu-item-height;
+    color: white;
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+
+    .toggle-btn {
+      position: absolute;
+      z-index: 10 !important;
+      top: 10px;
+      right: 10px;
+      display: block;
+      width: 40px;
+      padding: 3px;
+      cursor: pointer;
+      text-align: center;
+      color: #000;
+      background-color: #fff;
+    }
+
+    .brand {
+      padding-left: 20px;
+      text-align: left !important;
+      font-size: 22px;
+      line-height: 50px !important;
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.sub-menu.collapse.in li {
+  margin-left: 44px;
+  opacity: 1;
+}
+
+@for $i from 1 through 30 {
+  .sub-menu.collapse.in li:nth-child(#{$i}) {
+    @include prefix(transition-delay, #{$i*(40-$i)}ms);
+  }
+}
+
+.main-content {
+  z-index: 1;
+  margin-left: 300px;
+  padding-bottom: 5em;
+  vertical-align: top;
+  word-break: break-word;
+  @include prefix(opacity, 100ms ease-in-out);
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    margin-left: 0;
+  }
+}

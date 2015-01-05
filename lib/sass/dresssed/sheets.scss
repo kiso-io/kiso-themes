@@ -1,25 +1,21 @@
 .sheet,
 .sheet-inner {
   border: solid 1px $borderColor;
-  border-radius:2px;
-
+  border-radius: 2px;
   @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 }
 
 .sheet {
-  background: lighten($backgroundColor, 2%);
-  border-color: lighten($borderColor, 7%);
-
   margin: 6px 0 0 6px;
-
   margin-bottom: $baseLineHeight;
+  border-color: lighten($borderColor, 7%);
+  background: lighten($backgroundColor, 2%);
 }
 
 .sheet-inner {
-  background: $white;
-
   margin: -6px 4px 4px -6px;
   padding: 19px;
+  background: $white;
 
   form {
     margin-bottom: 0;
@@ -34,7 +30,6 @@
   padding: 3px;
 }
 
-
 // Form sheet style
 // ----------------
 
@@ -42,48 +37,42 @@
   $boxPadding: 16px;
 
   .form-group {
-    border-top: solid 2px $grayLighter;
-
-    margin-left: -$boxPadding;
     margin-right: -$boxPadding;
     margin-bottom: 0;
-
+    margin-left: -$boxPadding;
     padding: 0;
     padding-right: 19px;
+    border-top: solid 2px $grayLighter;
 
     label.form-label {
       position: absolute;
+      z-index: 100;
+      padding: 10px;
       cursor: text;
-
       outline: 0;
       @include box-shadow(none);
-
-      padding: 10px;
-      z-index: 100;
     }
 
     label.form-label.focused {
-      @include opacity(70);
-
       margin-left: 4px;
+      @include opacity(70);
     }
 
     input,
     textarea,
     .uneditable-input {
-      padding: 8px;
-      margin: 2px;
-      outline: none;
-
-      @include box-shadow(none);
-      border: none;
-      border-radius:0;
       width: 100%;
+      margin: 2px;
+      padding: 8px;
+      border: none;
+      border-radius: 0;
+      outline: none;
+      @include box-shadow(none);
     }
 
     input:focus,
     textarea:focus {
-      border-left: solid 3px rgba(82,168,236,.6);
+      border-left: solid 3px rgba(82, 168, 236, 0.6);
       @include box-shadow(none);
     }
 
@@ -98,11 +87,12 @@
     }
 
     .help-block {
-      float: right;
       position: relative;
+      float: right;
       margin-top: -30px;
       margin-right: -16px;
     }
+
     .help-block:hover {
       @include opacity(30);
     }
@@ -120,6 +110,6 @@
 
 .form-sheet-footer {
   margin-top: -21px;
-  margin-left: 27px;
   margin-bottom: 1em;
+  margin-left: 27px;
 }
