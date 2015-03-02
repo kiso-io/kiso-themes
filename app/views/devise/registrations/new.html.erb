@@ -1,7 +1,9 @@
 <% @title = "Sign up" %>
 
+<h1><%= app_name %></h1>
+
 <%= form_for resource, :as => resource_name, :url => registration_path(resource_name),
-                       :html => { :class => "form-horizontal col-md-5", :novalidate => true } do |f| %>
+                       :html => { :class => "form-horizontal col-xs-12 col-md-6 col-md-offset-3", :novalidate => true } do |f| %>
   <%= f.error_notification %>
 
   <div class="sheet form-sheet">
@@ -26,8 +28,8 @@
     </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit "Sign up", :class => 'btn btn-primary' %>
-    <%= link_to "Sign in", new_session_path(resource_name), :class => 'btn' %>
+  <div class="form-actions text-right">
+    <%= f.submit "Sign up", :class => 'btn btn-primary' %> or
+    <%= link_to "Log in", new_session_path(resource_name), :class => '' %>
   </div>
 <% end %>

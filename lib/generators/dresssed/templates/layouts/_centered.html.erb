@@ -27,21 +27,14 @@
     <%= yield :head %>
   </head>
   <body class="<%= yield (:body_class) %>">
-    <%= render "layouts/navbar" %>
-
-    <header>
-      <%= yield :header %>
-    </header>
-
-    <%= yield :banner %>
-
-    <div id="main">
-      <div class="row">
+    <div id="main" class='vertical-center'>
+      <div class="container">
+        <div class='row'>
+          <%= render "layouts/flashes" %>
+        </div>
         <%= yield %>
       </div> <!-- /.container -->
     </div> <!-- /#main -->
-
-    <%= render "layouts/footer" %>
 
     <!-- Le javascript
     ================================================== -->

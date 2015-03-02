@@ -1,7 +1,7 @@
 <% @title = "Resend unlock instructions" %>
-
+<h1><%= app_name %></h1>
 <%= form_for resource, :as => resource_name, :url => unlock_path(resource_name),
-                       :html => { :method => :post, :class => "form-horizontal col-md-6" } do |f| %>
+                       :html => { :method => :post, :class => "form-horizontal col-xs-12 col-md-6 col-md-offset-3" } do |f| %>
   <%= f.error_notification %>
 
   <div class="sheet form-sheet form-inputs">
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions text-right">
     <%= f.submit "Resend unlock instructions", :class => 'btn btn-primary' %>
     or
     <%= link_to "Sign in", new_session_path(resource_name), :class => 'btn' %>

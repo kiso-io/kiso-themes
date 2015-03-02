@@ -1,10 +1,10 @@
 .btn {
+  @include transition(all 0.15s ease);
   border: 1px solid darken($backgroundColor, 10%);
   border-radius: 4px;
   background: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  @include transition(all 0.15s ease);
 }
 
 .btn-warning,
@@ -38,23 +38,23 @@
 // Set the backgrounds
 // -------------------------
 .btn-primary {
+  @include buttonBackground(#428bca, #428bca);
   color: $primaryButtonText;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   font-weight: 400;
-  @include buttonBackground(#428bca, #428bca);
 }
 
 .btn-primary:hover {
-  color: darken($primaryButtonText, 10%);
   @include buttonBackground(darken(#428bca, 10%), darken(#428bca, 10%));
+  color: darken($primaryButtonText, 10%);
 }
 
 .btn-primary:focus,
 .btn-primary:active:focus,
 .btn-primary.active {
-  color: darken($primaryButtonText, 10%);
-  border-color: lighten($primaryButtonBackground, 20%);
   outline: none;
+  border-color: lighten($primaryButtonBackground, 20%);
+  color: darken($primaryButtonText, 10%);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
@@ -73,10 +73,10 @@ fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
-  color: darken($primaryButtonText, 10%);
+  outline: none;
   border-color: lighten($primaryButtonBackground, 20%);
   border-radius: 30px;
-  outline: none;
+  color: darken($primaryButtonText, 10%);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
@@ -86,9 +86,9 @@ fieldset[disabled] .btn-primary.active {
 
 // Warning appears are orange
 .btn-warning {
+  @include buttonBackground($warning, $warning);
   border-color: $warning;
   border-bottom-color: darken($warning, 10%);
-  @include buttonBackground($warning, $warning);
 
   &:hover {
     @include buttonBackground(darken($warning, 10%), darken($warning, 10%));
@@ -97,9 +97,9 @@ fieldset[disabled] .btn-primary.active {
 
 // Danger and error appear as red
 .btn-danger {
+  @include buttonBackground($danger, $danger);
   border-color: $danger;
   border-bottom-color: darken($danger, 10%);
-  @include buttonBackground($danger, $danger);
 
   &:hover {
     @include buttonBackground(darken($danger, 10%), darken($danger, 10%));
@@ -108,9 +108,9 @@ fieldset[disabled] .btn-primary.active {
 
 // Success appears as green
 .btn-success {
+  @include buttonBackground($success, $success);
   border-color: $success;
   border-bottom-color: darken($success, 10%);
-  @include buttonBackground($success, $success);
 
   &:hover {
     @include buttonBackground(darken($success, 10%), darken($success, 10%));
@@ -119,9 +119,9 @@ fieldset[disabled] .btn-primary.active {
 
 // Info appears as a neutral blue
 .btn-info {
+  @include buttonBackground($info, $info);
   border-color: $info;
   border-bottom-color: darken($info, 10%);
-  @include buttonBackground($info, $info);
 
   &:hover {
     @include buttonBackground(darken($info, 10%), darken($info, 10%));
@@ -136,44 +136,44 @@ fieldset[disabled] .btn-primary.active {
 // Homepage call to action
 
 .btn-border {
+  @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.1));
   display: inline-block;
   padding: 5px;
   border-radius: $buttonBorderRadius;
   background-color: $buttonTransparentBorder;
-  @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.1));
 
   .btn {
-    margin: 0;
-    text-transform: uppercase;
-    color: $callToActionTextColor;
-    border: 0;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    font-family: $font-family-serif;
-    font-weight: bold;
     @include box-shadow(none);
     @include buttonBackground(lighten($callToActionBackgroundColor, 20%), $callToActionBackgroundColor, 0 1px 1px rgba(255, 255, 255, 0.75));
+    margin: 0;
+    border: 0;
+    color: $callToActionTextColor;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+    font-family: $font-family-serif;
 
     &:hover {
+      @include buttonBackground(lighten($callToActionBackgroundColor, 10%), darken($callToActionBackgroundColor, 10%));
       color: $callToActionTextColor;
       text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-      @include buttonBackground(lighten($callToActionBackgroundColor, 10%), darken($callToActionBackgroundColor, 10%));
     }
   }
 
   .btn.active,
   .btn:active {
+    @include buttonBackground($callToActionBackgroundColor, darken($callToActionBackgroundColor, 10%));
     color: $callToActionTextColor;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    @include buttonBackground($callToActionBackgroundColor, darken($callToActionBackgroundColor, 10%));
   }
 }
 
 // Outline Buttons
 
 .btn-outline-default {
-  color: $textColor;
   border-color: #ededed;
   background-color: transparent;
+  color: $textColor;
 }
 
 .btn-outline-default.active,
@@ -181,15 +181,15 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-default:focus,
 .btn-outline-default:hover,
 .open .btn-outline-default.dropdown-toggle {
-  color: $textColor;
   outline: none;
   background-color: #fff;
+  color: $textColor;
 }
 
 .btn-outline-primary {
-  color: $textColor;
   border-color: $primary;
   background-color: transparent;
+  color: $primary;
 }
 
 .btn-outline-primary:hover,
@@ -197,16 +197,16 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-primary:active,
 .btn-outline-primary:focus,
 .open .btn-outline-primary.dropdown-toggle {
-  color: white;
   outline: none;
   background-color: #428bca;
+  color: white;
   text-shadow: none;
 }
 
 .btn-outline-success {
-  color: $textColor;
   border-color: $success;
   background: transparent;
+  color: $success;
   text-shadow: none;
 }
 
@@ -214,22 +214,22 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-success:active,
 .btn-outline-success:focus,
 .btn-outline-success:hover {
-  color: white;
   outline: none;
   background: $success;
+  color: white;
   text-shadow: none;
 }
 
 .open .btn-outline-success.dropdown-toggle {
-  color: $gray;
   background: $red;
+  color: $gray;
   text-shadow: none;
 }
 
 .btn-outline-info {
-  color: $textColor;
   border-color: $info;
   background: transparent;
+  color: $textColor;
   text-shadow: none;
 }
 
@@ -238,16 +238,16 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-info:focus,
 .btn-outline-info:hover,
 .open .btn-outline-info.dropdown-toggle {
-  color: white;
   outline: none;
   background: $info;
+  color: white;
   text-shadow: none;
 }
 
 .btn-outline-warning {
-  color: $textColor;
   border-color: $warning;
   background: transparent;
+  color: $warning;
 }
 
 .btn-outline-warning.active,
@@ -255,16 +255,16 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-warning:focus,
 .btn-outline-warning:hover,
 .open .btn-outline-warning.dropdown-toggle {
-  color: white;
   outline: none;
   background: $warning;
+  color: white;
   text-shadow: none;
 }
 
 .btn-outline-danger {
-  color: $textColor;
   border-color: $danger;
   background: transparent;
+  color: $danger;
 }
 
 .btn-outline-danger.active,
@@ -272,15 +272,15 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-danger:focus,
 .btn-outline-danger:hover,
 .open .btn-outline-danger.dropdown-toggle {
-  color: white;
   outline: none;
   background: $danger;
+  color: white;
   text-shadow: none;
 }
 
 .btn-outline-link {
-  color: $textColor;
   background: transparent;
+  color: $textColor;
 }
 
 .btn-outline-link.active,
@@ -288,9 +288,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-link:focus,
 .btn-outline-link:hover,
 .open .btn-outline-dark.dropdown-toggle {
-  text-decoration: underline;
-  color: $textColor;
   outline: none;
   background: #fff;
+  color: $textColor;
+  text-decoration: underline;
   text-shadow: none;
 }

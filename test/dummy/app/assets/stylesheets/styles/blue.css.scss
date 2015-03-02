@@ -199,6 +199,7 @@
 
 // Misc navs
 @import "dresssed/navbar";
+@import "dresssed/sidenav";
 @import "dresssed/pagination";
 @import "dresssed/pager";
 
@@ -206,13 +207,22 @@
 @import "dresssed/tooltip";
 @import "dresssed/alerts";
 @import "dresssed/dropdowns";
+@import "dresssed/checkboxes";
 @import "dresssed/wells";
 @import "dresssed/sheets";
 @import "dresssed/labels";
 @import "dresssed/thumbnails";
 @import "dresssed/jumbotron";
+@import "dresssed/panels";
+@import "dresssed/progress-bars";
+@import "dresssed/modals";
 @import "dresssed/sprites";
-@import "font_awesome/font-awesome";
+@import "dresssed/extensions";
+
+// App Pages
+@import "dresssed/app_pages/user-settings";
+@import "dresssed/app_pages/timeline";
+@import "dresssed/app_pages/user-profile";
 
 // Font Awesome
 @import "font_awesome/font-awesome";

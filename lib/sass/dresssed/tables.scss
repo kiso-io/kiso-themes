@@ -10,7 +10,8 @@
   thead th {
     padding-top: 4px;
     padding-bottom: 4px;
-    color: $quietColor;
+    color: darken($quietColor, 20%);
+    background: white;
     border-bottom: 2px solid $borderColor;
     font-size: $font-size-base - 2px;
     font-weight: normal;

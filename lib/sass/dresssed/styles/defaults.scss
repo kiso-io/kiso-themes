@@ -49,9 +49,10 @@ $brand-danger:  $danger;
 // Typography
 $font-size-base:        16px;
 $baseLineHeight:        22px;
+$padding-base-vertical: 6px;
 
-$font-family-sans-serif:  "Avenir", "Lato", Arial, Helvetica, sans-serif;
-$font-family-serif:       "Source Sans Pro", Arial, Helvetica, sans-serif;
+$font-family-sans-serif:  "Helvetica Neue", "Helvetica", Arial, Helvetica, sans-serif;
+$font-family-serif:       "Avenir", "Lato", Arial, Helvetica, sans-serif;
 $font-family-monospace:   "Andale Mono", "Lucida Console", monospace;
 
 $line-height-base:        (22/14);

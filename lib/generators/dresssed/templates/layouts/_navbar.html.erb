@@ -1,32 +1,4 @@
 <%# Top navigation bar containing the main menu of your app. %>
-<nav class="navbar navbar-default navbar-inverse">
-  <!-- TIP: to unfix the navbar:
-    1. remove the 'navbar-fixed-top' class here and
-    2. add the 'static-navbar' class to your body tag. -->
-  <div class="navbar-inner">
-    <div class="container">
-
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <%= activatable_li_tag_with_link "Home", root_path %>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <%= yield :navbar %>
-        </ul>
-
-    </div> <!-- /.container -->
-  </div> <!-- /.navbar-inner -->
-</nav> <!-- /.navbar -->
+<div class='container'>
+  <%= yield :navbar %>
+</div>

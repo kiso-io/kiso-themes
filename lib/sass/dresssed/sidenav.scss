@@ -8,13 +8,13 @@ $sub-menu-item-height: 40px;
   overflow-y: scroll;
   width: 300px;
   height: 100%;
-  color: $link-color;
   background-color: #2e353d;
+  color: $link-color;
 
   .brand {
     display: block;
-    text-align: center;
     background-color: #23282e;
+    text-align: center;
     font-size: 14px;
     line-height: 50px;
   }
@@ -26,35 +26,35 @@ $sub-menu-item-height: 40px;
   ul {
     margin: 0;
     padding: 0;
-    list-style: none;
     background-color: transparent;
+    list-style: none;
   }
 
   li {
     position: inherit;
     margin: 0;
     padding: 0;
-    list-style: none;
-    cursor: pointer;
     background-color: transparent;
+    list-style: none;
     line-height: 65px;
+    cursor: pointer;
 
     a {
       display: block;
-      text-decoration: none;
       color: $link-color;
+      text-decoration: none;
 
       &:hover {
-        padding: 0;
-        color: white;
-        background-color: #4f5b69;
         @include prefix(transition, all 200ms ease);
+        padding: 0;
+        background-color: #4f5b69;
+        color: white;
       }
 
       i {
-        width: 20px;
         padding-right: 30px;
         padding-left: 10px;
+        width: 20px;
       }
     }
 
@@ -68,15 +68,15 @@ $sub-menu-item-height: 40px;
 
 .nav-side-menu ul:not(collapsed) .arrow:before,
 .nav-side-menu li:not(collapsed) .arrow:before {
+  @include prefix(transition, all 150ms ease-in-out);
+  @include prefix(transform, rotate(0deg));
   position: relative;
   display: inline-block;
   float: right;
   margin-right: 20px;
-  content: '\f107';
   color: #6d747a;
+  content: '\f107';
   font-family: FontAwesome;
-  @include prefix(transition, all 150ms ease-in-out);
-  @include prefix(transform, rotate(0deg));
 }
 
 .nav-side-menu ul.collapsed .arrow:before,
@@ -96,9 +96,9 @@ $sub-menu-item-height: 40px;
 
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
-  color: white;
   border-left: 3px solid $brand-primary;
   background-color: transparent;
+  color: white;
   font-weight: bold;
 
   a {
@@ -111,8 +111,8 @@ $sub-menu-item-height: 40px;
 }
 
 .nav-side-menu ul li[data-toggle='collapse']:not(.collapsed) {
-  color: white;
   border-left: 3px solid $brand-primary;
+  color: white;
 }
 
 .nav-side-menu ul li.collapsed a,
@@ -135,8 +135,8 @@ $sub-menu-item-height: 40px;
 
 .nav-side-menu ul .sub-menu li.active,
 .nav-side-menu li .sub-menu li.active {
-  color: $brand-primary;
   background-color: transparent;
+  color: $brand-primary;
   font-weight: bold;
 
   a {
@@ -146,40 +146,40 @@ $sub-menu-item-height: 40px;
 
 .nav-side-menu ul .sub-menu li,
 .nav-side-menu li .sub-menu li {
-  height: $sub-menu-item-height;
+  @include prefix(transition, all 150ms ease-in-out);
   margin-left: -10px;
-  opacity: 0;
+  height: $sub-menu-item-height;
   border: none;
   border-bottom: 1px solid $text-color;
   line-height: $sub-menu-item-height;
-  @include prefix(transition, all 150ms ease-in-out);
+  opacity: 0;
 
   &:hover {
     height: $sub-menu-item-height;
-    color: white;
     background-color: transparent;
+    color: white;
   }
 }
 
 @media (max-width: 767px) {
   .nav-side-menu {
     position: relative;
+    margin-bottom: 0;
     width: 100%;
     height: auto;
-    margin-bottom: 0;
 
     .toggle-btn {
       position: absolute;
-      z-index: 10 !important;
       top: 10px;
       right: 10px;
+      z-index: 10 !important;
       display: block;
-      width: 40px;
       padding: 3px;
-      cursor: pointer;
-      text-align: center;
-      color: #000;
+      width: 40px;
       background-color: #fff;
+      color: #000;
+      text-align: center;
+      cursor: pointer;
     }
 
     .brand {
@@ -210,13 +210,22 @@ $sub-menu-item-height: 40px;
 }
 
 .main-content {
+  @include prefix(opacity, 100ms ease-in-out);
   z-index: 1;
   margin-left: 300px;
   padding-bottom: 5em;
   vertical-align: top;
   word-break: break-word;
-  @include prefix(opacity, 100ms ease-in-out);
 }
+
+// @media (max-width: 980px) {
+//   .nav-side-menu {
+//     width: 240px;
+//   }
+//   .main-content {
+//     margin-left: 240;
+//   }
+// }
 
 @media (max-width: 767px) {
   .main-content {

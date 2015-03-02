@@ -32,12 +32,12 @@
 
 .box-list li {
   float: left;
-  width: 25%;
-  height: 115px;
   margin: 0 -1px -1px 0;
   padding: 10px;
-  text-align: center;
+  width: 25%;
+  height: 115px;
   border: 1px solid #ddd;
+  text-align: center;
   font-size: 12px;
   line-height: 1.4;
 
@@ -45,8 +45,125 @@
     display: block;
     margin-top: 5px;
     margin-bottom: 10px;
+    color: $brand-primary;
     text-align: center;
     font-size: 32px;
-    color: $brand-primary;
   }
+}
+
+$max: 55;
+$step: 5;
+
+@for $i from 1 through ceil($max / $step) {
+  $value: ($i - 1) * $step;
+
+  .p#{$value} {
+    padding: #{$value}px;
+  }
+
+  .pb#{$value} {
+    padding-bottom: #{$value}px;
+  }
+
+  .pt#{$value} {
+    padding-top: #{$value}px;
+  }
+
+  .pl#{$value} {
+    padding-left: #{$value}px;
+  }
+
+  .pr#{$value} {
+    padding-right: #{$value}px;
+  }
+
+  .m#{$value} {
+    margin: #{$value}px;
+  }
+
+  .mb#{$value} {
+    margin-bottom: #{$value}px;
+  }
+
+  .mt#{$value} {
+    margin-top: #{$value}px;
+  }
+
+  .ml#{$value} {
+    margin-left: #{$value}px;
+  }
+
+  .mr#{$value} {
+    margin-right: #{$value}px;
+  }
+}
+
+$avatar-width: 200px;
+$avatar-height: 200px;
+
+.avatar-uploader {
+  position: relative;
+  margin: 15px auto 0 auto;
+  text-align: center;
+
+  > .inner {
+    position: relative;
+    margin: 0 auto;
+    width: $avatar-width + 10;
+    height: $avatar-height + 10;
+    border: 5px solid white;
+    cursor: pointer;
+
+    @include prefix(border-radius, 4px);
+
+    img {
+      width: $avatar-width;
+      height: $avatar-height;
+    }
+  }
+
+  .icon-wrapper {
+    position: absolute;
+    margin: -$avatar-width / 1.5 0 0 -$avatar-width / 5;
+    padding: 3px;
+    width: $avatar-width / 2.24719;
+    height: $avatar-height / 2.29885;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.6);
+    color: $brand-primary;
+
+    .fa {
+      display: table-cell;
+      height: $avatar-height / 2.5;
+      border: 3px solid;
+      border-radius: 100px;
+      vertical-align: middle;
+      font-size: $avatar-width / 3;
+    }
+  }
+
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.full-bleed {
+  margin-top: -51px;
+  padding: 0;
+}
+
+.leading {
+  margin-bottom: 2em;
+}
+
+.scrollspy-example {
+position: relative;
+overflow: auto;
+height: 200px;
 }

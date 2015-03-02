@@ -1,8 +1,10 @@
 .navbar {
   border-radius: 0;
+  margin-bottom: 0;
 
   .navbar-brand {
     text-transform: uppercase;
+    padding-left: 0;
   }
 
   .navbar-item {
@@ -17,6 +19,11 @@
       }
     }
   }
+}
+
+.navbar.small {
+  font-size: 0.8em;
+  margin-top: 5px;
 }
 
 .user-profile {

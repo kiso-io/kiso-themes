@@ -3,6 +3,32 @@ $browser-dots-color: $borderColor;
 $browser-bar-height: 40px;
 $rounded-depth: 5px;
 
+html, body {
+  height: 100%;
+}
+
+.vertical-center {
+  height:100%;
+  width:100%;
+
+  text-align: center;  /* align the inline(-block) elements horizontally */
+}
+
+.vertical-center:before {    /* create a full-height inline block pseudo=element */
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;    /* vertical alignment of the inline element */
+  height: 100%;
+}
+
+.vertical-center > .container {
+  max-width: 100%;
+
+  display: inline-block;
+  vertical-align: middle;  /* vertical alignment of the inline element */
+                           /* reset the font property */
+}
+
 .browser {
   position:relative;
   margin:2em auto 1em auto;
@@ -59,20 +85,24 @@ $rounded-depth: 5px;
     }
 }
 
+
 .landing {
+  background: white;
   .navbar {
     z-index: $zindexPopover;
     margin: 25px 0;
     opacity: 0.8;
 
+    .navbar-brand {
+      padding-left: 0;
+    }
+
     .sign-up {
       margin-left: 25px;
-      line-height: 2.4em;
     }
   }
 
   header {
-    height: 680px;
     position: relative;
 
     .text {
@@ -88,6 +118,7 @@ $rounded-depth: 5px;
         border-radius: 20px;
         color: white;
         text-shadow: none;
+        margin-bottom: 4em;
 
         &:hover,
         &:focus {
@@ -97,9 +128,9 @@ $rounded-depth: 5px;
     }
 
     .video {
-        position: relative;
-        margin: 141px auto;
         height: 267px;
+        width: 100%;
+        margin-top: 2em;
 
         .placeholder {
           background: url(asset-path('dresssed/app_video_placeholder.png')) no-repeat;

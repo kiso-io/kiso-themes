@@ -1,6 +1,7 @@
 .panel {
   border-radius: 2px;
-  @include prefix(box-shadow, 0 1px 0 rgba(0, 0, 0, 0.1));
+
+  @include prefix(box-shadow, 0 1px 0 rgba(0, 0, 0, .1));
 
   h1.page-header {
     margin: 0;
@@ -16,27 +17,36 @@
 
   .panel-heading {
     padding: 1em 1em;
+
     text-transform: uppercase;
+
     color: $textColor;
     background: white;
+
     font-family: $font-family-serif;
     font-size: $font-size-base;
     font-weight: 700;
 
     .glyphicon {
       top: 3px;
+
       min-width: 25px;
       margin-right: 5px;
       padding-top: 2px;
+
       border-right: 1px solid #ddd;
     }
 
     .fa {
       top: 3px;
+
       min-width: 25px;
       margin-right: 5px;
       padding-top: 2px;
-      border-right: 1px solid #ddd;
+
+      &:first-of-type {
+        border-right: 1px solid #ddd;
+      }
     }
 
     .btn-group {
@@ -44,8 +54,14 @@
 
       button {
         top: -5px;
+
         border: none;
         box-shadow: none;
+
+        .fa {
+          border: none;
+          margin-right: 0;
+        }
       }
 
       .dropdown-menu {
@@ -56,6 +72,7 @@
 
   .panel-body {
     margin: 0;
+
     background: #f8f9fa;
   }
 

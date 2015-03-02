@@ -24,11 +24,19 @@ $(document).ready(function(){
   });
 
   $('.size-tablet').on('click', function(){
-    sizeiframe(820, true);
+    sizeiframe(980, true);
   });
 
   $('.size-laptop').on('click', function(){
     sizeiframe(document.body.clientWidth, true);
+  });
+
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  });
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
   });
 });
 
