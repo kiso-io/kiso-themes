@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dresssed
-//= require_tree .
+//= require docs
+//= require prettify
 //= require_self
 
 $(document).ready(function(){

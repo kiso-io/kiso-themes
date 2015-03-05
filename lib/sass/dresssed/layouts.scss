@@ -283,3 +283,22 @@ html, body {
     }
   }
 }
+
+
+.landing.one-page {
+  width: 100%;
+  display: table;
+  height: 70vh;
+
+  .content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
