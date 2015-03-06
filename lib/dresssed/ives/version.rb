@@ -1,6 +1,6 @@
 module Dresssed
   module Ives
-    VERSION = "1.0.0.rc2"
+    VERSION = "1.0.0.rc5"
     STYLES = %w(blue black amber)
   end
 end

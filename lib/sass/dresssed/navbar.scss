@@ -21,6 +21,13 @@
   }
 }
 
+.navbar-toggle {
+  border-color: $borderColor;
+  color: $borderColor;
+  margin: 0;
+  padding: 6px 10px 4px 10px;
+}
+
 .navbar.small {
   font-size: 0.8em;
   margin-top: 5px;

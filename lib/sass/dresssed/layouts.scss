@@ -29,6 +29,12 @@ html, body {
                            /* reset the font property */
 }
 
+@media (max-width: 720px) {
+  .vertical-center:before {
+    display: inline-block;
+  }
+}
+
 .browser {
   position:relative;
   margin:2em auto 1em auto;
