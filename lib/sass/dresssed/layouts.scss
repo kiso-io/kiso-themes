@@ -30,8 +30,8 @@ html, body {
 }
 
 @media (max-width: 720px) {
-  .vertical-center:before {
-    display: inline-block;
+  .vertical-center {
+    height: auto;
   }
 }
 

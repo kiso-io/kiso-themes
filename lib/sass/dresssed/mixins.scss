@@ -1,4 +1,4 @@
-@mixin prefix($name, $argument) {
+@mixin prefix($name, $argument...) {
   -webkit-#{$name}: #{$argument};
   -ms-#{$name}: #{$argument};
   -moz-#{$name}: #{$argument};

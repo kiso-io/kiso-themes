@@ -1,0 +1,37 @@
+<div class="row">
+    <% colors = [ 'red',
+                  'pink',
+                  'purple',
+                  'deep-purple',
+                  'indigo',
+                  'blue',
+                  'light-blue',
+                  'cyan',
+                  'teal',
+                  'green',
+                  'light-green',
+                  'lime',
+                  'yellow',
+                  'amber',
+                  'orange',
+                  'deep-orange',
+                  'brown',
+                  'grey',
+                  'blue-grey'
+    ]
+    %>
+    <% colors.each do |color| %>
+      <div class="col-sm-4">
+        <% 5.downto(1).each do |value| %>
+          <div class="swatch <%= color %>-lighten-<%= value %>">
+          </div>
+        <% end %>
+        <div class='swatch <%= color %>'>
+        </div>
+        <% (1..5).each do |value| %>
+          <div class="swatch <%= color %>-darken-<%= value %>">
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+</div>

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dresssed
 //= require docs
 //= require prettify
 //= require_self
