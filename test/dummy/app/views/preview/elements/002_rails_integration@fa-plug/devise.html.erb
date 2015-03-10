@@ -85,27 +85,35 @@
             <form accept-charset="UTF-8" action="/users" class="form-horizontal" id="edit_user" method="post" novalidate="novalidate">
               <div class="form-group ">
                 <label class="col-md-4 control-label" for="user_email">Email</label>
-                <input class="col-md-7" id="user_email" name="user[email]" required="required" type="email" value="test@example.com">
+                <div class="col-md-7">
+                  <input class="form-control" id="user_email" name="user[email]" required="required" type="email" value="test@example.com">
+                </div>
               </div>
               <div class="form-group ">
                 <label class="col-md-4 control-label" for="user_password">Password</label>
-                <input class="col-md-7" id="user_password" name="user[password]" type="email">
+                <div class="col-md-7">
+                  <input class="form-control" id="user_password" name="user[password]" type="email">
+                </div>
               </div>
-              <div class="help-block col-md-offset-4">
+              <div class="help-block col-md-offset-4 pl10">
                 Leave it blank if you don't want to change it.
               </div>
               <div class="form-group ">
                 <label class="col-md-4 control-label" for="user_password_confirmation">Password confirmation</label>
-                <input class="col-md-7" id="user_password_confirmation" name="user[password_confirmation]" type="password">
+                <div class="col-md-7">
+                  <input class="form-control" id="user_password_confirmation" name="user[password_confirmation]" type="password">
+                </div>
               </div>
               <div class="form-group ">
                 <label class="col-md-4 control-label" for="user_current_password">Current password</label>
-                <input class="col-md-7" id="user_current_password" name="user[current_password]" type="password">
+                <div class="col-md-7">
+                  <input class="form-control" id="user_current_password" name="user[current_password]" type="password">
+                </div>
               </div>
-              <div class="help-block col-md-offset-4">
+              <div class="help-block col-md-offset-4 pl10">
                 We need your current password to confirm your changes.
               </div>
-              <div class="form-actions col-md-offset-4">
+              <div class="form-actions col-md-offset-4 pl10">
                 <input class="btn btn-primary" name="commit" type="submit" value="Update">
                 <a class="btn btn-danger" confirm="Are you sure?" data-method="delete" href="/users" rel="nofollow">Cancel my account</a>
               </div>
