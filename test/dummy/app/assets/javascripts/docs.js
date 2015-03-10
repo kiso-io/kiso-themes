@@ -51,8 +51,8 @@ $.fn.contrastColor = function() {
         //get r,g,b and decide
         var rgb = bg.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
         var yiq = ((rgb[0]*299)+(rgb[1]*587)+(rgb[2]*114))/1000;
-        if(yiq >= 128) $(this).removeClass('text-blue-grey-lighten-5');
-        else $(this).addClass('text-blue-grey-lighten-5');
+        if(yiq >= 128) $(this).removeClass('text-blue-grey-50');
+        else $(this).addClass('text-blue-grey-50');
     });
 };
 
