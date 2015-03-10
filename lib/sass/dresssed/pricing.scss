@@ -1,67 +1,102 @@
-#pricing thead th,
-#pricing tbody td,
-#pricing tfoot td {
-  text-align: center;
-}
+.pricing {
+  .tier {
+    position: relative;
+    position: relative;
+    top: 18px;
+    width: 100%;
+    min-height: 425px;
+    padding: 20px 40px 30px;
+    text-align: center;
+    border: 1px solid $grayLighter;
+    border-radius: 4px;
+    background-color: $white;
+    box-shadow: 0 0 2px 0 rgba(181, 181, 181, 0.3);
 
-#pricing tbody th {
-  font-weight: normal;
-}
+    .tier-name {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 5px;
+      text-align: center;
+      color: #444;
+      font-size: 20px;
+      font-weight: 400;
+    }
 
-#pricing tbody td {
-  vertical-align: middle;
-  font-family: $font-family-serif;
-  font-size: $font-size-base + 3px;
+    .tier-quantity {
+      margin-top: 10px;
+      text-align: center;
+      border-bottom: 1px solid $textColor;
 
-  strong {
-    font-size: $font-size-base + 12px;
+      .dollar {
+        position: relative;
+        top: -18px;
+        font-size: 19px;
+      }
+
+      .price {
+        font-size: 49px;
+      }
+
+      .period {
+        position: relative;
+        top: -8px;
+        margin-left: 4px;
+        font-size: 17px;
+      }
+    }
+
+    .specs {
+      margin-top: 20px;
+
+      .spec {
+        margin-bottom: 15px;
+        text-align: center;
+        color: #5d636d;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .first-tier {
+    left: 45px;
+    float: right;
+  }
+
+  .recommended-tier {
+    z-index: 999;
+    top: 5px;
+    min-height: 450px;
+    margin: 0 auto;
+    border-color: #c3dceb;
+    box-shadow: 0 0 13px -2px #b4daf1;
+
+    .tier-name {
+      margin-bottom: 24px;
+    }
+  }
+
+  .last-tier {
+    left: -45px;
+    float: left;
   }
 }
 
-// Header
-// ------
+@media (max-width: 320px) {
+  .pricing {
+    .first-tier,
+    .last-tier {
+      top:0;
+      float: none;
+      left: 0;
+    }
 
-#pricing thead th {
-  h3 {
-    margin-bottom: -22px;
-    padding: 4px;
-    color: $backgroundColor;
-    border-radius: 3px;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
-    @include gradient-vertical(lighten($textColor, 15%), $textColor);
-  }
+    .recommended-tier {
+      top: 0;
+      min-height: 315px;
+    }
 
-  .caret {
-    margin-top: 22px;
-    margin-bottom: -10px;
-    border-top-color: $textColor;
-    @include opacity(100);
-  }
-}
-
-// Highlight
-// ---------
-
-#pricing td.highlighted {
-  color: $infoText;
-  border-color: $infoBorder;
-  background-color: $infoBackground;
-  text-shadow: 0 1px 1px #fff;
-  font-size: $font-size-base + 5px;
-
-  strong {
-    font-size: $font-size-base + 15px;
-  }
-}
-
-#pricing thead th.highlighted {
-  h3 {
-    padding: 8px;
-    font-size: 20px;
-    @include gradient-vertical(lighten($infoText, 15%), $infoText);
-  }
-
-  .caret {
-    border-top-color: $infoText;
+    .tier {
+      margin-bottom: 2em;
+    }
   }
 }
