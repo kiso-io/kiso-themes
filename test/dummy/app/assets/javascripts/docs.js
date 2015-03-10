@@ -22,3 +22,41 @@ var Holder=Holder||{};!function(a,b){function c(a,b,c){b=parseInt(b,10),a=parseI
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
 !function(a){"use strict";a(function(){var b=a(window),c=a(document.body);c.scrollspy({target:".bs-docs-sidebar"}),b.on("load",function(){c.scrollspy("refresh")}),a(".bs-docs-container [href=#]").click(function(a){a.preventDefault()}),setTimeout(function(){var b=a(".bs-docs-sidebar");b.affix({offset:{top:function(){var c=b.offset().top,d=parseInt(b.children(0).css("margin-top"),10),e=a(".bs-docs-nav").height();return this.top=c-e-d},bottom:function(){return this.bottom=a(".bs-docs-footer").outerHeight(!0)}}})},100),setTimeout(function(){a(".bs-top").affix()},100),function(){var b=a("#bs-theme-stylesheet"),c=a(".bs-docs-theme-toggle");c.click(function(){var a=b.attr("href");a&&0!==a.indexOf("data")?(b.attr("href",""),c.text("Preview theme")):(b.attr("href",b.attr("data-href")),c.text("Disable theme preview"))})}(),a(".tooltip-demo").tooltip({selector:'[data-toggle="tooltip"]',container:"body"}),a(".popover-demo").popover({selector:'[data-toggle="popover"]',container:"body"}),a(".tooltip-test").tooltip(),a(".popover-test").popover(),a(".bs-docs-popover").popover(),a(".bs-docs-popover-dismiss").popover({trigger:"focus"}),a("#loading-example-btn").click(function(){var b=a(this);b.button("loading"),setTimeout(function(){b.button("reset")},3e3)}),ZeroClipboard.config({moviePath:"/assets/ZeroClipboard.swf",hoverClass:"btn-clipboard-hover"}),a(".highlight").each(function(){var b=a(this),c=b.prev(),d='<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>';c.hasClass("bs-example")?c.before(d.replace(/btn-clipboard/,"btn-clipboard with-example")):b.before(d)});var d=new ZeroClipboard(a(".btn-clipboard")),e=a("#global-zeroclipboard-html-bridge");d.on("load",function(){e.data("placement","top").attr("title","Copy to clipboard").tooltip()}),d.on("dataRequested",function(b){var c=a(this).parent().nextAll(".highlight").first();b.setText(c.text())}),d.on("complete",function(){e.attr("title","Copied!").tooltip("fixTitle").tooltip("show").attr("title","Copy to clipboard").tooltip("fixTitle")}),d.on("noflash wrongflash",function(){e.attr("title","Flash required").tooltip("fixTitle").tooltip("show")})})}(jQuery);
+
+var hexDigits = new Array
+        ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
+
+//Function to convert hex format to a rgb color
+function rgb2hex(rgb) {
+ rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+ return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+
+function hex(x) {
+  return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+}
+
+$.fn.contrastColor = function() {
+    return this.each(function() {
+        var bg = $(this).css('background-color');
+        //use first opaque parent bg if element is transparent
+        if(bg == 'transparent' || bg == 'rgba(0, 0, 0, 0)') {
+            $(this).parents().each(function(){
+                bg = $(this).css('background-color')
+                if(bg != 'transparent' && bg != 'rgba(0, 0, 0, 0)') return false;
+            });
+            //exit if all parents are transparent
+            if(bg == 'transparent' || bg == 'rgba(0, 0, 0, 0)') return false;
+        }
+        //get r,g,b and decide
+        var rgb = bg.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
+        var yiq = ((rgb[0]*299)+(rgb[1]*587)+(rgb[2]*114))/1000;
+        if(yiq >= 128) $(this).removeClass('text-blue-grey-lighten-5');
+        else $(this).addClass('text-blue-grey-lighten-5');
+    });
+};
+
+$(document).ready(function(){
+  $('.swatch').each(function(i, el) { $(el).children('.swatch-hexvalue').text(rgb2hex($(el).css('backgroundColor'))); });
+  $('.swatch > p').contrastColor();
+});

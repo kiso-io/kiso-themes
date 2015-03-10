@@ -1,3 +1,5 @@
+@import "dresssed/colors";
+
 .bs-example {
   position: relative;
   padding: 45px 15px 15px;
@@ -360,4 +362,10 @@ iframe {
 
 .swatch {
   height: 55px;
+  line-height: 55px;
+  clear: both;
+
+  p {
+    color: color($blue-grey, 900);
+  }
 }
