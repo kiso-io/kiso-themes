@@ -124,7 +124,7 @@ $avatar-height: 200px;
 
   .icon-wrapper {
     position: absolute;
-    margin: -$avatar-width / 1.5 0 0 -$avatar-width / 5;
+    margin: (-$avatar-width / 1.5) 0 0 (-$avatar-width / 5);
     padding: 3px;
     width: $avatar-width / 2.24719;
     height: $avatar-height / 2.29885;
