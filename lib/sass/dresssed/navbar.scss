@@ -1,6 +1,6 @@
 .navbar {
-  border-radius: 0;
   margin-bottom: 0;
+  border-radius: 0;
 
   .navbar-brand {
     text-transform: uppercase;
@@ -20,23 +20,34 @@
   }
 }
 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: $activeBackgroundColor;
+}
+
+.navbar-default .navbar-text a {
+  color: $altTextColor;
+}
+
 .navbar-toggle {
-  border-color: $borderColor;
-  color: $borderColor;
   margin: 0;
   padding: 6px 10px 4px 10px;
+  color: $borderColor;
+  border-color: $borderColor;
 }
 
 .navbar.small {
-  font-size: 0.8em;
   margin-top: 5px;
+  font-size: .8em;
 }
 
 .user-profile {
   .dropdown-toggle {
     height: $navbar-height;
-    line-height: $line-height-base;
     padding-top: 8px;
+    line-height: $line-height-base;
 
     img {
       margin-right: 1em;
@@ -47,23 +58,23 @@
     padding: 0;
 
     li {
-      border-bottom: 1px solid $borderColor;
-      margin: 0px auto;
       width: 90%;
+      margin: 0 auto;
+      border-bottom: 1px solid $borderColor;
 
       &:nth-last-child(2) {
         border: none;
       }
 
       &:last-of-type {
-        border-bottom: none;
-        border-top: 1px solid $borderColor;
-        background-color: $grayLighter;
         width: 100%;
+        border-top: 1px solid $borderColor;
+        border-bottom: none;
+        background-color: $grayLighter;
 
         a {
           width: 90%;
-          margin: 0px auto;
+          margin: 0 auto;
         }
 
         a:hover {
@@ -80,45 +91,45 @@
   }
 
   i {
-    line-height: $line-height-base;
+    width: .9em;
     color: $blue;
-    font-size: 0.9em;
-    width: 0.9em;
+    font-size: .9em;
+    line-height: $line-height-base;
   }
 }
 
 .notifications {
   .dropdown-toggle {
-    padding-top: 8px;
     height: $navbar-height;
+    padding-top: 8px;
     line-height: $line-height-base;
   }
 
   .dropdown-toggle > i {
+    width: $line-height-computed;
     margin-top: 7px;
     margin-left: 10px;
-    width: $line-height-computed;
     line-height: $line-height-base;
   }
 
   .dropdown-toggle > i + .badge {
-    color: white;
     position: absolute;
     top: 9px;
     left: 32px;
-    background: $brand-primary;
+    padding: 2px 4px;
+    color: white;
     border: 1px solid white;
     border-radius: 100%;
-    font-size: 0.7em;
-    padding: 2px 4px;
+    background: $brand-primary;
+    font-size: .7em;
   }
 
   .dropdown-menu {
     padding: 0;
 
     i {
-      line-height: $line-height-base;
       color: $blue;
+      line-height: $line-height-base;
     }
   }
 }

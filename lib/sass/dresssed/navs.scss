@@ -1,5 +1,6 @@
 .nav > li.active {
   font-weight: bold;
+  background-color: $backgroundColor;
 }
 
 .nav > li > a:hover {
@@ -8,7 +9,6 @@
 }
 
 .nav > li.active > a:hover {
-  background-color: $backgroundColor;
   color: darken($backgroundColor, 45%);
   text-shadow: none;
 }

@@ -20,13 +20,13 @@ $altTextColor:          #1FAFE7;
 $altBackgroundColor:    #d0ab5f;
 
 // Backgrounds
-$backgroundColor:       #EFF3F7;
+$backgroundColor:       color($blue-grey, 50);
 $footerBackgroundColor: #16333f;
 $activeBackgroundColor: darken($backgroundColor, 5%);
 
 // Links
-$link-color:             lighten($link-color, 5%);
-$link-color-hover:        lighten($link-color, 10%);
+$link-color:             color($light-blue, 500);
+$link-color-hover:       color($light-blue, 100);
 
 // Buttons
 $buttonTransparentBorder:     rgba(8, 23, 28, 0.35);
