@@ -32,8 +32,6 @@
 }
 
 .navbar-toggle {
-  margin: 0;
-  padding: 6px 10px 4px 10px;
   color: $borderColor;
   border-color: $borderColor;
 }
@@ -131,5 +129,11 @@
       color: $blue;
       line-height: $line-height-base;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-form {
+    margin-top: 8px;
   }
 }
