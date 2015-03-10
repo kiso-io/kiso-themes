@@ -1,40 +1,37 @@
+<div class="well">
+  The devise integration also provides a custom application layout called <code>devise</code> which provides a minimal vertical centered layout for classic login style pages.
+</div>
 <div class="row">
-<div class="col-lg-6">
-  <div class="panel panel-info">
-    <div class="panel-heading">Devise Sign In
-    </div>
-    <div class="panel-body">
-      <form accept-charset="UTF-8" action="/users/sign_in" class="form-horizontal" id="new_user" method="post">
-        <div class="sheet form-sheet">
-          <div class="sheet-inner">
-            <div class="form-group ">
-              <label class="form-label" for="user_email">Email</label>
-              <input id="user_email" name="user[email]" type="email" value="">
+  <div class="col-lg-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">Devise Sign In
+      </div>
+      <div class="panel-body">
+        <form accept-charset="UTF-8" action="/users/sign_in" class="form-horizontal" id="new_user" method="post">
+          <div class="sheet form-sheet">
+            <div class="sheet-inner">
+              <div class="form-group ">
+                <label class="form-label" for="user_email">Email</label>
+                <input id="user_email" name="user[email]" type="email" value="">
+              </div>
+              <div class="form-group ">
+                <label class="form-label" for="user_password">Password</label>
+                <input id="user_password" name="user[password]" type="password">
+              </div> </div>
             </div>
-            <div class="form-group ">
-              <label class="form-label" for="user_password">Password</label>
-              <input id="user_password" name="user[password]" type="password">
-            </div> </div>
-          </div>
-          <div class="form-sheet-footer">
-            <label class="checkbox" for="user_remember_me">
-              <input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"> Remember me
-            </label> </div>
-            <div class="form-actions">
+            <div class="form-sheet-footer">
+              <label class="checkbox" for="user_remember_me">
+                <input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"> Remember me
+              </label>
+            </div>
+            <div class="form-actions pull-right">
               <input class="btn btn-primary" name="commit" type="submit" value="Sign in">
               or
               <a class="btn" href="/users/sign_up">Sign up</a>
               for an account.
             </div>
           </form>
-          <div class="col-sm-1 col-md-4">
-            <div class="box">
-              <h6>Help</h6>
-              <ul>
-                <li><a href="/users/password/new">Forgot your password?</a></li>
-              </ul>
-            </div>
-          </div>
+          <a class='text-center' href="/users/password/new">Forgot your password?</a>
         </div>
       </div>
     </div>
@@ -59,19 +56,11 @@
                   <input id="user_password_confirmation" name="user[password_confirmation]" type="password">
                 </div> </div>
               </div>
-              <div class="form-actions">
+              <div class="form-actions pull-right">
                 <input class="btn btn-primary" name="commit" type="submit" value="Sign up">
                 <a class="btn" href="/users/sign_in">Sign in</a>
               </div>
             </form>
-            <div class="col-sm-1 col-md-4">
-              <div class="box">
-                <h6>Help</h6>
-                <ul>
-                  <li><a href="/users/password/new">Forgot your password?</a></li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -138,7 +127,7 @@
                 </div>
               </div>
 
-              <div class="form-actions">
+              <div class="form-actions pull-right">
                 <input class="btn btn-primary" name="commit" type="submit" value="Send me reset password instructions">
                 or
                 <a class="btn" href="/users/sign_in">Sign in</a>
