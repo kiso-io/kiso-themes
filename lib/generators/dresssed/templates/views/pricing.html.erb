@@ -1,71 +1,157 @@
 <% @title = "Pricing" %>
 
-<div class="jumbotron">
-  <h1>Low prices, big value.</h1>
-  <h2>Coffee buzz for the price of a latte.</h2>
+<div class='container'>
+  <div class='col-sm-12 col-md-12'>
+    <div id="first-option">
+      <header>
+        <div class="col-md-12 text-center">
+          <h3>Find the right plan</h3>
+          <p>We offer three flexible plans for all levels</p>
+        </div>
+      </header>
+      <div class="row pricing">
+        <div class="col-md-4">
+          <div class="tier first-tier">
+            <div class="tier-name">Startup</div>
+            <div class="tier-quantity">
+              <span class="dollar">$</span>
+              <span class="price">19</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="specs">
+              <div class="spec">
+                5 accounts
+              </div>
+              <div class="spec">
+                10 projects
+              </div>
+              <div class="spec">
+                Branding
+              </div>
+            </div>
+            <a class="btn btn-outline-primary" href="#">
+              <span>Start free trial</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="tier recommended-tier">
+            <div class="tier-name">Business</div>
+            <div class="tier-quantity">
+              <span class="dollar">$</span>
+              <span class="price">29</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="specs">
+              <div class="spec">
+                15 team members
+              </div>
+              <div class="spec">
+                30 projects
+              </div>
+              <div class="spec">
+                White labeling
+              </div>
+              <div class="spec">
+                Custom domain
+              </div>
+              <div class="spec">
+                Cats
+              </div>
+            </div>
+            <a class="btn btn-outline-primary" href="#">
+              <span>Start free trial</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="tier last-tier">
+            <div class="tier-name">Enterprise</div>
+            <div class="tier-quantity">
+              <span class="dollar">$</span>
+              <span class="price">199</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="specs">
+              <div class="spec">
+                Unlimited team members
+              </div>
+              <div class="spec">
+                Digital recurring billing
+              </div>
+              <div class="spec">
+                Virtual online terminal
+              </div>
+              <div class="spec">
+                25 total products
+              </div>
+              <div class="spec">
+                No Transaction fee
+              </div>
+            </div>
+            <a class="btn btn-outline-primary" href="#">
+              <span>Start free trial</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center mt40">
+        <p>
+          All plans have a 14 day trial with no credit card required. We also offer a <a href="#">free plan</a>.
+        </p>
+      </div>
+      <div class='container'>
+        <div class="row faq">
+          <div class="col-md-12">
+            <div class="row header">
+              <div class="col-md-12">
+                <h3>Frequently Asked Questions</h3>
+              </div>
+            </div>
+            <div class="row questions">
+              <div class="col-md-6">
+                <div class="question">
+                  <strong>Question?</strong>
+                  <p>
+                    There's a time when the operation of the machine becomes so odious, makes you so sick at heart, that you can't take part! You can't even passively take part! And you've got to put your bodies upon the gears and upon the wheels…upon the levers, upon all the apparatus, and you've got to make it stop!
+                  </p>
+                </div>
+                <div class="question">
+                  <strong>Question?</strong>
+                  <p>
+                    There's a time when the operation of the machine becomes so odious, makes you so sick at heart, that you can't take part! You can't even passively take part! And you've got to put your bodies upon the gears and upon the wheels…upon the levers, upon all the apparatus, and you've got to make it stop!
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="question">
+                  <strong>Question?</strong>
+                  <p>
+                    There's a time when the operation of the machine becomes so odious, makes you so sick at heart, that you can't take part! You can't even passively take part! And you've got to put your bodies upon the gears and upon the wheels…upon the levers, upon all the apparatus, and you've got to make it stop!
+                  </p>
+                </div>
+                <div class="question">
+                  <strong>Question?</strong>
+                  <p>
+                    There's a time when the operation of the machine becomes so odious, makes you so sick at heart, that you can't take part! You can't even passively take part! And you've got to put your bodies upon the gears and upon the wheels…upon the levers, upon all the apparatus, and you've got to make it stop!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='container'>
+        <div class="row contact">
+          <div class="col-md-12">
+            <div class="text-center">
+              <h4>
+                Can't decide which plan is right? Call <strong>1-555-1232-9999</strong> any time.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<section id="pricing">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th class="col-md-3"></th>
-        <th>
-          <h3>Free</h3>
-          <b class="caret"></b>
-        </th>
-        <th class="highlighted">
-          <h3>Small</h3>
-          <b class="caret"></b>
-        </th>
-        <th>
-          <h3>Big</h3>
-          <b class="caret"></b>
-        </th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <td></td>
-        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large' %></td>
-        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large btn-info' %></td>
-        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large' %></td>
-      </tr>
-    </tfoot>
-    <tbody>
-      <tr>
-        <th>
-          <h4>Space</h4>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </th>
-        <td><strong>0</strong> MB</td>
-        <td class="highlighted"><strong>200</strong> MB</td>
-        <td><strong>300</strong> MB</td>
-      </tr>
-      <tr>
-        <th>
-          <h4>Fun</h4>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </th>
-        <td>Low</td>
-        <td class="highlighted">Medium</td>
-        <td>High</td>
-      </tr>
-      <tr>
-        <th>
-          <h4>Projects</h4>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </th>
-        <td><strong>10</strong> projects</td>
-        <td class="highlighted"><strong>100</strong> projects</td>
-        <td><strong>Infinite!</strong></td>
-      </tr>
-      <tr>
-        <th><h4>Price</h4></th>
-        <td>Free</td>
-        <td class="highlighted"><strong>$12</strong>/month</td>
-        <td><strong>$29</strong>/month</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
