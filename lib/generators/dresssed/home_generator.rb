@@ -5,8 +5,8 @@ module Dresssed
     class HomeGenerator < PageGenerator
       view_name "home"
 
-      def copy_image
-
+      def set_layout
+        inject_into_class "app/controllers/#{name}_controller.rb", "#{name.titleize}Controller".constantize, "  layout 'home'\n"
       end
     end
   end
