@@ -1,5 +1,6 @@
 // Dresssed Theme config file
 // ==========================
+@import "dresssed/colors";
 @import "dresssed/styles/defaults";
 
 // STYLE
@@ -116,7 +117,6 @@
 // You can optionally remove some imports to end up with a tidier file. But keep in mind some
 // rules in a file might depend on rules in another one.
 
-// Core variables and mixins
 @import "twitter/bootstrap/variables";
 @import "twitter/bootstrap/mixins";
 
@@ -196,6 +196,7 @@
 @import "dresssed/navs/stacked-pills";
 @import "dresssed/navs/tabbable";
 @import "dresssed/breadcrumbs";
+@import "dresssed/list-groups";
 
 // Misc navs
 @import "dresssed/navbar";
@@ -226,6 +227,7 @@
 
 // Font Awesome
 @import "font_awesome/font-awesome";
+
 
 // CUSTOM RULES
 // ------------

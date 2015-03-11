@@ -16,6 +16,16 @@ class PreviewController < ApplicationController
     @elements = ElementFinder.new('app/views/preview/elements/*').find
   end
 
+  def switch_style
+    @style = params[:style]
+
+    raise ArgumentError, "Invalid style" unless @style.in?(Dresssed::Ives::COLORS)
+
+    cookies[:style] = @style
+
+    redirect_to :back
+  end
+
   def resolve_layout
     case action_name
     when 'main'

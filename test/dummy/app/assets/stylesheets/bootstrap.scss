@@ -369,3 +369,12 @@ iframe {
     color: color($blue-grey, 900);
   }
 }
+
+.style-list {
+  line-height: 40px;
+
+  li.active {
+    border: 1px solid white;
+    border-radius: 2px;
+  }
+}

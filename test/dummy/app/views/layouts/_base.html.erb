@@ -14,14 +14,11 @@
     <![endif]-->
 
     <!-- Le fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:100,200,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Le styles -->
     <%= stylesheet_link_tag "bootstrap", :media => "all" %>
-    <%= stylesheet_link_tag "dresssed", :media => "all" %>
+    <%= stylesheet_link_tag "styles/#{current_style}", :media => "all" %>
     <%= yield :styles %>
 
     <!-- Le fav and touch icons -->

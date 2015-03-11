@@ -10,7 +10,14 @@
     <a href="#" class="navbar-brand">Ives Theme</a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right mr15 mt5">
+      <li>
+        <ul class='style-list list-unstyle list-inline mr20'>
+          <% Dresssed::Ives::COLORS.each do |color| %>
+              <li class='<%= current_style == color ? 'active' : '' %>'><%= link_to color, switch_style_path(color) %></li>
+          <% end %>
+        </ul>
+      </li>
       <li>
         <div class="btn-group navbar-btn">
           <a data-toggle="tooltip" class="btn btn-default size-mobile" data-original-title="Mobile"><i class="fa fa-mobile-phone"></i></a>

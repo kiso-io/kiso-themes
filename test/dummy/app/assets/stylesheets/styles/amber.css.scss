@@ -1,5 +1,6 @@
 // Dresssed Theme config file
 // ==========================
+@import "dresssed/colors";
 @import "dresssed/styles/defaults";
 
 // STYLE
@@ -116,7 +117,6 @@
 // You can optionally remove some imports to end up with a tidier file. But keep in mind some
 // rules in a file might depend on rules in another one.
 
-// Core variables and mixins
 @import "twitter/bootstrap/variables";
 @import "twitter/bootstrap/mixins";
 
@@ -166,8 +166,6 @@
 // Utility classes
 @import "twitter/bootstrap/utilities";
 @import "twitter/bootstrap/responsive-utilities";
-@import "font_awesome/font-awesome";
-
 
 // Import Dresssed rules.
 @import "dresssed/mixins";
@@ -184,6 +182,7 @@
 @import "dresssed/tables";
 @import "dresssed/code";
 @import "dresssed/forms";
+@import "dresssed/addons";
 
 // Buttons
 @import "dresssed/buttons";
@@ -197,9 +196,11 @@
 @import "dresssed/navs/stacked-pills";
 @import "dresssed/navs/tabbable";
 @import "dresssed/breadcrumbs";
+@import "dresssed/list-groups";
 
 // Misc navs
 @import "dresssed/navbar";
+@import "dresssed/sidenav";
 @import "dresssed/pagination";
 @import "dresssed/pager";
 
@@ -207,17 +208,25 @@
 @import "dresssed/tooltip";
 @import "dresssed/alerts";
 @import "dresssed/dropdowns";
+@import "dresssed/checkboxes";
 @import "dresssed/wells";
 @import "dresssed/sheets";
 @import "dresssed/labels";
 @import "dresssed/thumbnails";
 @import "dresssed/jumbotron";
+@import "dresssed/panels";
+@import "dresssed/progress-bars";
+@import "dresssed/modals";
 @import "dresssed/sprites";
+@import "dresssed/extensions";
+
+// App Pages
+@import "dresssed/app_pages/user-settings";
+@import "dresssed/app_pages/timeline";
+@import "dresssed/app_pages/user-profile";
 
 // Font Awesome
 @import "font_awesome/font-awesome";
-
-
 
 // CUSTOM RULES
 // ------------
