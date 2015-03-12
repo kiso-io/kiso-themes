@@ -7,16 +7,16 @@ $sub-menu-item-height: 40px;
   overflow-x: hidden;
   overflow-y: scroll;
   width: 300px;
-  height: 100%;
   background-color: color($blue-grey, 900);
   color: $link-color;
+  font-size: 0.9em;
 
   .brand {
     display: block;
     background-color: #23282e;
     text-align: center;
     font-size: 14px;
-    line-height: 50px;
+    line-height: $navbar-height;
   }
 
   .toggle-btn {
@@ -232,4 +232,13 @@ $sub-menu-item-height: 40px;
   .main-content {
     margin-left: 0;
   }
+}
+
+.nav-side-menu-footer {
+  position: fixed;
+  padding: 7px 15px 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
 }

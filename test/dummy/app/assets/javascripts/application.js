@@ -32,6 +32,14 @@ $(document).ready(function(){
     sizeiframe(document.body.clientWidth, true);
   });
 
+  sizeiframe(document.body.clientWidth, true);
+
+  $(window).on('resize', function(){
+      var $sgViewport = $('#sg-viewport');
+      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      $($sgViewport).height(h-55);
+  });
+
   $(function () {
     $('[data-toggle="popover"]').popover()
   });
@@ -43,6 +51,8 @@ $(document).ready(function(){
 
 function sizeiframe(size) {
     var $sgViewport = $('#sg-viewport');
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    $($sgViewport).height(h-55);
     $('#sg-gen-container,#sg-viewport').addClass("vp-animate");
     $sgViewport.width(size);
 }
