@@ -10,7 +10,7 @@
     border: 1px solid $grayLighter;
     border-radius: 4px;
     background-color: $white;
-    box-shadow: 0 0 2px 0 rgba(181, 181, 181, 0.3);
+    box-shadow: 0 0 2px 0 $text-color;
 
     .tier-name {
       width: 90%;
@@ -25,7 +25,7 @@
     .tier-quantity {
       margin-top: 10px;
       text-align: center;
-      border-bottom: 1px solid $textColor;
+      border-bottom: 1px solid $text-color;
 
       .dollar {
         position: relative;
@@ -67,8 +67,8 @@
     top: 5px;
     min-height: 450px;
     margin: 0 auto;
-    border-color: #c3dceb;
-    box-shadow: 0 0 13px -2px #b4daf1;
+    border-color: $text-color;
+    box-shadow: 0 0 13px -2px $text-color;
 
     .tier-name {
       margin-bottom: 24px;

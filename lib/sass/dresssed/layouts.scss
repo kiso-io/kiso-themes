@@ -129,7 +129,7 @@ html, body {
 
         &:hover,
         &:focus {
-          color: $textColor;
+          color: $text-color;
         }
       }
     }
@@ -224,7 +224,7 @@ html, body {
   .getting-started {
     background: $gray;
     padding: 3em 2em;
-    color: lighten($textColor, 10%);
+    color: lighten($text-color, 10%);
 
     h1 {
       color: white;
@@ -242,7 +242,7 @@ html, body {
     }
 
     .btn-outline-primary {
-      border-color: lighten($textColor, 10%);
+      border-color: lighten($text-color, 10%);
     }
 
     .btn-outline-default:hover {
@@ -277,7 +277,7 @@ html, body {
       border-color: white;
 
       &:hover {
-        color: $textColor;
+        color: $text-color;
       }
     }
   }

@@ -48,6 +48,7 @@ $sub-menu-item-height: 40px;
         @include prefix(transition, all 200ms ease);
         padding: 0;
         background-color: #4f5b69;
+        color: white;
       }
 
       i {
@@ -59,7 +60,7 @@ $sub-menu-item-height: 40px;
 
     &:hover {
       a {
-        color: $link-color-hover;
+        color: lighten($link-color-hover,20%);
       }
     }
   }
@@ -126,6 +127,7 @@ $sub-menu-item-height: 40px;
 .nav-side-menu ul .sub-menu li a:hover {
   border: none;
   background-color: transparent;
+  padding-left: 8px;
 }
 
 .nav-side-menu ul .sub-menu.collapse.in {

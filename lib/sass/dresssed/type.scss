@@ -3,7 +3,7 @@ body {
   font-family: $font-family-serif;
   font-size: $font-size-base;
   background: $backgroundColor;
-  color: $textColor;
+  color: $text-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: $line-height-base;
@@ -99,7 +99,7 @@ hr {
 // Paragraphs
 p.highlight {
   margin-top: $baseLineHeight / 2;
-  color: lighten($textColor, 15%);
+  color: lighten($text-color, 15%);
 }
 
 // Emphasis

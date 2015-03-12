@@ -6,6 +6,8 @@ $style: "blue";
 // GLOBAL VALUES
 // --------------------------------------------------
 
+$brand-primary: color($blue-grey, '900');
+
 // Make grays blueish
 $grayDarker:            #112;
 $grayDark:              #223;
@@ -14,7 +16,7 @@ $grayLight:             #889;
 $grayLighter:           #dee;
 
 // Typography
-$textColor:             #607990;
+$text-color:            #607990;
 $quietColor:            #A6BDC5;
 $altTextColor:          #1FAFE7;
 $altBackgroundColor:    #d0ab5f;

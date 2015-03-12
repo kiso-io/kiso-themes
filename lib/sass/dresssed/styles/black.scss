@@ -6,8 +6,10 @@ $style: "black";
 // GLOBAL VALUES
 // --------------------------------------------------
 
+$brand-primary: color($blue-grey, 500);
+
 // Typography
-$textColor:             #555555;
+$text-color:            #222222;
 $quietColor:            #909191;
 $altTextColor:          #663c16;
 $altBackgroundColor:    #d0ab5f;
@@ -18,8 +20,8 @@ $footerBackgroundColor: #2a2a2a;
 $activeBackgroundColor: darken($backgroundColor, 5%);
 
 // Links
-$linkColor:             lighten($textColor, 25%);
-$linkColorHover:        darken($linkColor, 10%);
+$link-color:              lighten($text-color, 25%);
+$link-color-hover:        darken($link-color, 10%);
 
 // Buttons
 

@@ -173,7 +173,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-default {
   border-color: #ededed;
   background-color: transparent;
-  color: $textColor;
+  color: $text-color;
 }
 
 .btn-outline-default.active,
@@ -183,7 +183,7 @@ fieldset[disabled] .btn-primary.active {
 .open .btn-outline-default.dropdown-toggle {
   outline: none;
   background-color: #fff;
-  color: $textColor;
+  color: $text-color;
 }
 
 .btn-outline-primary {
@@ -229,7 +229,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-outline-info {
   border-color: $info;
   background: transparent;
-  color: $textColor;
+  color: $text-color;
   text-shadow: none;
 }
 
@@ -280,7 +280,7 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-outline-link {
   background: transparent;
-  color: $textColor;
+  color: $text-color;
 }
 
 .btn-outline-link.active,
@@ -290,7 +290,7 @@ fieldset[disabled] .btn-primary.active {
 .open .btn-outline-dark.dropdown-toggle {
   outline: none;
   background: #fff;
-  color: $textColor;
+  color: $text-color;
   text-decoration: underline;
   text-shadow: none;
 }

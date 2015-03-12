@@ -6,11 +6,12 @@ $style: "amber";
 // GLOBAL VALUES
 // --------------------------------------------------
 
-// Typography
-$textColor:             #625f5c;
-$quietColor:            #797572;
+$brand-primary: color($amber, 900);
 
-$altTextColor:             darken(#625f5c,20%);
+// Typography
+$text-color:            darken(color($amber, 900), 30%);
+$quietColor:            #797572;
+$altTextColor:          darken(#625f5c,20%);
 
 // Backgrounds
 $backgroundColor:       #f4f4f4;
@@ -18,7 +19,7 @@ $footerBackgroundColor: #342b20;
 $activeBackgroundColor: darken($backgroundColor, 5%);
 
 // Links
-$link-color:             lighten($textColor, 25%);
+$link-color:             lighten($text-color, 25%);
 $link-color-hover:        darken($link-color, 10%);
 
 // Buttons
@@ -28,13 +29,13 @@ $link-color-hover:        darken($link-color, 10%);
 // --------------------------------------------------
 
 // Input placeholder text color
-$placeholderText:         $grayLight;
+$input-color-placeholder:         color($blue-grey, 500);
 
 // Hr border color
 $hrBorder:                #dae8ec;
 
 // Navbar
-$navbarLinkBackgroundActive:      #231f19;
+$navbarLinkBackgroundActive:      color($amber, 900);
 $navbarBackgroundHighlight:       lighten($navbarLinkBackgroundActive, 10%);
 $navbarLinkBackgroundHover:       transparent;
 

@@ -5,11 +5,19 @@
   background: $navbarLinkBackgroundActive;
 }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+.dropdown-menu > li > a {
+  color: $navbarLinkColorHover;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+ {
   text-decoration: none;
-  color: #262626;
+  color: lighten($link-color, 20%);
   background-color: $link-color-hover;
 }
+
+
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
   color: white;
