@@ -1,4 +1,5 @@
 $sub-menu-item-height: 40px;
+$side-nav-menu-background-color: color($blue-grey, 900);
 
 .nav-side-menu {
   position: fixed;
@@ -6,8 +7,8 @@ $sub-menu-item-height: 40px;
   bottom: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  width: 300px;
-  background-color: color($blue-grey, 900);
+  width: $side-nav-width;
+  background-color: $side-nav-menu-background-color;
   color: $link-color;
   font-size: 0.9em;
 
@@ -213,8 +214,7 @@ $sub-menu-item-height: 40px;
 .main-content {
   @include prefix(opacity, 100ms ease-in-out);
   z-index: 1;
-  margin-left: 300px;
-  padding-bottom: 5em;
+  margin-left: $side-nav-width;
   vertical-align: top;
   word-break: break-word;
 }
@@ -235,10 +235,11 @@ $sub-menu-item-height: 40px;
 }
 
 .nav-side-menu-footer {
+  background-color: $side-nav-menu-background-color;
   position: fixed;
   padding: 7px 15px 10px;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 300px;
+  width: $side-nav-width;
 }
