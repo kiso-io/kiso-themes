@@ -6,12 +6,12 @@ $style: "black";
 // GLOBAL VALUES
 // --------------------------------------------------
 
-$brand-primary: color($blue-grey, 500);
+$brand-primary: color($grey, 900);
 
 // Typography
 $text-color:            #222222;
 $quietColor:            #909191;
-$altTextColor:          #663c16;
+$altTextColor:          darken($brand-primary, 10%);
 $altBackgroundColor:    #d0ab5f;
 
 // Backgrounds

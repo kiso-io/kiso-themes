@@ -35,6 +35,7 @@ $input-color-placeholder:         color($blue-grey, 500);
 $hrBorder:                #dae8ec;
 
 // Navbar
+$navbarLinkColorHover:            color($amber, 500);
 $navbarLinkBackgroundActive:      color($amber, 900);
 $navbarBackgroundHighlight:       lighten($navbarLinkBackgroundActive, 10%);
 $navbarLinkBackgroundHover:       transparent;

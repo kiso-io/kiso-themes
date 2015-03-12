@@ -73,7 +73,7 @@
 
     input:focus,
     textarea:focus {
-      border-left: solid 3px rgba(82, 168, 236, 0.6);
+      border-left: solid 3px $brand-primary;
       @include box-shadow(none);
     }
 

@@ -6,27 +6,28 @@
 }
 
 .dropdown-menu > li > a {
-  color: $navbarLinkColorHover;
+  color: $brand-primary;
 }
 
 .dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus,
- {
+.dropdown-menu > li > a:focus {
   text-decoration: none;
   color: lighten($link-color, 20%);
   background-color: $link-color-hover;
 }
 
-
-
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  color: white;
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
   text-decoration: none;
+  color: white;
   outline: 0;
   background-color: $navbarLinkBackgroundActive;
 }
 
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
   color: $quietColor;
 }
 
@@ -36,9 +37,9 @@
     margin-bottom: 0;
 
     .panel-heading {
-      font-weight: normal;
       text-transform: inherit;
       background: rgb(239, 243, 247);
+      font-weight: normal;
     }
 
     .media {
@@ -53,11 +54,13 @@
   }
 }
 
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: lighten($navbarLinkBackgroundActive, 20%);
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
   border-color: #337ab7;
+  background-color: lighten($navbarLinkBackgroundActive, 20%);
 }
 
 .caret {
-  border-top-color: lighten($quietColor, 15%);
+  border-top-color: darken($brand-primary, 15%);
 }
