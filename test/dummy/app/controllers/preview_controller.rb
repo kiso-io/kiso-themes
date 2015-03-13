@@ -14,6 +14,8 @@ class PreviewController < ApplicationController
     @title = @section[index..@section.length].gsub(/^\d{3}_/, '').gsub(/@\w+-\w+$/, '')
 
     @elements = ElementFinder.new('app/views/preview/elements/*').find
+
+    render template: 'preview/minimal' and return if params[:section] && params[:section].include?('004_app_pages')
   end
 
   def switch_style
