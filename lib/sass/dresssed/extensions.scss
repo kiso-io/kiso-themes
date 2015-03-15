@@ -208,6 +208,10 @@ $avatar-height: 200px;
     float: none !important;
 }
 
+.vam {
+  vertical-align: middle;
+}
+
 @media (min-width: 768px) {
     .col-sm-height {
         display: table-cell;

@@ -12,6 +12,11 @@ class PreviewController < ApplicationController
     index = @section.index('/') || 0
     index = index + 1 if index > 0
     @title = @section[index..@section.length].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub(/fullpage/, '').titleize
+    @parent = @section[0..index].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@.*$/, '').titleize
+
+    @breadcrumbs = []
+    @breadcrumbs << @parent if @parent != '0'
+    @breadcrumbs << @title if @title && @parent != '0'
 
     @elements = ElementFinder.new('app/views/preview/elements/*').find
 
