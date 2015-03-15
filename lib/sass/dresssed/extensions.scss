@@ -20,9 +20,14 @@
                            /* reset the font property */
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .vertical-center {
     height: auto;
+
+    &:before {
+      height: auto;
+      vertical-align: top;
+    }
   }
 }
 
