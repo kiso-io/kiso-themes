@@ -183,33 +183,15 @@ $avatar-height: 200px;
   }
 }
 
-.full-bleed {
-  margin-top: -51px;
-  padding: 0;
-}
-
-.leading {
-  margin-bottom: 2em;
-}
-
-.scrollspy-example {
-  position: relative;
-  overflow: auto;
-  height: 200px;
-}
-
 /* columns of same height styles */
 .row-same-height {
     display: table;
     width: 100%;
 }
+
 .col-xs-height {
     display: table-cell;
     float: none !important;
-}
-
-.vam {
-  vertical-align: middle;
 }
 
 @media (min-width: 768px) {
@@ -240,9 +222,11 @@ $avatar-height: 200px;
 .col-top {
     vertical-align:top;
 }
+
 .col-middle {
     vertical-align:middle;
 }
+
 .col-bottom {
     vertical-align:bottom;
 }
