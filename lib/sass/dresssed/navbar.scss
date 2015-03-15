@@ -28,6 +28,12 @@
   background-color: $activeBackgroundColor;
 }
 
+.navbar-default .navbar-text {
+  .btn-group {
+    margin-top: -4px;
+  }
+}
+
 .navbar-default .navbar-text a {
   color: $altTextColor;
 }

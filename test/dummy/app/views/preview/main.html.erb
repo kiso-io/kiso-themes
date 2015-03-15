@@ -100,12 +100,12 @@
     </div><!-- /.navbar-inner -->
   </nav>
   <div class='page-header row row-same-height'>
-  <h1 class='col-sm-6 col-xs-height'><%= raw @title.gsub('_', ' ').titleize %></h1>
-  <ol class="breadcrumb col-sm-6 col-xs-height text-right vam pr0">
-    <% @breadcrumbs.each do |crumb| %>
+    <h1 class='col-sm-6 col-xs-height'><%= raw @title.gsub('_', ' ').titleize %></h1>
+    <ol class="breadcrumb col-sm-6 col-xs-height text-right vam pr0">
+      <% @breadcrumbs.each do |crumb| %>
       <li><%=crumb%></li>
-    <% end %>
-  </ol>
+      <% end %>
+    </ol>
   </div>
   <div class='container-fluid'>
     <%= render file: "preview/elements/#{@section}" %>
