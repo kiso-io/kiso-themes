@@ -242,9 +242,14 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   right: 0;
   bottom: 0;
   width: $side-nav-width;
+
+  > div {
+    line-height: 1;
+    margin-bottom: 10px;
+  }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 767px) {
   .nav-side-menu-footer {
     position: relative;
     width: 100%;
