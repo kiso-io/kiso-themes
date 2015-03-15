@@ -11,11 +11,11 @@ class PreviewController < ApplicationController
     @section = params[:section] || "001_dashboard@fa-dashboard"
     index = @section.index('/') || 0
     index = index + 1 if index > 0
-    @title = @section[index..@section.length].gsub(/^\d{3}_/, '').gsub(/@\w+-\w+$/, '')
+    @title = @section[index..@section.length].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub(/fullpage/, '').titleize
 
     @elements = ElementFinder.new('app/views/preview/elements/*').find
 
-    render template: 'preview/minimal' and return if params[:section] && params[:section].include?('004_app_pages')
+    render template: 'preview/minimal' and return if params[:section] && (params[:section].include?('004_app_pages') || params[:section].include?('fullpage') )
   end
 
   def switch_style
@@ -62,7 +62,7 @@ class ElementFinder
           parent[:children] << {
             child_file_name: child,
             child_name:   File.basename(child, '.html.erb').to_s.gsub(/@\w+-\w+$/, ''),
-            display_name: File.basename(child, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').titleize,
+            display_name: File.basename(child, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub(/fullpage/, '').titleize,
             icon:         child.match(/@\w+-\w+$/).nil? ? 'fa-cogs' : child.match(/@\w+-\w+$/)[0][1..-1],
           }
         end

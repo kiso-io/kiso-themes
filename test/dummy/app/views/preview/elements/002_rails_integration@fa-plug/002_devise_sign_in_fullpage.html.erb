@@ -1,0 +1,48 @@
+<div id="main" class="vertical-center">
+  <div class="container">
+    <div class="row">
+      <div id="content" class="col-md-12">
+
+      <h1>Your App</h1>
+        <p>Enter your details below to log in.</p>
+
+        <div class="container">
+          <form class="form-horizontal col-xs-12 col-md-6 col-md-offset-3" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post">
+            <div class="sheet form-sheet">
+              <div class="sheet-inner">
+                <div class="form-group ">
+                  <label class="form-label" for="user_email">Email</label>
+                  <input autofocus="autofocus" class="col-sm-1 col-md-3" type="email" value="" name="user[email]" id="user_email">
+
+                </div>
+                <div class="form-group ">
+                  <label class="form-label" for="user_password">Password</label>
+                  <input type="password" name="user[password]" id="user_password">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="form-sheet-footer">
+              <label class="checkbox pull-left" for="user_remember_me">
+                <input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me"> Remember me
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <input type="submit" name="commit" value="Log in" class="btn btn-primary pull-right mt10">
+            </div>
+          </form>
+        </div>
+        <div class="row mt25">
+          <div class="box">
+            <ul class="list-unstyled">
+              <a class="text-center text-muted" href="/users/password/new">Forgot your password?</a>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- /#content -->
+    </div>
+
+  </div> <!-- /.container -->
+</div>

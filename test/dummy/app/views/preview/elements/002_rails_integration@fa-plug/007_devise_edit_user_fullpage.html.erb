@@ -1,0 +1,47 @@
+<div id="main" class="vertical-center">
+  <div class="container">
+    <div class="row">
+      <div id="content" class="col-md-12">
+        <h1>My App</h1>
+        <form accept-charset="UTF-8" action="/users" class="form-horizontal" id="edit_user" method="post" novalidate="novalidate">
+              <div class="form-group ">
+                <label class="col-md-4 control-label" for="user_email">Email</label>
+                <div class="col-md-7">
+                  <input class="form-control" id="user_email" name="user[email]" required="required" type="email" value="test@example.com">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label class="col-md-4 control-label" for="user_password">Password</label>
+                <div class="col-md-7">
+                  <input class="form-control" id="user_password" name="user[password]" type="email">
+                </div>
+              </div>
+              <div class="help-block col-md-offset-4 pl10">
+                Leave it blank if you don't want to change it.
+              </div>
+              <div class="form-group ">
+                <label class="col-md-4 control-label" for="user_password_confirmation">Password confirmation</label>
+                <div class="col-md-7">
+                  <input class="form-control" id="user_password_confirmation" name="user[password_confirmation]" type="password">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label class="col-md-4 control-label" for="user_current_password">Current password</label>
+                <div class="col-md-7">
+                  <input class="form-control" id="user_current_password" name="user[current_password]" type="password">
+                </div>
+              </div>
+              <div class="help-block col-md-offset-4 pl10">
+                We need your current password to confirm your changes.
+              </div>
+              <div class="form-actions col-md-offset-4 pl10">
+                <input class="btn btn-primary" name="commit" type="submit" value="Update">
+                <a class="btn btn-danger" confirm="Are you sure?" data-method="delete" href="/users" rel="nofollow">Cancel my account</a>
+              </div>
+
+            </form>
+        </div> <!-- /#content -->
+      </div>
+
+    </div> <!-- /.container -->
+  </div>
