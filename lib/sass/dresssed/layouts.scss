@@ -135,6 +135,13 @@ html, body {
             }
           }
         }
+
+        @media (max-width: 320px) {
+          .placeholder {
+            width: 93%;
+            height: 185px;
+          }
+        }
       }
 
     .bg {
