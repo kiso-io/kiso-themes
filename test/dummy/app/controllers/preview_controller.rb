@@ -58,11 +58,11 @@ class ElementFinder
       }
 
       if File.directory?(el)
-        Dir.glob(@path.gsub('*',"#{Pathname.new(el).basename}/*")).each do |child|
+        Dir.glob(@path.gsub('*',"#{Pathname.new(el).basename}/*")).sort {|el1, el2| el1 <=> el2}.each do |child|
           parent[:children] << {
             child_file_name: child,
-            child_name:   File.basename(child, '.html.erb').to_s,
-            display_name: File.basename(child, '.html.erb').to_s.gsub('_', ' ').titleize,
+            child_name:   File.basename(child, '.html.erb').to_s.gsub(/@\w+-\w+$/, ''),
+            display_name: File.basename(child, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').titleize,
             icon:         child.match(/@\w+-\w+$/).nil? ? 'fa-cogs' : child.match(/@\w+-\w+$/)[0][1..-1],
           }
         end
