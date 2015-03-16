@@ -52,6 +52,8 @@ $navbar-default-link-active-bg:            darken($brand-primary, 6.5%) !default
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
+$dropdown-caret-color: lighten($brand-primary, 25%);
+
 // Borders
 $dividerColor:            #dae8ec;
 $borderColor:             #cbdcde;
