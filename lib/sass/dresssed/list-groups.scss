@@ -3,14 +3,23 @@
   background-color: $link-color;
   color: darken($link-color, 30%);
   border: none;
+
+  .list-group-item-text {
+    color: darken($link-color, 20%);
+  }
 }
 
 .list-group-item.active:hover {
   background-color: $link-color-hover;
   border: none;
   @include transition(all 0.2s ease);
+  color: darken($link-color, 30%);
 
   a {
     color: darken($navbar-default-link-active-bg, 20%);
+  }
+
+  .list-group-item-text {
+    color: darken($link-color, 30%);
   }
 }
