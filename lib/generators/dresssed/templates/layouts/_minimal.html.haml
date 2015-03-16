@@ -27,16 +27,9 @@
   %body{ class: "#{yield(:body_class)}"}
     = render "layouts/navbar"
 
-    %header
-      = yield :header
-
-    = yield :banner
-
     #main.container-fluid
       .row
         = yield
-
-    = render "layouts/footer"
 
     / Le javascript
     / ==================================================
