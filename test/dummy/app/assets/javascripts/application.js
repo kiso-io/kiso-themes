@@ -21,11 +21,11 @@ $(document).ready(function(){
   prettyPrint();
 
   $('.size-mobile').on('click', function(){
-    sizeiframe(480, true);
+    sizeiframe(320, true);
   });
 
   $('.size-tablet').on('click', function(){
-    sizeiframe(980, true);
+    sizeiframe(768, true);
   });
 
   $('.size-laptop').on('click', function(){

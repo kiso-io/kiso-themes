@@ -1,23 +1,27 @@
 // Body
 body {
+  color: $text-color;
+  background: $backgroundColor;
   font-family: $font-family-serif;
   font-size: $font-size-base;
-  background: $backgroundColor;
-  color: $text-color;
+  line-height: $line-height-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: $line-height-base;
 }
 
+p {
+  margin-bottom: 1.3em;
+}
 
-p {margin-bottom: 1.3em;}
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
+  margin: 1.414em 0 .5em;
+  letter-spacing: -1px;
   font-family: $font-family-sans-serif;
-  margin: 1.414em 0 0.5em;
   font-weight: inherit;
   line-height: 1.2;
-  letter-spacing: -1px;
 }
 
 h1 {
@@ -25,19 +29,35 @@ h1 {
   font-size: 3.157em;
 }
 
-h2 {font-size: 2.369em;}
-h3 {font-size: 1.777em;}
-h4 {font-size: 1.333em;}
+h2 {
+  font-size: 2.369em;
+}
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h3 {
+  font-size: 1.777em;
+}
+
+h4 {
+  font-size: 1.333em;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: $font-family-sans-serif;
 }
 
-small, .font_small {font-size: 0.75em;}
+small,
+.font_small {
+  font-size: .75em;
+}
 
 a {
-  color:$link-color;
-  text-decoration:none;
+  text-decoration: none;
+  color: $link-color;
 
   &:hover {
     color: $link-color-hover;
@@ -46,6 +66,7 @@ a {
 
 blockquote {
   border-left-color: $borderColor;
+
   small {
     color: $quietColor;
   }
@@ -55,12 +76,11 @@ blockquote {
   }
 }
 
-
 // Page header
 .page-header {
-  border: none;
   margin: 0 0 1em 0;
   padding: 1em 1em 1em 15px;
+  border: none;
   border-bottom: 1px solid $borderColor;
   background: white;
 
@@ -69,16 +89,22 @@ blockquote {
   }
 }
 
+@media (max-width: 320px) {
+  .page-header {
+    position: relative;
+  }
+}
+
 // Lists
 ul.checks {
-
+  margin: 10px 0 0 0;
+  padding: 0 0 0 22px;
   font-family: $font-family-serif;
   font-style: italic;
 
-  margin: 10px 0 0 0;
-  padding: 0 0 0 22px;
-
-  li { margin-bottom: 6px; }
+  li {
+    margin-bottom: 6px;
+  }
 }
 
 // Divider
@@ -88,12 +114,13 @@ hr {
 }
 
 .lt-ie8 hr {
+  min-height: 0;
+  /*required to get IE to render the top pixel color*/
   color: $hrBorder;
-  min-height: 0;  /*required to get IE to render the top pixel color*/
-  border-left: 0;
-  border-right: 0;
   border-top: 3px solid $hrBorder;
+  border-right: 0;
   border-bottom: 1px solid $white;
+  border-left: 0;
 }
 
 // Paragraphs
@@ -108,42 +135,86 @@ p.highlight {
 }
 
 @media (max-width: 768px) {
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: 1em;
   }
 }
 
-.text-xs-left { text-align: left; }
-.text-xs-right { text-align: right; }
-.text-xs-center { text-align: center; }
-.text-xs-justify { text-align: justify; }
+.text-xs-left {
+  text-align: left;
+}
+
+.text-xs-right {
+  text-align: right;
+}
+
+.text-xs-center {
+  text-align: center;
+}
+
+.text-xs-justify {
+  text-align: justify;
+}
 
 @media (min-width: $screen-sm-min) {
-    .text-sm-left { text-align: left; }
-    .text-sm-right { text-align: right; }
-    .text-sm-center { text-align: center; }
-    .text-sm-justify { text-align: justify; }
+  .text-sm-left {
+    text-align: left;
+  }
+
+  .text-sm-right {
+    text-align: right;
+  }
+
+  .text-sm-center {
+    text-align: center;
+  }
+
+  .text-sm-justify {
+    text-align: justify;
+  }
 }
 
 @media (min-width: $screen-md-min) {
-    .text-md-left { text-align: left; }
-    .text-md-right { text-align: right; }
-    .text-md-center { text-align: center; }
-    .text-md-justify { text-align: justify; }
+  .text-md-left {
+    text-align: left;
+  }
+
+  .text-md-right {
+    text-align: right;
+  }
+
+  .text-md-center {
+    text-align: center;
+  }
+
+  .text-md-justify {
+    text-align: justify;
+  }
 }
 
 @media (min-width: $screen-lg-min) {
-   .text-lg-left { text-align: left; }
-   .text-lg-right { text-align: right; }
-   .text-lg-center { text-align: center; }
-   .text-lg-justify { text-align: justify; }
+  .text-lg-left {
+    text-align: left;
+  }
+
+  .text-lg-right {
+    text-align: right;
+  }
+
+  .text-lg-center {
+    text-align: center;
+  }
+
+  .text-lg-justify {
+    text-align: justify;
+  }
 }
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 1.25),
-only screen and ( min-device-pixel-ratio: 1.25),
-only screen and ( min-resolution: 200dpi),
-only screen and ( min-resolution: 1.25dppx)
-{
-    -webkit-font-smoothing: subpixel-antialiased;
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
+  -webkit-font-smoothing: subpixel-antialiased;
 }

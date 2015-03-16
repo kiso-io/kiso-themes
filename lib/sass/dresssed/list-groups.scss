@@ -11,6 +11,6 @@
   @include transition(all 0.2s ease);
 
   a {
-    color: darken($navbarBackgroundHighlight, 20%);
+    color: darken($navbar-default-link-active-bg, 20%);
   }
 }

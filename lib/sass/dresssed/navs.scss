@@ -5,7 +5,7 @@
 
 .nav > li > a:hover {
   background-color: transparent;
-  color: darken($navbarLinkColorHover, 60%);
+  color: darken($navbar-default-link-hover-color, 60%);
 }
 
 .nav > li.active > a:hover {

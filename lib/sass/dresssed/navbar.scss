@@ -1,7 +1,8 @@
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
-  height: $navbar-height;
+  border: none;
+  z-index: $zindexDropdown;
 
   .navbar-brand {
     text-transform: uppercase;
@@ -11,14 +12,12 @@
     padding-top: 13px;
     padding-bottom: 10px;
   }
+}
 
-  .navbar-nav {
-    li {
-      a {
-        line-height: $line-height-base;
-      }
-    }
-  }
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border: none;
+  background: $brand-primary;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -30,7 +29,8 @@
 
 .navbar-default .navbar-text {
   .btn-group {
-    margin-top: -4px;
+    margin-top: -3px;
+    margin-bottom: -4px;
   }
 }
 
@@ -142,5 +142,25 @@
 @media (min-width: 768px) {
   .navbar-form {
     margin-top: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar-form {
+    margin: 0;
+    padding: 0 15px;
+    border: none;
+  }
+
+  .navbar-text {
+    .btn-group {
+      margin: 0 0 0 15px;
+    }
+  }
+
+  .notifications {
+    .dropdown-menu .panel {
+      width: 100%;
+    }
   }
 }

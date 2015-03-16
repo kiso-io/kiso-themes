@@ -61,7 +61,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
 
     &:hover {
       a {
-        color: lighten($link-color-hover,20%);
+        color: lighten($link-color-hover, 20%);
       }
     }
   }
@@ -163,7 +163,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .nav-side-menu {
     position: relative;
     margin-bottom: 0;
@@ -193,7 +193,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .nav-side-menu .menu-list .menu-content {
     display: block;
     visibility: visible;
@@ -207,7 +207,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
 
 @for $i from 1 through 30 {
   .sub-menu.collapse.in li:nth-child(#{$i}) {
-    @include prefix(transition-delay, #{$i*(40-$i)}ms);
+    @include prefix(transition-delay, #{$i * (40 - $i)}ms);
   }
 }
 
@@ -219,16 +219,17 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   word-break: break-word;
 }
 
-// @media (max-width: 980px) {
-//   .nav-side-menu {
-//     width: 240px;
-//   }
-//   .main-content {
-//     margin-left: 240;
-//   }
-// }
+@media (max-width: 768px) {
+  .nav-side-menu .menu-list .menu-content {
+    height: 0;
+    display: block;
+    visibility: visible;
+  }
 
-@media (max-width: 767px) {
+  .collapse.in {
+    height: auto !important;
+  }
+
   .main-content {
     margin-left: 0;
   }
@@ -249,7 +250,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .nav-side-menu-footer {
     position: relative;
     width: 100%;
