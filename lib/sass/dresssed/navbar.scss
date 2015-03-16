@@ -36,6 +36,10 @@
   .btn-group {
     margin-top: -3px;
     margin-bottom: -4px;
+
+    > .active {
+      color: $brand-primary;
+    }
   }
 }
 
