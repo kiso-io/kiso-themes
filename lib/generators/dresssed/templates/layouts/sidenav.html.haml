@@ -1,0 +1,87 @@
+= render :layout => "layouts/minimal" do
+  = render partial: "layouts/sidenav"
+  .main-content
+    %nav.navbar.navbar-default.navbar-shadow{:role => "navigation"}
+      .navbar-inner
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-target" => "#main-content-nav", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+        / Collect the nav links, forms, and other content for toggling
+        #main-content-nav.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              %a{:href => "#"} Servers
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Clusters
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} Cluster 1
+                %li
+                  %a{:href => "#"} Cluster 2
+                %li
+                  %a{:href => "#"} Cluster 3
+                %li
+                  %a{:href => "#"} Cluster 4
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %form.navbar-form{:role => "search"}
+                .input-group
+                  %input.form-control{:placeholder => "Search", :type => "text"}/
+                  %span.input-group-btn
+                    %button.btn.btn-default{:type => "button"}
+                      %i.fa.fa-search
+            = yield :navbar
+            %li.navbar-form
+              .btn-group{"data-toggle" => "buttons"}
+                %label.btn.btn-default.active
+                  %input#option1{:autocomplete => "off", :checked => "checked", :name => "options", :type => "radio"}/
+                  %i.fa.fa-home
+                %label.btn.btn-default
+                  %input#option2{:autocomplete => "off", :name => "options", :type => "radio"}/
+                  %i.fa.fa-envelope
+                %label.btn.btn-default
+                  %input#option3{:autocomplete => "off", :name => "options", :type => "radio"}/
+                  %i.fa.fa-user
+            %li.dropdown.notifications
+              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
+                %i.fa.fa-bell
+                %span.badge.badge-sm 2
+                %span.visible-xs-inline Notifications
+              / dropdown
+              %ul.dropdown-menu
+                %li
+                  .panel
+                    .panel-heading
+                      %strong
+                        You have
+                        %span 2
+                        notifications
+                    .list-group
+                      %a.media.list-group-item{:href => "#"}
+                        %span.pull-left
+                          %img.media-object.img-circle{:src => "http://fillmurray.com/32/32"}/
+                        %span.media-body
+                          %p My name is Inigo Montoya.
+                          %small.text-muted 10 minutes ago
+                      %a.media.list-group-item{:href => ""}
+                        %span.media-body
+                          %div
+                            %p You've reached your space quota!
+                            .progress.progress-sm
+                              .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "100", :role => "progressbar", :style => "width: 100%;"}
+                                %span.sr-only 100% Complete
+                          %small.text-muted 12 hours ago
+                    .panel-footer
+                      %a.pull-right{:href => "#"}
+                        %i.fa.fa-cog
+                      %a{:href => "#"} View all Notifications
+              / / dropdown
+        / /.navbar-collapse
+      / /.navbar-inner
+    = yield

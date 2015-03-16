@@ -1,3 +1,6 @@
+@import "twitter/bootstrap/variables";
+@import "twitter/bootstrap/mixins";
+
 // Dresssed Theme config file
 // ==========================
 @import "dresssed/colors";
@@ -10,115 +13,10 @@
 // @import "dresssed/styles/black";
 // @import "dresssed/styles/amber";
 
-
-// VARIABLE OVERRIDES
-// ------------------
-// Optionally override any variables here to customize the theme.
-
-// Links colors
-// @linkColor:             #08c;
-// @linkColorHover:        darken(@linkColor, 15%);
-
-// Text colors
-// @textColor:             #3c545a;
-// @quietColor:            #95ABB3;
-// @altTextColor:          #663c16;
-
-// Border colors
-// @dividerColor:          #dae8ec;
-// @borderColor:           #cbdcde;
-
-// Header colors
-// @headerColor:           #16333f;
-// @featuredHeaderColor:   #d9f0f9;
-
-// Backgrounds colors
-// @backgroundColor:       #f0f8f9;
-// @altBackgroundColor:    #d0ab5f;
-// @footerBackgroundColor: #16333f;
-// @activeBackgroundColor: darken(@backgroundColor, 5%);
-
-// Typography
-// @baseFontSize:          13px;
-// @baseLineHeight:        18px;
-// @baseFontFamily:        Arial, Helvetica, sans-serif;
-// @headerFontFamily:      "Droid Sans", Arial, Helvetica, sans-serif;
-// @fixedFontFamily:       "Andale Mono", "Lucida Console", monospace;
-
-// Buttons
-// @primaryButtonBackground:     @altBackgroundColor;
-// @primaryButtonText:           @altTextColor;
-// @callToActionBackgroundColor: @altBackgroundColor;
-// @callToActionTextColor:       @altTextColor;
-// @buttonBorderRadius:          30px;
-// @largeButtonBorderRadius:     @buttonBorderRadius;
-// @buttonTransparentBorder:     rgba(0, 0, 0, 0.35);
-
-// Input placeholder text color
-// @placeholderText:             @grayLight;
-
-// Hr border color
-// @hrBorder:                    @grayLighter;
-
-// Navbar
-// @navbarBackground:            @grayDarker;
-// @navbarBackgroundHighlight:   @grayDark;
-// @navbarLinkBackgroundHover:   transparent;
-
-// @navbarText:                  @grayLight;
-// @navbarLinkColor:             @grayLight;
-// @navbarLinkColorHover:        @white;
-
-// Form states and alerts
-// @warningText:                 #c09853;
-// @warningBackground:           #fcf8e3;
-// @warningBorder:               darken(spin(@warningBackground, -10), 3%);
-
-// @errorText:                   #b94a48;
-// @errorBackground:             #f2dede;
-// @errorBorder:                 darken(spin(@errorBackground, -10), 3%);
-
-// @successText:                 #468847;
-// @successBackground:           #dff0d8;
-// @successBorder:               darken(spin(@successBackground, -10), 5%);
-
-// @infoText:                    #3a87ad;
-// @infoBackground:              #d9edf7;
-// @infoBorder:                  darken(spin(@infoBackground, -10), 7%);
-
-// Default 940px grid
-// @gridColumns:             12;
-// @gridColumnWidth:         60px;
-// @gridGutterWidth:         20px;
-// @gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
-
-// Fluid grid
-// @fluidGridColumnWidth:    6.382978723%;
-// @fluidGridGutterWidth:    2.127659574%;
-
-// @logoPath:                asset-path('dresssed/styles/@{style}/logo.png');
-// @backgroundImagePath:     asset-path('dresssed/styles/@{style}/background.png');
-// @navbarImagePath:         asset-path('dresssed/styles/@{style}/navbar.png');
-// @footerImagePath:         asset-path('dresssed/styles/@{style}/footer.png');
-// @bannerImagePath:         asset-path('dresssed/styles/@{style}/banner.png');
-// @featuredImagePath:       asset-path('dresssed/styles/@{style}/featured.jpg');
-// @topDividerImagePath:     asset-path('dresssed/styles/@{style}/top_divider.png');
-// @dividerImagePath:        asset-path('dresssed/styles/@{style}/divider.png');
-// @cloudIconPath:           asset-path('dresssed/styles/@{style}/icons/cloud.png');
-// @signalIconPath:          asset-path('dresssed/styles/@{style}/icons/signal.png');
-// @toolsIconPath:           asset-path('dresssed/styles/@{style}/icons/tools.png');
-// @searchIconPath:          asset-path('dresssed/styles/@{style}/icons/search.png');
-// @checkIconPath:           asset-path('dresssed/icons/check.png');
-
-
-
 // RULES
 // -----
 // You can optionally remove some imports to end up with a tidier file. But keep in mind some
 // rules in a file might depend on rules in another one.
-
-@import "twitter/bootstrap/variables";
-@import "twitter/bootstrap/mixins";
 
 // Reset and dependencies
 @import "twitter/bootstrap/normalize";
@@ -166,6 +64,9 @@
 // Utility classes
 @import "twitter/bootstrap/utilities";
 @import "twitter/bootstrap/responsive-utilities";
+
+// Font Awesome
+@import "font_awesome/font-awesome";
 
 // Import Dresssed rules.
 @import "dresssed/mixins";
@@ -225,9 +126,6 @@
 @import "dresssed/app_pages/user-settings";
 @import "dresssed/app_pages/timeline";
 @import "dresssed/app_pages/user-profile";
-
-// Font Awesome
-@import "font_awesome/font-awesome";
 
 
 // CUSTOM RULES

@@ -8,7 +8,7 @@ $wellPadding: 14px;
   @include box-shadow(0 1px 0 #fff);
 
   padding: $wellPadding;
-  margin-bottom: $baseLineHeight;
+  margin-bottom: $line-height-base;
 
   &.well-lg {
     padding: $wellPadding*2;

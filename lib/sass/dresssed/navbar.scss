@@ -32,10 +32,8 @@
   background-color: $activeBackgroundColor;
 }
 
-.navbar-default .navbar-text {
+.navbar-default {
   .btn-group {
-    margin-top: -3px;
-    margin-bottom: -4px;
 
     > .active {
       color: $brand-primary;
@@ -121,7 +119,7 @@
 
   .dropdown-toggle > i {
     width: $line-height-computed;
-    margin-top: 7px;
+    margin-top: 10px;
     margin-left: 10px;
     line-height: $line-height-base;
   }

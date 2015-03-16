@@ -16,7 +16,7 @@
 
 .nav-pills.nav-stacked.nav-caret-left > .active {
   &::before {
-    @include horizontal-caret(left, $baseLineHeight, 9px, $link-color);
+    @include horizontal-caret(left, $line-height-base, 9px, $link-color);
     border-right: 9px solid $link-color;
     margin-top: 4px;
     margin-left: -12px;
@@ -37,7 +37,7 @@
 
 .nav-pills.nav-stacked.nav-caret-right > .active {
   &::before {
-    @include horizontal-caret(right, $baseLineHeight, 9px, $link-color);
+    @include horizontal-caret(right, $line-height-base, 9px, $link-color);
     border-left: 9px solid $link-color;
 
     margin-top: 1px;

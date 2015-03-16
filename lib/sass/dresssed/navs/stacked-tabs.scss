@@ -52,14 +52,14 @@
 .nav-tabs.nav-stacked.nav-caret-left > li.active {
 
   &::before {
-    @include horizontal-caret(left, $baseLineHeight, 9px, $borderColor);
+    @include horizontal-caret(left, $line-height-base, 9px, $borderColor);
     border-right: 9px solid #cbdcde;
     margin-top: 4px;
     margin-left: -12px;
   }
 
   &::after {
-    @include horizontal-caret(left, $baseLineHeight, 9px, lighten($backgroundColor, 2%));
+    @include horizontal-caret(left, $line-height-base, 9px, lighten($backgroundColor, 2%));
     border-right: 9px solid lighten($backgroundColor, 2%);
 
     margin-top: -34px;
@@ -78,7 +78,7 @@
 
 .nav-tabs.nav-stacked.nav-caret-right > li.active {
   &::before, &::after {
-    @include horizontal-caret(right, $baseLineHeight, 9px, $borderColor);
+    @include horizontal-caret(right, $line-height-base, 9px, $borderColor);
     border-left: 9px solid $borderColor;
     margin-top: 2px;
     margin-right: -11px;
@@ -86,10 +86,10 @@
   }
 
   &::after {
-    @include horizontal-caret(right, $baseLineHeight, 9px, $backgroundColor);
+    @include horizontal-caret(right, $line-height-base, 9px, $backgroundColor);
     border-left: 9px solid lighten($backgroundColor, 2%);
 
-    margin-top: -$baseLineHeight*2;
+    margin-top: -$line-height-base*2;
     margin-right: -10px;
   }
 

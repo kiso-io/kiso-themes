@@ -133,41 +133,6 @@ fieldset[disabled] .btn-primary.active {
   @include buttonBackground(#454545, #262626);
 }
 
-// Homepage call to action
-
-.btn-border {
-  @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.1));
-  display: inline-block;
-  padding: 5px;
-  border-radius: $buttonBorderRadius;
-  background-color: $buttonTransparentBorder;
-
-  .btn {
-    @include box-shadow(none);
-    @include buttonBackground(lighten($callToActionBackgroundColor, 20%), $callToActionBackgroundColor, 0 1px 1px rgba(255, 255, 255, 0.75));
-    margin: 0;
-    border: 0;
-    color: $callToActionTextColor;
-    text-transform: uppercase;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    font-weight: bold;
-    font-family: $font-family-serif;
-
-    &:hover {
-      @include buttonBackground(lighten($callToActionBackgroundColor, 10%), darken($callToActionBackgroundColor, 10%));
-      color: $callToActionTextColor;
-      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    }
-  }
-
-  .btn.active,
-  .btn:active {
-    @include buttonBackground($callToActionBackgroundColor, darken($callToActionBackgroundColor, 10%));
-    color: $callToActionTextColor;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  }
-}
-
 // Outline Buttons
 
 .btn-outline-default {
