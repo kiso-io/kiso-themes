@@ -176,19 +176,19 @@ $side-nav-menu-background-color: color($blue-grey, 900);
       right: 10px;
       z-index: 10 !important;
       display: block;
-      padding: 3px;
       width: 40px;
-      background-color: #fff;
-      color: #000;
+      background-color: transparent;
+      border: 1px solid $text-color;
+      color: $text-color;
       text-align: center;
       cursor: pointer;
+      margin-right: 5px;
     }
 
     .brand {
-      padding-left: 20px;
+      padding-left: 15px;
       text-align: left !important;
-      font-size: 22px;
-      line-height: 50px !important;
+      line-height: $navbar-height !important;
     }
   }
 }
