@@ -12,6 +12,15 @@
     padding-top: 13px;
     padding-bottom: 10px;
   }
+
+  .dropdown,
+  .dropdown-toggle {
+    height: $navbar-height;
+  }
+}
+
+.navbar-nav li.active a {
+  height: $navbar-height;
 }
 
 .navbar-shadow {
