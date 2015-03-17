@@ -7,7 +7,7 @@
 
 .sheet {
   margin: 6px 0 0 6px;
-  margin-bottom: $line-height-base;
+  margin-bottom: $line-height-base*10px;
   border-color: lighten($borderColor, 7%);
   background: lighten($backgroundColor, 2%);
 }
@@ -110,7 +110,6 @@
 }
 
 .form-sheet-footer {
-  margin-top: -21px;
   margin-bottom: 1em;
   margin-left: 27px;
 }
