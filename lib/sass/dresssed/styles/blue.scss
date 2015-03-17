@@ -48,7 +48,7 @@ $navbar-default-link-color:                lighten($brand-primary, 25%);
 $navbar-default-link-hover-color:          lighten($brand-primary, 45%);
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         lighten($brand-primary, 45%);
-$navbar-default-link-active-bg:            darken($brand-primary, 6.5%) !default;
+$navbar-default-link-active-bg:            darken($brand-primary, 6.5%);
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
