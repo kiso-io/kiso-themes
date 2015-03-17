@@ -15,12 +15,12 @@
 
   .dropdown,
   .dropdown-toggle {
-    height: $navbar-height;
+    min-height: $navbar-height;
   }
 }
 
 .navbar-nav li.active a {
-  height: $navbar-height;
+  min-height: $navbar-height;
 }
 
 .navbar-shadow {
