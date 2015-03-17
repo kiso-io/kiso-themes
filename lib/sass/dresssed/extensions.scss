@@ -161,8 +161,8 @@ $avatar-height: 200px;
     position: absolute;
     margin: ($avatar-width / 4) 0 0 (-$avatar-width / 5);
     padding: 3px;
-    width: $avatar-width / 2.24719;
-    height: $avatar-height / 2.29885;
+    width: $avatar-width / 2.3;
+    height: $avatar-height / 2.2;
     border-radius: 100px;
     background: rgba(255, 255, 255, 0.6);
     color: $brand-primary;
@@ -173,7 +173,7 @@ $avatar-height: 200px;
       border: 3px solid;
       border-radius: 100px;
       vertical-align: middle;
-      font-size: $avatar-width / 3;
+      font-size: $avatar-width / 3.2;
     }
   }
 
