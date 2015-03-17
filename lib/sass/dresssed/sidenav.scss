@@ -163,7 +163,42 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   }
 }
 
-@media (max-width: 768px) {
+.sub-menu.collapse.in li {
+  margin-left: 44px;
+  opacity: 1;
+}
+
+@for $i from 1 through 30 {
+  .sub-menu.collapse.in li:nth-child(#{$i}) {
+    @include prefix(transition-delay, #{$i * (40 - $i)}ms);
+  }
+}
+
+.main-content {
+  @include prefix(opacity, 100ms ease-in-out);
+  z-index: 1;
+  margin-left: $side-nav-width;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+
+.nav-side-menu-footer {
+  background-color: $side-nav-menu-background-color;
+  position: fixed;
+  padding: 7px 15px 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: $side-nav-width;
+
+  > div {
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px), (max-width: 1024px) and (orientation: landscape) {
   .nav-side-menu {
     position: relative;
     margin-bottom: 0;
@@ -191,35 +226,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
       line-height: $navbar-height !important;
     }
   }
-}
 
-@media (min-width: 768px) {
-  .nav-side-menu .menu-list .menu-content {
-    display: block;
-    visibility: visible;
-  }
-}
-
-.sub-menu.collapse.in li {
-  margin-left: 44px;
-  opacity: 1;
-}
-
-@for $i from 1 through 30 {
-  .sub-menu.collapse.in li:nth-child(#{$i}) {
-    @include prefix(transition-delay, #{$i * (40 - $i)}ms);
-  }
-}
-
-.main-content {
-  @include prefix(opacity, 100ms ease-in-out);
-  z-index: 1;
-  margin-left: $side-nav-width;
-  vertical-align: top;
-  word-break: break-word;
-}
-
-@media (max-width: 768px) {
   .nav-side-menu .menu-list .menu-content {
     height: 0;
     display: block;
@@ -233,26 +240,16 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   .main-content {
     margin-left: 0;
   }
-}
 
-.nav-side-menu-footer {
-  background-color: $side-nav-menu-background-color;
-  position: fixed;
-  padding: 7px 15px 10px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: $side-nav-width;
-
-  > div {
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 768px) {
   .nav-side-menu-footer {
     position: relative;
     width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+    visibility: visible;
   }
 }

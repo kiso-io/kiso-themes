@@ -185,3 +185,21 @@
     }
   }
 }
+
+@media (max-width: 736px), (max-width: 1024px) and (orientation: landscape) {
+  .navbar-form {
+    border: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .dropdown-menu .panel {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .dropdown-menu .panel {
+    width: 280px !important;
+  }
+}
