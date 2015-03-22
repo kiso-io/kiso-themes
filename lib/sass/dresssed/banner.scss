@@ -1,10 +1,7 @@
 #banner {
-  height: 103px;
-
   img, i {
     float: left;
-    margin: 3px 20px 3px 0;
-    height: 40px;
+    width: 100%;
   }
 
   h3 {
@@ -15,7 +12,6 @@
 
   p {
     color: lighten($text-color, 15%);
-    padding-left: 65px;
   }
 
   .container {

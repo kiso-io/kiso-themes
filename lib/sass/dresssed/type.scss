@@ -2,7 +2,7 @@
 body {
   color: $text-color;
   background: $backgroundColor;
-  font-family: $font-family-sans-serif;
+  font-family: $font-family-serif;
   font-size: $font-size-base;
   line-height: $line-height-base;
   -webkit-font-smoothing: antialiased;
@@ -21,7 +21,7 @@ h4 {
   letter-spacing: -1px;
   font-family: $font-family-sans-serif;
   font-weight: inherit;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 h1 {
@@ -38,7 +38,8 @@ h3 {
 }
 
 h4 {
-  font-size: 1.333em;
+  font-size: 1.25em;
+  text-transform: uppercase;
 }
 
 .h1,
@@ -114,7 +115,7 @@ ul.checks {
 // Divider
 hr {
   height: 4px;
-  border: 0;
+  border-top: 1px solid $borderColor;
 }
 
 .lt-ie8 hr {

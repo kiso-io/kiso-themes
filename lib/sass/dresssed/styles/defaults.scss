@@ -54,7 +54,10 @@ $font-family-sans-serif:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvet
 $font-family-serif:       "Avenir", "Lato", Arial, Helvetica, sans-serif;
 $font-family-monospace:   "Andale Mono", "Lucida Console", monospace;
 
-$line-height-base:        (20/16);
+$line-height-base:        (21/13);
+$line-height-computed:    floor(($font-size-base * $line-height-base));
+
+$input-height-base:       ($line-height-computed + ($padding-base-vertical * 2) + 2);
 
 // Buttons
 $primaryButtonBackground:     $altBackgroundColor;

@@ -13,7 +13,7 @@
 }
 
 .vertical-center > .container {
-  max-width: 100%;
+  max-width: 99%;
 
   display: inline-block;
   vertical-align: middle;  /* vertical alignment of the inline element */
@@ -84,6 +84,21 @@
   }
 }
 
+$max: 30;
+$step: 1;
+
+@for $i from 1 through ceil($max / $step) {
+  $value: ($i - 1) * $step;
+
+  .w-#{$value} {
+    width: #{$value}em;
+  }
+
+  .fs-#{$value} {
+    font-size: #{$value}em;
+  }
+}
+
 $max: 55;
 $step: 5;
 
@@ -91,43 +106,43 @@ $step: 5;
   $value: ($i - 1) * $step;
 
   .p#{$value} {
-    padding: #{$value}px;
+    padding: #{$value}px !important;
   }
 
   .pb#{$value} {
-    padding-bottom: #{$value}px;
+    padding-bottom: #{$value}px !important;
   }
 
   .pt#{$value} {
-    padding-top: #{$value}px;
+    padding-top: #{$value}px !important;
   }
 
   .pl#{$value} {
-    padding-left: #{$value}px;
+    padding-left: #{$value}px !important;
   }
 
   .pr#{$value} {
-    padding-right: #{$value}px;
+    padding-right: #{$value}px !important;
   }
 
   .m#{$value} {
-    margin: #{$value}px;
+    margin: #{$value}px !important;
   }
 
   .mb#{$value} {
-    margin-bottom: #{$value}px;
+    margin-bottom: #{$value}px !important;
   }
 
   .mt#{$value} {
-    margin-top: #{$value}px;
+    margin-top: #{$value}px !important;
   }
 
   .ml#{$value} {
-    margin-left: #{$value}px;
+    margin-left: #{$value}px !important;
   }
 
   .mr#{$value} {
-    margin-right: #{$value}px;
+    margin-right: #{$value}px !important;
   }
 }
 

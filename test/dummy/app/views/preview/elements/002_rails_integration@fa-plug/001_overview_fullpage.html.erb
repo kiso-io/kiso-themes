@@ -4,207 +4,249 @@
 </div>
 
 <div class='container'>
-<section id="helpers">
-  <div class="page-header">
-    <h1>Helpers <small>helping you use Bootstrap</small></h1>
-  </div>
+  <section id="helpers">
+    <div class="page-header">
+      <h1>Helpers <small>helping you use Bootstrap</small></h1>
+    </div>
 
-  <p>We haven't converted any possible Bootstrap use case to a Rails helper. Just the bare minimum. The idea here is to help you write less code and not to hide the underneath markup. So in cases where using plain ol' HTML was simple enough we've refrained from wrapping it inside a helper.</p>
+    <p>We haven't converted any possible Bootstrap use case to a Rails helper. Just the bare minimum. The idea here is to help you write less code and not to hide the underneath markup. So in cases where using plain ol' HTML was simple enough we've refrained from wrapping it inside a helper.</p>
 
-  <h2>Forms</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <p><code>error_notification</code> renders error notifications on top of forms.</p>
-      <%= code_block do %>
+    <h2>Forms</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <p><code>error_notification</code> renders error notifications on top of forms.</p>
+        <%= code_block do %>
         <%%= form_for @user do |f|  %>
-          <%%= f.error_notification %>
-          ...
+        <%%= f.error_notification %>
+        ...
         <%% end %>
-      <% end %>
-      <p>If any error is present on the object the following message will be displayed.</p>
-      <div class="alert alert-danger">
-        <%= icon_tag("remove") %> 3 errors prohibited this user from from being saved.
+        <% end %>
+        <p>If any error is present on the object the following message will be displayed.</p>
+        <div class="alert alert-danger">
+          <%= icon_tag("remove") %> 3 errors prohibited this user from from being saved.
+        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <p><code>form_group</code> can be used on form builders (inside <code>form_for</code>). It will handle displaying error messages next to fields and adding the proper classes to the wrapping <code>&lt;div class="form-group"&gt;</code>.</p>
-      <%= code_block do %>
+      <div class="col-md-6">
+        <p><code>form_group</code> can be used on form builders (inside <code>form_for</code>). It will handle displaying error messages next to fields and adding the proper classes to the wrapping <code>&lt;div class="form-group"&gt;</code>.</p>
+        <%= code_block do %>
         <%%= f.form_group :name do |f| %>
-          <%%= f.label :name, :class => 'control-label' %>
-          <div class="controls">
-            <%%= f.text_field :name %>
-            <%%= f.error_messages %>
-          </div>
+        <%%= f.label :name, :class => 'control-label' %>
+        <div class="controls">
+          <%%= f.text_field :name %>
+          <%%= f.error_messages %>
+        </div>
         <%% end %>
-      <% end %>
-      <p>Bootstrap form documentation for proper usage of the <code>&lt;div class="form-group"&gt;</code> in forms.</p>
-    </div>
-  </div> <!-- /.row -->
-
-  <h2>Dropdowns</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <p><code>activatable_li_tag</code> generates an <code>&lt;li&gt;</code> tag with the <code>active</code> class added if the url is the current one. Useful for navbar and dropdowns.</p>
-      <%= code_block do %>
-        <%%= activatable_li_tag users_path do |url| %>
-          <%%= link_to "Users", url %>
-        <%% end %>
-      <% end %>
-
-      <p><code>activatable_li_tag_with_link</code> generates an <code>&lt;li&gt;</code> tag with the <code>active</code> class added if the url is the current one, with a link inside it pointing to that url. The following code produces the same as the example before.</p>
-      <%= code_block do %>
-        <%%= activatable_li_tag_with_link users_path %>
-      <% end %>
-    </div>
-    <div class="col-md-6">
-      <p><code>dropdown_menu</code> renders a dropdown menu that can be used inside navbars and tabs.</p>
-      <%= code_block do %>
-        <%%= dropdown_menu "Dropdown" do %>
-          <%%= activatable_li_tag_with_link "This page", "#{}" %>
-          <%%= activatable_li_tag_with_link "...", "..." %>
-        <%% end %>
-      <% end %>
-      <p>The previous code rendered inside a <code>&lt;ul class="nav nav-pills"&gt;</code> will produce the following.</p>
-      <ul class="nav nav-pills">
-        <li class="active"><%= link_to "Active link", '#' %></li>
-        <%= dropdown_menu "Dropdown" do %>
-          <%= activatable_li_tag_with_link "This page", "#" %>
-          <%= activatable_li_tag_with_link "Fancy forms", "#" %>
-          <%= activatable_li_tag_with_link "Classy tables", "#" %>
-          <%= activatable_li_tag_with_link "Pricing table", "#" %>
         <% end %>
-      </ul>
+        <p>Bootstrap form documentation for proper usage of the <code>&lt;div class="form-group"&gt;</code> in forms.</p>
+      </div>
+    </div> <!-- /.row -->
 
-      <p><code>dropdown_button</code> renders a dropdown menu that can be used inside button groups.</p>
-      <%= code_block do %>
-        <%%= dropdown_button "Dropdown" do %>
-          <%%= activatable_li_tag_with_link "This page", "#" %>
-          <%%= activatable_li_tag_with_link "...", "..." %>
+    <h2>Dropdowns</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <p><code>activatable_li_tag</code> generates an <code>&lt;li&gt;</code> tag with the <code>active</code> class added if the url is the current one. Useful for navbar and dropdowns.</p>
+        <%= code_block do %>
+        <%%= activatable_li_tag users_path do |url| %>
+        <%%= link_to "Users", url %>
         <%% end %>
-      <% end %>
+        <% end %>
 
-      <p>The previous code rendered inside a <code>&lt;div class="btn-group"&gt;</code> will produce the following.</p>
-      <div class="btn-group">
-        <%= dropdown_button "Dropdown" do %>
-          <%= activatable_li_tag_with_link "This page", "#" %>
-          <%= activatable_li_tag_with_link "Fancy forms", "#" %>
-          <%= activatable_li_tag_with_link "Classy tables", "#" %>
-          <%= activatable_li_tag_with_link "Pricing table", "#" %>
+        <p><code>activatable_li_tag_with_link</code> generates an <code>&lt;li&gt;</code> tag with the <code>active</code> class added if the url is the current one, with a link inside it pointing to that url. The following code produces the same as the example before.</p>
+        <%= code_block do %>
+        <%%= activatable_li_tag_with_link users_path %>
         <% end %>
       </div>
-    </div>
-  </div> <!-- /.row -->
+      <div class="col-md-6">
+        <p><code>dropdown_menu</code> renders a dropdown menu that can be used inside navbars and tabs.</p>
+        <%= code_block do %>
+        <%%= dropdown_menu "Dropdown" do %>
+        <%%= activatable_li_tag_with_link "This page", "#{}" %>
+        <%%= activatable_li_tag_with_link "...", "..." %>
+        <%% end %>
+        <% end %>
+        <p>The previous code rendered inside a <code>&lt;ul class="nav nav-pills"&gt;</code> will produce the following.</p>
+        <ul class="nav nav-pills">
+          <li class="active"><%= link_to "Active link", '#' %></li>
+          <%= dropdown_menu "Dropdown" do %>
+          <%= activatable_li_tag_with_link "This page", "#" %>
+          <%= activatable_li_tag_with_link "Fancy forms", "#" %>
+          <%= activatable_li_tag_with_link "Classy tables", "#" %>
+          <%= activatable_li_tag_with_link "Pricing table", "#" %>
+          <% end %>
+        </ul>
 
-  <h2>Icons</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <p><code>icon_tag</code> renders any available icon from FontAwesome. Use without the <code>icon-</code> prefix.</p>
-      <%= code_block do %>
+        <p><code>dropdown_button</code> renders a dropdown menu that can be used inside button groups.</p>
+        <%= code_block do %>
+        <%%= dropdown_button "Dropdown" do %>
+        <%%= activatable_li_tag_with_link "This page", "#" %>
+        <%%= activatable_li_tag_with_link "...", "..." %>
+        <%% end %>
+        <% end %>
+
+        <p>The previous code rendered inside a <code>&lt;div class="btn-group"&gt;</code> will produce the following.</p>
+        <div class="btn-group">
+          <%= dropdown_button "Dropdown" do %>
+          <%= activatable_li_tag_with_link "This page", "#" %>
+          <%= activatable_li_tag_with_link "Fancy forms", "#" %>
+          <%= activatable_li_tag_with_link "Classy tables", "#" %>
+          <%= activatable_li_tag_with_link "Pricing table", "#" %>
+          <% end %>
+        </div>
+      </div>
+    </div> <!-- /.row -->
+
+    <h2>Icons</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <p><code>icon_tag</code> renders any available icon from FontAwesome. Use without the <code>icon-</code> prefix.</p>
+        <%= code_block do %>
         <%%= icon_tag("heart") %>
-      <% end %>
-    </div>
-  </div> <!-- /.row -->
+        <% end %>
+      </div>
+    </div> <!-- /.row -->
 
-</section>
+  </section>
 
-<section id="helpers">
-  <div class="page-header">
-    <h1>Layouts <small>a nice place in which to render your views</small></h1>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Application</h2>
-      <p>The application layout, located at <code>app/views/layouts/application.html.{erb,haml}</code>, is the default layout. It contains a header section and sidebar. Being based on Bootstrap 12-column grid, the structure of that layout is easily customizable.</p>
-    </div>
-    <div class="col-md-6">
-      <h2>Home</h2>
-      <p>The home layout, located at <code>app/views/layouts/home.html.{erb,haml}</code> is similar the application layout but doesn't contain any sidebar. It is useful for rendering the home page, about, contact pages and the like. The generate the view for the home page, use the <code>rails generate dresssed:home</code> code generator, described bellow.</p>
-    </div>
-  </div> <!-- /.row -->
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Pricing</h2>
-      <p>The pricing layout is a view (and not a layout in the Rails-sense) rendered inside the home layout to display pricing plans to visitors. You can generate that view using the <code>rails generate dresssed:pricing</code> code generator, described bellow.</p>
-    </div>
-    <div class="col-md-6">
-      <h2>_base</h2>
-      <p>Each layout is rendered inside a <em>partial layout</em>, <code>_base.html.erb</code> or <code>_base.html.haml</code>, thus removing any repetition. Containing a header, footer and common components. It's easy to create your own custom layout by using this partial.</p>
-    </div>
-  </div> <!-- /.row -->
-
-</section>
-
-<section id="helpers">
-  <div class="page-header">
-    <h1>Code generators <small>this code ain't going to write itself</small></h1>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Scaffold integration</h2>
-      <p>This theme comes with its own <code>rails generate scaffold</code> templates. Each time you generate code scaffolding, you'll start with a nice looking set of views.</p>
-
-      <p>See on the top navbar under the <em>Rails / Scaffold views</em> menu for samples.</p>
+  <section id="helpers">
+    <div class="page-header">
+      <h1>Layouts <small>a nice place in which to render your views</small></h1>
     </div>
 
-    <div class="col-md-6">
-      <h2>Dresssed generators</h2>
-      <dl>
-        <dt><code>rails generate dresssed:install</code></dt>
-        <dd>Will install the theme files in your app. Just run this command and you're done.</dd>
-
-        <dt><code>rails generate dresssed:home CONTROLLER ACTION</code></dt>
-        <dd>Generates a homepage style view at app/views/CONTROLLER/ACTION.</dd>
-
-        <dt><code>rails generate dresssed:pricing CONTROLLER ACTION</code></dt>
-        <dd>Generates a pricing style view at app/views/CONTROLLER/ACTION.</dd>
-
-        <dt><code>rails generate dresssed:error_pages</code></dt>
-        <dd>Generates standard Error pages for 403, 404, 422 and 500 statuses at public/.</dd>
-      </dl>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Application</h2>
+        <p>The application layout, located at <code>app/views/layouts/application.html.{erb,haml}</code>, is the default layout. It contains a header section and sidebar. Being based on Bootstrap 12-column grid, the structure of that layout is easily customizable.</p>
+      </div>
+      <div class="col-md-6">
+        <h2>Home</h2>
+        <p>The home layout, located at <code>app/views/layouts/home.html.{erb,haml}</code> is similar the application layout but doesn't contain any sidebar. It is useful for rendering the home page, about, contact pages and the like. The generate the view for the home page, use the <code>rails generate dresssed:home</code> code generator, described bellow.</p>
+      </div>
+    </div> <!-- /.row -->
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Pricing</h2>
+        <p>The pricing layout is a view (and not a layout in the Rails-sense) rendered inside the home layout to display pricing plans to visitors. You can generate that view using the <code>rails generate dresssed:pricing</code> code generator, described bellow.</p>
+      </div>
+      <div class="col-md-6">
+        <h2>_base</h2>
+        <p>Each layout is rendered inside a <em>partial layout</em>, <code>_base.html.erb</code> or <code>_base.html.haml</code>, thus removing any repetition. Containing a header, footer and common components. It's easy to create your own custom layout by using this partial.</p>
+      </div>
+    </div> <!-- /.row -->
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2>_minimal</h2>
+        <p>The Minimal layout simply provides the user nav bar, and a fluid container with one row. For example, Landing Page 3 uses this layout.
+        </p>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2>Devise</h2>
+        <p>The Devise layout uses a <code>centered</code> sub-layout to provide the vertically centered container where only the current devise form is rendered.
+        </p>
+      </div>
     </div>
-  </div> <!-- /.row -->
-</section>
+  </section>
 
-<section id="helpers">
-  <div class="page-header">
-    <h1>Gems integration <small>with a Little Help from My Friends</small></h1>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h2>WillPaginate</h2>
-      <p>Using WillPaginate and its helper <code><%%= will_paginate %></code> will automatically render the Bootstrap pagination component.</p>
-
-      <h2>Kaminari</h2>
-      <p>Similarly, if you prefer Kaminari for pagination, <code><%%= paginate @users %></code> will automatically render the Bootstrap pagination component.</p>
+  <section id="helpers">
+    <div class="page-header">
+      <h1>Code generators <small>this code ain't going to write itself</small></h1>
     </div>
 
-    <div class="col-md-4">
-      <h2>SimpleForm</h2>
-      <p>This theme comes with its own SimpleForm wrapper. Use like so, and your controls will be wrapped in <code>control-group</code> divs with error messages, required markers and all that jazz.</p>
-      <%= code_block do %>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Scaffold integration</h2>
+        <p>This theme comes with its own <code>rails generate scaffold</code> templates. Each time you generate code scaffolding, you'll start with a nice looking set of views.</p>
+
+        <p>See on the top navbar under the <em>Rails / Scaffold views</em> menu for samples.</p>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Dresssed generators</h2>
+        <dl>
+          <dt><code>rails generate dresssed:install</code></dt>
+          <dd>Will install the theme files in your app. Just run this command and you're done.</dd>
+
+          <dt><code>rails generate dresssed:home CONTROLLER ACTION</code></dt>
+          <dd>Generates a homepage style view at app/views/CONTROLLER/ACTION.</dd>
+
+          <dt><code>rails generate dresssed:pricing CONTROLLER ACTION</code></dt>
+          <dd>Generates a pricing style view at app/views/CONTROLLER/ACTION.</dd>
+
+          <dt><code>rails generate dresssed:error_pages</code></dt>
+          <dd>Generates standard Error pages for 403, 404, 422 and 500 statuses at public/.</dd>
+
+          <dt><code>dresssed:devise</code></dt>
+          <dd>Generates the Dresssed custom Devise views into your application.</dd>
+
+          <dt><code>dresssed:error_pages</code></dt>
+          <dd>Generates the Custom error pages into the <code>/public</code> directory of your application.</dd>
+
+          <dt><code>dresssed:landing1 CONTROLLER ACTION</code></dt>
+          <dd>Generates the Landing 1 template at app/views/CONTROLLER/ACTION</dd>
+
+          <dt><code>dresssed:landing2 CONTROLLER ACTION</code></dt>
+          <dd>Generates the Landing 2 template at app/views/CONTROLLER/ACTION</dd>
+
+          <dt><code>dresssed:landing3 CONTROLLER ACTION</code></dt>
+          <dd>Generates the Landing 3 template at app/views/CONTROLLER/ACTION</dd>
+
+          <dt><code>dresssed:legal_pages</code></dt>
+          <dd>Generates the Privacy and Terms of Services page template at <code>app/views/legal/terms_of_service.{erb|haml}</code> and <code>app/views/legal/privacy.{erb|haml}</code></dd>
+
+          <dt><code>dresssed:sidenav CONTROLLER ACTION</code></dt>
+          <dd>Generates the Sidenav style template at app/views/CONTROLLER/ACTION</dd>
+
+          <dt><code>dresssed:timeline CONTROLLER ACTION</code></dt>
+          <dd>Generates the User Timeline template at app/views/CONTROLLER/ACTION</dd>
+
+          <dt><code>dresssed:userprofile CONTROLLER ACTION</code></dt>
+          <dd>Generates the User Profile template at app/views/CONTROLLER/ACTION</dd>
+
+          <dt><code>dresssed:usersettings CONTROLLER ACTION</code></dt>
+          <dd>Generates the User Settings template at app/views/CONTROLLER/ACTION</dd>
+
+        </dl>
+      </div>
+    </div> <!-- /.row -->
+  </section>
+
+  <section id="helpers">
+    <div class="page-header">
+      <h1>Gems integration <small>with a Little Help from My Friends</small></h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2>WillPaginate</h2>
+        <p>Using WillPaginate and its helper <code><%%= will_paginate %></code> will automatically render the Bootstrap pagination component.</p>
+
+        <h2>Kaminari</h2>
+        <p>Similarly, if you prefer Kaminari for pagination, <code><%%= paginate @users %></code> will automatically render the Bootstrap pagination component.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h2>SimpleForm</h2>
+        <p>This theme comes with its own SimpleForm wrapper. Use like so, and your controls will be wrapped in <code>control-group</code> divs with error messages, required markers and all that jazz.</p>
+        <%= code_block do %>
         <%%= simple_form_for @user,
-            :wrapper => :bootstrap,
-            :html => { :class => 'form-horizontal' } %>
-      <% end %>
-      <p>If you have SimpleForm installed, scaffold view <code>_form</code> will use it instead of plain <code>form_for</code>.</p>
-    </div>
+        :wrapper => :bootstrap,
+        :html => { :class => 'form-horizontal' } %>
+        <% end %>
+        <p>If you have SimpleForm installed, scaffold view <code>_form</code> will use it instead of plain <code>form_for</code>.</p>
+      </div>
 
-    <div class="col-md-4">
-      <h2>Devise</h2>
-      <p>If you have Devise installed for handling your authentication, all of its views will be styled.</p>
-      <ul>
-        <li>Sign in</li>
-        <li>Sign up</li>
-        <li>Edit settings</li>
-        <li>Forgot your password</li>
-        <li>Change your password</li>
-        <li>Resend confirmation</li>
-        <li>Resend unlock instructions</li>
-      </ul>
+      <div class="col-md-4">
+        <h2>Devise</h2>
+        <p>If you have Devise installed for handling your authentication, all of its views will be styled.</p>
+        <ul>
+          <li>Sign in</li>
+          <li>Sign up</li>
+          <li>Edit settings</li>
+          <li>Forgot your password</li>
+          <li>Change your password</li>
+          <li>Resend confirmation</li>
+          <li>Resend unlock instructions</li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </div>
