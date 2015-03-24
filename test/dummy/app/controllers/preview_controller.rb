@@ -8,7 +8,7 @@ class PreviewController < ApplicationController
 
   def main
     @body_class = 'main'
-    @section = params[:section] || "001_dashboard@fa-dashboard"
+    @section = params[:section]
     index = @section.index('/') || 0
     index = index + 1 if index > 0
     @title = @section[index..@section.length].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub(/fullpage/, '').titleize
@@ -23,14 +23,14 @@ class PreviewController < ApplicationController
     render template: 'preview/minimal' and return if params[:section] && (params[:section].include?('004_app_pages') || params[:section].include?('fullpage') )
   end
 
-  def switch_style
+  def styles
     @style = params[:style]
 
     raise ArgumentError, "Invalid style" unless @style.in?(Dresssed::Ives::COLORS)
 
     cookies[:style] = @style
 
-    redirect_to :back
+    redirect_to element_path('001_dashboard@fa-dashboard')
   end
 
   def resolve_layout

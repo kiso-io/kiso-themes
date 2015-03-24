@@ -9,7 +9,7 @@ Dummy::Application.routes.draw do
   get 'preview/main' => 'preview#main'
   get 'preview/:section' => 'preview#main', as: :element
 
-  get 'preview/switch_style/:style', to: 'preview#switch_style', as: :switch_style
+  get 'styles/:style', to: 'preview#styles', as: :switch_style
 
   root :to => 'preview#index'
 end

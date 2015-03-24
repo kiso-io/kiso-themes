@@ -5,6 +5,6 @@ module IconsHelper
   #   <%= icon_tag "remove" %>
   #
   def icon_tag(name)
-    content_tag(:i, nil, :class => "fa fa-#{name}")
+    content_tag(:i, nil, class: "fa fa-#{name}")
   end
 end

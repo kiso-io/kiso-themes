@@ -186,6 +186,8 @@ $side-nav-menu-background-color: color($blue-grey, 900);
 .nav-side-menu-footer {
   background-color: $side-nav-menu-background-color;
   position: fixed;
+  @include prefix(transition, none);
+  @include prefix(transition-delay, none);
   padding: 7px 15px 10px;
   left: 0;
   right: 0;

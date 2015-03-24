@@ -19,16 +19,3 @@
   }
 }
 
-@media (max-width: 768px) {
-  #banner {
-    display: none;
-    p { padding-left: 0;}
-  }
-}
-
-@media (min-width: 768px) and (max-width: 980px) {
-  #banner {
-    img, i { display: none; }
-    p { padding-left: 0;}
-  }
-}
