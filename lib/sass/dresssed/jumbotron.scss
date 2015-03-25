@@ -19,3 +19,14 @@
   line-height:27px;
   padding-left: 4px;
 }
+
+@media (max-width: 375px) {
+  .jumbotron h1 {
+    font-size: 2em;
+    letter-spacing: 0px;
+  }
+
+  .jumbotron p {
+    padding: 4px 0 0 0;
+  }
+}

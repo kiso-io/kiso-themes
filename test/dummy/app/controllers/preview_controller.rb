@@ -8,7 +8,7 @@ class PreviewController < ApplicationController
 
   def main
     @body_class = 'main'
-    @section = params[:section]
+    @section = params[:section] || '001_dashboard@fa-dashboard'
     index = @section.index('/') || 0
     index = index + 1 if index > 0
     @title = @section[index..@section.length].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub(/fullpage/, '').titleize
