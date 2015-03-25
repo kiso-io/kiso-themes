@@ -103,7 +103,7 @@ $step: 1;
   }
 }
 
-$max: 55;
+$max: 60;
 $step: 5;
 
 @for $i from 1 through ceil($max / $step) {
