@@ -1,7 +1,7 @@
 <div class='container-fluid'>
   <div class="row">
     <div class="user-profile">
-      <header style="background: url("<%= image_path("dresssed/header_1.jpg") %>")">
+      <header style="background: url(<%= image_path("dresssed/header_1.jpg") %>)">
         <div class="avatar">
           <img class="img-rounded" src="http://fillmurray.com/200/200" />
           <h1>John McDowall</h1>
@@ -87,10 +87,6 @@
       </ul>
     </div>
     <div class="col-sm-6">
-      <ul class="list-group mt15">
-        <li class="list-group-item">Followers <span class="badge">4</span></li>
-        <li class="list-group-item">Following <span class="badge">14</span></li>
-      </ul>
       <div class="panel panel-default mt15" id="panels">
         <div class="panel-heading">
           User Bio
@@ -99,6 +95,10 @@
           Currently working on new forms of time travel involving claw-foot bathtubs and large quantities of ice.
         </p>
       </div>
+      <ul class="list-group mt15">
+        <li class="list-group-item">Followers <span class="badge">4</span></li>
+        <li class="list-group-item">Following <span class="badge">14</span></li>
+      </ul>
     </div>
   </div>
 </div>

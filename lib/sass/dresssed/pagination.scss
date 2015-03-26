@@ -1,5 +1,6 @@
-.pagination-lg {
-  font-size: 2.5em;
+.pagination-lg li a{
+  font-size: 1.2em;
+  line-height: $line-height-base + 5px;
 }
 
 .pagination ul {
@@ -30,10 +31,14 @@
   margin-left: 10px;
   padding: $padding-base-horizontal;
   text-align: center;
-  border-color: transparent;
+  border-color: $borderColor;
   border-left-width: 1px;
   border-radius: 3px;
   line-height: $line-height-base + 5px;
+
+  &:active {
+    @include prefix(transform, scale(0.9));
+  }
 }
 
 .pagination a:hover,
@@ -51,4 +56,73 @@
   margin-left: 0;
   color: $quietColor;
   background: none;
+}
+
+.pagination-group {
+  li a {
+    margin-left: -2px;
+    border-radius: 0;
+  }
+
+  li:last-child a {
+    border-radius: 0px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}
+
+.pagination-block {
+  border-radius: 0.25em;
+  border: 1px solid $borderColor;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+
+  li {
+    float: none;
+    border: none;
+    margin: 0;
+    display: inline-block;
+    border-right: none;
+
+    a {
+      padding: .8em 1em;
+
+      &.active {
+        background-color: $brand-primary;
+        color: white;
+      }
+
+      &:hover {
+        border: none;
+      }
+    }
+
+    &.previous {
+      float: left;
+
+      a:hover {
+        border: none;
+        border-right: 1px solid $borderColor;
+      }
+    }
+
+    &.next {
+      float: right;
+
+      a:hover {
+        border: none;
+        border-left: 1px solid $borderColor;
+      }
+    }
+
+    a {
+      background: transparent;
+      border: none;
+      margin: 0;
+      float: none;
+      line-height: 2.6;
+    }
+  }
 }
