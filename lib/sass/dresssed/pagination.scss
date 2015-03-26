@@ -71,6 +71,40 @@
   }
 }
 
+.pager.arrows {
+
+  li.previous a {
+    width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(image-path("dresssed/arrow-2.svg"));
+
+    &::before {
+      content: '\00ab ';
+    }
+  }
+
+  li.next a {
+    width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(image-path("dresssed/arrow-2.svg"));
+    @include prefix(transform, rotate(180deg));
+
+    &::before {
+      content: '\00ab ';
+    }
+  }
+}
+
 .pagination-block {
   border-radius: 0.25em;
   border: 1px solid $borderColor;
