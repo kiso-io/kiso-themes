@@ -15,7 +15,7 @@
   background-color: $brand-warning;
 }
 .label-warning:hover {
-  background-color: darken($orange, 10%);
+  background-color: darken($brand-warning, 10%);
 }
 .label-success {
   background-color: $brand-success;

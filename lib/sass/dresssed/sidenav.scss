@@ -184,6 +184,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
 
 
 .nav-side-menu-footer {
+  -webkit-transform: translateZ(0);   // Thanks, Chrome. http://stackoverflow.com/questions/15152470/chrome-rendering-issue-fixed-position-anchor-with-ul-in-body
   background-color: $side-nav-menu-background-color;
   position: fixed;
   @include prefix(transition, none);

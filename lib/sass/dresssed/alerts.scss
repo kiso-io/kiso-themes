@@ -3,26 +3,48 @@
   top: 0;
 }
 
+.alert {
+  .alert-link {
+
+  }
+}
+
 .alert-danger {
   background-color: $errorBackground;
-  border-color: #ebccd1;
+  border-color: $errorBorder;
   color: $errorText;
+
+  .alert-link {
+    color: lighten($errorText, 10%);
+  }
 }
 
 .alert-success {
   background-color: $successBackground;
   border-color: $successText;
   color: $successText;
+
+  .alert-link {
+    color: lighten($successText, 10%);
+  }
 }
 
 .alert-warning {
   background-color: $warningBackground;
   border-color: $warningText;
   color: $warningText;
+
+  .alert-link {
+    color: lighten($warningText, 10%);
+  }
 }
 
 .alert-info {
   background-color: $infoBackground;
   border-color: $infoText;
   color: $infoText;
+
+  .alert-link {
+    color: lighten($infoText, 10%);
+  }
 }

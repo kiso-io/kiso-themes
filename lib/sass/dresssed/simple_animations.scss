@@ -1,0 +1,100 @@
+@include keyframes(drop-fade) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(-0.6em));
+  }
+  50% {
+    opacity: 0;
+    @include transform(translateY(-0.6em));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(rise-fade) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(+0.6em));
+  }
+  50% {
+    opacity: 0;
+    @include transform(translateY(+0.6em));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(right-fade) {
+  0% {
+    opacity: 0;
+    @include transform(translateX(-0.6em));
+  }
+  50% {
+    opacity: 0;
+    @include transform(translateX(-0.6em));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(left-fade) {
+  0% {
+    opacity: 0;
+    @include transform(translateX(+0.6em));
+  }
+  50% {
+    opacity: 0;
+    @include transform(translateX(+0.6em));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(fade-in) {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+$max: 1050;
+$step: 50;
+$start: 200;
+
+@for $i from 1 through ceil($max / $step) {
+  $value: $start + (($i - 1) * $step);
+
+  .animate-drop-fade-#{$value} {
+    @include prefix(animation, drop-fade #{$value}ms);
+  }
+
+  .animate-rise-fade-#{$value} {
+    @include prefix(animation, rise-fade #{$value}ms);
+  }
+
+  .animate-right-fade-#{$value} {
+    @include prefix(animation, right-fade #{$value}ms);
+  }
+
+  .animate-left-fade-#{$value} {
+    @include prefix(animation, left-fade #{$value}ms);
+  }
+
+  .animate-fade-in-#{$value} {
+    @include prefix(animation, fade-in #{$value}ms);
+  }
+}

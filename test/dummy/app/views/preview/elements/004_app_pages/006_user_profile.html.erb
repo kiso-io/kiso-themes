@@ -1,24 +1,26 @@
-<div class="user-profile">
-  <header style="background: url("<%= image_path("dresssed/header_1.jpg") %>")">
-    <div class="avatar">
-      <img class="img-rounded" src="http://fillmurray.com/200/200" />
-      <h1>John McDowall</h1>
+<div class='container-fluid'>
+  <div class="row">
+    <div class="user-profile">
+      <header style="background: url("<%= image_path("dresssed/header_1.jpg") %>")">
+        <div class="avatar">
+          <img class="img-rounded" src="http://fillmurray.com/200/200" />
+          <h1>John McDowall</h1>
+        </div>
+      </header>
     </div>
-  </header>
-</div>
-<div class='container'>
+  </div>
   <div class="row">
     <div class="left-timeline col-sm-6">
       <form role="form" class="timeline-update">
         <textarea class="form-control" placeholder="What are you working on?"></textarea>
         <div class="row">
           <div class="col-xs-6 col-sm-6">
-            <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
-            <a class="btn btn-sm btn-default"><i class="fa fa-video-camera"></i></a>
-            <a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a>
+            <a class="btn btn-sm btn-default"><i class="fa fa-fw fa-camera"></i></a>
+            <a class="btn btn-sm btn-default"><i class="fa fa-fw fa-video-camera"></i></a>
+            <a class="btn btn-sm btn-default"><i class="fa fa-fw fa-map-marker"></i></a>
           </div>
           <div class="col-xs-6 col-sm-6 text-right">
-            <button type="submit" class="btn btn-outline-primary">Post</button>
+            <button type="submit" class="btn btn-sm btn-outline-primary">Post</button>
           </div>
         </div>
       </form>

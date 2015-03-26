@@ -8,12 +8,6 @@ $style: "blue";
 
 $brand-primary: color($light-blue, 900);
 
-// Make grays blueish
-$grayDarker:            #112;
-$grayDark:              #223;
-$gray:                  #445;
-$grayLight:             #889;
-$grayLighter:           #dee;
 
 // Typography
 $text-color:            desaturate(darken($brand-primary, 5%), 30%);
@@ -38,7 +32,7 @@ $buttonTransparentBorder:     rgba(8, 23, 28, 0.35);
 // --------------------------------------------------
 
 // Input placeholder text color
-$placeholderText:         $grayLight;
+$placeholderText:         color($blue-grey, 300);
 
 // Hr border color
 $hrBorder:                #dae8ec;

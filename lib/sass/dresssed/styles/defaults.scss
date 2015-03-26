@@ -13,38 +13,21 @@ $altBackgroundColor:    #2866AA;
 $link-color:             #08c;
 $link-color-hover:        darken($link-color, 15%);
 
-// Grays
-$black:                 #000;
-$grayDarker:            #222;
-$grayDark:              #333;
-$gray:                  #555;
-$grayLight:             #999;
-$grayLighter:           #eee;
-$white:                 #fff;
-
-// Accent colors
-$blue:                  #67809F;
-$blueDark:              #03C9A9;
-$green:                 #46a546;
-$red:                   #DD2C43;
-$yellow:                #ffc40d;
-$orange:                #F27935;
-$pink:                  #c3325f;
-$purple:                #7a43b6;
-
 // States
 
 $primary: $altBackgroundColor;
-$warning: $orange;
-$danger:  $red;
-$success: $blueDark;
-$info:    $blue;
+$warning: color($orange, 900);
+$danger:  color($red, 900);
+$success: color($green, 'a700');
+$info:    color($light-blue, 400);
 
 $brand-primary: $primary;
 $brand-success: $success;
 $brand-info:    $info;
 $brand-warning: $warning;
 $brand-danger:  $danger;
+
+$white: #fff;
 
 // Typography
 $font-size-base:        16px;
@@ -84,10 +67,10 @@ $zindexModalBackdrop:     1040;
 $zindexModal:             1050;
 
 // Input placeholder text color
-$placeholderText:         $grayLight;
+$placeholderText:         color($grey, 300);
 
 // Hr border color
-$hrBorder:                $grayLighter;
+$hrBorder:                color($grey, 100);
 
 
 $navbar-height: 55px;
@@ -97,20 +80,20 @@ $generalBorderRadius: 2px;
 $side-nav-width: 270px;
 
 // Form states and alerts
-$warningText:             $orange;
-$warningBackground:       #fcf8e3;
+$warningText:             color($orange, 50);
+$warningBackground:       color($orange, 900);
 $warningBorder:           darken(adjust-hue($warningBackground, -10), 3%);
 
-$errorText:               $red;
-$errorBackground:         #f2dede;
+$errorText:               color($red, 100);
+$errorBackground:         color($red, 900);
 $errorBorder:             darken(adjust-hue($errorBackground, -10), 3%);
 
-$successText:             darken($success, 10%);
-$successBackground:       #dff0d8;
+$successText:             color($green, 50);
+$successBackground:       color($green, 'a700');
 $successBorder:           darken(adjust-hue($successBackground, -10), 5%);
 
-$infoText:                #3a87ad;
-$infoBackground:          #d9edf7;
+$infoText:                color($light-blue, 50);
+$infoBackground:          color($light-blue, 900);
 $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%);
 
 $primaryText:                #3a87ad;

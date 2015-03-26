@@ -91,7 +91,7 @@
         width: 100%;
         border-top: 1px solid $borderColor;
         border-bottom: none;
-        background-color: $grayLighter;
+        background-color: color($grey, 100);
 
         a {
           width: 90%;
@@ -99,7 +99,7 @@
         }
 
         a:hover {
-          background-color: $grayLighter;
+          background-color: color($grey, 100);
           font-weight: bold;
         }
       }
@@ -113,7 +113,7 @@
 
   i {
     width: .9em;
-    color: $blue;
+    color: $brand-primary;
     font-size: .9em;
     line-height: $line-height-base;
   }
@@ -150,7 +150,7 @@
     padding: 0;
 
     i {
-      color: $blue;
+      color: $brand-primary;
       line-height: $line-height-base;
     }
   }

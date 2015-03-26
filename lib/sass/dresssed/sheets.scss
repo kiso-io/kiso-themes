@@ -42,7 +42,7 @@
     margin-left: -$boxPadding;
     padding: 0;
     padding-right: 19px;
-    border-top: solid 2px $grayLighter;
+    border-top: solid 2px color($grey, 100);
 
     label.form-label {
       position: absolute;

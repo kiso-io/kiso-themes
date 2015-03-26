@@ -6,8 +6,30 @@
   #{$name}: #{$argument};
 }
 
-@mixin transform($value) {
-  @include prefix(transform, $value);
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin transform($transforms) {
+  @include prefix(transform, $transforms);
+}
+
+@mixin animation($str) {
+  @include prefix(animation, #{$str});
 }
 
 // Border Radius
@@ -56,7 +78,6 @@
 
 // Carets
 // ------
-
 @mixin horizontal-caret($side, $height: 9px, $width: 9px, $color: $white){
   display: inline-block;
   width: 0;
@@ -74,8 +95,6 @@
   position: relative;
   float: $side;
 }
-
-
 
 // Button backgrounds
 // ------------------
@@ -99,7 +118,6 @@
   }
 }
 
-
 // Gradient Bar Colors for buttons and alerts
 @mixin gradientBar($primaryColor, $secondaryColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   color: $textColor;
@@ -107,11 +125,4 @@
   @include gradient-vertical($primaryColor, $secondaryColor);
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
-}
-
-// IE7 inline-block
-// ----------------
-@mixin ie7-inline-block() {
-  *display: inline; /* IE7 inline-block hack */
-  *zoom: 1;
 }
