@@ -78,6 +78,10 @@ task :compile_assets do
     puts "Processing #{file}"
     CssRewriter.compile(file, "app/assets/stylesheets/dresssed")
   end
+
+  cd "test/dummy" do
+    sh "rake assets:clobber"
+  end
 end
 
 task :build => :compile_assets
