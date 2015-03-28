@@ -168,6 +168,10 @@
     line-height: $line-height-base;
   }
 
+  .caret {
+    margin-top: -4px;
+  }
+
   .dropdown-toggle > i {
     line-height: $line-height-base;
     color: $navbar-default-link-color;
