@@ -12,39 +12,39 @@
 .alert-danger {
   background-color: $errorBackground;
   border-color: $errorBorder;
-  color: $errorText;
+  color: color($red, 50);
 
   .alert-link {
-    color: lighten($errorText, 10%);
+    color: lighten(color($red, 50), 10%);
   }
 }
 
 .alert-success {
   background-color: $successBackground;
   border-color: $successText;
-  color: $successText;
+  color: color($green, 50);
 
   .alert-link {
-    color: lighten($successText, 10%);
+    color: lighten(color($green, 50), 10%);
   }
 }
 
 .alert-warning {
   background-color: $warningBackground;
   border-color: $warningText;
-  color: $warningText;
+  color: color($orange, 50);
 
   .alert-link {
-    color: lighten($warningText, 10%);
+    color: lighten(color($orange, 50), 10%);
   }
 }
 
 .alert-info {
   background-color: $infoBackground;
   border-color: $infoText;
-  color: $infoText;
+  color: color($blue, 50);
 
   .alert-link {
-    color: lighten($infoText, 10%);
+    color: lighten(color($blue, 50), 10%);
   }
 }

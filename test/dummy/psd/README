@@ -10,7 +10,7 @@ install the following font on your system:
 
   http://www.google.com/webfonts/specimen/Droid+Sans
 
-To replace an image from the theme. Save the web version 
+To replace an image from the theme. Save the web version
 of the PSD in your app, under
 app/assets/images/dresssed/<PSD_PATH>.
 
@@ -28,5 +28,5 @@ is at psd/blue/logo.psd
 
 
 --
-http://dresssed.com/themes/gimlet
+http://dresssed.com/themes/ives
 Copyright 2012 (c) Coded Inc.

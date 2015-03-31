@@ -80,19 +80,19 @@ $generalBorderRadius: 2px;
 $side-nav-width: 270px;
 
 // Form states and alerts
-$warningText:             color($orange, 50);
+$warningText:             color($orange, 400);
 $warningBackground:       color($orange, 900);
 $warningBorder:           darken(adjust-hue($warningBackground, -10), 3%);
 
-$errorText:               color($red, 100);
+$errorText:               color($red, 400);
 $errorBackground:         color($red, 900);
 $errorBorder:             darken(adjust-hue($errorBackground, -10), 3%);
 
-$successText:             color($green, 50);
+$successText:             color($green, 400);
 $successBackground:       color($green, 'a700');
 $successBorder:           darken(adjust-hue($successBackground, -10), 5%);
 
-$infoText:                color($light-blue, 50);
+$infoText:                color($light-blue, 400);
 $infoBackground:          color($light-blue, 900);
 $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%);
 

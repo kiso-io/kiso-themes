@@ -5,7 +5,7 @@
         <p class="lead"><i class="fa fa-globe fa-fw"></i> TOTAL <b>PAGE HITS</b></p>
       </div>
       <div class='panel-body text-red-400'>
-        <h2>1,123</h2>
+        <h2 class='page-hits'>1123</h2>
       </div>
       <div class="panel-footer">
         <div class="row">
@@ -72,26 +72,49 @@
     </div>
   </div>
 </div>
+
 <div class="row">
-  <div class="col-sm-4">
-    <div class="panel animate-fade-in-1000">
+  <div class="col-sm-8 animate-fade-in-1000">
+    <div class="panel">
       <div class="panel-heading">
-        <h5>Orders</h5>
+        <h5>Master Server</h5>
       </div>
       <div class="panel-body">
-        <h4>3,729</h4>
-        <div class="row">
-          <div class="col-sm-6">
-            <small>Total Orders</small>
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div id="realtime" style="height: 315px; width: 100%; display: block;">
+              </div>
+            </div>
           </div>
-          <div class="col-sm-6 text-right">
-            80% <i class="fa fa-level-down"></i>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="server-status-details clearfix">
+                <h5>Memory Stats</h5>
+                <div class="row">
+                  <dl class="col-xs-3">
+                    <dt>In use</dt>
+                    <dd>2.5 GB</dd>
+                  </dl>
+                  <dl class="col-xs-3">
+                    <dt>Total</dt>
+                    <dd>4 GB</dd>
+                  </dl>
+                  <dl class="col-xs-3">
+                    <dt>Available</dt>
+                    <dd>500 MB</dd>
+                  </dl>
+                  <dl class="col-xs-3">
+                    <dt>Swap</dt>
+                    <dd>360 MB</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="progress progress-sm">
-          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-            <span class="sr-only">80% Complete</span>
-          </div>
+
         </div>
       </div>
     </div>
@@ -99,44 +122,81 @@
   <div class="col-sm-4 animate-fade-in-1000">
     <div class="panel">
       <div class="panel-heading">
-        <h5>Refunds</h5>
+        <h5>New Support Requests</h5>
       </div>
-      <div class="panel-body">
-        <h4>1,280</h4>
-        <div class="row">
-          <div class="col-sm-6">
-            <small>Total Refunds</small>
+      <div class="panel-body panel-list">
+        <div class="list-group">
+          <div class="list-group-item media">
+            <a class="pull-left">
+              <i class="avatar-notification"></i>
+              <img class="media-object img-circle" src="http://fillmurray.com/64/64">
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">Momoko Price</h5>
+              <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
+            </div>
+            <ul class="list-unstyled list-inline">
+              <li>
+                <small class="text-muted"><a href="#">View</a></small>
+              </li>
+              <li>
+                <small class="text-muted"><a href="#">Archive</a></small>
+              </li>
+            </ul>
           </div>
-          <div class="col-sm-6 text-right">
-            18% <i class="fa fa-level-up"></i>
+          <div class="list-group-item media">
+            <a class="pull-left">
+              <i class="avatar-notification danger"></i>
+              <img class="media-object img-circle" src="http://fillmurray.com/64/64">
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">Momoko Price</h5>
+              <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
+            </div>
+            <ul class="list-unstyled list-inline">
+              <li>
+                <small class="text-muted"><a href="#">View</a></small>
+              </li>
+              <li>
+                <small class="text-muted"><a href="#">Archive</a></small>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div class="progress progress-sm">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-            <span class="sr-only">99% Complete</span>
+          <div class="list-group-item media">
+            <a class="pull-left">
+              <i class="avatar-notification warning"></i>
+              <img class="media-object img-circle" src="http://fillmurray.com/64/64">
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">Momoko Price</h5>
+              <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
+            </div>
+            <ul class="list-unstyled list-inline">
+              <li class='pr0'>
+                <small class="text-muted"><a href="#">View</a></small>
+              </li>
+              <li>
+                <small class="text-muted"><a href="#">Archive</a></small>
+              </li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4 animate-fade-in-1000">
-    <div class="panel">
-      <div class="panel-heading">
-        <h5>Enquiries</h5>
-      </div>
-      <div class="panel-body">
-        <h4>28,123</h4>
-        <div class="row">
-          <div class="col-sm-6">
-            <small>Total Enquiries</small>
-          </div>
-          <div class="col-sm-6 text-right">
-            12% <i class="fa fa-level-up"></i>
-          </div>
-        </div>
-        <div class="progress progress-sm">
-          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-            <span class="sr-only">50% Complete</span>
+          <div class="list-group-item media">
+            <a class="pull-left">
+              <i class="avatar-notification success"></i>
+              <img class="media-object img-circle" src="http://fillmurray.com/64/64">
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">Momoko Price</h5>
+              <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
+            </div>
+            <ul class="list-unstyled list-inline">
+              <li>
+                <small class="text-muted"><a href="#">View</a></small>
+              </li>
+              <li>
+                <small class="text-muted"><a href="#">Archive</a></small>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -144,18 +204,146 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-12 animate-fade-in-1000">
-    <div class="panel">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="panel panel-default">
       <div class="panel-heading">
-        Stuff
+        <h3 class="panel-title">Online Users</h3>
       </div>
       <div class="panel-body">
-        <div class="chart-container">
-            <script src="http://code.highcharts.com/highcharts.js"></script>
-            <script src="http://code.highcharts.com/modules/exporting.js"></script>
+        <div id="map_canvas_1"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Most Active Users</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Full Name</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
-<div id="container" style="width: 100%; height: 400px; margin: 0 auto" data-highcharts-chart="0"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 100%; height: 400px; text-align: left; line-height: normal; z-index: 0;"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="1337" height="400"><desc>Created with Highcharts 4.1.3</desc><defs><clipPath id="highcharts-1"><rect x="0" y="0" width="1155" height="303"></rect></clipPath></defs><rect x="0" y="0" width="100%" height="400" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><path fill="none" d="M 63 321.5 L 1218 321.5" stroke="#808080" stroke-width="1"></path><g class="highcharts-grid" zIndex="1"></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 63 364.5 L 1218 364.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 321.5 L 1218 321.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 277.5 L 1218 277.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 234.5 L 1218 234.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 191.5 L 1218 191.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 148.5 L 1218 148.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 104.5 L 1218 104.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 60.5 L 1218 60.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-axis" zIndex="2"><path fill="none" d="M 158.5 364 L 158.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 255.5 364 L 255.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 351.5 364 L 351.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 447.5 364 L 447.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 543.5 364 L 543.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 640.5 364 L 640.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 736.5 364 L 736.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 832.5 364 L 832.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 928.5 364 L 928.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 1025.5 364 L 1025.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 1121.5 364 L 1121.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 1218.5 364 L 1218.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 62.5 364 L 62.5 374" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 63 364.5 L 1218 364.5" stroke="#C0D0E0" stroke-width="1" zIndex="7" visibility="visible"></path></g><g class="highcharts-axis" zIndex="2"><text x="24.078125" zIndex="7" text-anchor="middle" transform="translate(0,0) rotate(270 24.078125 212.5)" class=" highcharts-yaxis-title" style="color:#707070;fill:#707070;" visibility="visible" y="212.5"><tspan>Temperature (°C)</tspan></text></g><g class="highcharts-series-group" zIndex="3"><path fill="rgba(124,181,236,0.25)" d="M 0 0"></path><path fill="rgba(67,67,72,0.25)" d="M 0 0"></path><path fill="rgba(247,163,92,0.25)" d="M 0 0"></path><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(63,61) scale(1 1)" clip-path="url(http://www.highcharts.com/demo/line-basic#highcharts-1)"><path fill="none" d="M 48.125 199.11428571428573 L 144.375 199.98000000000002 L 240.625 177.4714285714286 L 336.875 134.18571428571428 L 433.125 102.15428571428572 L 529.375 73.58571428571429 L 625.625 41.554285714285754 L 721.875 30.30000000000001 L 818.125 58.00285714285715 L 914.375 101.28857142857143 L 1010.625 139.38000000000002 L 1106.875 176.6057142857143" stroke="#7cb5ec" stroke-width="2" zIndex="1" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 38.125 199.11428571428573 L 48.125 199.11428571428573 L 144.375 199.98000000000002 L 240.625 177.4714285714286 L 336.875 134.18571428571428 L 433.125 102.15428571428572 L 529.375 73.58571428571429 L 625.625 41.554285714285754 L 721.875 30.30000000000001 L 818.125 58.00285714285715 L 914.375 101.28857142857143 L 1010.625 139.38000000000002 L 1106.875 176.6057142857143 L 1116.875 176.6057142857143" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(63,61) scale(1 1)" clip-path="url(http://www.highcharts.com/demo/line-basic#highcharts-2)" style=""><path fill="#7cb5ec" d="M 1106 172.6057142857143 C 1111.328 172.6057142857143 1111.328 180.6057142857143 1106 180.6057142857143 C 1100.672 180.6057142857143 1100.672 172.6057142857143 1106 172.6057142857143 Z"></path><path fill="#7cb5ec" d="M 1010 135.38000000000002 C 1015.328 135.38000000000002 1015.328 143.38000000000002 1010 143.38000000000002 C 1004.672 143.38000000000002 1004.672 135.38000000000002 1010 135.38000000000002 Z"></path><path fill="#7cb5ec" d="M 914 97.28857142857143 C 919.328 97.28857142857143 919.328 105.28857142857143 914 105.28857142857143 C 908.672 105.28857142857143 908.672 97.28857142857143 914 97.28857142857143 Z"></path><path fill="#7cb5ec" d="M 818 54.00285714285715 C 823.328 54.00285714285715 823.328 62.00285714285715 818 62.00285714285715 C 812.672 62.00285714285715 812.672 54.00285714285715 818 54.00285714285715 Z"></path><path fill="#7cb5ec" d="M 721 26.30000000000001 C 726.328 26.30000000000001 726.328 34.30000000000001 721 34.30000000000001 C 715.672 34.30000000000001 715.672 26.30000000000001 721 26.30000000000001 Z"></path><path fill="#7cb5ec" d="M 625.625 37.554285714285754 C 630.953 37.554285714285754 630.953 45.554285714285754 625.625 45.554285714285754 C 620.297 45.554285714285754 620.297 37.554285714285754 625.625 37.554285714285754 Z" stroke-width="1"></path><path fill="#7cb5ec" d="M 529 69.58571428571429 C 534.328 69.58571428571429 534.328 77.58571428571429 529 77.58571428571429 C 523.672 77.58571428571429 523.672 69.58571428571429 529 69.58571428571429 Z"></path><path fill="#7cb5ec" d="M 433.125 98.15428571428572 C 438.453 98.15428571428572 438.453 106.15428571428572 433.125 106.15428571428572 C 427.797 106.15428571428572 427.797 98.15428571428572 433.125 98.15428571428572 Z" stroke-width="1"></path><path fill="#7cb5ec" d="M 336.875 130.18571428571428 C 342.203 130.18571428571428 342.203 138.18571428571428 336.875 138.18571428571428 C 331.547 138.18571428571428 331.547 130.18571428571428 336.875 130.18571428571428 Z" stroke-width="1"></path><path fill="#7cb5ec" d="M 240 173.4714285714286 C 245.328 173.4714285714286 245.328 181.4714285714286 240 181.4714285714286 C 234.672 181.4714285714286 234.672 173.4714285714286 240 173.4714285714286 Z"></path><path fill="#7cb5ec" d="M 144 195.98000000000002 C 149.328 195.98000000000002 149.328 203.98000000000002 144 203.98000000000002 C 138.672 203.98000000000002 138.672 195.98000000000002 144 195.98000000000002 Z"></path><path fill="#7cb5ec" d="M 48.125 195.11428571428573 C 53.453 195.11428571428573 53.453 203.11428571428573 48.125 203.11428571428573 C 42.797 203.11428571428573 42.797 195.11428571428573 48.125 195.11428571428573 Z" stroke-width="1"></path></g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(63,61) scale(1 1)" clip-path="url(http://www.highcharts.com/demo/line-basic#highcharts-1)"><path fill="none" d="M 48.125 261.4457142857143 L 144.375 252.78857142857143 L 240.625 210.36857142857144 L 336.875 161.88857142857142 L 433.125 112.54285714285714 L 529.375 69.25714285714287 L 625.625 45.01714285714286 L 721.875 51.07714285714286 L 818.125 85.7057142857143 L 914.375 137.64857142857142 L 1010.625 185.26285714285717 L 1106.875 238.07142857142856" stroke="#434348" stroke-width="2" zIndex="1" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 38.125 261.4457142857143 L 48.125 261.4457142857143 L 144.375 252.78857142857143 L 240.625 210.36857142857144 L 336.875 161.88857142857142 L 433.125 112.54285714285714 L 529.375 69.25714285714287 L 625.625 45.01714285714286 L 721.875 51.07714285714286 L 818.125 85.7057142857143 L 914.375 137.64857142857142 L 1010.625 185.26285714285717 L 1106.875 238.07142857142856 L 1116.875 238.07142857142856" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(63,61) scale(1 1)" clip-path="url(http://www.highcharts.com/demo/line-basic#highcharts-2)" style=""><path fill="#434348" d="M 1106 234.07142857142856 L 1110 238.07142857142856 1106 242.07142857142856 1102 238.07142857142856 Z"></path><path fill="#434348" d="M 1010 181.26285714285717 L 1014 185.26285714285717 1010 189.26285714285717 1006 185.26285714285717 Z"></path><path fill="#434348" d="M 914 133.64857142857142 L 918 137.64857142857142 914 141.64857142857142 910 137.64857142857142 Z"></path><path fill="#434348" d="M 818 81.7057142857143 L 822 85.7057142857143 818 89.7057142857143 814 85.7057142857143 Z"></path><path fill="#434348" d="M 721.875 47.07714285714286 L 725.875 51.07714285714286 721.875 55.07714285714286 717.875 51.07714285714286 Z" stroke-width="1"></path><path fill="#434348" d="M 625.625 41.01714285714286 L 629.625 45.01714285714286 625.625 49.01714285714286 621.625 45.01714285714286 Z" stroke-width="1"></path><path fill="#434348" d="M 529.375 65.25714285714287 L 533.375 69.25714285714287 529.375 73.25714285714287 525.375 69.25714285714287 Z" stroke-width="1"></path><path fill="#434348" d="M 433 108.54285714285714 L 437 112.54285714285714 433 116.54285714285714 429 112.54285714285714 Z"></path><path fill="#434348" d="M 336 157.88857142857142 L 340 161.88857142857142 336 165.88857142857142 332 161.88857142857142 Z"></path><path fill="#434348" d="M 240 206.36857142857144 L 244 210.36857142857144 240 214.36857142857144 236 210.36857142857144 Z"></path><path fill="#434348" d="M 144 248.78857142857143 L 148 252.78857142857143 144 256.78857142857146 140 252.78857142857143 Z"></path><path fill="#434348" d="M 48 257.4457142857143 L 52 261.4457142857143 48 265.4457142857143 44 261.4457142857143 Z"></path></g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(63,61) scale(1 1)" clip-path="url(http://www.highcharts.com/demo/line-basic#highcharts-1)"><path fill="none" d="M 48.125 267.5057142857143 L 144.375 254.52 L 240.625 229.4142857142857 L 336.875 186.99428571428572 L 433.125 142.84285714285716 L 529.375 112.54285714285714 L 625.625 98.69142857142856 L 721.875 104.75142857142859 L 818.125 135.91714285714286 L 914.375 181.8 L 1010.625 225.95142857142858 L 1106.875 251.05714285714288" stroke="#90ed7d" stroke-width="2" zIndex="1" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 38.125 267.5057142857143 L 48.125 267.5057142857143 L 144.375 254.52 L 240.625 229.4142857142857 L 336.875 186.99428571428572 L 433.125 142.84285714285716 L 529.375 112.54285714285714 L 625.625 98.69142857142856 L 721.875 104.75142857142859 L 818.125 135.91714285714286 L 914.375 181.8 L 1010.625 225.95142857142858 L 1106.875 251.05714285714288 L 1116.875 251.05714285714288" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(63,61) scale(1 1)" clip-path="url(http://www.highcharts.com/demo/line-basic#highcharts-2)" style=""><path fill="#90ed7d" d="M 1102 247.05714285714288 L 1110 247.05714285714288 1110 255.05714285714288 1102 255.05714285714288 Z"></path><path fill="#90ed7d" d="M 1006 221.95142857142858 L 1014 221.95142857142858 1014 229.95142857142858 1006 229.95142857142858 Z"></path><path fill="#90ed7d" d="M 910 177.8 L 918 177.8 918 185.8 910 185.8 Z"></path><path fill="#90ed7d" d="M 814 131.91714285714286 L 822 131.91714285714286 822 139.91714285714286 814 139.91714285714286 Z"></path><path fill="#90ed7d" d="M 717 100.75142857142859 L 725 100.75142857142859 725 108.75142857142859 717 108.75142857142859 Z"></path><path fill="#90ed7d" d="M 621 94.69142857142856 L 629 94.69142857142856 629 102.69142857142856 621 102.69142857142856 Z"></path><path fill="#90ed7d" d="M 525 108.54285714285714 L 533 108.54285714285714 533 116.54285714285714 525 116.54285714285714 Z"></path><path fill="#90ed7d" d="M 429 138.84285714285716 L 437 138.84285714285716 437 146.84285714285716 429 146.84285714285716 Z"></path><path fill="#90ed7d" d="M 332 182.99428571428572 L 340 182.99428571428572 340 190.99428571428572 332 190.99428571428572 Z"></path><path fill="#90ed7d" d="M 236 225.4142857142857 L 244 225.4142857142857 244 233.4142857142857 236 233.4142857142857 Z"></path><path fill="#90ed7d" d="M 140 250.52 L 148 250.52 148 258.52 140 258.52 Z"></path><path fill="#90ed7d" d="M 44 263.5057142857143 L 52 263.5057142857143 52 271.5057142857143 44 271.5057142857143 Z"></path></g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(63,61) scale(1 1)" clip-path="url(http://www.highcharts.com/demo/line-basic#highcharts-1)"><path fill="none" d="M 48.125 225.95142857142858 L 144.375 223.3542857142857 L 240.625 210.36857142857144 L 336.875 186.12857142857143 L 433.125 156.69428571428574 L 529.375 128.1257142857143 L 625.625 112.54285714285714 L 721.875 116.00571428571428 L 818.125 136.78285714285715 L 914.375 170.5457142857143 L 1010.625 202.57714285714286 L 1106.875 218.16" stroke="#f7a35c" stroke-width="2" zIndex="1" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 38.125 225.95142857142858 L 48.125 225.95142857142858 L 144.375 223.3542857142857 L 240.625 210.36857142857144 L 336.875 186.12857142857143 L 433.125 156.69428571428574 L 529.375 128.1257142857143 L 625.625 112.54285714285714 L 721.875 116.00571428571428 L 818.125 136.78285714285715 L 914.375 170.5457142857143 L 1010.625 202.57714285714286 L 1106.875 218.16 L 1116.875 218.16" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(63,61) scale(1 1)" clip-path="url(http://www.highcharts.com/demo/line-basic#highcharts-2)" style=""><path fill="#f7a35c" d="M 1106 214.16 L 1110 222.16 1102 222.16 Z"></path><path fill="#f7a35c" d="M 1010 198.57714285714286 L 1014 206.57714285714286 1006 206.57714285714286 Z"></path><path fill="#f7a35c" d="M 914 166.5457142857143 L 918 174.5457142857143 910 174.5457142857143 Z"></path><path fill="#f7a35c" d="M 818 132.78285714285715 L 822 140.78285714285715 814 140.78285714285715 Z"></path><path fill="#f7a35c" d="M 721 112.00571428571428 L 725 120.00571428571428 717 120.00571428571428 Z"></path><path fill="#f7a35c" d="M 625 108.54285714285714 L 629 116.54285714285714 621 116.54285714285714 Z"></path><path fill="#f7a35c" d="M 529.375 124.12571428571431 L 533.375 132.1257142857143 525.375 132.1257142857143 Z" stroke-width="1"></path><path fill="#f7a35c" d="M 433.125 152.69428571428574 L 437.125 160.69428571428574 429.125 160.69428571428574 Z" stroke-width="1"></path><path fill="#f7a35c" d="M 336.875 182.12857142857143 L 340.875 190.12857142857143 332.875 190.12857142857143 Z" stroke-width="1"></path><path fill="#f7a35c" d="M 240 206.36857142857144 L 244 214.36857142857144 236 214.36857142857144 Z"></path><path fill="#f7a35c" d="M 144 219.3542857142857 L 148 227.3542857142857 140 227.3542857142857 Z"></path><path fill="#f7a35c" d="M 48 221.95142857142858 L 52 229.95142857142858 44 229.95142857142858 Z"></path></g></g><text x="649" text-anchor="middle" class="highcharts-title" zIndex="4" style="color:#333333;font-size:18px;fill:#333333;width:1273px;" y="24"><tspan>Monthly Average Temperature</tspan></text><text x="649" text-anchor="middle" class="highcharts-subtitle" zIndex="4" style="color:#555555;fill:#555555;width:1273px;" y="45"><tspan>Source: WorldClimate.com</tspan></text><g class="highcharts-legend" zIndex="7" transform="translate(1230,164)"><g zIndex="1"><g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,3)"><path fill="none" d="M 0 11 L 16 11" stroke="#7cb5ec" stroke-width="2"></path><path fill="#7cb5ec" d="M 8 7 C 13.328 7 13.328 15 8 15 C 2.6719999999999997 15 2.6719999999999997 7 8 7 Z"></path><text x="21" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" zIndex="2" y="15">Tokyo</text></g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,17)"><path fill="none" d="M 0 11 L 16 11" stroke="#434348" stroke-width="2"></path><path fill="#434348" d="M 8 7 L 12 11 8 15 4 11 Z"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" zIndex="2"><tspan>New York</tspan></text></g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,31)"><path fill="none" d="M 0 11 L 16 11" stroke="#90ed7d" stroke-width="2"></path><path fill="#90ed7d" d="M 4 7 L 12 7 12 15 4 15 Z"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" zIndex="2">Berlin</text></g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,45)"><path fill="none" d="M 0 11 L 16 11" stroke="#f7a35c" stroke-width="2"></path><path fill="#f7a35c" d="M 8 7 L 12 15 4 15 Z"></path><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" zIndex="2">London</text></g></g></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"><text x="111.125" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Jan</text><text x="207.375" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Feb</text><text x="303.625" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Mar</text><text x="399.875" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Apr</text><text x="496.125" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">May</text><text x="592.375" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Jun</text><text x="688.625" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Jul</text><text x="784.875" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Aug</text><text x="881.125" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Sep</text><text x="977.375" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Oct</text><text x="1073.625" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Nov</text><text x="1169.875" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="383" opacity="1">Dec</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"><text x="48" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:431px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="369" opacity="1">-5</text><text x="48" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:431px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="325" opacity="1">0</text><text x="48" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:431px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="282" opacity="1">5</text><text x="48" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:431px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="239" opacity="1">10</text><text x="48" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:431px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="195" opacity="1">15</text><text x="48" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:431px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="152" opacity="1">20</text><text x="48" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:431px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="109" opacity="1">25</text><text x="48" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:431px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="66" opacity="1">30</text></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(345,-9999)" opacity="0" visibility="visible"><path fill="none" d="M 3.5 0.5 L 107.5 0.5 C 110.5 0.5 110.5 0.5 110.5 3.5 L 110.5 40.5 C 110.5 43.5 110.5 43.5 107.5 43.5 L 61.5 43.5 55.5 49.5 49.5 43.5 3.5 43.5 C 0.5 43.5 0.5 43.5 0.5 40.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)" width="110" height="43"></path><path fill="none" d="M 3.5 0.5 L 107.5 0.5 C 110.5 0.5 110.5 0.5 110.5 3.5 L 110.5 40.5 C 110.5 43.5 110.5 43.5 107.5 43.5 L 61.5 43.5 55.5 49.5 49.5 43.5 3.5 43.5 C 0.5 43.5 0.5 43.5 0.5 40.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)" width="110" height="43"></path><path fill="none" d="M 3.5 0.5 L 107.5 0.5 C 110.5 0.5 110.5 0.5 110.5 3.5 L 110.5 40.5 C 110.5 43.5 110.5 43.5 107.5 43.5 L 61.5 43.5 55.5 49.5 49.5 43.5 3.5 43.5 C 0.5 43.5 0.5 43.5 0.5 40.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)" width="110" height="43"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 107.5 0.5 C 110.5 0.5 110.5 0.5 110.5 3.5 L 110.5 40.5 C 110.5 43.5 110.5 43.5 107.5 43.5 L 61.5 43.5 55.5 49.5 49.5 43.5 3.5 43.5 C 0.5 43.5 0.5 43.5 0.5 40.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#f7a35c" stroke-width="1"></path><text x="8" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;" y="20"><tspan style="font-size: 10px">Apr</tspan><tspan style="fill:#f7a35c" x="8" dy="15">●</tspan><tspan dx="0"> London: </tspan><tspan style="font-weight:bold" dx="0">8.5°C</tspan></text></g><text x="1327" text-anchor="end" zIndex="8" style="cursor:pointer;color:#909090;font-size:9px;fill:#909090;" y="395">Highcharts.com</text></svg></div></div>
-          </div>
+          <tbody>
+            <tr>
+              <td>1</td><td><strong>Fred Berlin</strong></td>
+              <td>Vancouver, Canada</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td><td>Octavius Belt</td>
+              <td>London, United Kingdom</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td><td><strong>Cash Money</strong></td>
+              <td>Ney York City, USA</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td><td><strong>Bailey Bingface</strong></td>
+              <td>Liberia</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td><td><strong>Altus Zombo</strong></td>
+              <td>Monrovia</td>
+              <td><span class="label label-danger">Suspended</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>8</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>9</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>10</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
