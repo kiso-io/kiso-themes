@@ -322,7 +322,7 @@ $blue-grey: (
     $value: nth($color, 2);
 
     @each $grade in $value {
-      .text-#{$name}-#{nth($grade,1)} { color: #{nth($grade,2)} !important }
+      .text-#{$name}-#{nth($grade,1)} { color: #{nth($grade,2)} !important; }
       .#{$name}-#{nth($grade,1)} { background-color: nth($grade, 2); }
     }
 }
