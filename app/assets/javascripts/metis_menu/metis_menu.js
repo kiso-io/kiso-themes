@@ -44,6 +44,7 @@
 
             $this.find("li").has("ul").children("a").on("click" + "." + pluginName, function(e) {
                 e.preventDefault();
+                $this.find("ul").removeClass('direct');
 
                 //Do we need to enable the double tap
                 if (obj.settings.doubleTapToGo) {

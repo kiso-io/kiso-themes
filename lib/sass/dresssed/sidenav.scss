@@ -85,8 +85,9 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   }
 
   @for $i from 1 through 30 {
-    .nav-second-level li:nth-child(#{$i}) a,
-    .nav-third-level li:nth-child(#{$i}) a {
+
+    .nav-second-level:not(.direct) li:nth-child(#{$i}) a,
+    .nav-third-level:not(.direct) li:nth-child(#{$i}) a {
       @include prefix(animation, right-fade 500ms);
       @include prefix(animation-delay, #{$i * (40 - $i)}ms);
     }
@@ -110,7 +111,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
     }
   }
 
-  .collapsing {
+  ul[aria-expanded=true].collapsing  li{
     opacity: 0;
   }
 

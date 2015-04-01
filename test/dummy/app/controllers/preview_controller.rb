@@ -18,7 +18,7 @@ class PreviewController < ApplicationController
     @breadcrumbs << @parent if @parent != '0'
     @breadcrumbs << @title if @title && @parent != '0'
 
-    @elements = ElementFinder.new('app/views/preview/elements/*').find
+    @elements = ElementFinder.find(File.join(Rails.root, 'app/views/preview/elements/'))
 
     render template: 'preview/minimal' and return if params[:section] && (params[:section].include?('004_app_pages') || params[:section].include?('fullpage') )
   end
@@ -48,33 +48,32 @@ class ElementFinder
     @path = path
   end
 
-  def find()
-    top_level_elements = Dir.glob(@path)
-    results = []
+  def self.find(path, name=nil)
+    data = {
+      parent_file_name: path,
+      parent_name:      File.basename(path, '.html.erb').to_s,
+      target_name:      File.basename(path, '.html.erb').to_s.gsub(/@\w+-\w+$/, ''),
+      display_name:     File.basename(path, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').titleize,
+      icon:             path.match(/@\w+-\w+/).nil? ? 'fa-gift' : path.match(/@\w+-\w+/)[0][1..-1],
+    }
 
-    top_level_elements.sort {|el1, el2| el1 <=> el2}.each do |el|
-      parent = {
-        parent_file_name: el,
-        parent_name:      File.basename(el, '.html.erb').to_s,
-        target_name:      File.basename(el, '.html.erb').to_s.gsub(/@\w+-\w+$/, ''),
-        display_name:     File.basename(el, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').titleize,
-        icon:             el.match(/@\w+-\w+/).nil? ? 'fa-gift' : el.match(/@\w+-\w+/)[0][1..-1],
-        children:         []
-      }
-
-      if File.directory?(el)
-        Dir.glob(@path.gsub('*',"#{Pathname.new(el).basename}/*")).sort {|el1, el2| el1 <=> el2}.each do |child|
-          parent[:children] << {
-            child_file_name: child,
-            child_name:   File.basename(child, '.html.erb').to_s.gsub(/@\w+-\w+$/, ''),
-            display_name: File.basename(child, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub(/fullpage/, '').titleize,
-            icon:         child.match(/@\w+-\w+$/).nil? ? 'fa-cogs' : child.match(/@\w+-\w+$/)[0][1..-1],
-          }
-        end
+    data[:children] = children = []
+    Dir.foreach(path).sort {|el1, el2| el1 <=> el2}.each do |entry|
+      next if (entry == '..' || entry == '.' || entry == '.DS_Store')
+      full_path = File.join(path, entry)
+      if File.directory?(full_path)
+        children << find(full_path, entry)
+      else
+        childdata = {
+          parent_file_name: data[:parent_file_name].gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
+          parent_name:      File.basename(entry, '.html.erb').to_s,
+          target_name:      File.basename(entry, '.html.erb').to_s.gsub(/@\w+-\w+$/, ''),
+          display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub('fullpage', '').titleize,
+          icon:             entry.match(/@\w+-\w+/).nil? ? 'fa-gift' : entry.match(/@\w+-\w+/)[0][1..-1],
+        }
+        children << childdata
       end
-
-      results << parent
     end
-    results
+    return data
   end
 end

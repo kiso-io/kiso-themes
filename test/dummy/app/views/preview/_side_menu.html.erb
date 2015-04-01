@@ -2,19 +2,13 @@
   <div class="brand">Sidenav Header</div>
   <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   <ul id="menu-content" class="nav in  navbar-collapse active">
-    <% @elements.each do |el| %>
 
-      <% if el[:children].any? %>
-
+    <% @elements[:children].each do |el| %>
+      <% unless el[:children].nil? %>
         <li class="<%= @section.downcase.include?(el[:parent_name].downcase ) ? 'active' : '' %>">
           <a href="#"><i class="fa <%=el[:icon]%> fa-lg fa-fw"></i><%= el[:display_name] %><span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level collapse <%= "in" if @section.downcase.include?(el[:parent_name].downcase ) %>" aria-expanded="false">
-            <% el[:children].each do |child_el| %>
-              <%=activatable_li_tag_with_link child_el[:display_name], element_path(File.join(el[:parent_name],child_el[:child_name])) %>
-            <% end %>
-          </ul>
+          <%= render_children el[:children] %>
         </li>
-
       <% else %>
         <%=activatable_li_tag element_path(el[:parent_name]) do %>
           <% @is_active = (@section.downcase.include?(el[:parent_name].downcase)) ? 'active' : '' %>
