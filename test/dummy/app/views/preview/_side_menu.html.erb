@@ -1,38 +1,63 @@
 <div class="nav-side-menu">
   <div class="brand">Sidenav Header</div>
   <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
-  <div class="menu-list">
-    <ul id="menu-content" class="menu-content collapse">
-      <% @elements.each do |el| %>
+  <ul id="menu-content" class="nav in  navbar-collapse active">
+    <% @elements.each do |el| %>
 
       <% if el[:children].any? %>
 
-      <li data-toggle="collapse" data-target="#<%= el[:target_name] %>" class="<%= "collapsed" unless @section.downcase.include?(el[:parent_name].downcase) %> <%= "active" if @section.downcase.include?(el[:parent_name].downcase) %>">
-        <a href="#"><i class="fa <%=el[:icon]%> fa-lg"></i><%= el[:display_name] %><span class="arrow"></span></a>
-      </li>
-      <ul class="sub-menu collapse <%= "in" if @section.downcase.include?(el[:parent_name].downcase ) %>" id="<%= el[:target_name] %>">
-        <% el[:children].each do |child_el| %>
-        <%=activatable_li_tag_with_link child_el[:display_name], element_path(File.join(el[:parent_name],child_el[:child_name])) %>
-        <% end %>
-      </ul>
+        <li class="<%= @section.downcase.include?(el[:parent_name].downcase ) ? 'active' : '' %>">
+          <a href="#"><i class="fa <%=el[:icon]%> fa-lg fa-fw"></i><%= el[:display_name] %><span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level collapse <%= "in" if @section.downcase.include?(el[:parent_name].downcase ) %>" aria-expanded="false">
+            <% el[:children].each do |child_el| %>
+              <%=activatable_li_tag_with_link child_el[:display_name], element_path(File.join(el[:parent_name],child_el[:child_name])) %>
+            <% end %>
+          </ul>
+        </li>
 
       <% else %>
-
-      <%=activatable_li_tag el[:display_name], element_path(el[:parent_name]) do %>
-      <% @is_active = @section.downcase.include?(el[:parent_name].downcase) ? 'active' : '' %>
-
-      <%= link_to element_path(el[:parent_name]), class: @is_active do %>
-      <i class="fa <%=el[:icon]%> fa-lg"></i>
-      <%= el[:display_name].titleize %>
-      <% end %>
+        <%=activatable_li_tag element_path(el[:parent_name]) do %>
+          <% @is_active = (@section.downcase.include?(el[:parent_name].downcase)) ? 'active' : '' %>
+          <%= link_to element_path(el[:parent_name]), class: @is_active do %>
+            <i class="fa <%=el[:icon]%> fa-fw fa-lg"></i><%= el[:display_name].titleize %>
+          <% end %>
+        <% end %>
       <% end %>
 
-      <% end %>
+    <% end %>
 
-      <% end %>
-    </ul>
-  </div>
+    <li>
+      <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+      <ul class="nav nav-second-level collapse" aria-expanded="false">
+        <li>
+          <a href="#" class="active">Second Level Item</a>
+        </li>
+        <li>
+          <a href="#" class="active">Second Level Item</a>
+        </li>
+        <li>
+          <a href="#">Third Level <span class="fa arrow"></span></a>
+          <ul class="nav nav-third-level">
+            <li>
+              <a href="#" class="active">Third Level Item</a>
+            </li>
+            <li>
+              <a href="#" class="active">Third Level Item</a>
+            </li>
+            <li>
+              <a href="#" class="active">Third Level Item</a>
+            </li>
+            <li>
+              <a href="#" class="active">Third Level Item</a>
+            </li>
+          </ul>
+          <!-- /.nav-third-level -->
+        </li>
+      </ul>
+      <!-- /.nav-second-level -->
+    </li>
+  </ul>
+
   <div class="nav-side-menu-footer">
     <div>
       <small>

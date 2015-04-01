@@ -1,179 +1,6 @@
 $sub-menu-item-height: 40px;
 $side-nav-menu-background-color: color($blue-grey, 900);
 
-.nav-side-menu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  width: $side-nav-width;
-  background-color: $side-nav-menu-background-color;
-  color: $link-color;
-  font-size: 0.8em;
-
-  .brand {
-    display: block;
-    background-color: #23282e;
-    text-align: center;
-    font-size: 14px;
-    line-height: $navbar-height;
-  }
-
-  .toggle-btn {
-    display: none;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    list-style: none;
-  }
-
-  li {
-    position: inherit;
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    list-style: none;
-    line-height: 65px;
-    cursor: pointer;
-
-    a {
-      display: block;
-      color: $link-color;
-      text-decoration: none;
-
-      &:hover {
-        @include prefix(transition, all 200ms ease);
-        padding: 0;
-        background-color: #4f5b69;
-        color: white;
-      }
-
-      i {
-        padding-right: 30px;
-        padding-left: 10px;
-        width: 20px;
-      }
-    }
-
-    &:hover {
-      a {
-        color: lighten($link-color-hover, 20%);
-      }
-    }
-  }
-}
-
-.nav-side-menu ul:not(collapsed) .arrow:before,
-.nav-side-menu li:not(collapsed) .arrow:before {
-  @include prefix(transition, all 150ms ease-in-out);
-  @include prefix(transform, rotate(0deg));
-  position: relative;
-  display: inline-block;
-  float: right;
-  margin-right: 20px;
-  color: #6d747a;
-  content: '\f107';
-  font-family: FontAwesome;
-}
-
-.nav-side-menu ul.collapsed .arrow:before,
-.nav-side-menu li.collapsed .arrow:before {
-  @include prefix(transform, rotate(-90deg));
-}
-
-.nav-side-menu ul.active:not(collapsed) .arrow:before,
-.nav-side-menu li.active:not(collapsed) .arrow:before {
-  @include prefix(transform, rotate(0deg));
-}
-
-.nav-side-menu ul.active.collapsed .arrow:before,
-.nav-side-menu li.active.collapsed .arrow:before {
-  @include prefix(transform, rotate(-90deg));
-}
-
-.nav-side-menu ul .active,
-.nav-side-menu li .active {
-  border-left: 3px solid $brand-primary;
-  background-color: transparent;
-  color: white;
-  font-weight: bold;
-
-  a {
-    color: white;
-  }
-}
-
-.nav-side-menu ul li[data-toggle='collapse'] a i {
-  padding-right: 35px;
-}
-
-.nav-side-menu ul li[data-toggle='collapse']:not(.collapsed) {
-  border-left: 3px solid $brand-primary;
-  color: white;
-}
-
-.nav-side-menu ul li.collapsed a,
-.nav-side-menu ul li:not([data-toggle]) a:not(.active) {
-  padding-left: 3px;
-}
-
-.nav-side-menu ul li.active a:hover {
-  border: none;
-}
-
-.nav-side-menu ul .sub-menu li a:hover {
-  border: none;
-  background-color: transparent;
-  padding-left: 8px;
-}
-
-.nav-side-menu ul .sub-menu.collapse.in {
-  border-left: 3px solid $brand-primary;
-}
-
-.nav-side-menu ul .sub-menu li.active,
-.nav-side-menu li .sub-menu li.active {
-  background-color: transparent;
-  color: $brand-primary;
-  font-weight: bold;
-
-  a {
-    color: white;
-  }
-}
-
-.nav-side-menu ul .sub-menu li,
-.nav-side-menu li .sub-menu li {
-  @include prefix(transition, all 150ms ease-in-out);
-  margin-left: -10px;
-  height: $sub-menu-item-height;
-  border: none;
-  border-bottom: 1px solid $text-color;
-  line-height: $sub-menu-item-height;
-  opacity: 0;
-
-  &:hover {
-    height: $sub-menu-item-height;
-    background-color: transparent;
-    color: white;
-  }
-}
-
-.sub-menu.collapse.in li {
-  margin-left: 44px;
-  opacity: 1;
-}
-
-@for $i from 1 through 30 {
-  .sub-menu.collapse.in li:nth-child(#{$i}) {
-    @include prefix(transition-delay, #{$i * (40 - $i)}ms);
-  }
-}
-
 .main-content {
   @include prefix(opacity, 100ms ease-in-out);
   z-index: 1;
@@ -182,8 +9,130 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   word-break: break-word;
 }
 
+.nav-side-menu {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: $side-nav-width;
+  color: $link-color;
+  background-color: $side-nav-menu-background-color;
+  font-size: .8em;
 
-.nav-side-menu-footer {
+  .brand {
+    display: block;
+    text-align: center;
+    background-color: #23282e;
+    font-size: 14px;
+    line-height: $navbar-height;
+  }
+
+  .nav > li.active {
+    border-left: 3px solid $brand-primary;
+    background: transparent;
+    font-weight: inherit;
+
+    > a {
+      font-weight: bold;
+    }
+  }
+
+  &.navbar-collapse {
+    padding: 0;
+  }
+
+  .toggle-btn {
+    display: none;
+  }
+
+  .arrow {
+    float: right;
+    line-height: 1.42857;
+  }
+
+  .glyphicon.arrow:before {
+    content: '\e079';
+  }
+
+  .active > a > .glyphicon.arrow:before {
+    content: '\e114';
+  }
+
+  .fa.arrow:before {
+    content: '\f104';
+  }
+
+  .active > a > .fa.arrow:before {
+    content: '\f107';
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    @include prefix(transform, rotate(45deg));
+  }
+
+  .nav li a {
+
+    &:hover {
+      @include prefix(transition, all 200ms ease);
+
+      background-color: #4f5b69;
+      color: white;
+    }
+
+    i {
+        padding-right: 10px;
+    }
+  }
+
+  @for $i from 1 through 30 {
+    .nav-second-level li:nth-child(#{$i}) a,
+    .nav-third-level li:nth-child(#{$i}) a {
+      @include prefix(animation, right-fade 500ms);
+      @include prefix(animation-delay, #{$i * (40 - $i)}ms);
+    }
+  }
+
+  .nav > li {
+    &.active {
+      background-color: #4f5b69;
+
+      > a i {
+        margin-left: -3px;
+      }
+
+      > a {
+        color: white;
+      }
+    }
+
+    > a:focus {
+      color: white;
+    }
+  }
+
+  .collapsing {
+    opacity: 0;
+  }
+
+  .nav-second-level li {
+    background-color: #4f5b69;
+    color: white;
+
+    &.active {
+      border: none;
+    }
+
+    a {
+      padding-left: 35px;
+    }
+  }
+
+  .nav-third-level li a {
+    padding-left: 45px;
+  }
+}
+
+.nav-side-menu .nav-side-menu-footer {
   -webkit-transform: translateZ(0);   // Thanks, Chrome. http://stackoverflow.com/questions/15152470/chrome-rendering-issue-fixed-position-anchor-with-ul-in-body
   background-color: $side-nav-menu-background-color;
   position: fixed;
@@ -245,11 +194,12 @@ $side-nav-menu-background-color: color($blue-grey, 900);
     margin-left: 0;
   }
 
-  .nav-side-menu-footer {
+  .nav-side-menu .nav-side-menu-footer {
     position: relative;
     width: 100%;
   }
 }
+
 
 @media (min-width: 768px) {
   .nav-side-menu .menu-list .menu-content {

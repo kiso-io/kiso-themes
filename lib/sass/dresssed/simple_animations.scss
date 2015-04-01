@@ -70,6 +70,18 @@
   }
 }
 
+@include keyframes(fade-out) {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 $max: 1050;
 $step: 50;
@@ -96,5 +108,9 @@ $start: 200;
 
   .animate-fade-in-#{$value} {
     @include prefix(animation, fade-in #{$value}ms);
+  }
+
+  .animate-fade-out-#{$value} {
+    @include prefix(animation, fade-out #{$value}ms);
   }
 }

@@ -47,6 +47,8 @@ $(document).ready(function(){
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   });
+
+  $('.nav-side-menu').metisMenu();
 });
 
 function sizeiframe(size) {
