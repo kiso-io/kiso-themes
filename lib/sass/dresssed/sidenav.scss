@@ -15,11 +15,29 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   top: 0;
   bottom: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   width: $side-nav-width;
   color: $link-color;
   background-color: $side-nav-menu-background-color;
   font-size: .8em;
+
+  &::-webkit-scrollbar {
+      width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+      background-color: #aaa;
+  }
 
   .brand {
     display: block;
