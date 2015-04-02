@@ -126,3 +126,33 @@
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 }
+
+//Prefixes definition
+$webkit:true;
+$o:true;
+$moz:true;
+$w3:true;
+$ms:true;
+
+//Gradient Mixin
+@mixin gradient($mode,$direction,$from,$to,$oldDirection:null){
+
+    @if $webkit == true {
+        @if($oldDirection != null){
+            background-image: -webkit-gradient($mode, #{$oldDirection}, from($from),to($to));
+        }
+        background-image: -webkit-#{$mode}-gradient($direction, $from, $to);
+    }
+    @if $moz == true {
+        background-image: -moz-#{$mode}-gradient($direction, $from, $to);
+    }
+    @if $o == true {
+        background-image: -o-#{$mode}-gradient($direction, $from, $to);
+    }
+    @if $ms == true {
+        background-image: -ms-#{$mode}-gradient($direction, $from, $to);
+    }
+    @if $w3 == true {
+        background-image: #{$mode}-gradient($direction, $from, $to);
+    }
+}

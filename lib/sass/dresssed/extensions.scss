@@ -12,12 +12,17 @@
   height: 100%;
 }
 
-.vertical-center > .container {
+.vertical-center > .container,
+.vertical-center > .container-fluid {
   max-width: 99%;
 
   display: inline-block;
   vertical-align: middle;
 
+}
+
+.vertical-center > .container-fluid {
+  width: 100%;
 }
 
 @media (max-width: 375px) {
@@ -30,8 +35,13 @@
     }
   }
 
-  .vertical-center > .container {
+  .vertical-center > .container,
+  .vertical-center > .container-fluid {
     max-width: 98.5%;
+  }
+
+  .vertical-center > .container-fluid {
+    width: 100%;
   }
 }
 

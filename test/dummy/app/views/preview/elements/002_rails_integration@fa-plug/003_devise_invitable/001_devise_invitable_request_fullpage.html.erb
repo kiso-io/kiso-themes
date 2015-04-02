@@ -1,0 +1,25 @@
+<div id="main" class='devise'>
+  <div class="container-fluid">
+    <div class="row">
+      <header class="text-center">
+        <h1>My App</h1>
+        <p class="p0 m0">Request an Invite</p>
+      </header>
+    </div>
+    <div class="row mt20">
+      <form class="form-horizontal col-xs-12 col-md-6 col-md-offset-3" id="new_user" action="/" accept-charset="UTF-8" method="post">
+        <div class="sheet form-sheet">
+          <div class="sheet-inner">
+          <div class="form-group">
+              <label for='user_email' class='form-label'>Your Email</label>
+              <input required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" type="email" value="" name="user[email]" id="user_email">
+            </div>
+          </div>
+        </div>
+        <div class="form-actions pull-right">
+          <input type="submit" name="commit" value="Get an Invite →" class="btn btn-outline-primary">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,8 @@ module ApplicationHelper
       level_class = 'nav-second-level'
     when 2
       level_class = 'nav-third-level'
+    else
+      level_class = 'nav-third-level'
     end
 
     klass     = "nav #{level_class} collapse"
