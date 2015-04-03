@@ -87,8 +87,8 @@
   // do the content that text-indent is hiding, either, so we're ok.
   *text-indent: 0;
   vertical-align: top;
-  border-top:     $height solid transparent;
-  border-bottom:  $height solid transparent;
+  border-top:     #{$height/2} solid transparent;
+  border-bottom:  #{$height/2} solid transparent;
 
   content: " ";
 

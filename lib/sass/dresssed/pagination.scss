@@ -48,7 +48,7 @@
 }
 
 .pagination .active a {
-  color: darken($link-color, 3%);
+  color: lighten($link-color, 13%);
 }
 
 .pagination .disabled a,

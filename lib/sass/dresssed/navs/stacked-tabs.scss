@@ -52,18 +52,18 @@
 .nav-tabs.nav-stacked.nav-caret-left > li.active {
 
   &::before {
-    @include horizontal-caret(left, $line-height-base, 9px, $borderColor);
-    border-right: 9px solid #cbdcde;
-    margin-top: 4px;
-    margin-left: -12px;
+    @include horizontal-caret(left, $line-height-computed, 9px, $borderColor);
+    border-right: #{$line-height-computed/2} solid #cbdcde;
+    margin-top: 9px;
+    margin-left: -14px;
   }
 
   &::after {
-    @include horizontal-caret(left, $line-height-base, 9px, lighten($backgroundColor, 2%));
-    border-right: 9px solid lighten($backgroundColor, 2%);
+    @include horizontal-caret(left, $line-height-computed, 9px, lighten($backgroundColor, 2%));
+    border-right: #{$line-height-computed/2} solid lighten($backgroundColor, 2%);
 
-    margin-top: -34px;
-    margin-left: -11px;
+    margin-top: -32px;
+    margin-left: -13px;
   }
 
   a {
@@ -78,19 +78,19 @@
 
 .nav-tabs.nav-stacked.nav-caret-right > li.active {
   &::before, &::after {
-    @include horizontal-caret(right, $line-height-base, 9px, $borderColor);
-    border-left: 9px solid $borderColor;
-    margin-top: 2px;
-    margin-right: -11px;
+    @include horizontal-caret(right, $line-height-computed, 9px, $borderColor);
+    border-left: #{$line-height-computed/2}  solid $borderColor;
+    margin-top: 9px;
+    margin-right: -15px;
     margin-bottom: -33px;
   }
 
   &::after {
-    @include horizontal-caret(right, $line-height-base, 9px, $backgroundColor);
-    border-left: 9px solid lighten($backgroundColor, 2%);
+    @include horizontal-caret(right, $line-height-computed, 9px, $backgroundColor);
+    border-left: #{$line-height-computed/2} solid lighten($backgroundColor, 2%);
 
-    margin-top: -$line-height-base*2;
-    margin-right: -10px;
+    margin-top: -32px;
+    margin-right: -14px;
   }
 
   a {
@@ -109,5 +109,5 @@
   content: "\00B7";
   font-weight: normal;
   font-size: 25px;
-  margin-top: -9px;
+  margin-top: -7px;
 }
