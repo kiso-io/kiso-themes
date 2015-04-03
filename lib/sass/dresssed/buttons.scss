@@ -175,12 +175,11 @@ fieldset[disabled] .btn-primary.active {
   text-shadow: none;
 }
 
-.btn-outline-success.active,
 .btn-outline-success:active,
 .btn-outline-success:focus,
 .btn-outline-success:hover {
   outline: none;
-  background: $success;
+  background: darken($success, 10%);
   color: white;
   text-shadow: none;
 }
@@ -197,7 +196,6 @@ fieldset[disabled] .btn-primary.active {
   text-shadow: none;
 }
 
-.btn-outline-info.active,
 .btn-outline-info:active,
 .btn-outline-info:focus,
 .btn-outline-info:hover,
@@ -214,13 +212,12 @@ fieldset[disabled] .btn-primary.active {
   color: $warning;
 }
 
-.btn-outline-warning.active,
 .btn-outline-warning:active,
 .btn-outline-warning:focus,
 .btn-outline-warning:hover,
 .open .btn-outline-warning.dropdown-toggle {
   outline: none;
-  background: $warning;
+  background: darken($warning, 10%);
   color: white;
   text-shadow: none;
 }
@@ -231,13 +228,12 @@ fieldset[disabled] .btn-primary.active {
   color: $danger;
 }
 
-.btn-outline-danger.active,
 .btn-outline-danger:active,
 .btn-outline-danger:focus,
 .btn-outline-danger:hover,
 .open .btn-outline-danger.dropdown-toggle {
   outline: none;
-  background: $danger;
+  background: $errorBackground;
   color: white;
   text-shadow: none;
 }
@@ -247,13 +243,12 @@ fieldset[disabled] .btn-primary.active {
   color: $text-color;
 }
 
-.btn-outline-link.active,
 .btn-outline-link:active,
 .btn-outline-link:focus,
 .btn-outline-link:hover,
 .open .btn-outline-dark.dropdown-toggle {
   outline: none;
-  background: #fff;
+  background: transparent;
   color: $text-color;
   text-decoration: underline;
   text-shadow: none;

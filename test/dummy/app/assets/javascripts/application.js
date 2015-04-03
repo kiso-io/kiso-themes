@@ -40,13 +40,8 @@ $(document).ready(function(){
       $($sgViewport).height(h-55);
   });
 
-  $(function () {
-    $('[data-toggle="popover"]').popover()
-  });
-
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  });
+  $('[data-toggle="popover"]').popover();
+  $('[data-toggle="tooltip"]').tooltip();
 
   $('.nav-side-menu').metisMenu();
 });

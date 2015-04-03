@@ -1,6 +1,7 @@
 // Colors
 .label {
   background-color: $brand-info;
+  line-height: inherit;
 }
 .label:hover {
   cursor: pointer;
