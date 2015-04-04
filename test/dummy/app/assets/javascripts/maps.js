@@ -7,6 +7,9 @@ $(document).ready(function(){
       lat: 0,
       lng: 0,
       disableDefaultUI: true,
+      scaleControl: false,
+        scrollwheel: false,
+        disableDoubleClickZoom: true,
       zoomControl : true,
       zoomControlOpt: {
           style : 'SMALL',
