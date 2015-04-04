@@ -89,7 +89,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
     @include prefix(transform, rotate(45deg));
   }
 
-  .nav li:nth-last-child(2) {
+  #menu-content > li:nth-last-child(2) {
     margin-bottom: 132px;
   }
 
