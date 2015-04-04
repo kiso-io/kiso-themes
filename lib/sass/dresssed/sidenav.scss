@@ -40,12 +40,16 @@ $side-nav-menu-background-color: color($blue-grey, 900);
       background-color: #aaa;
   }
 
-  .brand {
-    display: block;
-    text-align: center;
+  .navbar-header {
+    float: none;
     background-color: #23282e;
+  }
+
+  .navbar-brand {
+    display: block;
+    width: 100%;
+    text-align: center;
     font-size: 14px;
-    line-height: $navbar-height;
   }
 
   .nav > li.active {
@@ -62,7 +66,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
     padding: 0;
   }
 
-  .toggle-btn {
+  .navbar-toggle {
     display: none;
   }
 
@@ -175,6 +179,18 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   }
 }
 
+@media (max-width: 768px) {
+  .nav-side-menu {
+    .navbar-collapse.collapse {
+      display: none !important;
+    }
+
+    .navbar-collapse.collapse.in {
+      display: block !important;
+    }
+  }
+}
+
 @media (max-width: 768px), (max-width: 1024px) and (orientation: landscape) {
   .nav-side-menu {
     position: relative;
@@ -182,37 +198,36 @@ $side-nav-menu-background-color: color($blue-grey, 900);
     width: 100%;
     height: auto;
 
-    .toggle-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+    #menu-content > li:nth-last-child(2) {
+      margin-bottom: 0px;
+    }
+
+    .navbar-collapse {
+      height: 0;
+      overflow: hidden;
+
+      &.in {
+        height: auto;
+        display: block;
+        overflow-y: scroll;
+      }
+    }
+
+    .navbar-toggle {
       z-index: 10 !important;
       display: block;
-      width: 40px;
       background-color: transparent;
       border: 1px solid $text-color;
       color: $text-color;
       text-align: center;
       cursor: pointer;
-      margin-right: 5px;
-      line-height: $line-height-computed *1.3;
     }
 
-    .brand {
+    .navbar-brand {
+      width: auto;
       padding-left: 15px;
       text-align: left !important;
-      line-height: $navbar-height !important;
     }
-  }
-
-  .nav-side-menu .menu-list .menu-content {
-    height: 0;
-    display: block;
-    visibility: visible;
-  }
-
-  .collapse.in {
-    height: auto !important;
   }
 
   .main-content {
@@ -222,22 +237,5 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   .nav-side-menu .nav-side-menu-footer {
     position: relative;
     width: 100%;
-  }
-}
-
-
-@media (min-width: 768px) {
-  .nav-side-menu .menu-list .menu-content {
-    display: block;
-    visibility: visible;
-    overflow: hidden;
-  }
-}
-
-@media (max-width: 375px) {
-  .nav-side-menu .menu-list .menu-content {
-    display: block;
-    visibility: visible;
-    overflow: hidden;
   }
 }

@@ -30,7 +30,7 @@ $(document).ready(function(){
 
   $('.size-laptop').on('click', function(){
     sizeiframe(document.body.clientWidth, true);
-  });
+  })
 
   sizeiframe(document.body.clientWidth, true);
 
@@ -38,6 +38,7 @@ $(document).ready(function(){
       var $sgViewport = $('#sg-viewport');
       var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       $($sgViewport).height(h-55);
+      sizeiframe(document.body.clientWidth);
   });
 
   $('[data-toggle="popover"]').popover();

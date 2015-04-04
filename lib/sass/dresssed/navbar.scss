@@ -14,6 +14,19 @@
     padding-bottom: 10px;
   }
 
+  .navbar-toggle .icon-bar {
+    display: block;
+    width: 10px;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 2px;
+  }
+
   .dropdown,
   .dropdown-toggle {
     min-height: $navbar-height;
@@ -42,13 +55,11 @@
   background-color: $activeBackgroundColor;
 }
 
-
 .navbar-default {
-
   button.dropdown-toggle {
-    background: transparent;
-    border: none;
     min-width: 62px;
+    border: none;
+    background: transparent;
 
     i {
       color: $navbar-default-link-color;
@@ -63,8 +74,8 @@
     .search-button {
       position: absolute;
       top: 15px;
-      font-size: 16px;
       right: 26px;
+      font-size: 16px;
     }
   }
 
@@ -74,8 +85,8 @@
       background: $brand-primary;
 
       i {
-        @include prefix(text-shadow, none);
         color: $navbar-default-link-color;
+        @include prefix(text-shadow, none);
       }
     }
 
@@ -174,9 +185,9 @@
   }
 
   .dropdown-toggle > i {
-    line-height: $line-height-base;
-    color: $navbar-default-link-color;
     margin-top: -5px;
+    color: $navbar-default-link-color;
+    line-height: $line-height-base;
   }
 
   .dropdown-toggle > i + .badge {

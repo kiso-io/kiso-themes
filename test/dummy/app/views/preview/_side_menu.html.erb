@@ -1,7 +1,10 @@
 <div class="nav-side-menu">
-  <div class="brand">Sidenav Header</div>
-  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-  <ul id="menu-content" class="nav in  navbar-collapse active">
+  <div class="navbar-header">
+    <div class="navbar-brand">Sidenav Header</div>
+    <i class="navbar-toggle collapsed fa fa-bars" data-toggle="collapse" data-target="#menu-content"></i>
+  </div>
+
+  <ul id="menu-content" class="nav navbar-collapse">
 
     <% @elements[:children].each do |el| %>
       <% unless el[:children].nil? %>
