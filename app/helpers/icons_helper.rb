@@ -11,7 +11,7 @@ module IconsHelper
   # Icon from Glyphicon Icons. Use the name without the 'glyphicon glyphicon-' prefix.
   # Eg.:
   #
-  #   <%= glyphicon_tag "-cloud-download" %>
+  #   <%= glyphicon_tag "cloud-download" %>
   #
   def glyphicon_tag(name)
     content_tag(:i, nil, class: "glyphicon glyphicon-#{name}")
@@ -29,7 +29,7 @@ module IconsHelper
   # Icon from Material Design Icons.
   # Eg.:
   #
-  #   <%= mdi_icon_tag "remove" %>
+  #   <%= mdi_icon_tag "mdi-action-account-box" %>
   #
   def mdi_icon_tag(name)
     content_tag(:i, nil, class: "#{name}")
