@@ -11,7 +11,7 @@ class PreviewController < ApplicationController
     @section = params[:section] || '001_dashboard@fa-dashboard'
     index = @section.index('/') || 0
     index = index + 1 if index > 0
-    @title = @section[index..@section.length].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub(/fullpage/, '').titleize
+    @title = @section[index..@section.length].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/fullpage/, '').titleize
     @parent = @section[0..index].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@.*$/, '').titleize
 
     @breadcrumbs = []
@@ -52,9 +52,9 @@ class ElementFinder
     data = {
       parent_file_name: path,
       parent_name:      File.basename(path, '.html.erb').to_s,
-      target_name:      File.basename(path, '.html.erb').to_s.gsub(/@\w+-\w+$/, ''),
-      display_name:     File.basename(path, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').titleize,
-      icon:             path.match(/@\w+-\w+/).nil? ? 'fa-gift' : path.match(/@\w+-\w+/)[0][1..-1],
+      target_name:      File.basename(path, '.html.erb').to_s.gsub(/@([\w+-]*)$/, ''),
+      display_name:     File.basename(path, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').titleize,
+      icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : path.match(/@([\w+-]*)/)[0][1..-1],
     }
 
     data[:children] = children = []
@@ -67,9 +67,9 @@ class ElementFinder
         childdata = {
           parent_file_name: data[:parent_file_name].gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
           parent_name:      File.basename(entry, '.html.erb').to_s,
-          target_name:      File.basename(entry, '.html.erb').to_s.gsub(/@\w+-\w+$/, ''),
-          display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@\w+-\w+$/, '').gsub('fullpage', '').titleize,
-          icon:             entry.match(/@\w+-\w+/).nil? ? 'fa-gift' : entry.match(/@\w+-\w+/)[0][1..-1],
+          target_name:      File.basename(entry, '.html.erb').to_s.gsub(/@([\w+-]*)$/, ''),
+          display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub('fullpage', '').titleize,
+          icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : entry.match(/@([\w+-]*)/)[0][1..-1],
         }
         children << childdata
       end
