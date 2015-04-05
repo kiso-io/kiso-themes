@@ -4,7 +4,11 @@ module IconsHelper
   #
   #   <%= icon_tag "remove" %>
   #
-  def icon_tag(name)
+  def fa_icon_tag(name)
     content_tag(:i, nil, class: "fa fa-#{name}")
+  end
+
+  def ionicon_icon_tag(name)
+    content_tag(:i, nil, class: "icon ion-#{name}")
   end
 end

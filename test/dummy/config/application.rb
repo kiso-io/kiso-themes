@@ -55,6 +55,8 @@ module Dummy
     config.assets.precompile += ['styles/blue.css', 'styles/black.css', 'styles/amber.css']
     config.assets.initialize_on_precompile = false
 
+    config.autoload_paths << Rails.root.join('lib')
+
     config.action_dispatch.default_headers = {
         'X-Frame-Options' => 'ALLOWALL'
     }
