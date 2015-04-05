@@ -8,7 +8,10 @@ class PreviewController < ApplicationController
 
   def main
     @body_class = 'main'
-    @section = params[:section] || '001_dashboard@fa-dashboard'
+
+    redirect_to element_path('001_dashboard@fa-dashboard') and return if params[:section].nil?
+
+    @section = params[:section]
     index = @section.index('/') || 0
     index = index + 1 if index > 0
     @title = @section[index..@section.length].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/fullpage/, '').titleize
@@ -50,9 +53,8 @@ class ElementFinder
 
   def self.find(path, name=nil)
     data = {
-      parent_file_name: path,
-      parent_name:      File.basename(path, '.html.erb').to_s,
-      target_name:      File.basename(path, '.html.erb').to_s.gsub(/@([\w+-]*)$/, ''),
+      section: path.gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
+      target_name:      File.basename(path, '.html.erb').to_s,
       display_name:     File.basename(path, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').titleize,
       icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : path.match(/@([\w+-]*)/)[0][1..-1],
     }
@@ -65,9 +67,8 @@ class ElementFinder
         children << find(full_path, entry)
       else
         childdata = {
-          parent_file_name: data[:parent_file_name].gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
-          parent_name:      File.basename(entry, '.html.erb').to_s,
-          target_name:      File.basename(entry, '.html.erb').to_s.gsub(/@([\w+-]*)$/, ''),
+          section:          data[:section].gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
+          target_name:      File.basename(entry, '.html.erb').to_s,
           display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub('fullpage', '').titleize,
           icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : entry.match(/@([\w+-]*)/)[0][1..-1],
         }

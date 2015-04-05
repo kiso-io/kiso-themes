@@ -152,14 +152,18 @@ $side-nav-menu-background-color: color($blue-grey, 900);
 
   @for $i from 1 through 30 {
     .nav-second-level:not(.direct) li:nth-child(#{$i}) a,
-
-    .nav-third-level:not(.direct) li:nth-child(#{$i}) a {
+    .nav-third-level:not(.direct) li:nth-child(#{$i}) a,
+    .nav-fourth-level:not(.direct) li:nth-child(#{$i}) a {
       @include prefix(animation, right-fade 500ms);
       @include prefix(animation-delay, #{$i * (40 - $i)}ms);
     }
   }
 
   .nav > li {
+    a {
+      padding: 8px 15px;
+    }
+
     &.active {
       background-color: #4f5b69;
 
@@ -195,6 +199,10 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   }
 
   .nav-third-level li a {
+    padding-left: 45px;
+  }
+
+  .nav-fourth-level li a {
     padding-left: 45px;
   }
 }

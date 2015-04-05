@@ -21,14 +21,14 @@
 
     <% @elements[:children].each do |el| %>
       <% unless el[:children].nil? %>
-        <li class="<%= @section.downcase.include?(el[:parent_name].downcase ) ? 'active' : '' %>">
+        <li class="<%= @section.downcase.include?(el[:target_name].downcase ) ? 'active' : '' %>">
           <a href="#"><i class="fa <%=el[:icon]%> fa-lg fa-fw"></i><%= el[:display_name] %><span class="fa arrow"></span></a>
           <%= render_children el[:children] %>
         </li>
       <% else %>
-        <%=activatable_li_tag element_path(el[:parent_name]) do %>
-          <% @is_active = (@section.downcase.include?(el[:parent_name].downcase)) ? 'active' : '' %>
-          <%= link_to element_path(el[:parent_name]), class: @is_active do %>
+        <%=activatable_li_tag element_path(el[:target_name]) do %>
+          <% @is_active = (@section.downcase.include?(el[:target_name].downcase)) ? 'active' : '' %>
+          <%= link_to element_path(el[:target_name]), class: @is_active do %>
             <i class="fa <%=el[:icon]%> fa-fw fa-lg"></i><%= el[:display_name].titleize %>
           <% end %>
         <% end %>
