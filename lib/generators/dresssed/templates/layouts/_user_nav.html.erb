@@ -6,7 +6,7 @@
   <div class="navbar-text pull-right">
   <% if devise? %>
     <%% if user_signed_in? %>
-      <%%= icon_tag "user" %> Welcome, <strong><%%= current_user.email %></strong>
+      <%%= fa_icon_tag "user" %> Welcome, <strong><%%= current_user.email %></strong>
       <span class="divider">|</span>
       <%%= link_to 'Settings', edit_user_registration_path %>
       <span class="divider">|</span>
@@ -17,7 +17,7 @@
       <%%= link_to 'Login', new_user_session_path %>
     <%% end %>
   <% else %>
-    <%%= icon_tag "user" %> Welcome, <strong><%%= "User" %></strong>
+    <%%= fa_icon_tag "user" %> Welcome, <strong><%%= "User" %></strong>
     <span class="divider">|</span>
     <%%= link_to "Settings", "#" %>
   <% end %>

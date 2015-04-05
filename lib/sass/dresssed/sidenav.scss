@@ -23,26 +23,67 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   font-size: .8em;
 
   &::-webkit-scrollbar {
-      width: 8px;
+    width: 8px;
   }
 
   &::-webkit-scrollbar-track {
-      background-color: transparent;
-      border: none;
+    background-color: transparent;
+    border: none;
   }
 
   &::-webkit-scrollbar-thumb {
-      background-color: #ccc;
-      border-radius: 2px;
+    background-color: #ccc;
+    border-radius: 2px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-      background-color: #aaa;
+    background-color: #aaa;
   }
 
   .navbar-header {
     float: none;
     background-color: #23282e;
+    margin-bottom: 20px;
+
+    .profile {
+      padding: 10px 20px;
+      overflow: hidden;
+      zoom: 1;
+    }
+
+    .profile .profile-image {
+      display: block;
+      float: left;
+      width: 62px;
+      height: 62px;
+      margin-right: 10px;
+    }
+
+    .profile .profile-body {
+      overflow: hidden;
+      zoom: 1;
+    }
+
+    .profile .profile-body h4 {
+      color: #fff;
+      margin: 0;
+      margin-top: 15px;
+      text-transform: none;
+    }
+
+    .profile .user-links .btn-link {
+      padding-left: 4px;
+      padding-right: 4px;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:hover {
+        color: white;
+        transition: color 250ms;
+      }
+    }
   }
 
   .navbar-brand {
@@ -98,22 +139,20 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   }
 
   .nav li a {
-
     &:hover {
       @include prefix(transition, all 200ms ease);
-
       background-color: #4f5b69;
       color: white;
     }
 
     i {
-        padding-right: 10px;
+      padding-right: 10px;
     }
   }
 
   @for $i from 1 through 30 {
-
     .nav-second-level:not(.direct) li:nth-child(#{$i}) a,
+
     .nav-third-level:not(.direct) li:nth-child(#{$i}) a {
       @include prefix(animation, right-fade 500ms);
       @include prefix(animation-delay, #{$i * (40 - $i)}ms);
@@ -138,7 +177,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
     }
   }
 
-  ul[aria-expanded=true].collapsing  li{
+  ul[aria-expanded=true].collapsing li {
     opacity: 0;
   }
 
@@ -161,7 +200,8 @@ $side-nav-menu-background-color: color($blue-grey, 900);
 }
 
 .nav-side-menu .nav-side-menu-footer {
-  -webkit-transform: translateZ(0);   // Thanks, Chrome. http://stackoverflow.com/questions/15152470/chrome-rendering-issue-fixed-position-anchor-with-ul-in-body
+  -webkit-transform: translateZ(0);
+  // Thanks, Chrome. http://stackoverflow.com/questions/15152470/chrome-rendering-issue-fixed-position-anchor-with-ul-in-body
   background-color: $side-nav-menu-background-color;
   position: fixed;
   @include prefix(transition, none);

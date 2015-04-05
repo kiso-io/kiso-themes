@@ -15,7 +15,7 @@
         <%- if devise_mapping.omniauthable? %>
           <p>
             <%- resource_class.omniauth_providers.each do |provider| %>
-              <%= link_to icon_tag("#{provider}-sign") + " Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: 'btn' %>
+              <%= link_to fa_icon_tag("#{provider}-sign") + " Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: 'btn' %>
             <% end -%>
           </p>
 

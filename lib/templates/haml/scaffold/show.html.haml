@@ -9,5 +9,5 @@
 
 <% end -%>
   .form-actions.col-md-offset-2
-    = link_to icon_tag("pencil") + ' Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), <%= Dresssed.key_value :class, "'btn btn-primary'" %>
+    = link_to fa_icon_tag("pencil") + ' Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), <%= Dresssed.key_value :class, "'btn btn-primary'" %>
     = link_to 'Back', <%= index_helper %>_path, <%= Dresssed.key_value :class, "'btn'" %>

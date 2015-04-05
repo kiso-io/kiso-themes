@@ -6,7 +6,7 @@
 
 <%% content_for :actions do %>
   <%%= link_to new_<%= singular_table_name %>_path, <%= Dresssed.key_value :class, "'btn btn-primary btn-large pull-right'" %> do %>
-    <%%= icon_tag "plus" %> Add <%= human_name %>
+    <%%= fa_icon_tag "plus" %> Add <%= human_name %>
   <%% end %>
 <%% end %>
 
@@ -28,9 +28,9 @@
           <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
           <td class="actions">
-            <%%= link_to icon_tag("eye"), <%= singular_table_name %>, <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Show'" %> %>
-            <%%= link_to icon_tag("pencil"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Edit'" %> %>
-            <%%= link_to icon_tag("trash-o"), <%= singular_table_name %>, <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Delete'" %>,
+            <%%= link_to fa_icon_tag("eye"), <%= singular_table_name %>, <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Show'" %> %>
+            <%%= link_to fa_icon_tag("pencil"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Edit'" %> %>
+            <%%= link_to fa_icon_tag("trash-o"), <%= singular_table_name %>, <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Delete'" %>,
                         <%= Gem::Version.new(Rails.version) >= Gem::Version.new("3.2.6") ? Dresssed.key_value(:data, '{ ' + Dresssed.key_value(:confirm, "'Are you sure?'") + ' }') : Dresssed.key_value(:confirm, "'Are you sure?'") %>, <%= Dresssed.key_value :method, ":delete" %> %>
           </td>
         </tr>
