@@ -7,6 +7,7 @@
 
 .dropdown-menu > li > a {
   color: $brand-primary;
+  font-size: $font-size-base - 2;
 }
 
 .dropdown-menu > li > a:hover,
