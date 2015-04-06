@@ -54,6 +54,25 @@
       }
     }
 
+    .switch {
+      span {
+        height:22px;
+        width: 40px;
+
+        &:after {
+          width: 19px;
+        }
+      }
+
+      input:checked + span:after {
+        left: 18px;
+      }
+    }
+
+    .pagination-xs {
+      margin: 0;
+    }
+
     .btn-group {
       top: -3px;
 

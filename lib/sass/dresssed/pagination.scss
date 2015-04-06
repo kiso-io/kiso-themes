@@ -1,8 +1,3 @@
-.pagination-lg li a{
-  font-size: 1.2em;
-  line-height: $line-height-base + 5px;
-}
-
 .pagination ul {
   display: inline-block;
   margin-bottom: 0;
@@ -72,7 +67,6 @@
 }
 
 .pager.arrows {
-
   li.previous a {
     width: 40px;
     overflow: hidden;
@@ -159,4 +153,15 @@
       line-height: 2.6;
     }
   }
+}
+
+.pagination-lg li a {
+  font-size: 1.2em;
+  line-height: $line-height-base + 5px;
+}
+
+.pagination-xs li a {
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 7px;
 }
