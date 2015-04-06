@@ -30,15 +30,15 @@ module ApplicationHelper
       attributes.each do |attribute|
         if !attribute[:children].nil?
           parent_is_active = @section.include?(attribute[:section])
-          concat(content_tag(:li, attribute[:display_name], class: parent_is_active ? 'active' : '') do
+          concat(content_tag(:li, raw(attribute[:display_name]), class: parent_is_active ? 'active' : '') do
             concat(content_tag(:a, '#') do
-              concat( attribute[:display_name] )
+              concat( raw(attribute[:display_name]) )
               concat(content_tag(:span, nil, class: 'fa arrow'))
             end)
             concat(render_children(attribute[:children], level+1))
           end)
         else
-          concat(activatable_li_tag_with_link attribute[:display_name], element_path(File.join(attribute[:section],attribute[:target_name])))
+          concat(activatable_li_tag_with_link raw(attribute[:display_name]), element_path(File.join(attribute[:section],attribute[:target_name])))
         end
       end
     end
