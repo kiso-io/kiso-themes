@@ -14,12 +14,13 @@ class PreviewController < ApplicationController
     @section = params[:section]
     index = @section.index('/') || 0
     index = index + 1 if index > 0
-    @title = @section[index..@section.length].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/fullpage/, '').titleize
+    @title = @section[index..@section.length].gsub('_', ' ').gsub(/\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/fullpage/, '').titleize
     @parent = @section[0..index].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@.*$/, '').titleize
 
     @breadcrumbs = []
     @breadcrumbs << @parent if @parent != '0'
-    @breadcrumbs << @title if @title && @parent != '0'
+    @breadcrumbs << @title.split('/').flatten if @title && @parent != '0'
+    @breadcrumbs.flatten!
 
     @elements = ElementFinder.find(File.join(Rails.root, 'app/views/preview/elements/'))
 
