@@ -41,8 +41,12 @@ $(document).ready(function(){
       sizeiframe(document.body.clientWidth);
   });
 
-  $('[data-toggle="popover"]').popover();
-  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover({
+    container: 'body'
+  });
+  $('[data-toggle="tooltip"]').tooltip({
+    container: 'body'
+  });
 
   $('.nav-side-menu').metisMenu();
 });

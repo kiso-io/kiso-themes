@@ -32,6 +32,17 @@
       border-right: 1px solid #ddd;
     }
 
+    .nav-tabs {
+      border-bottom-color: transparent;
+      top: 20px;
+      position: absolute;
+      right: 20px;
+    }
+
+    .nav-tabs>li>a {
+        border-bottom-color: transparent
+    }
+
     .fa {
       top: 3px;
       min-width: 25px;

@@ -132,7 +132,7 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-8 animate-fade-in-1000">
+  <div class="col-sm-7 animate-fade-in-1000">
     <div class="panel">
       <div class="panel-heading">
         <h5>Master Server</h5>
@@ -177,83 +177,227 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-4 animate-fade-in-1000">
-    <div class="panel">
+  <div class="col-md-5 animate-fade-in-1000">
+
+
+    <div class="panel panel-default">
       <div class="panel-heading">
-        <h5>New Support Requests</h5>
+        <%= ionicon_icon_tag 'flame' %>
+          Recent
+        <ul class="nav nav-tabs nav-tabs-xs">
+          <li class="active">
+            <a href="#dashboard-recent-comments" data-toggle="tab">Comments</a>
+          </li>
+          <li class="">
+            <a href="#dashboard-recent-threads" data-toggle="tab">Forum threads</a>
+          </li>
+        </ul>
       </div>
-      <div class="panel-body panel-list">
-        <div class="list-group">
-          <div class="list-group-item media">
-            <a class="pull-left">
-              <i class="avatar-notification"></i>
-              <img class="media-object img-circle" src="http://fillmurray.com/64/64">
-            </a>
-            <div class="media-body">
-              <h5 class="media-heading">Momoko Price</h5>
-              <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
-            </div>
-            <ul class="list-unstyled list-inline text-right">
-              <li>
-                <small class="text-muted"><a href="#">View</a></small>
+      <div class="tab-content">
+        <div class="tab-pane fade active in" style='height: 474px; overflow: scroll;' id='dashboard-recent-comments'>
+          <ul class="list-group list-group-flush">
+            <li class='list-group-item'>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                </a>
+                <div class="media-body">
+                  <h5 class="media-heading"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
+                  <p class='small'>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <ul class="list-inline small">
+                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                    <span class="pull-right">1 hour ago</span>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class='list-group-item'>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                </a>
+                <div class="media-body">
+                  <h5 class="media-heading"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
+                  <p class='small'>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <ul class="list-inline small">
+                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                    <span class="pull-right">1 hour ago</span>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class='list-group-item'>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                </a>
+                <div class="media-body">
+                  <h5 class="media-heading"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
+                  <p class='small'>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <ul class="list-inline small">
+                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                    <span class="pull-right">1 hour ago</span>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class='list-group-item'>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                </a>
+                <div class="media-body">
+                  <h5 class="media-heading"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
+                  <p class='small'>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <ul class="list-inline small">
+                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                    <span class="pull-right">1 hour ago</span>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class='list-group-item'>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                </a>
+                <div class="media-body">
+                  <h5 class="media-heading"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
+                  <p class='small'>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <ul class="list-inline small">
+                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                    <span class="pull-right">1 hour ago</span>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class='list-group-item'>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                </a>
+                <div class="media-body">
+                  <h5 class="media-heading"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
+                  <p class='small'>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <ul class="list-inline small">
+                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                    <span class="pull-right">1 hour ago</span>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class='list-group-item'>
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                </a>
+                <div class="media-body">
+                  <h5 class="media-heading"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
+                  <p class='small'>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  <ul class="list-inline small">
+                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                    <span class="pull-right">1 hour ago</span>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="dashboard-recent-threads">
+          <div style="overflow: scroll; width: auto; height: 474px;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
+                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li>
-                <small class="text-muted"><a href="#">Archive</a></small>
+              <li class="list-group-item">
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
+                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
+                    </div>
+                  </div>
+                </div>
               </li>
-            </ul>
-          </div>
-          <div class="list-group-item media">
-            <a class="pull-left">
-              <i class="avatar-notification danger"></i>
-              <img class="media-object img-circle" src="http://fillmurray.com/64/64">
-            </a>
-            <div class="media-body">
-              <h5 class="media-heading">Momoko Price</h5>
-              <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
-            </div>
-            <ul class="list-unstyled list-inline text-right">
-              <li>
-                <small class="text-muted"><a href="#">View</a></small>
+              <li class="list-group-item">
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
+                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li>
-                <small class="text-muted"><a href="#">Archive</a></small>
+              <li class="list-group-item">
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
+                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
+                    </div>
+                  </div>
+                </div>
               </li>
-            </ul>
-          </div>
-          <div class="list-group-item media">
-            <a class="pull-left">
-              <i class="avatar-notification warning"></i>
-              <img class="media-object img-circle" src="http://fillmurray.com/64/64">
-            </a>
-            <div class="media-body">
-              <h5 class="media-heading">Momoko Price</h5>
-              <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
-            </div>
-            <ul class="list-unstyled list-inline text-right">
-              <li class='pr0'>
-                <small class="text-muted"><a href="#">View</a></small>
+              <li class="list-group-item">
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
+                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li>
-                <small class="text-muted"><a href="#">Archive</a></small>
+              <li class="list-group-item">
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
+                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
+                    </div>
+                  </div>
+                </div>
               </li>
-            </ul>
-          </div>
-          <div class="list-group-item media">
-            <a class="pull-left">
-              <i class="avatar-notification success"></i>
-              <img class="media-object img-circle" src="http://fillmurray.com/64/64">
-            </a>
-            <div class="media-body">
-              <h5 class="media-heading">Momoko Price</h5>
-              <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
-            </div>
-            <ul class="list-unstyled list-inline text-right">
-              <li>
-                <small class="text-muted"><a href="#">View</a></small>
+              <li class="list-group-item">
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <img class="media-object" src="http://fillmurray.com/40/40" alt="">
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
+                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li>
-                <small class="text-muted"><a href="#">Archive</a></small>
-              </li>
+
             </ul>
           </div>
         </div>

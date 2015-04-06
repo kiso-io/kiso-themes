@@ -26,3 +26,22 @@
   background: transparent;
   border-bottom: 1px solid blue;
 }
+
+.nav-tabs.nav-tabs-xs>li>a {
+    font-size: 12px
+}
+
+.nav-tabs.nav-tabs-xs>li>a>.badge,.nav-tabs.nav-tabs-xs>li>a>.label {
+    padding-left: 4px;
+    padding-right: 4px;
+    line-height: 13px;
+    font-size: 10px;
+    margin-left: 3px;
+    margin-right: -3px;
+    top: -1px
+}
+
+.nav-tabs.nav-tabs-xs>li>a>.label {
+    padding-left: 3px;
+    padding-right: 3px
+}
