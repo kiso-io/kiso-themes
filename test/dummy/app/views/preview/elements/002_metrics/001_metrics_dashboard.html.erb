@@ -41,7 +41,7 @@
         <ul class="list-unstyled small">
           <% types = [ { klass: 'refund', css_class: 'label-danger'},  { klass: 'purchase', css_class: 'label-success'}, { klass: 'cancellation', css_class: 'label-info'}] %>
           <% (1..20).each do |index|%>
-            <li>
+            <li class="mb10">
               <% instance = types[Random.rand(types.length)] %>
               <span class="label <%= instance[:css_class]%> mr10"><%=instance[:klass].upcase %> </span>
               <strong>$<%=Random.rand(120) %></strong> from <strong>Me</strong>
