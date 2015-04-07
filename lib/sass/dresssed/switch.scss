@@ -17,7 +17,7 @@
     height: 28px;
     border-radius: 14px;
     background: rgba(0, 0, 0, 0.2);
-    @include prefix(transition, background-color 0.75s);
+    transition: background-color 0.75s;
 
     &:after {
       position: absolute;
@@ -28,7 +28,7 @@
       content: '';
       border-radius: 12px;
       background-color: #fff;
-      @include prefix(transition, all 0.15s ease-in-out);
+      transition: all 0.15s ease-in-out;
     }
   }
 

@@ -86,7 +86,7 @@
 
       i {
         color: $navbar-default-link-color;
-        @include prefix(text-shadow, none);
+        text-shadow: none;
       }
     }
 

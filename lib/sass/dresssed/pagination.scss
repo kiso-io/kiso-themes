@@ -32,7 +32,7 @@
   line-height: $line-height-base + 5px;
 
   &:active {
-    @include prefix(transform, scale(0.9));
+    transform: scale(0.9);
   }
 }
 
@@ -91,7 +91,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url(image-path("dresssed/arrow-2.svg"));
-    @include prefix(transform, rotate(180deg));
+    transform: rotate(180deg);
 
     &::before {
       content: '\00ab ';

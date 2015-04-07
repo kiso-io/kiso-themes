@@ -2,7 +2,6 @@ $sub-menu-item-height: 40px;
 $side-nav-menu-background-color: color($blue-grey, 900);
 
 .main-content {
-  @include prefix(opacity, 100ms ease-in-out);
   z-index: 1;
   margin-left: $side-nav-width;
   vertical-align: top;
@@ -131,7 +130,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
   .active > a > .fa.arrow:before {
     content: '\f107';
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-    @include prefix(transform, rotate(45deg));
+    transform: rotate(45deg);
   }
 
   #menu-content > li:nth-last-child(2) {
@@ -140,7 +139,7 @@ $side-nav-menu-background-color: color($blue-grey, 900);
 
   .nav li a {
     &:hover {
-      @include prefix(transition, all 200ms ease);
+      transition: all 200ms ease;
       background-color: #4f5b69;
       color: white;
     }
@@ -154,8 +153,8 @@ $side-nav-menu-background-color: color($blue-grey, 900);
     .nav-second-level:not(.direct) li:nth-child(#{$i}) a,
     .nav-third-level:not(.direct) li:nth-child(#{$i}) a,
     .nav-fourth-level:not(.direct) li:nth-child(#{$i}) a {
-      @include prefix(animation, right-fade 500ms);
-      @include prefix(animation-delay, #{$i * (40 - $i)}ms);
+      animation: right-fade 500ms;
+      animation-delay: #{$i * (40 - $i)}ms;
     }
   }
 
@@ -208,12 +207,12 @@ $side-nav-menu-background-color: color($blue-grey, 900);
 }
 
 .nav-side-menu .nav-side-menu-footer {
-  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   // Thanks, Chrome. http://stackoverflow.com/questions/15152470/chrome-rendering-issue-fixed-position-anchor-with-ul-in-body
   background-color: $side-nav-menu-background-color;
   position: fixed;
-  @include prefix(transition, none);
-  @include prefix(transition-delay, none);
+  transition: none;
+  transition-delay: none;
   padding: 7px 15px 10px;
   left: 0;
   right: 0;

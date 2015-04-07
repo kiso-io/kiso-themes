@@ -1,11 +1,3 @@
-@mixin prefix($name, $argument...) {
-  -webkit-#{$name}: #{$argument};
-  -ms-#{$name}: #{$argument};
-  -moz-#{$name}: #{$argument};
-  -o-#{$name}: #{$argument};
-  #{$name}: #{$argument};
-}
-
 @mixin keyframes($animationName) {
   @-webkit-keyframes #{$animationName} {
     @content;
@@ -24,61 +16,32 @@
   }
 }
 
-@mixin transform($transforms) {
-  @include prefix(transform, $transforms);
-}
-
-@mixin animation($str) {
-  @include prefix(animation, #{$str});
-}
-
 // Border Radius
 // -------------
 
-@mixin border-radius-left($radius: 5px){
-  -webkit-border-top-left-radius: $radius;
-      -moz-border-radius-topleft: $radius;
-          border-top-left-radius: $radius;
-
-  -webkit-border-bottom-left-radius: $radius;
-      -moz-border-radius-bottomleft: $radius;
-          border-bottom-left-radius: $radius;
+@mixin border-radius-left($radius: 5px) {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
 }
 
-@mixin border-radius-right($radius: 5px){
-  -webkit-border-top-right-radius: $radius;
-      -moz-border-radius-topright: $radius;
-          border-top-right-radius: $radius;
-
-  -webkit-border-bottom-right-radius: $radius;
-      -moz-border-radius-bottomright: $radius;
-          border-bottom-right-radius: $radius;
+@mixin border-radius-right($radius: 5px) {
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
 }
 
-@mixin border-radius-top($radius: 5px){
-  -webkit-border-top-left-radius: $radius;
-      -moz-border-radius-topleft: $radius;
-          border-top-left-radius: $radius;
-
--webkit-border-top-right-radius: $radius;
-    -moz-border-radius-topright: $radius;
-        border-top-right-radius: $radius;
+@mixin border-radius-top($radius: 5px) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
 }
 
-@mixin border-radius-bottom($radius: 5px){
-  -webkit-border-bottom-left-radius: $radius;
-      -moz-border-radius-bottomleft: $radius;
-          border-bottom-left-radius: $radius;
-
-  -webkit-border-bottom-right-radius: $radius;
-      -moz-border-radius-bottomright: $radius;
-          border-bottom-right-radius: $radius;
+@mixin border-radius-bottom($radius: 5px) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
 }
-
 
 // Carets
 // ------
-@mixin horizontal-caret($side, $height: 9px, $width: 9px, $color: $white){
+@mixin horizontal-caret($side, $height: 9px, $width: 9px, $color: $white) {
   display: inline-block;
   width: 0;
   height: 0;
@@ -87,21 +50,19 @@
   // do the content that text-indent is hiding, either, so we're ok.
   *text-indent: 0;
   vertical-align: top;
-  border-top:     #{$height/2} solid transparent;
-  border-bottom:  #{$height/2} solid transparent;
-
+  border-top: #{$height / 2} solid transparent;
+  border-bottom: #{$height / 2} solid transparent;
   content: " ";
-
   position: relative;
   float: $side;
 }
 
 // Button backgrounds
 // ------------------
-@mixin buttonBackground($startColor, $endColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+@mixin buttonBackground($startColor, $endColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0, 0, 0, 0.25)) {
   // gradientBar will set the background to a pleasing blend of these, to support IE<=9
   @include gradientBar($startColor, $endColor, $textColor, $textShadow);
-  @include reset-filter();
+  @include reset-filter;
   outline: none;
 
   // in these cases the gradient won't cover the background, so we override
@@ -119,42 +80,45 @@
 }
 
 // Gradient Bar Colors for buttons and alerts
-@mixin gradientBar($primaryColor, $secondaryColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+@mixin gradientBar($primaryColor, $secondaryColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0, 0, 0, 0.25)) {
   color: $textColor;
   text-shadow: $textShadow;
   @include gradient-vertical($primaryColor, $secondaryColor);
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
-  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
 }
 
 //Prefixes definition
-$webkit:true;
-$o:true;
-$moz:true;
-$w3:true;
-$ms:true;
+$webkit: true;
+$o: true;
+$moz: true;
+$w3: true;
+$ms: true;
 
 //Gradient Mixin
-@mixin gradient($mode,$direction,$from,$to,$oldDirection:null){
+@mixin gradient($mode, $direction, $from, $to, $oldDirection: null) {
+  @if $webkit == true {
+    @if $oldDirection != null {
+      background-image: -webkit-gradient($mode, #{$oldDirection}, from($from), to($to));
+    }
+    background-image: -webkit-#{$mode}-gradient($direction, $from, $to);
+  }
 
-    @if $webkit == true {
-        @if($oldDirection != null){
-            background-image: -webkit-gradient($mode, #{$oldDirection}, from($from),to($to));
-        }
-        background-image: -webkit-#{$mode}-gradient($direction, $from, $to);
-    }
-    @if $moz == true {
-        background-image: -moz-#{$mode}-gradient($direction, $from, $to);
-    }
-    @if $o == true {
-        background-image: -o-#{$mode}-gradient($direction, $from, $to);
-    }
-    @if $ms == true {
-        background-image: -ms-#{$mode}-gradient($direction, $from, $to);
-    }
-    @if $w3 == true {
-        background-image: #{$mode}-gradient($direction, $from, $to);
-    }
+  @if $moz == true {
+    background-image: -moz-#{$mode}-gradient($direction, $from, $to);
+  }
+
+  @if $o == true {
+    background-image: -o-#{$mode}-gradient($direction, $from, $to);
+  }
+
+  @if $ms == true {
+    background-image: -ms-#{$mode}-gradient($direction, $from, $to);
+  }
+
+  @if $w3 == true {
+    background-image: #{$mode}-gradient($direction, $from, $to);
+  }
 }
 
 @mixin alertBorder($color) {

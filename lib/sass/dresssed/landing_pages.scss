@@ -39,7 +39,7 @@ $rounded-depth: 5px;
   -webkit-overflow-scrolling: touch;
 
   & > * {
-    @include transform(translateZ(0px));
+    transform: translateZ(0px);
   }
 
   iframe,

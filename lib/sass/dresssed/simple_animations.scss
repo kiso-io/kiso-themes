@@ -1,60 +1,60 @@
 @include keyframes(drop-fade) {
   0% {
     opacity: 0;
-    @include transform(translateY(-0.6em));
+    transform: translateY(-0.6em);
   }
   50% {
     opacity: 0;
-    @include transform(translateY(-0.6em));
+    transform: translateY(-0.6em);
   }
   100% {
     opacity: 1;
-    @include transform(translateY(0));
+    transform: translateY(0);
   }
 }
 
 @include keyframes(rise-fade) {
   0% {
     opacity: 0;
-    @include transform(translateY(+0.6em));
+    transform: translateY(+0.6em);
   }
   50% {
     opacity: 0;
-    @include transform(translateY(+0.6em));
+    transform: translateY(+0.6em);
   }
   100% {
     opacity: 1;
-    @include transform(translateY(0));
+    transform: translateY(0);
   }
 }
 
 @include keyframes(right-fade) {
   0% {
     opacity: 0;
-    @include transform(translateX(-0.6em));
+    transform: translateX(-0.6em);
   }
   50% {
     opacity: 0;
-    @include transform(translateX(-0.6em));
+    transform: translateX(-0.6em);
   }
   100% {
     opacity: 1;
-    @include transform(translateX(0));
+    transform: translateX(0);
   }
 }
 
 @include keyframes(left-fade) {
   0% {
     opacity: 0;
-    @include transform(translateX(+0.6em));
+    transform: translateX(+0.6em);
   }
   50% {
     opacity: 0;
-    @include transform(translateX(+0.6em));
+    transform: translateX(+0.6em);
   }
   100% {
     opacity: 1;
-    @include transform(translateX(0));
+    transform: translateX(0);
   }
 }
 
@@ -91,26 +91,26 @@ $start: 200;
   $value: $start + (($i - 1) * $step);
 
   .animate-drop-fade-#{$value} {
-    @include prefix(animation, drop-fade #{$value}ms);
+    animation: drop-fade #{$value}ms;
   }
 
   .animate-rise-fade-#{$value} {
-    @include prefix(animation, rise-fade #{$value}ms);
+    animation: rise-fade #{$value}ms;
   }
 
   .animate-right-fade-#{$value} {
-    @include prefix(animation, right-fade #{$value}ms);
+    animation: right-fade #{$value}ms;
   }
 
   .animate-left-fade-#{$value} {
-    @include prefix(animation, left-fade #{$value}ms);
+    animation: left-fade #{$value}ms;
   }
 
   .animate-fade-in-#{$value} {
-    @include prefix(animation, fade-in #{$value}ms);
+    animation: fade-in #{$value}ms;
   }
 
   .animate-fade-out-#{$value} {
-    @include prefix(animation, fade-out #{$value}ms);
+    animation: fade-out #{$value}ms;
   }
 }
