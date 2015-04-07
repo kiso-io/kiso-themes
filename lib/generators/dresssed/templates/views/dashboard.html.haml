@@ -1,0 +1,541 @@
+.row.top-summary
+  .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
+    .panel
+      .panel-heading
+        %p.lead
+          %i.fa.fa-globe.fa-fw
+          TOTAL
+          %b PAGE HITS
+      .panel-body.text-red-400
+        %h2.page-hits 1123
+      .panel-footer
+        .row
+          .col-sm-12
+            %i.fa.fa-caret-down
+            %b 10%
+            decrease in page hits.
+        .clearfix
+  .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
+    .panel
+      .panel-heading
+        %p.lead
+          %i.fa.fa-trophy.fa-fw
+          TOTAL
+          %b SALES
+      .panel-body.text-light-blue-400
+        %h2 $12,121
+      .panel-footer
+        .row
+          .col-sm-12
+            %i.fa.fa-minus
+            %b No change
+            in sales
+        .clearfix
+  .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
+    .panel
+      .panel-heading
+        %p.lead
+          %i.fa.fa-dollar.fa-fw
+          TOTAL
+          %b REVENUE
+      .panel-body.text-green-400
+        %h2 $100,123
+      .panel-footer
+        .row
+          .col-sm-12
+            %i.fa.fa-caret-up
+            %b 12%
+            increase in revenue.
+        .clearfix
+  .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
+    .panel
+      .panel-heading
+        %p.lead
+          %i.fa.fa-users.fa-fw
+          ACTIVE
+          %b CUSTOMERS
+      .panel-body.text-green-400
+        %h2 23,453
+      .panel-footer
+        .row
+          .col-sm-12
+            %i.fa.fa-caret-up
+            %b 1%
+            increase in active customers.
+        .clearfix
+.row
+  .col-xs-12.col-sm-12.col-md-6.col-lg-6
+    .panel.panel-metric
+      .panel-body
+        .metric-content
+          .metric-value
+            $19,821
+          .metric-trend
+            %p.text-success
+              %i.fa.fa-chevron-up
+              12%
+            %strong 30 Days Ago
+          #metric-monthly-earnings{:style => "height:150px;"}
+          %header
+            %h3 Monthly Earnings
+  .col-xs-12.col-sm-12.col-md-6.col-lg-6
+    .panel.panel-metric
+      .panel-body
+        .metric-content
+          .metric-value
+            123
+          .metric-trend
+            %p.text-danger
+              %i.fa.fa-chevron-down
+              98%
+            %strong 30 Days Ago
+          #metric-cancellations{:style => "height:150px;"}
+          %header
+            %h3 Cancellations
+.row
+  .col-sm-12.col-md-9.animate-fade-in-1000
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Sales Vs Refunds
+      .panel-body
+        #rickshaw-bars
+  .col-sm-12.col-md-3.animate-fade-in-1000
+    .panel.panel-cover{:style => "background-image: url(#{image_path("dresssed/header_1.jpg")})"}
+      %p.lead.p10 Top Affiliate
+      %img.img-circle{:alt => "Fill Murray", :src => "http://fillmurray.com/120/120"}/
+      %h3.mt0 Fill Murray
+      %ul.stats.list-unstlyed.list-inline.clearfix
+        %li.col-4
+          %span> $1,267
+          Commission
+        %li.col-4
+          %span> $3,987
+          Sales
+        %li.col-4
+          %span> 121
+          Referrals
+.row
+  .col-sm-12.col-md-7.animate-fade-in-1000
+    .panel
+      .panel-heading
+        %h5 Master Server
+      .panel-body
+        .container-fluid
+          .row
+            .col-xs-12.col-sm-12.col-md-12.col-lg-12
+              #realtime{:style => "height: 315px; width: 100%; display: block;"}
+          .row
+            .col-xs-12.col-sm-12.col-md-12.col-lg-12
+              .server-status-details.clearfix
+                %h5 Memory Stats
+                .row
+                  %dl.col-xs-6.col-sm-6.col-md-3
+                    %dt In use
+                    %dd 2.5 GB
+                  %dl.col-xs-6.col-sm-6.col-md-3
+                    %dt Total
+                    %dd 4 GB
+                  %dl.col-xs-6.col-sm-6.col-md-3
+                    %dt Available
+                    %dd 500 MB
+                  %dl.col-xs-6.col-sm-6.col-md-3
+                    %dt Swap
+                    %dd 360 MB
+  .col-sm-12.col-md-5.animate-fade-in-1000
+    .panel.panel-default
+      .panel-heading
+        = ionicon_icon_tag 'flame'
+        Recent
+        %ul.nav.nav-tabs.nav-tabs-xs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#dashboard-recent-comments"} Comments
+          %li
+            %a{"data-toggle" => "tab", :href => "#dashboard-recent-threads"} Forum threads
+      .tab-content
+        #dashboard-recent-comments.tab-pane.fade.active.in{:style => "height: 474px; overflow: scroll;"}
+          %ul.list-group.list-group-flush
+            %li.list-group-item
+              .media
+                %a.pull-left{:href => "#"}
+                  %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                .media-body
+                  %h5.media-heading
+                    %a{:href => "#", :title => ""} Fill Murray
+                    commented on
+                    %a{:href => "#", :title => ""} Article Name
+                  %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  %ul.list-inline.small
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-pencil>
+                        Edit
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-times>
+                        Remove
+                    %span.pull-right 1 hour ago
+            %li.list-group-item
+              .media
+                %a.pull-left{:href => "#"}
+                  %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                .media-body
+                  %h5.media-heading
+                    %a{:href => "#", :title => ""} Fill Murray
+                    commented on
+                    %a{:href => "#", :title => ""} Article Name
+                  %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  %ul.list-inline.small
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-pencil>
+                        Edit
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-times>
+                        Remove
+                    %span.pull-right 1 hour ago
+            %li.list-group-item
+              .media
+                %a.pull-left{:href => "#"}
+                  %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                .media-body
+                  %h5.media-heading
+                    %a{:href => "#", :title => ""} Fill Murray
+                    commented on
+                    %a{:href => "#", :title => ""} Article Name
+                  %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  %ul.list-inline.small
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-pencil>
+                        Edit
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-times>
+                        Remove
+                    %span.pull-right 1 hour ago
+            %li.list-group-item
+              .media
+                %a.pull-left{:href => "#"}
+                  %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                .media-body
+                  %h5.media-heading
+                    %a{:href => "#", :title => ""} Fill Murray
+                    commented on
+                    %a{:href => "#", :title => ""} Article Name
+                  %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  %ul.list-inline.small
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-pencil>
+                        Edit
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-times>
+                        Remove
+                    %span.pull-right 1 hour ago
+            %li.list-group-item
+              .media
+                %a.pull-left{:href => "#"}
+                  %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                .media-body
+                  %h5.media-heading
+                    %a{:href => "#", :title => ""} Fill Murray
+                    commented on
+                    %a{:href => "#", :title => ""} Article Name
+                  %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  %ul.list-inline.small
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-pencil>
+                        Edit
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-times>
+                        Remove
+                    %span.pull-right 1 hour ago
+            %li.list-group-item
+              .media
+                %a.pull-left{:href => "#"}
+                  %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                .media-body
+                  %h5.media-heading
+                    %a{:href => "#", :title => ""} Fill Murray
+                    commented on
+                    %a{:href => "#", :title => ""} Article Name
+                  %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  %ul.list-inline.small
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-pencil>
+                        Edit
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-times>
+                        Remove
+                    %span.pull-right 1 hour ago
+            %li.list-group-item
+              .media
+                %a.pull-left{:href => "#"}
+                  %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                .media-body
+                  %h5.media-heading
+                    %a{:href => "#", :title => ""} Fill Murray
+                    commented on
+                    %a{:href => "#", :title => ""} Article Name
+                  %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  %ul.list-inline.small
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-pencil>
+                        Edit
+                    %li
+                      %a{:href => "#"}
+                        %i.fa.fa-fw.fa-times>
+                        Remove
+                    %span.pull-right 1 hour ago
+        #dashboard-recent-threads.tab-pane.fade
+          %div{:style => "overflow: scroll; width: auto; height: 474px;"}
+            %ul.list-group.list-group-flush
+              %li.list-group-item
+                .media
+                  %a.pull-left{:href => "#"}
+                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                  .media-body
+                    %h5.media-heading
+                      %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
+                    .small
+                      started by
+                      %a{:href => "#", :title => ""} Fill Murray
+                      in
+                      %a{:href => "#", :title => ""} Forum name
+                      %span.pull-right 3h
+              %li.list-group-item
+                .media
+                  %a.pull-left{:href => "#"}
+                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                  .media-body
+                    %h5.media-heading
+                      %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
+                    .small
+                      started by
+                      %a{:href => "#", :title => ""} Fill Murray
+                      in
+                      %a{:href => "#", :title => ""} Forum name
+                      %span.pull-right 3h
+              %li.list-group-item
+                .media
+                  %a.pull-left{:href => "#"}
+                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                  .media-body
+                    %h5.media-heading
+                      %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
+                    .small
+                      started by
+                      %a{:href => "#", :title => ""} Fill Murray
+                      in
+                      %a{:href => "#", :title => ""} Forum name
+                      %span.pull-right 3h
+              %li.list-group-item
+                .media
+                  %a.pull-left{:href => "#"}
+                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                  .media-body
+                    %h5.media-heading
+                      %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
+                    .small
+                      started by
+                      %a{:href => "#", :title => ""} Fill Murray
+                      in
+                      %a{:href => "#", :title => ""} Forum name
+                      %span.pull-right 3h
+              %li.list-group-item
+                .media
+                  %a.pull-left{:href => "#"}
+                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                  .media-body
+                    %h5.media-heading
+                      %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
+                    .small
+                      started by
+                      %a{:href => "#", :title => ""} Fill Murray
+                      in
+                      %a{:href => "#", :title => ""} Forum name
+                      %span.pull-right 3h
+              %li.list-group-item
+                .media
+                  %a.pull-left{:href => "#"}
+                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                  .media-body
+                    %h5.media-heading
+                      %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
+                    .small
+                      started by
+                      %a{:href => "#", :title => ""} Fill Murray
+                      in
+                      %a{:href => "#", :title => ""} Forum name
+                      %span.pull-right 3h
+              %li.list-group-item
+                .media
+                  %a.pull-left{:href => "#"}
+                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                  .media-body
+                    %h5.media-heading
+                      %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
+                    .small
+                      started by
+                      %a{:href => "#", :title => ""} Fill Murray
+                      in
+                      %a{:href => "#", :title => ""} Forum name
+                      %span.pull-right 3h
+.row
+  .col-xs-12.col-sm-12.col-md-6.col-lg-6
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Online Users
+      .panel-body
+        #map_canvas_1
+  .col-xs-12.col-sm-12.col-md-6.col-lg-6
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Most Active Users
+      .panel-body
+        .table-responsive
+          %table.table.table-hover.table-striped
+            %thead
+              %tr
+                %th #
+                %th Full Name
+                %th Location
+                %th Status
+                %th Action
+            %tbody
+              %tr
+                %td 1
+                %td
+                  %strong Fred Berlin
+                %td Vancouver, Canada
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-default{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 2
+                %td Octavius Belt
+                %td London, United Kingdom
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-default{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 3
+                %td
+                  %strong Cash Money
+                %td Ney York City, USA
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-default{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 4
+                %td
+                  %strong Bailey Bingface
+                %td Liberia
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-default{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 5
+                %td
+                  %strong Altus Zombo
+                %td Monrovia
+                %td
+                  %span.label.label-danger Suspended
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-default{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 6
+                %td
+                  %strong Leslie Taket
+                %td Dublin, Ireland
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-sm{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-sm{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 7
+                %td
+                  %strong Leslie Taket
+                %td Dublin, Ireland
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-sm{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-sm{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 8
+                %td
+                  %strong Leslie Taket
+                %td Dublin, Ireland
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-sm{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-sm{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 9
+                %td
+                  %strong Leslie Taket
+                %td Dublin, Ireland
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-sm{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-sm{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit
+              %tr
+                %td 10
+                %td
+                  %strong Leslie Taket
+                %td Dublin, Ireland
+                %td
+                  %span.label.label-success Active
+                %td
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-sm{"data-original-title" => "Delete", "data-toggle" => "tooltip"}
+                      %i.fa.fa-trash
+                    %a.btn.btn-sm{"data-original-title" => "Edit", "data-toggle" => "tooltip"}
+                      %i.fa.fa-edit

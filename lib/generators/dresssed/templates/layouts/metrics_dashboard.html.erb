@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="row">
+    <% metric_names.each do |metric| %>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="panel panel-metric">
+          <div class="panel-body">
+            <div class="metric-content">
+              <div class="metric-value">
+                <%= random_value metric[:type] %>
+              </div>
+              <div class="metric-trend">
+                <% direction = increase_or_decrease %>
+                <p class="<%=increase_or_decrease_class direction %>">
+                  <i class="fa <%=increase_or_decrease_chevron direction %>"></i> <%= random_percent %>
+                </p>
+                <strong>30 Days Ago</strong>
+              </div>
+              <div id='metric-<%= metric[:name].downcase.parameterize %>' style='height:150px;'></div>
+              <header>
+                <h3><%= metric[:name] %></h3>
+              </header>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% content_for :javascript do %>
+        <script>
+            flotMetric('#metric-<%= metric[:name].downcase.parameterize %>', <%= random_trending_data(direction) %> );
+        </script>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Activity</h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list-unstyled small">
+          <% types = [ { klass: 'refund', css_class: 'label-danger'},  { klass: 'purchase', css_class: 'label-success'}, { klass: 'cancellation', css_class: 'label-info'}] %>
+          <% (1..20).each do |index|%>
+            <li class="mb10">
+              <% instance = types[Random.rand(types.length)] %>
+              <span class="label <%= instance[:css_class]%> mr10"><%=instance[:klass].upcase %> </span>
+              <strong>$<%=Random.rand(120) %></strong> from <strong>Me</strong>
+              <small class="text-muted"><%=time_ago_in_words( DateTime.now-(10+index.minutes) ) %></small>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
