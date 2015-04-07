@@ -57,7 +57,7 @@ class ElementFinder
       section: path.gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
       target_name:      File.basename(path, '.html.erb').to_s,
       display_name:     File.basename(path, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').titleize,
-      icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : path.match(/@([\w+-]*)/)[0][1..-1],
+      icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "fa-fw #{path.match(/@([\w+-]*)/)[0][1..-1]}"
     }
 
     data[:children] = children = []
@@ -71,7 +71,7 @@ class ElementFinder
           section:          data[:section].gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
           target_name:      File.basename(entry, '.html.erb').to_s,
           display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub('fullpage', '').titleize,
-          icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : entry.match(/@([\w+-]*)/)[0][1..-1],
+          icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "fa-fw #{entry.match(/@([\w+-]*)/)[0][1..-1]}"
         }
         children << childdata
       end

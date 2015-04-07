@@ -27,6 +27,60 @@
       </div>
     </div>
   </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Sheet Forms</h3>
+    </div>
+    <div class="panel-body">
+      <div class="sheet form-sheet">
+        <div class="sheet-inner">
+          <div class="form-group">
+            <label class="form-label">Title</label>
+            <input type="text" required="required">
+            <div class="help-block">
+              <i class="fa fa-asterisk"></i> Required
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description</label>
+            <textarea rows="10"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Well Forms</h3>
+    </div>
+    <div class="panel-body">
+      <div class="well form-well">
+        <form class="form-inline form-group" role="form">
+          <div class="form-group">
+            <label class="form-label">Size</label>
+            <div class="checkbox"><label><input id="check_box_1" name="check_box_1" type="checkbox" value="1"> Large</label></div>
+            <div class="checkbox"><label><input id="check_box_2" name="check_box_2" type="checkbox" value="1"> Medium</label></div>
+            <div class="checkbox"><label><input id="check_box_3" name="check_box_3" type="checkbox" value="1"> Small</label></div>
+          </div>
+        </form>
+        <div class="form-group">
+          <label class="form-label">Color</label>
+          <select>
+            <option>Red</option>
+            <option>Green</option>
+            <option>Blue</option>
+          </select>
+        </div>
+        <div class="form-group has-error">
+          <label class="form-label">Quantity</label>
+          <input class='form-control col-sm-4' type="number">
+          <div class="help-block">
+            <i class="fa fa-remove"></i> Contains an error
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class='row'>
     <div class='col-sm-12'>
       <div class="panel panel-default">
@@ -149,6 +203,32 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
               </fieldset>
             </form>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Custom File Input</h3>
+          </div>
+          <div class="panel-body">
+            <span class="btn btn-default btn-file">
+              Browse <input type="file">
+            </span>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Custom Avatar File Input</h3>
+          </div>
+          <div class="panel-body">
+            <div class="avatar-uploader">
+              <div class="inner">
+                <img src='http://fillmurray.com/200/200' class='thumbnail'/>
+                <span class="icon-wrapper">
+                  <i class='fa fa-cloud-upload fa-fw'></i>
+                </span>
+                <input type="file" name="avatar">
+              </div>
+            </div>
           </div>
         </div>
       </div>
