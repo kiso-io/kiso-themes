@@ -26,13 +26,6 @@ gem 'devise'
 gem 'will_paginate'
 gem 'kaminari'
 gem 'simple_form', '~> 3.1.0.rc2', github: 'plataformatec/simple_form', branch: 'master', tag: 'v3.1.0.rc1'
-
-# gem 'dresssed-ives', :path => '../../'
-
-source 'http://dresssed.com/gems/263834bde09a27b4f271aeede0e37ed5' do
-  gem 'dresssed-ives'
-end
-
 gem 'guard'
 gem 'guard-livereload'
 
@@ -42,9 +35,16 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'dresssed-ives', :path => '../../'
 end
 
 gem 'pg', :group => :production
 gem 'thin', group: :production
 gem 'rails_12factor', group: :production
+
+group :production do
+  # source 'http://dresssed.com/gems/263834bde09a27b4f271aeede0e37ed5' do
+  #   gem 'dresssed-ives'
+  # end
+end
 
