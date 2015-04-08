@@ -30,12 +30,10 @@
                   %a{:href => "#"} Cluster 4
           %ul.nav.navbar-nav.navbar-right
             %li
-              %form.navbar-form{:role => "search"}
-                .input-group
-                  %input.form-control{:placeholder => "Search", :type => "text"}/
-                  %span.input-group-btn
-                    %button.btn.btn-default{:type => "button"}
-                      %i.fa.fa-search
+              %form.navbar-form.search-form{:role => "search"}
+                %input#searchbox.form-control{:placeholder => "Search", :type => "text"}/
+                %span.search-button
+                  %i.fa.fa-search
             = yield :navbar
             %li.navbar-form
               .btn-group{"data-toggle" => "buttons"}
@@ -48,10 +46,22 @@
                 %label.btn.btn-default
                   %input#option3{:autocomplete => "off", :name => "options", :type => "radio"}/
                   %i.fa.fa-user
+            %li.dropdown
+              %button.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+                %i.fa.fa-fw.fa-cog
+                %span.caret.caret-light
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  %a{:href => "#"} Site management
+                %li
+                  %a{:href => "#"} User management
+                %li
+                  %a{:href => "#"} Settings
             %li.dropdown.notifications
-              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
-                %i.fa.fa-bell
+              %button.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+                %i.fa.fa-fw.fa-bell
                 %span.badge.badge-sm 2
+                %span.caret.caret-light
                 %span.visible-xs-inline Notifications
               / dropdown
               %ul.dropdown-menu
@@ -65,7 +75,7 @@
                     .list-group
                       %a.media.list-group-item{:href => "#"}
                         %span.pull-left
-                          %img.media-object.img-circle{:src => "http://fillmurray.com/32/32"}/
+                          %img.media-object.img-circle{:src => "http://fillmurray.com/36/36"}/
                         %span.media-body
                           %p My name is Inigo Montoya.
                           %small.text-muted 10 minutes ago
@@ -82,6 +92,23 @@
                         %i.fa.fa-cog
                       %a{:href => "#"} View all Notifications
               / / dropdown
+            %li.dropdown.user-nav
+              %button.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+                %img.avatar.img-rounded{:src => "//fillmurray.com/34/34"}/
+                %span.caret.caret-light
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-fw.fa-user
+                    Edit profile
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-fw.fa-lock
+                    Change password
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-fw.fa-power-off
+                    Logout
         / /.navbar-collapse
       / /.navbar-inner
     = yield

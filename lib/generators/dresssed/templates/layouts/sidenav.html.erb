@@ -29,13 +29,9 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <form class="navbar-form" role="search">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                </span>
-              </div>
+            <form class="navbar-form search-form" role="search">
+              <input type="text" class="form-control" id="searchbox" placeholder="Search">
+              <span class="search-button"><i class="fa fa-search"></i></span>
             </form>
           </li>
           <%= yield :navbar %>
@@ -52,12 +48,23 @@
               </label>
             </div>
           </li>
+          <li class="dropdown">
+            <button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-cog"></i>
+              <span class="caret caret-light"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Site management</a></li>
+              <li><a href="#">User management</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </li>
           <li class="dropdown notifications">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-bell"></i>
-              <span class="badge badge-sm">2</span>
+            <button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-bell"></i>
+              <span class="badge badge-sm">2</span><span class="caret caret-light"></span>
               <span class="visible-xs-inline">Notifications</span>
-            </a>
+            </button>
             <!-- dropdown -->
             <ul class="dropdown-menu">
               <li>
@@ -68,7 +75,7 @@
                   <div class="list-group">
                     <a href="#" class="media list-group-item">
                       <span class="pull-left">
-                        <img src="http://fillmurray.com/32/32" class="media-object img-circle">
+                        <img src="http://fillmurray.com/36/36" class="media-object img-circle">
                       </span>
                       <span class="media-body">
                         <p>My name is Inigo Montoya.</p>
@@ -95,6 +102,17 @@
               </li>
             </ul>
             <!-- / dropdown -->
+          </li>
+          <li class="dropdown user-nav">
+            <button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="avatar img-rounded" src="//fillmurray.com/34/34">
+              <span class="caret caret-light"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit profile</a></li>
+              <li><a href="#"><i class="fa fa-fw fa-lock"></i> Change password</a></li>
+              <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+            </ul>
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->

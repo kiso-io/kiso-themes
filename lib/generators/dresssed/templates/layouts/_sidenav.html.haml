@@ -1,11 +1,24 @@
 .nav-side-menu
-  .brand Sidenav Header
-  %i.fa.fa-bars.fa-2x.toggle-btn{"data-target" => "#menu-content", "data-toggle" => "collapse"}
-  %ul#menu-content.nav.in.navbar-collapse.active
+  .navbar-header
+    .profile
+      %img.img-circle.profile-image{:src => "http://fillmurray.com/60/60"}/
+      .profile-body
+        %h4 Fill Murray
+        .user-links
+          %a.btn.btn-link.btn-flat.btn-xs{"data-original-title" => "Profile", "data-placement" => "bottom", "data-toggle" => "tooltip", :href => "#"}
+            %i.fa.fa-user
+          %a.btn.btn-link.btn-flat.btn-xs{"data-original-title" => "Messages", "data-placement" => "bottom", "data-toggle" => "tooltip", :href => "#"}
+            %i.fa.fa-envelope
+          %a.btn.btn-link.btn-flat.btn-xs{"data-original-title" => "Settings", "data-placement" => "bottom", "data-toggle" => "tooltip", :href => "#"}
+            %i.fa.fa-cog
+          %a.btn.btn-link.btn-flat.btn-xs{"data-original-title" => "Logout", "data-placement" => "bottom", "data-toggle" => "tooltip", :href => "#"}
+            %i.fa.fa-sign-out
+    %i.navbar-toggle.collapsed.fa.fa-bars{"data-target" => "#menu-content", "data-toggle" => "collapse"}
+  %ul#menu-content.nav.navbar-collapse
     %li
       %a{:href => "#"}
         %i.fa.fa-sitemap.fa-fw
-        Multi-Level Dropdown
+        Multi-Level Menu Example
         %span.fa.arrow
       %ul.nav.nav-second-level.collapse{"aria-expanded" => "false"}
         %li
@@ -24,7 +37,18 @@
             %li
               %a.active{:href => "#"} Third Level Item
             %li
-              %a.active{:href => "#"} Third Level Item
+              %a{:href => "#"}
+                Fourth Level
+                %span.fa.arrow
+              %ul.nav.nav-fourth-level
+                %li
+                  %a.active{:href => "#"} Fourth Level Item
+                %li
+                  %a.active{:href => "#"} Fourth Level Item
+                %li
+                  %a.active{:href => "#"} Fourth Level Item
+                %li
+                  %a.active{:href => "#"} Fourth Level Item
           / /.nav-third-level
       / /.nav-second-level
     %li.nav-side-menu-footer
