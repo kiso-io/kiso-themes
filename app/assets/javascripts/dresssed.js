@@ -11,7 +11,7 @@ $(document).ready(function(){
     container: 'body'
   });
 
-  // Required for the SideNav dropdown menu
+  // Required for the SideNav dropdown nav-side-menu
   $('.nav-side-menu').metisMenu();
 
   flotMetric($('#metric-monthly-earnings'), [

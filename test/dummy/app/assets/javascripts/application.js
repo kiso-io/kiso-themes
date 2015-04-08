@@ -41,14 +41,6 @@ $(document).ready(function(){
       sizeiframe(document.body.clientWidth);
   });
 
-  $('[data-toggle="popover"]').popover({
-    container: 'body'
-  });
-  $('[data-toggle="tooltip"]').tooltip({
-    container: 'body'
-  });
-
-  $('.nav-side-menu').metisMenu();
 });
 
 function sizeiframe(size) {

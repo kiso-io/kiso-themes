@@ -123,6 +123,9 @@ function flotRealtime() {
 
 
 $(document).ready(function(){
+  if( $('#map_canvas_1')[0] === undefined ) {
+    return;
+  }
 
   var oldMarker;
 

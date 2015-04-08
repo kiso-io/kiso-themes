@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <h1><%= @title = "Rails Integration" %></h1>
-  <p>It'll be just like plain ol' Rails, but with awesome looks.</p>
+  <p>Rails, but looking great and making you look amazing.</p>
 </div>
 
 <div class='container-fluid'>
@@ -11,10 +11,17 @@
         <div class="col-xs-12 col-sm-12 col-md-10">
           <section>
             <h1 id='getting-started'>Getting Started</h1>
+            <h4>FIRST THINGS FIRST</h4>
             <p>Once you have included the Dresssed gem in your Gemfile, along with its custom source, and run <code>bundle install</code>, you're almost done. The first thing is to run the main generator by executing <code>rails g dresssed:install</code> (note the three 's' in 'dresssed'!). You will be prompted if anything will be overwritten, and if you're not sure say no and double check first that you won't overwrite anything you need.</p>
 
-            <p>Done that? Good. If you want to see what else you can run next, take a look at the Generators section below, or run the command <code>bundle exec rails g | grep 'dresssed'</code> in your terminal. A fun thing to run next might be the dashboard geneartor since it will give you something nice to look at: <code>bundle exec rails g dresssed:dashboard home dashboard</code> - this will generate the Dashboard view on the <code>home</code> controller under the <code>dashboard</code> action. Don't foget to add a Route in your <code>config/routes.rb</code> for the dashboard. Once you've dont that, and you hit the URL for the dashboard you should be greeted with something that looks like this: </p>
+            <h4>LETS MAKE A GORGEOUS DASHBOARD IN 10 SECONDS</h4>
+            <p>If you want to see what else you can run next, take a look at the <a href="#generators">Code Generators</a> section below, or run the command <code>bundle exec rails g | grep 'dresssed'</code> in your terminal. A fun thing to run next might be the dashboard geneartor since it will give you something nice to look at. First we need to generate the <strong>SideNav</strong> layout: <code>bundle exec rails g dresssed:sidenav home sidenav</code> - this will generate the SideNav layout and add the <code>layout 'sidenav'</code> directive to the <code>HomeController</code>.</p>
+            <p>Next, we'll generate the Dashboard view itself: <code>bundle exec rails g dresssed:dashboard home dashboard</code> - this will generate the Dashboard view on the <code>home</code> controller under the <code>dashboard</code> action. Don't foget to add a Route in your <code>config/routes.rb</code> for the dashboard. Once you've dont that, and you hit the URL for the dashboard you should be greeted with something that looks like this: </p>
             <img src='/dashboard.png' class='thumbnail text-center'/>
+            <p>Pretty nice, eh? </p>
+
+            <h4>NEED HELP? QUESTIONS? COMPLIMENTS?</h4>
+            <p><strong>I'm here to help.</strong> I want you to succeed and have a good time. If you're having trouble, just email me directly at <a href="mailto:john@dresssed.com">john@dresssed.com</a> and I'll get back to you as quick as I can.</p>
           </section>
           <section>
             <h1 id="rails-helpers">Rails Helpers</h1>
@@ -144,9 +151,8 @@
             <p>The Minimal layout simply provides the user nav bar, and a fluid container with one row. For example, Landing Page 3 uses this layout.
             </p>
 
-            <h2>Devise</h2>
-            <p>The Devise layout uses a <code>centered</code> sub-layout to provide the vertically centered container where only the current devise form is rendered.
-            </p>
+            <h2>SideNav</h2>
+            <p>The SideNav layout provides a standard right-located Menu with main content area to the left. The menu is in fixed position, allowing the content area to scroll as needed.</p>
           </section>
 
           <section id="helpers">
@@ -238,6 +244,13 @@
               <li>Change your password</li>
               <li>Resend confirmation</li>
               <li>Resend unlock instructions</li>
+            </ul>
+
+            <h2>Devise Invitable</h2>
+            <p>If you have Devise Invitable installed for handling invitation requests, all of its views will be styled.</p>
+            <ul>
+              <li>Request Invitation</li>
+              <li>Accept Invitation</li>
             </ul>
           </section>
         </div>
