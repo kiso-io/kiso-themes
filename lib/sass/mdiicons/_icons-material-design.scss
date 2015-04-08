@@ -4,11 +4,11 @@ $icons-font-path: asset-path('assets/mdiicons/') !default;
 
 @font-face {
     font-family: "#{$font-mdi}";
-    src:url("#{$icons-font-path}#{$font-mdi}.eot?#iefix") format("embedded-opentype"),
-        url("#{$icons-font-path}#{$font-mdi}.woff2") format("woff2"),
-        url("#{$icons-font-path}#{$font-mdi}.woff") format("woff"),
-        url("#{$icons-font-path}#{$font-mdi}.ttf") format("truetype"),
-        url("#{$icons-font-path}#{$font-mdi}.svg##{$font-mdi}") format("svg");
+    src:url(asset-path("#{$icons-font-path}#{$font-mdi}.eot?#iefix")) format("embedded-opentype"),
+        url(asset-path("#{$icons-font-path}#{$font-mdi}.woff2")) format("woff2"),
+        url(asset-path("#{$icons-font-path}#{$font-mdi}.woff")) format("woff"),
+        url(asset-path("#{$icons-font-path}#{$font-mdi}.ttf")) format("truetype"),
+        url(asset-path("#{$icons-font-path}#{$font-mdi}.svg##{$font-mdi}")) format("svg");
     font-weight: normal;
     font-style: normal;
 }
