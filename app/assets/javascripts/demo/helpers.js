@@ -1,4 +1,8 @@
 function flotMetric(el, data, yaxis, options) {
+  if( el[0] === undefined ) {
+    return;
+  }
+
   options = $.extend({
       type: 'area',
       lineWidth: 1
@@ -62,6 +66,10 @@ function flotMetric(el, data, yaxis, options) {
 };
 
 function rickshawBars() {
+  if( $('#rickshaw-bars')[0] === undefined ) {
+    return;
+  }
+
   var seriesData = [ [], [] ];
   var random = new Rickshaw.Fixtures.RandomData(50);
 
@@ -98,6 +106,10 @@ function rickshawBars() {
 }
 
 function flotRealtime() {
+  if( $('#realtime')[0] === undefined ) {
+    return;
+  }
+
   var dataGenerator = new DataGenerator(200);
   var plot = $.plot("#realtime", [ dataGenerator.getRandomizedData() ], {
     series: {
