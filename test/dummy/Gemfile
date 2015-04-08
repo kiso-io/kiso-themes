@@ -1,3 +1,5 @@
+ruby '2.2.0'
+
 source 'https://rubygems.org'
 
 gem 'rails', '>= 3.2'
@@ -6,7 +8,6 @@ gem 'rake', '10.4.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'rack', '1.5.2'
 
 # Gems used only for assets and not required
@@ -26,7 +27,11 @@ gem 'will_paginate'
 gem 'kaminari'
 gem 'simple_form', '~> 3.1.0.rc2', github: 'plataformatec/simple_form', branch: 'master', tag: 'v3.1.0.rc1'
 
-gem 'dresssed-ives', :path => '../../'
+# gem 'dresssed-ives', :path => '../../'
+
+source 'http://dresssed.com/gems/263834bde09a27b4f271aeede0e37ed5' do
+  gem 'dresssed-ives'
+end
 
 gem 'guard'
 gem 'guard-livereload'
@@ -34,3 +39,12 @@ gem 'guard-livereload'
 group :test do
   gem 'mocha'
 end
+
+group :development do
+  gem 'sqlite3'
+end
+
+gem 'pg', :group => :production
+gem 'thin', group: :production
+gem 'rails_12factor', group: :production
+

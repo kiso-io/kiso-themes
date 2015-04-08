@@ -14,7 +14,7 @@
       <li>
         <ul class='style-list list-unstyle list-inline mr20'>
           <% Dresssed::Ives::COLORS.each do |color| %>
-              <li class='<%= current_style == color ? 'active' : '' %>'><%= link_to color, switch_style_path(color) %></li>
+              <li class='<%= current_style == color ? 'active' : '' %>'><%= link_to color, switch_style_path(color, demo_frame:true) %></li>
           <% end %>
         </ul>
       </li>

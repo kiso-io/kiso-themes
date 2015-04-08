@@ -2,3 +2,45 @@
 <div class='main-content animate-fade-in-500'>
   <%= render file: "preview/elements/#{@section}" %>
 </div>
+
+<% content_for :javascript do %>
+  <script>
+    $(document).ready(function(){
+      console.log('executing');
+      prettyPrint();
+
+      $('.size-mobile').on('click', function(){
+        console.log('mobile');
+        sizeiframe(320, true);
+      });
+
+      $('.size-tablet').on('click', function(){
+        console.log('tablet');
+        sizeiframe(768, true);
+      });
+
+      $('.size-laptop').on('click', function(){
+        console.log('laptop');
+        sizeiframe(document.body.clientWidth, true);
+      })
+
+      sizeiframe(document.body.clientWidth, true);
+
+      $(window).on('resize', function(){
+          var $sgViewport = $('#sg-viewport');
+          var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+          $($sgViewport).height(h-55);
+          sizeiframe(document.body.clientWidth);
+      });
+
+    });
+
+    function sizeiframe(size) {
+        var $sgViewport = $('#sg-viewport');
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        $($sgViewport).height(h-55);
+        $('#sg-gen-container,#sg-viewport').addClass("vp-animate");
+        $sgViewport.width(size);
+    };
+  </script>
+<% end %>

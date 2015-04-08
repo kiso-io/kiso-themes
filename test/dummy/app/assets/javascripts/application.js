@@ -15,11 +15,9 @@
 //= require dresssed
 //= require docs
 //= require prettify
-//= require_self
+//= require counters
 
 $(document).ready(function(){
-  prettyPrint();
-
   $('.size-mobile').on('click', function(){
     sizeiframe(320, true);
   });
@@ -49,4 +47,4 @@ function sizeiframe(size) {
     $($sgViewport).height(h-55);
     $('#sg-gen-container,#sg-viewport').addClass("vp-animate");
     $sgViewport.width(size);
-}
+};

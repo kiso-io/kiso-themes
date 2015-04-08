@@ -34,7 +34,8 @@ class PreviewController < ApplicationController
 
     cookies[:style] = @style
 
-    redirect_to element_path('001_dashboard@fa-dashboard')
+    redirect_to element_path('001_dashboard@fa-dashboard') and return unless params[:demo_frame].present?
+    redirect_to root_path
   end
 
   def resolve_layout

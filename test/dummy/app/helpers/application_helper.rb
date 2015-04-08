@@ -115,7 +115,7 @@ module ApplicationHelper
     is_active = @section.downcase.include?(attributes[0][:section].downcase )
     klass     = "#{klass} in direct" if is_active
 
-    content_tag :ul, class: klass, 'aria-expanded': false do
+    content_tag(:ul, class: klass, :'aria-expanded'=> false) do
       attributes.each do |attribute|
         if !attribute[:children].nil?
           parent_is_active = @section.include?(attribute[:section])
