@@ -3,6 +3,11 @@ module ApplicationHelper
     "My App"
   end
 
+  def random_avatar size=64, css_class
+    value = (rand() * 4 + 1).to_i
+    image_tag "#{value}.jpg", class: css_class, width: size, height: size
+  end
+
   def current_style
     cookies[:style] || 'blue'
   end
