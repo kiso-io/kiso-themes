@@ -9,7 +9,7 @@ $style: "amber";
 $brand-primary: color($orange, 800);
 
 // Typography
-$text-color:            darken(color($amber, 900), 30%);
+$text-color:            desaturate(darken($brand-primary, 25%), 40%);
 $quietColor:            #797572;
 $altTextColor:          darken(#625f5c,20%);
 
