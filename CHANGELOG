@@ -1,72 +1,10 @@
-= 3.0.0
-  * Rewritten to be based on SASS
-  * Dropped LESS dependencies
-  * Re-wrote the theme to be based on Twitter Bootstrap 3.0.2
-
-= 1.4.1
- * Include the gemspec in the gem files.
-
-= 1.4.0
- * Fix generator templates to work under Rails 4.
-
-= 1.3.4
- * Fix bootstrap-transition error w/ latest version of jQuery.
-
-= 1.3.3
- * Fix breadcrumb under Chrome.
-
-= 1.3.2
- * Fix when used with relative_url_root option.
-
-= 1.3.1
- * Fix error with client_side_validations-simple_form.
-
-= 1.3.0
- * Update `dropdown_menu` helper to be used strictly inside .nav.
- * Add `dropdown_button` helper to be used inside button groups.
- * Add link to 'Droid Sans' font in base layout.
-
-= 1.2.5
- * Fix prepend and append when used on the same input.
-
-= 1.2.4
- * Fix <html> tag being closed prematurely in html_tag helper.
-
-= 1.2.3
- * Fix warning RE :confirm option in scaffold index view when using with Rails 3.2.6.
-
-= 1.2.2
- * Fix sidebar overlapping content on narrow displays (iPad).
- * Fix navbar dropdown menu not showing when menu was opened in collapse mode (narrow display).
-
-= 1.2.1
- * Fix width of <hr> in header when navbar is not fixed on top.
- * Remove `:class => 'span5'` on inputs in scaffold forms.
- * Make installer not crash when default files are missing.
-   Such as application.js and application_helper.rb
-
-= 1.2.0
- * Make it easier to make the navbar not fixed on top.
-
-= 1.1.0
- * Remove less-rails-bootstrap dep. Only add less-rails in case of customization.
- * Now works under Windows (except customization).
- * `rails generate dresssed:home` and `rails generate dresssed:pricing` now generate the controller too.
- * Fix incompatible use of Array#in? with older ActiveSupport versions.
-
-= 1.0.4
- * Improve doc to customize logo.
-
-= 1.0.3
- * Fix wrong value for .navbar .brand background-image in dresssed.css. Preventing custom logo from displaying.
-
-= 1.0.2
- * Fix `rails generate dresssed:install` crashing when template engine is none of ERB or HAML.
- * Default template engine to ERB in case of unsupported engine in generators.
-
-= 1.0.1
- * Fix loading issue with older Bundler versions.
- * Fix large satellite icon in HAML home page template.
-
-= 1.0.0
- * Initial version
+# RC.10
+  - Added a small background scrim on the Metrics beneath the Heading
+  - Harmonized the colors a bit better
+  - Removed the 1px transparent border from Panels
+  - Adjusted the font sizing and padding for Panels
+  - Removed forced uppercase and bold for panel headers
+  - Lightened the metric panel graph color
+  - Default the side nave to a light gray color for link text
+  - Standardized on ordinary Helvetica for mostly all heades, introduced $font-family-sans-serif-light
+  - Navbar dropdown toggle icons light up white properly

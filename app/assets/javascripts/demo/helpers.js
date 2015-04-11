@@ -12,43 +12,16 @@ function flotMetric(el, data, yaxis, options) {
       shadowSize: 0
   };
 
-  switch (options.type) {
-      case 'bar':
-          series.bars = {
-              show: true,
-              align: 'center',
-              lineWidth: 1,
-              fill: true,
-              fillColor: null
-          };
-          break;
-      case 'area-points':
-          series.lines = {
-              lineWidth: 2,
-              show: true,
-              fill: true
-          };
-          series.points = {
-              show: true,
-              lineWidth: 1,
-              fill: true,
-              fillColor: '#ffffff',
-              symbol: 'circle',
-              radius: 3
-          };
-          break;
-      default:
-          series.lines = {
-              lineWidth: 3,
-              show: true,
-              fill: true
-          };
-  }
+  series.lines = {
+      lineWidth: 3,
+      show: true,
+      fill: true
+  };
 
   $.plot(el, [{
     label: 'Data 1',
     data: data,
-    color: options.color
+    color: '#C9E3F5'
   }], {
     series: series,
     grid: {
@@ -83,7 +56,7 @@ function rickshawBars() {
     renderer: 'bar',
     series: [
       {
-        color: "#c72929",
+        color: "#D13B47",
         data: seriesData[0],
       }, {
         color: "#90caf9",

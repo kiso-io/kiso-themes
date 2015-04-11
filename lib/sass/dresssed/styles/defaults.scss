@@ -33,9 +33,10 @@ $white: #fff;
 $font-size-base:        16px;
 $padding-base-vertical: 6px;
 
-$font-family-sans-serif:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-family-serif:       "Avenir", "Lato", Arial, Helvetica, sans-serif;
-$font-family-monospace:   "Andale Mono", "Lucida Console", monospace;
+$font-family-sans-serif:        "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-sans-serif-light:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-serif:             "Avenir", "Lato", Arial, Helvetica, sans-serif;
+$font-family-monospace:         "Andale Mono", "Lucida Console", monospace;
 
 $line-height-base:        (21/13);
 $line-height-computed:    floor(($font-size-base * $line-height-base));

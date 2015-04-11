@@ -1,6 +1,7 @@
 .panel {
+  border: none;
   border-radius: 3px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 
   h1.page-header {
     margin: 0;
@@ -11,18 +12,11 @@
     font-size: 1em;
   }
 
-  // h2 {
-  //   margin: 0;
-  // }
-
   .panel-heading {
-    padding: 1em 1em;
-    text-transform: uppercase;
     color: $text-color;
     background: white;
     font-family: $font-family-serif;
     font-size: $font-size-base;
-    font-weight: 700;
 
     .glyphicon {
       top: 3px;
@@ -34,7 +28,7 @@
 
     .nav-tabs {
       border-bottom-color: transparent;
-      top: 20px;
+      top: 7px;
       position: absolute;
       right: 20px;
     }
@@ -93,9 +87,14 @@
     }
   }
 
+  .panel-title {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+  }
+
   .panel-body {
     margin: 0;
-    background: #f8f9fa;
   }
 
   .panel-footer {

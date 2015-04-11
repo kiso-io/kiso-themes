@@ -1,7 +1,7 @@
 %heading_spacing {
   margin: 0;
   padding: 2px 0 12px;
-  color: $brand-primary;
+  color: color($grey, 800);
 }
 
 .panel-metric {
@@ -52,7 +52,6 @@
       left: 0;
       margin: 25px 0 0 20px;
       color: $brand-primary;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
       font-size: 36px;
       font-weight: 700;
       line-height: 1em;
@@ -65,6 +64,9 @@
       bottom: 0;
       left: 0;
       text-align: center;
+      /*background-color: #fefffd;*/
+      @include gradient(linear,top,rgba(255, 255, 255, 0.00),rgba(1, 1, 1, 0.08),'left top, left bottom');
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#fefffd', EndColorStr='#010814');
 
       h1 {
         @extend %heading_spacing;
