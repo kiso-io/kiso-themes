@@ -127,7 +127,7 @@ $(document).ready(function(){
           style : 'SMALL',
           position: 'TOP_RIGHT'
       },
-      height: '483px',
+      height: '494px',
       zoom: 1
   });
 
