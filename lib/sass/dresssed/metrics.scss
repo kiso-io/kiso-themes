@@ -53,9 +53,9 @@
       left: 0;
       margin: 25px 0 0 20px;
       color: $brand-primary;
-      font-size: 36px;
+      font-size: 30px;
       font-weight: 700;
-      line-height: 1em;
+      line-height: 1;
     }
 
     header {
@@ -96,6 +96,13 @@
 
     .chart {
       height: 135px;
+    }
+  }
+
+  .metric-content-detail {
+    .metric-value {
+      position: relative;
+      font-size: 36px;
     }
   }
 }

@@ -41,3 +41,15 @@
     }
   }
 }
+
+.stat-list {
+  text-align: center;
+
+  dl {
+    border-right: 1px solid #f4f4f4;
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+}
