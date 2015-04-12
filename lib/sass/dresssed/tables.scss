@@ -119,3 +119,13 @@
     @include opacity(100);
   }
 }
+
+.table-responsive {
+  width: 100%;
+}
+
+@media (max-width: 375px) {
+  .table-responsive {
+    width: 260px;
+  }
+}
