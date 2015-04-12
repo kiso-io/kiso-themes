@@ -1,7 +1,7 @@
 //= require counter_animator
 
 $(document).ready(function(){
-  if( $('body.touch') ) {
+  if( Modernizr.touch ) {
     return;
   }
 

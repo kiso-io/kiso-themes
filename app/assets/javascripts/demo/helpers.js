@@ -101,7 +101,7 @@ function flotRealtime() {
     plot.setData([dataGenerator.getRandomizedData()]);
     plot.draw();
 
-    if( !$('body.touch') ) {
+    if( !Modernizr.touch ) {
       setTimeout(update, 24);
     } else
     {
@@ -147,7 +147,7 @@ $(document).ready(function(){
       lng: Math.random() * 360
     });
 
-    if( !$('body.touch') ) {
+    if( !Modernizr.touch ) {
       setTimeout(update, Math.random() * 1000);
       setTimeout(removeMarkers, 10000);
     }
