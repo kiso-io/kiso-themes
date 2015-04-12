@@ -67,15 +67,13 @@ function rickshawBars() {
 
   graph.render();
 
-  if( !$('body.touch') ) {
-    $(window).on('resize', function(){
-      graph.configure({
-        width: $("#rickshaw-bars").parent('.panel-body').width(),
-        height: 200
-      });
-      graph.render();
+  $(window).on('resize', function(){
+    graph.configure({
+      width: $("#rickshaw-bars").parent('.panel-body').width(),
+      height: 200
     });
-  }
+    graph.render();
+  });
 
   var hoverDetail = new Rickshaw.Graph.HoverDetail( { graph: graph } );
 }
