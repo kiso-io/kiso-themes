@@ -1,3 +1,6 @@
+# RC.14
+  - Version bump for small bug fix in helpers
+
 # RC.13
   - Fixed bug where .table-responsive on iOS (iphone 5) was causing the container to be pushed
   to the width of the table, thus blowing out the menus
