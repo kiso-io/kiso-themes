@@ -34,10 +34,17 @@
 }
 
 .dropdown-menu {
+  display: block;
+  visibility: hidden;
+  margin-top: -10px !important;
+  transition: .25s;
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+
   .panel {
     width: 290px;
-    border-top: 1px;
     margin-bottom: 0;
+    border-top: 1px;
 
     .panel-heading {
       text-transform: inherit;
@@ -55,6 +62,12 @@
       }
     }
   }
+}
+
+.open > .dropdown-menu {
+  visibility: visible;
+  margin-top: 0 !important;
+  opacity: 1;
 }
 
 .nav .open > a,

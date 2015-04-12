@@ -164,10 +164,49 @@
 }
 
 .user-nav {
+  .dropdown-menu {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 1px 0 0 0;
+    border-top-width: 0;
+    width: 280px;
+
+    .profile-header {
+      height: 175px;
+      padding: 20px 10px 10px 10px;
+      text-align: center;
+
+      img {
+        z-index: 5;
+        width: 90px;
+        height: 90px;
+        border: 3px solid;
+        border-color: transparent;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .profile-footer {
+      background-color: $backgroundColor;
+      padding: 10px;
+
+      &:before,
+      &:after {
+        content: " ";
+        display: table;
+      }
+
+      &:after {
+        clear: both;
+      }
+    }
+  }
+
   .caret {
     margin-top: 2px;
   }
 }
+
 
 .notifications {
   .dropdown-toggle {

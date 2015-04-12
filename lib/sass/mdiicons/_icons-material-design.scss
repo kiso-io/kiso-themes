@@ -1,6 +1,6 @@
 $font-mdi   : 'Material-Design-Icons';
 $mdi-prefix : 'mdi-';
-$icons-font-path: asset-path('mdiicons/') !default;
+$icons-font-path: 'mdiicons/' !default;
 
 @font-face {
     font-family: "#{$font-mdi}";

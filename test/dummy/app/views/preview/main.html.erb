@@ -68,8 +68,8 @@
             <ul class="dropdown-menu">
               <li>
                 <div class="panel">
-                  <div class="panel-heading">
-                    <strong>You have <span>2</span> notifications</strong>
+                  <div class="panel-heading text-center">
+                    <small><strong>You have <span>2</span> notifications</strong></small>
                   </div>
                   <div class="list-group">
                     <a href="#" class="media list-group-item">
@@ -85,7 +85,7 @@
                       <span class="media-body">
                         <div>
                           <p>You've reached your space quota!</p>
-                          <div class="progress progress-sm">
+                          <div class="progress progress-sm m0">
                             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only">100% Complete</span></div>
                           </div>
                         </div>
@@ -108,9 +108,21 @@
               <span class="caret caret-light"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit profile</a></li>
-              <li><a href="#"><i class="fa fa-fw fa-lock"></i> Change password</a></li>
-              <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+              <li class="profile-header">
+                <%= random_avatar 120, "avatar img-rounded" %>
+                <p class="m0 p0">
+                  Fill Murray
+                </p>
+                <p class="small m0 p0">Premium Account</p>
+              </li>
+              <li class="profile-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat"><small>Edit Profile</small></a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat small"><small>Log Out</small></a>
+                </div>
+              </li>
             </ul>
           </li>
         </ul>
