@@ -67,13 +67,15 @@ function rickshawBars() {
 
   graph.render();
 
-  $(window).on('resize', function(){
-    graph.configure({
-      width: $("#rickshaw-bars").parent('.panel-body').width(),
-      height: 200
+  if( !$('body.touch') ) {
+    $(window).on('resize', function(){
+      graph.configure({
+        width: $("#rickshaw-bars").parent('.panel-body').width(),
+        height: 200
+      });
+      graph.render();
     });
-    graph.render();
-  });
+  }
 
   var hoverDetail = new Rickshaw.Graph.HoverDetail( { graph: graph } );
 }
@@ -100,7 +102,13 @@ function flotRealtime() {
   function update() {
     plot.setData([dataGenerator.getRandomizedData()]);
     plot.draw();
-    setTimeout(update, 24);
+
+    if( !$('body.touch') ) {
+      setTimeout(update, 24);
+    } else
+    {
+      setTimeout(update, 1000);
+    }
   }
 
   update();
@@ -127,7 +135,7 @@ $(document).ready(function(){
           style : 'SMALL',
           position: 'TOP_RIGHT'
       },
-      height: '494px',
+      height: '485px',
       zoom: 1
   });
 
@@ -141,9 +149,13 @@ $(document).ready(function(){
       lng: Math.random() * 360
     });
 
-    setTimeout(update, Math.random() * 1000);
-    setTimeout(removeMarkers, 10000);
+    if( !$('body.touch') ) {
+      setTimeout(update, Math.random() * 1000);
+      setTimeout(removeMarkers, 10000);
+    }
   }
 
+
   update();
+
 });

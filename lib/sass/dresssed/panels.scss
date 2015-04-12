@@ -1,5 +1,6 @@
 .panel {
   border: none;
+  border-top: 3px solid $brand-primary;
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 
@@ -155,6 +156,7 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
+  border: none;
 
   h3 {
     margin-bottom: 88px;

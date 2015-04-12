@@ -1,6 +1,10 @@
 //= require counter_animator
 
 $(document).ready(function(){
+  if( $('body.touch') ) {
+    return;
+  }
+
   var pageHitAnimator = new CounterAnimator( '.page-hits', 1123 );
 
   function update() {
