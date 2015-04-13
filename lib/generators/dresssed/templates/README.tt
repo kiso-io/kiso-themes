@@ -34,6 +34,10 @@ Some setup you must do manually if you haven't yet:
     On config/application.rb forcing your application to not access the DB
     or load models when precompiling your assets.
 
+  * If you are using simple_form, don't forget to run:
+
+      rails generate simple_form:install --bootstrap
+
   * Browse the theme documentation:
 
       Rails Integration: http://gimlet.dresssed.com/rails

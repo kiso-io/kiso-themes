@@ -23,14 +23,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sqlite3"
 
   s.post_install_message = <<-DOC
+    All done!
 
-    SIMPLE FORM USERS:
-    You will need to use a specific version of simple_form with this Theme in order
-    to get the proper support for Bootstrap 3. Make sure to use this in your Gemfile:
-
-    gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master', tag: 'v3.1.0.rc1'
-
-    Any questions? Email dresssed@kantan.io
+    Any questions? Email support@dresssed.com
 
   DOC
 end
