@@ -68,9 +68,10 @@ END
         inject_into_file file, code, { :after => sentinel }
       end
 
-      def copy_psds
-        directory File.expand_path("../../../../psd", __FILE__), "psd"
-      end
+      # No PSDs for Ives
+      # def copy_psds
+      #   directory File.expand_path("../../../../psd", __FILE__), "psd"
+      # end
 
       def show_readme
         readme_template "README.tt" if behavior == :invoke

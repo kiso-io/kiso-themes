@@ -1,3 +1,7 @@
+# RC.18
+ - Fixed issue on install where installer was looking for old PSD folder
+ - Blog post Layout
+
 # RC.16 & RC.17
  - Tweaks to listgroups, serverstats and tooltips
 

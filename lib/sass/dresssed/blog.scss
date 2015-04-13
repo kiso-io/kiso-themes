@@ -1,0 +1,54 @@
+article.blog-post {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-family-sans-serif;
+  }
+
+  p {
+    font-family: $font-family-serif;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  header {
+    position: relative;
+    height: 300px;
+    color: white;
+
+    .bg {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+      background-size: cover;
+    }
+
+    .bg::after {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: ' ';
+      opacity: .9;
+      background-color: rgba(0,0,0,0.5);
+    }
+  }
+
+  .comments {
+    time {
+      @extend .small;
+      float: right;
+    }
+  }
+}

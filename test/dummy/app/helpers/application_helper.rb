@@ -8,6 +8,15 @@ module ApplicationHelper
     image_tag "#{value}.jpg", class: css_class, width: size, height: size
   end
 
+  def random_landscape width='100%', css_class=''
+    image_tag random_landscape_name, class: css_class, width: width
+  end
+
+  def random_landscape_name
+    value = (rand() * 10 + 1).to_i
+    "landscape_#{value}.jpg"
+  end
+
   def current_style
     cookies[:style] || 'blue'
   end

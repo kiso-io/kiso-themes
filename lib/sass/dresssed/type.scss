@@ -96,6 +96,7 @@ blockquote {
   border: none;
   border-bottom: 1px solid $borderColor;
   background: white;
+  word-break: initial;
 
   h1 {
     letter-spacing: -1px;
