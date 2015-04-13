@@ -1,3 +1,6 @@
+# RC.22
+ - Reinstated the haml views for devise
+
 # RC.21
  - Fixed old usage of f.control_group for f.form_group
  - Fixed devise Login template
