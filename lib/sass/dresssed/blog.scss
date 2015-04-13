@@ -1,4 +1,4 @@
-article.blog-post {
+.blog {
   h1,
   h2,
   h3,
@@ -45,31 +45,72 @@ article.blog-post {
     }
   }
 
+  .media {
+    position: relative;
+  }
+
+  .social {
+    font-size: 14px;
+
+    .social-links {
+      text-align: center;
+      font-size: 16px;
+
+      a {
+        padding-right: 8px;
+
+        &:last-of-type {
+          paddin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.blog-archive {
+  .article-meta {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    .media-body {
+      height: 40px;
+      vertical-align: middle;
+    }
+
+    time {
+      @extend .text-muted;
+    }
+  }
+
+  .social {
+    position: relative;
+    margin-top: -8px;
+    padding: 5px;
+    border-radius: 5px;
+    background: white;
+  }
+
+  li {
+    margin-bottom: 2em;
+
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.blog-post {
+  .social {
+    position: absolute;
+    top: 0;
+    right: 25px;
+  }
+
   .post-footer {
     padding: 15px 0;
     border-radius: 5px;
     background: color($grey, 50);
     @extend .small;
-
-    .social {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 14px;
-
-      .social-links {
-        text-align: center;
-        font-size: 16px;
-
-        a {
-          padding-right: 8px;
-
-          &:last-of-type {
-            paddin-right: 0;
-          }
-        }
-      }
-    }
   }
 
   .comments {
@@ -90,7 +131,7 @@ article.blog-post {
 
 footer {
   header {
-    background-color: color( $grey, 50 );
+    background-color: color($grey, 50);
 
     h5 {
       text-align: center;
