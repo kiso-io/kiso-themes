@@ -102,52 +102,48 @@
           </div>
         </div>
       </div>
-      <form action="#" method="post" novalidate="" class="myform" id="mycomment">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: visible;">
-            <div class="form-group">
-              <label class="control-label" for="contact-message">Join the discussion...</label>
-              <div class="controls">
-                <textarea name="comments" placeholder="Join the discussion..." class="form-control input-lg requiredField" rows="3" data-error-empty="Please enter comment"></textarea>
+      <div class="well  mt50 mb50">
+        <form action="#" method="post" novalidate="" class="form" id="mycomment">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: visible;">
+              <div class="form-group">
+                <label class="control-label" for="contact-message">Join the discussion</label>
+                <div class="controls">
+                  <textarea name="comments" placeholder="Please be civil." class="form-control input-lg requiredField" rows="3" data-error-empty="Please enter comment"></textarea>
+                  <span class="help-block">* required</span>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <label class="control-label">Name</label>
-                  <div class="controls">
-                    <input name="contactName" placeholder="Name" class="form-control input-lg requiredField " type="text" data-error-empty="Please enter name">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Name</label>
+                    <div class="controls">
+                      <input name="contactName" placeholder="Name" class="form-control input-lg requiredField " type="text" data-error-empty="Please enter name">
+                      <span class="help-block">* required</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <label class="control-label" for="contact-mail">Email</label>
+                    <div class="controls">
+                      <input name="email" placeholder="Email" class="form-control input-lg requiredField" type="email" data-error-empty="Please enter email" data-error-invalid="Invalid email address">
+                      <span class="help-block">* required</span>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <label class="control-label" for="contact-mail">Email</label>
-                  <div class=" controls">
-                    <input name="email" placeholder="Email" class="form-control input-lg requiredField" type="email" data-error-empty="Please enter email" data-error-invalid="Invalid email address">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="form-group">
+                    <button name="submit" type="submit" class="form-control btn btn-primary mt30" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Comment Sent">Send Comment</button>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <label class="control-label">Website</label>
-                  <div class="controls">
-                    <input name="contactName" placeholder="Website" class="form-control input-lg " type="text">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <button name="submit" type="submit" class="btn btn-block" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Comment Sent">Send Comment</button>
-                  <input type="hidden" name="submitted" id="submitted3" value="true">
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </section>
 </article>

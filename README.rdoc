@@ -9,4 +9,4 @@ responsive, compatible with any Bootstrap theme and a bunch
 of Rails plugins.
 
 http://dresssed.com/themes/ives
-Copyright 2012 (c) Coded Inc.
+Copyright 2015 (c) Kantan Designs Inc.
