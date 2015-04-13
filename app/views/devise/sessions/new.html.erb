@@ -47,22 +47,21 @@
           </div>
         <% end %>
       <% end %>
-
-      <div class="row mt20">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 text-right">
-          <ul class="list-unstyled options">
-            <li class="col-xs-12 col-md-6"><a href="/users/sign_up">Sign up</a></li>
-            <%- if devise_mapping.recoverable? %>
-              <li class="col-xs-12 col-md-6"><%= link_to "Forgot your password?", new_password_path(resource_name) %></li>
-            <% end -%>
-            <%- if devise_mapping.confirmable? %>
-              <li class="col-xs-12 col-md-6"><%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %></li>
-            <% end -%>
-            <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) %>
-              <li class="col-xs-12 col-md-6"><%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %></li>
-            <% end -%>
-          </ul>
-        </div>
+    </div>
+    <div class="row mt20">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 text-right">
+        <ul class="list-unstyled options">
+          <li class="col-xs-12 col-md-6"><a href="/users/sign_up">Sign up</a></li>
+          <%- if devise_mapping.recoverable? %>
+            <li class="col-xs-12 col-md-6"><%= link_to "Forgot your password?", new_password_path(resource_name) %></li>
+          <% end -%>
+          <%- if devise_mapping.confirmable? %>
+            <li class="col-xs-12 col-md-6"><%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %></li>
+          <% end -%>
+          <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) %>
+            <li class="col-xs-12 col-md-6"><%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %></li>
+          <% end -%>
+        </ul>
       </div>
     </div>
   </div>

@@ -44,11 +44,11 @@ module Dresssed
 
         code = <<-INJECTEDCODE
   Rails.application.config.to_prepare do
-    Devise::SessionsController.layout "devise"
-    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }
-    Devise::ConfirmationsController.layout "devise"
-    Devise::UnlocksController.layout "devise"
-    Devise::PasswordsController.layout "devise"
+    Devise::SessionsController.layout "_minimal"
+    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "_minimal" }
+    Devise::ConfirmationsController.layout "_minimal"
+    Devise::UnlocksController.layout "_minimal"
+    Devise::PasswordsController.layout "_minimal"
   end\n
         INJECTEDCODE
 

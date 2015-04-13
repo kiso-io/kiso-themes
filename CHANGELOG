@@ -1,3 +1,8 @@
+# RC.21
+ - Fixed old usage of f.control_group for f.form_group
+ - Fixed devise Login template
+ - Fixed the install generator's injection into the devise initializer to use the correct layout
+
 # RC.20
  - Updated post-install instructions about simple_form
 

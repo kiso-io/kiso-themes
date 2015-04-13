@@ -32,7 +32,7 @@ module FormGroupHelper
     # Return a ControlGroupBuilder that can display error message specific to a single model attribute.
     # Usage inside a FormBuilder:
     #
-    #  <%= f.control_group :name do |f| %>
+    #  <%= f.form_group :name do |f| %>
     #    ...
     #    <%= f.error_messages %> <== helper method only accessible inside the control_group block.
     #  <% end %>
