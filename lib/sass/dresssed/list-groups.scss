@@ -46,7 +46,7 @@
   text-align: center;
 
   dl {
-    border-right: 1px solid #f4f4f4;
+    border-right: 1px solid desaturate(lighten($text-color, 20%), 20%);
 
     &:last-of-type {
       border: none;
