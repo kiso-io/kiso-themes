@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require dresssed
 //= require docs
-//= require prettify
 //= require counters
 
 $(document).ready(function(){

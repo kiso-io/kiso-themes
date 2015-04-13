@@ -53,8 +53,22 @@ article.blog-post {
 
     .social {
       position: absolute;
-      top: 4px;
+      top: 0;
       right: 25px;
+      font-size: 14px;
+
+      .social-links {
+        text-align: center;
+        font-size: 16px;
+
+        a {
+          padding-right: 8px;
+
+          &:last-of-type {
+            paddin-right: 0;
+          }
+        }
+      }
     }
   }
 
@@ -76,12 +90,15 @@ article.blog-post {
 
 footer {
   header {
+    background-color: color( $grey, 50 );
+
     h5 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
       text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
   }
+
   .suggested-article {
     position: relative;
     text-align: center;
@@ -97,8 +114,8 @@ footer {
 
     &:hover {
       .overlay {
-        background-color: rgba(0, 0, 0, 0.8);
         transition: all 600ms;
+        background-color: rgba(0, 0, 0, 0.8);
       }
 
       h3 {
@@ -123,11 +140,11 @@ footer {
       transform: translate(-50%, -50%);
       letter-spacing: 2px;
       text-transform: uppercase;
+      word-break: initial;
       color: #fff;
       font-size: 14px;
       font-size: 1.4rem;
       line-height: 30px;
-      word-break: initial;
     }
   }
 }

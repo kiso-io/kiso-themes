@@ -129,6 +129,11 @@ ul.checks {
 hr {
   height: 4px;
   border-top: 1px solid $borderColor;
+
+  &.nub {
+    border-top: 3px solid $borderColor;
+    width: 25%;
+  }
 }
 
 .lt-ie8 hr {
