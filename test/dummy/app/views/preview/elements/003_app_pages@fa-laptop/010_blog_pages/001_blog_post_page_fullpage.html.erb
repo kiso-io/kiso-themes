@@ -33,23 +33,23 @@
     <p>Occasionally, we are treated to the sounds of someone somewhere else in the house enjoying vigorous, short lived coitus, the echoes of it carried inside the bones of the house, inside these long forgoten about ducts that serve no purpose. Should the ducts be ripped out? That would be very costly, and damaging to the house. So they stay. Silently embedded within the walls. </p>
     <pre>
       <code>
-              function decodeEscape(charsetPart) {
-              var cc0 = charsetPart.charCodeAt(0);
-              if (cc0 !== 92 /* \\ */) {
-              return cc0;
-            }
-            var c1 = charsetPart.charAt(1);
-            cc0 = escapeCharToCodeUnit[c1];
-            if (cc0) {
+            function decodeEscape(charsetPart) {
+            var cc0 = charsetPart.charCodeAt(0);
+            if (cc0 !== 92 /* \\ */) {
             return cc0;
-          } else if ('0' <= c1 && c1 <= '7') {
-          return parseInt(charsetPart.substring(1), 8);
-        } else if (c1 === 'u' || c1 === 'x') {
-        return parseInt(charsetPart.substring(2), 16);
-      } else {
-      return charsetPart.charCodeAt(1);
-      }
-      }
+          }
+          var c1 = charsetPart.charAt(1);
+          cc0 = escapeCharToCodeUnit[c1];
+          if (cc0) {
+          return cc0;
+        } else if ('0' <= c1 && c1 <= '7') {
+        return parseInt(charsetPart.substring(1), 8);
+      } else if (c1 === 'u' || c1 === 'x') {
+      return parseInt(charsetPart.substring(2), 16);
+    } else {
+    return charsetPart.charCodeAt(1);
+    }
+    }
       </code>
     </pre>
     <p>Much like the infastructure portions of almost every software design that's ever been written. Look at your codebase. Is there something in there, some remnant of infrastructure that was built with the greatest of hopes and expectations, only to be roundly replaced when you understood the problem better?</p>
@@ -57,6 +57,30 @@
     <p>And yet that code sits there, inside your digital walls.</p>
     <p>Software Design is like building houses. The construction continues long after the thing is 'finished', and you end up living with the choices you make for a long time, usually forever. </p>
     <p>And sometimes, in the night, you hear odd noises carried by those old ducts.</p>
+
+    <section class="row post-footer">
+      <div class="col-xs-12">
+        <div class="media color-grey-50">
+          <div class="pull-left">
+            <%= random_avatar 40, 'media-object img-rounded' %>
+          </div>
+          <div class="media-body">
+            <p class='m0 media-heading'>Published <span>14th May 2015</span></p>
+            <a href="#">by John McDowall</a> in <a href="#">Rails, Front-end, Magic</a>
+            <span class="social pull-right">
+              <p class='m0 text-muted small'>
+                Share this article
+              </p>
+              <div class="social-links">
+                <a class="social-icon" href="#" data-platform="twitter" data-message="Message about this post" data-url="http://writertheme.com/post"><i class="fa fa-twitter"></i></a>
+                <a class="social-icon" href="#" data-platform="facebook" data-message="Message about this post" data-url="http://writertheme.com/post"><i class="fa fa-facebook-official"></i></a>
+                <a class="social-icon" data-platform="mail" href="mailto:test@example.com"><i class="fa fa-envelope"></i></a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class='comments row'>
       <div class="col-xs-12">
@@ -102,6 +126,7 @@
           </div>
         </div>
       </div>
+
       <div class="well  mt50 mb50">
         <form action="#" method="post" novalidate="" class="form" id="mycomment">
           <div class="row">
@@ -136,7 +161,7 @@
               <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                   <div class="form-group">
-                    <button name="submit" type="submit" class="form-control btn btn-primary mt30" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Comment Sent">Send Comment</button>
+                    <button name="submit" type="submit" class="form-control btn btn-primary btn-flat" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Comment Sent">Send Comment</button>
                   </div>
                 </div>
               </div>
@@ -147,3 +172,54 @@
     </div>
   </section>
 </article>
+<footer class="container-fluid read-another-section">
+  <div class="row">
+    <header class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h5>Read These Next</h5>
+    </header>
+  </div>
+  <div class="row">
+    <a href="#">
+      <div class="col-sm-6 col-md-2 p0 m0 suggested-article">
+        <div class="overlay"></div>
+        <%= random_landscape %>
+        <h3>Announcing our new feature</h3>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-6 col-md-2 p0 m0 suggested-article">
+        <div class="overlay"></div>
+        <%= random_landscape %>
+        <h3>Invite a friend get 10% off</h3>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-6 col-md-2 p0 m0 suggested-article">
+        <div class="overlay"></div>
+        <%= random_landscape %>
+        <h3>Guest Accounts</h3>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-6 col-md-2 p0 m0 suggested-article">
+        <div class="overlay"></div>
+        <%= random_landscape %>
+        <h3>Using Bootstrap for great Victory</h3>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-6 col-md-2 p0 m0 suggested-article">
+        <div class="overlay"></div>
+        <%= random_landscape %>
+        <h3>Cats in the heating vents</h3>
+      </div>
+    </a>
+    <a href="#">
+      <div class="col-sm-6 col-md-2 p0 m0 suggested-article">
+        <div class="overlay"></div>
+        <%= random_landscape %>
+        <h3>$10,000 in 24hrs</h3>
+      </div>
+    </a>
+  </div>
+</footer>
