@@ -33,23 +33,24 @@
     <p>Occasionally, we are treated to the sounds of someone somewhere else in the house enjoying vigorous, short lived coitus, the echoes of it carried inside the bones of the house, inside these long forgoten about ducts that serve no purpose. Should the ducts be ripped out? That would be very costly, and damaging to the house. So they stay. Silently embedded within the walls. </p>
     <pre>
       <code>
-  function decodeEscape(charsetPart) {
-    var cc0 = charsetPart.charCodeAt(0);
-    if (cc0 !== 92 /* \\ */) {
-      return cc0;
-    }
-    var c1 = charsetPart.charAt(1);
-    cc0 = escapeCharToCodeUnit[c1];
-    if (cc0) {
-      return cc0;
-    } else if ('0' <= c1 && c1 <= '7') {
-      return parseInt(charsetPart.substring(1), 8);
-    } else if (c1 === 'u' || c1 === 'x') {
-      return parseInt(charsetPart.substring(2), 16);
-    } else {
+              function decodeEscape(charsetPart) {
+              var cc0 = charsetPart.charCodeAt(0);
+              if (cc0 !== 92 /* \\ */) {
+              return cc0;
+            }
+            var c1 = charsetPart.charAt(1);
+            cc0 = escapeCharToCodeUnit[c1];
+            if (cc0) {
+            return cc0;
+          } else if ('0' <= c1 && c1 <= '7') {
+          return parseInt(charsetPart.substring(1), 8);
+        } else if (c1 === 'u' || c1 === 'x') {
+        return parseInt(charsetPart.substring(2), 16);
+      } else {
       return charsetPart.charCodeAt(1);
-    }
-  }</code>
+      }
+      }
+      </code>
     </pre>
     <p>Much like the infastructure portions of almost every software design that's ever been written. Look at your codebase. Is there something in there, some remnant of infrastructure that was built with the greatest of hopes and expectations, only to be roundly replaced when you understood the problem better?</p>
     <p>Removing that code might be too hard now, because nobody writes perfect software. Some brittle tests somewhere might flare up, or a method call somewhere might explode. </p>
@@ -101,6 +102,52 @@
           </div>
         </div>
       </div>
+      <form action="#" method="post" novalidate="" class="myform" id="mycomment">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: visible;">
+            <div class="form-group">
+              <label class="control-label" for="contact-message">Join the discussion...</label>
+              <div class="controls">
+                <textarea name="comments" placeholder="Join the discussion..." class="form-control input-lg requiredField" rows="3" data-error-empty="Please enter comment"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Name</label>
+                  <div class="controls">
+                    <input name="contactName" placeholder="Name" class="form-control input-lg requiredField " type="text" data-error-empty="Please enter name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label class="control-label" for="contact-mail">Email</label>
+                  <div class=" controls">
+                    <input name="email" placeholder="Email" class="form-control input-lg requiredField" type="email" data-error-empty="Please enter email" data-error-invalid="Invalid email address">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Website</label>
+                  <div class="controls">
+                    <input name="contactName" placeholder="Website" class="form-control input-lg " type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <button name="submit" type="submit" class="btn btn-block" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Comment Sent">Send Comment</button>
+                  <input type="hidden" name="submitted" id="submitted3" value="true">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 </article>

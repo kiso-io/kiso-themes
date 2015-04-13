@@ -1,3 +1,6 @@
+# RC.19
+ - Stock images for users and landscapes, with associated helpers
+
 # RC.18
  - Fixed issue on install where installer was looking for old PSD folder
  - Blog post Layout
