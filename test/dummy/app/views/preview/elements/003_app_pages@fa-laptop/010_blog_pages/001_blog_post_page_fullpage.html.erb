@@ -7,7 +7,7 @@
     <div class='bg cover' style="background-image: url(<%=asset_path(random_landscape_name) %>);"></div>
   </header>
   <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-muted">
-    <aside class='pt30 pl30 small text-center'>
+    <aside class='small text-center'>
       <em>By John McDowall</em>
       <p class='m0'>Published <time>14th May 2015</time></p>
       <hr class='nub' />
@@ -33,6 +33,7 @@
     <p>You see there are the remenants of what were ducts for the purposes of a forced air central heating system, all through the house. The air vents are now sealed, but the ornamentation on the baseboard that gives away their purpose is still there. The ducts lie embedded within the walls still. Long forgotten about, these heating ducts were probably installed at great expense at the time, for what was felt to be the ultimate in home comfort: hot air blown into the rooms from a central heater!</p>
     <p>At some point, the old air heater was pulled out, radiators were found and installed, and a fancy Swedish boiler system now silently and efficiently pumps hot water around the piping and heats the house. And the ducts remain, in the walls. Now sealed up and silent. Except for when they carry sound in funny ways. Old houses are like that. </p>
     <p>Occasionally, we are treated to the sounds of someone somewhere else in the house enjoying vigorous, short lived coitus, the echoes of it carried inside the bones of the house, inside these long forgoten about ducts that serve no purpose. Should the ducts be ripped out? That would be very costly, and damaging to the house. So they stay. Silently embedded within the walls. </p>
+    <div class='table-responsive'>
     <%= code_block do %>
       function decodeEscape(charsetPart) {
         var cc0 = charsetPart.charCodeAt(0);
@@ -52,6 +53,7 @@
         }
       }
     <% end %>
+    </div>
     <p>Much like the infastructure portions of almost every software design that's ever been written. Look at your codebase. Is there something in there, some remnant of infrastructure that was built with the greatest of hopes and expectations, only to be roundly replaced when you understood the problem better?</p>
     <p>Removing that code might be too hard now, because nobody writes perfect software. Some brittle tests somewhere might flare up, or a method call somewhere might explode. </p>
     <p>And yet that code sits there, inside your digital walls.</p>
