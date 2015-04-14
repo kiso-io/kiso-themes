@@ -68,6 +68,11 @@ small,
   font-size: .75em;
 }
 
+.header {
+  border-bottom: 1px solid;
+  margin-top: 1.4em;
+}
+
 a {
   text-decoration: none;
   color: $link-color;
