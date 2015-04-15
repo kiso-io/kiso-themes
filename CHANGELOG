@@ -1,3 +1,12 @@
+# RC.26 
+ - Bugfixes
+ [x] Post install instructions refer to Gimlet  
+ [x] Gap at top of page after running several generators - damn u vim!
+ [x] Standardize on quotes
+ [x] Modernizr is missing on post install
+ [x] Google maps is missing post install
+ [x] rails generate dresssed:home home index doesn't seem to exist
+
 # RC.25
  - Added .btn-borderless
  - Added addtional Jumbotrons
