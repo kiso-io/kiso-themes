@@ -2,7 +2,7 @@
 
 def create_app
   stop_server
-  test_dir = '/tmp/dresssed-gimlet-install-test'
+  test_dir = '/tmp/dresssed-ives-install-test'
   rm_rf test_dir
   mkdir_p test_dir
   cd test_dir
@@ -12,7 +12,7 @@ def create_app
 end
 
 def install_theme
-  add_gem 'dresssed-gimlet', :path => File.expand_path("../../..", __FILE__)
+  add_gem 'dresssed-ives', :path => File.expand_path("../../..", __FILE__)
   sh 'bundle install'
   sh 'spring stop'
   sh 'bin/rails generate dresssed:install -f'

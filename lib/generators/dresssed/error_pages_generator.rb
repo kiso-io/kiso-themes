@@ -5,7 +5,7 @@ module Dresssed
     class ErrorPagesGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates/error_pages', __FILE__)
 
-      desc "Installs the Gimlet error pages into the /public directory."
+      desc "Installs the Ives error pages into the /public directory."
 
       def copy_stylesheet
         copy_file "403.html", "public/403.html"

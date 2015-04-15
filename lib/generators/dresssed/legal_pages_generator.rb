@@ -11,7 +11,7 @@ module Dresssed
         invoke :controller, [ 'legal' ], skip: true
       end
 
-      desc "Installs the Gimlet legal pages into the your chosen directory."
+      desc "Installs the Ives legal pages into the your chosen directory."
 
       def copy_legal_pages
         ['terms_of_service', 'privacy'].each do |page_name|
