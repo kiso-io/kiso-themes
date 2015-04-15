@@ -22,7 +22,7 @@ def generate_views
   sh 'rails generate scaffold contact name:string phone:string email:string'
   sh 'rake db:migrate'
   rm_rf 'public/index.html'
-  sh 'rails generate dresssed:home home index'
+  sh 'rails generate dresssed:landing1 home index'
   sh 'rails generate dresssed:pricing home pricing'
   add_route "get '/pricing' => 'home#pricing'"
   add_route "root :to => 'home#index'"
