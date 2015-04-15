@@ -4,6 +4,10 @@
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+
+  .glyphicon {
+    line-height: $line-height-computed;
+  }
 }
 
 .btn-warning,
@@ -32,6 +36,7 @@
 .btn-link:focus,
 .btn-link:active {
   background: transparent;
+  border: 1px solid;
 }
 
 // Set the backgrounds
@@ -237,6 +242,22 @@ fieldset[disabled] .btn-primary.active {
   text-shadow: none;
 }
 
+.btn-outline-inverse {
+  border-color: $inverse-base;
+  background: transparent;
+  color: $inverse-base;
+}
+
+.btn-outline-inverse:active,
+.btn-outline-inverse:focus,
+.btn-outline-inverse:hover,
+.open .btn-outline-inverse.dropdown-toggle {
+  outline: none;
+  background: darken($inverse-base, 10%);
+  color: white;
+  text-shadow: none;
+}
+
 .btn-outline-link {
   background: transparent;
   color: $text-color;
@@ -260,4 +281,9 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-borderless {
   border: none;
+}
+
+.btn-circle {
+  border-radius: 50px;
+  line-height: $line-height-computed;
 }
