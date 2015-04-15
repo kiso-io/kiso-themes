@@ -19,9 +19,6 @@
     = stylesheet_link_tag "application", :media => "all"
     = yield :styles
 
-    -# This is for Google Maps integration. You can safely remove if not using Google Maps.
-    %script{:src => "//maps.google.com/maps/api/js?sensor=true&.js", :type => "text/javascript"}
-
     / Le fav and touch icons
     = favicon_link_tag
     -# favicon_link_tag "apple-touch-icon.png", :rel => "apple-touch-icon"
@@ -37,5 +34,8 @@
     / Le javascript
     / ==================================================
     / Placed at the end of the document so the pages load faster
+    = javascript_include_tag "//maps.google.com/maps/api/js?sensor=true&.js"
+    -# This is for Google Maps integration. You can safely remove if not using Google Maps.
+    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
     = javascript_include_tag "application"
     = yield :javascript

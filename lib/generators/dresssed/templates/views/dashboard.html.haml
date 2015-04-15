@@ -1,14 +1,14 @@
 .container-fluid.mt20
   .row.top-summary
     .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
-      .panel
+      .panel.panel-danger
         .panel-heading
           %p.lead
-            %i.fa.fa-globe.fa-fw
+            %i.fa.fa-globe
             TOTAL
             %b PAGE HITS
         .panel-body.text-red-400
-          %h2.page-hits 1123
+          %h2.page-hits.m0 1123
         .panel-footer
           .row
             .col-sm-12
@@ -17,14 +17,14 @@
               decrease in page hits.
           .clearfix
     .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
-      .panel
+      .panel.panel-info
         .panel-heading
           %p.lead
-            %i.fa.fa-trophy.fa-fw
+            %i.fa.fa-trophy
             TOTAL
             %b SALES
         .panel-body.text-light-blue-400
-          %h2 $12,121
+          %h2.m0 $12,121
         .panel-footer
           .row
             .col-sm-12
@@ -33,14 +33,14 @@
               in sales
           .clearfix
     .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
-      .panel
+      .panel.panel-success
         .panel-heading
           %p.lead
-            %i.fa.fa-dollar.fa-fw
+            %i.fa.fa-dollar
             TOTAL
             %b REVENUE
         .panel-body.text-green-400
-          %h2 $100,123
+          %h2.m0 $100,123
         .panel-footer
           .row
             .col-sm-12
@@ -49,14 +49,14 @@
               increase in revenue.
           .clearfix
     .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
-      .panel
+      .panel.panel-success
         .panel-heading
           %p.lead
-            %i.fa.fa-users.fa-fw
+            %i.fa.fa-users
             ACTIVE
             %b CUSTOMERS
         .panel-body.text-green-400
-          %h2 23,453
+          %h2.m0 23,453
         .panel-footer
           .row
             .col-sm-12
@@ -103,7 +103,7 @@
     .col-sm-12.col-md-3.animate-fade-in-1000
       .panel.panel-cover{:style => "background-image: url(#{image_path("dresssed/header_1.jpg")})"}
         %p.lead.p10 Top Affiliate
-        %img.img-circle{:alt => "Fill Murray", :src => "http://fillmurray.com/120/120"}/
+        = random_avatar 115, "img-circle"
         %h3.mt0 Fill Murray
         %ul.stats.list-unstlyed.list-inline.clearfix
           %li.col-4
@@ -117,54 +117,56 @@
             Referrals
   .row
     .col-sm-12.col-md-7.animate-fade-in-1000
-      .panel
+      .panel.panel-default
         .panel-heading
-          %h5 Master Server
+          %h3.panel-title Master Server
         .panel-body
           .container-fluid
             .row
               .col-xs-12.col-sm-12.col-md-12.col-lg-12
                 #realtime{:style => "height: 315px; width: 100%; display: block;"}
-            .row
-              .col-xs-12.col-sm-12.col-md-12.col-lg-12
-                .server-status-details.clearfix
-                  %h5 Memory Stats
-                  .row
-                    %dl.col-xs-6.col-sm-6.col-md-3
-                      %dt In use
-                      %dd 2.5 GB
-                    %dl.col-xs-6.col-sm-6.col-md-3
-                      %dt Total
-                      %dd 4 GB
-                    %dl.col-xs-6.col-sm-6.col-md-3
-                      %dt Available
-                      %dd 500 MB
-                    %dl.col-xs-6.col-sm-6.col-md-3
-                      %dt Swap
-                      %dd 360 MB
+        .panel-footer
+          .row
+            .col-xs-12.col-sm-12.col-md-12.col-lg-12
+              .server-status-details.clearfix
+                %h5.text-center Memory Stats
+                .row.stat-list
+                  %dl.col-xs-6.col-sm-6.col-md-3
+                    %dt In use
+                    %dd 2.5 GB
+                  %dl.col-xs-6.col-sm-6.col-md-3
+                    %dt Total
+                    %dd 4 GB
+                  %dl.col-xs-6.col-sm-6.col-md-3
+                    %dt Available
+                    %dd 500 MB
+                  %dl.col-xs-6.col-sm-6.col-md-3
+                    %dt Swap
+                    %dd 360 MB
     .col-sm-12.col-md-5.animate-fade-in-1000
       .panel.panel-default
         .panel-heading
-          = ionicon_icon_tag 'flame'
-          Recent
+          %h3.panel-title
+            = ionicon_icon_tag 'flame'
+            Recent
           %ul.nav.nav-tabs.nav-tabs-xs
             %li.active
               %a{"data-toggle" => "tab", :href => "#dashboard-recent-comments"} Comments
             %li
               %a{"data-toggle" => "tab", :href => "#dashboard-recent-threads"} Forum threads
         .tab-content
-          #dashboard-recent-comments.tab-pane.fade.active.in{:style => "height: 474px; overflow: scroll;"}
+          #dashboard-recent-comments.tab-pane.fade.active.in{:style => "height: 470px; overflow: scroll;"}
             %ul.list-group.list-group-flush
               %li.list-group-item
                 .media
                   %a.pull-left{:href => "#"}
-                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                    = random_avatar 40, "media-object"
                   .media-body
                     %h5.media-heading
                       %a{:href => "#", :title => ""} Fill Murray
                       commented on
                       %a{:href => "#", :title => ""} Article Name
-                    %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    %p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae atque, dolore quo voluptatum sed voluptas incidunt aspernatur natus iste dolor neque porro quos illo quia iusto minima, nesciunt animi architecto.
                     %ul.list-inline.small
                       %li
                         %a{:href => "#"}
@@ -178,13 +180,13 @@
               %li.list-group-item
                 .media
                   %a.pull-left{:href => "#"}
-                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                    = random_avatar 40, "media-object"
                   .media-body
                     %h5.media-heading
                       %a{:href => "#", :title => ""} Fill Murray
                       commented on
                       %a{:href => "#", :title => ""} Article Name
-                    %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    %p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus harum hic, atque, blanditiis commodi repellendus quibusdam ratione, a tenetur sint iste sunt consequatur nemo. Sed necessitatibus aut aperiam accusamus dignissimos.
                     %ul.list-inline.small
                       %li
                         %a{:href => "#"}
@@ -198,13 +200,13 @@
               %li.list-group-item
                 .media
                   %a.pull-left{:href => "#"}
-                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                    = random_avatar 40, "media-object"
                   .media-body
                     %h5.media-heading
                       %a{:href => "#", :title => ""} Fill Murray
                       commented on
                       %a{:href => "#", :title => ""} Article Name
-                    %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    %p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora illo odio ducimus voluptas dicta, mollitia omnis reiciendis architecto nisi sunt cumque accusantium incidunt eveniet. Dicta accusamus voluptas, iure facilis quo.
                     %ul.list-inline.small
                       %li
                         %a{:href => "#"}
@@ -218,13 +220,13 @@
               %li.list-group-item
                 .media
                   %a.pull-left{:href => "#"}
-                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                    = random_avatar 40, "media-object"
                   .media-body
                     %h5.media-heading
                       %a{:href => "#", :title => ""} Fill Murray
                       commented on
                       %a{:href => "#", :title => ""} Article Name
-                    %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    %p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus non voluptatibus dolorum maxime, distinctio, dolores corporis, eveniet placeat odio est nulla a ea aliquam, tempore autem voluptas. Ex, quibusdam, itaque.
                     %ul.list-inline.small
                       %li
                         %a{:href => "#"}
@@ -238,13 +240,13 @@
               %li.list-group-item
                 .media
                   %a.pull-left{:href => "#"}
-                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                    = random_avatar 40, "media-object"
                   .media-body
                     %h5.media-heading
                       %a{:href => "#", :title => ""} Fill Murray
                       commented on
                       %a{:href => "#", :title => ""} Article Name
-                    %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    %p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, corporis, facilis magni error est quibusdam eaque hic nulla quod veniam reiciendis atque itaque laboriosam. Molestias architecto natus hic, veritatis fugiat.
                     %ul.list-inline.small
                       %li
                         %a{:href => "#"}
@@ -258,13 +260,13 @@
               %li.list-group-item
                 .media
                   %a.pull-left{:href => "#"}
-                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                    = random_avatar 40, "media-object"
                   .media-body
                     %h5.media-heading
                       %a{:href => "#", :title => ""} Fill Murray
                       commented on
                       %a{:href => "#", :title => ""} Article Name
-                    %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    %p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam suscipit, exercitationem mollitia, id fugit earum. Nemo veniam, temporibus soluta laudantium nulla quae ipsam, iste et accusantium blanditiis dignissimos id adipisci.
                     %ul.list-inline.small
                       %li
                         %a{:href => "#"}
@@ -278,13 +280,13 @@
               %li.list-group-item
                 .media
                   %a.pull-left{:href => "#"}
-                    %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                    = random_avatar 40, "media-object"
                   .media-body
                     %h5.media-heading
                       %a{:href => "#", :title => ""} Fill Murray
                       commented on
                       %a{:href => "#", :title => ""} Article Name
-                    %p.small Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    %p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel pariatur repellat hic magni a, sit odit quaerat veniam, quae veritatis temporibus ex ullam nesciunt dolor consequuntur ut dignissimos praesentium.
                     %ul.list-inline.small
                       %li
                         %a{:href => "#"}
@@ -301,7 +303,7 @@
                 %li.list-group-item
                   .media
                     %a.pull-left{:href => "#"}
-                      %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                      = random_avatar 40, "media-object"
                     .media-body
                       %h5.media-heading
                         %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
@@ -314,7 +316,7 @@
                 %li.list-group-item
                   .media
                     %a.pull-left{:href => "#"}
-                      %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                      = random_avatar 40, "media-object"
                     .media-body
                       %h5.media-heading
                         %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
@@ -327,7 +329,7 @@
                 %li.list-group-item
                   .media
                     %a.pull-left{:href => "#"}
-                      %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                      = random_avatar 40, "media-object"
                     .media-body
                       %h5.media-heading
                         %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
@@ -340,7 +342,7 @@
                 %li.list-group-item
                   .media
                     %a.pull-left{:href => "#"}
-                      %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                      = random_avatar 40, "media-object"
                     .media-body
                       %h5.media-heading
                         %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
@@ -353,7 +355,7 @@
                 %li.list-group-item
                   .media
                     %a.pull-left{:href => "#"}
-                      %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                      = random_avatar 40, "media-object"
                     .media-body
                       %h5.media-heading
                         %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
@@ -366,7 +368,7 @@
                 %li.list-group-item
                   .media
                     %a.pull-left{:href => "#"}
-                      %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                      = random_avatar 40, "media-object"
                     .media-body
                       %h5.media-heading
                         %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
@@ -379,7 +381,7 @@
                 %li.list-group-item
                   .media
                     %a.pull-left{:href => "#"}
-                      %img.media-object{:alt => "", :src => "http://fillmurray.com/40/40"}/
+                      = random_avatar 40, "media-object"
                     .media-body
                       %h5.media-heading
                         %a{:href => "#", :title => ""} Lorem ipsum dolor sit amet
@@ -397,7 +399,7 @@
         .panel-body
           #map_canvas_1
     .col-xs-12.col-sm-12.col-md-6.col-lg-6
-      .panel.panel-default
+      .panel
         .panel-heading
           %h3.panel-title Most Active Users
         .panel-body
