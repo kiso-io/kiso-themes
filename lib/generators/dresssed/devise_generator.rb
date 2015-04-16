@@ -5,10 +5,30 @@ module Dresssed
     class DeviseGenerator < Rails::Generators::Base
       include HandlerSupport
 
-      desc "Copy Dresssed's custom Devise layouts to your project."
+      source_root File.expand_path('../templates', __FILE__)
+
+      desc "Copy Dresssed's custom Devise layouts and Email templates to your project."
 
       def copy_layouts
         directory File.expand_path("../../../../app/views/devise/#{handler}", __FILE__), 'app/views/devise'
+        copy_file "views/emails/_email_header.html.erb", "app/views/emails/_email_header.html.erb"
+        copy_file "views/emails/_email_footer.html.erb", "app/views/emails/_email_footer.html.erb"
+      end
+
+      def inject_devise_initializer_config
+        code = <<-INJECTEDCODE.strip_heredoc
+        Rails.application.config.to_prepare do
+          Devise::SessionsController.layout "_minimal"
+          Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "_minimal" }
+          Devise::ConfirmationsController.layout "_minimal"
+          Devise::UnlocksController.layout "_minimal"
+          Devise::PasswordsController.layout "_minimal"
+
+          Devise::Mailer.layout "email"
+        end\n
+        INJECTEDCODE
+
+        inject_into_file( "config/initializers/devise.rb", code, :before => /^end/)
       end
     end
   end

@@ -11,7 +11,7 @@ module Dresssed
 
       def copy_layouts
         layouts_path = "app/views/layouts"
-        %w( _base _flashes _footer _navbar application home devise sidenav _sidenav _minimal _centered ).each do |name|
+        %w( _base _flashes _footer _navbar application home devise sidenav _sidenav _minimal _centered email ).each do |name|
           copy_file "layouts/#{name}.html.#{handler}", "#{layouts_path}/#{name}.html.#{handler}"
         end
         template "layouts/_user_nav.html.#{handler}", "#{layouts_path}/_user_nav.html.#{handler}"
