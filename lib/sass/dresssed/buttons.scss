@@ -287,3 +287,8 @@ fieldset[disabled] .btn-primary.active {
   border-radius: 50px;
   line-height: $line-height-computed;
 }
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
