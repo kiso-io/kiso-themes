@@ -11,8 +11,8 @@ module Dresssed
 
       def copy_layouts
         directory File.expand_path("../../../../app/views/devise/#{handler}", __FILE__), 'app/views/devise'
-        copy_file "views/emails/_email_header.html.erb", "app/views/emails/_email_header.html.erb"
-        copy_file "views/emails/_email_footer.html.erb", "app/views/emails/_email_footer.html.erb"
+        copy_file "views/emails/_email_header.html.#{handler}", "app/views/emails/_email_header.html.#{handler}"
+        copy_file "views/emails/_email_footer.html.#{handler}", "app/views/emails/_email_footer.html.#{handler}"
       end
 
       def inject_devise_initializer_config
