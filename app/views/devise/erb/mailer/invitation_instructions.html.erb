@@ -1,38 +1,20 @@
-<tr>
-  <td>
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr>
-        <td align="center" valign="top">
-          <table border="0" cellpadding="10" cellspacing="0" width="100%">
-            <tr>
-              <td align="center" valign="top">
-                <br/>
-                <br/>
-                <span style="font-family: Avenir, 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; color:#444444;"><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></span>
-                <span style="font-family: Avenir, 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; color:#444444;"><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></span>
+<%= email_message_section do %>
+  <%= email_message_spacer 2 %>
 
-                <table width="50%" cellspacing="0" cellpadding="0" border="0" style="background-color:#16A086;">
-                  <tr>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <td style="padding: 18px 20px 18px 20px; font-family:  Avenir, 'Helvetica Neue', Helvetica, sans-serif, sans-serif; color: #ffffff; font-size: 18px; text-align: center;">
-                      <span style="text-decoration: none; color: #ffffff;"><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) style: 'color: #fff;' %></span>
-                    </td>
-                  </tr>
-                </table>
-                <br/>
-                <br/>
+  <%= email_message_body_text do %>
+    <%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %>
+  <% end %>
 
-                <span style="font-family: Avenir, 'Helvetica Neue', Helvetica, sans-serif; font-size:22px; color:#444444;"><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></span>
-                <br />
-                <br />
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
+  <%= email_message_button do %>
+    <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) style: 'color: #fff;' %>
+  <% end %>
+
+
+  <%= email_message_spacer 2 %>
+
+  <%= email_message_small_text do %>
+    <%= t("devise.mailer.invitation_instructions.ignore").html_safe %>
+  <% end %>
+
+  <%= email_message_spacer 2 %>
+<% end %>

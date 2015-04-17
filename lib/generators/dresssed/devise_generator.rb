@@ -26,6 +26,10 @@ module Dresssed
 
           Devise::Mailer.layout "email"
         end\n
+\n
+        Devise::Mailer.class_eval do
+          helper :email_template # includes "EmailTemplateHelper"
+        end\n
         INJECTEDCODE
 
         inject_into_file( "config/initializers/devise.rb", code, :before => /^end/)
