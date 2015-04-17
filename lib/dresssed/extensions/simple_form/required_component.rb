@@ -6,7 +6,7 @@ module Dresssed
       def required_tag
         return unless required_field? && !has_errors?
         template.content_tag :div,
-                             template.icon_tag("asterisk") + " " + translate_required_text,
+                             template.fa_icon_tag("asterisk") + " " + translate_required_text,
                              :class => "help-block"
       end
 

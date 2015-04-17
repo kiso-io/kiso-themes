@@ -14,7 +14,7 @@ module FormGroupHelper
     def error_messages
       if has_errors?
         @template.content_tag :span,
-          @template.icon_tag("remove") + " " + @form.object.errors[@attribute].to_sentence,
+          @template.fa_icon_tag("remove") + " " + @form.object.errors[@attribute].to_sentence,
           :class => "help-block"
       end
     end
