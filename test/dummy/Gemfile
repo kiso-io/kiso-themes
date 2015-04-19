@@ -35,7 +35,9 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'dresssed-ives', :path => '../../'
+  if ENV['DRESSSED_DEBUG']
+    gem 'dresssed-ives', :path => '../../'
+  end
 end
 
 gem 'pg', :group => :production
