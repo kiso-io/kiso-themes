@@ -1,6 +1,6 @@
 module Dresssed
   module Ives
-    VERSION = "1.0.0.rc26"
+    VERSION = File.read(File.expand_path('../../../../VERSION', __FILE__))
     STYLES = %w(blue black amber)
   end
 end
