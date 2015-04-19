@@ -102,6 +102,7 @@ task :release_version do
   cd "../dresssed.com" do
     sh "bundle exec rake gems:push gem=../dresssed-ives/pkg/dresssed-ives-#{latest_version}.gem"
     sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
+    sh "bundle exec cap production deploy"
   end
 
   sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
