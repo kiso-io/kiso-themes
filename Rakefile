@@ -11,8 +11,7 @@ end
 
 Bundler::GemHelper.install_tasks
 
-require 'rake/version_task'
-Rake::VersionTask.new
+require 'version_bumper'
 
 ## Doc
 
