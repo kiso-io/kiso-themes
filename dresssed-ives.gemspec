@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'jquery-rails'
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "version-bumper"
+  s.add_development_dependency "version_bumper"
 
   s.post_install_message = <<-DOC
     All done!
