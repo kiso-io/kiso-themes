@@ -84,4 +84,8 @@ task :compile_assets do
   end
 end
 
+task :deploy_demo do
+  sh "git push heroku `git subtree split --prefix test/dummy master`:master --force"
+end
+
 task :build => :compile_assets
