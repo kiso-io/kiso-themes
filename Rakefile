@@ -88,4 +88,8 @@ task :deploy_demo do
   sh "git push heroku `git subtree split --prefix test/dummy master`:master --force"
 end
 
+task :release_version do
+
+end
+
 task :build => :compile_assets

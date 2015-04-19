@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "dresssed-ives"
   s.version     = Dresssed::Ives::VERSION
   s.authors     = ["Dresssed"]
-  s.email       = ["dresssed@kantan.io"]
+  s.email       = ["support@dresssed.com"]
   s.homepage    = "http://dresssed.com/themes/ives"
   s.summary     =
   s.description = "Dresssed Ives theme"
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'jquery-rails'
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "version"
 
   s.post_install_message = <<-DOC
     All done!
