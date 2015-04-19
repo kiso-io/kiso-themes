@@ -81,7 +81,7 @@ task :compile_assets do
   end
 
   cd "test/dummy" do
-    sh "rake assets:clobber"
+    sh "DRESSSED_BUILD=true rake assets:clobber"
   end
 end
 
@@ -95,10 +95,13 @@ task :release_version do
     sh "rm -rf *"
   end
   Rake::Task["build"].invoke
+  latest_version = File.read('./VERSION')
   cd "../dresssed.com" do
-    sh "be rake gems:push gem=../dresssed-ives/pkg/*"
-    sh "git add . && git commit -m 'Latest Ives' && gpush"
+    sh "bundle exec rake gems:push gem=../dresssed-ives/pkg/dresssed-ives-#{latest_version}.gem"
+    sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
   end
+
+  sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
 end
 
 task :build => :compile_assets
