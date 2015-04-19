@@ -86,6 +86,9 @@ task :compile_assets do
 end
 
 task :deploy_demo do
+  cd "test/dummy" do
+    sh "RAILS_ENV=production bundle update dresssed-ives"
+  end
   sh "git push heroku `git subtree split --prefix test/dummy master`:master --force"
 end
 
