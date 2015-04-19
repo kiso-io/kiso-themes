@@ -90,7 +90,15 @@ task :deploy_demo do
 end
 
 task :release_version do
-
+  sh "rake bump:build"
+  cd "pkg" do
+    sh "rm *"
+  end
+  Rake::Task["build"].invoke
+  cd "../dresssed.com" do
+    sh "be rake gems:push gem=../dresssed-ives/pkg/*"
+    sh "git add . && git commit -m 'Latest Ives' && gpush"
+  end
 end
 
 task :build => :compile_assets
