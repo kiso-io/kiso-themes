@@ -204,7 +204,7 @@ $rounded-depth: 5px;
   }
 
   .getting-started {
-    background: $gray;
+    background: darken($text-color, 40%);
     padding: 3em 0em;
     color: lighten($text-color, 10%);
 
