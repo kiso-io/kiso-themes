@@ -43,8 +43,8 @@ gem 'thin', group: :production
 gem 'rails_12factor', group: :production
 
 group :production do
-  # source 'http://dresssed.com/gems/263834bde09a27b4f271aeede0e37ed5' do
-  #   gem 'dresssed-ives'
-  # end
+   source 'http://dresssed.com/gems/263834bde09a27b4f271aeede0e37ed5' do
+     gem 'dresssed-ives'
+   end
 end
 
