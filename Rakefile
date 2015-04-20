@@ -102,6 +102,9 @@ task :release_version do
   latest_version = File.read('./VERSION')
   cd "../dresssed.com" do
     sh "bundle exec rake gems:push gem=../dresssed-ives/pkg/dresssed-ives-#{latest_version}.gem"
+
+    puts system('test -z "$(git ls-files --others)"')
+
     sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
     sh "bundle exec cap production deploy"
   end
