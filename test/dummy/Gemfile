@@ -43,6 +43,7 @@ end
 gem 'pg', :group => :production
 gem 'thin', group: :production
 gem 'rails_12factor', group: :production
+gem 'heroku_rails_deflate', :group => :production
 
 group :production do
   if !ENV['DRESSSED_BUILD'] || ENV['RAILS_ENV'] == 'production'

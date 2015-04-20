@@ -93,6 +93,10 @@ GEM
       em-websocket (~> 0.5)
       guard (~> 2.8)
       multi_json (~> 1.8)
+    heroku_rails_deflate (1.0.3)
+      actionpack (>= 3.2.13)
+      activesupport (>= 3.2.13)
+      rack (>= 1.4.5)
     hitimes (1.2.2)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
@@ -202,6 +206,7 @@ DEPENDENCIES
   dresssed-ives!
   guard
   guard-livereload
+  heroku_rails_deflate
   jquery-rails
   kaminari
   mocha
