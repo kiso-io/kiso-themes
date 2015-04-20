@@ -8,9 +8,15 @@ GIT
       actionpack (~> 4.0)
       activemodel (~> 4.0)
 
+PATH
+  remote: ../../
+  specs:
+    dresssed-ives (1.0.0.rc30)
+      jquery-rails
+      rails (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
-  remote: http://dresssed.com/gems/263834bde09a27b4f271aeede0e37ed5/
   specs:
     actionmailer (4.1.10)
       actionpack (= 4.1.10)
@@ -69,9 +75,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    dresssed-ives (1.0.0.rc29)
-      jquery-rails
-      rails (>= 3.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
