@@ -1,7 +1,8 @@
 %heading_spacing {
   margin: 0;
-  padding: 2px 0 12px;
-  color: color($grey, 800);
+  padding: 6px 0 12px;
+  background-color: $brand-primary;
+  color: white;
 }
 
 .panel-metric {
@@ -17,11 +18,7 @@
     min-height: 140px;
 
     .metric-trend {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      margin: 25px 15px 0 0;
+      margin: -9px 15px 0 0;
       text-align: center;
 
       strong {
@@ -47,27 +44,31 @@
     }
 
     .metric-value {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      margin: 25px 0 0 20px;
       color: $brand-primary;
       font-size: 30px;
       font-weight: 700;
       line-height: 1;
+      text-align: center;
+      padding: 9px 0;
+
+      &::after {
+        content: ' ';
+        width: 50%;
+        display: block;
+        margin: 19px auto;
+        border-bottom: 1px solid color($grey, 400);
+      }
+
+      small {
+        display: block;
+        font-size: 0.4em;
+        color: color($grey, 400);
+      }
     }
 
     header {
-      position: absolute;
-      z-index: 1;
-      right: 0;
-      bottom: 0;
-      left: 0;
       text-align: center;
-      /*background-color: #fefffd;*/
-      @include gradient(linear,top,rgba(255, 255, 255, 0.00),rgba(1, 1, 1, 0.08),'left top, left bottom');
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#fefffd', EndColorStr='#010814');
+      margin-bottom: 15px;
 
       h1 {
         @extend %heading_spacing;
@@ -94,8 +95,9 @@
       }
     }
 
-    .chart {
-      height: 135px;
+    .metric-graph {
+      position: absolute;
+      width: 100%;
     }
   }
 
@@ -105,4 +107,23 @@
       font-size: 36px;
     }
   }
+}
+
+.metrics-timeline {
+  ul {
+    li {
+      padding: 4px 15px 25px 0px !important;
+
+      &::before {
+        display: none !important;
+      }
+
+      time {
+        line-height: 50px !important;
+
+        color: white;
+      }
+    }
+  }
+
 }

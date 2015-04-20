@@ -118,6 +118,26 @@ $left-timeline-item-padding: 40px;
       background: $brand-primary;
       line-height: 130%;
 
+      &.label-success {
+        background-color: $success;
+      }
+
+      &.label-danger {
+        background-color: $danger;
+      }
+
+      &.label-warning {
+        background-color: $warning;
+      }
+
+      &.label-info {
+        background-color: $info;
+      }
+
+      &.label-inverse {
+        background-color: color($grey, 900);
+      }
+
       span {
         display: block;
         margin-top: 8px;
