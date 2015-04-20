@@ -1,19 +1,25 @@
 <%% @title = "Showing <%= singular_table_name %>" %>
 
-<div class="form-horizontal">
-<% attributes.each do |attribute| -%>
-  <div class="form-group">
-    <label class="col-md-2 form-label"><%= attribute.human_name %></label>
-    <div class="col-md-10 form-control uneditable-input">
-      <span>
-        <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
-      </span>
-    </div>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="form-horizontal">
+        <% attributes.each do |attribute| -%>
+        <div class="form-group">
+          <label class="col-md-2 form-label"><%= attribute.human_name %></label>
+          <div class="col-md-10 form-control uneditable-input">
+            <span>
+              <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+            </span>
+          </div>
+        </div>
 
-<% end -%>
-  <div class="form-actions col-md-offset-2">
-    <%%= link_to fa_icon_tag("pencil") + ' Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), <%= Dresssed.key_value :class, "'btn btn-primary'" %> %>
-    <%%= link_to 'Back', <%= index_helper %>_path, <%= Dresssed.key_value :class, "'btn'" %> %>
+        <% end -%>
+        <div class="form-actions col-md-offset-2">
+          <%%= link_to fa_icon_tag("pencil") + ' Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), <%= Dresssed.key_value :class, "'btn btn-primary'" %> %>
+          <%%= link_to 'Back', <%= index_helper %>_path, <%= Dresssed.key_value :class, "'btn'" %> %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
