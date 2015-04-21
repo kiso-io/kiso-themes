@@ -80,8 +80,6 @@ $navbar-height: 55px;
 $navBorderRadius: 2px;
 $generalBorderRadius: 2px;
 
-$side-nav-width: 270px;
-
 // Form states and alerts
 $warningText:             color($orange, 400);
 $warningBackground:       color($orange, 900);
@@ -103,6 +101,10 @@ $primaryText:                #3a87ad;
 $primaryBackground:          #d9edf7;
 $primaryBorder:              darken(adjust-hue($primaryBackground, -10), 7%);
 
+$side-nav-width: 250px;
 $sub-menu-item-height: 40px;
-$side-nav-menu-background-color: color($blue-grey, 900);
+$side-nav-menu-background-color: #192227;
+$side-nav-text-color: color($light-blue, 400);
+$side-nav-menu-item-background-color: #3D4857;
+$side-nav-menu-item-color: desaturate($brand-primary, 40%);
 
