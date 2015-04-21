@@ -14,6 +14,10 @@ $(document).ready(function(){
   // Required for the SideNav dropdown nav-side-menu
   $('.nav-side-menu').metisMenu();
 
+  $('#menu-content').slimScroll({
+       height: '100%'
+   });
+
   flotMetric($('#metric-monthly-earnings'), [
       [0, 4],
       [1, 8],
