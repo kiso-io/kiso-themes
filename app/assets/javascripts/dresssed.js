@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   if(!Modernizr.touch) {
     $('#menu-content').slimScroll({
-         height: '100%'
+         height: 'auto'
      });
   }
 
