@@ -69,30 +69,36 @@
       .panel.panel-metric
         .panel-body
           .metric-content
-            .metric-value
-              $19,821
-            .metric-trend
-              %p.text-success
-                %i.fa.fa-chevron-up
-                12%
-              %strong 30 Days Ago
-            #metric-monthly-earnings{:style => "height:150px;"}
-            %header
-              %h3 Monthly Earnings
+            .row
+              %header.col-xs-12
+                %h3 Monthly Earnings
+              .col-xs-7.col-sm-7.col-md-7.col-lg-7{:style => "min-height: 150px;"}
+                #metric-monthly-earnings.metric-graph{:style => "height:150px;"}
+              .col-xs-5.col-sm-5.col-md-5.col-lg-5
+                .metric-value
+                  $19,821
+                .metric-trend
+                  %p.text-success
+                    %i.fa.fa-chevron-up
+                    12%
+                  %strong 30 Days Ago
     .col-xs-12.col-sm-12.col-md-6.col-lg-6
       .panel.panel-metric
         .panel-body
           .metric-content
-            .metric-value
-              123
-            .metric-trend
-              %p.text-danger
-                %i.fa.fa-chevron-down
-                98%
-              %strong 30 Days Ago
-            #metric-cancellations{:style => "height:150px;"}
-            %header
-              %h3 Cancellations
+            .row
+              %header.col-xs-12
+                %h3 Cancellations
+              .col-xs-7.col-sm-7.col-md-7.col-lg-7{:style => "min-height: 150px;"}
+                #metric-cancellations.metric-graph{:style => "height:150px;"}
+              .col-xs-5.col-sm-5.col-md-5.col-lg-5
+                .metric-value
+                  123
+                .metric-trend
+                  %p.text-success
+                    %i.fa.fa-chevron-up
+                    12%
+                  %strong 30 Days Ago
   .row
     .col-sm-12.col-md-9.animate-fade-in-1000
       .panel.panel-default
@@ -442,7 +448,7 @@
                   %td 3
                   %td
                     %strong Cash Money
-                  %td Ney York City, USA
+                  %td New York City, USA
                   %td
                     %span.label.label-success Active
                   %td
