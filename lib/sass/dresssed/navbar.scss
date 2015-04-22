@@ -6,7 +6,7 @@
 
   .navbar-brand {
     text-transform: uppercase;
-    color: $navbar-default-link-color;
+    color: darken($navbar-default-link-color, 40%);
   }
 
   .navbar-item {
