@@ -17,6 +17,12 @@
 //= require counters
 
 $(document).ready(function(){
+  if(Modernizr.touch) {
+    $('#menu-content').slimScroll({
+         destroy: 'true'
+     });
+  }
+
   $('.size-mobile').on('click', function(){
     sizeiframe(320, true);
   });
@@ -55,7 +61,11 @@ function sizeiframe(size) {
   if( Modernizr.touch ) {
     return;
   }
-  console.log('resizing');
+
+  $('#menu-content').slimScroll({
+       destroy: 'true'
+   });
+
   var $sgViewport = $('#sg-viewport');
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   $($sgViewport).height(h-55);

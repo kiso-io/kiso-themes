@@ -18,6 +18,10 @@ $(document).ready(function(){
     $('#menu-content').slimScroll({
          height: 'auto'
      });
+  } else {
+    $('#menu-content').slimScroll({
+         destroy: 'true'
+     });
   }
 
   flotMetric($('#metric-monthly-earnings'), [
