@@ -40,7 +40,7 @@
 
   .navbar-header {
     float: none;
-    background-color: #23282e;
+    background-color: $side-nav-header-bg-color;
 
     .profile {
       padding: 6px 14px;
@@ -71,13 +71,15 @@
     .profile .user-links .btn-link {
       padding-left: 4px;
       padding-right: 4px;
-      color: $brand-primary;
+
+      color: $side-nav-header-bg-link-color;
 
       &:first-of-type {
         padding-left: 0;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: white;
         transition: color 250ms;
         border: none;
@@ -226,6 +228,15 @@
 
   > div {
     margin-bottom: 10px;
+  }
+
+  .btn {
+    color: currentColor;
+
+    &:hover,
+    &:focus {
+      color: white;
+    }
   }
 }
 

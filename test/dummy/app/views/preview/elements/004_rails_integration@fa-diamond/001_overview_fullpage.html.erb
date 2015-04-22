@@ -124,6 +124,41 @@
             <%%= mdi_icon_tag("heart") %>
             <% end %>
 
+            <h2>Minimal Devices</h2>
+            <p>Want a snazzy looking CSS-only Apple device to hold some screenshot? There's a bunch of helpers for that:</p>
+            <%= code_block do %>
+              <%%= device_imac do %>
+                <%%= image_tag 'http://fillmurray.com/230/129' %>
+              <%% end %>
+            <% end %>
+
+            <%= code_block do %>
+            <%%= device_macbook do %>
+              <%%= image_tag 'http://fillmurray.com/230/129' %>
+            <%% end %>
+            <% end %>
+
+            <%= code_block do %>
+            <%%= device_ipad do %>
+              <%%= image_tag 'http://fillmurray.com/230/129' %>
+            <%% end %>
+            <% end %>
+
+            <%= code_block do %>
+            <%%= device_iphone do %>
+              <%%= image_tag 'http://fillmurray.com/230/129' %>
+            <%% end %>
+            <% end %>
+
+            <h2>SASS Helpers</h2>
+            <p>We also provide some handy SASS helpers for various common tasks:</p>
+
+            <h3>Color lookup</h3>
+            <p>By including <code>'dresssed/color'</code> in your SASS file, you'll get access to the Material Design color palette and a handy lookup function:</p>
+            <%= code_block do %>
+              color: color($grey, 400);
+              background-color: color($grey, 50);
+            <% end %>
 
           </section>
 

@@ -62,6 +62,16 @@
     }
   }
 
+  .navbar-text {
+    color: $text-color;
+  }
+
+  .navbar-brand:hover,
+  .navbar-brand:focus {
+    color: $altTextColor;
+    background-color: transparent;
+  }
+
   .search-form {
     input {
       border-radius: $generalBorderRadius;

@@ -62,10 +62,6 @@ function sizeiframe(size) {
     return;
   }
 
-  $('#menu-content').slimScroll({
-       destroy: 'true'
-   });
-
   var $sgViewport = $('#sg-viewport');
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   $($sgViewport).height(h-55);

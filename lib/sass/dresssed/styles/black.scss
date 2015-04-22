@@ -11,7 +11,7 @@ $brand-primary: color($grey, 900);
 // Typography
 $text-color:            #222222;
 $quietColor:            #909191;
-$altTextColor:          darken($brand-primary, 10%);
+$altTextColor:          lighten($brand-primary, 20%);
 $altBackgroundColor:    #d0ab5f;
 
 // Backgrounds
@@ -20,8 +20,8 @@ $footerBackgroundColor: #2a2a2a;
 $activeBackgroundColor: darken($backgroundColor, 5%);
 
 // Links
-$link-color:              lighten($text-color, 25%);
-$link-color-hover:        darken($link-color, 10%);
+$link-color:              lighten($text-color, 45%);
+$link-color-hover:        lighten($link-color, 30%);
 
 // Navbar links
 $navbar-default-link-color:                lighten($brand-primary, 35%);
@@ -35,3 +35,5 @@ $navbar-default-link-disabled-bg:          transparent !default;
 // Borders
 $dividerColor:            #e9e9e9;
 $borderColor:             #dddddd;
+
+$side-nav-header-bg-link-color: lighten($brand-primary, 40%);

@@ -73,6 +73,6 @@
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  border-color: #337ab7;
+  border-color: lighten($brand-primary, 20%);
   background-color: lighten($navbar-default-link-active-bg, 20%);
 }
