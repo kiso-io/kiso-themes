@@ -13,7 +13,7 @@
           .sheet-inner
             = f.form_group :email do |f|
               = f.label :email, class: "form-label"
-              = f.email_field :email, autofocus: true, class: "col-md3"
+              = f.email_field :email, autofocus: true, class: ""
               = f.error_messages
         .form-actions.text-right
           = f.submit "Resend unlock instructions", class: 'btn btn-primary mr15'

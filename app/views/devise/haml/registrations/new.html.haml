@@ -13,15 +13,15 @@
           .sheet-inner
             = f.form_group :email do |f|
               = f.label :email, class: "form-label"
-              = f.email_field :email, autofocus: true, class: "col-md-3"
+              = f.email_field :email, autofocus: true, class: ""
               = f.error_messages
             = f.form_group :password do |f|
               = f.label :password, class: "form-label"
-              = f.password_field :password, class: "col-md-3"
+              = f.password_field :password, class: ""
               = f.error_messages
             = f.form_group :password_confirmation do |f|
               = f.label :password_confirmation, class: "form-label"
-              = f.password_field :password_confirmation, class: "col-md-3"
+              = f.password_field :password_confirmation, class: ""
               = f.error_messages
         .form-actions.text-right
           = f.submit "Sign up", class: 'btn btn-primary'

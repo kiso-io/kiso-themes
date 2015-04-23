@@ -16,7 +16,7 @@
             <% resource.class.invite_key_fields.each do |field| -%>
               <%= f.form_group field do |f| %>
                 <%= f.label field, class: "form-label" %>
-                <%= f.text_field field, autofocus: true, class: "col-md-3"  %>
+                <%= f.text_field field, autofocus: true, class: ""  %>
                 <%= f.error_messages %>
               <% end %>
             <% end -%>
