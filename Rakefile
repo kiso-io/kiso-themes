@@ -94,7 +94,7 @@ task :deploy_demo do
 end
 
 task :release_version do
-  sh "rake bump:build"
+  sh "rake bump:revision"
   cd "pkg" do
     sh "rm -rf *"
   end
