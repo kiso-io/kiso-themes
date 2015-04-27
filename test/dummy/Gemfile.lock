@@ -11,7 +11,7 @@ GIT
 PATH
   remote: ../../
   specs:
-    dresssed-ives (1.0.1)
+    dresssed-ives (1.0.3)
       jquery-rails
       rails (>= 3.1)
 
