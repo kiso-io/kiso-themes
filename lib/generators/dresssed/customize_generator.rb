@@ -9,6 +9,7 @@ module Dresssed
 
       def copy_stylesheet
         copy_file "dresssed.css.scss", "app/assets/stylesheets/dresssed.css.scss"
+        copy_file "dresssed.js", "app/assets/javascripts/dresssed.js"
       end
 
       def add_gem

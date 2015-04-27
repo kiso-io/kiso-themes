@@ -6,7 +6,7 @@
   <% end %>
 
   <%= email_message_button do %>
-    <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) style: 'color: #fff;' %>
+    <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token), style: 'color: #fff;' %>
   <% end %>
 
 

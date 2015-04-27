@@ -23,12 +23,14 @@ module Dresssed
           Devise::ConfirmationsController.layout "_minimal"
           Devise::UnlocksController.layout "_minimal"
           Devise::PasswordsController.layout "_minimal"
+          Devise::InvitationsController.layout '_minimal' if defined?(DeviseInvitable)
+          DeviseInvitable::RegistrationsController.layout "_minimal" if defined?(DeviseInvitable)
 
           Devise::Mailer.layout "email"
         end\n
 \n
-        Devise::Mailer.class_eval do
-          helper :email_template # includes "EmailTemplateHelper"
+        Devise::Mailers::Helpers.class_eval do
+          include EmailTemplateHelper
         end\n
         INJECTEDCODE
 

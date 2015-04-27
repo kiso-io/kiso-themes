@@ -1,12 +1,19 @@
+# 1.0.2
+ - Fixed missing comma in Invitation instructions mailer
+ - Updated devise generator initializer block to properly include the email template helpers at a scope that works
+   for Devise and Devise Invitable.
+ - Updated the customize generator to create a dresssed.js file for more granular control of the included js
+ - Restored some missing SCSS imports in the customize generatred dresssed.scss.css file
+
 # RC.29
  - Fix extraneous underline on pricing page
 
 # RC.28
- - Various fixes to scaffolding 
+ - Various fixes to scaffolding
 
-# RC.26 
+# RC.26
  - Bugfixes
- [x] Post install instructions refer to Gimlet  
+ [x] Post install instructions refer to Gimlet
  [x] Gap at top of page after running several generators - damn u vim!
  [x] Standardize on quotes
  [x] Modernizr is missing on post install
