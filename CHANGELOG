@@ -1,4 +1,4 @@
-# 1.0.2
+# 1.0.3
  - Fixed missing comma in Invitation instructions mailer
  - Updated devise generator initializer block to properly include the email template helpers at a scope that works
    for Devise and Devise Invitable.
