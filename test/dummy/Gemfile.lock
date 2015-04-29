@@ -8,15 +8,9 @@ GIT
       actionpack (~> 4.0)
       activemodel (~> 4.0)
 
-PATH
-  remote: ../../
-  specs:
-    dresssed-ives (1.0.3)
-      jquery-rails
-      rails (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
+  remote: http://dresssed.com/gems/263834bde09a27b4f271aeede0e37ed5/
   specs:
     actionmailer (4.1.10)
       actionpack (= 4.1.10)
@@ -75,6 +69,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dresssed-ives (1.0.3)
+      jquery-rails
+      rails (>= 3.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -119,8 +116,8 @@ GEM
       mime-types (>= 1.16, < 3)
     metaclass (0.0.4)
     method_source (0.8.2)
-    mime-types (2.4.3)
-    minitest (5.6.0)
+    mime-types (2.5)
+    minitest (5.6.1)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
     multi_json (1.11.0)
@@ -172,7 +169,7 @@ GEM
       tilt (~> 1.1)
     shellany (0.0.1)
     slop (3.6.0)
-    sprockets (3.0.1)
+    sprockets (3.0.3)
       rack (~> 1.0)
     sprockets-rails (2.2.4)
       actionpack (>= 3.0)
