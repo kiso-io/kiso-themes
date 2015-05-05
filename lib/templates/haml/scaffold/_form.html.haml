@@ -7,7 +7,7 @@
     = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>
   <%- end -%>
 
-  .form-actions
+  .form-actions.col-md-offset-3.col-md-9
     = f.button :submit
     = f.button :cancel, <%= Dresssed.key_value :to, "#{index_helper}_path" %>
 <%- else -%>
@@ -23,7 +23,7 @@
         = f.error_messages
   <%- end -%>
 
-  .form-actions.col-md-offset-2.col-md-10
+  .form-actions.col-md-offset-3.col-md-9
     = f.submit <%= Dresssed.key_value :class, "'btn btn-primary'" %>
     = link_to "Cancel", <%= index_helper %>_path, <%= Dresssed.key_value :class, "'btn'" %>
 <%- end -%>

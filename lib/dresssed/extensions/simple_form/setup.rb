@@ -103,6 +103,19 @@ SimpleForm.setup do |config|
     end
   end
 
+  config.wrappers :fancy_horizontal_radio_and_checkboxes, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
+    b.use :html5
+    b.use :placeholder
+
+    b.wrapper tag: 'div', class: 'col-sm-push-3 col-sm-9' do |ba|
+      ba.use :input
+      ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
+      ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+    end
+
+    b.use :label, class: 'col-sm-pull-9 col-sm-3 control-label'
+  end
+
   # Wrappers for forms and inputs using the Bootstrap toolkit.
   # Check the Bootstrap docs (http://getbootstrap.com)
   # to learn about the different styles for forms and inputs,
