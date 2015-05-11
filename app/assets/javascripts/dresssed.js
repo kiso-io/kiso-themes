@@ -3,6 +3,10 @@
 //= require_tree ./demo
 
 $(document).ready(function(){
+  if( Modernizr.touch ) {
+    FastClick.attach(document.body);
+  }
+
   $('[data-toggle="popover"]').popover({
     container: 'body'
   });
@@ -14,11 +18,14 @@ $(document).ready(function(){
   // Required for the SideNav dropdown nav-side-menu
   $('.nav-side-menu').metisMenu();
 
-  if(!Modernizr.touch) {
+  var width = document.body.clientWidth;
+
+  if(!Modernizr.touch && width > 800) {
     $('#menu-content').slimScroll({
          height: 'auto'
      });
   } else {
+    $('#menu-content').height(0);
     $('#menu-content').slimScroll({
          destroy: 'true'
      });
@@ -33,7 +40,10 @@ $(document).ready(function(){
   //
   // It is safe to delete this code yourself.
   $(window).on('resize', function(){
-    var width = document.body.clientWidth;
+    if( Modernizr.touch ) return;
+
+    width = document.body.clientWidth;
+
     if(width<800) {
       $('#menu-content').height(0);
       $('#menu-content').slimScroll({
