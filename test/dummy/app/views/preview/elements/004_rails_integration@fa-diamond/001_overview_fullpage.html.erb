@@ -48,7 +48,19 @@
             </div>
             <%% end %>
             <% end %>
-            <p>Bootstrap form documentation for proper usage of the <code>&lt;div class="form-group"&gt;</code> in forms.</p>
+            <p>The <code>form_group</code> helper will also take an addition CSS class parameter to use when there are errors, allowing you to override th default <code>error</code> class to something else:
+
+            <%= code_block do %>
+            <%%= f.form_group :name, 'has-error' do |f| %>
+            <%%= f.label :name, class: 'control-label' %>
+            <div class="controls">
+              <%%= f.text_field :name %>
+              <%%= f.error_messages %>
+            </div>
+            <%% end %>
+            <% end %>
+
+            <p>See the Bootstrap form documentation for proper usage of the <code>&lt;div class="form-group"&gt;</code> in forms.</p>
 
 
             <h2>Dropdowns</h2>
