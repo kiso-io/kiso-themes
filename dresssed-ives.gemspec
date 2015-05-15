@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "version_bumper"
+  s.add_development_dependency "aws-sdk"
 
   s.post_install_message = <<-DOC
     All done!
