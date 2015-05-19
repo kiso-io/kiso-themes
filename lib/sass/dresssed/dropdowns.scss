@@ -34,13 +34,6 @@
 }
 
 .dropdown-menu {
-  display: block;
-  visibility: hidden;
-  margin-top: -10px !important;
-  transition: .25s;
-  opacity: 0;
-  -webkit-backface-visibility: hidden;
-
   .panel {
     width: 290px;
     margin-bottom: 0;
@@ -65,9 +58,7 @@
 }
 
 .open > .dropdown-menu {
-  visibility: visible;
-  margin-top: 0 !important;
-  opacity: 1;
+  @extend .animate-drop-fade-250;
 }
 
 .nav .open > a,
