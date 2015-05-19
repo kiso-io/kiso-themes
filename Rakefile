@@ -125,6 +125,8 @@ task :make_demo do
       sh "cp -R preview #{style.downcase}_preview"
       cd "#{style.downcase}_preview" do
         sh "perl -i -pe 's/black.self/#{style.downcase}.self/g' ./* "
+        sh "perl -i -pe 's{http://}{//}g' ./* "
+        sh "cp main.html index.html"
       end
       sh "cp ../../app/assets/stylesheets/dresssed/#{style}.css.erb assets/styles/#{style}.self.css?body=1.css"
       cd "assets/styles" do
