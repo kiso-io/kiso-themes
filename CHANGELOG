@@ -1,97 +1,140 @@
-# 1.0.7
-- Fix the Dropdown so that the fade in animation doesn't break the default
-Bootstrap behaviour, but still animates on show
-- Fix ordering include so that Bootsrap variables are included first in Amber
-and Black styles
+1.0.7 / 2015-05-19
+==================
 
-# 1.0.6
-- Add ability to customize error css class on form_group helper
+  *  Fix the Dropdown so that the fade in animation doesn't break the default Bootstrap behaviour, but still animates on show
+  *  Fix ordering include so that Bootsrap variables are included first in Amber and Black styles
 
-# 1.0.5 
-- Fix up the sidenav collapsing on mobile while still handling slimscroll.
-- Added Fastclick.js
+1.0.6
+==================
 
-# 1.0.4
-- Fix HAML template indentation issues, and some missing styles that were applied to the ERB templates. 
-- Adjusted the fancy checkbox line heights and also added a simple_form wrapper of fancy_horizontal_radio_and_checkboxes that will work with the Flatlogic fancy checkboxes.
+  *  Add ability to customize error css class on form_group helper
 
-# 1.0.3
- - Fixed missing comma in Invitation instructions mailer
- - Updated devise generator initializer block to properly include the email template helpers at a scope that works
-   for Devise and Devise Invitable.
- - Updated the customize generator to create a dresssed.js file for more granular control of the included js
- - Restored some missing SCSS imports in the customize generatred dresssed.scss.css file
+1.0.5
+==================
 
-# RC.29
- - Fix extraneous underline on pricing page
+  *  Fix up the sidenav collapsing on mobile while still handling slimscroll.
+  *  Added Fastclick.js
 
-# RC.28
- - Various fixes to scaffolding
+1.0.4
+==================
 
-# RC.26
- - Bugfixes
- [x] Post install instructions refer to Gimlet
- [x] Gap at top of page after running several generators - damn u vim!
- [x] Standardize on quotes
- [x] Modernizr is missing on post install
- [x] Google maps is missing post install
- [x] rails generate dresssed:home home index doesn't seem to exist
+  *  Fix HAML template indentation issues, and some missing styles that were applied to the ERB templates.
+  *  Adjusted the fancy checkbox line heights and also added a simple_form wrapper of fancy_horizontal_radio_and_checkboxes that will work with the Flatlogic fancy checkboxes.
 
-# RC.25
- - Added .btn-borderless
- - Added addtional Jumbotrons
+1.0.3
+==================
 
-# RC.24
- - Responsive blog refinements
+   *  Fixed missing comma in Invitation instructions mailer
+   *  Updated devise generator initializer block to properly include the email template helpers at a scope that works for Devise and Devise Invitable.
+   *  Updated the customize generator to create a dresssed.js file for more granular control of the included js
+   *  Restored some missing SCSS imports in the customize generatred dresssed.scss.css file
 
-# RC.23
- - Blog post and Archive templates, and generators
+RC.29
+==================
 
-# RC.22
- - Reinstated the haml views for devise
+   *  Fix extraneous underline on pricing page
 
-# RC.21
- - Fixed old usage of f.control_group for f.form_group
- - Fixed devise Login template
- - Fixed the install generator's injection into the devise initializer to use the correct layout
+RC.28
+==================
 
-# RC.20
- - Updated post-install instructions about simple_form
+   *  Various fixes to scaffolding
 
-# RC.19
- - Stock images for users and landscapes, with associated helpers
+RC.26
+==================
 
-# RC.18
- - Fixed issue on install where installer was looking for old PSD folder
- - Blog post Layout
+  *  Bugfixes
+  *  Post install instructions refer to Gimlet
+  *  Gap at top of page after running several generators   *  damn u vim!
+  *  Standardize on quotes
+  *  Modernizr is missing on post install
+  *  Google maps is missing post install
+  *  rails generate dresssed:home home index doesn't seem to exist
 
-# RC.16 & RC.17
- - Tweaks to listgroups, serverstats and tooltips
+RC.25
+==================
 
-# RC.15
- - Added animations to dropdown menus and fixed up Icon backgrounds.
- - Updated the Sidenav templates for the generators"
+   *  Added .btn  * borderless
+   *  Added addtional Jumbotrons
 
-# RC.14
-  - Version bump for small bug fix in helpers
+RC.24
+==================
 
-# RC.13
-  - Fixed bug where .table-responsive on iOS (iphone 5) was causing the container to be pushed
+   *  Responsive blog refinements
+
+RC.23
+==================
+
+   *  Blog post and Archive templates, and generators
+
+RC.22
+==================
+
+   *  Reinstated the haml views for devise
+
+RC.21
+==================
+
+   *  Fixed old usage of f.control_group for f.form_group
+   *  Fixed devise Login template
+   *  Fixed the install generator's injection into the devise initializer to use the correct layout
+
+RC.20
+==================
+
+   *  Updated post  * install instructions about simple_form
+
+RC.19
+==================
+
+   *  Stock images for users and landscapes, with associated helpers
+
+RC.18
+==================
+
+   *  Fixed issue on install where installer was looking for old PSD folder
+   *  Blog post Layout
+
+RC.16 & RC.17
+==================
+
+   *  Tweaks to listgroups, serverstats and tooltips
+
+RC.15
+==================
+
+   *  Added animations to dropdown menus and fixed up Icon backgrounds.
+   *  Updated the Sidenav templates for the generators"
+
+RC.14
+==================
+
+    *  Version bump for small bug fix in helpers
+
+RC.13
+==================
+
+    *  Fixed bug where .table  * responsive on iOS (iphone 5) was causing the container to be pushed
   to the width of the table, thus blowing out the menus
 
-# RC.12
-  - Tweaked the Panel headers to be a bit more colorful
+RC.12
+==================
 
-# RC.11
-  - Missing landing page stylesheets for Amber and Black
+    *  Tweaked the Panel headers to be a bit more colorful
 
-# RC.10
-  - Added a small background scrim on the Metrics beneath the Heading
-  - Harmonized the colors a bit better
-  - Removed the 1px transparent border from Panels
-  - Adjusted the font sizing and padding for Panels
-  - Removed forced uppercase and bold for panel headers
-  - Lightened the metric panel graph color
-  - Default the side nave to a light gray color for link text
-  - Standardized on ordinary Helvetica for mostly all heades, introduced $font-family-sans-serif-light
-  - Navbar dropdown toggle icons light up white properly
+RC.11
+==================
+
+    *  Missing landing page stylesheets for Amber and Black
+
+RC.10
+==================
+
+    *  Added a small background scrim on the Metrics beneath the Heading
+    *  Harmonized the colors a bit better
+    *  Removed the 1px transparent border from Panels
+    *  Adjusted the font sizing and padding for Panels
+    *  Removed forced uppercase and bold for panel headers
+    *  Lightened the metric panel graph color
+    *  Default the side nave to a light gray color for link text
+    *  Standardized on ordinary Helvetica for mostly all heades, introduced $font  * family  * sans  * serif  * light
+    *  Navbar dropdown toggle icons light up white properly
