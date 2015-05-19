@@ -1,3 +1,20 @@
+# 1.0.7
+- Fix the Dropdown so that the fade in animation doesn't break the default
+Bootstrap behaviour, but still animates on show
+- Fix ordering include so that Bootsrap variables are included first in Amber
+and Black styles
+
+# 1.0.6
+- Add ability to customize error css class on form_group helper
+
+# 1.0.5 
+- Fix up the sidenav collapsing on mobile while still handling slimscroll.
+- Added Fastclick.js
+
+# 1.0.4
+- Fix HAML template indentation issues, and some missing styles that were applied to the ERB templates. 
+- Adjusted the fancy checkbox line heights and also added a simple_form wrapper of fancy_horizontal_radio_and_checkboxes that will work with the Flatlogic fancy checkboxes.
+
 # 1.0.3
  - Fixed missing comma in Invitation instructions mailer
  - Updated devise generator initializer block to properly include the email template helpers at a scope that works
