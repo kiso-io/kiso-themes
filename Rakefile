@@ -110,6 +110,7 @@ task :release_version do
   end
 
   sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
+  sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
 end
 
 task :make_demo do
