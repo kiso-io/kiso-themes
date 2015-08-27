@@ -1,4 +1,6 @@
 module EmailTemplateHelper
+  extend ActiveSupport::Concern
+
   def email_message_spacer( count=1 )
     (1..count).each do
       return capture do
