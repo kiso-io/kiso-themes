@@ -5,13 +5,14 @@ module Dresssed
     class PageGenerator < Rails::Generators::NamedBase
       include HandlerSupport
 
+      remove_hook_for :helper
       class_attribute :_view_name
 
       argument :action_name, type: :string, required: true, banner: "ACTION",
                              desc: "The action, also the name of the view."
 
       def create_controller
-        invoke :controller, [ name ], skip: true
+        invoke :controller, [ name ], skip: true, helper: false, test_framework: false, assets: false
       end
 
       def copy_view
