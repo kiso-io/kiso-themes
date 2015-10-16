@@ -1,4 +1,4 @@
-module MetricsHelpers
+module MetricsHelper
   def random_dollar_value( min=10, max=2000 )
     random_value = ((max.to_f - min.to_f) * rand() + min).round(0)
     "$#{random_value}"
