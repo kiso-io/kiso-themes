@@ -1,3 +1,10 @@
+
+1.0.12 / 2015-10-16
+==================
+
+  * Fix changelog
+  * Fix the typo in the metrics helper file name so it gets autoloaded correctly
+
 1.0.11 / 2015-10-14
 ===================
 
