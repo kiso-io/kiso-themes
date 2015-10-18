@@ -74,11 +74,31 @@
 
   .search-form {
     input {
-      border-radius: $generalBorderRadius;
+      &::-webkit-input-placeholder {
+        color: lighten($text-color, 50%);
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+        color: desaturate($text-color, 50%);
+      }
+
+      &::-moz-placeholder {  /* Firefox 19+ */
+        color: desaturate($text-color, 50%);
+      }
+
+      &:-ms-input-placeholder {
+        color: desaturate($text-color, 50%);
+      }
+
+      color: $navbar-default-link-color;
+      border-color: darken($brand-primary, 10%);
+      border-radius: $generalBorderRadius * 4;
+      background: transparent;
     }
 
     .search-button {
       position: absolute;
+      color: $navbar-default-link-color;
       top: 15px;
       right: 26px;
       font-size: 16px;
