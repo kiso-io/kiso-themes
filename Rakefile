@@ -100,6 +100,8 @@ task :release_version do
   end
   Rake::Task["build"].invoke
   latest_version = File.read('./VERSION')
+  sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
+
   cd "../dresssed.com" do
     sh "bundle exec rake gems:push gem=../dresssed-ives/pkg/dresssed-ives-#{latest_version}.gem"
 
@@ -110,7 +112,6 @@ task :release_version do
   end
 
   sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
-  sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
 end
 
 task :make_demo do
