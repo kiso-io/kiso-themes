@@ -1,8 +1,14 @@
 %heading_spacing {
   margin: 0;
-  padding: 6px 0 12px;
+  padding: 12px 0 12px 1em;
   background-color: $brand-primary;
   color: white;
+  font-family: "Avenir", "Lato", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
 
 .panel-metric {
@@ -21,6 +27,14 @@
       margin: -9px 0px 0 0;
       text-align: center;
 
+      small {
+        display: block;
+        color: color($grey, 400);
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 10px;
+      }
+
       strong {
         text-transform: uppercase;
         color: color($grey, 600);
@@ -29,8 +43,8 @@
       }
 
       > p {
-        margin: 0 0 2px;
-        font-size: 22.5px;
+        margin: 0 0 -2px;
+        font-size: 1em;
         font-weight: 700;
         line-height: 1em;
 
@@ -45,11 +59,11 @@
 
     .metric-value {
       color: $brand-primary;
-      font-size: 30px;
-      font-weight: 700;
+      font-size: 1.6em;
+      font-weight: 200;
       line-height: 1;
       text-align: center;
-      padding: 14px 0;
+      padding: 20px 0;
 
       &::after {
         content: ' ';
@@ -63,11 +77,13 @@
         display: block;
         font-size: 0.4em;
         color: color($grey, 400);
+        font-weight: bold;
+        font-size: 10px;
       }
     }
 
     header {
-      text-align: center;
+      text-align: left;
 
       h1 {
         @extend %heading_spacing;
