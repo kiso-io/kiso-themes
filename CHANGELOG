@@ -1,4 +1,11 @@
 
+1.0.13 / 2015-10-17
+==================
+
+  * Styling pass on Metrics panels to make them overall more consistent with the design.
+  * Make the Dashboard Metrics panels use consistent markup with the Metrics Dashboard panels
+  * Make the initial dashboard panel headers consistent with p.lead
+
 1.0.12 / 2015-10-16
 ==================
 
