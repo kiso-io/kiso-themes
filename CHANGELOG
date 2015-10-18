@@ -1,4 +1,11 @@
 
+1.0.14 / 2015-10-18
+==================
+
+  * Harmonize the navbar search box
+  * Increase text contrast of sidenav menu items
+  * Make sure iframe resizes on demo site
+
 1.0.13 / 2015-10-17
 ==================
 
@@ -15,21 +22,21 @@
 1.0.11 / 2015-10-14
 ===================
 
-	* Ives 1.0.11
-	* Added missing Glyphicon .woff2 file
+  * Ives 1.0.11
+  * Added missing Glyphicon .woff2 file
 
 1.0.10 / 2015-10-14
 ===================
 
-	* Ives 1.0.10
-	* Make the Dresssed generators not generate empty asset, test and useless
-	* Helper files which could cause a conflict on subsequen runs
+  * Ives 1.0.10
+  * Make the Dresssed generators not generate empty asset, test and useless
+  * Helper files which could cause a conflict on subsequen runs
 
 1.0.9 / 2015-08-27
 ==================
 
   * Ives 1.0.9
-	* Make Rails include the Devise email template helpers properly 
+  * Make Rails include the Devise email template helpers properly 
 
 1.0.8 / 2015-07-20
 ==================
@@ -63,10 +70,10 @@
 1.0.3
 ==================
 
-   *  Fixed missing comma in Invitation instructions mailer
-   *  Updated devise generator initializer block to properly include the email template helpers at a scope that works for Devise and Devise Invitable.
-   *  Updated the customize generator to create a dresssed.js file for more granular control of the included js
-   *  Restored some missing SCSS imports in the customize generatred dresssed.scss.css file
+  *  Fixed missing comma in Invitation instructions mailer
+  *  Updated devise generator initializer block to properly include the email template helpers at a scope that works for Devise and Devise Invitable.
+  *  Updated the customize generator to create a dresssed.js file for more granular control of the included js
+  *  Restored some missing SCSS imports in the customize generatred dresssed.scss.css file
 
 RC.29
 ==================
