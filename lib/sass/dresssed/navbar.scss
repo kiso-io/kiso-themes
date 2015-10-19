@@ -94,6 +94,12 @@
       border-color: darken($brand-primary, 10%);
       border-radius: $generalBorderRadius * 4;
       background: transparent;
+      transition: all 500ms ease-in-out;
+
+      &:focus {
+        width: 300px;
+        border-color: $navbar-default-link-color;
+      }
     }
 
     .search-button {
