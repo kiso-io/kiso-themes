@@ -39,14 +39,6 @@ $(document).ready(function(){
     sizeiframe(document.body.clientWidth, true);
   }
 
-  $('#welcome-modal').on('hidden.bs.modal', function (e) {
-    setCookie('seen-modal', true);
-  })
-
-  if(!getCookie('seen-modal') && !Modernizr.touch) {
-    $('#welcome-modal').modal('show');
-  }
-
   if(!Modernizr.touch){
     $(window).on('resize', function(){
       var $sgViewport = $('#sg-viewport');
