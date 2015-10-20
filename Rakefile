@@ -223,8 +223,13 @@ class S3FolderUpload
           if File.directory?(path)
             next
           else
-            puts "...Uploading to: #{path.gsub('demo/localhost:4000/', '')}"
-            @s3_bucket.object(path.gsub('demo/localhost:4000/', '')).upload_file(path, acl:'public-read')
+            content_type = if path.include?('css')
+                             'text/css'
+                           else
+                             'text/html'
+                           end
+            puts "...Uploading to: #{path.gsub('demo/localhost:4000/', '')} with ct: #{content_type}"
+            @s3_bucket.object(path.gsub('demo/localhost:4000/', '')).upload_file(path, acl:'public-read', content_type: content_type)
           end
         end
       }
