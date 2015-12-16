@@ -1,4 +1,8 @@
 
+1.0.15 / 2015-12-15
+==================
+	* Fix bug with Camelized controller names specified in Generators and restore ability to specify multiple action names when executing generators.
+
 1.0.14 / 2015-10-18
 ==================
 
