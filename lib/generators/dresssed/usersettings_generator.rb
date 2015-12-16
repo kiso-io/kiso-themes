@@ -6,7 +6,7 @@ module Dresssed
       view_name "user_settings"
 
       def set_layout
-        inject_into_class "app/controllers/#{name}_controller.rb", "#{name.titleize}Controller".constantize, "  layout 'application'\n"
+        inject_into_class "app/controllers/#{name.underscore}_controller.rb", "#{name.camelize}Controller".constantize, "  layout 'application'\n"
       end
     end
   end

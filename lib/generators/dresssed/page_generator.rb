@@ -8,7 +8,7 @@ module Dresssed
       remove_hook_for :helper
       class_attribute :_view_name
 
-      argument :action_name, type: :string, required: true, banner: "ACTION",
+      argument :actions, type: :array, required: true, banner: "ACTION",
                              desc: "The action, also the name of the view."
 
       def create_controller
@@ -16,8 +16,10 @@ module Dresssed
       end
 
       def copy_view
-        copy_file "views/#{_view_name}.html.#{handler}",
-                  "app/views/#{name}/#{action_name}.html.#{handler}"
+        for action in actions do
+          view_name = action
+          copy_file "views/#{_view_name}.html.#{handler}", "app/views/#{name.underscore}/#{action}.html.#{handler}"
+        end
       end
 
       def self.view_name(name)

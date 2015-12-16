@@ -6,7 +6,7 @@ module Dresssed
       view_name "blog_archive"
 
       def set_layout
-        inject_into_class "app/controllers/#{name}_controller.rb", "#{name.titleize}Controller".constantize, "  layout '_minimal'\n"
+        inject_into_class "app/controllers/#{name.underscore}_controller.rb", "#{name.camelize}Controller".constantize, "  layout '_minimal'\n"
       end
     end
   end
