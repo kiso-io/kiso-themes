@@ -90,6 +90,7 @@
         color: desaturate($text-color, 50%);
       }
 
+      width: 200px;
       color: $navbar-default-link-color;
       border-color: darken($brand-primary, 10%);
       border-radius: $generalBorderRadius * 4;
