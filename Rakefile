@@ -94,11 +94,11 @@ task :deploy_demo do
 end
 
 task :release_version do
-  sh "rake bump:revision"
   cd "pkg" do
     sh "rm -rf *"
   end
   Rake::Task["build"].invoke
+  sh "rake bump:revision"
   latest_version = File.read('./VERSION')
   sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
 
