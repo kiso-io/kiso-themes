@@ -47,6 +47,7 @@ task :compile_assets do
   cd "test/dummy" do
     sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
   end
+  sh "rake bump:revision"
 end
 
 task :deploy_demo do
@@ -63,7 +64,6 @@ task :release_version do
     sh "rm -rf *"
   end
   Rake::Task["build"].invoke
-  sh "rake bump:revision"
   latest_version = File.read('./VERSION')
   sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
 
