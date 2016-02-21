@@ -20,6 +20,7 @@ end
 require 'version_bumper'
 
 ## Packaging
+task :build => :compile_assets
 
 desc "Compile assets for packaging as a gem"
 task :compile_assets do
@@ -61,7 +62,7 @@ task :release_version do
   cd "pkg" do
     sh "rm -rf *"
   end
-  Rake::Task["compile_assets"].invoke
+  Rake::Task["build"].invoke
   sh "rake bump:revision"
   latest_version = File.read('./VERSION')
   sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
