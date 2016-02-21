@@ -1,62 +1,23 @@
 #!/usr/bin/env rake
 $: << "support"
 
-## Bundler
-
 begin
   require 'bundler'
 rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
 
-Bundler::GemHelper.install_tasks
+Bundler::GemHelper.install_tasks name: 'dresssed-ives'
 
-require 'version_bumper'
-
-## Doc
-
-begin
-  require 'rdoc/task'
-rescue LoadError
-  require 'rdoc/rdoc'
-  require 'rake/rdoctask'
-  RDoc::Task = Rake::RDocTask
-end
-
-RDoc::Task.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Dresssed'
-  rdoc.options << '--line-numbers'
-  rdoc.rdoc_files.include('README.rdoc')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
-
-
-## Tests
-
-require 'rake/testtask'
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
-end
-
-task :default => :test
-
-namespace :test do
-  desc "Run system tests"
-  task :system do
-    # Run in another sell to get a clean env
-    FileList["test/system/*.rake"].each do |file|
-      ruby "#{$0} -f #{file}"
-    end
+def setup_bundler
+  begin
+    require 'bundler'
+  rescue LoadError
+    puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
   end
 end
 
-task :test => 'test:system'
-
+require 'version_bumper'
 
 ## Packaging
 
@@ -65,6 +26,8 @@ task :compile_assets do
   require "css_rewriter"
 
   cd "test/dummy" do
+    setup_bundler
+    sh "bundle list"
     sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
     sh "DRESSSED_BUILD=true bundle exec rake assets:precompile"
     sh "DRESSSED_BUILD=true bundle exec rake non_digested"
@@ -87,6 +50,7 @@ end
 
 task :deploy_demo do
   cd "test/dummy" do
+    setup_bundler
     sh "RAILS_ENV=production bundle update dresssed-ives"
   end
   sh "git add . && git commit -m 'Update Ives in demo site' && git push"
@@ -97,7 +61,7 @@ task :release_version do
   cd "pkg" do
     sh "rm -rf *"
   end
-  Rake::Task["build"].invoke
+  Rake::Task["compile_assets"].invoke
   sh "rake bump:revision"
   latest_version = File.read('./VERSION')
   sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
@@ -117,6 +81,7 @@ end
 task :make_demo do
   sh "rm -rf demo/"
   cd "test/dummy" do
+    setup_bundler
     start_server
     sh "wget --mirror -nv -p --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo http://localhost:4000; true"
     stop_server
@@ -170,8 +135,6 @@ def stop_server(wait=true)
   sh 'spring stop'
   sleep 0.1 while server_running? if wait
 end
-
-task :build => :compile_assets
 
 require 'aws-sdk'
 class S3FolderUpload
@@ -239,3 +202,46 @@ class S3FolderUpload
     puts e.message
   end
 end
+
+## Doc
+
+begin
+  require 'rdoc/task'
+rescue LoadError
+  require 'rdoc/rdoc'
+  require 'rake/rdoctask'
+  RDoc::Task = Rake::RDocTask
+end
+
+RDoc::Task.new(:rdoc) do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title    = 'Dresssed'
+  rdoc.options << '--line-numbers'
+  rdoc.rdoc_files.include('README.rdoc')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+
+## Tests
+
+require 'rake/testtask'
+
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'lib'
+  t.libs << 'test'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = false
+end
+
+namespace :test do
+  desc "Run system tests"
+  task :system do
+    setup_bundler
+    # Run in another sell to get a clean env
+    FileList["test/system/*.rake"].each do |file|
+      ruby "#{$0} -f #{file}"
+    end
+  end
+end
+
+task :test => 'test:system'
