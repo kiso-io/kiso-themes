@@ -65,6 +65,7 @@ task :release_version do
   end
   Rake::Task["build"].invoke
   latest_version = File.read('./VERSION')
+  sh "git changelog"
   sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
 
   cd "../dresssed.com" do
