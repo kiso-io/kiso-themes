@@ -27,7 +27,12 @@ Gem::Specification.new do |s|
   s.post_install_message = <<-DOC
     All done!
 
-    Any questions? Email support@dresssed.com
+    Any questions? Email john@dresssed.com
+
+    Need help? Check out the FAQ first: https://dresssed.com/faq
+
+    Still need help? Go to your order receipt page and send me the information
+    requested on the right hand side and send to john@dresssed.com.
 
   DOC
 end
