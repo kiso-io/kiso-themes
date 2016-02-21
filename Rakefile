@@ -65,9 +65,9 @@ task :compile_assets do
   require "css_rewriter"
 
   cd "test/dummy" do
-    sh "DRESSSED_BUILD=true rake assets:clobber"
+    sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
     sh "DRESSSED_BUILD=true bundle exec rake assets:precompile"
-    sh "DRESSSED_BUILD=true rake non_digested"
+    sh "DRESSSED_BUILD=true bundle exec rake non_digested"
   end
 
   mkdir_p "app/assets/stylesheets/dresssed"
@@ -81,7 +81,7 @@ task :compile_assets do
   end
 
   cd "test/dummy" do
-    sh "DRESSSED_BUILD=true rake assets:clobber"
+    sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
   end
 end
 
