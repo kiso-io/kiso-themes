@@ -223,4 +223,30 @@ Devise.setup do |config|
     Devise::UnlocksController.layout "devise"
     Devise::PasswordsController.layout "devise"
   end
+  Rails.application.config.to_prepare do
+    Devise::SessionsController.layout "_minimal"
+    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "_minimal" }
+    Devise::ConfirmationsController.layout "_minimal"
+    Devise::UnlocksController.layout "_minimal"
+    Devise::PasswordsController.layout "_minimal"
+  end
+
+Rails.application.config.to_prepare do
+  Devise::SessionsController.layout "_minimal"
+  Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "_minimal" }
+  Devise::ConfirmationsController.layout "_minimal"
+  Devise::UnlocksController.layout "_minimal"
+  Devise::PasswordsController.layout "_minimal"
+  Devise::InvitationsController.layout '_minimal' if defined?(DeviseInvitable)
+  DeviseInvitable::RegistrationsController.layout "_minimal" if defined?(DeviseInvitable)
+
+  Devise::Mailer.layout "email"
+end
+
+
+
+Devise::Mailer.send(:include, EmailTemplateHelper)
+
+Devise::Mailer.send(:helper, EmailTemplateHelper)
+
 end
