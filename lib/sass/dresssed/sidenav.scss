@@ -149,7 +149,7 @@
     }
 
     i {
-      padding-right: 25px;
+      margin-right: 14px;
     }
   }
 
@@ -198,17 +198,20 @@
     }
 
     a {
-      padding: 8px 15px 8px 37px;
+      padding: 8px 15px 8px 0px;
+      margin-left: 60px;
       color: lighten($side-nav-menu-item-color, 20%);
     }
   }
 
   .nav-third-level li a {
-    padding: 8px 15px 8px 45px;
+    padding: 8px 15px 8px 0px;
+    margin-left: 80px;
   }
 
   .nav-fourth-level li a {
-    padding: 8px 15px 8px 60px;
+    padding: 8px 15px 8px 0px;
+    margin-left: 100px;
   }
 }
 
