@@ -54,7 +54,10 @@ $(document).ready(function(){
            height: '100%'
        });
     }
-    sizeiframe(width);
+
+    try {
+      sizeiframe(width);
+    } catch(e) {}
   });
 
   flotMetric($('#metric-monthly-earnings'), [
