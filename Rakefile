@@ -209,7 +209,11 @@ class S3FolderUpload
                              'text/html'
                            end
             puts "...Uploading to: #{path.gsub('demo/localhost:4000/', '')} with ct: #{content_type}"
-            @s3_bucket.object(path.gsub('demo/localhost:4000/', '')).upload_file(path, acl:'public-read', content_type: content_type)
+            @s3_bucket.object(path.gsub('demo/localhost:4000/', '')).upload_file(path,
+                                                                                 acl:'public-read',
+                                                                                 content_type: content_type,
+                                                                                 expires: Time.new + 60*60
+                                                                                )
           end
         end
       }
