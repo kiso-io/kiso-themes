@@ -112,6 +112,7 @@ task :make_demo do
 
   cd "demo/localhost:4000/assets/bootstrap" do
     sh 'for file in *.*\?*; do mv "$file" "${file%%\?*}"; done '
+    sh 'mv glyphicons-halflings-regular.woff2.html glyphicons-halflings-regular.woff2'
   end
 end
 
@@ -190,6 +191,20 @@ class S3FolderUpload
           else
             content_type = if path.include?('css')
                              'text/css'
+                           elsif path.include?('.js')
+                             'application/javascript'
+                           elsif path.include?('svg')
+                             'image/svg+xml'
+                           elsif path.include?('otf')
+                             'font/otf'
+                           elsif path.include?('eot')
+                             'font/eot'
+                           elsif path.include?('ttf')
+                             'font/ttf'
+                           elsif path.include?('woff')
+                             'font/woff'
+                           elsif path.include?('woff2')
+                             'font/woff2'
                            else
                              'text/html'
                            end

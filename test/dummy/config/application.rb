@@ -22,6 +22,7 @@ module Dummy
     config.middleware.insert_before ActionDispatch::Static, Rack::Deflater
 
     config.autoload_paths << Rails.root.join('lib')
+    config.assets.paths << File.join(config.root, 'app/assets/flash')
 
     config.action_dispatch.default_headers = {
         'X-Frame-Options' => 'ALLOWALL'
