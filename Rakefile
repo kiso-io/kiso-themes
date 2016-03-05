@@ -102,6 +102,8 @@ task :make_demo do
         sh "perl -i -pe 's,<%=\s?asset_path \",../,g' ./* "
         sh "perl -i -pe 's,\" %>,,g' ./* "
       end
+      sh "mkdir #{style.downcase}_preview/assets"
+      sh "cp ../../test/dummy/app/assets/flash/ZeroClipboard.swf #{style.downcase}_preview/assets/"
     end
     sh "rm -rf preview"
   end
@@ -113,6 +115,10 @@ task :make_demo do
   cd "demo/localhost:4000/assets/bootstrap" do
     sh 'for file in *.*\?*; do mv "$file" "${file%%\?*}"; done '
     sh 'mv glyphicons-halflings-regular.woff2.html glyphicons-halflings-regular.woff2'
+  end
+
+  cd "demo/localhost:4000/assets/mdiicons" do
+    sh 'mv Material-Design-Icons.woff2.html Material-Design-Icons.woff2'
   end
 end
 
