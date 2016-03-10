@@ -274,15 +274,15 @@
       margin-bottom: 0px;
     }
 
-    .navbar-collapse {
-      height: 0;
-      overflow: hidden;
+    .navbar-collapse.collapse {
+      height: 0 !important;
+      overflow: hidden !important;
       padding: 0 15px 0 15px;
 
       &.in {
-        height: auto;
-        display: block;
-        overflow-y: scroll;
+        height: auto !important;
+        display: block !important;
+        overflow-y: scroll !important;
       }
     }
 

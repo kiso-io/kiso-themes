@@ -20,7 +20,7 @@ $(document).ready(function(){
 
   var width = document.body.clientWidth;
 
-  if(!Modernizr.touch && width > 800) {
+  if(!Modernizr.touch && width > 1025) {
     $('#menu-content').slimScroll({
          height: 'auto'
      });
@@ -44,12 +44,12 @@ $(document).ready(function(){
 
     width = document.body.clientWidth;
 
-    if(width<800) {
+    if(width < 1025) {
       $('#menu-content').height(0);
       $('#menu-content').slimScroll({
            destroy: 'true'
        });
-    } else if( width > 800) {
+    } else {
       $('#menu-content').slimScroll({
            height: '100%'
        });
