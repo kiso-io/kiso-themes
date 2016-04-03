@@ -51,12 +51,7 @@ task :compile_assets do
 end
 
 task :deploy_demo do
-  cd "test/dummy" do
-    setup_bundler
-    sh "RAILS_ENV=production bundle update dresssed-ives"
-  end
-  sh "git add . && git commit -m 'Update Ives in demo site' && git push"
-  sh "git push heroku `git subtree split --prefix test/dummy master`:master --force"
+  sh "rsync -cavtX --delete ./demo/localhost:4000/ deploy@192.241.204.175:/home/deploy/apps/dressseddotcom_production/shared/public/demos/ives/;"
 end
 
 task :release_version do
