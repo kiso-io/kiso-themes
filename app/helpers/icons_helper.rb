@@ -32,6 +32,6 @@ module IconsHelper
   #   <%= mdi_icon_tag "mdi-action-account-box" %>
   #
   def mdi_icon_tag(name)
-    content_tag(:i, nil, class: "#{name}")
+    content_tag(:i, name, class: "material-icons")
   end
 end
