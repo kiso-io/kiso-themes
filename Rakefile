@@ -113,7 +113,8 @@ task :make_demo do
   end
 
   cd "demo/localhost:4000/assets/mdiicons" do
-    sh 'mv Material-Design-Icons.woff2.html Material-Design-Icons.woff2'
+    sh 'mv MaterialIcons-Regular.woff2.html MaterialIcons-Regular.woff2'
+    sh 'mv MaterialIcons-Regular.eot? MaterialIcons-Regular.eot'
   end
 end
 
