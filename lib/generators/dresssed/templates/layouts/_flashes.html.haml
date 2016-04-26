@@ -1,11 +1,5 @@
-- if alert
-  .alert.alert-danger
-    %a.close{'data-dismiss' => "alert"} &times;
-    = fa_icon_tag "remove"
-    = alert
-
-- if notice
-  .alert.alert-warning
-    %a.close{'data-dismiss' => "alert"} &times;
+- flash.each do |type, message|
+  %div{:class => "alert #{bootstrap_class_for(type)} alert-dismissable fade in"}
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
     = fa_icon_tag "info-sign"
-    = notice
+    = message
