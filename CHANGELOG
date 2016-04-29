@@ -1,4 +1,9 @@
 
+1.0.27 / 2016-04-28
+==================
+
+  * Make sure to use asset-path for Font Awesome so as not to break asset precompile
+
 1.0.26 / 2016-04-25
 ==================
 
