@@ -51,6 +51,9 @@ $(document).ready(function(){
        });
     } else {
       $('#menu-content').slimScroll({
+        destroy: 'true'
+      });
+      $('#menu-content').slimScroll({
            height: '100%'
        });
     }
