@@ -1,4 +1,36 @@
 
+1.0.31 / 2016-05-08
+==================
+
+  * White Theme
+	* New SASS vars: 
+		$navbar-brand-color
+		$navbar-inverse-brand-color
+		$navbar-default-link-color
+		$navbar-default-link-hover-color
+		$navbar-default-link-hover-bg
+		$navbar-default-link-active-color
+		$navbar-default-link-active-bg
+		$navbar-default-link-disabled-color
+		$navbar-default-link-disabled-bg
+		$navbar-form-button-group-bg
+		$navbar-form-button-group-border-color
+		$navbar-default-dropdown-open-bg
+		$navbar-default-dropdown-icon-bg
+		$navbar-default-dropdown-icon-color
+		$navbar-default-dropdown-hover-color
+		$navbar-default-dropdown-hover-bg
+		$navbar-search-form-border-color
+		$navbar-search-form-bg
+		$navbar-search-form-focus-border-color
+		$dropdown-item-color
+		$side-nav-menu-right-border-color
+		$side-nav-header-bg-color
+		$side-nav-header-color
+		$side-nav-header-bg-link-color
+		$side-nav-header-link-hover-color
+
+
 1.0.30 / 2016-05-02
 ==================
 
