@@ -68,7 +68,7 @@
     }
 
     .caret {
-      color: $navbar-default-dropdown-icon-color;
+      color: $navbar-default-link-color;
     }
   }
 
@@ -77,6 +77,10 @@
 
     i {
       background: $navbar-default-dropdown-icon-bg !important;
+      color: $navbar-default-dropdown-icon-color !important;
+    }
+
+    .caret {
       color: $navbar-default-dropdown-icon-color !important;
     }
 

@@ -2,12 +2,12 @@
 .dropdown.open .dropdown-toggle:hover,
 .dropdown.open .dropdown-toggle:active,
 .dropdown.open > button > i {
-  color: $white;
+  color: $dropdown-item-color;
   background: $navbar-default-link-active-bg;
 }
 
 .dropdown-menu > li > a {
-  color: $brand-primary;
+  color: $dropdown-item-color;
   font-size: $font-size-base - 2;
 }
 

@@ -11,7 +11,7 @@ $brand-primary: #A0A0A0;
 // Typography
 $text-color:            #222222;
 $quietColor:            #909191;
-$altTextColor:          lighten($brand-primary, 20%);
+$altTextColor:          darken($brand-primary, 20%);
 $altBackgroundColor:    #d0ab5f;
 
 // Backgrounds
@@ -38,11 +38,11 @@ $navbar-form-button-group-bg:              #ADADAD;
 $navbar-form-button-group-border-color:    #898A8A;
 $navbar-default-dropdown-open-bg:          #ccc;
 $navbar-default-dropdown-icon-bg:          transparent;
-$navbar-default-dropdown-icon-color:       $navbar-form-button-group-bg;
-$navbar-default-dropdown-hover-color:      $brand-primary;
+$navbar-default-dropdown-icon-color:       #fff;
+$navbar-default-dropdown-hover-color:      #111;
 $navbar-default-dropdown-hover-bg:         lighten($brand-primary, 30%);
 $navbar-search-form-border-color:          lighten($brand-primary, 30%);
-$navbar-search-form-bg:                    $navbar-bg-color;
+$navbar-search-form-bg:                    darken($navbar-bg-color, 10%);
 $navbar-search-form-focus-border-color:    lighten($brand-primary, 60%);
 
 // Borders
@@ -62,3 +62,6 @@ $side-nav-header-bg-link-color: darken($brand-primary, 20%);
 $side-nav-header-link-hover-color: #1f1f1f;
 $side-nav-menu-right-border-color: #E3E5E6;
 
+// Dropdowns
+
+$dropdown-item-color: #222;
