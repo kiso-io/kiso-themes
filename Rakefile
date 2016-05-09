@@ -28,7 +28,6 @@ task :compile_assets do
 
   cd "test/dummy" do
     setup_bundler
-    sh "bundle list"
     sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
     sh "DRESSSED_BUILD=true bundle exec rake assets:precompile"
     sh "DRESSSED_BUILD=true bundle exec rake non_digested"
@@ -88,7 +87,7 @@ task :make_demo do
     Dresssed::Ives::STYLES.each do |style|
       sh "cp -R preview #{style.downcase}_preview"
       cd "#{style.downcase}_preview" do
-        sh "perl -i -pe 's/black.self/#{style.downcase}.self/g' ./* "
+        sh "perl -i -pe 's/white.self/#{style.downcase}.self/g' ./* "
         sh "perl -i -pe 's{http://}{//}g' ./* "
         sh "cp main.html index.html"
       end
