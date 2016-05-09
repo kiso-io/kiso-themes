@@ -4,9 +4,15 @@
   border: none;
   border-radius: 0;
 
+  &.navbar-inverse {
+    .navbar-brand {
+      color: $navbar-inverse-brand-color;
+    }
+  }
+
   .navbar-brand {
     text-transform: uppercase;
-    color: darken($navbar-default-link-color, 40%);
+    color: $navbar-brand-color;
   }
 
   .navbar-item {
@@ -41,7 +47,7 @@
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   border: none;
-  background: $brand-primary;
+  background: $navbar-bg-color;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -60,6 +66,27 @@
     i {
       color: $navbar-default-link-color;
     }
+
+    .caret {
+      color: $navbar-default-dropdown-icon-color;
+    }
+  }
+
+  .dropdown.open .dropdown-toggle {
+    background: $navbar-default-dropdown-open-bg !important;
+
+    i {
+      background: $navbar-default-dropdown-icon-bg !important;
+      color: $navbar-default-dropdown-icon-color !important;
+    }
+
+  }
+
+  .navbar-nav > .open > a,
+  .navbar-nav > .open > a:hover,
+  .navbar-nav > .open > a:focus {
+    background-color: $navbar-default-link-active-bg;
+    color: $navbar-default-link-active-color;
   }
 
   .navbar-text {
@@ -92,14 +119,14 @@
 
       width: 200px;
       color: $navbar-default-link-color;
-      border-color: darken($brand-primary, 10%);
-      border-radius: $generalBorderRadius * 4;
-      background: transparent;
+      border-color: $navbar-search-form-border-color;
+      border-radius: $generalBorderRadius * 2;
+      background: $navbar-search-form-bg;
       transition: all 500ms ease-in-out;
 
       &:focus {
         width: 300px;
-        border-color: $navbar-default-link-color;
+        border-color: $navbar-search-form-focus-border-color;
       }
     }
 
@@ -114,8 +141,8 @@
 
   .btn-group {
     .btn {
-      border-color: darken($brand-primary, 10%);
-      background: $brand-primary;
+      border-color: $navbar-form-button-group-border-color;
+      background: $navbar-form-button-group-bg;
 
       i {
         color: $navbar-default-link-color;

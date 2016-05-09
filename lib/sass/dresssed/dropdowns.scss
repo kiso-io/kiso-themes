@@ -14,8 +14,8 @@
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: darken($link-color, 20%);
-  background-color: $link-color-hover;
+  color: $navbar-default-dropdown-hover-color;
+  background-color: $navbar-default-dropdown-hover-bg;
 }
 
 .dropdown-menu > .active > a,

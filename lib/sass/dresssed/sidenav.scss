@@ -16,6 +16,8 @@
   background-color: $side-nav-menu-background-color;
   font-size: .8em;
 
+  border-right: 1px solid $side-nav-menu-right-border-color;
+
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -40,6 +42,7 @@
 
   .navbar-header {
     float: none;
+    color: $side-nav-header-color;
     background-color: $side-nav-header-bg-color;
 
     .profile {
@@ -62,7 +65,7 @@
     }
 
     .profile .profile-body h4 {
-      color: #fff;
+      color: $side-nav-header-color;
       margin: 0;
       margin-top: 2px;
       text-transform: none;
@@ -80,7 +83,7 @@
 
       &:hover,
       &:focus {
-        color: white;
+        color: $side-nav-header-link-hover-color;
         transition: color 250ms;
         border: none;
       }
@@ -145,7 +148,7 @@
     &:hover {
       transition: all 200ms ease;
       background-color: $side-nav-menu-item-background-color;
-      color: white;
+      color: $side-nav-menu-item-hover-color;
     }
 
     i {
@@ -175,12 +178,12 @@
       }
 
       > a {
-        color: lighten($brand-primary, 30%);;
+        color: $side-nav-menu-item-active-color;
       }
     }
 
     > a:focus {
-      color: lighten($brand-primary, 30%);;
+      color: $side-nav-menu-item-color;
     }
   }
 
@@ -229,16 +232,20 @@
   width: $side-nav-width;
   margin: 0;
 
+  border-right: 1px solid $side-nav-menu-right-border-color;
+
   > div {
     margin-bottom: 10px;
   }
 
   .btn {
-    color: currentColor;
+    color: $side-nav-text-color;
+    border-color: $side-nav-text-color;
 
     &:hover,
     &:focus {
       color: white;
+      background-color: $side-nav-text-color;
     }
   }
 }

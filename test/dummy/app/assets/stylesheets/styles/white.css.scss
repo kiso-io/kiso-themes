@@ -9,10 +9,10 @@
 // STYLE
 // -----
 // Pick one style. Just one. Comment or remove the other ones.
-@import "dresssed/styles/blue";
+// @import "dresssed/styles/blue";
 // @import "dresssed/styles/black";
+@import "dresssed/styles/white";
 // @import "dresssed/styles/amber";
-// @import "dresssed/styles/white";
 
 // RULES
 // -----
@@ -65,9 +65,6 @@
 // Utility classes
 @import "twitter/bootstrap/utilities";
 @import "twitter/bootstrap/responsive-utilities";
-
-// Font Awesome
-@import "font_awesome/font-awesome";
 
 // Import Dresssed rules.
 @import "dresssed/mixins";
@@ -138,6 +135,9 @@
 @import "dresssed/app_pages/user-profile";
 @import "dresssed/landing_pages";
 @import "dresssed/blog";
+
+// Font Awesome
+@import "font_awesome/font-awesome";
 
 // Ionicons
 @import "ionicons/ionicons";
