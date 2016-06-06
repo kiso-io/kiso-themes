@@ -1,4 +1,9 @@
 
+1.0.34 / 2016-06-05
+==================
+
+  * Make sure flash type is always a Symbol in the bootstrap_class_for helper
+
 1.0.33 / 2016-06-05
 ==================
 
