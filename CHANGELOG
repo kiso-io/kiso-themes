@@ -1,4 +1,9 @@
 
+1.0.35 / 2016-08-03
+==================
+
+  * Allow namespaces to be used in the page generator. 
+
 1.0.34 / 2016-06-05
 ==================
 
