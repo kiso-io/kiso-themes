@@ -6,7 +6,8 @@ module Dresssed
       view_name "landing2"
 
       def set_layout
-        inject_into_class "app/controllers/#{name.underscore}_controller.rb", "#{name.camelize}Controller".constantize, "  layout 'home'\n"
+        controller_const_name = "#{name.camelize}Controller".constantize
+        inject_into_class File.join('app/controllers', class_path, "#{file_name}_controller.rb"), controller_const_name, "  layout 'home'\n"
       end
     end
   end
