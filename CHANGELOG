@@ -1,4 +1,9 @@
 
+1.0.38 / 2016-08-07
+==================
+
+  * Fix bug with Sidenav collapsing where the `collapse` class was missing in the generator template.
+
 1.0.37 / 2016-08-07
 ==================
 
