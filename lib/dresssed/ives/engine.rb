@@ -27,16 +27,6 @@ module Dresssed
           end)
       end
 
-      initializer 'dresssed.compressor',
-                  :after => :setup_compression,
-                  :group => :all do |app|
-        # FIX: Sass CssCompressor can't handle the current version of Bootstrap.
-        #      Because of IE9 fix "\0/" used in forms.less.
-        if app.config.assets.css_compressor.class.name == "Sass::Rails::CssCompressor"
-          app.config.assets.css_compressor = nil
-        end
-      end
-
       initializer 'dresssed.will_paginate', :after => 'will_paginate' do
         ActiveSupport.on_load :action_view do
           if defined?(WillPaginate)
@@ -47,8 +37,13 @@ module Dresssed
 
       initializer 'dresssed.simple_form' do
         ActiveSupport.on_load :action_view do
-          if defined?(SimpleForm)
+          simple_form_disabled = ENV['DRESSSED_SIMPLE_FORM_DISABLED']
+          if defined?(SimpleForm) && !simple_form_disabled
             require "dresssed/extensions/simple_form"
+          else
+            if simple_form_disabled
+              puts "[DRESSSED]  Bypassing simple_form initializer"
+            end
           end
         end
       end
