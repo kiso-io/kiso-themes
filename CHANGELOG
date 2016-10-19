@@ -1,4 +1,9 @@
 
+1.0.40 / 2016-10-19
+==================
+
+  * Fix issue where Webkit autofill causes the sheets inputs to have the field label still appear underneath the input
+
 1.0.39 / 2016-08-09
 ==================
 
