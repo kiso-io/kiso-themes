@@ -4,6 +4,16 @@
 
     // FORM SHEET
     // ----------
+    //
+
+    // This is the fix for when Webkit decides to autofill a field,
+    // and it causes the label being used as a placeholder to be seen underneath
+    // the autofilled text.
+    window.setTimeout(function(){
+      $('.form-sheet').find('input:-webkit-autofill').each(function(){
+        hideLabel(this)
+      });
+    }, 10);
 
     // Use label as placeholder in sheet forms, as placeholder can't be styled fully in most browsers.
 
@@ -14,7 +24,11 @@
       })
 
       .change(function() {
-        if (this.value == "") showLabel(this)
+        if (this.value == "") {
+          showLabel(this)
+        } else {
+          hideLabel(this)
+        }
       })
 
       .focus(function() {

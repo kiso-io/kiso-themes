@@ -12,3 +12,4 @@ test/dummy/.sass-cache
 test/dummy/public/assets
 bin
 demo/
+.tern-port
