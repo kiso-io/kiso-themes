@@ -3,7 +3,8 @@
   .container-fluid
     .row
       %header.text-center
-        %h1 My App
+        %h1
+          = app_name
         %p.p0.m0 Sign Up
     .row.mt20
       = form_for resource, as: resource_name, url: registration_path(resource_name),                   |
