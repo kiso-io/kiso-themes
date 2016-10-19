@@ -1,4 +1,9 @@
 
+1.0.41 / 2016-10-19
+==================
+
+  * Make the Devise templates use the app_name helper for the App title
+
 1.0.40 / 2016-10-19
 ==================
 
