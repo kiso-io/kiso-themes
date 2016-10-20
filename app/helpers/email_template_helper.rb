@@ -1,5 +1,6 @@
 module EmailTemplateHelper
   extend ActiveSupport::Concern
+  include Rails.application.routes.url_helpers
 
   def email_message_spacer( count=1 )
     (1..count).each do

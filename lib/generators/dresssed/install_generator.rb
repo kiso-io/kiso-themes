@@ -11,7 +11,7 @@ module Dresssed
 
       def copy_layouts
         layouts_path = "app/views/layouts"
-        %w( _base _flashes _footer _navbar application home devise sidenav _sidenav _minimal _centered email ).each do |name|
+        %w( _base _flashes _footer _navbar application home sidenav _sidenav _minimal _centered email ).each do |name|
           copy_file "layouts/#{name}.html.#{handler}", "#{layouts_path}/#{name}.html.#{handler}"
         end
         template "layouts/_user_nav.html.#{handler}", "#{layouts_path}/_user_nav.html.#{handler}"
@@ -37,22 +37,6 @@ module Dresssed
           say_status :warning, "Can't find #{file}. " +
             "Make sure to include add `require dresssed` in your Javascript.", :red
         end
-      end
-
-      def inject_devise_initializer_config
-        return unless devise?
-
-        code = <<-INJECTEDCODE
-  Rails.application.config.to_prepare do
-    Devise::SessionsController.layout "_minimal"
-    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "_minimal" }
-    Devise::ConfirmationsController.layout "_minimal"
-    Devise::UnlocksController.layout "_minimal"
-    Devise::PasswordsController.layout "_minimal"
-  end\n
-        INJECTEDCODE
-
-        inject_into_file( "config/initializers/devise.rb", code, :before => /^end/)
       end
 
       def add_app_name_to_application_helper
