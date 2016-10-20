@@ -71,7 +71,7 @@ task :release_version do
     sh "bundle exec cap production deploy"
   end
 
-  sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
+  sh "git add . && git commit -m 'Ives #{latest_version}' && git tag #{latest_version} && git push"
 end
 
 task :make_demo do
