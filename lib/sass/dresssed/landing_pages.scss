@@ -69,6 +69,8 @@ $rounded-depth: 5px;
 
     .navbar-brand {
       padding-left: 0;
+      color: darken($text-color, 10%);
+      font-weight: bold;
     }
 
     .icon-bar {
