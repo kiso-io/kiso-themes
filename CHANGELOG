@@ -1,5 +1,10 @@
 
-n.n.n / 2016-10-20
+1.0.43 / 2016-10-20
+==================
+
+  * Make the chrome autofill bug stomper try three times to remove the sheet label
+
+1.0.42 / 2016-10-20
 ==================
 
   * Improve the first run experience of running the generator if Devise isn't already configured. Remove devise configuration from the install generator and concentrate on the dresssed:devise generator. Fix bug with Devise Email templates not being configured with the email template helpers in all cases. Make the page generators not create a view when a Dresssed template view is being used instead, resulting in a conflict message.
