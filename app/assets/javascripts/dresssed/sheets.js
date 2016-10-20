@@ -9,11 +9,17 @@
     // This is the fix for when Webkit decides to autofill a field,
     // and it causes the label being used as a placeholder to be seen underneath
     // the autofilled text.
-    window.setTimeout(function(){
+    var attemptCount = 0;
+    var intervalId = window.setInterval(function(){
       $('.form-sheet').find('input:-webkit-autofill').each(function(){
-        hideLabel(this)
+        hideLabel(this);
+        attemptCount++;
+
+        if(attemptCount > 3) {
+          clearInterval(intervalId);
+        }
       });
-    }, 10);
+    }, 300);
 
     // Use label as placeholder in sheet forms, as placeholder can't be styled fully in most browsers.
 
