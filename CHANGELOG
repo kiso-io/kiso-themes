@@ -1,4 +1,10 @@
 
+1.0.44 / 2016-10-20
+==================
+
+  * Make the landing pages use the app_name helper
+  * Darken the App Name in the landing pages
+
 1.0.43 / 2016-10-20
 ==================
 
