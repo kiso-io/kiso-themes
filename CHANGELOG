@@ -1,4 +1,9 @@
 
+1.0.45 / 2016-10-30
+==================
+
+  * Fix slimscroll scrolling on load and handle breakpoint where the menu collapses.
+
 1.0.44 / 2016-10-20
 ==================
 
