@@ -1,4 +1,9 @@
 
+1.0.46 / 2016-12-28
+==================
+
+  * Fix a console error in Firefox because the webkit-autofill pseudo selector isn't supported. Fix 'operatinal' typo. Fix registrations/edit template generator field types on password fields.
+
 1.0.45 / 2016-10-30
 ==================
 
