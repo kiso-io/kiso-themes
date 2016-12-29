@@ -19,19 +19,19 @@
           = f.form_group :password do |f|
             = f.label :password, class: "col-xs-1 col-sm-2 col-md-2 control-label"
             .col-sm-10
-              = f.email_field :password, class: "form-control"
+              = f.password_field :password, class: "form-control"
               = f.error_messages
               .help-inline
                 Leave it blank if you don't want to change it.
           = f.form_group :password_confirmation do |f|
             = f.label :password_confirmation, class: "col-xs-1 col-sm-2 col-md-2 control-label"
             .col-sm-10
-              = f.email_field :password_confirmation, class: "form-control"
+              = f.password_field :password_confirmation, class: "form-control"
               = f.error_messages
           = f.form_group :current_password do |f|
             = f.label :current_password, class: "col-xs-1 col-sm-2 col-md-2 control-label"
             .col-sm-10
-              = f.email_field :current_password, class: "form-control"
+              = f.password_field :current_password, class: "form-control"
               = f.error_messages
               .help-inline
                 We need your current password to confirm your changes.

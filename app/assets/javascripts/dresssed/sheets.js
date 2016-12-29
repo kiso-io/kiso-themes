@@ -11,14 +11,16 @@
     // the autofilled text.
     var attemptCount = 0;
     var intervalId = window.setInterval(function(){
-      $('.form-sheet').find('input:-webkit-autofill').each(function(){
-        hideLabel(this);
-        attemptCount++;
+      try {
+        $('.form-sheet').find('input:-webkit-autofill').each(function(){
+          hideLabel(this);
+          attemptCount++;
 
-        if(attemptCount > 3) {
-          clearInterval(intervalId);
-        }
-      });
+          if(attemptCount > 3) {
+            clearInterval(intervalId);
+          }
+        });
+      } catch( e ) { /* Do Nothing */ }
     }, 300);
 
     // Use label as placeholder in sheet forms, as placeholder can't be styled fully in most browsers.
