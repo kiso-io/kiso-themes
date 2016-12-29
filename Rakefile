@@ -117,11 +117,6 @@ task :make_demo do
   end
 end
 
-task :release_demo do
-  uploader = S3FolderUpload.new('demo/localhost:4000', 'kantan-dresssed-demos/demos/ives', ENV['DRESSSED_AWS_ACCESS_KEY_ID'], ENV['DRESSSED_AWS_SECRET_ACCESS_KEY'])
-  uploader.upload!()
-end
-
 def server_running?
   File.file?('tmp/pids/server.pid')
 end
