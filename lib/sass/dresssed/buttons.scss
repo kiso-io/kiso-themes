@@ -135,6 +135,14 @@ fieldset[disabled] .btn-primary.active {
 // Inverse appears as dark gray
 .btn-inverse {
   @include buttonBackground(#454545, #262626);
+
+  &:hover {
+    @include buttonBackground(lighten(#454545, 10%), lighten(#262626, 10%));
+  }
+
+  &:focus {
+    color: $white;
+  }
 }
 
 // Outline Buttons
