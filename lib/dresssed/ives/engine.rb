@@ -19,12 +19,20 @@ module Dresssed
           app.config.assets.paths << File.join(config.root, "lib", "sass")
           app.config.assets.paths << File.join(config.root, 'app', 'assets', 'fonts')
 
-          app.config.assets.precompile.push(Proc.new do |path|
-            File.extname(path).in? [
-              '.png',  '.gif', '.jpg', '.jpeg', '.svg', # Images
-              '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
-            ]
-          end)
+          types = [
+            '.png',  '.gif', '.jpg', '.jpeg', '.svg', # Images
+            '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
+          ]
+
+          if Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
+						Dir.glob(config.root.join('app/assets/*/**/**')) do |assets_directory|
+							app.config.assets.precompile += [assets_directory] if File.extname(assets_directory).in? types
+						end
+					else
+						app.config.assets.precompile.push(Proc.new do |path|
+							File.extname(path).in? types
+						end)
+					end
       end
 
       initializer 'dresssed.will_paginate', :after => 'will_paginate' do
