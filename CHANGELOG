@@ -1,4 +1,9 @@
 
+1.0.51 / 2017-05-08
+==================
+
+  * Implement method_missing in the EmailTemplateHelper which proxies calls to path and url helpers to the `main_app` if it responds to them. This is because of a long standing bug in Rails where it seems that including the url_helpers directly from the main app causes all sorts of problems in isolated engines: see here http://www.candland.net/2012/04/17/rails-routes-used-in-an-isolated-engine/
+
 1.0.50 / 2017-05-05
 ==================
 
