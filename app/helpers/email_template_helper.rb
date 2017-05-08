@@ -1,6 +1,14 @@
 module EmailTemplateHelper
   extend ActiveSupport::Concern
-  include Rails.application.routes.url_helpers
+
+  # Ok, some madness ahead. There seems to be a bug in rails as documented http://www.candland.net/2012/04/17/rails-routes-used-in-an-isolated-engine/ where including the URL helpers will cause all other
+  # path helpers to go crazy. So instead of include Rails.application.routes.url_helpers
+  # we specifically respond to path and url helpers in the method_missing and proxy them up to the
+  # main_app if they exist. This way the email helpers in the devise templates will still work.
+
+  def method_missing method, *args, &block
+    method.to_s.end_with?('_path', '_url') and main_app.respond_to?(method) ? main_app.send(method, *args) : super
+  end
 
   def email_message_spacer( count=1 )
     (1..count).each do
