@@ -1,7 +1,7 @@
 PATH
   remote: ../../
   specs:
-    dresssed-ives (1.0.50)
+    dresssed-ives (1.0.51)
       jquery-rails
       rails (>= 3.1)
 

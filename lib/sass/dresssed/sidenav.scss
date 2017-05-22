@@ -161,6 +161,7 @@
     .nav-third-level:not(.direct) li:nth-child(#{$i}) a,
     .nav-fourth-level:not(.direct) li:nth-child(#{$i}) a {
       animation: right-fade 500ms;
+      animation-fill-mode: backwards;
       animation-delay: #{$i * (40 - $i)}ms;
     }
   }
