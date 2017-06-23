@@ -19,6 +19,16 @@ end
 
 require 'version_bumper'
 
+task :check_dressseddotcom_on_master do
+  cd "../dresssed.com", verbose: false do
+    branch_name = `git rev-parse --abbrev-ref HEAD`.chomp
+    if branch_name != 'master'
+      puts "🚨  CANNOT RELEASE: dresssed.com is not on master"
+      exit
+    end
+  end
+end
+
 ## Packaging
 task :build => :compile_assets
 
@@ -26,9 +36,11 @@ desc "Compile assets for packaging as a gem"
 task :compile_assets do
   require "css_rewriter"
 
-  cd "test/dummy" do
+  cd "test/dummy", verbose: false do
     setup_bundler
+    puts "💥  Clobbering the old assets..."
     sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
+    puts "👷  Precompiling assets..."
     sh "DRESSSED_BUILD=true bundle exec rake assets:precompile"
     sh "DRESSSED_BUILD=true bundle exec rake non_digested"
   end
@@ -36,33 +48,42 @@ task :compile_assets do
   mkdir_p "app/assets/stylesheets/dresssed"
 
   puts "Processing CSS files to app/assets/stylesheets/dresssed"
-  puts "Looking for files in: #{"test/dummy/public/assets/styles/{#{Dresssed::Ives::STYLES * ','}}.css"}"
+  puts "🔎  Looking for files in: #{"test/dummy/public/assets/styles/{#{Dresssed::Ives::STYLES * ','}}.css"}"
   css_files = FileList["test/dummy/public/assets/styles/{#{Dresssed::Ives::STYLES * ','}}.css"]
   css_files.each do |file|
-    puts "Processing #{file}"
+    puts "👷  Processing #{file}"
     CssRewriter.compile(file, "app/assets/stylesheets/dresssed")
   end
 
-  cd "test/dummy" do
+  cd "test/dummy", verbose: false do
     sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
   end
+
+  puts "🎉  Bumping version number..."
   sh "rake bump:revision"
 end
 
-task :deploy_demo do
-  sh "rsync -cavtX --delete ./demo/localhost:4000/ deploy@192.241.204.175:/home/deploy/apps/dressseddotcom_production/shared/public/demos/ives/;"
-end
-
 task :release_version do
-  cd "pkg" do
+
+  puts "🚦  Checking if repo dresssed.com is on master..."
+  Rake::Task["check_dressseddotcom_on_master"].invoke
+
+  puts "👷  Cleaning out pkg directory"
+  cd "pkg", verbose: false do
     sh "rm -rf *"
   end
+
+  puts "🚧  Building release..."
   Rake::Task["build"].invoke
+
   latest_version = File.read('./VERSION')
+
+  puts "📖  Generating changelog..."
   sh "git changelog"
   sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
 
-  cd "../dresssed.com" do
+  puts "🚚  Pushing release to dresssed.com"
+  cd "../dresssed.com", verbose: false do
     sh "bundle exec rake gems:push gem=../dresssed-ives/pkg/dresssed-ives-#{latest_version}.gem"
 
     puts system('test -z "$(git ls-files --others)"')
@@ -71,7 +92,12 @@ task :release_version do
     sh "bundle exec cap production deploy"
   end
 
+  puts "🐱  Tagging and pushing latest version"
   sh "git add . && git commit -m 'Ives #{latest_version}' && git tag #{latest_version} && git push"
+end
+
+task :deploy_demo do
+  sh "rsync -cavtX --delete ./demo/localhost:4000/ deploy@192.241.204.175:/home/deploy/apps/dressseddotcom_production/shared/public/demos/ives/;"
 end
 
 task :make_demo do
