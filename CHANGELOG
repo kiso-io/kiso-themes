@@ -1,4 +1,12 @@
 
+1.0.54 / 2017-07-22
+==================
+
+  * Add the jquery.turbolinks gem and asset require by default.
+  * Move the javscript includes in the default layouts into the HEAD to make it Turbolinks safe by default since it seems to be hanging around for good now
+  * Make the new installation process Rails 5.1 specific
+  * Update installation process to handle Rails 5.1.2 removing jquery from the Gemfile as a default. Copy the favicon from the public directory into the asset pipeline since missing assets throw exceptiosn now.
+
 1.0.53 / 2017-05-21
 ==================
 
