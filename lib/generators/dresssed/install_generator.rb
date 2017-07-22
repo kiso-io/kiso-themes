@@ -25,6 +25,7 @@ module Dresssed
         return unless Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
         say_status :info, "Adding jQuery back into the Gemfile"
         gem "jquery-rails"
+        gem "jquery-turbolinks"
         system('bundle install')
       end
 
@@ -38,10 +39,12 @@ module Dresssed
         if File.file?(file)
           inject_into_file file, "\n//= require jquery\n", { :before => "//#{sentinel}" }
           inject_into_file file, "\n//= require jquery_ujs\n", { :before => "//#{sentinel}" }
+          inject_into_file file, "\n//= require jquery.turbolinks\n", { before: "//= require jquery_ujs"}
         # CoffeeScript
         elsif File.file?("#{file}.coffee")
           inject_into_file "#{file}.coffee", "\n#require jquery\n", { :before => "##{sentinel}" }
           inject_into_file "#{file}.coffee", "\n#require jquery_ujs\n", { :before => "##{sentinel}" }
+          inject_into_file "#{file}.coffee", "\n#require jquery.turbolinks\n", { :before => "#require jquery_ujs}" }
         # No main JS file
         else
           say_status :warning, "Can't find #{file}. " +
