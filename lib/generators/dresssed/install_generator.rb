@@ -22,12 +22,14 @@ module Dresssed
       end
 
       def add_jquery_to_gemfile
+        return unless Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
         say_status :info, "Adding jQuery back into the Gemfile"
         gem "jquery-rails"
         system('bundle install')
       end
 
       def add_jquery_require_to_app_js
+        return unless Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
         sentinel = "= require rails-ujs"
 
         file = 'app/assets/javascripts/application.js'
@@ -79,6 +81,7 @@ END
       end
 
       def copy_favicons_into_asset_pipeline
+        return unless Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
         copy_file Rails.root.join('public', 'favicon.ico'), Rails.root.join('app', 'assets', 'images', 'favicon.ico')
       end
 
