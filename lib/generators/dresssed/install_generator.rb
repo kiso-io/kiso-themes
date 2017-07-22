@@ -21,6 +21,32 @@ module Dresssed
         copy_file "dresssed.css", "app/assets/stylesheets/dresssed.css"
       end
 
+      def add_jquery_to_gemfile
+        say_status :info, "Adding jQuery back into the Gemfile"
+        gem "jquery-rails"
+        system('bundle install')
+      end
+
+      def add_jquery_require_to_app_js
+        sentinel = "= require rails-ujs"
+
+        file = 'app/assets/javascripts/application.js'
+
+        # Plain JS
+        if File.file?(file)
+          inject_into_file file, "\n//= require jquery\n", { :before => "//#{sentinel}" }
+          inject_into_file file, "\n//= require jquery_ujs\n", { :before => "//#{sentinel}" }
+        # CoffeeScript
+        elsif File.file?("#{file}.coffee")
+          inject_into_file "#{file}.coffee", "\n#require jquery\n", { :before => "##{sentinel}" }
+          inject_into_file "#{file}.coffee", "\n#require jquery_ujs\n", { :before => "##{sentinel}" }
+        # No main JS file
+        else
+          say_status :warning, "Can't find #{file}. " +
+            "Make sure to include add `require dresssed` in your Javascript.", :red
+        end
+      end
+
       def require_dresssed_javascript
         sentinel = "= require jquery_ujs"
         code = "= require dresssed"
@@ -52,10 +78,9 @@ END
         inject_into_file file, code, { :after => sentinel }
       end
 
-      # No PSDs for Ives
-      # def copy_psds
-      #   directory File.expand_path("../../../../psd", __FILE__), "psd"
-      # end
+      def copy_favicons_into_asset_pipeline
+        copy_file Rails.root.join('public', 'favicon.ico'), Rails.root.join('app', 'assets', 'images', 'favicon.ico')
+      end
 
       def show_readme
         readme_template "README.tt" if behavior == :invoke
