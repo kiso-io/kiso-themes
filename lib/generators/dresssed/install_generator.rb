@@ -38,13 +38,13 @@ module Dresssed
         # Plain JS
         if File.file?(file)
           inject_into_file file, "\n//= require jquery\n", { :before => "//#{sentinel}" }
-          inject_into_file file, "\n//= require jquery_ujs\n", { :before => "//#{sentinel}" }
-          inject_into_file file, "\n//= require jquery.turbolinks\n", { before: "//= require jquery_ujs"}
+          inject_into_file file, "//= require jquery_ujs\n", { :before => "//#{sentinel}" }
+          inject_into_file file, "//= require jquery.turbolinks\n", { before: "//= require jquery_ujs"}
         # CoffeeScript
         elsif File.file?("#{file}.coffee")
           inject_into_file "#{file}.coffee", "\n#require jquery\n", { :before => "##{sentinel}" }
-          inject_into_file "#{file}.coffee", "\n#require jquery_ujs\n", { :before => "##{sentinel}" }
-          inject_into_file "#{file}.coffee", "\n#require jquery.turbolinks\n", { :before => "#require jquery_ujs}" }
+          inject_into_file "#{file}.coffee", "#require jquery_ujs\n", { :before => "##{sentinel}" }
+          inject_into_file "#{file}.coffee", "#require jquery.turbolinks\n", { :before => "#require jquery_ujs}" }
         # No main JS file
         else
           say_status :warning, "Can't find #{file}. " +
