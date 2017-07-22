@@ -19,6 +19,14 @@
     = stylesheet_link_tag "application", :media => "all"
     = yield :styles
 
+    / Le javascript
+    / ==================================================
+    / Placed at the end of the document so the pages load faster
+
+    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+    = javascript_include_tag "application"
+    = yield :javascript
+
     -# This is for Google Maps integration. You can safely remove if not using Google Maps.
     %script{:src => "//maps.google.com/maps/api/js?.js", :type => "text/javascript"}
 
@@ -40,11 +48,3 @@
         = yield
 
     = render "layouts/footer"
-
-    / Le javascript
-    / ==================================================
-    / Placed at the end of the document so the pages load faster
-
-    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
-    = javascript_include_tag "application"
-    = yield :javascript

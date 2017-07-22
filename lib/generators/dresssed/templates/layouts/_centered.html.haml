@@ -15,6 +15,12 @@
       / Le styles
       = stylesheet_link_tag "application", :media => "all"
       = yield :styles
+      /
+        Le javascript
+        \==================================================
+      / Placed at the end of the document so the pages load faster
+      = javascript_include_tag "application"
+      = yield :javascript
       / Le fav and touch icons
       = favicon_link_tag
       = yield :head
@@ -25,9 +31,3 @@
           = yield
         / /.container
       / /#main
-      /
-        Le javascript
-        \==================================================
-      / Placed at the end of the document so the pages load faster
-      = javascript_include_tag "application"
-      = yield :javascript
