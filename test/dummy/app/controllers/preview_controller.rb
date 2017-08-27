@@ -4,10 +4,28 @@ class PreviewController < ApplicationController
 
   def index
     @body_class = 'theme-container'
+
+    @themes = Dresssed::THEMES.map do |theme|
+      {theme: theme.titlecase, colors: Kernel.const_get("Dresssed::#{theme.titlecase}::COLORS")}
+    end
   end
 
   def main
     @body_class = 'main'
+
+    if params[:style]
+      cookies[:style] = {
+        value: params[:style],
+        path: 'preview/main'
+      }
+    end
+
+    if params[:theme]
+      cookies[:theme] = {
+        value: params[:theme],
+        path: 'preview/main'
+      }
+    end
 
     redirect_to element_path('001_dashboard@fa-dashboard') and return if params[:section].nil?
 
@@ -25,17 +43,6 @@ class PreviewController < ApplicationController
     @elements = ElementFinder.find(File.join(Rails.root, 'app/views/preview/elements/'))
 
     render template: 'preview/minimal' and return if params[:section] && (params[:section].include?('004_app_pages') || params[:section].include?('fullpage') )
-  end
-
-  def styles
-    @style = params[:style]
-
-    raise ArgumentError, "Invalid style" unless @style.in?(Dresssed::Ives::COLORS)
-
-    cookies[:style] = @style
-
-    redirect_to element_path('001_dashboard@fa-dashboard') and return unless params[:demo_frame].present?
-    redirect_to root_path
   end
 
   def resolve_layout

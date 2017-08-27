@@ -1,4 +1,4 @@
-@import "dresssed/colors";
+@import "dresssed/ives/colors";
 
 .bs-example {
   position: relative;
@@ -52,7 +52,8 @@
   color: #999;
 }
 
-.bs-docs-sidebar .nav > li > a:hover, .bs-docs-sidebar .nav > li > a:focus {
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
   padding-left: 19px;
   color: #563d7c;
   text-decoration: none;
@@ -60,7 +61,9 @@
   border-left: 1px solid #563d7c;
 }
 
-.bs-docs-sidebar .nav > .active > a, .bs-docs-sidebar .nav > .active:hover > a, .bs-docs-sidebar .nav > .active:focus > a {
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
   padding-left: 18px;
   font-weight: 700;
   color: #563d7c;
@@ -81,16 +84,20 @@
   font-weight: 400;
 }
 
-.bs-docs-sidebar .nav .nav > li > a:hover, .bs-docs-sidebar .nav .nav > li > a:focus {
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
   padding-left: 29px;
 }
 
-.bs-docs-sidebar .nav .nav > .active > a, .bs-docs-sidebar .nav .nav > .active:hover > a, .bs-docs-sidebar .nav .nav > .active:focus > a {
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
   padding-left: 28px;
   font-weight: 500;
 }
 
-.back-to-top, .bs-docs-theme-toggle {
+.back-to-top,
+.bs-docs-theme-toggle {
   display: none;
   padding: 4px 10px;
   margin-top: 10px;
@@ -100,7 +107,8 @@
   color: #999;
 }
 
-.back-to-top:hover, .bs-docs-theme-toggle:hover {
+.back-to-top:hover,
+.bs-docs-theme-toggle:hover {
   color: #563d7c;
   text-decoration: none;
 }
@@ -110,7 +118,8 @@
 }
 
 @media (min-width: 768px) {
-  .back-to-top, .bs-docs-theme-toggle {
+  .back-to-top,
+  .bs-docs-theme-toggle {
     display: block;
   }
 }
@@ -120,7 +129,8 @@
     display: block;
   }
 
-  .bs-docs-sidebar.affix, .bs-docs-sidebar.affix-bottom {
+  .bs-docs-sidebar.affix,
+  .bs-docs-sidebar.affix-bottom {
     width: 213px;
   }
 
@@ -133,14 +143,16 @@
     position: absolute;
   }
 
-  .bs-docs-sidebar.affix-bottom .bs-docs-sidenav, .bs-docs-sidebar.affix .bs-docs-sidenav {
+  .bs-docs-sidebar.affix-bottom .bs-docs-sidenav,
+  .bs-docs-sidebar.affix .bs-docs-sidenav {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .bs-docs-sidebar.affix-bottom, .bs-docs-sidebar.affix {
+  .bs-docs-sidebar.affix-bottom,
+  .bs-docs-sidebar.affix {
     width: 263px;
   }
 }
@@ -153,17 +165,20 @@
   margin-bottom: 0;
 }
 
-.bs-navbar-top-example, .bs-navbar-bottom-example {
+.bs-navbar-top-example,
+.bs-navbar-bottom-example {
   z-index: 1;
   padding: 0;
   overflow: hidden;
 }
 
-.bs-navbar-top-example .navbar-header, .bs-navbar-bottom-example .navbar-header {
+.bs-navbar-top-example .navbar-header,
+.bs-navbar-bottom-example .navbar-header {
   margin-left: 0;
 }
 
-.bs-navbar-top-example .navbar-fixed-top, .bs-navbar-bottom-example .navbar-fixed-bottom {
+.bs-navbar-top-example .navbar-fixed-top,
+.bs-navbar-bottom-example .navbar-fixed-bottom {
   position: relative;
   margin-right: 0;
   margin-left: 0;
@@ -195,7 +210,8 @@
 }
 
 @media (min-width: 768px) {
-  .bs-navbar-top-example .navbar-fixed-top, .bs-navbar-bottom-example .navbar-fixed-bottom {
+  .bs-navbar-top-example .navbar-fixed-top,
+  .bs-navbar-bottom-example .navbar-fixed-bottom {
     position: absolute;
   }
 }
@@ -268,14 +284,6 @@ body.theme-container {
   background: #607990;
 }
 
-body.theme-container .navbar {
-  margin: 0;
-}
-
-body.theme-container .container {
-  margin-left: 300px;
-}
-
 .vp-animate {
   -webkit-transition: width 0.2s ease-out;
   -moz-transition: width 0.2s ease-out;
@@ -312,15 +320,6 @@ iframe {
 
   p {
     color: color($blue-grey, 900);
-  }
-}
-
-.style-list {
-  line-height: 40px;
-
-  li.active {
-    border: 1px solid white;
-    border-radius: 2px;
   }
 }
 

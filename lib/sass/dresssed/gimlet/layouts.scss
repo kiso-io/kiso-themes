@@ -1,0 +1,46 @@
+body {
+  background: $footerBackgroundColor;
+}
+
+#main {
+  background: $backgroundColor url($backgroundImagePath) repeat-x;
+
+  padding: 30px 0;
+  min-height: 500px;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $headerFontFamily;
+    margin-bottom: 0.4em;
+  }
+
+  h5 {
+    font-weight: bold;
+  }
+
+}
+
+#content {
+  @include clearfix
+}
+
+#sidebar {
+  margin-top: 1em;
+}
+
+footer {
+  background: $footerBackgroundColor url($footerImagePath) repeat-x;
+  color: $quietColor;
+
+  padding: 30px 0;
+  clear: both;
+
+  p {
+    font-size: $baseFontSize - 2px;
+  }
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

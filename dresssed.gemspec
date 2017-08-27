@@ -1,17 +1,17 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "dresssed/ives/version"
+require "dresssed/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "dresssed-ives"
-  s.version     = Dresssed::Ives::VERSION
+  s.name        = "dresssed"
+  s.version     = Dresssed::VERSION
   s.authors     = ["Dresssed"]
   s.email       = ["support@dresssed.com"]
-  s.homepage    = "http://dresssed.com/themes/ives"
+  s.homepage    = "https://dresssed.com/"
   s.summary     =
-  s.description = "Dresssed Ives theme"
+  s.description = "Dresssed Themes"
 
   s.files = Dir["{app,config,db,lib,psd}/**/*"] +
             Dir["*.gemspec"] +

@@ -1,0 +1,41 @@
+header {
+  background: #f2fbff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-header {
+  flex: 1;
+}
+
+.theme-list {
+  flex: 1;
+  margin: 0;
+
+  li {
+    font-size: 12px;
+    text-transform: uppercase;
+
+    a {
+      color: #323232;
+    }
+
+    &.active a {
+      font-weight: bold;
+    }
+  }
+}
+
+.style-list {
+  li {
+    font-size: 10px;
+
+    a {
+      color: #323232;
+    }
+  }
+}

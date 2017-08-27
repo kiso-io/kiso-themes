@@ -3,16 +3,16 @@
 
 // Dresssed Theme config file
 // ==========================
-@import "dresssed/colors";
-@import "dresssed/styles/defaults";
+@import "dresssed/ives/colors";
+@import "dresssed/ives/styles/defaults";
 
 // STYLE
 // -----
 // Pick one style. Just one. Comment or remove the other ones.
-// @import "dresssed/styles/blue";
-// @import "dresssed/styles/black";
-@import "dresssed/styles/amber";
-
+// @import "dresssed/ives/styles/blue";
+// @import "dresssed/ives/styles/black";
+@import "dresssed/ives/styles/white";
+// @import "dresssed/ives/styles/amber";
 
 // RULES
 // -----
@@ -32,7 +32,6 @@
 @import "twitter/bootstrap/tables";
 @import "twitter/bootstrap/forms";
 @import "twitter/bootstrap/buttons";
-@import "dresssed/devices";
 
 // Components
 @import "twitter/bootstrap/component-animations";
@@ -68,73 +67,74 @@
 @import "twitter/bootstrap/responsive-utilities";
 
 // Import Dresssed rules.
-@import "dresssed/mixins";
+@import "dresssed/ives/mixins";
 
 // Page structure
-@import "dresssed/layouts";
-@import "dresssed/header";
-@import "dresssed/featured";
-@import "dresssed/banner";
-@import "dresssed/pricing";
-@import "dresssed/footer";
+@import "dresssed/ives/layouts";
+@import "dresssed/ives/header";
+@import "dresssed/ives/featured";
+@import "dresssed/ives/banner";
+@import "dresssed/ives/pricing";
+@import "dresssed/ives/footer";
 
 // Base CSS
-@import "dresssed/type";
-@import "dresssed/tables";
-@import "dresssed/code";
-@import "dresssed/forms";
-@import "dresssed/addons";
+@import "dresssed/ives/type";
+@import "dresssed/ives/tables";
+@import "dresssed/ives/code";
+@import "dresssed/ives/forms";
+@import "dresssed/ives/addons";
 
 // Buttons
-@import "dresssed/buttons";
-@import "dresssed/button-groups";
+@import "dresssed/ives/buttons";
+@import "dresssed/ives/button-groups";
 
 // Navs
-@import "dresssed/navs";
-@import "dresssed/navs/tabs";
-@import "dresssed/navs/pills";
-@import "dresssed/navs/stacked-tabs";
-@import "dresssed/navs/stacked-pills";
-@import "dresssed/navs/tabbable";
-@import "dresssed/breadcrumbs";
-@import "dresssed/list-groups";
+@import "dresssed/ives/navs";
+@import "dresssed/ives/navs/tabs";
+@import "dresssed/ives/navs/pills";
+@import "dresssed/ives/navs/stacked-tabs";
+@import "dresssed/ives/navs/stacked-pills";
+@import "dresssed/ives/navs/tabbable";
+@import "dresssed/ives/breadcrumbs";
+@import "dresssed/ives/list-groups";
 
 // Misc navs
-@import "dresssed/navbar";
-@import "dresssed/sidenav";
-@import "dresssed/pagination";
-@import "dresssed/pager";
+@import "dresssed/ives/navbar";
+@import "dresssed/ives/sidenav";
+@import "dresssed/ives/pagination";
+@import "dresssed/ives/pager";
 
 // Misc components
-@import "dresssed/tooltip";
-@import "dresssed/alerts";
-@import "dresssed/dropdowns";
-@import "dresssed/checkboxes";
-@import "dresssed/wells";
-@import "dresssed/sheets";
-@import "dresssed/labels";
-@import "dresssed/thumbnails";
-@import "dresssed/jumbotron";
-@import "dresssed/panels";
-@import "dresssed/progress-bars";
-@import "dresssed/modals";
-@import "dresssed/sprites";
-@import "dresssed/extensions";
-@import "dresssed/switch";
-@import "dresssed/devise";
-@import "dresssed/simple_animations";
-@import "dresssed/font-awesome-icons";
-@import "dresssed/rickshaw";
-@import "dresssed/morris";
-@import "dresssed/metrics";
-@import "dresssed/loaders";
+@import "dresssed/ives/tooltip";
+@import "dresssed/ives/alerts";
+@import "dresssed/ives/dropdowns";
+@import "dresssed/ives/checkboxes";
+@import "dresssed/ives/wells";
+@import "dresssed/ives/sheets";
+@import "dresssed/ives/labels";
+@import "dresssed/ives/thumbnails";
+@import "dresssed/ives/jumbotron";
+@import "dresssed/ives/panels";
+@import "dresssed/ives/progress-bars";
+@import "dresssed/ives/modals";
+@import "dresssed/ives/sprites";
+@import "dresssed/ives/extensions";
+@import "dresssed/ives/switch";
+@import "dresssed/ives/devices";
+@import "dresssed/ives/devise";
+@import "dresssed/ives/simple_animations";
+@import "dresssed/ives/font-awesome-icons";
+@import "dresssed/ives/rickshaw";
+@import "dresssed/ives/morris";
+@import "dresssed/ives/metrics";
+@import "dresssed/ives/loaders";
 
 // App Pages
-@import "dresssed/app_pages/user-settings";
-@import "dresssed/app_pages/timeline";
-@import "dresssed/app_pages/user-profile";
-@import "dresssed/landing_pages";
-@import "dresssed/blog";
+@import "dresssed/ives/app_pages/user-settings";
+@import "dresssed/ives/app_pages/timeline";
+@import "dresssed/ives/app_pages/user-profile";
+@import "dresssed/ives/landing_pages";
+@import "dresssed/ives/blog";
 
 // Font Awesome
 @import "font_awesome/font-awesome";

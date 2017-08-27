@@ -1,0 +1,77 @@
+.btn-group .btn:first-child {
+     -webkit-border-top-left-radius: $buttonBorderRadius;
+         -moz-border-radius-topleft: $buttonBorderRadius;
+             border-top-left-radius: $buttonBorderRadius;
+  -webkit-border-bottom-left-radius: $buttonBorderRadius;
+      -moz-border-radius-bottomleft: $buttonBorderRadius;
+          border-bottom-left-radius: $buttonBorderRadius;
+}
+.btn-group .btn:last-child,
+.btn-group .dropdown-toggle {
+     -webkit-border-top-right-radius: $buttonBorderRadius;
+         -moz-border-radius-topright: $buttonBorderRadius;
+             border-top-right-radius: $buttonBorderRadius;
+  -webkit-border-bottom-right-radius: $buttonBorderRadius;
+      -moz-border-radius-bottomright: $buttonBorderRadius;
+          border-bottom-right-radius: $buttonBorderRadius;
+}
+// Reset corners for large buttons
+.btn-group .btn.large:first-child {
+     -webkit-border-top-left-radius: $largeButtonBorderRadius;
+         -moz-border-radius-topleft: $largeButtonBorderRadius;
+             border-top-left-radius: $largeButtonBorderRadius;
+  -webkit-border-bottom-left-radius: $largeButtonBorderRadius;
+      -moz-border-radius-bottomleft: $largeButtonBorderRadius;
+          border-bottom-left-radius: $largeButtonBorderRadius;
+}
+.btn-group .btn.large:last-child,
+.btn-group .large.dropdown-toggle {
+     -webkit-border-top-right-radius: $largeButtonBorderRadius;
+         -moz-border-radius-topright: $largeButtonBorderRadius;
+             border-top-right-radius: $largeButtonBorderRadius;
+  -webkit-border-bottom-right-radius: $largeButtonBorderRadius;
+      -moz-border-radius-bottomright: $largeButtonBorderRadius;
+          border-bottom-right-radius: $largeButtonBorderRadius;
+}
+
+
+
+.btn-group-vertical .btn:first-child {
+     -webkit-border-top-left-radius: $buttonBorderRadius/10;
+         -moz-border-radius-topleft: $buttonBorderRadius/10;
+             border-top-left-radius: $buttonBorderRadius/10;
+  -webkit-border-bottom-left-radius: $buttonBorderRadius/10;
+      -moz-border-radius-bottomleft: $buttonBorderRadius/10;
+          border-bottom-left-radius: $buttonBorderRadius/10;
+}
+.btn-group-vertical .btn:last-child,
+.btn-group-vertical .dropdown-toggle {
+     -webkit-border-top-right-radius: $buttonBorderRadius/10;
+         -moz-border-radius-topright: $buttonBorderRadius/10;
+             border-top-right-radius: $buttonBorderRadius/10;
+  -webkit-border-bottom-right-radius: $buttonBorderRadius/10;
+      -moz-border-radius-bottomright: $buttonBorderRadius/10;
+          border-bottom-right-radius: $buttonBorderRadius/10;
+}
+// Reset corners for large buttons
+.btn-group-vertical .btn.large:first-child {
+     -webkit-border-top-left-radius: $largeButtonBorderRadius;
+         -moz-border-radius-topleft: $largeButtonBorderRadius;
+             border-top-left-radius: $largeButtonBorderRadius;
+  -webkit-border-bottom-left-radius: $largeButtonBorderRadius;
+      -moz-border-radius-bottomleft: $largeButtonBorderRadius;
+          border-bottom-left-radius: $largeButtonBorderRadius;
+}
+.btn-group-vertical .btn.large:last-child,
+.btn-group-vertical .large.dropdown-toggle {
+     -webkit-border-top-right-radius: $largeButtonBorderRadius;
+         -moz-border-radius-topright: $largeButtonBorderRadius;
+             border-top-right-radius: $largeButtonBorderRadius;
+  -webkit-border-bottom-right-radius: $largeButtonBorderRadius;
+      -moz-border-radius-bottomright: $largeButtonBorderRadius;
+          border-bottom-right-radius: $largeButtonBorderRadius;
+}
+
+.btn-toolbar .btn-group + .btn-group {
+  margin-left: 0;
+}

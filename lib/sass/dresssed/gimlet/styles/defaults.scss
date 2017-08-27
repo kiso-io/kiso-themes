@@ -1,0 +1,124 @@
+// Default style variables
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Colors
+$altTextColor: #663c16;
+$altBackgroundColor: #d0ab5f;
+
+// Links
+$linkColor: #08c;
+$linkColorHover: darken($linkColor, 15%);
+
+// Grays
+$black: #000;
+$grayDarker: #222;
+$grayDark: #333;
+$gray: #555;
+$grayLight: #999;
+$grayLighter: #eee;
+$white: #fff;
+
+// Accent colors
+$blue: #049cdb;
+$blueDark: #0064cd;
+$green: #46a546;
+$red: #9d261d;
+$yellow: #ffc40d;
+$orange: #f89406;
+$pink: #c3325f;
+$purple: #7a43b6;
+
+// Typography
+$baseFontSize: 13px;
+$baseLineHeight: 18px;
+$baseFontFamily: Arial, Helvetica, sans-serif;
+$headerFontFamily: "Droid Sans", Arial, Helvetica, sans-serif;
+$fixedFontFamily: "Andale Mono", "Lucida Console", monospace;
+
+// Buttons
+$primaryButtonBackground: $altBackgroundColor;
+$primaryButtonText: $altTextColor;
+$callToActionBackgroundColor: $altBackgroundColor;
+$callToActionTextColor: $altTextColor;
+$buttonBorderRadius: 30px;
+$largeButtonBorderRadius: $buttonBorderRadius;
+$buttonTransparentBorder: rgba(0, 0, 0, 0.35);
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+$zindexDropdown: 1000;
+$zindexPopover: 1010;
+$zindexTooltip: 1020;
+$zindexFixedNavbar: 1030;
+$zindexModalBackdrop: 1040;
+$zindexModal: 1050;
+
+// Input placeholder text color
+$placeholderText: $grayLight;
+
+// Hr border color
+$hrBorder: $grayLighter;
+
+// Navbar
+$navbarHeight: 58px;
+$navbarBackground: $grayDarker;
+$navbarBackgroundHighlight: $grayDark;
+$navbarLinkBackgroundHover: transparent;
+
+$navbarText: $grayLight;
+$navbarLinkColor: $grayLight;
+$navbarLinkColorHover: $white;
+
+// Form states and alerts
+$warningText: #c09853;
+$warningBackground: #fcf8e3;
+$warningBorder: darken(adjust-hue($warningBackground, -10), 3%);
+
+$errorText: #b94a48;
+$errorBackground: #f2dede;
+$errorBorder: darken(adjust-hue($errorBackground, -10), 3%);
+
+$successText: #468847;
+$successBackground: #dff0d8;
+$successBorder: darken(adjust-hue($successBackground, -10), 5%);
+
+$infoText: #3a87ad;
+$infoBackground: #d9edf7;
+$infoBorder: darken(adjust-hue($infoBackground, -10), 7%);
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
+$gridColumns: 12;
+$gridColumnWidth: 60px;
+$gridGutterWidth: 20px;
+$gridRowWidth: ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns -
+          1));
+
+// Fluid grid
+$fluidGridColumnWidth: 6.382978723%;
+$fluidGridGutterWidth: 2.127659574%;
+
+$side-nav-width: 250px;
+$sub-menu-item-height: 40px;
+
+$side-nav-header-link-hover-color: white;
+$side-nav-header-color: white;
+$side-nav-menu-right-border-color: transparent;
+$side-nav-menu-background-color: #192227;
+$side-nav-text-color: color($blue, 400);
+$side-nav-menu-item-background-color: #3d4857;
+$side-nav-menu-item-color: lighten(saturate($blue, 10%), 10%);
+$side-nav-menu-item-active-color: #eee;
+$side-nav-header-bg-color: #23282e;
+$side-nav-header-bg-link-color: $blue;
+$side-nav-menu-item-hover-color: white;

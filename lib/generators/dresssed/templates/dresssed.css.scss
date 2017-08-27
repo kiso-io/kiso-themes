@@ -1,19 +1,17 @@
 // Dresssed Theme config file
 // ==========================
-@import "dresssed/colors";
-
+@import "dresssed/ives/colors";
 
 // To get started customizing, comment out this line...
-@import "dresssed/styles/defaults";
+@import "dresssed/ives/styles/defaults";
 
 // STYLE
 // -----
 // Comment out these lines if customizing
-@import "dresssed/styles/blue";
-// @import "dresssed/styles/black";
-// @import "dresssed/styles/white";
-// @import "dresssed/styles/amber";
-
+@import "dresssed/ives/styles/blue";
+// @import "dresssed/ives/styles/black";
+// @import "dresssed/ives/styles/white";
+// @import "dresssed/ives/styles/amber";
 
 // And uncomment all of the following:
 
@@ -73,7 +71,6 @@
 // $largeButtonBorderRadius:     $buttonBorderRadius;
 // $buttonTransparentBorder:     rgba(0, 0, 0, 0.35);
 
-
 // // COMPONENT VARIABLES
 // // --------------------------------------------------
 
@@ -93,11 +90,9 @@
 // // Hr border color
 // $hrBorder:                color($grey, 100);
 
-
 // $navbar-height: 55px;
 // $navBorderRadius: 2px;
 // $generalBorderRadius: 2px;
-
 
 // // Form states and alerts
 // $warningText:             color($orange, 400);
@@ -172,9 +167,6 @@
 // // Header
 // $headerColor:             #16333f;
 // $featuredHeaderColor:     #d9f0f9;
-
-
-
 
 // RULES
 // -----
@@ -311,7 +303,6 @@
 
 // Material Design Icons
 @import "mdiicons/icons-material-design";
-
 
 // CUSTOM RULES
 // ------------

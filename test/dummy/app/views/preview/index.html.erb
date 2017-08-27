@@ -1,33 +1,51 @@
-<div class="navbar navbar-inverse">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a href="#" class="navbar-brand">Ives Theme</a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right mr15 mt5">
-      <li>
-        <ul class='style-list list-unstyle list-inline mr20'>
-          <% Dresssed::Ives::COLORS.each do |color| %>
-              <li class='<%= current_style == color ? 'active' : '' %>'><%= link_to color, switch_style_path(color, demo_frame:true) %></li>
-          <% end %>
-        </ul>
-      </li>
-      <li>
-        <div class="btn-group navbar-btn">
-          <a data-toggle="tooltip" class="btn btn-default size-mobile" data-original-title="Mobile"><i class="fa fa-mobile-phone"></i></a>
-          <a data-toggle="tooltip" class="btn btn-default size-tablet" data-original-title="Tablet"><i class="fa fa-tablet"></i></a>
-          <a data-toggle="tooltip" class="btn btn-default size-laptop" data-original-title="Laptop"><i class="fa fa-laptop"></i></a>
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="navbar">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <ul class='theme-list list-inline list-unstyled'>
+              <% @themes.each do |theme| %>
+              <li data-theme='<%=theme[:theme]%>' >
+                <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color='<%=theme[:colors][0] %>' ><%= theme[:theme] %></a>
+                <ul class='style-list list-unstyled list-inline'>
+                  <% theme[:colors].each do |color| %>
+                  <li data-theme='<%=theme[:theme]%>' data-color="<%= color %>">
+                    <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color="<%= color %>"><%= color %></a>
+                  </li>
+                  <% end %>
+                </ul>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <div class="btn-group navbar-btn">
+                  <a data-toggle="tooltip" class="btn btn-default size-mobile" data-original-title="Mobile"><i class="fa fa-mobile-phone"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default size-tablet" data-original-title="Tablet"><i class="fa fa-tablet"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default size-laptop" data-original-title="Laptop"><i class="fa fa-laptop"></i></a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
-</div>
+</header>
 <div id="sg-gen-container" class="vp-animate">
-<iframe id="sg-viewport" sandbox="allow-same-origin allow-scripts" class="vp-animate" src='preview/main'></iframe>
+  <iframe id="sg-viewport" sandbox="allow-same-origin allow-scripts" class="vp-animate" src='preview/main'></iframe>
 </div>
+
+<% content_for :styles do %>
+  <%= stylesheet_link_tag "preview", :media => "all" %>
+<% end %>

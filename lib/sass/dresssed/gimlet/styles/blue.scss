@@ -1,0 +1,95 @@
+// Blue theme variation
+// --------------------
+
+$style: "blue";
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Make grays blueish
+$grayDarker:            #112;
+$grayDark:              #223;
+$gray:                  #445;
+$grayLight:             #889;
+$grayLighter:           #dee;
+
+// Typography
+$textColor:             #3c545a;
+$quietColor:            #95ABB3;
+$altTextColor:          #663c16;
+$altBackgroundColor:    #d0ab5f;
+
+// Backgrounds
+$backgroundColor:       #f0f8f9;
+$footerBackgroundColor: #16333f;
+$activeBackgroundColor: darken($backgroundColor, 5%);
+
+// Links
+$linkColor:             lighten($textColor, 25%);
+$linkColorHover:        darken($linkColor, 10%);
+
+// Buttons
+$buttonTransparentBorder:     rgba(8, 23, 28, 0.35);
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Input placeholder text color
+$placeholderText:         $grayLight;
+
+// Hr border color
+$hrBorder:                #dae8ec;
+
+// Navbar
+$navbarLinkBackgroundActive:      #131D26;
+$navbarBackgroundHighlight:       lighten($navbarLinkBackgroundActive, 10%);
+$navbarLinkBackgroundHover:       transparent;
+
+$navbarLinkColorActive:           #607e8c;
+$navbarLinkColorHover:            #80a6b2;
+$navbarText:                      darken($navbarLinkColor, 15%);
+$navbarTextAlt:                   lighten($navbarLinkColor, 15%);
+
+// Form states and alerts
+$warningBackground:       #fcebb1;
+$warningText:             darken($warningBackground, 10%) * 0.5;
+$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%);
+
+$errorText:               #b94a48;
+$errorBackground:         #f2dede;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%);
+
+$successText:             #468847;
+$successBackground:       #dff0d8;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%);
+
+$infoBackground:          darken($backgroundColor, 10%);
+$infoText:                #3a87ad;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%);
+
+// Borders
+$dividerColor:            #dae8ec;
+$borderColor:             #cbdcde;
+
+// Header
+$headerColor:             #16333f;
+$featuredHeaderColor:     #d9f0f9;
+
+
+// DRESSSED IMAGES
+// --------------------------------------------------
+
+$logoPath:                asset-path("dresssed/#{$style}/logo.png");
+$backgroundImagePath:     asset-path("dresssed/#{$style}/background.png");
+$navbarImagePath:         asset-path("dresssed/#{$style}/navbar.png");
+$footerImagePath:         asset-path("dresssed/#{$style}/footer.png");
+$bannerImagePath:         asset-path("dresssed/#{$style}/banner.png");
+$featuredImagePath:       asset-path("dresssed/#{$style}/featured.jpg");
+$topDividerImagePath:     asset-path("dresssed/#{$style}/top_divider.png");
+$dividerImagePath:        asset-path("dresssed/#{$style}/divider.png");
+$cloudIconPath:           asset-path("dresssed/#{$style}/icons/cloud.png");
+$signalIconPath:          asset-path("dresssed/#{$style}/icons/signal.png");
+$toolsIconPath:           asset-path("dresssed/#{$style}/icons/tools.png");
+$searchIconPath:          asset-path("dresssed/#{$style}/icons/search.png");
+$checkIconPath:           asset-path("dresssed/icons/check.png");

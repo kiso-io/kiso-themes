@@ -1,9 +1,9 @@
 /*
  * Pick one style by placing the `=` sign in front the the style you want. Just one.
- *= require dresssed/blue
- *  require dresssed/black
- *  require dresssed/amber
- *  require dresssed/white
+ *= require dresssed/ives/blue
+ *  require dresssed/ives/black
+ *  require dresssed/ives/amber
+ *  require dresssed/ives/white
  *
  * To fully customize your theme, run: `rails generate dresssed:customize`.
  */

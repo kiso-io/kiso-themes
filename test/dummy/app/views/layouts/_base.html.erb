@@ -17,8 +17,9 @@
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700' rel='stylesheet' type='text/css'>
 
     <!-- Le styles -->
-    <%= stylesheet_link_tag "styles/#{current_style}", :media => "all" %>
+    <%= stylesheet_link_tag "styles/#{current_theme.downcase}/#{current_style}", :media => "all" %>
     <%= stylesheet_link_tag "bootstrap_docs", :media => "all" %>
+
     <%= yield :styles %>
 
     <!-- Le fav and touch icons -->

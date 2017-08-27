@@ -1,0 +1,17 @@
+// Large icons used in banner.
+.large-icon-cloud,
+.large-icon-signal,
+.large-icon-tools {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  vertical-align: text-top;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @include ie7-restore-right-whitespace();
+}
+.large-icon-cloud  { background-image: url($cloudIconPath); }
+.large-icon-signal { background-image: url($signalIconPath); }
+.large-icon-tools  { background-image: url($toolsIconPath); }

@@ -1,0 +1,236 @@
+.navbar {
+  margin-bottom: 0;
+
+}
+
+.navbar-btn {
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+body.static-navbar {
+  padding-top: 0;
+}
+
+.navbar-inner {
+  background: url($navbarImagePath) repeat-x;
+  filter: none;
+  min-height: $navbarHeight;
+  border-radius:0;
+}
+
+.nav.navbar-nav > li {
+  font-weight: bold;
+  font-size: $baseFontSize + 1px;
+}
+
+.navbar-text {
+  color: #777777;
+  margin-top: 19px;
+}
+
+.navbar-brand {
+  text-indent: -99999px;
+  background: url($logoPath) center center no-repeat;
+  width: 105px;
+  height: 24px;
+
+  padding-top: 40px;
+  margin-right: 15px;
+}
+
+.navbar.navbar-text {
+  line-height: $navbarHeight;
+  a:hover {
+    color: lighten($navbarText, 10%);
+  }
+  .divider {
+    color: $navbarBackground;
+    text-shadow: 1px 0 0 $navbarBackgroundHighlight;
+  }
+}
+
+.nav.navbar .btn {
+  margin-top: 10px;
+}
+
+.navbar-inverse {
+  .navbar-header button {
+    padding: 10px;
+    @include buttonBackground($navbarBackgroundHighlight, $navbarBackground);
+    $shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+    @include box-shadow($shadow);
+    border-radius:5px;
+  }
+
+  .navbar-header button:hover {
+    @include buttonBackground(darken($navbarBackgroundHighlight, 10%), darken($navbarBackground,10%));
+    @include transition(background-image 0.5s ease);
+  }
+  .navbar-header button .icon-bar {
+    background-color: $navbarLinkColorActive;
+  }
+
+  .nav.navbar-nav > li > a {
+    margin: 0 10px;
+    margin-top: 4px;
+    padding: 15px 8px 19px;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.75);
+  }
+
+  .nav.navbar-nav > li.active > a,
+  .nav.navbar-nav > li.active > a:hover, {
+    margin-top: 0;
+    border-top: 4px solid;
+    background: none;
+  }
+
+  .nav.navbar-nav > li > a {
+    color: $navbarLinkColorActive;
+  }
+
+  // Dropdown
+
+  .nav.navbar-nav .dropdown.active > a:hover {
+    color: $navbarLinkColorHover;
+  }
+
+  .dropdown-menu > .active > a,
+  .dropdown-menu > .active > a:hover,
+  .dropdown-menu > .active > a:focus {
+    color: white;
+    text-decoration: none;
+    outline: 0;
+    background-color: $navbarLinkColorHover;
+  }
+
+  .nav.navbar-nav .dropdown-toggle .caret,
+  .nav.navbar-nav .open.dropdown .caret {
+    border-top-color: $navbarLinkColorHover;
+  }
+
+  .nav.navbar-nav .dropdown.open .dropdown-toggle,
+  .nav.navbar-nav .dropdown.open.active .dropdown-toggle:hover,
+  .nav.navbar-nav .dropdown .dropdown-toggle:hover {
+    background: transparent;
+    color: $navbarLinkColorHover;
+  }
+
+  .nav.navbar-nav > li li.active > a,
+  .nav.navbar-nav > li li.active > a:hover, {
+    color: $white;
+  }
+
+  // Nav headers (for dropdowns and lists)
+  .nav .nav-header {
+    display: block;
+    padding: 3px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: $baseLineHeight;
+    color: $grayLight;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    text-transform: uppercase;
+  }
+  // Space them out when they follow another list item (link)
+  .nav li + .nav-header {
+    margin-top: 9px;
+  }
+}
+
+// Search form
+.navbar-search {
+  top: 5px;
+  position: relative;
+
+  .search-query {
+    background: darken($navbarBackground, 8%) url($searchIconPath) 10px center no-repeat;
+    border-color: lighten($navbarBackground, 1%);
+    padding: 5px 14px 5px 14px;
+
+    outline: none;
+    border-radius:14px;
+    @include box-shadow(#{inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15)});
+    @include placeholder($textColor);
+    width: 180px;
+
+    &:hover {
+      background-color: darken($navbarBackground, 3%);
+    }
+
+    &,
+    &:focus,
+    &.focused {
+      padding: 5px 14px 5px 26px;
+    }
+
+    &:focus,
+    &.focused {
+      @include placeholder();
+      color: $grayDark;
+      text-shadow: 0 1px 0 $white;
+      background-color: $white;
+      @include box-shadow(0 0 3px rgba(0,0,0,.15));
+    }
+  }
+}
+
+// Responsive collapsing
+
+.navbar .collapse {
+  //@include transition(none); // Weird behaviour in chrome
+}
+
+.navbar .collapsing {
+  .nav.navbar-nav > li > a,
+  .nav.navbar-nav > li > a:hover, {
+    border-top: none;
+    background: none;
+  }
+}
+
+.navbar .in.collapse {
+  background-color: $navbarBackground;
+  z-index: $zindexDropdown;
+
+  border-radius:0;
+
+  .nav .active > a {
+    border: none;
+  }
+
+  .nav .active > a:hover {
+    border: none;
+  }
+
+  .navbar-search {
+    padding: 8px 10px;
+    margin-top: 10px;
+    left: 1em;
+  }
+}
+
+@media (max-width: 980px) {
+  .navbar-fixed-top .navbar-inner {
+    padding: 0 5px;
+  }
+
+  body {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+
+  .navbar .in.collapse {
+    background-color: transparent;
+    height: $navbarHeight;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand { margin-left: 15px; }
+}

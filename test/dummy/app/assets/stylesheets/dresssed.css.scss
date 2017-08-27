@@ -3,16 +3,16 @@
 
 // Dresssed Theme config file
 // ==========================
-@import "dresssed/colors";
-@import "dresssed/styles/defaults";
+@import "dresssed/ives/colors";
+@import "dresssed/ives/styles/defaults";
 
 // STYLE
 // -----
 // Pick one style. Just one. Comment or remove the other ones.
-@import "dresssed/styles/blue";
-// @import "dresssed/styles/black";
-// @import "dresssed/styles/amber";
-// @import "dresssed/styles/white";
+@import "dresssed/ives/styles/blue";
+// @import "dresssed/ives/styles/black";
+// @import "dresssed/ives/styles/amber";
+// @import "dresssed/ives/styles/white";
 
 // VARIABLES
 // Default style variables
@@ -71,8 +71,6 @@
 // $largeButtonBorderRadius:     $buttonBorderRadius;
 // $buttonTransparentBorder:     rgba(0, 0, 0, 0.35);
 
-
-
 // // COMPONENT VARIABLES
 // // --------------------------------------------------
 
@@ -91,7 +89,6 @@
 
 // // Hr border color
 // $hrBorder:                color($grey, 100);
-
 
 // $navbar-height: 55px;
 // $navBorderRadius: 2px;
@@ -123,7 +120,6 @@
 
 // $brand-primary: color($blue, 600);
 
-
 // // Typography
 // $text-color:            desaturate(darken($brand-primary, 25%), 40%);
 // $quietColor:            #A6BDC5;
@@ -141,7 +137,6 @@
 
 // // Buttons
 // $buttonTransparentBorder:     rgba(8, 23, 28, 0.35);
-
 
 // // COMPONENT VARIABLES
 // // --------------------------------------------------
@@ -175,10 +170,6 @@
 // $side-nav-width: 270px;
 // $sub-menu-item-height: 40px;
 // $side-nav-menu-background-color: color($blue-grey, 900);
-
-
-
-
 
 // RULES
 // -----
