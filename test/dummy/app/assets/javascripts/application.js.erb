@@ -16,12 +16,47 @@
 //= require docs
 //= require counters
 
+var THEMES = <%= Dresssed::THEMES %>;
+
+function setThemeMenuItemActive(themeName, styleName) {
+  $('.theme-list').children().map(function(i, themeEl) {
+    $(themeEl).removeClass('active');
+    $(themeEl)
+      .children('.style-list')
+      .first()
+      .children()
+      .map(function(i, styleEl) {
+        $(styleEl).removeClass('active');
+      });
+
+    if (themeEl.dataset['theme'].toLowerCase() === themeName.toLowerCase()) {
+      $(themeEl).addClass('active');
+
+      $(themeEl)
+        .children('.style-list')
+        .first()
+        .children()
+        .map(function(i, styleEl) {
+          $(styleEl).removeClass('active');
+
+          if (
+            styleEl.dataset['color'].toLowerCase() === styleName.toLowerCase()
+          ) {
+            $(styleEl).addClass('active');
+          }
+        });
+    }
+  });
+}
+
 $(document).ready(function() {
   if (Modernizr.touch) {
     $('#menu-content').slimScroll({
       destroy: 'true'
     });
   }
+
+  setThemeMenuItemActive(THEMES[0], 'blue')
 
   $('.size-mobile').on('click', function() {
     sizeiframe(320, true);
@@ -45,34 +80,7 @@ $(document).ready(function() {
       src = src + '&style=' + color;
     }
 
-    $('.theme-list').children().map(function(i, themeEl) {
-      $(themeEl).removeClass('active');
-      $(themeEl)
-        .children('.style-list')
-        .first()
-        .children()
-        .map(function(i, styleEl) {
-          $(styleEl).removeClass('active');
-        });
-
-      if (themeEl.dataset['theme'].toLowerCase() === theme.toLowerCase()) {
-        $(themeEl).addClass('active');
-
-        $(themeEl)
-          .children('.style-list')
-          .first()
-          .children()
-          .map(function(i, styleEl) {
-            $(styleEl).removeClass('active');
-
-            if (
-              styleEl.dataset['color'].toLowerCase() === color.toLowerCase()
-            ) {
-              $(styleEl).addClass('active');
-            }
-          });
-      }
-    });
+    setThemeMenuItemActive(theme, color)
 
     $('#sg-viewport').attr('src', src);
   });
