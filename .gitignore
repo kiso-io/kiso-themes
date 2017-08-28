@@ -11,5 +11,5 @@ test/dummy/tmp/
 test/dummy/.sass-cache
 test/dummy/public/assets
 bin
-demo/
+demo/*
 .tern-port
