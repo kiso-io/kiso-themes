@@ -114,15 +114,15 @@ module ApplicationHelper
       level_class = 'nav-fourth-level'
     end
 
-    klass     = "nav #{level_class} collapse"
+    is_active = attributes.map{ |attr| attr[:section].downcase}.select{ |i| @section.downcase.include?(i) }.any?
 
-    is_active = @section.downcase.include?(attributes[0][:section].downcase )
-    klass     = "#{klass} in direct" if is_active
+    klass     = "nav #{level_class} #{is_active ? 'nav-direct' : ''} collapse"
+    klass     = "#{klass} in" if is_active
 
-    content_tag(:ul, class: klass, :'aria-expanded'=> false) do
+    content_tag(:ul, class: klass, :'aria-expanded'=> klass.include?('in') || klass.include?('direct')) do
       attributes.each do |attribute|
         if !attribute[:children].nil?
-          parent_is_active = @section.include?(attribute[:section])
+          parent_is_active = @section.downcase.include?(attribute[:section].downcase)
           concat(content_tag(:li, raw(attribute[:display_name]), class: parent_is_active ? 'active' : '') do
             concat(content_tag(:a, '#') do
               concat( raw(attribute[:display_name]) )
@@ -131,7 +131,7 @@ module ApplicationHelper
             concat(render_children(attribute[:children], level+1))
           end)
         else
-          concat(activatable_li_tag_with_link raw(attribute[:display_name]), element_path(File.join(attribute[:section],attribute[:target_name])))
+          concat(activatable_li_tag_with_link raw(attribute[:display_name]), element_path(File.join(attribute[:section])))
         end
       end
     end

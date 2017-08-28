@@ -41,8 +41,6 @@ class PreviewController < ApplicationController
     @breadcrumbs.flatten!
 
     @elements = ElementFinder.find(File.join(Rails.root, 'app/views/preview/elements/'))
-
-    render template: 'preview/minimal' and return if params[:section] && (params[:section].include?('004_app_pages') || params[:section].include?('fullpage') )
   end
 
   def resolve_layout
@@ -60,23 +58,27 @@ class ElementFinder
     @path = path
   end
 
-  def self.find(path, name=nil)
+  def self.find(path, parent_section=nil, name=nil)
+    section = path.gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, '')
+
     data = {
-      section: path.gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
+      section: section,
       target_name:      File.basename(path, '.html.erb').to_s,
       display_name:     File.basename(path, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').titleize,
       icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "fa-fw #{path.match(/@([\w+-]*)/)[0][1..-1]}"
     }
 
     data[:children] = children = []
+
     Dir.foreach(path).sort {|el1, el2| el1 <=> el2}.each do |entry|
       next if (entry == '..' || entry == '.' || entry == '.DS_Store')
       full_path = File.join(path, entry)
+
       if File.directory?(full_path)
-        children << find(full_path, entry)
+        children << find(full_path, section, entry)
       else
         childdata = {
-          section:          data[:section].gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, ''),
+          section:          section + '/' + File.basename(entry, '.html.erb').to_s,
           target_name:      File.basename(entry, '.html.erb').to_s,
           display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub('fullpage', '').titleize,
           icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "fa-fw #{entry.match(/@([\w+-]*)/)[0][1..-1]}"
@@ -84,6 +86,7 @@ class ElementFinder
         children << childdata
       end
     end
+
     return data
   end
 end
