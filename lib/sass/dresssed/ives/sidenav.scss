@@ -1,6 +1,5 @@
 .main-content {
   z-index: 1;
-  margin-left: $side-nav-width;
   vertical-align: top;
   word-break: break-word;
   height: 100%;
@@ -8,6 +7,7 @@
 
 .nav-side-menu {
   position: fixed;
+  z-index: $zindex-navbar-fixed;
   height: 100%;
   top: 0;
   bottom: 0;
@@ -16,7 +16,9 @@
   background-color: $side-nav-menu-background-color;
   font-size: .8em;
 
-  border-right: 1px solid $side-nav-menu-right-border-color;
+  transform: translateX(-100%) translateY(0) translateZ(0);
+  -webkit-overflow-scrolling: touch;
+  will-change: transform;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -44,6 +46,7 @@
     float: none;
     color: $side-nav-header-color;
     background-color: $side-nav-header-bg-color;
+    height: $navbar-height;
 
     .profile {
       padding: 6px 14px;
@@ -54,8 +57,8 @@
     .profile .profile-image {
       display: block;
       float: left;
-      width: 43px;
-      height: 43px;
+      height: $navbar-height - 12;
+      width: auto;
       margin-right: 10px;
     }
 
@@ -67,7 +70,6 @@
     .profile .profile-body h4 {
       color: $side-nav-header-color;
       margin: 0;
-      margin-top: 2px;
       text-transform: none;
     }
 
@@ -117,7 +119,7 @@
 
   .arrow {
     float: right;
-    line-height: 1.42857;
+    line-height: $line-height-base;
   }
 
   .glyphicon.arrow:before {
@@ -152,7 +154,9 @@
     }
 
     i {
-      margin-right: 14px;
+      margin-right: 8px;
+      font-size: 1.53333em;
+      color: lighten($side-nav-menu-item-color, 10%);
     }
   }
 
@@ -202,20 +206,21 @@
     }
 
     a {
-      padding: 8px 15px 8px 0px;
-      margin-left: 60px;
+      padding: 0px 15px 8px 0px;
+      margin-left: 4.5rem;
       color: lighten($side-nav-menu-item-color, 20%);
+      cursor: pointer;
     }
   }
 
   .nav-third-level li a {
     padding: 8px 15px 8px 0px;
-    margin-left: 80px;
+    margin-left: 6rem;
   }
 
   .nav-fourth-level li a {
     padding: 8px 15px 8px 0px;
-    margin-left: 100px;
+    margin-left: 8rem;
   }
 }
 

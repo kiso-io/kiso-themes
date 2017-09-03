@@ -82,10 +82,10 @@
             <header class="col-xs-12">
               <h3>Monthly Earnings</h3>
             </header>
-            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="min-height: 150px;">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="min-height: 150px;">
               <div class='metric-graph' id='metric-monthly-earnings' style='height:150px;'></div>
             </div>
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <div class="metric-value">
                 $19,821
                 <small>CURRENT</small>
@@ -110,10 +110,10 @@
             <header class="col-xs-12">
               <h3>Cancellations</h3>
             </header>
-            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="min-height: 150px;">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="min-height: 150px;">
               <div class='metric-graph' id='metric-cancellations' style='height:150px;'></div>
             </div>
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <div class="metric-value">
                 123
                 <small>CURRENT</small>
@@ -133,32 +133,34 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-12 col-md-9 animate-fade-in-1000">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <p class="lead">SALES VS REFUNDS</h3>
+  <div class="row-same-height">
+    <div class="col-sm-12 col-md-9 animate-fade-in-1000 col-xs-height col-top">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <p class="lead">SALES VS REFUNDS</h3>
+          </div>
+          <div class="panel-body">
+            <div id="rickshaw-bars"></div>
+          </div>
+        </div>
       </div>
-      <div class="panel-body">
-        <div id="rickshaw-bars"></div>
+      <div class="col-sm-12 col-md-3 animate-fade-in-1000 col-xs-height col-top">
+        <div class="panel panel-cover text-primary">
+          <p class="lead p10 mt10 mb10">Top Affiliate</p>
+          <%= random_avatar 115, "img-rounded" %>
+          <h3 class='mt0'>Fill Murray</h3>
+          <ul class="stats list-unstlyed list-inline clearfix">
+            <li class="col-4"><span>$1,267</span>Commission</li>
+            <li class="col-4"><span>$3,987</span>Sales</li>
+            <li class="col-4"><span>121</span>Referrals</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-sm-12 col-md-3 animate-fade-in-1000">
-    <div class="panel panel-cover" style="background-image: url(<%= image_path("dresssed/header_1.jpg") %>)">
-      <p class="lead p10">Top Affiliate</p>
-      <%= random_avatar 115, "img-rounded" %>
-      <h3 class='mt0'>Fill Murray</h3>
-      <ul class="stats list-unstlyed list-inline clearfix">
-        <li class="col-4"><span>$1,267</span>Commission</li>
-        <li class="col-4"><span>$3,987</span>Sales</li>
-        <li class="col-4"><span>121</span>Referrals</li>
-      </ul>
-    </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-12 col-md-7 animate-fade-in-1000">
+  <div class="col-sm-12 col-md-5 animate-fade-in-1000">
     <div class="panel panel-default">
       <div class="panel-heading">
         <p class="lead">MASTER SERVER</p>
@@ -202,7 +204,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-12 col-md-5 animate-fade-in-1000">
+  <div class="col-sm-12 col-md-7 animate-fade-in-1000">
     <div class="panel panel-default">
       <div class="panel-heading">
         <p class='lead'><%= ionicon_icon_tag 'flame' %> RECENT ACTIVITY</p>

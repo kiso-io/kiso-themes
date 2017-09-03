@@ -36,23 +36,23 @@ input,textarea,select,.uneditable-input {
 .has-warning .checkbox,
 .has-warning .radio-inline,
 .has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label {
-  color: $warningText;
+  color: $state-warning-text;
 }
 
 .has-warning .form-control {
-  border-color: $warningText;
+  border-color: $state-warning-text;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .has-warning .form-control:focus {
-  border-color: $warningText;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $warningText;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $warningText;
+  border-color: $state-warning-text;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $state-warning-text;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $state-warning-text;
 }
 
 .has-warning .form-control-feedback {
-  color: $warningText;
+  color: $state-warning-text;
 }
 
 .has-error .help-block,
@@ -61,23 +61,23 @@ input,textarea,select,.uneditable-input {
 .has-error .checkbox,
 .has-error .radio-inline,
 .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
-  color: $errorText;
+  color: $state-danger-text;
 }
 
 .has-error .form-control {
-  border-color: $errorText;
+  border-color: $state-danger-text;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .has-error .form-control:focus {
-  border-color: $errorText;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $errorText;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $errorText;
+  border-color: $state-danger-text;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $state-danger-text;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $state-danger-text;
 }
 
 .has-error .form-control-feedback {
-  color: $errorText;
+  color: $state-danger-text;
 }
 
 
@@ -87,23 +87,23 @@ input,textarea,select,.uneditable-input {
 .has-success .checkbox,
 .has-success .radio-inline,
 .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
-  color: $successText;
+  color: $state-success-text;
 }
 
 .has-success .form-control {
-  border-color: $successText;
+  border-color: $state-success-text;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .has-success .form-control:focus {
-  border-color: $successText;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $successText;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $successText;
+  border-color: $state-success-text;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $state-success-text;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $state-success-text;
 }
 
 .has-success .form-control-feedback {
-  color: $successText;
+  color: $state-success-text;
 }
 
 

@@ -58,6 +58,12 @@ $(document).ready(function() {
 
   setThemeMenuItemActive(THEMES[0], 'blue')
 
+  $('.SideNavToggle').on('click', function() {
+    $('body').toggleClass(
+      'show-sidebar'
+    )
+  })
+
   $('.size-mobile').on('click', function() {
     sizeiframe(320, true);
   });
@@ -112,7 +118,7 @@ function sizeiframe(size) {
     document.documentElement.clientHeight,
     window.innerHeight || 0
   );
-  $($sgViewport).height(h - 55);
+  $($sgViewport).height(h - 50);
   $('#sg-gen-container,#sg-viewport').addClass('vp-animate');
   $sgViewport.width(size);
 }

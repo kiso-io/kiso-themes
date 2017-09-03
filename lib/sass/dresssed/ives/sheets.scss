@@ -79,7 +79,7 @@
 
     &.error input:focus,
     &.error textarea:focus {
-      border-left-color: $errorText;
+      border-left-color: $state-danger-text;
     }
 
     input:focus:required:invalid,

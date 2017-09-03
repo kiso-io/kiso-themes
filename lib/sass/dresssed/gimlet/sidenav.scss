@@ -1,6 +1,5 @@
 .main-content {
-  z-index: 1;
-  margin-left: $side-nav-width;
+  z-index: -1;
   vertical-align: top;
   word-break: break-word;
   height: 100%;
@@ -37,7 +36,7 @@
   }
 
   .navbar-collapse {
-    padding:0;
+    padding: 0;
   }
 
   .navbar-header {
@@ -273,9 +272,9 @@
     .navbar-header {
       margin-bottom: 0;
       .profile {
-          width: 61%;
-          float: left;
-        }
+        width: 61%;
+        float: left;
+      }
     }
 
     #menu-content > li:nth-last-child(2) {

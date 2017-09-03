@@ -1,90 +1,100 @@
 function flotMetric(el, data, yaxis, options) {
-  if( el[0] === undefined ) {
+  if (el[0] === undefined) {
     return;
   }
 
-  options = $.extend({
+  options = $.extend(
+    {
       type: 'area',
       lineWidth: 1
-  }, options);
+    },
+    options
+  );
 
   var series = {
-      shadowSize: 0
+    shadowSize: 0
   };
 
   series.lines = {
-      lineWidth: 3,
-      show: true,
-      fill: true
+    lineWidth: 3,
+    show: true,
+    fill: true
   };
 
-  $.plot(el, [{
-    label: 'Data 1',
-    data: data,
-    color: '#C9E3F5'
-  }], {
-    series: series,
-    grid: {
+  $.plot(
+    el,
+    [
+      {
+        label: 'Data 1',
+        data: data,
+        color: '#C9E3F5'
+      }
+    ],
+    {
+      series: series,
+      grid: {
         show: false,
         borderWidth: 0
-    },
-    yaxis: yaxis,
-    xaxis: {
+      },
+      yaxis: yaxis,
+      xaxis: {
         tickDecimals: 0
-    },
-    legend: {
+      },
+      legend: {
         show: false
+      }
     }
-  });
-};
+  );
+}
 
 function rickshawBars() {
-  if( $('#rickshaw-bars')[0] === undefined ) {
+  if ($('#rickshaw-bars')[0] === undefined) {
     return;
   }
 
-  var seriesData = [ [], [] ];
+  var seriesData = [[], []];
   var random = new Rickshaw.Fixtures.RandomData(50);
 
   for (var i = 0; i < 50; i++) {
     random.addData(seriesData);
   }
 
-  var graph = new Rickshaw.Graph( {
-    element: document.getElementById("rickshaw-bars"),
+  var graph = new Rickshaw.Graph({
+    element: document.getElementById('rickshaw-bars'),
     height: 200,
     renderer: 'bar',
     series: [
       {
-        color: "#D13B47",
-        data: seriesData[0],
-      }, {
-        color: "#90caf9",
-        data: seriesData[1],
+        color: '#dedede',
+        data: seriesData[0]
+      },
+      {
+        color: 'rgba(233, 244, 251, 1.000)',
+        data: seriesData[1]
       }
     ]
-  } );
+  });
 
   graph.render();
 
-  $(window).on('resize', function(){
+  $(window).on('resize', function() {
     graph.configure({
-      width: $("#rickshaw-bars").parent('.panel-body').width(),
-      height: 200
+      width: $('#rickshaw-bars').parent('.panel-body').width(),
+      height: $('#rickshaw-bars').outerHeight()
     });
     graph.render();
   });
 
-  var hoverDetail = new Rickshaw.Graph.HoverDetail( { graph: graph } );
+  var hoverDetail = new Rickshaw.Graph.HoverDetail({ graph: graph });
 }
 
 function flotRealtime() {
-  if( $('#realtime')[0] === undefined ) {
+  if ($('#realtime')[0] === undefined) {
     return;
   }
 
   var dataGenerator = new DataGenerator(200);
-  var plot = $.plot("#realtime", [ dataGenerator.getRandomizedData() ], {
+  var plot = $.plot('#realtime', [dataGenerator.getRandomizedData()], {
     series: {
       shadowSize: 0
     },
@@ -101,10 +111,9 @@ function flotRealtime() {
     plot.setData([dataGenerator.getRandomizedData()]);
     plot.draw();
 
-    if( !Modernizr.touch ) {
+    if (!Modernizr.touch) {
       setTimeout(update, 24);
-    } else
-    {
+    } else {
       setTimeout(update, 1000);
     }
   }
@@ -112,29 +121,28 @@ function flotRealtime() {
   update();
 }
 
-
-$(document).ready(function(){
-  if( $('#map_canvas_1')[0] === undefined ) {
+$(document).ready(function() {
+  if ($('#map_canvas_1')[0] === undefined) {
     return;
   }
 
   var oldMarker;
 
   var map = new GMaps({
-      div: '#map_canvas_1',
-      lat: 0,
-      lng: 0,
-      disableDefaultUI: true,
-      scaleControl: false,
-        scrollwheel: false,
-        disableDoubleClickZoom: true,
-      zoomControl : true,
-      zoomControlOpt: {
-          style : 'SMALL',
-          position: 'TOP_RIGHT'
-      },
-      height: '485px',
-      zoom: 1
+    div: '#map_canvas_1',
+    lat: 0,
+    lng: 0,
+    disableDefaultUI: true,
+    scaleControl: false,
+    scrollwheel: false,
+    disableDoubleClickZoom: true,
+    zoomControl: true,
+    zoomControlOpt: {
+      style: 'SMALL',
+      position: 'TOP_RIGHT'
+    },
+    height: '485px',
+    zoom: 1
   });
 
   function removeMarkers() {
@@ -147,13 +155,11 @@ $(document).ready(function(){
       lng: Math.random() * 360
     });
 
-    if( !Modernizr.touch ) {
+    if (!Modernizr.touch) {
       setTimeout(update, Math.random() * 1000);
       setTimeout(removeMarkers, 10000);
     }
   }
 
-
   update();
-
 });

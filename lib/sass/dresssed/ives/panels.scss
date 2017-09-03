@@ -2,7 +2,8 @@
   border: none;
   border-top: 3px solid $brand-primary;
   border-radius: 3px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  height: 100%;
 
   h1.page-header {
     margin: 0;
@@ -36,8 +37,8 @@
       right: 20px;
     }
 
-    .nav-tabs>li>a {
-        border-bottom-color: transparent
+    .nav-tabs > li > a {
+      border-bottom-color: transparent;
     }
 
     .fa {
@@ -53,7 +54,7 @@
 
     .switch {
       span {
-        height:22px;
+        height: 22px;
         width: 40px;
 
         &:after {
@@ -90,6 +91,10 @@
     }
   }
 
+  .panel-footer {
+    padding: 4px 15px;
+  }
+
   .panel-title {
     margin: 0;
     padding: 0;
@@ -106,23 +111,23 @@
 }
 
 .panel-primary {
-  border-color: $primary;
+  border-color: $brand-primary;
 }
 
 .panel-success {
-  border-color: $success;
+  border-color: $brand-success;
 }
 
 .panel-info {
-  border-color: $info;
+  border-color: $brand-info;
 }
 
 .panel-warning {
-  border-color: $warning;
+  border-color: $brand-warning;
 }
 
 .panel-danger {
-  border-color: $danger;
+  border-color: $brand-danger;
 }
 
 .panel-list {
@@ -153,7 +158,6 @@
 
 .panel-cover {
   padding: 0;
-  color: #fff;
   text-align: center;
   background-size: cover;
   position: relative;
@@ -173,7 +177,7 @@
     border-bottom-left-radius: 3px;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: $brand-primary;
 
     li {
       span {

@@ -4,10 +4,10 @@
 .table > tbody > tr > td,
 .table > tfoot > tr > th,
 .table > tfoot > tr > td {
-    padding: 8px;
-    line-height: 1.61538;
-    vertical-align: middle;
-    border-top: 1px solid #ddd;
+  padding: 8px;
+  line-height: 1.61538;
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
 }
 
 .table {
@@ -32,22 +32,22 @@
   tbody {
     tr.success td {
       color: white;
-      background: $success;
+      background: $state-success-bg;
     }
 
     tr.danger td {
       color: white;
-      background: $danger;
+      background: $state-danger-bg;
     }
 
     tr.warning td {
       color: white;
-      background: $warning;
+      background: $state-warning-bg;
     }
 
     tr.info td {
       color: white;
-      background: $info;
+      background: $state-info-bg;
     }
   }
 }
@@ -84,22 +84,22 @@
 
 .table-hover > tbody > tr.success:hover > td {
   color: white;
-  background: darken($success, 10%);
+  background: darken($state-success-bg, 10%);
 }
 
 .table-hover > tbody > tr.warning:hover > td {
   color: white;
-  background: darken($warning, 10%);
+  background: darken($state-warning-bg, 10%);
 }
 
 .table-hover > tbody > tr.danger:hover > td {
   color: white;
-  background: darken($danger, 10%);
+  background: darken($state-danger-bg, 10%);
 }
 
 .table-hover > tbody > tr.info:hover > td {
   color: white;
-  background: darken($info, 10%);
+  background: darken($state-info-bg, 10%);
 }
 
 .table td.actions {

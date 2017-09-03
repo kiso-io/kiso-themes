@@ -111,7 +111,7 @@ $left-timeline-item-padding: 40px;
     time {
       position: absolute;
       top: 0;
-      left: -69px;
+      left: -70px;
       width: 50px;
       height: 50px;
       text-align: center;
@@ -120,23 +120,28 @@ $left-timeline-item-padding: 40px;
       line-height: 130%;
 
       &.label-success {
-        background-color: $success;
+        background-color: $state-success-bg;
+        color: $state-success-text;
       }
 
       &.label-danger {
-        background-color: $danger;
+        background-color: $state-danger-bg;
+        color: $state-danger-text;
       }
 
       &.label-warning {
-        background-color: $warning;
+        background-color: $state-warning-bg;
+        color: $state-warning-text;
       }
 
       &.label-info {
-        background-color: $info;
+        background-color: $state-info-bg;
+        color: $state-info-text;
       }
 
       &.label-inverse {
-        background-color: color($grey, 900);
+        background-color: $navbar-inverse-color;
+        color: $navbar-inverse-bg;
       }
 
       span {

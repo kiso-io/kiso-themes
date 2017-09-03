@@ -1,4 +1,6 @@
-code, pre {
+code,
+pre {
+  color: $text-muted;
   border-color: lighten($borderColor, 5%);
   background-color: lighten($backgroundColor, 3%);
 }

@@ -10,7 +10,7 @@
   background-color: $brand-primary;
 }
 .label-primary:hover {
-  background-color: darken($primaryText, 10%);
+  background-color: darken($text-color, 10%);
 }
 .label-warning {
   background-color: $brand-warning;
@@ -22,18 +22,18 @@
   background-color: $brand-success;
 }
 .label-success:hover {
-  background-color: darken($successText, 10%);
+  background-color: darken($state-success-text, 10%);
 }
 .label-info {
   background-color: $brand-info;
 }
 .label-info:hover {
-  background-color: darken($infoText, 10%);
+  background-color: darken($state-info-bg, 10%);
 }
 .label-danger {
   background-color: $brand-danger;
 }
 .label-danger:hover {
-  background-color: darken($errorText, 10%);
+  background-color: darken($state-danger-text, 10%);
 }
 

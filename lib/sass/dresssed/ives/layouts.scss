@@ -1,8 +1,39 @@
-html, body {
+html,
+body {
   height: 100%;
   word-break: initial;
 }
 
 a:hover {
   transition: color 250ms ease-in-out;
+}
+
+.with-sidebar {
+  .nav-side-menu {
+    transition: $side-nav-transition;
+  }
+}
+
+.show-sidebar {
+  .nav-side-menu {
+    transition: $side-nav-transition;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+
+  .main-content {
+    padding-left: $side-nav-width;
+  }
+}
+
+.main-content {
+  #main-content-nav {
+    > .navbar-nav {
+      > li:first-of-type {
+        a {
+          margin-left: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
 }
