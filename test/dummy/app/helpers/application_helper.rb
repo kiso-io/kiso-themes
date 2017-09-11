@@ -4,11 +4,11 @@ module ApplicationHelper
   end
 
   def current_style
-    cookies[:style] || Kernel.const_get("Dresssed::Ives::COLORS")[0]
+    cookies[:style] || Kernel.const_get("Dresssed::Now::COLORS")[0]
   end
 
   def current_theme
-    cookies[:theme] || 'Ives'
+    cookies[:theme] || 'Now'
   end
 
   def random_dollar_value( min=10, max=2000 )

@@ -9,7 +9,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p, pre {
+p,
+pre {
   margin-bottom: 1.3em;
 }
 
@@ -51,7 +52,7 @@ h5 {
 }
 
 h6 {
-  font-size: 0.8em
+  font-size: 0.8em;
 }
 
 .h1,
@@ -97,11 +98,15 @@ blockquote {
 // Page header
 .page-header {
   margin: 0 0 1em 0;
-  padding: 1em 0em 1em 0px;
+  padding: 1em 0em 1em 1em;
   border: none;
   border-bottom: 1px solid $borderColor;
   background: white;
   word-break: initial;
+
+  .col-sm-6 {
+    padding-left: 0;
+  }
 
   h1 {
     letter-spacing: -1px;
@@ -249,7 +254,8 @@ p.highlight {
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
   background: #1d1f21;
-  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco,
+    Consolas, monospace;
   font-size: 12px;
   line-height: 1.5;
   border: 1px solid #ccc;
@@ -341,7 +347,9 @@ p.highlight {
     color: #004444;
   }
 
-  .pun, .opn, .clo {
+  .pun,
+  .opn,
+  .clo {
     color: #444400;
   }
 

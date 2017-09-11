@@ -1,8 +1,8 @@
 .panel {
   border: none;
-  border-top: 3px solid $brand-primary;
-  border-radius: 3px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid $brand-primary;
+  border-radius: 2px;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05);
   height: 100%;
 
   h1.page-header {
@@ -107,6 +107,7 @@
 
   .panel-footer {
     font-size: .8em;
+    color: $gray-light;
   }
 }
 

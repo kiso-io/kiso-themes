@@ -5,7 +5,7 @@ body {
 }
 
 a:hover {
-  transition: color 250ms ease-in-out;
+  transition: color 250ms;
 }
 
 .with-sidebar {
@@ -20,8 +20,16 @@ a:hover {
     transform: translateX(0) translateY(0) translateZ(0);
   }
 
-  .main-content {
-    padding-left: $side-nav-width;
+  @media only screen and (max-width: 992px) {
+    #menu-content {
+      width: 100% !important;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    .main-content {
+      padding-left: $side-nav-width;
+    }
   }
 }
 

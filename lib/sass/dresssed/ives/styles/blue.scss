@@ -6,12 +6,12 @@ $style: "blue";
 // GLOBAL VALUES
 // --------------------------------------------------
 
-$brand-primary: #3b8be4;
+$brand-primary: #3c77d8;
 
-$body-bg: #f6fbff;
+$body-bg: #e4e7e8;
 
 // Typography
-$text-color: desaturate(darken($brand-primary, 25%), 40%);
+$text-color: #264756;
 $quietColor: #a6bdc5;
 $altTextColor: lighten($text-color, 50%);
 $altBackgroundColor: #d0ab5f;
@@ -60,11 +60,16 @@ $side-nav-menu-right-border-color: transparent;
 $side-nav-menu-background-color: rgba(54, 65, 80, 1.000);
 $side-nav-text-color: color($light-blue, 400);
 $side-nav-menu-item-background-color: #3d4857;
-$side-nav-menu-item-color: lighten($brand-primary, 10%);
-$side-nav-menu-item-active-color: #eee;
+$side-nav-menu-item-icon-color: lighten($brand-primary, 10%);
+$side-nav-menu-item-color: lighten($brand-primary, 35%);
+$side-nav-menu-item-active-color: #fff;
 $side-nav-header-bg-color: darken($side-nav-menu-background-color, 10%);
 $side-nav-header-bg-link-color: $brand-primary;
 $side-nav-menu-item-hover-color: white;
+$side-nav-menu-footer-background-color: darken(
+  $side-nav-menu-background-color,
+  5%
+);
 
 $dropdown-caret-color: lighten($brand-primary, 25%);
 

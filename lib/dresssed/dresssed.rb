@@ -3,13 +3,17 @@ require "dresssed/compatibility"
 
 module Dresssed
 
-  THEMES = ['Ives', 'Gimlet']
+  THEMES = ['Now']
 
-  module Ives
-    COLORS = ['blue', 'amber', 'black', 'white'].freeze
-  end
+  # module Ives
+  #   COLORS = ['blue', 'amber', 'black', 'white'].freeze
+  # end
+  #
+  # module Gimlet
+  #   COLORS = ['blue', 'amber', 'black'].freeze
+  # end
 
-  module Gimlet
-    COLORS = ['blue', 'amber', 'black'].freeze
+  module Now
+    COLORS = ['orange'].freeze
   end
 end

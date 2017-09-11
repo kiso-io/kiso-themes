@@ -61,15 +61,16 @@ function rickshawBars() {
 
   var graph = new Rickshaw.Graph({
     element: document.getElementById('rickshaw-bars'),
-    height: 200,
+    height: $('#rickshaw-bars').outerHeight(),
+    width: $('#rickshaw-bars').parent('.panel-body').width(),
     renderer: 'bar',
     series: [
       {
-        color: '#dedede',
+        color: '#B7D1E4',
         data: seriesData[0]
       },
       {
-        color: 'rgba(233, 244, 251, 1.000)',
+        color: '#c9e3f5',
         data: seriesData[1]
       }
     ]

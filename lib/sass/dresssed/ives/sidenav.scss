@@ -156,7 +156,7 @@
     i {
       margin-right: 8px;
       font-size: 1.53333em;
-      color: lighten($side-nav-menu-item-color, 10%);
+      color: lighten($side-nav-menu-item-icon-color, 10%);
     }
   }
 
@@ -180,6 +180,7 @@
 
       > a i {
         margin-left: -3px;
+        color: $side-nav-menu-item-active-color;
       }
 
       > a {
@@ -188,7 +189,7 @@
     }
 
     > a:focus {
-      color: $side-nav-menu-item-color;
+      color: $side-nav-header-link-hover-color;
     }
   }
 
@@ -208,7 +209,6 @@
     a {
       padding: 0px 15px 8px 0px;
       margin-left: 4.5rem;
-      color: lighten($side-nav-menu-item-color, 20%);
       cursor: pointer;
     }
   }
@@ -227,11 +227,11 @@
 .nav-side-menu .nav-side-menu-footer {
   transform: translateZ(0);
   // Thanks, Chrome. http://stackoverflow.com/questions/15152470/chrome-rendering-issue-fixed-position-anchor-with-ul-in-body
-  background-color: $side-nav-menu-background-color;
+  background-color: $side-nav-menu-footer-background-color;
   position: fixed;
   transition: none;
   transition-delay: none;
-  padding: 7px 15px 10px;
+  padding: 1rem 1rem 10px;
   left: 0;
   right: 0;
   bottom: 0;
