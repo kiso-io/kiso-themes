@@ -18,6 +18,7 @@
 
 @import 'dresssed/now/variables';
 @import 'dresssed/now/mixins';
+@import "dresssed/now/responsive";
 
 // Plugins CSS
 @import "dresssed/now/plugins/plugin-bootstrap-switch";
@@ -42,54 +43,13 @@
 @import "dresssed/now/dropdown";
 @import "dresssed/now/alerts";
 @import "dresssed/now/images";
-@import "dresssed/now/popups";
-@import "dresssed/now/nucleo-outline";
+@import "dresssed/now/popover";
 @import "dresssed/now/modals";
 @import "dresssed/now/carousel";
 @import "dresssed/now/cards";
 @import "dresssed/now/footers";
 @import "dresssed/now/sidenav";
+@import "dresssed/now/tooltips";
 
-// example pages and sections
-@import "dresssed/now/example-pages";
-@import "dresssed/now/sections";
 
-@import "dresssed/now/responsive";
-@import 'dresssed/now/variables';
-@import 'dresssed/now/mixins';
 
-// Plugins CSS
-@import "dresssed/now/plugins/plugin-bootstrap-switch";
-@import "dresssed/now/plugins/plugin-nouislider";
-@import "dresssed/now/plugins/plugin-datepicker";
-
-// Core CSS
-@import "dresssed/now/buttons";
-@import "dresssed/now/inputs";
-@import "dresssed/now/checkboxes-radio";
-@import "dresssed/now/progress";
-@import "dresssed/now/badges";
-@import "dresssed/now/pagination";
-@import "dresssed/now/typography";
-@import "dresssed/now/misc";
-@import "dresssed/now/pills";
-
-// components
-@import "dresssed/now/social-buttons";
-@import "dresssed/now/tabs";
-@import "dresssed/now/navbar";
-@import "dresssed/now/dropdown";
-@import "dresssed/now/alerts";
-@import "dresssed/now/images";
-@import "dresssed/now/popups";
-@import "dresssed/now/nucleo-outline";
-@import "dresssed/now/modals";
-@import "dresssed/now/carousel";
-@import "dresssed/now/cards";
-@import "dresssed/now/footers";
-
-// example pages and sections
-@import "dresssed/now/example-pages";
-@import "dresssed/now/sections";
-
-@import "dresssed/now/responsive";

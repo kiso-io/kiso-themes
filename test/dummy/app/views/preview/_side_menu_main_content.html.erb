@@ -1,0 +1,20 @@
+<% @elements[:children].each do |el| %>
+  <% unless el[:children].nil? %>
+    <li class="nav-item <%= @section.downcase.include?(el[:target_name].downcase ) ? 'active' : '' %>">
+      <a class="nav-link" href="#" aria-expanded='<%=@section.downcase.include?(el[:target_name].downcase) %>'>
+        <i class="<%=el[:icon]%>"></i>
+        <span><%= el[:display_name].chomp %></span>
+        <span class="fa arrow"></span>
+      </a>
+      <%= render_children el[:children] %>
+    </li>
+  <% else %>
+    <%=activatable_li_tag element_path(el[:target_name]), 'nav-item' do %>
+      <% @is_active = (@section.downcase.include?(el[:target_name].downcase)) ? 'nav-link active' : 'nav-link ' %>
+      <%= link_to element_path(el[:target_name]), class: @is_active, 'aria-expanded': @section.downcase.include?(el[:target_name].downcase) do %>
+        <i class="<%=el[:icon]%>"></i>
+        <span><%= el[:display_name].titleize.chomp %></span>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

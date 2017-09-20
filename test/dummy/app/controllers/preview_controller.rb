@@ -27,7 +27,7 @@ class PreviewController < ApplicationController
       }
     end
 
-    redirect_to element_path('001_dashboard@fa-dashboard') and return if params[:section].nil?
+    redirect_to element_path('001_dashboard@ti-dashboard') and return if params[:section].nil?
 
     @section = params[:section]
     index = @section.index('/') || 0
@@ -65,7 +65,7 @@ class ElementFinder
       section: section,
       target_name:      File.basename(path, '.html.erb').to_s,
       display_name:     File.basename(path, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').titleize,
-      icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "fa-fw #{path.match(/@([\w+-]*)/)[0][1..-1]}"
+      icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{path.match(/@([\w+-]*)/)[0][1..-1]}"
     }
 
     data[:children] = children = []
@@ -81,7 +81,7 @@ class ElementFinder
           section:          section + '/' + File.basename(entry, '.html.erb').to_s,
           target_name:      File.basename(entry, '.html.erb').to_s,
           display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub('fullpage', '').titleize,
-          icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "fa-fw #{entry.match(/@([\w+-]*)/)[0][1..-1]}"
+          icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{entry.match(/@([\w+-]*)/)[0][1..-1]}"
         }
         children << childdata
       end

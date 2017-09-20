@@ -1,8 +1,9 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
-@import "bootstrap/mixins";
 
 @import 'dresssed/now/variables';
+
+@import "bootstrap/mixins";
 @import 'dresssed/now/mixins';
 
 @import "bootstrap/print";
@@ -37,6 +38,7 @@
 @import "bootstrap/carousel";
 @import "bootstrap/utilities";
 
+@import "dresssed/now/simple_animations";
 @import "dresssed/now/buttons";
 @import "dresssed/now/inputs";
 @import "dresssed/now/checkboxes-radio";
@@ -46,6 +48,7 @@
 @import "dresssed/now/typography";
 @import "dresssed/now/misc";
 @import "dresssed/now/pills";
+@import "dresssed/now/page_components";
 
 @import "dresssed/now/social-buttons";
 @import "dresssed/now/tabs";
@@ -53,15 +56,15 @@
 @import "dresssed/now/dropdown";
 @import "dresssed/now/alerts";
 @import "dresssed/now/images";
-@import "dresssed/now/popups";
-@import "dresssed/now/nucleo-outline";
+@import "dresssed/now/popover";
+@import "dresssed/now/tooltips";
 @import "dresssed/now/modals";
 @import "dresssed/now/carousel";
 @import "dresssed/now/cards";
 @import "dresssed/now/footers";
 @import "dresssed/now/sidenav";
 
-@import "dresssed/now/example-pages";
-@import "dresssed/now/sections";
-
 @import "dresssed/now/responsive";
+
+@import "font_awesome/font-awesome";
+@import "themify/themify-icons";

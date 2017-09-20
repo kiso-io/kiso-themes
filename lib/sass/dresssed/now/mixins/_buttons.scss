@@ -113,6 +113,17 @@
         box-shadow: none;
       }
     }
+
+    .badge {
+      position: absolute;
+      color: $primary-states-color;
+      margin-bottom: 0;
+      line-height: 1;
+      padding: 2px 4px;
+      top: 5px;
+      right: 33px;
+      background: white;
+    }
   } @else {
     color: $white-color;
   }
@@ -142,6 +153,10 @@
       text-decoration: none;
       box-shadow: none;
     }
+  }
+
+  &.btn-avatar {
+    padding: 3px 7px 3px 3px;
   }
 }
 

@@ -1,13 +1,3 @@
-header {
-  background: #f2fbff;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .navbar-header {
   flex: 1;
 }
@@ -109,5 +99,44 @@ header {
     a {
       color: #323232;
     }
+  }
+}
+
+.vp-animate {
+  -webkit-transition: width 0.2s ease-out;
+  -moz-transition: width 0.2s ease-out;
+  -ms-transition: width 0.2s ease-out;
+  -o-transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
+}
+
+#sg-gen-container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+iframe {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0px auto;
+  padding: 0;
+}
+
+.swatch {
+  height: 55px;
+  line-height: 55px;
+  clear: both;
+
+  p {
+    color: blue;
   }
 }

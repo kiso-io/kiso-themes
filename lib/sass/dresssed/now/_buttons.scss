@@ -4,7 +4,7 @@
   font-weight: $font-weight-normal;
   font-size: $font-size-small;
   line-height: $line-height;
-  margin: 5px 1px;
+  margin: 0;
   border: none;
   border-radius: $border-radius-small;
   padding: $padding-btn-vertical $padding-btn-horizontal;
@@ -24,8 +24,23 @@
     outline: 0 !important;
   }
 
+  &.btn-transparent {
+    background-color: transparent;
+
+    &.dropdown-toggle {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+
+
   &.btn-icon {
-    // see above for color variations
     height: $btn-icon-size-regular;
     min-width: $btn-icon-size-regular;
     width: $btn-icon-size-regular;
@@ -33,7 +48,7 @@
     font-size: $btn-icon-font-size-regular;
     overflow: hidden;
     position: relative;
-    line-height: normal;
+    line-height: 1;
 
     &.btn-simple {
       padding: 0;
@@ -44,8 +59,7 @@
       min-width: $btn-icon-size-small;
       width: $btn-icon-size-small;
 
-      i.fa,
-      i.now-ui-icons {
+      i {
         font-size: $btn-icon-font-size-small;
       }
     }
@@ -78,6 +92,10 @@
   }
 }
 
+.navbar .navbar-nav > a.btn {
+  padding: inherit;
+}
+
 // Apply the mixin to the buttons
 // .btn-default { @include btn-styles($default-color, $default-states-color); }
 .btn-primary {
@@ -106,7 +124,7 @@
     @include opacity(.5);
   }
 }
-.btn-round {
+.btn-circle {
   border-width: $border-thin;
   border-radius: $btn-round-radius !important;
   padding: $padding-btn-vertical $padding-round-horizontal;

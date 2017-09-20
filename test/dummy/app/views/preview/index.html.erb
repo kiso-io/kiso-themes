@@ -1,44 +1,40 @@
 <header>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="navbar">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <ul class='theme-list list-inline list-unstyled'>
-              <% @themes.each do |theme| %>
-              <li data-theme='<%=theme[:theme]%>' >
-                <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color='<%=theme[:colors][0] %>' ><%= theme[:theme] %></a>
-                <ul class='style-list list-unstyled list-inline'>
-                  <% theme[:colors].each do |color| %>
-                  <li data-theme='<%=theme[:theme]%>' data-color="<%= color %>">
-                    <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color="<%= color %>"><%= color %></a>
-                  </li>
-                  <% end %>
-                </ul>
-              </li>
-              <% end %>
-            </ul>
-          </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <div class="btn-group navbar-btn">
-                  <a data-toggle="tooltip" class="btn btn-default size-mobile" data-original-title="Mobile"><i class="fa fa-mobile-phone"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-default size-tablet" data-original-title="Tablet"><i class="fa fa-tablet"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-default size-laptop" data-original-title="Laptop"><i class="fa fa-laptop"></i></a>
-                </div>
-              </li>
-            </ul>
-          </div>
+  <div class="row no-gutters">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark my-0">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav mr-auto theme-list mr-auto">
+            <% @themes.each do |theme| %>
+            <li data-theme='<%=theme[:theme]%>' >
+              <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color='<%=theme[:colors][0] %>' ><%= theme[:theme] %></a>
+              <ul class='style-list list-unstyled list-inline'>
+                <% theme[:colors].each do |color| %>
+                <li data-theme='<%=theme[:theme]%>' data-color="<%= color %>">
+                  <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color="<%= color %>"><%= color %></a>
+                </li>
+                <% end %>
+              </ul>
+            </li>
+            <% end %>
+          </ul>
+
+          <ul class="list-unstyled my-2 my-lg-0">
+            <li>
+              <div class="btn-group">
+                <a data-toggle="tooltip" class="btn btn-neutral size-mobile" data-original-title="Mobile"><i class="fa fa-mobile-phone"></i></a>
+                <a data-toggle="tooltip" class="btn btn-neutral size-tablet" data-original-title="Tablet"><i class="fa fa-tablet"></i></a>
+                <a data-toggle="tooltip" class="btn btn-neutral size-laptop" data-original-title="Laptop"><i class="fa fa-laptop"></i></a>
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
+
     </div>
   </div>
 </header>

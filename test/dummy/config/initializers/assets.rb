@@ -15,4 +15,4 @@ Dir.glob("#{Rails.root}/app/assets/stylesheets/styles/**/*.scss").each do |path|
   Rails.application.config.assets.precompile += [ relpath ]
 end
 
-Rails.application.config.assets.precompile += %w( font-awesome.css ionicons.css icons-material-design.css bootstrap_docs.css preview.css flash/ZeroClipboard.swf)
+Rails.application.config.assets.precompile += %w( themify-icons.css font-awesome.css ionicons.css icons-material-design.css bootstrap_docs.css preview.css flash/ZeroClipboard.swf)

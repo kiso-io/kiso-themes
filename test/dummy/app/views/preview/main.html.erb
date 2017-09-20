@@ -1,15 +1,36 @@
 <%= render partial: "side_menu" %>
+
 <div class='main-content'>
   <%= render partial: 'dashboard_top_nav' %>
 
-  <div class='page-header row row-same-height'>
-    <h1 class='col-sm-6 col-xs-height'><%= raw @title.gsub('_', ' ').titleize %></h1>
-    <ol class="breadcrumb col-sm-6 col-xs-height text-right col-middle">
-      <% @breadcrumbs.each do |crumb| %>
-      <li><%=crumb%></li>
+  <div class='page-header'>
+    <div class="d-flex mr-auto align-items-center">
+      <h4 class=''><%= raw @title.gsub('_', ' ').titleize %></h4>
+
+      <% if @breadcrumbs.length > 0 %>
+        <ol class="breadcrumb text-right text-muted">
+          <% @breadcrumbs.each do |crumb| %>
+            <li class="breadcrumb-item"><%=crumb%></li>
+          <% end %>
+        </ol>
       <% end %>
-    </ol>
+    </div>
+
+    <div class="page-header-actions">
+      <div class="dropdown">
+        <button class="btn btn-icon btn-neutral" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="ti-settings"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+
   </div>
+
   <div class='container-fluid animate-fade-in-500'>
     <%= render file: "preview/elements/#{@section}" %>
   </div>

@@ -1,4 +1,17 @@
-//= require_tree ./dresssed
+//= require ./dresssed/fastclick
+//= require ./dresssed/slimscroll
+//= require ./dresssed/metis_menu
+//= require ./dresssed/header
+//= require ./dresssed/popper
+//= require ./dresssed/bootstrap
+//= require ./dresssed/sheets
+//= require ./dresssed/maps
+//= require ./dresssed/flot
+//= require ./dresssed/rickshaw
+//= require ./dresssed/fastclick
+//= require ./dresssed/prettify
+//= require ./dresssed/morris
+
 //= require_tree ./generators
 //= require_tree ./demo
 
@@ -15,8 +28,13 @@ $(document).ready(function() {
     container: 'body'
   });
 
-  // Required for the SideNav dropdown nav-side-menu
-  $('.nav-side-menu').metisMenu();
+  $('.form-control')
+    .on('focus', function() {
+      $(this).parent('.input-group').addClass('input-group-focus');
+    })
+    .on('blur', function() {
+      $(this).parent('.input-group').removeClass('input-group-focus');
+    });
 
   var width = document.body.clientWidth;
 
@@ -41,6 +59,13 @@ $(document).ready(function() {
 
     $('#menu-content').mouseover();
   }
+
+  // Required for the SideNav dropdown nav-side-menu
+  $('.nav-side-menu').metisMenu({
+    triggerElement: '.nav-link', // bootstrap 4
+    parentTrigger: '.nav-item', // bootstrap 4
+    collapseInClass: 'show'
+  });
 
   // AHOY THERE!
   //

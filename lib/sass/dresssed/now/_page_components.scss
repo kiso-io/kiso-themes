@@ -1,0 +1,33 @@
+.page-header {
+  display: flex;
+  align-items: center;
+
+  padding: $padding-base-vertical*3 1rem;
+
+  h4 {
+    margin: 0;
+  }
+
+  h4 ~ ol {
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      height: 2.2rem;
+      top: .5rem;
+      left: 1rem;
+      border-right: 1px solid black;
+    }
+  }
+
+  .breadcrumb {
+    position: relative;
+    margin: 0;
+    padding-left: 2rem;
+    background: transparent;
+
+    li {
+      display: flex;
+    }
+  }
+}

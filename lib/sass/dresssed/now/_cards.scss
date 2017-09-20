@@ -1,5 +1,5 @@
-.card{
-    border: 0;
+ .card{
+   border: 0;
     border-radius: $border-radius-small;
     display: inline-block;
     position: relative;
@@ -7,10 +7,6 @@
     width: 100%;
     margin-bottom: 20px;
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
-
-    .card-body{
-        min-height: 190px;
-    }
 
     &[data-background-color="orange"]{
         background-color: $primary-color;
@@ -31,6 +27,16 @@
     &[data-background-color="green"]{
         background-color: $success-color;
     }
+}
+
+.card-footer {
+  font-size: $font-size-mini;
+}
+
+.card-full-bleed {
+  .card-body {
+    padding: 0;
+  }
 }
 
 .card-signup{
