@@ -68,15 +68,13 @@
         <div class='metric-graph' id='metric-monthly-earnings'></div>
         <div class="metric-details">
           <div class="metric-value">
+            <h6>New Subscribers</h6>
             <div class="value">123</div>
             <p class="text-success">
               <i class="fa fa-chevron-up"></i> 12%
             </p>
             <small>30 Days Ago</small>
           </div>
-        </div>
-        <div class="metric-header">
-          <h5>New Subscribers</h5>
         </div>
       </div>
     </div>
@@ -87,15 +85,13 @@
         <div class='metric-graph' id='metric-cancellations'></div>
         <div class="metric-details">
           <div class="metric-value">
+            <h6>Cancellations</h6>
             <div class="value">10</div>
             <p class="text-danger">
               <i class="fa fa-chevron-down"></i> 1%
             </p>
             <small>30 Days Ago</small>
           </div>
-        </div>
-        <div class="metric-header">
-          <h5>Cancellations</h5>
         </div>
       </div>
     </div>
@@ -118,7 +114,7 @@
         <h6>SALES ACTIVITY</h6>
         <div class="timeline" style="height: 380px;">
           <ul class="left-timeline">
-            <% types = [ { klass: 'refund', css_class: 'label-danger'},  { klass: 'purchase', css_class: 'label-success'}, { klass: 'cancellation', css_class: 'label-inverse'}] %>
+            <% types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}] %>
             <% (1..5).each do |index|%>
               <li class="timeline-item">
                 <% instance = types[Random.rand(types.length)] %>
@@ -200,11 +196,11 @@
                     <%= random_avatar 40, "rounded-circle" %>
                   </a>
                   <div class="media-body">
-                    <h6><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h6>
+                    <strong><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></strong>
                     <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae atque, dolore quo voluptatum sed voluptas incidunt aspernatur natus iste dolor neque porro quos illo quia iusto minima, nesciunt animi architecto.</p>
                     <ul class="nav small">
-                      <li class="nav-item"><a href="#" class="mr-3"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
-                      <li class="nav-item"><a href="#" class=""><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                      <li class="nav-item"><a href="#" class="mr-3 btn btn-circle btn-primary"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                      <li class="nav-item"><a href="#" class="btn btn-circle btn-secondary"><i class="fa fa-fw fa-times"></i>Remove</a></li>
                       <li class="ml-auto">
                         <span class="text-muted"><%= index %> hour ago</span>
                       </li>
@@ -240,11 +236,11 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+  <div class="col-sm-12">
     <div class="card card-default">
       <div class="card-body">
         <h6>MOST ACTIVE USERS</h6>
-        <table class="table table-hover table-striped table-responsive">
+        <table class="table-responsive table table-hover table-striped">
           <thead>
             <tr>
               <th>#</th>
@@ -262,8 +258,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -273,8 +269,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -284,8 +280,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -295,8 +291,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -306,8 +302,8 @@
               <td><span class="label label-danger">Suspended</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -317,8 +313,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -328,8 +324,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -339,8 +335,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -350,8 +346,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -361,8 +357,8 @@
               <td><span class="label label-success">Active</span></td>
               <td>
                 <div class="btn-group btn-group-xs">
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-neutral" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                 </div>
               </td>
             </tr>
@@ -371,7 +367,9 @@
       </div>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+</div>
+<div class="row">
+  <div class="col-sm-12">
     <div class="card card-default">
       <div class="card-body">
         <h6>ONLINE USERS</h6>

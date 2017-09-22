@@ -34,12 +34,21 @@
 }
 
 .card-header {
+  background: transparent;
+  border-bottom: 0;
+
   .nav-tabs {
     padding: 0;
 
     .nav-item {
       .nav-link {
-        &:last-of-type {
+        &:hover {
+          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17);
+        }
+      }
+
+      &:last-of-type {
+        .nav-link {
           margin-right: 0
         }
       }
@@ -89,18 +98,21 @@
 
     .value {
       font-size: 2rem;
-      margin: 0;
+      margin: 0 0 .6rem 0;
       line-height: 1;
+      color: $dark-gray;
     }
 
     small {
       display: block;
       text-transform: uppercase;
+      color: $text-muted;
     }
 
     p {
       margin: 0;
       padding-top: $padding-base-vertical;
+      line-height: 1;
     }
   }
 
@@ -111,21 +123,11 @@
     left: 0;
     right: 0;
   }
-
-  .metric-header {
-    z-index: 2;
-
-    h5 {
-      margin: 0;
-      padding-bottom: $padding-base-vertical;
-      text-align: center;
-      color: $brand-primary-darkest;
-    }
-  }
-
 }
 
 .mini-card {
+  display: block;
+
   i {
     color: $brand-primary-lighter;
 
