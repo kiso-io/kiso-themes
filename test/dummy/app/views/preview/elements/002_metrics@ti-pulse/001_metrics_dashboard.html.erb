@@ -43,23 +43,21 @@
         <h3 class="card-title">Activity</h3>
       </div>
       <div class="card-body">
-        <div class='left-timeline metrics-timeline'>
-          <ul class="list-unstyled small">
-            <% types = [ { klass: 'refund', css_class: 'label-danger'},  { klass: 'purchase', css_class: 'label-success'}, { klass: 'cancellation', css_class: 'label-inverse'}] %>
-            <% (1..10).each do |index|%>
-              <li class="mb10">
-                <% instance = types[Random.rand(types.length)] %>
-                <time class='<%= instance[:css_class]%>'>
-                  <strong>$<%=Random.rand(120) %></strong>
-                </time>
-                <header>
-                  <strong>Internet Genie</strong><br/>
-                  <small class="text-muted"><%=instance[:klass].upcase %> - <%=time_ago_in_words( DateTime.now-(index.minutes) ) %></small>
-                </header>
-              </li>
-            <% end %>
-          </ul>
-        </div>
+        <ul class="left-timeline">
+          <% types = [ { klass: 'refund', css_class: 'label-danger'},  { klass: 'purchase', css_class: 'label-success'}, { klass: 'cancellation', css_class: 'label-inverse'}] %>
+          <% (1..10).each do |index|%>
+            <li class="timeline-item">
+              <% instance = types[Random.rand(types.length)] %>
+              <time class='<%= instance[:css_class]%>'>
+                <strong>$<%=Random.rand(120) %></strong>
+              </time>
+              <header>
+                <strong>Internet Genie</strong><br/>
+                <small class="text-muted"><%=instance[:klass].upcase %> - <%=time_ago_in_words( DateTime.now-(index.minutes) ) %></small>
+              </header>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

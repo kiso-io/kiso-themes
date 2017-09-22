@@ -1,13 +1,13 @@
-<div class="row top-summary">
+<div class="row">
   <div class="col-lg-3 col-md-6 col-sm-12 animate-drop-fade">
-    <div class="card">
+    <div class="card mini-card">
       <div class="card-body">
         <div class="media">
           <div class="d-flex align-self-center mr-3">
-            <span><i class="h1 ti-world text-primary border-primary round-widget"></i></span>
+            <span><i class="h1 ti-world border-primary round-widget"></i></span>
           </div>
           <div class="media-body text-right">
-            <h4 class="m-0 page-hits">1278</h4>
+            <h4 class="m-0 counter" data-from="0" data-to="100" data-speed="5000" data-refresh-interval="80">0</h4>
             <h6 class="m-0 text-muted">Page Hits</h6>
           </div>
         </div>
@@ -15,14 +15,14 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-6 col-sm-12 animate-drop-fade">
-    <div class="card">
+    <div class="card mini-card">
       <div class="card-body">
         <div class="media">
           <div class="d-flex align-self-center mr-3">
-            <span><i class="h1 ti-shopping-cart text-primary border-primary round-widget"></i></span>
+            <span><i class="h1 ti-shopping-cart border-primary round-widget"></i></span>
           </div>
           <div class="media-body text-right">
-            <h4 class="m-0">$12,347</h4>
+            <h4 class="m-0 counter" data-from="0" data-to="1231" data-speed="500" data-refresh-interval="80">0</h4>
             <h6 class="m-0 text-muted">Total Sales</h6>
           </div>
         </div>
@@ -30,14 +30,14 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-6 col-sm-12 animate-drop-fade">
-    <div class="card">
+    <div class="card mini-card">
       <div class="card-body">
         <div class="media">
           <div class="d-flex align-self-center mr-3">
-            <span><i class="h1 ti-money text-primary border-primary round-widget"></i></span>
+            <span><i class="h1 ti-money border-primary round-widget"></i></span>
           </div>
           <div class="media-body text-right">
-            <h4 class="m-0">$151,347</h4>
+            <h4 class="m-0 cash-counter" data-from="0" data-to="151231" data-speed="500" data-refresh-interval="80">0</h4>
             <h6 class="m-0 text-muted">Total Revenue</h6>
           </div>
         </div>
@@ -45,14 +45,14 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-6 col-sm-12 animate-drop-fade">
-    <div class="card">
+    <div class="card mini-card">
       <div class="card-body">
         <div class="media">
           <div class="d-flex align-self-center mr-3">
-            <span><i class="h1 ti-user text-primary border-primary round-widget"></i></span>
+            <span><i class="h1 ti-user border-primary round-widget"></i></span>
           </div>
           <div class="media-body text-right">
-            <h4 class="m-0">23,312</h4>
+            <h4 class="m-0 counter" data-from="0" data-to="23312" data-speed="500" data-refresh-interval="50">0</h4>
             <h6 class="m-0 text-muted">Total Users</h6>
           </div>
         </div>
@@ -63,98 +63,87 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <div class="card card-full-bleed">
-      <h5 class="card-header">Monthly Earnings</h5>
+    <div class="card card-metric card-full-bleed">
       <div class="card-body">
-        <div class="metric-content">
-          <div class="row">
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="min-height: 150px;">
-              <div class='metric-graph' id='metric-monthly-earnings' style='height:150px;'></div>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <div class="metric-value">
-                $19,821
-                <small>CURRENT</small>
-              </div>
-              <div class="metric-trend">
-                <p class="text-success">
-                  <i class="fa fa-chevron-up"></i> 12%
-                </p>
-                <small>30 Days Ago</small>
-              </div>
-            </div>
+        <div class='metric-graph' id='metric-monthly-earnings'></div>
+        <div class="metric-details">
+          <div class="metric-value">
+            <div class="value">123</div>
+            <p class="text-success">
+              <i class="fa fa-chevron-up"></i> 12%
+            </p>
+            <small>30 Days Ago</small>
           </div>
+        </div>
+        <div class="metric-header">
+          <h5>New Subscribers</h5>
         </div>
       </div>
     </div>
   </div>
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
     <div class="card card-full-bleed card-metric">
-      <h5 class="card-header">Cancellations</h5>
       <div class="card-body">
-        <div class="metric-content">
-          <div class="row">
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="min-height: 150px;">
-              <div class='metric-graph' id='metric-cancellations' style='height:150px;'></div>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <div class="metric-value">
-                123
-                <small>CURRENT</small>
-              </div>
-              <div class="metric-trend">
-                <p class="text-success">
-                  <i class="fa fa-chevron-up"></i> 12%
-                </p>
-                <small>30 Days Ago</small>
-              </div>
-            </div>
+        <div class='metric-graph' id='metric-cancellations'></div>
+        <div class="metric-details">
+          <div class="metric-value">
+            <div class="value">10</div>
+            <p class="text-danger">
+              <i class="fa fa-chevron-down"></i> 1%
+            </p>
+            <small>30 Days Ago</small>
           </div>
+        </div>
+        <div class="metric-header">
+          <h5>Cancellations</h5>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row">
+<div class="row is-flex">
   <div class="col-sm-12 col-md-9 animate-fade-in-1000">
-    <div class="card card-default">
-      <div class="card-header">
-        <p class="lead">SALES VS REFUNDS</h3>
-        </div>
-        <div class="card-body">
-          <div id="rickshaw-bars"></div>
+    <div class="card">
+      <div class="card-body">
+        <h6>SALES VS REFUNDS LAST 7 DAYS</h6>
+        <canvas class="sales-vs-refunds"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-3 animate-fade-in-1000">
+    <div class="card card-grow d-flex">
+      <div class="card-body overflow-y-scroll">
+        <h6>SALES ACTIVITY</h6>
+        <div class="timeline" style="height: 380px;">
+          <ul class="left-timeline">
+            <% types = [ { klass: 'refund', css_class: 'label-danger'},  { klass: 'purchase', css_class: 'label-success'}, { klass: 'cancellation', css_class: 'label-inverse'}] %>
+            <% (1..5).each do |index|%>
+              <li class="timeline-item">
+                <% instance = types[Random.rand(types.length)] %>
+                <time class='<%= instance[:css_class]%>'>
+                  <strong>$<%=Random.rand(120) %></strong>
+                </time>
+                <div class="activity-text">
+                  <strong>Internet Genie</strong>
+                  <small class="text-muted"><%=instance[:klass].upcase %> - <%=time_ago_in_words( DateTime.now-(index.minutes) ) %></small>
+                </header>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-3 animate-fade-in-1000">
-      <div class="card card-cover text-primary">
-        <p class="lead p10 mt10 mb10">Top Affiliate</p>
-        <%= random_avatar 115, "img-rounded" %>
-        <h3 class='mt0'>Fill Murray</h3>
-        <ul class="stats list-unstlyed list-inline clearfix">
-          <li class="col-4"><span>$1,267</span>Commission</li>
-          <li class="col-4"><span>$3,987</span>Sales</li>
-          <li class="col-4"><span>121</span>Referrals</li>
-        </ul>
-      </div>
-    </div>
+  </div>
 </div>
 
-<div class="row">
+<div class="row is-flex">
   <div class="col-sm-12 col-md-5 animate-fade-in-1000">
     <div class="card card-default">
-      <div class="card-header">
-        <p class="lead">MASTER SERVER</p>
-      </div>
       <div class="card-body">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <div id="realtime" style="height: 315px; width: 100%; display: block;">
-              </div>
-            </div>
-          </div>
+        <h6>MASTER SERVER</h6>
+        <div id="realtime" style="height: 315px; width: 100%; display: block;">
         </div>
       </div>
       <div class="card-footer">
@@ -162,7 +151,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="server-status-details clearfix">
               <h5 class="text-center">Memory Stats</h5>
-              <div class="row stat-list">
+              <div class="row stat-list text-center">
                 <dl class="col-xs-6 col-sm-6 col-md-3">
                   <dt>In use</dt>
                   <dd>2.5 GB</dd>
@@ -189,221 +178,60 @@
   <div class="col-sm-12 col-md-7 animate-fade-in-1000">
     <div class="card card-default">
       <div class="card-header">
-        <p class='lead'><%= ionicon_icon_tag 'flame' %> RECENT ACTIVITY</p>
         <ul class="nav nav-tabs nav-tabs-xs">
-          <li class="active">
-            <a href="#dashboard-recent-comments" data-toggle="tab">Comments</a>
+          <li class="mr-auto d-flex align-items-center">
+            <h6><%= ionicon_icon_tag 'flame' %> RECENT ACTIVITY</h6>
           </li>
-          <li class="">
-            <a href="#dashboard-recent-threads" data-toggle="tab">Forum threads</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="#dashboard-recent-comments" data-toggle="tab">Comments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#dashboard-recent-threads" data-toggle="tab">Forum threads</a>
           </li>
         </ul>
       </div>
       <div class="tab-content">
-        <div class="tab-pane fade active in" style='height: 470px; overflow: scroll;' id='dashboard-recent-comments'>
+        <div class="tab-pane fade active show" style='height: 444px; overflow: scroll;' id='dashboard-recent-comments'>
           <ul class="list-group list-group-flush">
-            <li class='list-group-item'>
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <%= random_avatar 40, "media-object" %>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-header"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
-                  <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae atque, dolore quo voluptatum sed voluptas incidunt aspernatur natus iste dolor neque porro quos illo quia iusto minima, nesciunt animi architecto.</p>
-                  <ul class="list-inline small">
-                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
-                    <span class="pull-right">1 hour ago</span>
-                  </ul>
+            <% (1..5).each do |index|%>
+              <li class='list-group-item'>
+                <div class="media">
+                  <a class="d-flex mr-3" href="#">
+                    <%= random_avatar 40, "rounded-circle" %>
+                  </a>
+                  <div class="media-body">
+                    <h6><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h6>
+                    <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae atque, dolore quo voluptatum sed voluptas incidunt aspernatur natus iste dolor neque porro quos illo quia iusto minima, nesciunt animi architecto.</p>
+                    <ul class="nav small">
+                      <li class="nav-item"><a href="#" class="mr-3"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
+                      <li class="nav-item"><a href="#" class=""><i class="fa fa-fw fa-times"></i>Remove</a></li>
+                      <li class="ml-auto">
+                        <span class="text-muted"><%= index %> hour ago</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class='list-group-item'>
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <%= random_avatar 40, "media-object" %>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-header"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
-                  <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus harum hic, atque, blanditiis commodi repellendus quibusdam ratione, a tenetur sint iste sunt consequatur nemo. Sed necessitatibus aut aperiam accusamus dignissimos.</p>
-                  <ul class="list-inline small">
-                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
-                    <span class="pull-right">1 hour ago</span>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class='list-group-item'>
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <%= random_avatar 40, "media-object" %>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-header"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
-                  <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora illo odio ducimus voluptas dicta, mollitia omnis reiciendis architecto nisi sunt cumque accusantium incidunt eveniet. Dicta accusamus voluptas, iure facilis quo.</p>
-                  <ul class="list-inline small">
-                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
-                    <span class="pull-right">1 hour ago</span>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class='list-group-item'>
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <%= random_avatar 40, "media-object" %>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-header"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
-                  <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus non voluptatibus dolorum maxime, distinctio, dolores corporis, eveniet placeat odio est nulla a ea aliquam, tempore autem voluptas. Ex, quibusdam, itaque.</p>
-                  <ul class="list-inline small">
-                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
-                    <span class="pull-right">1 hour ago</span>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class='list-group-item'>
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <%= random_avatar 40, "media-object" %>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-header"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
-                  <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, corporis, facilis magni error est quibusdam eaque hic nulla quod veniam reiciendis atque itaque laboriosam. Molestias architecto natus hic, veritatis fugiat.</p>
-                  <ul class="list-inline small">
-                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
-                    <span class="pull-right">1 hour ago</span>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class='list-group-item'>
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <%= random_avatar 40, "media-object" %>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-header"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
-                  <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam suscipit, exercitationem mollitia, id fugit earum. Nemo veniam, temporibus soluta laudantium nulla quae ipsam, iste et accusantium blanditiis dignissimos id adipisci.</p>
-                  <ul class="list-inline small">
-                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
-                    <span class="pull-right">1 hour ago</span>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class='list-group-item'>
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <%= random_avatar 40, "media-object" %>
-                </a>
-                <div class="media-body">
-                  <h5 class="media-header"><a href="#" title="">Fill Murray</a> commented on <a href="#" title="">Article Name</a></h5>
-                  <p class='small'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt vel pariatur repellat hic magni a, sit odit quaerat veniam, quae veritatis temporibus ex ullam nesciunt dolor consequuntur ut dignissimos praesentium.</p>
-                  <ul class="list-inline small">
-                    <li><a href="#"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-times"></i>Remove</a></li>
-                    <span class="pull-right">1 hour ago</span>
-                  </ul>
-                </div>
-              </div>
-            </li>
+              </li>
+            <% end %>
           </ul>
         </div>
         <div class="tab-pane fade" id="dashboard-recent-threads">
-          <div style="overflow: scroll; width: auto; height: 474px;">
+          <div style="overflow: scroll; width: auto; height: 444px;">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <%= random_avatar 40, "media-object" %>
-                  </a>
-                  <div class="media-body">
-                    <h5 class="media-header"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
-                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
+              <% (1..10).each do |index|%>
+                <li class="list-group-item">
+                  <div class="media">
+                    <a class="d-flex mr-3" href="#">
+                      <%= random_avatar 40, "rounded-circle" %>
+                    </a>
+                    <div class="media-body">
+                      <h6 class="media-header"><a href="#" title="">Lorem ipsum dolor sit amet</a></h6>
+                      <div class="small d-flex">Started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="ml-auto">3h ago</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <%= random_avatar 40, "media-object" %>
-                  </a>
-                  <div class="media-body">
-                    <h5 class="media-header"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
-                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <%= random_avatar 40, "media-object" %>
-                  </a>
-                  <div class="media-body">
-                    <h5 class="media-header"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
-                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <%= random_avatar 40, "media-object" %>
-                  </a>
-                  <div class="media-body">
-                    <h5 class="media-header"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
-                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <%= random_avatar 40, "media-object" %>
-                  </a>
-                  <div class="media-body">
-                    <h5 class="media-header"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
-                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <%= random_avatar 40, "media-object" %>
-                  </a>
-                  <div class="media-body">
-                    <h5 class="media-header"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
-                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <%= random_avatar 40, "media-object" %>
-                  </a>
-                  <div class="media-body">
-                    <h5 class="media-header"><a href="#" title="">Lorem ipsum dolor sit amet</a></h5>
-                    <div class="small">started by <a href="#" title="">Fill Murray</a> in <a href="#" title="">Forum name</a><span class="pull-right">3h</span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
+                </li>
+              <%end %>
             </ul>
           </div>
         </div>
@@ -412,148 +240,142 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+  <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
     <div class="card card-default">
-      <div class="card-header">
-        <p class="lead">ONLINE USERS</p>
-      </div>
       <div class="card-body">
-        <div id="map_canvas_1"></div>
+        <h6>MOST ACTIVE USERS</h6>
+        <table class="table table-hover table-striped table-responsive">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Full Name</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td><td><strong>Fred Berlin</strong></td>
+              <td>Vancouver, Canada</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td><td>Octavius Belt</td>
+              <td>London, United Kingdom</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td><td><strong>Cash Money</strong></td>
+              <td>New York City, USA</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td><td><strong>Bailey Bingface</strong></td>
+              <td>Liberia</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td><td><strong>Altus Zombo</strong></td>
+              <td>Monrovia</td>
+              <td><span class="label label-danger">Suspended</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>8</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>9</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>10</td><td><strong>Leslie Taket</strong></td>
+              <td>Dublin, Ireland</td>
+              <td><span class="label label-success">Active</span></td>
+              <td>
+                <div class="btn-group btn-group-xs">
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
+                  <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
     <div class="card card-default">
-      <div class="card-header">
-        <p class="lead">MOST ACTIVE USERS</p>
-      </div>
       <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-hover table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Full Name</th>
-                <th>Location</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>1</td><td><strong>Fred Berlin</strong></td>
-                <td>Vancouver, Canada</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td><td>Octavius Belt</td>
-                <td>London, United Kingdom</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td><td><strong>Cash Money</strong></td>
-                <td>New York City, USA</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td><td><strong>Bailey Bingface</strong></td>
-                <td>Liberia</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>5</td><td><strong>Altus Zombo</strong></td>
-                <td>Monrovia</td>
-                <td><span class="label label-danger">Suspended</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-default" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>6</td><td><strong>Leslie Taket</strong></td>
-                <td>Dublin, Ireland</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>7</td><td><strong>Leslie Taket</strong></td>
-                <td>Dublin, Ireland</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>8</td><td><strong>Leslie Taket</strong></td>
-                <td>Dublin, Ireland</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>9</td><td><strong>Leslie Taket</strong></td>
-                <td>Dublin, Ireland</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>10</td><td><strong>Leslie Taket</strong></td>
-                <td>Dublin, Ireland</td>
-                <td><span class="label label-success">Active</span></td>
-                <td>
-                  <div class="btn-group btn-group-xs">
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Delete"><i class="fa fa-trash"></i></a>
-                    <a data-toggle="tooltip" class="btn btn-sm" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <h6>ONLINE USERS</h6>
+        <div id="map_canvas_1"></div>
       </div>
     </div>
   </div>

@@ -5,10 +5,10 @@ function flotMetric(el, data, yaxis, options) {
 
   options = $.extend(
     {
-      type: 'area',
-      lineWidth: 1
-    },
-    options
+    type: 'area',
+    lineWidth: 1
+  },
+  options
   );
 
   var series = {
@@ -25,10 +25,10 @@ function flotMetric(el, data, yaxis, options) {
     el,
     [
       {
-        label: 'Data 1',
-        data: data,
-        color: '#C9E3F5'
-      }
+      label: 'Data 1',
+      data: data,
+      color: '#C9E3F5'
+    }
     ],
     {
       series: series,
@@ -45,48 +45,6 @@ function flotMetric(el, data, yaxis, options) {
       }
     }
   );
-}
-
-function rickshawBars() {
-  if ($('#rickshaw-bars')[0] === undefined) {
-    return;
-  }
-
-  var seriesData = [[], []];
-  var random = new Rickshaw.Fixtures.RandomData(50);
-
-  for (var i = 0; i < 50; i++) {
-    random.addData(seriesData);
-  }
-
-  var graph = new Rickshaw.Graph({
-    element: document.getElementById('rickshaw-bars'),
-    height: $('#rickshaw-bars').outerHeight(),
-    width: $('#rickshaw-bars').parent('.panel-body').width(),
-    renderer: 'bar',
-    series: [
-      {
-        color: '#B7D1E4',
-        data: seriesData[0]
-      },
-      {
-        color: '#c9e3f5',
-        data: seriesData[1]
-      }
-    ]
-  });
-
-  graph.render();
-
-  $(window).on('resize', function() {
-    graph.configure({
-      width: $('#rickshaw-bars').parent('.panel-body').width(),
-      height: $('#rickshaw-bars').outerHeight()
-    });
-    graph.render();
-  });
-
-  var hoverDetail = new Rickshaw.Graph.HoverDetail({ graph: graph });
 }
 
 function flotRealtime() {
@@ -164,3 +122,52 @@ $(document).ready(function() {
 
   update();
 });
+
+function salesVsRefunds() {
+  // Set Global Chart.js configuration
+  Chart.defaults.global.defaultFontColor              = '#555555';
+  Chart.defaults.scale.gridLines.color                = "rgba(0,0,0,.04)";
+  Chart.defaults.scale.gridLines.zeroLineColor        = "rgba(0,0,0,.1)";
+  Chart.defaults.scale.ticks.beginAtZero              = true;
+  Chart.defaults.global.elements.line.borderWidth     = 2;
+  Chart.defaults.global.elements.point.radius         = 5;
+  Chart.defaults.global.elements.point.hoverRadius    = 7;
+  Chart.defaults.global.tooltips.cornerRadius         = 3;
+  Chart.defaults.global.legend.labels.boxWidth        = 12;
+
+  var chartLinesCon  = jQuery('.sales-vs-refunds');
+
+  var chartLinesBarsRadarData = {
+    labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+    datasets: [
+      {
+      label: 'Refunds',
+      fill: true,
+      backgroundColor: '#81A2D0',
+      borderColor: 'rgba(66,165,245,1)',
+      pointBackgroundColor: 'rgba(66,165,245,1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(66,165,245,1)',
+      data: [19, 20, 8, 32, 100, 15, 99]
+    },
+    {
+      label: 'Sales',
+      fill: true,
+      backgroundColor: '#e9f4fb',
+      borderColor: '#A3D9FE',
+      pointBackgroundColor: '#A3D9FE',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(66,165,245,1)',
+      data: [200, 192, 220, 240, 200, 131, 126]
+    }
+    ]
+  };
+
+  if(chartLinesCon.length > 0) {
+    new Chart(chartLinesCon, { type: 'line', data: chartLinesBarsRadarData });
+  }
+
+
+}

@@ -1,10 +1,10 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 
-@import 'dresssed/now/variables';
-
 @import "bootstrap/mixins";
 @import 'dresssed/now/mixins';
+@import 'dresssed/now/variables';
+
 
 @import "bootstrap/print";
 @import "bootstrap/reboot";
@@ -49,6 +49,7 @@
 @import "dresssed/now/misc";
 @import "dresssed/now/pills";
 @import "dresssed/now/page_components";
+@import "dresssed/now/timelines";
 
 @import "dresssed/now/social-buttons";
 @import "dresssed/now/tabs";
@@ -67,4 +68,5 @@
 @import "dresssed/now/responsive";
 
 @import "font_awesome/font-awesome";
+@import "ionicons/ionicons";
 @import "themify/themify-icons";

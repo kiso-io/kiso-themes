@@ -2,7 +2,7 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$sans-serif-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+$sans-serif-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
 
 $none: 0 !default;
 $border-thin: 1px !default;
@@ -26,19 +26,18 @@ $light-gray: #e3e3e3 !default;
 $medium-gray: #dddddd !default;
 $dark-gray: #9a9a9a !default;
 
+$opacity-1: rgba(255, 255, 255, .1) !default;
+$opacity-2: rgba(255, 255, 255, .2) !default;
+$opacity-5: rgba(255, 255, 255, .5) !default;
+$opacity-8: rgba(255, 255, 255, .8) !default;
+
 $opacity-gray-3: rgba(222, 222, 222, .3) !default;
 $opacity-gray-5: rgba(222, 222, 222, .5) !default;
 $opacity-gray-8: rgba(222, 222, 222, .8) !default;
 
-$opacity-5: rgba(255, 255, 255, .5) !default;
-
-$opacity-8: rgba(255, 255, 255, .8) !default;
-
 $datepicker-color-days: rgba(255, 255, 255, .8) !default;
 $datepicker-color-old-new-days: rgba(255, 255, 255, .4) !default;
 
-$opacity-1: rgba(255, 255, 255, .1) !default;
-$opacity-2: rgba(255, 255, 255, .2) !default;
 
 $transparent-bg: transparent !default;
 $dark-background: #555555 !default;
@@ -52,7 +51,7 @@ $primary-states-color: lighten($primary-color, 6%) !default;
 $primary-color-opacity: rgba(249, 99, 50, .3) !default;
 $primary-color-alert: rgba(249, 99, 50, .8) !default;
 
-$success-color: #3ca937 !default;
+$success-color: #6eda62 !default;
 $success-states-color: lighten($success-color, 6%) !default;
 $success-color-opacity: rgba(48, 167, 42, .3) !default;
 $success-color-alert: rgba(48, 167, 42, .8) !default;
@@ -67,7 +66,7 @@ $warning-states-color: lighten($warning-color, 6%) !default;
 $warning-color-opacity: rgba(255, 143, 26, .3) !default;
 $warning-color-alert: rgba(216, 143, 26, .8) !default;
 
-$danger-color: #d83838 !default;
+$danger-color: #fc7373 !default;
 $danger-states-color: lighten($danger-color, 6%) !default;
 $danger-color-opacity: rgba(202, 37, 37, .3) !default;
 $danger-color-alert: rgba(202, 37, 37, .8) !default;
@@ -79,6 +78,14 @@ $brand-success: $success-color !default;
 $brand-warning: $warning-color !default;
 $brand-danger: $danger-color !default;
 $brand-inverse: $black-color !default;
+
+$brand-primary-light: tint($brand-primary, 10%);
+$brand-primary-lighter: tint($brand-primary, 25%);
+$brand-primary-lightest: tint($brand-primary, 38%);
+
+$brand-primary-dark: shade($brand-primary, 10%);
+$brand-primary-darker: shade($brand-primary, 25%);
+$brand-primary-darkest: shade($brand-primary, 38%);
 
 $link-disabled-color: #666666 !default;
 
@@ -145,6 +152,7 @@ $btn-icon-font-size-small: 0.6875rem !default;
 $btn-icon-size-small: 1.875rem !default;
 $btn-icon-font-size-lg: 1.325rem !default;
 $btn-icon-size-lg: 3.6rem !default;
+$btn-icon-top-padding: .3rem !default;
 
 $font-size-h1: 3.5em !default; // ~ 49px
 $font-size-h2: 2.5em !default; // ~ 35px
@@ -273,4 +281,8 @@ $side-nav-sub-menu-item-horizontal-padding: .8rem;
 $side-nav-menu-footer-background-color: #2e4261;
 
 
-$tooltip-bg: lighten($brand-primary, 25%)
+$tooltip-bg: lighten($brand-primary, 25%);
+
+
+$left-timeline-item-background-color: #fff;
+$left-timeline-item-padding: 1rem;

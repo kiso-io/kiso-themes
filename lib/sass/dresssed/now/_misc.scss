@@ -10,6 +10,7 @@ body{
     position: relative;
     background: $main-bg;
 }
+
 /* Animations */
 .nav-pills .nav-link,
 .nav-item .nav-link,
@@ -60,4 +61,8 @@ body{
     &.separator-primary{
         background-color: $primary-color;
     }
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }

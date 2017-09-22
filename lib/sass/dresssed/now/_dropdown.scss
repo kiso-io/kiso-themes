@@ -74,7 +74,7 @@
     .dropdown &{
         @include transform-translate-y(-25px);
         visibility: hidden;
-        display: block;
+        display: none;
         @include opacity(0);
     }
 
@@ -82,6 +82,7 @@
     &.open{
         @include opacity(1);
         visibility: visible;
+        display: block;
         @include transform-translate-y(0px);
     }
 

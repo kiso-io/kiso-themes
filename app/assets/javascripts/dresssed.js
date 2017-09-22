@@ -11,6 +11,8 @@
 //= require ./dresssed/fastclick
 //= require ./dresssed/prettify
 //= require ./dresssed/morris
+//= require ./dresssed/chartjs
+//= require ./dresssed/countTo
 
 //= require_tree ./generators
 //= require_tree ./demo
@@ -29,12 +31,12 @@ $(document).ready(function() {
   });
 
   $('.form-control')
-    .on('focus', function() {
-      $(this).parent('.input-group').addClass('input-group-focus');
-    })
-    .on('blur', function() {
-      $(this).parent('.input-group').removeClass('input-group-focus');
-    });
+  .on('focus', function() {
+    $(this).parent('.input-group').addClass('input-group-focus');
+  })
+  .on('blur', function() {
+    $(this).parent('.input-group').removeClass('input-group-focus');
+  });
 
   var width = document.body.clientWidth;
 
@@ -102,27 +104,66 @@ $(document).ready(function() {
   });
 
   flotMetric($('#metric-monthly-earnings'), [
-    [0, 4],
-    [1, 8],
-    [2, 14],
-    [3, 16],
-    [4, 12],
-    [5, 26],
-    [6, 29],
-    [7, 32]
+             [0, 4],
+             [1, 8],
+             [2, 14],
+             [3, 16],
+             [4, 12],
+             [5, 26],
+             [6, 29],
+             [7, 32]
   ]);
 
   flotMetric($('#metric-cancellations'), [
-    [0, 10],
-    [1, 10],
-    [2, 11],
-    [3, 20],
-    [4, 12],
-    [5, 11],
-    [6, 10],
-    [7, 10]
+             [0, 10],
+             [1, 10],
+             [2, 11],
+             [3, 20],
+             [4, 12],
+             [5, 11],
+             [6, 10],
+             [7, 10]
   ]);
 
   flotRealtime();
-  rickshawBars();
+  salesVsRefunds();
+
+  function count(options) {
+    var $this = $(this);
+    options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+    $this.countTo(options);
+  }
+
+  $('.counter').data('countToOptions', {
+    onComplete: function (value) {
+      var timeout = setTimeout(function() {
+        count.call(this, {
+          from: value,
+          to: value + (Math.floor(value * (1/20)))
+        });
+        clearTimeout(timeout)
+      }.bind(this), 5000 + Math.floor(Math.random() * 10000))
+    },
+    formatter: function (value, options) {
+      return value.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+    }
+  });
+
+  $('.cash-counter').data('countToOptions', {
+    onComplete: function (value) {
+      var timeout = setTimeout(function() {
+        count.call(this, {
+          from: value,
+          to: value + (Math.floor(value * (1/50)))
+        });
+        clearTimeout(timeout)
+      }.bind(this), 5550 + Math.floor(Math.random() * 10000))
+    },
+    formatter: function (value, options) {
+      return '$' + value.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+    }
+  });
+
+  $('.counter').each(count)
+  $('.cash-counter').each(count)
 });
