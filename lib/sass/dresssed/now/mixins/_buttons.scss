@@ -91,6 +91,16 @@
       }
     }
 
+    &.btn-inverse {
+      color: $inverse-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $inverse-states-color;
+      }
+    }
+
     &.active,
     &:active,
     &:active:focus,
@@ -141,6 +151,17 @@
       box-shadow: none;
     }
   }
+
+  &.btn-inverse {
+    background-color: $inverse-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white-color;
+    }
+  }
+
 
   &.btn-link {
     color: $btn-color;

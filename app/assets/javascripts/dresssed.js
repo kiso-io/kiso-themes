@@ -16,6 +16,8 @@
 
 //= require_tree ./generators
 //= require_tree ./demo
+//
+Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
 
 $(document).ready(function() {
   if (Modernizr.touch) {

@@ -101,8 +101,23 @@
 <div class="row is-flex">
   <div class="col-sm-12 col-md-9 animate-fade-in-1000">
     <div class="card">
+      <div class="card-header d-flex align-items-center">
+        <h6 class="mr-auto">SALES VS REFUNDS LAST 7 DAYS</h6>
+
+        <div class="d-flex">
+          <div class="dropdown">
+            <button class="nav-link btn btn-icon btn-neutral" type="button" id="salesAndRefundButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="ti-more"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="salesAndRefundButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="card-body">
-        <h6>SALES VS REFUNDS LAST 7 DAYS</h6>
         <canvas class="sales-vs-refunds"></canvas>
       </div>
     </div>
@@ -112,7 +127,7 @@
     <div class="card card-grow d-flex">
       <div class="card-body overflow-y-scroll">
         <h6>SALES ACTIVITY</h6>
-        <div class="timeline" style="height: 380px;">
+        <div class="timeline" style="height: 390px;">
           <ul class="left-timeline">
             <% types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}] %>
             <% (1..5).each do |index|%>
