@@ -27,13 +27,15 @@ class PreviewController < ApplicationController
       }
     end
 
-    redirect_to element_path('001_dashboard@ti-dashboard') and return if params[:section].nil?
+    redirect_to element_path('001_dashboards@ti-dashboard/001_dashboard_1') and return if params[:section].nil?
 
     @section = params[:section]
     index = @section.index('/') || 0
     index = index + 1 if index > 0
-    @title = @section[index..@section.length].gsub('_', ' ').gsub(/\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/fullpage/, '').titleize
+    @title = @section[index..@section.length].gsub('_', ' ').gsub(/\$.\w+/, '').gsub(/\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/fullpage/, '').titleize
     @parent = @section[0..index].gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@.*$/, '').titleize
+
+    @current_layout = @section.match(/\$.\w+/) && @section.match(/\$.\w+/)[0].gsub(/\$/, '_')
 
     @breadcrumbs = []
     @breadcrumbs << @parent if @parent != '0'
@@ -41,6 +43,12 @@ class PreviewController < ApplicationController
     @breadcrumbs.flatten!
 
     @elements = ElementFinder.find(File.join(Rails.root, 'app/views/preview/elements/'))
+
+    if @current_layout == '_minimal'
+      render partial: "minimal"
+    else
+      @body_class = ' with-sidebar show-sidebar'
+    end
   end
 
   def resolve_layout
@@ -62,9 +70,11 @@ class ElementFinder
     section = path.gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, '')
 
     data = {
+      is_header: File.basename(path, '.html.erb').to_s.match(/header/),
+      header_title: File.basename(path, '.html.erb').to_s.match(/header/) && File.basename(path, '.html.erb').to_s.match(/header_\w+/)[0].gsub(/header_/, ''),
       section: section,
       target_name:      File.basename(path, '.html.erb').to_s,
-      display_name:     File.basename(path, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').titleize,
+      display_name:     File.basename(path, '.html.erb').to_s.gsub(/\$.\w+/, '').gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').titleize,
       icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{path.match(/@([\w+-]*)/)[0][1..-1]}"
     }
 
@@ -78,15 +88,19 @@ class ElementFinder
         children << find(full_path, section, entry)
       else
         childdata = {
+          is_header: !File.basename(entry, '.html.erb').to_s.match(/header/).nil?,
+          header_title: !File.basename(entry, '.html.erb').to_s.match(/header/).nil? &&
+          File.basename(entry, '.html.erb').to_s.match(/header_\w+/)[0].gsub(/header_/, '').gsub(/_/, ' '),
           section:          section + '/' + File.basename(entry, '.html.erb').to_s,
           target_name:      File.basename(entry, '.html.erb').to_s,
-          display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub('fullpage', '').titleize,
+          display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/\$.\w+/, '').gsub('fullpage', '').titleize,
           icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{entry.match(/@([\w+-]*)/)[0][1..-1]}"
         }
         children << childdata
       end
     end
 
+    puts data.inspect
     return data
   end
 end

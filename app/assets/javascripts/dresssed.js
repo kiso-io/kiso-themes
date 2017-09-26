@@ -141,10 +141,10 @@ $(document).ready(function() {
       var timeout = setTimeout(function() {
         count.call(this, {
           from: value,
-          to: value + (Math.floor(value * (1/20)))
+          to: value + (Math.floor(value * (1/90)))
         });
         clearTimeout(timeout)
-      }.bind(this), 5000 + Math.floor(Math.random() * 10000))
+      }.bind(this), 2000 + Math.floor(Math.random() * 10000))
     },
     formatter: function (value, options) {
       return value.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
@@ -156,10 +156,10 @@ $(document).ready(function() {
       var timeout = setTimeout(function() {
         count.call(this, {
           from: value,
-          to: value + (Math.floor(value * (1/50)))
+          to: value + (Math.floor(value * (1/90)))
         });
         clearTimeout(timeout)
-      }.bind(this), 5550 + Math.floor(Math.random() * 10000))
+      }.bind(this), 3550 + Math.floor(Math.random() * 10000))
     },
     formatter: function (value, options) {
       return '$' + value.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")

@@ -53,6 +53,17 @@
 
   }
 
+
+  ul#menu-content {
+    .sidenav-menu-header {
+      margin-left: 10px;
+      color: $side-nav-menu-item-icon-color;
+      font-weight: normal;
+      font-size: 14px;
+      padding: 0.5rem 0 0 0;
+    }
+  }
+
   ul.nav-item {
     list-style: none;
     padding: 0;
