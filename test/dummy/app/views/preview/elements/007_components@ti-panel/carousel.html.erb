@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      <h3 class="panel-title">Carousel</h3>
+      </div>
+      <div class="panel-body">
+        <div id="carousel-example-generic" class="carousel slide">
+          <!-- Indicators //-->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= random_landscape %>
+            </div>
+            <div class="item">
+              <%= random_landscape %>
+            </div>
+            <div class="item">
+              <%= random_landscape %>
+            </div>
+          </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="icon-prev"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="icon-next"></span>
+          </a>
+        </div>
+        <!-- carousel end //-->
+      </div>
+    </div>
+  </div>
+</div>
