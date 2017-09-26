@@ -90,7 +90,7 @@
             padding: $padding-vertical - 1 $padding-horizontal - 1 $padding-vertical - 1 $padding-horizontal - 1;
 
             & + .input-group-addon{
-                padding: $padding-vertical - 1 $padding-horizontal - 1 $padding-vertical - 1 0;
+                padding: $padding-vertical - 2 $padding-horizontal - 1 $padding-vertical - 1 0;
             }
         }
 

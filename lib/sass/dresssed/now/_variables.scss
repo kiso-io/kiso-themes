@@ -12,7 +12,7 @@ $white-color: #ffffff !default;
 $white-bg: #ffffff !default;
 $orange-bg: #e95e38 !default;
 
-$main-bg: #eef5fb;
+$main-bg: #eef5fb !default;
 
 $smoke-bg: #f5f5f5 !default;
 $light-black: #444 !default;
@@ -42,11 +42,11 @@ $datepicker-color-old-new-days: rgba(255, 255, 255, .4) !default;
 $transparent-bg: transparent !default;
 $dark-background: #555555 !default;
 
-$default-color: #7ba3ef !default;
+$default-color: #6886a7 !default;
 $default-states-color: lighten($default-color, 6%) !default;
 $default-color-opacity: rgba(182, 182, 182, .6) !default;
 
-$primary-color: #449dfb !default;
+$primary-color: #4173a7 !default;
 $primary-states-color: lighten($primary-color, 6%) !default;
 $primary-color-opacity: rgba(249, 99, 50, .3) !default;
 $primary-color-alert: rgba(249, 99, 50, .8) !default;
@@ -56,7 +56,7 @@ $success-states-color: lighten($success-color, 6%) !default;
 $success-color-opacity: rgba(48, 167, 42, .3) !default;
 $success-color-alert: rgba(48, 167, 42, .8) !default;
 
-$info-color: #38cada !default;
+$info-color: #5cc6d2 !default;
 $info-states-color: lighten($info-color, 6%) !default;
 $info-color-opacity: rgba(36, 144, 220, .3) !default;
 $info-color-alert: rgba(36, 144, 220, .8) !default;
@@ -66,7 +66,7 @@ $warning-states-color: lighten($warning-color, 6%) !default;
 $warning-color-opacity: rgba(255, 143, 26, .3) !default;
 $warning-color-alert: rgba(216, 143, 26, .8) !default;
 
-$danger-color: #fc7373 !default;
+$danger-color: #c55e5e !default;
 $danger-states-color: lighten($danger-color, 6%) !default;
 $danger-color-opacity: rgba(202, 37, 37, .3) !default;
 $danger-color-alert: rgba(202, 37, 37, .8) !default;
@@ -274,7 +274,7 @@ $side-nav-menu-right-border-color: transparent;
 $side-nav-text-color: darken(#0077b5, 5%);
 
 $side-nav-menu-item-background-color: #395379;
-$side-nav-menu-item-icon-color: desaturate(darken($brand-primary, 10%), 50%);
+$side-nav-menu-item-icon-color: #4d80b8;
 $side-nav-menu-item-color: lighten($brand-primary, 25%);
 $side-nav-menu-item-active-color: $white-color;
 $side-nav-menu-item-hover-color: $white-color;

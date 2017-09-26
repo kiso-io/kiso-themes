@@ -6,7 +6,6 @@
   border-radius: $btn-round-radius;
   color: $black-color;
   line-height: normal;
-  font-size: $font-size-small;
   @include transition-input-focus-color();
   @include box-shadow(none);
 
@@ -194,10 +193,7 @@
   }
 }
 
-.input-group,
-.form-group {
-  margin-bottom: 10px;
-}
+
 .input-group[disabled] {
   .input-group-addon {
     background-color: $light-gray;
