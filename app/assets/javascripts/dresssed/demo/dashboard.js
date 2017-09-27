@@ -1,3 +1,4 @@
+//= require ./data_generator
 
 function flotMetric(el, data, yaxis, options) {
   if (el[0] === undefined) {
