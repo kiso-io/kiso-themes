@@ -32,6 +32,17 @@ module Dresssed
 						File.extname(path).in? types
 					end)
 				end
+
+        app.config.assets.precompile += [
+          'gmaps/gmaps.js',
+          'flot/flot-chart',
+          'flot/flot-chart-resize',
+          'flot/flot-chart-time',
+          'flot/flot-chart-stack',
+
+          'rickshaw/d3',
+          'rickshaw/rickshaw'
+        ]
     end
 
     initializer 'dresssed.will_paginate', :after => 'will_paginate' do

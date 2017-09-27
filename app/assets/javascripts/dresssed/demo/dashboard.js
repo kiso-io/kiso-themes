@@ -1,3 +1,4 @@
+
 function flotMetric(el, data, yaxis, options) {
   if (el[0] === undefined) {
     return;
@@ -80,8 +81,8 @@ function flotRealtime() {
   update();
 }
 
-$(document).ready(function() {
-  if ($('#map_canvas_1')[0] === undefined) {
+Dresssed.hookOnPageLoad(function() {
+  if ($('#map_canvas_1')[0] === undefined || !Dresssed.jsLibIsActive('gmaps')) {
     return;
   }
 
@@ -171,3 +172,73 @@ function salesVsRefunds() {
 
 
 }
+function initDashboardDemo() {
+  function count(options) {
+    var $this = $(this);
+    options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+    $this.countTo(options);
+  }
+
+  $('.counter').data('countToOptions', {
+    onComplete: function (value) {
+      var timeout = setTimeout(function() {
+        count.call(this, {
+          from: value,
+          to: value + (Math.floor(value * (1/90)))
+        });
+        clearTimeout(timeout)
+      }.bind(this), 2000 + Math.floor(Math.random() * 10000))
+    },
+    formatter: function (value, options) {
+      return value.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+    }
+  });
+
+  $('.cash-counter').data('countToOptions', {
+    onComplete: function (value) {
+      var timeout = setTimeout(function() {
+        count.call(this, {
+          from: value,
+          to: value + (Math.floor(value * (1/90)))
+        });
+        clearTimeout(timeout)
+      }.bind(this), 3550 + Math.floor(Math.random() * 10000))
+    },
+    formatter: function (value, options) {
+      return '$' + value.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+    }
+  });
+
+  $('.counter').each(count)
+  $('.cash-counter').each(count)
+
+
+  flotMetric($('#metric-monthly-earnings'), [
+             [0, 4],
+             [1, 8],
+             [2, 14],
+             [3, 16],
+             [4, 12],
+             [5, 26],
+             [6, 29],
+             [7, 32]
+  ]);
+
+  flotMetric($('#metric-cancellations'), [
+             [0, 10],
+             [1, 10],
+             [2, 11],
+             [3, 20],
+             [4, 12],
+             [5, 11],
+             [6, 10],
+             [7, 10]
+  ]);
+
+  flotRealtime();
+  salesVsRefunds();
+}
+
+Dresssed.hookOnPageLoad( function() {
+  Dresssed.jsLibIsActive('demo-dashboard') && initDashboardDemo.call(this)
+})

@@ -1,5 +1,8 @@
-//= require flot/flot-chart
-//= require flot/flot-chart-resize
-//= require flot/flot-chart-time
-//= require flot/flot-chart-stack
+
+function initFlot() {
+}
+
+Dresssed.hookOnPageLoad( function() {
+  Dresssed.jsLibIsActive('flot') && initFlot.call(this)
+})
 

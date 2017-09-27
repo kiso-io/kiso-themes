@@ -1,0 +1,20 @@
+<% @js_libs = yield :js_libs %>
+
+<% if @js_libs.include? 'gmaps' %>
+  <%= javascript_include_tag "//maps.google.com/maps/api/js?sensor=true" %>
+  <%= javascript_include_tag "gmaps/gmaps" %>
+<% end %>
+
+<% if @js_libs.include? 'flot' %>
+  <% content_for :javascript do %>
+    <%= javascript_include_tag "flot/flot-chart" %>
+    <%= javascript_include_tag "flot/flot-chart-resize" %>
+    <%= javascript_include_tag "flot/flot-chart-time" %>
+    <%= javascript_include_tag "flot/flot-chart-stack" %>
+  <% end %>
+<% end %>
+
+<% if @js_libs.include? 'rickshaw' %>
+  <%= javascript_include_tag "rickshaw/d3" %>
+  <%= javascript_include_tag "rickshaw/rickshaw" %>
+<% end %>

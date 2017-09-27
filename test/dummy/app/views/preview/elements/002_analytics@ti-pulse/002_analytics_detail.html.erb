@@ -63,31 +63,34 @@
 
 <% content_for :javascript do %>
 <script>
- Morris.Area({
-  element: 'metrics-bounce-rate-detail',
-  data: [
-  { period: '2015-04-31', bounce_rate: 10  },
-  { period: '2015-04-30', bounce_rate: 20  },
-  { period: '2015-04-29', bounce_rate: 14  },
-  { period: '2015-04-28', bounce_rate: 19  },
-  { period: '2015-04-27', bounce_rate: 32  },
-  { period: '2015-04-26', bounce_rate: 12  },
-  { period: '2015-04-25', bounce_rate: 10  },
-  { period: '2015-04-24', bounce_rate: 23 },
-  { period: '2015-04-23', bounce_rate: 11 },
-  { period: '2015-04-22', bounce_rate: 19  }
-  ],
-  xkey: 'period',
-  ykeys: ['bounce_rate'],
-  labels: ['Bounce Rate'],
-  hideHover: 'auto',
-  lineColors: ['#498DFD'],
-  fillOpacity: 0.3,
-  behaveLikeLine: true,
-  lineWidth: 2,
-  pointSize: 4,
-  gridLineColor: '#cfcfcf',
-  resize: true
-});
+  Dresssed.hookOnPageLoad(function() {
+    Morris.Area({
+      element: 'metrics-bounce-rate-detail',
+      data: [
+        { period: '2015-04-31', bounce_rate: 10  },
+        { period: '2015-04-30', bounce_rate: 20  },
+        { period: '2015-04-29', bounce_rate: 14  },
+        { period: '2015-04-28', bounce_rate: 19  },
+        { period: '2015-04-27', bounce_rate: 32  },
+        { period: '2015-04-26', bounce_rate: 12  },
+        { period: '2015-04-25', bounce_rate: 10  },
+        { period: '2015-04-24', bounce_rate: 23 },
+        { period: '2015-04-23', bounce_rate: 11 },
+        { period: '2015-04-22', bounce_rate: 19  }
+      ],
+      xkey: 'period',
+      ykeys: ['bounce_rate'],
+      labels: ['Bounce Rate'],
+      hideHover: 'auto',
+      lineColors: ['#498DFD'],
+      fillOpacity: 0.3,
+      behaveLikeLine: true,
+      lineWidth: 2,
+      pointSize: 4,
+      gridLineColor: '#cfcfcf',
+      resize: true
+    });
+
+  })
 </script>
 <% end %>

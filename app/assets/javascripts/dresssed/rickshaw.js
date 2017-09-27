@@ -1,3 +1,8 @@
-//= require rickshaw/d3
-//= require rickshaw/rickshaw
+
+function initRickshaw() {
+}
+
+Dresssed.hookOnPageLoad( function() {
+  Dresssed.jsLibIsActive('rickshaw') && initRickshaw.call(this)
+})
 
