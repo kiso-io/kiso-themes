@@ -13,10 +13,14 @@
 //= require ./dresssed/morris
 //= require ./dresssed/chartjs
 //= require ./dresssed/countTo
+//= require ./prism/prism
+//= require ./clipboardjs/clipboard
 
 //= require_tree ./generators
 //= require_tree ./demo
-//
+//= require ./inspect_mode/inspect_mode
+
+
 Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
 
 $(document).ready(function() {
