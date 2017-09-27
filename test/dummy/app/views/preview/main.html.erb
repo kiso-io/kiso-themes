@@ -3,7 +3,8 @@
 <div class='main-content'>
   <%= render partial: 'dashboard_top_nav' %>
 
-  <div class='page-header'>
+  <div class='page-header inspectable'>
+    <!-- component-title: Page Header -->
     <div class="d-flex mr-auto align-items-center">
       <h4 class=''><%= raw @title.gsub('_', ' ').titleize %></h4>
 
@@ -43,6 +44,7 @@
 
 <div class="inspect-mode-bg d-none">
   <div class="inspector-modal">
+    <h2 class="inspector-component-name text-left text-primary">Component Name</h2>
     <pre><code class="language-html"></code></pre>
 
     <textarea id="raw-markup"></textarea>
