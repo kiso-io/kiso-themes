@@ -18,3 +18,14 @@
   <%= javascript_include_tag "rickshaw/d3" %>
   <%= javascript_include_tag "rickshaw/rickshaw" %>
 <% end %>
+
+<% if @js_libs.include? 'chartjs' %>
+  <%= javascript_include_tag "chartjs/Chart.bundle.min" %>
+  <%= javascript_include_tag "chartjs/Chart.min" %>
+<% end %>
+
+<% if @js_libs.include? 'morris' %>
+  <%= javascript_include_tag "morris/raphael" %>
+  <%= javascript_include_tag "morris/morris.min" %>
+<% end %>
+

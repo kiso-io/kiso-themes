@@ -41,7 +41,13 @@ module Dresssed
           'flot/flot-chart-stack',
 
           'rickshaw/d3',
-          'rickshaw/rickshaw'
+          'rickshaw/rickshaw',
+
+          'chartjs/Chart.bundle.min',
+          'chartjs/Chart.min',
+
+          'morris/raphael',
+          'morris/morris.min'
         ]
     end
 
