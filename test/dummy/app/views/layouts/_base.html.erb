@@ -34,7 +34,7 @@
     <%= yield :javascript %>
     <%= yield :head %>
   </head>
-	<body class='<%= @body_class %>'>
+  <body class='<%= @body_class %>' data-js-libs='bootstrap metis forms sidenav <%= yield :js_libs %>'>
 
     <%= yield %>
 
