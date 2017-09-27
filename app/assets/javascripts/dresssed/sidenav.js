@@ -48,5 +48,5 @@ function initSidenav() {
 }
 
 Dresssed.hookOnPageLoad( function() {
-  Dresssed.jsLibIsActive('sidenav') && initFastClick.call(this)
+  Dresssed.jsLibIsActive('sidenav') && initSidenav.call(this)
 })

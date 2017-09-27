@@ -2,6 +2,7 @@
 //= require ./dresssed/fastclick
 //= require ./dresssed/slimscroll
 //= require ./dresssed/metis_menu
+//= require ./dresssed/sidenav
 //= require ./dresssed/header
 //= require ./dresssed/popper
 //= require ./dresssed/bootstrap
@@ -14,8 +15,8 @@
 //= require ./dresssed/morris
 //= require ./dresssed/chartjs
 //= require ./dresssed/countTo
-//= require ./prism/prism
-//= require ./clipboardjs/clipboard
+//= require ./dresssed/prism
+//= require ./dresssed/clipboard
 
 //= require ./dresssed/demo/dashboard
 //= require_tree ./generators
