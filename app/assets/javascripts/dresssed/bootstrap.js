@@ -1,4 +1,4 @@
-//= require twitter/bootstrap
+//= require bootstrap/bootstrap
 
 function initBootstrap() {
   $('[data-toggle="popover"]').popover({
