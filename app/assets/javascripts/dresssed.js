@@ -18,7 +18,7 @@
 //= require dresssed/clipboard
 
 //= require dresssed/demo/dashboard
-//= require inspect_mode/inspect_mode
+//= require dresssed/inspect_mode/inspect_mode
 
 
 Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
