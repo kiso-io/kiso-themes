@@ -50,15 +50,21 @@ function flotMetric(el, data, yaxis, options) {
 }
 
 function flotRealtime() {
-  if ($('#realtime')[0] === undefined) {
+  if ($('.flot-realtime').length === 0) {
     return;
   }
 
   var dataGenerator = new DataGenerator(200);
-  var plot = $.plot('#realtime', [dataGenerator.getRandomizedData()], {
+  var plot = $.plot($('.flot-realtime'), [dataGenerator.getRandomizedData()], {
     series: {
       shadowSize: 0
     },
+      lines: {
+        fill: true,
+        fillColor: {
+          colors: [{opacity: 1}, {opacity: .3}]
+        }
+      },
     yaxis: {
       min: 0,
       max: 100
@@ -73,9 +79,9 @@ function flotRealtime() {
     plot.draw();
 
     if (!Modernizr.touch) {
-      setTimeout(function() { window.requestAnimationFrame(update)}, 24);
+      setTimeout(update, 24);
     } else {
-      setTimeout(function() { window.requestAnimationFrame(update) }, 1000);
+      setTimeout(update, 1000);
     }
   }
 

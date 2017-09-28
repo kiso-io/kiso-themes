@@ -9,10 +9,8 @@
 //= require dresssed/sheets
 //= require dresssed/gmaps
 //= require dresssed/flot
-//= require dresssed/rickshaw
-//= require dresssed/prettify
-//= require dresssed/morris
 //= require dresssed/chartjs
+//= require dresssed/prettify
 //= require dresssed/countTo
 //= require dresssed/prism
 //= require dresssed/clipboard
