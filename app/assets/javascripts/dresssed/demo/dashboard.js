@@ -73,9 +73,9 @@ function flotRealtime() {
     plot.draw();
 
     if (!Modernizr.touch) {
-      setTimeout(update, 24);
+      setTimeout(function() { window.requestAnimationFrame(update)}, 24);
     } else {
-      setTimeout(update, 1000);
+      setTimeout(function() { window.requestAnimationFrame(update) }, 1000);
     }
   }
 

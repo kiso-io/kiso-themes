@@ -4,7 +4,7 @@ function initSidenav() {
 
   if (!Modernizr.touch && width > 1025) {
     $('#menu-content').slimScroll({
-      height: $('#menu-content').outerHeight(),
+      height: $('.nav-side-menu').outerHeight(),
       color: '#cdcdcd',
       size: '4px',
       opacity: 0.9,
