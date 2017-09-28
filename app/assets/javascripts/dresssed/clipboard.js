@@ -1,9 +1,12 @@
 //= require clipboardjs/clipboard
 
+(function() {
 
-function initClipboard() {
-}
+  function initClipboard() {
+  }
 
-Dresssed.hookOnPageLoad( function() {
-  Dresssed.jsLibIsActive('clipboard') && initClipboard.call(this)
-})
+  Dresssed.hookOnPageLoad( function() {
+    Dresssed.jsLibIsActive('clipboard') && initClipboard.call(this)
+  })
+
+})()

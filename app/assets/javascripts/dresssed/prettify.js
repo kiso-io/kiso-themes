@@ -1,9 +1,12 @@
 //= require prettify/prettify
 
-function initPrettify() {
-  PR.prettyPrint()
-}
+(function() {
+  function initPrettify() {
+    PR.prettyPrint()
+  }
 
-Dresssed.hookOnPageLoad( function() {
-  Dresssed.jsLibIsActive('prettify') && initPrettify.call(this)
-})
+  Dresssed.hookOnPageLoad( function() {
+    Dresssed.jsLibIsActive('prettify') && initPrettify.call(this)
+  })
+})()
+

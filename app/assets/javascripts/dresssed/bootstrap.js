@@ -1,16 +1,20 @@
 //= require bootstrap/bootstrap
 
-function initBootstrap() {
-  $('[data-toggle="popover"]').popover({
-    container: 'body'
-  });
+(function() {
 
-  $('[data-toggle="tooltip"]').tooltip({
-    container: 'body'
-  });
-}
+  function initBootstrap() {
+    $('[data-toggle="popover"]').popover({
+      container: 'body'
+    });
 
-Dresssed.hookOnPageLoad( function() {
-  Dresssed.jsLibIsActive('bootstrap') && initBootstrap.call(this)
-})
+    $('[data-toggle="tooltip"]').tooltip({
+      container: 'body'
+    });
+  }
+
+  Dresssed.hookOnPageLoad( function() {
+    Dresssed.jsLibIsActive('bootstrap') && initBootstrap.call(this)
+  })
+
+})()
 

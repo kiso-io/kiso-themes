@@ -1,8 +1,10 @@
 //= require prism/prism
 
-function initPrism() {
-}
+(function() {
+  function initPrism() {
+  }
 
-Dresssed.hookOnPageLoad( function() {
-  Dresssed.jsLibIsActive('prism') && initPrism.call(this)
-})
+  Dresssed.hookOnPageLoad( function() {
+    Dresssed.jsLibIsActive('prism') && initPrism.call(this)
+  })
+})()

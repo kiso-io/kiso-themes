@@ -10,6 +10,8 @@
 //= require dresssed/gmaps
 //= require dresssed/flot
 //= require dresssed/chartjs
+//= require dresssed/sparklines
+//= require dresssed/easypiechart
 //= require dresssed/prettify
 //= require dresssed/countTo
 //= require dresssed/prism

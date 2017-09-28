@@ -1,7 +1,11 @@
 
-function initChartJS() {
-}
+(function() {
 
-Dresssed.hookOnPageLoad( function() {
-  Dresssed.jsLibIsActive('chartjs') && initChartJS.call(this)
-})
+  function initChartJS() {
+  }
+
+  Dresssed.hookOnPageLoad( function() {
+    Dresssed.jsLibIsActive('chartjs') && initChartJS.call(this)
+  })
+
+})()

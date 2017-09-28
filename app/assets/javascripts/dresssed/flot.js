@@ -1,8 +1,11 @@
 
-function initFlot() {
-}
+(function() {
+  function initFlot() {
+  }
 
-Dresssed.hookOnPageLoad( function() {
-  Dresssed.jsLibIsActive('flot') && initFlot.call(this)
-})
+  Dresssed.hookOnPageLoad( function() {
+    Dresssed.jsLibIsActive('flot') && initFlot.call(this)
+  })
+})()
+
 

@@ -1,7 +1,8 @@
+(function() {
+  function initGMaps() {
+  }
 
-function initGMaps() {
-}
-
-Dresssed.hookOnPageLoad( function() {
-  Dresssed.jsLibIsActive('gmaps') && initGMaps.call(this)
-})
+  Dresssed.hookOnPageLoad( function() {
+    Dresssed.jsLibIsActive('gmaps') && initGMaps.call(this)
+  })
+})()

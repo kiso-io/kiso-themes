@@ -1,0 +1,1 @@
+//= require sparklines/jquery.sparkline
