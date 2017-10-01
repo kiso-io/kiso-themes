@@ -1,56 +1,16 @@
 //= require ./data_generator
 
+Chart.defaults.global.defaultFontColor              = '#555555';
+Chart.defaults.scale.gridLines.color                = "rgba(0,0,0,.04)";
+Chart.defaults.scale.gridLines.zeroLineColor        = "rgba(0,0,0,.1)";
+Chart.defaults.scale.ticks.beginAtZero              = true;
+Chart.defaults.global.elements.line.borderWidth     = 2;
+Chart.defaults.global.elements.point.radius         = 5;
+Chart.defaults.global.elements.point.hoverRadius    = 7;
+Chart.defaults.global.tooltips.cornerRadius         = 3;
+Chart.defaults.global.legend.labels.boxWidth        = 12;
+
 (function() {
-
-  function flotMetric(el, data, yaxis, options) {
-    if (el[0] === undefined) {
-      return;
-    }
-
-    options = $.extend(
-      {
-      type: 'area',
-      lineWidth: 1
-    },
-    options
-    );
-
-    var series = {
-      shadowSize: 0
-    };
-
-    series.lines = {
-      lineWidth: 3,
-      show: true,
-      fill: true
-    };
-
-    $.plot(
-      el,
-      [
-        {
-        label: 'Data 1',
-        data: data,
-        color: '#C9E3F5'
-      }
-      ],
-      {
-        series: series,
-        grid: {
-          show: false,
-          borderWidth: 0
-        },
-        yaxis: yaxis,
-        xaxis: {
-          tickDecimals: 0
-        },
-        legend: {
-          show: false
-        }
-      }
-    );
-  }
-
   function flotRealtime() {
     if ($('.flot-realtime').length === 0) {
       return;
@@ -133,18 +93,82 @@
     update();
   });
 
-  function salesVsRefunds() {
-    // Set Global Chart.js configuration
-    Chart.defaults.global.defaultFontColor              = '#555555';
-    Chart.defaults.scale.gridLines.color                = "rgba(0,0,0,.04)";
-    Chart.defaults.scale.gridLines.zeroLineColor        = "rgba(0,0,0,.1)";
-    Chart.defaults.scale.ticks.beginAtZero              = true;
-    Chart.defaults.global.elements.line.borderWidth     = 2;
-    Chart.defaults.global.elements.point.radius         = 5;
-    Chart.defaults.global.elements.point.hoverRadius    = 7;
-    Chart.defaults.global.tooltips.cornerRadius         = 3;
-    Chart.defaults.global.legend.labels.boxWidth        = 12;
+  function displayRandomMetricCharts() {
+    var randomMetricGraphs = jQuery('.metric-random-graph');
 
+    if(randomMetricGraphs.length > 0) {
+      randomMetricGraphs.each(function(i, graph) {
+        var isDetailGraph = $(graph).hasClass('detail-graph')
+
+        var data = Array.apply(null, Array(10)).map(function() { return Math.floor(Math.random() * 100 % 100); })
+        var lablels = null;
+
+        if(isDetailGraph) {
+          var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+          var endDate = new Date()
+          var startDate = new Date(new Date().setDate(endDate.getDate()-30))
+          labels = Array(Math.floor((endDate - startDate) / 86400000) + 1).fill().map( function(_, idx) {
+            var d = new Date(startDate.getTime() + idx * 86400000)
+            return monthNames[d.getMonth()] + ' ' + d.getDate()
+          })
+          data = Array.apply(null, Array(31)).map(function() { return Math.floor(Math.random() * 100 % 100); })
+        }
+
+        var graphData = {
+          datasets: [{
+            fill: true,
+            backgroundColor: '#e9f4fb',
+            borderColor: '#c9e3f5',
+            borderWidth: 4,
+            pointRadius: 0,
+            data: data
+          }]
+        };
+
+        if(isDetailGraph) {
+          graphData.labels = labels
+          graphData.datasets[0].pointBackgroundColor = 'rgba(66,165,245,1)';
+          graphData.datasets[0].pointBorderColor= '#fff';
+          graphData.datasets[0].pointHoverBackgroundColor= '#fff';
+          graphData.datasets[0].pointHoverBorderColor= 'rgba(66,165,245,1)';
+          graphData.datasets[0].pointRadius = 4;
+          graphData.datasets[0].borderWidth = 2;
+        }
+
+        new Chart(graph, { type: 'line', data: graphData, options: {
+          maintainAspectRatio: false,
+          responsive: true,
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              display: isDetailGraph,
+              gridLines: {
+                    display: isDetailGraph,
+                    drawBorder: false,
+                    drawOnChartArea: true,
+                    drawTicks: isDetailGraph,
+                }
+            }],
+
+            yAxes: [{
+              display: isDetailGraph,
+              gridLines: {
+                    display: isDetailGraph,
+                    drawBorder: false,
+                    drawOnChartArea: true,
+                    drawTicks: isDetailGraph,
+                }
+            }]
+          }
+        } })
+      });
+    }
+
+  }
+
+  function salesVsRefunds() {
     var chartLinesCon  = jQuery('.sales-vs-refunds');
 
     var chartLinesBarsRadarData = {
@@ -222,28 +246,7 @@
     $('.cash-counter').each(count)
 
 
-    flotMetric($('#metric-monthly-earnings'), [
-               [0, 4],
-               [1, 8],
-               [2, 14],
-               [3, 16],
-               [4, 12],
-               [5, 26],
-               [6, 29],
-               [7, 32]
-    ]);
-
-    flotMetric($('#metric-cancellations'), [
-               [0, 10],
-               [1, 10],
-               [2, 11],
-               [3, 20],
-               [4, 12],
-               [5, 11],
-               [6, 10],
-               [7, 10]
-    ]);
-
+    displayRandomMetricCharts();
     flotRealtime();
     salesVsRefunds();
   }
