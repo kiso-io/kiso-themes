@@ -1,73 +1,96 @@
-<div class='row'>
-  <div class='col-sm-12'>
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        List Groups
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Basic List group</h3>
       </div>
-      <div class="panel-body">
-        <div class='row'>
-          <div class="col-lg-4">
-            <ul class="list-group">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Morbi leo risus</li>
-              <li class="list-group-item">Porta ac consectetur ac</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <div class="list-group">
-              <a href="#" class="list-group-item active">          Cras justo odio        </a><a href="#" class="list-group-item">Dapibus ac facilisis in        </a><a href="#" class="list-group-item">Morbi leo risus        </a><a href="#" class="list-group-item">Porta ac consectetur ac        </a><a href="#" class="list-group-item">Vestibulum at eros        </a>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Basic List group with Active item</h3>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item active">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Basic List group Disabled item</h3>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item disabled">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Basic List group with Media objects</h3>
+      </div>
+      <div class="card-body">
+        <div class="list-group">
+          <div class="list-group-item">
+            <div class="media">
+              <%= random_avatar 64, "img-circle d-flex mr-3" %>
+              <div class="media-body">
+                <h5 class="media-header">Lisa Solvay</h5>
+                Hey, I have the new designs ready. But I could use some feedback on the color choices.
+              </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="list-group">
-              <a href="#" class="list-group-item active">          <h4 class="list-group-item-heading">List group item heading</h4>          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>        </a><a href="#" class="list-group-item">          <h4 class="list-group-item-heading">List group item heading</h4>          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>        </a><a href="#" class="list-group-item">          <h4 class="list-group-item-heading">List group item heading</h4>          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>        </a>
+          <div class="list-group-item media clearfix">
+            <div class="media">
+              <%= random_avatar 64, "img-circle d-flex mr-3" %>
+              <div class="media-body">
+                <h5 class="media-header">Jim Fenix</h5>
+                Hey, I have the new designs ready. But I could use some feedback on the color choices.
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="list-group">
-              <div class="list-group-item media clearfix">
-                <a class='pull-left'>
-                  <i class='avatar-notification'></i>
-                  <%= random_avatar 64, "media-object img-circle" %>
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Momoko Price</h4>
-                  <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
-                </div>
+          <div class="list-group-item media clearfix">
+            <div class="media">
+              <%= random_avatar 64, "img-circle d-flex mr-3" %>
+              <div class="media-body">
+                <h5 class="media-header">Jim Van Sant</h5>
+                Hey, I have the new designs ready. But I could use some feedback on the color choices.
               </div>
-              <div class="list-group-item media clearfix">
-                <a class='pull-left'>
-                  <i class='avatar-notification danger'></i>
-                  <%= random_avatar 64, "media-object img-circle" %>
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Momoko Price</h4>
-                  <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
-                </div>
-              </div>
-              <div class="list-group-item media clearfix">
-                <a class='pull-left'>
-                  <i class='avatar-notification warning'></i>
-                  <%= random_avatar 64, "media-object img-circle" %>
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Momoko Price</h4>
-                  <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
-                </div>
-              </div>
-              <div class="list-group-item media clearfix">
-                <a class='pull-left'>
-                  <i class='avatar-notification success'></i>
-                  <%= random_avatar 64, "media-object img-circle" %>
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Momoko Price</h4>
-                  <small class="text-muted">Hey, I have the new designs ready. But I could use some feedback on the color choices.</small>
-                </div>
+            </div>
+          </div>
+          <div class="list-group-item media clearfix">
+            <div class="media">
+              <%= random_avatar 64, "img-circle d-flex mr-3" %>
+              <div class="media-body">
+                <h5 class="media-header">Jack Parsons</h5>
+                Hey, I have the new designs ready. But I could use some feedback on the color choices.
               </div>
             </div>
           </div>
@@ -76,3 +99,4 @@
     </div>
   </div>
 </div>
+
