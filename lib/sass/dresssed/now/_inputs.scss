@@ -210,7 +210,7 @@ select[multiple] {
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
   border-right: 0 none;
 }
-.input-group .form-control:last-child,
+.input-group .form-control:last-child:not(:first-child),
 .input-group-addon:last-child,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child) {
@@ -226,7 +226,7 @@ fieldset[disabled] .form-control {
 
 .input-group-btn .btn {
   border-width: $border-thin;
-  padding: $padding-btn-vertical $padding-base-horizontal;
+  padding: $padding-btn-vertical + 2 $padding-base-horizontal;
 }
 .input-group-btn .btn-default:not(.btn-fill) {
   border-color: $medium-gray;

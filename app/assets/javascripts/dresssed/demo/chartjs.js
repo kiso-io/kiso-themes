@@ -3,15 +3,17 @@
 
 (function() {
 
-  Chart.defaults.global.defaultFontColor              = '#555555';
-  Chart.defaults.scale.gridLines.color                = "rgba(0,0,0,.04)";
-  Chart.defaults.scale.gridLines.zeroLineColor        = "rgba(0,0,0,.1)";
-  Chart.defaults.scale.ticks.beginAtZero              = true;
-  Chart.defaults.global.elements.line.borderWidth     = 2;
-  Chart.defaults.global.elements.point.radius         = 5;
-  Chart.defaults.global.elements.point.hoverRadius    = 7;
-  Chart.defaults.global.tooltips.cornerRadius         = 3;
-  Chart.defaults.global.legend.labels.boxWidth        = 12;
+  if(window.Chart) {
+    Chart.defaults.global.defaultFontColor              = '#555555';
+    Chart.defaults.scale.gridLines.color                = "rgba(0,0,0,.04)";
+    Chart.defaults.scale.gridLines.zeroLineColor        = "rgba(0,0,0,.1)";
+    Chart.defaults.scale.ticks.beginAtZero              = true;
+    Chart.defaults.global.elements.line.borderWidth     = 2;
+    Chart.defaults.global.elements.point.radius         = 5;
+    Chart.defaults.global.elements.point.hoverRadius    = 7;
+    Chart.defaults.global.tooltips.cornerRadius         = 3;
+    Chart.defaults.global.legend.labels.boxWidth        = 12;
+  }
 
   function lineCharts(el, type) {
     var chartLinesCon  = jQuery(el);

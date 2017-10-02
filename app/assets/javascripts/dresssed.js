@@ -6,6 +6,7 @@
 //= require dresssed/bootstrap
 //= require dresssed/sidenav
 //= require dresssed/header
+//= require dresssed/forms
 //= require dresssed/sheets
 //= require dresssed/gmaps
 //= require dresssed/flot
