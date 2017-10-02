@@ -1,247 +1,210 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Dresssed Side Nav</h3>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Base Nav</h3>
       </div>
-      <div class="panel-body">
-        <div id="sidebar" class='col-md-6'>
-          <ul class="nav nav-tabs nav-stacked nav-caret-left">
-            <li><a href="#">Menu Item 1</a></li>
-            <li class="active"><a href="#">Menu Item 2</a></li>
-            <li><a href="#">Menu Item 3</a></li>
-            <li><a href="#">Menu Item 4</a></li>
-          </ul>
-        </div>
-        <div id="sidebar" class='col-md-6'>
-          <ul class="nav nav-tabs nav-stacked nav-caret-right">
-            <li><a href="#">Menu Item 1</a></li>
-            <li class="active"><a href="#">Menu Item 2</a></li>
-            <li><a href="#">Menu Item 3</a></li>
-            <li><a href="#">Menu Item 4</a></li>
-          </ul>
+      <div class="card-body d-flex align-self-center justify-content-center">
+        <ul class="nav bg-light">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Vertical Nav</h3>
+      </div>
+      <div class="card-body d-flex align-self-center justify-content-center">
+        <ul class="nav bg-light flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Tabs</h3>
+      </div>
+      <div class="card-body">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card" style="overflow: visible">
+      <div class="card-header">
+        <h3>Tabs with dropdowns</h3>
+      </div>
+      <div class="card-body">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card" style="overflow: visible">
+      <div class="card-header">
+        Tabs with Content
+      </div>
+      <div class="card-body">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-expanded="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Profile</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" id="dropdown1-tab" href="#dropdown1" role="tab" data-toggle="tab" aria-controls="dropdown1">@fat</a>
+              <a class="dropdown-item" id="dropdown2-tab" href="#dropdown2" role="tab" data-toggle="tab" aria-controls="dropdown2">@mdo</a>
+            </div>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+          </div>
+          <div class="tab-pane fade" id="dropdown1" role="tabpanel" aria-labelledby="dropdown1-tab">
+            Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+          </div>
+          <div class="tab-pane fade" id="dropdown2" role="tabpanel" aria-labelledby="dropdown2-tab">
+            Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class='row'>
-  <div class='col-sm-12'>
-    <div class="panel panel-default" id="navs">
-      <div class="panel-heading">Navs
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Pills</h3>
       </div>
-      <div class="panel-body clearfix">
-        <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="#">First</a></li>
-          <li role="presentation"><a href="#">Second</a></li>
-          <li role="presentation"><a href="#">Messages</a></li>
-        </ul>
-        <hr>
-        <ul class="nav nav-tabs nav-justified">
-          <li role="presentation" class="active"><a href="#">First</a></li>
-          <li role="presentation"><a href="#">Second</a></li>
-          <li role="presentation"><a href="#">Messages</a></li>
-        </ul>
-        <hr>
-        <ul class="nav nav-tabs nav-tabs-line">
-          <li role="presentation" class="active"><a href="#">First</a></li>
-          <li role="presentation"><a href="#">Second</a></li>
-          <li role="presentation"><a href="#">Messages</a></li>
-        </ul>
-        <hr>
-        <ul class="nav nav-tabs nav-justified">
-          <li class='active'>
-            <a href="#">
-              <i class="glyphicon glyphicon-user"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="glyphicon glyphicon-comment"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="glyphicon glyphicon-transfer"></i>
-            </a>
-          </li>
-        </ul>
-        <hr>
+      <div class="card-body">
         <ul class="nav nav-pills">
-          <li class="active">
-            <a href="#">First</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
           </li>
-          <li>
-            <a href="#">About</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
           </li>
-        </ul>
-        <hr>
-        <ul class="nav nav-stacked nav-pills">
-          <li class="active">
-            <a href="#">First</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
           </li>
-          <li>
-            <a href="#">About</a>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
           </li>
         </ul>
-        <hr>
-        <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="#">First</a></li>
-          <li role="presentation"><a href="#">Help</a></li>
-          <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-              Dropdown <span class="caret"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Round Pills</h3>
+      </div>
+      <div class="card-body">
+        <ul class="nav nav-pills nav-pills-round nav-pills-primary" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#active" role="tablist" aria-expanded="true">
+              <i class="ti-settings"></i>
             </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#link" role="tablist" aria-expanded="false">
+              <i class="ti-alert"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#link" role="tablist" aria-expanded="false">
+              <i class="ti-thumb-down"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" data-toggle="tab" href="#disabled" role="tablist">
+              <i class="ti-printer"></i>
+            </a>
           </li>
         </ul>
-        <hr>
-        <ol class="breadcrumb">
-          <li>
-            <a href="/">First</a>
-          </li>
-          <li>
-            Layouts
-          </li>
-          <li class="active">
-            Table
-          </li>
-        </ol>
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Left Tabs</h3>
-      </div>
-      <div class="panel-body">
-        <div class="tab-wrapper tab-left ">
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#first3" data-toggle="tab">First</a>
-            </li>
-            <li class=""><a href="#second3" data-toggle="tab">Second</a>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="first3">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae dolorem consequuntur autem laudantium fugit mollitia quia at, natus dolorum nisi aliquam cum voluptatum officiis, libero vitae ducimus corrupti laborum! Nostrum!
-              </p>
-            </div>
-            <div class="tab-pane" id="second3">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut odio ipsum obcaecati iusto reiciendis sequi, consequuntur, voluptas repellat voluptatem voluptatibus, assumenda. Cumque doloribus atque modi unde, tempora quibusdam, natus aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nisi eum, dignissimos, voluptatum earum et veniam doloremque nulla est alias id quia omnis aliquam, rerum dolore ab delectus sunt libero.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Right Tabs</h3>
-      </div>
-      <div class="panel-body">
-        <div class="tab-wrapper tab-right ">
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#first4" data-toggle="tab">First</a>
-            </li>
-            <li class=""><a href="#second4" data-toggle="tab">Second</a>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="first4">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sunt exercitationem voluptates deleniti maxime aliquid odit vitae ipsam rerum quae impedit provident assumenda doloribus consequuntur sit eaque, recusandae facilis? Labore! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim optio accusantium, consequuntur nobis! Ea assumenda ullam nobis quaerat nihil vitae dolor commodi rem! Maxime sint consequuntur magni in officia tempore?
-              </p>
-            </div>
-            <div class="tab-pane" id="second4">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati voluptate culpa saepe accusamus ullam alias, impedit repellendus temporibus dignissimos aliquid iure vitae, ipsa assumenda ad natus. Doloribus exercitationem, voluptate aliquid.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolorum doloribus cupiditate, modi deserunt hic velit harum placeat itaque, ut perferendis laudantium eum. Repudiandae veniam architecto totam amet autem, mollitia.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-   <div class="panel panel-default">
-     <div class="panel-heading">
-       <h3 class="panel-title">Tabs Bottom</h3>
-     </div>
-     <div class="panel-body">
-       <div class="tab-wrapper tab-bottom tab-primary">
-         <div class="tab-content">
-           <div class="tab-pane" id="first2">
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illo iure perspiciatis mollitia nihil autem officiis laboriosam repudiandae, error placeat voluptate asperiores veniam quisquam rem quos ea praesentium! Vel, cum.
-             </p>
-           </div>
-           <div class="tab-pane active" id="second2">
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero possimus soluta harum cum autem debitis nobis sit! Expedita, dicta, non! Ad, mollitia debitis suscipit nam molestias sint, quas nulla quasi!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur distinctio velit voluptate magnam sed rem, unde omnis odio aliquid eos inventore. Nostrum quam commodi odio adipisci delectus optio, ea reiciendis!
-             </p>
-           </div>
-         </div>
-         <ul class="nav nav-tabs">
-           <li class=""><a href="#first2" data-toggle="tab">First</a>
-           </li>
-           <li class="active"><a href="#second2" data-toggle="tab">Second</a>
-           </li>
-         </ul>
-       </div>
-     </div>
-   </div>
- </div>
- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-   <div class="panel panel-default">
-     <div class="panel-heading">
-       <h3 class="panel-title">Regular Tabs</h3>
-     </div>
-     <div class="panel-body" style="display: block;">
-       <div class="tab-wrapper tab-primary">
-         <ul class="nav nav-tabs">
-           <li class=""><a href="#first" data-toggle="tab">First</a>
-           </li>
-           <li class="active"><a href="#second" data-toggle="tab">Second</a>
-           </li>
-           <li class="dropdown">
-             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-               <li><a href="#">Something</a>
-               </li>
-               <li><a href="#">Something Else</a>
-               </li>
-               <li class="divider"></li>
-               <li><a href="#">And one more thing</a>
-               </li>
-             </ul>
-           </li>
-         </ul>
-         <div class="tab-content">
-           <div class="tab-pane fade in" id="first">
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et nisi, sit accusamus eius voluptate unde voluptas ipsum perspiciatis, illo, laborum excepturi impedit nesciunt similique totam, est magni provident delectus odio.
-             </p>
-           </div>
-           <div class="tab-pane active fade in" id="second">
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, delectus, earum. Ratione enim nisi hic odit ut alias praesentium pariatur expedita fugit labore, saepe cupiditate. Obcaecati iusto tempora pariatur unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates consequuntur maxime tempora recusandae culpa laborum facere magni, illo mollitia odio quidem doloremque optio impedit sed unde reprehenderit dicta, commodi illum.
-             </p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
 </div>
