@@ -7,9 +7,13 @@
 
   a {
     vertical-align: middle;
+  }
 
-    &:not(.btn):not(.dropdown-item) {
-      color: $white-color;
+  &:not(.navbar-light) {
+    a {
+      &:not(.btn):not(.dropdown-item) {
+        color: $white-color;
+      }
     }
   }
 
