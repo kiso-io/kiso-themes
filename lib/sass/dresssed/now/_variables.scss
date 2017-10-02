@@ -74,6 +74,7 @@ $danger-color-alert: rgb(216, 96, 96) !default;
 
 $inverse-color: #364267 !default;
 $inverse-states-color: lighten($inverse-color, 6%) !default;
+$dark-states-color: lighten($inverse-color, 6%) !default;
 
 /*     brand Colors              */
 $brand-primary: $primary-color !default;

@@ -37,6 +37,64 @@
     }
   }
 
+  &.btn-outline-danger {
+    background: transparent;
+    border: $border $danger-states-color;
+    color: $danger-states-color;
+  }
+
+  &.btn-outline-info {
+    background: transparent;
+    border: $border $info-states-color;
+    color: $info-states-color;
+  }
+
+  &.btn-outline-success {
+    background: transparent;
+    border: $border $success-states-color;
+    color: $success-states-color;
+  }
+
+  &.btn-outline-warning {
+    background: transparent;
+    border: $border $warning-states-color;
+    color: $warning-states-color;
+  }
+
+  &.btn-outline-primary {
+    background: transparent;
+    border: $border $primary-states-color;
+    color: $primary-states-color;
+  }
+
+  &.btn-outline-default {
+    background: transparent;
+    border: $border $default-states-color;
+    color: $default-states-color;
+  }
+
+  &.btn-outline-dark {
+    background: transparent;
+    border: $border $dark-states-color;
+    color: $dark-states-color;
+  }
+
+  &.btn-outline-light {
+    background: transparent;
+    border: $border $light-gray;
+    color: $black-color;
+  }
+
+  &.btn-outline-link {
+    background: transparent;
+    border: $border $light-gray;
+    color: $black-color;
+  }
+
+  &.btn-border-2x {
+    border-width: 2px;
+  }
+
   // btn-neutral style
   @if $btn-color == $white-color {
     color: $primary-color;
@@ -152,7 +210,7 @@
     }
   }
 
-  &.btn-inverse {
+  &.btn-dark {
     background-color: $inverse-color;
 
     &:hover,
@@ -160,6 +218,11 @@
     &:active {
       color: $white-color;
     }
+  }
+
+  &.btn-light {
+    background-color: $light-gray;
+    color: $black-color;
   }
 
 
@@ -171,7 +234,6 @@
     &:active {
       background-color: $transparent-bg;
       color: $btn-states-color;
-      text-decoration: none;
       box-shadow: none;
     }
   }

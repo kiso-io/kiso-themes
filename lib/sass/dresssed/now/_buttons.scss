@@ -44,7 +44,7 @@
     height: $btn-icon-size-regular;
     min-width: $btn-icon-size-regular;
     width: $btn-icon-size-regular;
-    padding: $btn-icon-top-padding 0 0 0;
+    padding: 0;
     font-size: $btn-icon-font-size-regular;
     overflow: hidden;
     position: relative;
@@ -124,6 +124,7 @@
     @include opacity(.5);
   }
 }
+
 .btn-circle {
   border-width: $border-thin;
   border-radius: $btn-round-radius !important;
@@ -133,6 +134,7 @@
     padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
   }
 }
+
 .btn-simple {
   border: $border;
   border-color: $default-color;
