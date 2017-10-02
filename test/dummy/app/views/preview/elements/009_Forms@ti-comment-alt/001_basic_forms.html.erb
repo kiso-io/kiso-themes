@@ -1,5 +1,5 @@
 <div class='row'>
-  <div class='col-sm-12'>
+  <div class='col-12'>
     <div class="card card-default">
       <h3 class="card-header">Basic Forms</h3>
       <div class="card-body">
@@ -28,39 +28,43 @@
   </div>
 </div>
 
-<div class="card">
-  <div class="card-body">
-    <h3 class="card-header">Forms Controls</h3>
-    <form>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <h3 class="card-header">Forms Controls</h3>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">Example multiple select</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Example select</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect2">Example multiple select</label>
-        <select multiple class="form-control" id="exampleFormControlSelect2">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
 
@@ -291,9 +295,10 @@
         <h3 class="card-title">Custom File Input</h3>
       </div>
       <div class="card-body">
-        <span class="btn btn-default btn-file">
-          Browse <input type="file">
-        </span>
+        <label class="custom-file">
+          <input type="file" id="file2" class="custom-file-input">
+          <span class="custom-file-control"></span>
+        </label>
       </div>
     </div>
     <div class="card card-default">
@@ -321,17 +326,13 @@
         <h3 class="card-title">Validation States</h3>
       </div>
       <div class="card-body">
-        <div class="form-group has-success">
+        <div class="form-group">
           <label class="control-label" for="inputSuccess1">Input with success</label>
-          <input type="text" class="form-control" id="inputSuccess1">
+          <input type="text" class="form-control is-valid" id="inputSuccess1">
         </div>
-        <div class="form-group has-warning">
-          <label class="control-label" for="inputWarning1">Input with warning</label>
-          <input type="text" class="form-control" id="inputWarning1">
-        </div>
-        <div class="form-group has-error">
+        <div class="form-group">
           <label class="control-label" for="inputError1">Input with error</label>
-          <input type="text" class="form-control" id="inputError1">
+          <input type="text" class="form-control is-invalid" id="inputError1">
         </div>
         <div class="has-success">
           <div class="checkbox">
@@ -361,21 +362,14 @@
         <legend>With Optional Icons</legend>
         <div class="form-group has-success has-feedback">
           <label class="control-label" for="inputSuccess2">Input with success</label>
-          <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-          <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-          <span id="inputSuccess2Status" class="sr-only">(success)</span>
+          <div class="form-group has-success">
+            <input type="email" value="Success Input" class="form-control form-control-success">
+          </div>
         </div>
-        <div class="form-group has-warning has-feedback">
-          <label class="control-label" for="inputWarning2">Input with warning</label>
-          <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
-          <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
-          <span id="inputWarning2Status" class="sr-only">(warning)</span>
-        </div>
-        <div class="form-group has-error has-feedback">
-          <label class="control-label" for="inputError2">Input with error</label>
-          <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
-          <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-          <span id="inputError2Status" class="sr-only">(error)</span>
+        <div class="form-group has-feedback">
+          <div class="form-group has-danger">
+            <input type="email" value="Error Input" class="form-control form-control-danger">
+          </div>
         </div>
       </div>
     </div>

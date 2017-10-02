@@ -76,17 +76,22 @@
   }
 }
 
+select[multiple] {
+  border-radius: 0;
+  padding: 10px 9px 10px 9px;
+}
+
 .has-success,
 .has-danger {
   &:after {
-    font-family: 'Nucleo Outline';
-    content: "\ea22";
+    font-family: 'themify';
+    content: "\e64c";
     display: inline-block;
     position: absolute;
     right: 15px;
-    bottom: 10px;
+    bottom: 7px;
     color: $success-color;
-    font-size: 11px;
+    font-size: 16px;
   }
 
   &.input-lg {
@@ -97,9 +102,10 @@
   }
 }
 
-.has-danger {
+.has-danger,
+.has-error {
   &:after {
-    content: "\ea53";
+    content: "\e6c5";
     color: $danger-color;
   }
 }
@@ -153,8 +159,7 @@
   border: 1px solid $light-gray;
   border-radius: $btn-round-radius;
   color: $dark-background;
-  padding: $padding-base-vertical - 1 0 $padding-base-vertical - 1
-    $padding-base-horizontal - 1;
+  padding: $padding-base-vertical - 1 0 $padding-base-vertical - 1 $padding-base-horizontal - 1;
 
   @include transition-input-focus-color();
 

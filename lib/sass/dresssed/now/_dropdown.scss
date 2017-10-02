@@ -109,6 +109,15 @@
 }
 
 
+.dropdown-hover:hover {
+  > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
 .dropdown {
   .with-count {
     .badge {
