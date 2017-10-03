@@ -1,39 +1,39 @@
-/*           badges             */
 .badge {
-  border-radius: 8px;
-  padding: 4px 8px;
   text-transform: uppercase;
-  font-size: $font-size-mini;
-  line-height: 12px;
-  background-color: $transparent-bg;
-  border: $border;
-  margin-bottom: 5px;
-  border-radius: $border-radius-extreme;
+  padding: .25rem .5rem;
 }
+
 .badge-icon {
   padding: 0.4em 0.55em;
   i {
     font-size: 0.8em;
   }
 }
+
 .badge-default {
-  @include badge-color($default-color);
+  @include badge-variant($default-color);
 }
+
 .badge-primary {
-  @include badge-color($primary-color);
+  @include badge-variant($primary-color);
 }
+
 .badge-info {
-  @include badge-color($info-color);
+  @include badge-variant($info-color);
 }
+
 .badge-success {
-  @include badge-color($success-color);
+  @include badge-variant($success-color);
 }
+
 .badge-warning {
-  @include badge-color($warning-color);
+  @include badge-variant($warning-color);
 }
+
 .badge-danger {
-  @include badge-color($danger-color);
+  @include badge-variant($danger-color);
 }
+
 .badge-neutral {
-  @include badge-color($white-color);
+  @include badge-variant($white-color);
 }
