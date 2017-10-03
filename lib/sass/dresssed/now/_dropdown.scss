@@ -5,7 +5,7 @@
 
   font-size: $font-size-base;
 
-  @include transition($fast-transition-time, $transition-linear);
+  @include transition(all $fast-transition-time $transition-linear);
 
   &.dropdown-menu-right {
     right: 0;
@@ -43,7 +43,7 @@
 
     font-size: $font-size-small;
 
-    @include transition($fast-transition-time, $transition-linear);
+    @include transition(all $fast-transition-time $transition-linear);
 
     &:hover,
     &:focus {
@@ -88,16 +88,16 @@
     display: block;
     visibility: hidden;
 
-    @include transform-translate-y(-25px);
     @include opacity(0);
+    @include transform-translate-y(-25px);
   }
 
   .dropdown.show &,
   &.open {
     visibility: visible;
 
-    @include opacity(1);
     @include transform-translate-y(0px);
+    @include opacity(1);
   }
 
   .navbar .dropdown.show & {
