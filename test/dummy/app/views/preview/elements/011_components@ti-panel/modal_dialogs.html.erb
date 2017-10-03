@@ -1,43 +1,125 @@
-<div class='row'>
-  <div class='col-sm-12'>
-    <div class="modal modal-example">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title">Modal title</h4>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Basic Modal Dialog</h3>
+      </div>
+      <div class="card-body">
+        <div class="modal show modal-example" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: block;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header justify-content-center">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  <i class="ti-close"></i>
+                </button>
+                <h4 class="title title-up">Modal Dialog title</h4>
+              </div>
+              <div class="modal-body">
+                <p>Green juice raw denim vinyl williamsburg neutra celiac austin mlkshk, shoreditch jean shorts mustache quinoa. Chicharrones banjo jean shorts swag prism godard pitchfork air plant keffiyeh shoreditch. Polaroid heirloom vice drinking vinegar poke, raw denim pitchfork cliche art party umami cred unicorn readymade.</p>
+              </div>
+              <div class="modal-footer d-flex justify-content-end">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Got it</button>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <p>One fine body&hellip;</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class='row'>
-  <div class='col-sm-12'>
-    <div class="modal modal-example">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <span class="glyphicon glyphicon-exclamation-sign"></span>
-            <h4 class="modal-title">Hey look out!</h4>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Icon Modal Dialog</h3>
+      </div>
+      <div class="card-body">
+        <div class="modal show modal-example" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: block;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header justify-content-center">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  <i class="ti-close"></i>
+                </button>
+                <h4 class="title title-up d-flex flex-column text-center">
+                  <i class="ti-alert display-1"></i>
+                  Modal Dialog title
+                </h4>
+              </div>
+              <div class="modal-body">
+                <p>Green juice raw denim vinyl williamsburg neutra celiac austin mlkshk, shoreditch jean shorts mustache quinoa. Chicharrones banjo jean shorts swag prism godard pitchfork air plant keffiyeh shoreditch. Polaroid heirloom vice drinking vinegar poke, raw denim pitchfork cliche art party umami cred unicorn readymade.</p>
+              </div>
+              <div class="modal-footer d-flex justify-content-end">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Got it</button>
+              </div>
+            </div>
           </div>
-          <div class="modal-body text-center">
-            <p>This is a really important message about something you've jsut done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Modal Dialog Footer</h3>
+      </div>
+      <div class="card-body">
+        <div class="modal show modal-example" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: block;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header justify-content-center">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  <i class="ti-close"></i>
+                </button>
+                <h4 class="title title-up d-flex flex-column text-center">
+                  <i class="ti-alert display-1"></i>
+                  Modal Dialog title
+                </h4>
+              </div>
+              <div class="modal-body">
+                <p>Green juice raw denim vinyl williamsburg neutra celiac austin mlkshk, shoreditch jean shorts mustache quinoa. Chicharrones banjo jean shorts swag prism godard pitchfork air plant keffiyeh shoreditch. Polaroid heirloom vice drinking vinegar poke, raw denim pitchfork cliche art party umami cred unicorn readymade.</p>
+              </div>
+              <div class="modal-footer d-flex justify-content-end bg-default py-2">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Got it</button>
+              </div>
+            </div>
           </div>
-          <div class="modal-footer text-center">
-            <button type="button" class="btn btn-outline-default" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-danger">Delete post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Mini Modal Dialog</h3>
+      </div>
+      <div class="card-body">
+        <div class="modal modal-example modal-mini modal-primary show" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: block;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header justify-content-center">
+                <div class="modal-profile">
+                  <i class="ti-user h2"></i>
+                </div>
+              </div>
+              <div class="modal-body">
+                <p>Deleting your account is un-recoverable. Are you sure?</p>
+              </div>
+              <div class="modal-footer bg-white py-2">
+                <button type="button" class="btn btn-link btn-default">No</button>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Yes</button>
+              </div>
+            </div>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+      </div>
+    </div>
   </div>
 </div>
