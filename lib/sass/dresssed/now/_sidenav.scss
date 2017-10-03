@@ -45,6 +45,11 @@
 
   #menu-content.nav.flex-column {
     flex-wrap: nowrap;
+
+    > li:nth-last-child(1) {
+      margin-bottom: 130px;
+    }
+
   }
 
 

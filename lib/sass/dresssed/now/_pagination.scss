@@ -11,7 +11,6 @@
         line-height: 30px;
         color: $black-color;
         cursor: pointer;
-        font-size: $font-size-base;
         text-transform: uppercase;
         background: transparent;
 
@@ -52,7 +51,7 @@
     .page-item.disabled > .page-link{
         opacity: .5;
         background-color: rgba(255,255,255, .2);
-        color: $white-color;
+        color: $dark-gray;
     }
 
     // Colors
