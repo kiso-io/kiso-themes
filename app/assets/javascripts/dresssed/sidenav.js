@@ -5,7 +5,7 @@
 
     if (!Modernizr.touch && width > 1025) {
       $('#menu-content').slimScroll({
-        height: $('.nav-side-menu').outerHeight(),
+        height: 'auto',
         color: '#cdcdcd',
         size: '4px',
         opacity: 0.9,
