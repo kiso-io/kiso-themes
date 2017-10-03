@@ -2,8 +2,8 @@
 @import "bootstrap/variables";
 
 @import "bootstrap/mixins";
-@import 'dresssed/now/mixins';
-@import 'dresssed/now/variables';
+@import "dresssed/now/mixins";
+@import "dresssed/now/variables";
 
 
 @import "bootstrap/print";
@@ -61,6 +61,7 @@
 @import "dresssed/now/tooltips";
 @import "dresssed/now/modals";
 @import "dresssed/now/carousel";
+@import "dresssed/now/accordion";
 @import "dresssed/now/cards";
 @import "dresssed/now/card_metric";
 @import "dresssed/now/footers";

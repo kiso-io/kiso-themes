@@ -1,0 +1,27 @@
+.accordion {
+  h6 {
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      i {
+        color: $primary-color;
+
+        @include transition( all $general-transition-time $transition-bezier);
+      }
+
+      &.collapsed {
+        i {
+          color: $medium-gray;
+
+          @include rotate-180();
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
