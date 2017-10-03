@@ -3,7 +3,7 @@
   function initSidenav() {
     var width = document.body.clientWidth;
 
-    if (!Modernizr.touch && width > 1025) {
+    if (!Modernizr.touch && width > 992) {
       $('#menu-content').slimScroll({
         height: 'auto',
         color: '#cdcdcd',
@@ -30,7 +30,7 @@
 
       width = document.body.clientWidth;
 
-      if (width < 1025) {
+      if (width < 992) {
         $('#menu-content').height(0);
         $('#menu-content').slimScroll({
           destroy: 'true'

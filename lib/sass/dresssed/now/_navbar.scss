@@ -1,8 +1,9 @@
 .navbar {
-  padding-top: $navbar-padding-base;
-  padding-bottom: $navbar-padding-base;
   min-height: 53px;
   margin-bottom: 20px;
+  padding-top: $navbar-padding-base;
+  padding-bottom: $navbar-padding-base;
+
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
 
   a {
@@ -19,7 +20,9 @@
 
   p {
     display: inline-block;
+
     margin: 0;
+
     line-height: 21px;
   }
 
@@ -28,11 +31,12 @@
 
     &.navbar-logo {
       position: absolute;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: 49px;
       top: -4px;
+      right: 0;
+      left: 0;
+
+      width: 49px;
+      margin: 0 auto;
     }
 
     [class^="ti-"],
@@ -53,13 +57,16 @@
     }
 
     .nav-link:not(.btn) {
-      text-transform: uppercase;
-      font-size: $font-size-mini;
-      padding: $padding-base-horizontal;
-      line-height: $line-height-nav-link;
-      cursor: pointer;
       display: flex;
       align-items: center;
+
+      padding: $padding-base-horizontal;
+
+      cursor: pointer;
+      text-transform: uppercase;
+
+      font-size: $font-size-mini;
+      line-height: $line-height-nav-link;
 
       i.fa + p,
       i.now-ui-icons + p {
@@ -68,15 +75,19 @@
 
       i.fa,
       i.now-ui-icons {
-        font-size: 18px;
         position: relative;
         top: 2px;
-        text-align: center;
+
         width: 21px;
+
+        text-align: center;
+
+        font-size: 18px;
       }
 
       i.now-ui-icons {
         top: 4px;
+
         font-size: 16px;
       }
 
@@ -97,8 +108,8 @@
     .nav-item .nav-link:not(.btn):focus,
     .nav-item .nav-link:not(.btn):hover,
     .nav-item .nav-link:not(.btn):active {
-      background-color: $opacity-2;
       border-radius: $border-radius-small;
+      background-color: $opacity-2;
     }
 
     .nav-item {
@@ -115,12 +126,13 @@
 
     .form-control {
       border-color: $white-color;
+
       @include form-control-placeholder($white-color, $opacity-1);
     }
 
     .input-group-addon {
-      border-color: $white-color;
       color: $white-color;
+      border-color: $white-color;
       background-color: transparent;
     }
 
@@ -130,31 +142,35 @@
   }
 
   .logo-container {
+    overflow: hidden;
+
     width: 27px;
     height: 27px;
-    overflow: hidden;
     margin: 0 auto;
-    border-radius: 50%;
+
     border: 1px solid transparent;
+    border-radius: 50%;
   }
 
   .navbar-brand {
-    text-transform: uppercase;
-    font-size: $font-size-small;
     padding-top: $padding-base-vertical;
     padding-bottom: $padding-base-vertical;
+
+    text-transform: uppercase;
+
+    font-size: $font-size-small;
     line-height: $line-height-nav-link;
   }
 
   .navbar-toggler {
-    width: 37px;
-    height: 27px;
-    outline: 0;
     cursor: pointer;
+
+    outline: 0;
 
     &.navbar-toggler-left {
       position: relative;
       left: 0;
+
       padding-left: 0;
     }
 
@@ -172,10 +188,11 @@
   }
 
   &.navbar-transparent {
+    padding-top: 20px;
+
+    color: $white-color;
     background-color: $transparent-bg !important;
     box-shadow: none;
-    color: $white-color;
-    padding-top: 20px;
   }
 
   &.bg-white:not(.navbar-transparent) {
