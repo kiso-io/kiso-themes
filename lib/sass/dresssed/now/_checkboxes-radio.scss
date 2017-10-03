@@ -172,3 +172,48 @@
 .radio.radio-inline {
   margin-top: 0;
 }
+
+.radio-primary input[type='radio']:checked + label::before {
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
+.radio-primary input[type='radio']:checked + label::after {
+  color: #fff;
+}
+
+.radio-danger input[type='radio']:checked + label::before {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.radio-danger input[type='radio']:checked + label::after {
+  color: #fff;
+}
+
+.radio-info input[type='radio']:checked + label::before {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+
+.radio-info input[type='radio']:checked + label::after {
+  color: #fff;
+}
+
+.radio-warning input[type='radio']:checked + label::before {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+
+.radio-warning input[type='radio']:checked + label::after {
+  color: #fff;
+}
+
+.radio-success input[type='radio']:checked + label::before {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.radio-success input[type='radio']:checked + label::after {
+  color: #fff;
+}
