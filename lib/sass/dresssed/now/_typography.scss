@@ -27,33 +27,39 @@ a {
 }
 h1,
 .h1 {
-  font-size: $font-size-h1;
-  line-height: 1.15;
   margin-bottom: $margin-base-vertical * 2;
 
+  font-size: $font-size-h1;
+  line-height: 1.15;
+
   small {
-    font-weight: $font-weight-bold;
     text-transform: uppercase;
+
     opacity: .8;
+
+    font-weight: $font-weight-bold;
   }
 }
 h2,
 .h2 {
-  font-size: $font-size-h2;
   margin-bottom: $margin-base-vertical * 2;
+
+  font-size: $font-size-h2;
 }
 h3,
 .h3 {
-  font-size: $font-size-h3;
   margin-bottom: $margin-base-vertical * 2;
+
+  font-size: $font-size-h3;
   line-height: 1.4em;
 }
 h4,
 .h4 {
-  font-size: $font-size-h4;
-  line-height: 1.45em;
   margin-top: $margin-base-vertical * 2;
   margin-bottom: $margin-base-vertical;
+
+  font-size: $font-size-h4;
+  line-height: 1.45em;
 
   & + .category,
   &.title + .category {
@@ -62,15 +68,17 @@ h4,
 }
 h5,
 .h5 {
+  margin-bottom: 15px;
+
   font-size: $font-size-h5;
   line-height: 1.4em;
-  margin-bottom: 15px;
 }
 h6,
 .h6 {
+  text-transform: uppercase;
+
   font-size: $font-size-h6;
   font-weight: $font-weight-bold;
-  text-transform: uppercase;
 }
 p {
   line-height: 1.61em;
@@ -88,8 +96,9 @@ p {
     text-transform: uppercase;
 
     a {
-      color: $black-color;
       text-decoration: none;
+
+      color: $black-color;
     }
   }
   & + .category {
@@ -101,12 +110,15 @@ p {
 .card-description,
 .footer-big p {
   color: $dark-gray;
+
   font-weight: $font-weight-light;
 }
 .category {
   text-transform: uppercase;
-  font-weight: $font-weight-bold;
+
   color: $dark-gray;
+
+  font-weight: $font-weight-bold;
 }
 .text-primary {
   color: $brand-primary !important;
@@ -126,23 +138,42 @@ p {
 .text-black {
   color: $light-black;
 }
+.text-opacity-1 {
+  color: $opacity-1;
+}
+.text-opacity-2 {
+  color: $opacity-2;
+}
+.text-opacity-5 {
+  color: $opacity-5;
+}
+.text-opacity-7 {
+  color: $opacity-7;
+}
+.text-opacity-8 {
+  color: $opacity-8;
+}
 
 .blockquote {
-  border-left: none;
-  border: 1px solid $default-color;
   padding: 20px;
+
+  border: 1px solid $default-color;
+  border-left: none;
+
   font-size: $font-size-blockquote;
   line-height: 1.8;
 
   small {
-    color: $default-color;
-    font-size: $font-size-small;
     text-transform: uppercase;
+
+    color: $default-color;
+
+    font-size: $font-size-small;
   }
 
   &.blockquote-primary {
-    border-color: $primary-color;
     color: $primary-color;
+    border-color: $primary-color;
 
     small {
       color: $primary-color;
@@ -150,8 +181,8 @@ p {
   }
 
   &.blockquote-danger {
-    border-color: $danger-color;
     color: $danger-color;
+    border-color: $danger-color;
 
     small {
       color: $danger-color;
@@ -159,8 +190,8 @@ p {
   }
 
   &.blockquote-white {
-    border-color: $opacity-8;
     color: $white-color;
+    border-color: $opacity-8;
 
     small {
       color: $opacity-8;
