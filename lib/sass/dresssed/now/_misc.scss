@@ -62,8 +62,8 @@ body {
 .open {
   visibility: visible;
 
-  @include opacity(1);
   @include transform-translate-y(0);
+  @include opacity(1);
 }
 
 .cover-image {
@@ -100,6 +100,18 @@ body {
 
 .bg-gradient-4 {
   background: $gradient-5;
+}
+
+.bg-neutral {
+  background: $smoke-bg;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.shadow {
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, .25);
 }
 
 .inspect-mode {

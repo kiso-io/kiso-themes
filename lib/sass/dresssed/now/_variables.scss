@@ -235,3 +235,5 @@ $gradient-2: linear-gradient(180deg, #a4d0de 25%, #e3313a 100%);
 $gradient-3: linear-gradient(180deg, #a1bdcc 25%, #f4f8c1 100%);
 $gradient-4: linear-gradient(180deg, #fac043 25%, #e13b36 100%);
 $gradient-5: linear-gradient(180deg, #2ae374 25%, #f7f9bc 100%);
+$gradient-floor-fade: linear-gradient(to bottom,transparent 20%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.6) 90%) no-repeat scroll 0 0;
+$gradient-roof-fade: linear-gradient(to bottom, rgba(0,0,0,.6) 90%, rgba(0,0,0,.6) 40%, transparent 100%) no-repeat scroll 0 0;
