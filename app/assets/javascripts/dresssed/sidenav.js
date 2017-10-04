@@ -3,9 +3,11 @@
   function initSidenav() {
     var width = document.body.clientWidth;
 
+    var sideNavContainer = $('.nav-side-container')
+
     if (!Modernizr.touch && width > 992) {
-      $('#menu-content').slimScroll({
-        height: 'auto',
+      sideNavContainer.slimScroll({
+        height: $('.nav-side-menu').outerHeight() - $('.navbar-header').outerHeight(),
         color: '#cdcdcd',
         size: '4px',
         opacity: 0.9,
@@ -15,37 +17,33 @@
         railOpacity: 1
       });
 
-      $('#menu-content').mouseover();
+      sideNavContainer.mouseover();
     } else {
-      $('#menu-content').height(0);
-      $('#menu-content').slimScroll({
-        destroy: 'true'
-      });
+      sideNavContainer.slimScroll({ destroy: 'true' });
 
-      $('#menu-content').mouseover();
+      sideNavContainer.mouseover();
     }
 
-    $(window).on('resize', function() {
+    $(window).on('resize', Dresssed.debounce(function() {
+      console.log('resizing')
       if (Modernizr.touch) return;
 
       width = document.body.clientWidth;
 
       if (width < 992) {
-        $('#menu-content').height(0);
-        $('#menu-content').slimScroll({
-          destroy: 'true'
-        });
+        sideNavContainer.slimScroll({ destroy: 'true' });
+        sideNavContainer.height('auto')
+
+        sideNavContainer.mouseover();
       } else {
-        $('#menu-content').slimScroll({
-          destroy: 'true'
-        });
-        $('#menu-content').slimScroll({
-          height: '100%'
+        sideNavContainer.slimScroll({ destroy: 'true' });
+        sideNavContainer.slimScroll({
+          height: $('.nav-side-menu').outerHeight() - $('.navbar-header').outerHeight(),
         });
 
-        $('#menu-content').mouseover();
+        sideNavContainer.mouseover();
       }
-    });
+    }, 250));
   }
 
   Dresssed.hookOnPageLoad( function() {
