@@ -80,26 +80,3 @@
 .card-flat {
   box-shadow: none;
 }
-
-.mini-card {
-  display: block;
-
-  i {
-    color: $brand-primary-lighter;
-
-    &:before {
-      background: linear-gradient(180deg, #94b9f1 25%, #70c2e0 50%, #768ae8 75%, #e76ede 100%);
-      -webkit-background-clip: text;
-              background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-              text-fill-color: transparent;
-    }
-  }
-
-  h6 {
-    letter-spacing: 2px;
-
-    font-size: 12px;
-  }
-}

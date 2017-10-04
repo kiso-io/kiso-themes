@@ -1,0 +1,116 @@
+.card-mini {
+  display: block;
+
+  i {
+    color: $brand-primary-lighter;
+
+    &:before {
+      background: $gradient-1;
+      -webkit-background-clip: text;
+              background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+              text-fill-color: transparent;
+    }
+  }
+
+  &.card-mini-icon-gradient-1 {
+    i {
+      color: currentColor;
+
+      &:before {
+        background: $gradient-2;
+        -webkit-background-clip: text;
+                background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+      }
+    }
+  }
+
+  &.card-mini-icon-gradient-2 {
+    i {
+      color: currentColor;
+
+      &:before {
+        background: $gradient-3;
+        -webkit-background-clip: text;
+                background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+      }
+    }
+  }
+
+
+  &.card-mini-icon-gradient-3 {
+    i {
+      color: currentColor;
+
+      &:before {
+        background: $gradient-4;
+        -webkit-background-clip: text;
+                background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+      }
+    }
+  }
+
+  &.card-mini-icon-gradient-4 {
+    i {
+      color: currentColor;
+
+      &:before {
+        background: $gradient-5;
+        -webkit-background-clip: text;
+                background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+      }
+    }
+  }
+
+  &.card-mini-solid-icon {
+    i {
+      color: currentColor;
+
+      &:before {
+        background: none;
+        -webkit-background-clip: unset;
+                background-clip: unset;
+
+        -webkit-text-fill-color: currentColor;
+                text-fill-color: currentColor;
+      }
+    }
+  }
+
+  &.card-mini-bordered-icon {
+    i {
+      padding: 1rem;
+
+      border: 1px solid currentColor;
+      border-radius: 50%;
+    }
+  }
+
+  &.card-mini-bordered-icon-2x {
+    i {
+      padding: 1rem;
+
+      border: 2px solid currentColor;
+      border-radius: 50%;
+    }
+  }
+
+  h6 {
+    letter-spacing: 2px;
+
+    font-size: 12px;
+  }
+}

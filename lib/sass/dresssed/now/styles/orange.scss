@@ -1,23 +1,5 @@
-/*!
-
- =========================================================
- * dresssed/now - v1.1.0
- =========================================================
-
- * Product Page: http://www.creative-tim.com/product/dresssed/now
- * Copyright 2017 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/dresssed/now/blob/master/LICENSE.md)
-
- * Designed by www.invisionapp.com Coded by www.creative-tim.com
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
-
-@import 'dresssed/now/variables';
-@import 'dresssed/now/mixins';
+@import "dresssed/now/variables";
+@import "dresssed/now/mixins";
 @import "dresssed/now/responsive";
 
 // Plugins CSS
@@ -50,6 +32,3 @@
 @import "dresssed/now/footers";
 @import "dresssed/now/sidenav";
 @import "dresssed/now/tooltips";
-
-
-
