@@ -44,6 +44,13 @@
         sideNavContainer.slimScroll({ destroy: 'true' });
         sideNavContainer.slimScroll({
           height: getSideNavHeight(),
+          color: '#cdcdcd',
+          size: '4px',
+          opacity: 0.9,
+          wheelStep: 15,
+          distance: '0',
+          railVisible: false,
+          railOpacity: 1
         });
 
         sideNavContainer.mouseover();
