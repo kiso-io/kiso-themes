@@ -219,7 +219,7 @@ if(window.Chart) {
         var timeout = setTimeout(function() {
           count.call(this, {
             from: value,
-            to: value + (Math.floor(value * (1/90)))
+            to: value + (Math.random()*100)
           });
           clearTimeout(timeout)
         }.bind(this), 2000 + Math.floor(Math.random() * 10000))
