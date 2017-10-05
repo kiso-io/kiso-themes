@@ -111,7 +111,11 @@ body {
 }
 
 .shadow {
-  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, .25);
+  box-shadow: $general-shadow;
+}
+
+.light-shadow {
+  box-shadow: $light-shadow;
 }
 
 .inspect-mode {

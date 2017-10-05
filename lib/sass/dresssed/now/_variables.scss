@@ -54,7 +54,7 @@ $datepicker-color-old-new-days: rgba(255, 255, 255, .4) !default;
 // Transparent BG
 $transparent-bg: transparent !default;
 
-// Dark BG
+// State colors
 $dark-background: #555 !default;
 $default-color: #6886a7 !default;
 $default-states-color: lighten($default-color, 6%) !default;
@@ -79,11 +79,14 @@ $danger-color: #c55e5e !default;
 $danger-states-color: lighten($danger-color, 6%) !default;
 $danger-color-opacity: rgba(202, 37, 37, .3) !default;
 $danger-color-alert: rgb(216, 96, 96) !default;
+
+// Inverse Colors
 $inverse-color: #364267 !default;
 $inverse-states-color: lighten($inverse-color, 6%) !default;
 $dark-states-color: lighten($inverse-color, 6%) !default;
 
-/*     brand Colors              */
+
+// Brand colors
 $brand-primary: $primary-color !default;
 $brand-info: $info-color !default;
 $brand-success: $success-color !default;
@@ -98,22 +101,22 @@ $brand-primary-darker: shade($brand-primary, 25%);
 $brand-primary-darkest: shade($brand-primary, 38%);
 $link-disabled-color: #666 !default;
 
-/*      light colors         */
+// Lighter colors
 $light-blue: rgba($primary-color, .2);
 $light-azure: rgba($info-color, .2);
 $light-green: rgba($success-color, .2);
 $light-orange: rgba($warning-color, .2);
 $light-red: rgba($danger-color, .2);
 
-//== Components
-//
-
+// Padding
 $padding-input-vertical: 11px !default;
 $padding-input-horizontal: 19px !default;
 $padding-btn-vertical: 11px !default;
 $padding-btn-horizontal: 22px !default;
 $padding-base-vertical: .5rem !default;
 $padding-base-horizontal: .7rem !default;
+$padding-nav-link-vertical: .2rem !default;
+$padding-nav-link-horizontal: .7rem !default;
 $padding-round-horizontal: 23px !default;
 $padding-simple-vertical: 10px !default;
 $padding-simple-horizontal: 17px !default;
@@ -149,6 +152,8 @@ $btn-icon-size-small: 1.875rem !default;
 $btn-icon-font-size-lg: 1.325rem !default;
 $btn-icon-size-lg: 3.6rem !default;
 $btn-icon-top-padding: .3rem !default;
+
+// Fonts
 $font-size-h1: 3.5em !default; // ~ 49px
 $font-size-h2: 2.5em !default; // ~ 35px
 $font-size-h3: 2em !default; // ~ 28px
@@ -169,6 +174,8 @@ $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
 $font-weight-semi: 600 !default;
 $font-weight-bold: 700 !default;
+
+// Line Heights
 $line-height-general: 1.5 !default;
 $line-height-nav-link: 1 !default;
 $btn-icon-line-height: 2.4em !default;
@@ -178,6 +185,8 @@ $border-radius-top: 10px 10px 0 0 !default;
 $border-radius-bottom: 0 0 10px 10px !default;
 $dropdown-shadow: 1px 2px 3px rgba(0, 0, 0, .125);
 $box-shadow-raised: 0 10px 25px 0 rgba(0, 0, 0, .3);
+$general-shadow: 0 12px 24px 0 rgba(0, 0, 0, .25);
+$light-shadow: 0 6px 24px 0 rgba(0, 0, 0, .25);
 $general-transition-time: 300ms !default;
 $slow-transition-time: 370ms !default;
 $dropdown-coordinates: 29px -50px !default;
@@ -251,7 +260,11 @@ $side-nav-menu-item-hover-color: $white-color;
 $side-nav-sub-menu-item-vertical-padding: .3rem;
 $side-nav-sub-menu-item-horizontal-padding: .8rem;
 $side-nav-menu-footer-background-color: #2e4261;
+
+// Tooltips
 $tooltip-bg: lighten($brand-primary, 25%);
+
+// Timelines
 $left-timeline-item-background-color: #fff;
 $left-timeline-item-padding: 1rem;
 

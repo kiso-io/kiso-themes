@@ -1,116 +1,122 @@
 
 .nav-tabs {
-    border: 0;
-    padding: $padding-large-vertical $padding-base-horizontal;
+  padding: $padding-large-vertical $padding-base-horizontal;
 
-    > .nav-item{
-        > .nav-link{
-            color: $default-color;
-            margin: 0;
-            margin-right: 5px;
-            background-color: $transparent-bg;
-            border: 1px solid $transparent-bg;
-            border-radius: 30px;
-            font-size: $font-size-base;
-            padding: $padding-btn-vertical $padding-round-horizontal;
-            line-height: $line-height-general;
+  border: 0;
 
-            &:hover {
-                background-color: $transparent-bg;
-            }
+  > .nav-item {
+    > .nav-link {
+      margin: 0;
+      margin-right: 5px;
+      padding: $padding-nav-link-vertical $padding-nav-link-horizontal;
 
-            &.active{
-                border: 1px solid $brand-primary;
-                border-radius: 30px;
-            }
+      color: $default-color;
+      border: 1px solid $transparent-bg;
+      border-radius: 30px;
+      background-color: $transparent-bg;
 
-            i.now-ui-icons{
-                font-size: 14px;
-                position: relative;
-                top: 1px;
-                margin-right: 3px;
-            }
-        }
+      font-size: $font-size-small;
+      line-height: $line-height-general;
 
-        &.disabled > .nav-link,
-        &.disabled > .nav-link:hover {
-            color: rgba(255,255,255,0.5);
-        }
+      &:hover {
+        background-color: $transparent-bg;
+      }
+
+      &.active {
+        border: 1px solid $brand-primary;
+        border-radius: 30px;
+      }
+
+      i.now-ui-icons {
+        position: relative;
+        top: 1px;
+
+        margin-right: 3px;
+
+        font-size: 14px;
+      }
     }
 
-    &.nav-tabs-neutral{
-        > .nav-item{
-            > .nav-link{
-                color: $white-color;
-
-                &.active{
-                    border-color: $opacity-5;
-                    color: $white-color;
-                }
-            }
-        }
+    &.disabled > .nav-link,
+    &.disabled > .nav-link:hover {
+      color: rgba(255,255,255,.5);
     }
+  }
 
-    &.nav-tabs-primary{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $primary-color;
-                    color: $primary-color;
-                }
-            }
+  &.nav-tabs-neutral {
+    > .nav-item {
+      > .nav-link {
+        color: $white-color;
+
+        &.active {
+          color: $white-color;
+          border-color: $opacity-5;
         }
+      }
     }
+  }
 
-    &.nav-tabs-info{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $info-color;
-                    color: $info-color;
-                }
-            }
+  &.nav-tabs-primary {
+    > .nav-item {
+      > .nav-link {
+        &.active {
+          color: $white-color;
+          border-color: $primary-color;
+          background-color: $primary-color;
         }
+      }
     }
+  }
 
-    &.nav-tabs-danger{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $danger-color;
-                    color: $danger-color;
-                }
-            }
+  &.nav-tabs-info {
+    > .nav-item {
+      > .nav-link {
+        &.active {
+          color: $info-color;
+          border-color: $info-color;
         }
+      }
     }
+  }
 
-    &.nav-tabs-warning{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $warning-color;
-                    color: $warning-color;
-                }
-            }
+  &.nav-tabs-danger {
+    > .nav-item {
+      > .nav-link {
+        &.active {
+          color: $danger-color;
+          border-color: $danger-color;
         }
+      }
     }
+  }
 
-    &.nav-tabs-success{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $success-color;
-                    color: $success-color;
-                }
-            }
+  &.nav-tabs-warning {
+    > .nav-item {
+      > .nav-link {
+        &.active {
+          color: $warning-color;
+          border-color: $warning-color;
         }
+      }
     }
+  }
 
+  &.nav-tabs-success {
+    > .nav-item {
+      > .nav-link {
+        &.active {
+          color: $success-color;
+          border-color: $success-color;
+        }
+      }
+    }
+  }
 }
 
 .nav-tabs.nav-tabs-xs {
-  .nav-link{
-    font-size: $font-size-small;
+  .nav-link {
     padding: 7px 14px;
+
+    font-size: $font-size-small;
   }
 }

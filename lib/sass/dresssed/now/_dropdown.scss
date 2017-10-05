@@ -84,19 +84,25 @@
     @include dropdown-colors(darken($warning-color, 3%),$opacity-8,$white-color, $opacity-2);
   }
 
+  &.dropdown-neutral {
+    @include dropdown-colors($brand-primary-light, $brand-primary-dark ,$white-color, $brand-primary-lightest);
+  }
+
   .dropdown & {
+    // Needed so that transitions work correctly with Popper
+    display: block;
     visibility: hidden;
 
-    @include transform-translate-y(-25px);
     @include opacity(0);
+    @include transform-translate-y(-25px);
   }
 
   .dropdown.show &,
   &.open {
     visibility: visible;
 
-    @include opacity(1);
     @include transform-translate-y(0px);
+    @include opacity(1);
   }
 
   .navbar .dropdown.show & {

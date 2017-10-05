@@ -19,12 +19,33 @@ small {
   font-size: 60%;
 }
 
+
+.font-size-mini {
+  font-size: $font-size-mini !important;
+}
+
+.font-size-small {
+  font-size: $font-size-small !important;
+}
+
+.font-size-base {
+  font-size: $font-size-base !important;
+}
+
+.font-size-large {
+  font-size: $font-size-large !important;
+}
+
 a {
   color: $primary-color;
   &:hover,
   &:focus {
     color: $primary-color;
   }
+}
+
+pre {
+  font-size: 100%;
 }
 
 h1,
