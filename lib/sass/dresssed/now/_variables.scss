@@ -3,32 +3,58 @@
 //## For each of Bootstrap's buttons, define text, background and border color.
 
 $sans-serif-family: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+
+// Border thicknesses
 $none: 0 !default;
 $border-thin: 1px !default;
 $border-thick: 2px !default;
+
+// Whites
 $white-color: #fff !default;
 $white-bg: #fff !default;
-$orange-bg: #e95e38 !default;
-$main-bg: #eef5fb !default;
-$smoke-bg: #f5f5f5 !default;
-$light-black: #444 !default;
+
+// Blacks
 $black-bg: rgba(30, 30, 30, .97) !default;
+$light-black: #444 !default;
 $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
+
+// Grays
 $light-gray: #e3e3e3 !default;
 $medium-gray: #ddd !default;
 $dark-gray: #9a9a9a !default;
+
+// Backgrounds
+$main-bg: #eef5fb !default;
+$smoke-bg: #f5f5f5 !default;
+
+
+// Opacities
 $opacity-1: rgba(255, 255, 255, .1) !default;
 $opacity-2: rgba(255, 255, 255, .2) !default;
+$opacity-3: rgba(255, 255, 255, .3) !default;
+$opacity-4: rgba(255, 255, 255, .4) !default;
 $opacity-5: rgba(255, 255, 255, .5) !default;
+$opacity-6: rgba(255, 255, 255, .6) !default;
 $opacity-7: rgba(255, 255, 255, .7) !default;
 $opacity-8: rgba(255, 255, 255, .8) !default;
+$opacity-gray-1: rgba(222, 222, 222, .1) !default;
+$opacity-gray-2: rgba(222, 222, 222, .2) !default;
 $opacity-gray-3: rgba(222, 222, 222, .3) !default;
+$opacity-gray-4: rgba(222, 222, 222, .4) !default;
 $opacity-gray-5: rgba(222, 222, 222, .5) !default;
+$opacity-gray-6: rgba(222, 222, 222, .6) !default;
+$opacity-gray-7: rgba(222, 222, 222, .7) !default;
 $opacity-gray-8: rgba(222, 222, 222, .8) !default;
+
+// Datepicker
 $datepicker-color-days: rgba(255, 255, 255, .8) !default;
 $datepicker-color-old-new-days: rgba(255, 255, 255, .4) !default;
+
+// Transparent BG
 $transparent-bg: transparent !default;
+
+// Dark BG
 $dark-background: #555 !default;
 $default-color: #6886a7 !default;
 $default-states-color: lighten($default-color, 6%) !default;
