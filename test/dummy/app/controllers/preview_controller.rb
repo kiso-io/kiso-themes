@@ -100,7 +100,6 @@ class ElementFinder
       end
     end
 
-    puts data.inspect
     return data
   end
 end

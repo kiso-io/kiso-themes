@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "/usr/local/lib/node_modules/stylelint-config-recommended-scss",
+    "/usr/local/lib/node_modules/stylelint-config-concentric-order",
+    "/usr/local/lib/node_modules/prettier-stylelint/config.js"
+    ],
+    "plugins": [
+    ],
+    "rules": {
+      "indentation": 2,
+      "string-quotes": "single",
+      "max-empty-lines": 1,
+      "block-closing-brace-newline-after": "always",
+      "rule-empty-line-before": "always"
+    }
+}

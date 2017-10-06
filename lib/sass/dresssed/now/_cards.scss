@@ -1,103 +1,110 @@
- .card {
+.card {
+  @include transition(all $general-transition-time $transition-linear);
+  display: inline-block;
+
   position: relative;
 
-  display: inline-block;
-  overflow: hidden;
-
-  width: 100%;
   margin-bottom: 20px;
 
   border: 0;
   border-radius: $border-radius-small;
+  box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   background-color: $white-color;
   background-image: $gradient-white-to-alpha;
   background-size: 100vh 100vh;
-  box-shadow: 0 5px 16px 0 rgba(0, 0, 0, .1), 0 2px 8px 0 rgba(0,0,0,.1);
 
-  @include transition(all $general-transition-time $transition-linear);
+  width: 100%;
+  overflow: hidden;
 
   &.card-grow {
     flex-grow: 1;
-    }
   }
+}
 
 .card-header {
-  padding: 1.25rem;
-
   border-bottom: 0;
   background: transparent;
+  padding: 1.25rem;
 
   h3 {
     margin: 0;
-    }
+  }
 
   .nav-tabs {
     padding: 0;
 
     .nav-item {
+
       .nav-link {
+
         &:hover {
-          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .17);
-          }
+          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17);
         }
+      }
 
       &:last-of-type {
+
         .nav-link {
           margin-right: 0;
-          }
         }
       }
     }
+  }
 
   .nav-pills-round .nav-item .nav-link {
+    padding: 0;
     width: 36px;
     height: 36px;
-    padding: 0;
-    }
+  }
 
   .nav-pills-round .nav-item:last-of-type .nav-link {
     margin-right: 0;
-    }
+  }
 
   .nav-pills-round .nav-item i {
     line-height: 36px;
-    }
+  }
 
   h6 {
     margin: 0;
-    }
   }
+}
 
 .card-footer {
+  border-top: none;
+
   font-size: $font-size-mini;
-  }
+}
 
 .card-full-bleed {
+
   .card-body {
     padding: 0;
-    }
   }
+}
 
 .card-flat {
   box-shadow: none;
-  }
+}
 
 .card-body {
+
   p {
     line-height: 1.31;
-    }
   }
+}
 
 .card-tabbed {
+
   .card-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     background-color: $pale-blue-bg;
 
     .card-header-tabs {
       margin: 0;
-      }
     }
   }
+}
