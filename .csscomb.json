@@ -18,7 +18,7 @@
   "space-after-opening-brace": "\n",
   "space-after-selector-delimiter": "\n",
   "space-before-selector-delimiter": "",
-  "space-before-closing-brace": "\n",
+  "space-before-closing-brace": "\r\n",
   "strip-spaces": true,
   "tab-size": true,
   "unitless-zero": true,

@@ -2,7 +2,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-}
+  }
 
 body {
   color: $black-color;
@@ -13,13 +13,13 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  }
 
 .main {
   position: relative;
 
   background: $main-bg;
-}
+  }
 
 /* Animations */
 .nav-pills .nav-link,
@@ -27,17 +27,17 @@ body {
 .navbar,
 .nav-tabs .nav-link {
   @include transition(all $general-transition-time $transition-ease);
-}
+  }
 
 //transition for dropdown caret
 .dropdown-toggle:after,
 .bootstrap-switch-label:before {
   @include transition(all $fast-transition-time $transition-ease);
-}
+  }
 
 .dropdown-toggle[aria-expanded="true"]:after {
   @include rotate-180();
-}
+  }
 
 .button-bar {
   position: relative;
@@ -52,23 +52,23 @@ body {
 
   & + .button-bar {
     margin-top: 7px;
-  }
+    }
 
   &:nth-child(2) {
     width: 17px;
+    }
   }
-}
 
 .open {
   visibility: visible;
 
-  @include transform-translate-y(0);
   @include opacity(1);
-}
+  @include transform-translate-y(0);
+  }
 
 .cover-image {
   background-size: cover;
-}
+  }
 
 .separator {
   width: 44px;
@@ -79,44 +79,24 @@ body {
 
   &.separator-primary {
     background-color: $primary-color;
+    }
   }
-}
 
 .overflow-y-scroll {
   overflow-y: scroll;
-}
-
-.bg-gradient-1 {
-  background: $gradient-1;
-}
-
-.bg-gradient-2 {
-  background: $gradient-3;
-}
-
-.bg-gradient-3 {
-  background: $gradient-4;
-}
-
-.bg-gradient-4 {
-  background: $gradient-5;
-}
-
-.bg-neutral {
-  background: $smoke-bg;
-}
+  }
 
 .cursor-pointer {
   cursor: pointer;
-}
+  }
 
 .shadow {
   box-shadow: $general-shadow;
-}
+  }
 
 .light-shadow {
   box-shadow: $light-shadow;
-}
+  }
 
 .inspect-mode {
   position: fixed;
@@ -145,24 +125,24 @@ body {
   &:hover,
   &:focus {
     outline: none;
-  }
+    }
 
   &:hover {
     box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
-  }
+    }
 
   &.on {
     background-color: #232527;
 
     font-size: 24px;
+    }
   }
-}
 
 .inspect-target {
   cursor: pointer !important;
 
   border: 4px solid red !important;
-}
+  }
 
 .inspect-mode-bg {
   position: fixed;
@@ -177,7 +157,7 @@ body {
   align-items: center;
 
   background-color: rgba( 0, 0, 0, .8);
-}
+  }
 
 .inspector-modal {
   display: flex;
@@ -194,7 +174,7 @@ body {
 
   textarea {
     display: none;
-  }
+    }
 
   pre {
     overflow: scroll;
@@ -202,7 +182,7 @@ body {
     width: 100%;
 
     background-color: black;
-  }
+    }
 
   code {
     width: 100%;
@@ -214,5 +194,5 @@ body {
     outline: none;
 
     font-family: monospace;
+    }
   }
-}

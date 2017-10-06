@@ -9,32 +9,17 @@
 
   border: 0;
   border-radius: $border-radius-small;
+  background-color: $white-color;
+  background-image: $gradient-white-to-alpha;
+  background-size: 100vh 100vh;
   box-shadow: 0 5px 16px 0 rgba(0, 0, 0, .1), 0 2px 8px 0 rgba(0,0,0,.1);
 
-  &[data-background-color="orange"] {
-    background-color: $primary-color;
-  }
-
-  &[data-background-color="red"] {
-    background-color: $danger-color;
-  }
-
-  &[data-background-color="yellow"] {
-    background-color: $warning-color;
-  }
-
-  &[data-background-color="blue"] {
-    background-color: $info-color;
-  }
-
-  &[data-background-color="green"] {
-    background-color: $success-color;
-  }
+  @include transition(all $general-transition-time $transition-linear);
 
   &.card-grow {
     flex-grow: 1;
+    }
   }
-}
 
 .card-header {
   padding: 1.25rem;
@@ -44,7 +29,7 @@
 
   h3 {
     margin: 0;
-  }
+    }
 
   .nav-tabs {
     padding: 0;
@@ -53,55 +38,55 @@
       .nav-link {
         &:hover {
           box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .17);
+          }
         }
-      }
 
       &:last-of-type {
         .nav-link {
           margin-right: 0;
+          }
         }
       }
     }
-  }
 
   .nav-pills-round .nav-item .nav-link {
     width: 36px;
     height: 36px;
     padding: 0;
-  }
+    }
 
   .nav-pills-round .nav-item:last-of-type .nav-link {
     margin-right: 0;
-  }
+    }
 
   .nav-pills-round .nav-item i {
     line-height: 36px;
-  }
+    }
 
   h6 {
     margin: 0;
+    }
   }
-}
 
 .card-footer {
   font-size: $font-size-mini;
-}
+  }
 
 .card-full-bleed {
   .card-body {
     padding: 0;
+    }
   }
-}
 
 .card-flat {
   box-shadow: none;
-}
+  }
 
 .card-body {
   p {
     line-height: 1.31;
+    }
   }
-}
 
 .card-tabbed {
   .card-header {
@@ -113,6 +98,6 @@
 
     .card-header-tabs {
       margin: 0;
+      }
     }
   }
-}

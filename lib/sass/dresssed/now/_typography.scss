@@ -4,7 +4,7 @@ optgroup,
 select,
 textarea {
   font-family: $sans-serif-family;
-}
+  }
 
 h1,
 h2,
@@ -13,40 +13,56 @@ h4,
 h5,
 h6 {
   font-weight: $font-weight-normal;
-}
+  }
 
 small {
-  font-size: 60%;
-}
+  font-size: 70%;
+  }
 
 
 .font-size-mini {
   font-size: $font-size-mini !important;
-}
+  }
 
 .font-size-small {
   font-size: $font-size-small !important;
-}
+  }
 
 .font-size-base {
   font-size: $font-size-base !important;
-}
+  }
 
 .font-size-large {
   font-size: $font-size-large !important;
-}
+  }
+
+.leading-tight {
+  line-height: .7 !important;
+  }
+
+.leading-normal {
+  line-height: 1 !important;
+  }
+
+.leading-loose {
+  line-height: 1.2 !important;
+  }
+
+.leading-looser {
+  line-height: 1.5 !important;
+  }
 
 a {
   color: $primary-color;
   &:hover,
   &:focus {
     color: $primary-color;
+    }
   }
-}
 
 pre {
   font-size: 100%;
-}
+  }
 
 h1,
 .h1 {
@@ -61,15 +77,15 @@ h1,
     opacity: .8;
 
     font-weight: $font-weight-bold;
+    }
   }
-}
 
 h2,
 .h2 {
   margin-bottom: $margin-base-vertical * 2;
 
   font-size: $font-size-h2;
-}
+  }
 
 h3,
 .h3 {
@@ -77,7 +93,7 @@ h3,
 
   font-size: $font-size-h3;
   line-height: 1.4em;
-}
+  }
 
 h4,
 .h4 {
@@ -89,8 +105,8 @@ h4,
   & + .category,
   &.title + .category {
     margin-top: -10px;
+    }
   }
-}
 
 h5,
 .h5 {
@@ -98,7 +114,7 @@ h5,
 
   font-size: $font-size-h5;
   line-height: 1.4em;
-}
+  }
 
 h6,
 .h6 {
@@ -106,7 +122,7 @@ h6,
 
   font-size: $font-size-h6;
   font-weight: $font-weight-bold;
-}
+  }
 
 p {
   line-height: 1.61em;
@@ -114,8 +130,8 @@ p {
   .description &,
   &.description {
     font-size: 1.14em;
+    }
   }
-}
 
 .title {
   font-weight: $font-weight-bold;
@@ -127,12 +143,12 @@ p {
       text-decoration: none;
 
       color: $black-color;
+      }
     }
-  }
   & + .category {
     margin-top: -25px;
+    }
   }
-}
 
 .description,
 .card-description,
@@ -140,57 +156,102 @@ p {
   color: $dark-gray;
 
   font-weight: $font-weight-light;
-}
+  }
 .category {
   text-transform: uppercase;
 
   color: $dark-gray;
 
   font-weight: $font-weight-bold;
-}
+  }
 .text-primary {
   color: $brand-primary !important;
-}
+  }
+.text-brand-primary-light {
+  color: $brand-primary-light !important;
+  }
+.text-brand-primary-lighter {
+  color: $brand-primary-lighter !important;
+  }
+.text-brand-primary-lightest {
+  color: $brand-primary-lightest !important;
+  }
+
+.text-brand-primary-dark {
+  color: $brand-primary-dark !important;
+  }
+.text-brand-primary-darker {
+  color: $brand-primary-darker !important;
+  }
+.text-brand-primary-darkest {
+  color: $brand-primary-darkest !important;
+  }
+
 .text-info {
   color: $brand-info !important;
-}
+  }
 .text-success {
   color: $brand-success !important;
-}
+  }
 .text-warning {
   color: $brand-warning !important;
-}
+  }
 .text-danger {
   color: $brand-danger !important;
-}
+  }
 .text-black {
   color: $light-black;
-}
+  }
 
 .text-opacity-1 {
   color: $opacity-1;
-}
+  }
 .text-opacity-2 {
   color: $opacity-2;
-}
+  }
 .text-opacity-3 {
   color: $opacity-3;
-}
+  }
 .text-opacity-4 {
   color: $opacity-5;
-}
+  }
 .text-opacity-5 {
   color: $opacity-5;
-}
+  }
 .text-opacity-6 {
   color: $opacity-6;
-}
+  }
 .text-opacity-7 {
   color: $opacity-7;
-}
+  }
 .text-opacity-8 {
   color: $opacity-8;
-}
+  }
+
+.text-opacity-gray-1 {
+  color: $opacity-gray-1;
+  }
+.text-opacity-gray-2 {
+  color: $opacity-gray-2;
+  }
+.text-opacity-gray-3 {
+  color: $opacity-gray-3;
+  }
+.text-opacity-gray-4 {
+  color: $opacity-gray-5;
+  }
+.text-opacity-gray-5 {
+  color: $opacity-gray-5;
+  }
+.text-opacity-gray-6 {
+  color: $opacity-gray-6;
+  }
+.text-opacity-gray-7 {
+  color: $opacity-gray-7;
+  }
+.text-opacity-gray-8 {
+  color: $opacity-gray-8;
+  }
 
 .blockquote {
   padding: 20px;
@@ -207,7 +268,7 @@ p {
     color: $default-color;
 
     font-size: $font-size-small;
-  }
+    }
 
   &.blockquote-primary {
     color: $primary-color;
@@ -215,8 +276,8 @@ p {
 
     small {
       color: $primary-color;
+      }
     }
-  }
 
   &.blockquote-danger {
     color: $danger-color;
@@ -224,8 +285,8 @@ p {
 
     small {
       color: $danger-color;
+      }
     }
-  }
 
   &.blockquote-white {
     color: $white-color;
@@ -233,6 +294,6 @@ p {
 
     small {
       color: $opacity-8;
+      }
     }
   }
-}

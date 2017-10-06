@@ -1,31 +1,58 @@
 .bg-default {
   background-color: $default-color !important;
-}
+  }
 
 .bg-primary {
   background-color: $primary-color !important;
-}
+  background-image: none !important;
+  }
 
 .bg-info {
   background-color: $info-color !important;
-}
+  background-image: none !important;
+  }
 
 .bg-success {
   background-color: $success-color !important;
-}
+  background-image: none !important;
+  }
 
 .bg-danger {
   background-color: $danger-color !important;
-}
+  background-image: none !important;
+  }
 
 .bg-warning {
   background-color: $warning-color !important;
-}
+  background-image: none !important;
+  }
 
 .bg-white {
   background-color: $white-color !important;
-}
+  background-image: none !important;
+  }
 
 .bg-dark {
   background-color: $inverse-color !important;
-}
+  background-image: none !important;
+  }
+
+.bg-gradient-1 {
+  background-image: $gradient-1 !important;
+  }
+
+.bg-gradient-2 {
+  background-image: $gradient-3 !important;
+  }
+
+.bg-gradient-3 {
+  background-image: $gradient-4 !important;
+  }
+
+.bg-gradient-4 {
+  background-image: $gradient-5 !important;
+  }
+
+.bg-neutral {
+  background-image: $smoke-bg !important;
+  }
