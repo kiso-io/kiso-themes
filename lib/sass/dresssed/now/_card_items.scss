@@ -1,0 +1,72 @@
+.card-item-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+
+  .card-item {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    @include transition(all $general-transition-time $transition-bezier);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      display: block;
+      margin-right: 8px;
+      border-radius: 4px;
+      background-color: $brand-primary;
+      width: 4px;
+      height: 26px;
+      content: '';
+    }
+
+    .display-on-hover {
+      @include transition(all $general-transition-time $transition-bezier);
+      opacity: 0;
+    }
+
+    &:hover {
+      .display-on-hover {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  @each $color in map-keys($theme-colors) {
+    .card-item-chip-#{$color} {
+      &.card-item {
+        &:before {
+          background-color: map-get($theme-colors, $color);
+        }
+      }
+    }
+  }
+
+  .checkbox {
+    display: inline;
+    margin: 0;
+
+    label {
+      display: block;
+      position: relative;
+      margin-right: 0.875rem;
+      padding-left: 0;
+      width: 26px;
+      height: 26px;
+
+      &:before {
+        left: auto;
+      }
+    }
+  }
+}

@@ -34,11 +34,11 @@
       type: 'bar',
       barWidth: 8,
       barSpacing: 6,
-      height: '80px',
       barColor: '#ffca28',
       tooltipPrefix: '',
       tooltipSuffix: ' Tickets',
-      tooltipFormat: '{{prefix}}{{value}}{{suffix}}'
+      tooltipFormat: '{{prefix}}{{value}}{{suffix}}',
+      enableTagOptions: true
     };
 
     for (var attrname in opts) { defaultOpts[attrname] = opts[attrname]; }

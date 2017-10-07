@@ -86,6 +86,10 @@ body {
   overflow-y: scroll;
   }
 
+.overflow-visible {
+  overflow: visible !important;
+}
+
 .cursor-pointer {
   cursor: pointer;
   }

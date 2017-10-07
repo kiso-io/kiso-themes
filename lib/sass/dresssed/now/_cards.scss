@@ -106,5 +106,13 @@
     .card-header-tabs {
       margin: 0;
     }
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+
+      h6 {
+        margin-bottom: 1rem;
+      }
+    }
   }
 }

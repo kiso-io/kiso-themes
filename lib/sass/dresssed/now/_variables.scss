@@ -2,7 +2,7 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$sans-serif-family: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+$sans-serif-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
 
 // Border thicknesses
 $none: 0 !default;
@@ -14,7 +14,7 @@ $white-color: #fdfcfc !default;
 $white-bg: #fff !default;
 
 // Blacks
-$black-bg: rgba(30, 30, 30, .97) !default;
+$black-bg: rgba(30, 30, 30, 0.97) !default;
 $light-black: #444 !default;
 $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
@@ -26,66 +26,64 @@ $dark-gray: #9a9a9a !default;
 
 // Backgrounds
 $main-bg: #eef5fb !default;
+$dark-background: #555 !default;
 $smoke-bg: #f5f5f5 !default;
 $pale-blue-bg: #dae4f1 !default;
 
-
 // Opacities
-$opacity-1: rgba(255, 255, 255, .1) !default;
-$opacity-2: rgba(255, 255, 255, .2) !default;
-$opacity-3: rgba(255, 255, 255, .3) !default;
-$opacity-4: rgba(255, 255, 255, .4) !default;
-$opacity-5: rgba(255, 255, 255, .5) !default;
-$opacity-6: rgba(255, 255, 255, .6) !default;
-$opacity-7: rgba(255, 255, 255, .7) !default;
-$opacity-8: rgba(255, 255, 255, .8) !default;
-$opacity-gray-1: rgba(200, 208, 218, .1) !default;
-$opacity-gray-2: rgba(200, 208, 218, .2) !default;
-$opacity-gray-3: rgba(200, 208, 218, .3) !default;
-$opacity-gray-4: rgba(200, 208, 218, .4) !default;
-$opacity-gray-5: rgba(200, 208, 218, .5) !default;
-$opacity-gray-6: rgba(200, 208, 218, .6) !default;
-$opacity-gray-7: rgba(200, 208, 218, .7) !default;
-$opacity-gray-8: rgba(200, 208, 218, .8) !default;
+$opacity-1: rgba(255, 255, 255, 0.1) !default;
+$opacity-2: rgba(255, 255, 255, 0.2) !default;
+$opacity-3: rgba(255, 255, 255, 0.3) !default;
+$opacity-4: rgba(255, 255, 255, 0.4) !default;
+$opacity-5: rgba(255, 255, 255, 0.5) !default;
+$opacity-6: rgba(255, 255, 255, 0.6) !default;
+$opacity-7: rgba(255, 255, 255, 0.7) !default;
+$opacity-8: rgba(255, 255, 255, 0.8) !default;
+$opacity-gray-1: rgba(200, 208, 218, 0.1) !default;
+$opacity-gray-2: rgba(200, 208, 218, 0.2) !default;
+$opacity-gray-3: rgba(200, 208, 218, 0.3) !default;
+$opacity-gray-4: rgba(200, 208, 218, 0.4) !default;
+$opacity-gray-5: rgba(200, 208, 218, 0.5) !default;
+$opacity-gray-6: rgba(200, 208, 218, 0.6) !default;
+$opacity-gray-7: rgba(200, 208, 218, 0.7) !default;
+$opacity-gray-8: rgba(200, 208, 218, 0.8) !default;
 
 // Datepicker
-$datepicker-color-days: rgba(255, 255, 255, .8) !default;
-$datepicker-color-old-new-days: rgba(255, 255, 255, .4) !default;
+$datepicker-color-days: rgba(255, 255, 255, 0.8) !default;
+$datepicker-color-old-new-days: rgba(255, 255, 255, 0.4) !default;
 
 // Transparent BG
 $transparent-bg: transparent !default;
 
 // State colors
-$dark-background: #555 !default;
 $default-color: #6886a7 !default;
 $default-states-color: lighten($default-color, 6%) !default;
-$default-color-opacity: rgba(182, 182, 182, .6) !default;
+$default-color-opacity: rgba(182, 182, 182, 0.6) !default;
 $primary-color: #4173a7 !default;
 $primary-states-color: lighten($primary-color, 6%) !default;
-$primary-color-opacity: rgba(249, 99, 50, .3) !default;
-$primary-color-alert: rgba(249, 99, 50, .8) !default;
+$primary-color-opacity: rgba(249, 99, 50, 0.3) !default;
+$primary-color-alert: rgba(249, 99, 50, 0.8) !default;
 $success-color: #73c16b !default;
 $success-states-color: lighten($success-color, 6%) !default;
-$success-color-opacity: rgba(48, 167, 42, .3) !default;
+$success-color-opacity: rgba(48, 167, 42, 0.3) !default;
 $success-color-alert: rgb(107, 195, 103) !default;
 $info-color: #5cc6d2 !default;
 $info-states-color: lighten($info-color, 6%) !default;
-$info-color-opacity: rgba(36, 144, 220, .3) !default;
-$info-color-alert: rgba(143, 188, 220, .8) !default;
+$info-color-opacity: rgba(36, 144, 220, 0.3) !default;
+$info-color-alert: rgba(143, 188, 220, 0.8) !default;
 $warning-color: #e08e45 !default;
 $warning-states-color: lighten($warning-color, 6%) !default;
-$warning-color-opacity: rgba(255, 143, 26, .3) !default;
+$warning-color-opacity: rgba(255, 143, 26, 0.3) !default;
 $warning-color-alert: rgb(228, 169, 62) !default;
 $danger-color: #c55e5e !default;
 $danger-states-color: lighten($danger-color, 6%) !default;
-$danger-color-opacity: rgba(202, 37, 37, .3) !default;
+$danger-color-opacity: rgba(202, 37, 37, 0.3) !default;
 $danger-color-alert: rgb(216, 96, 96) !default;
 
 // Inverse Colors
 $inverse-color: #283d52 !default;
 $inverse-states-color: lighten($inverse-color, 6%) !default;
 $dark-states-color: lighten($inverse-color, 6%) !default;
-
 
 // Brand colors
 $brand-primary: $primary-color !default;
@@ -103,21 +101,33 @@ $brand-inverse: $inverse-color !default;
 $link-disabled-color: #666 !default;
 
 // Lighter colors
-$light-blue: rgba($primary-color, .2);
-$light-azure: rgba($info-color, .2);
-$light-green: rgba($success-color, .2);
-$light-orange: rgba($warning-color, .2);
-$light-red: rgba($danger-color, .2);
+$light-blue: rgba($primary-color, 0.2);
+$light-azure: rgba($info-color, 0.2);
+$light-green: rgba($success-color, 0.2);
+$light-orange: rgba($warning-color, 0.2);
+$light-red: rgba($danger-color, 0.2);
+
+// Update the theme color map
+$theme-colors: (
+  primary: $primary-color,
+  secondary: $default-color,
+  success: $success-color,
+  info: $info-color,
+  warning: $warning-color,
+  danger: $danger-color,
+  light: $light-blue,
+  dark: $inverse-color
+);
 
 // Padding
 $padding-input-vertical: 11px !default;
 $padding-input-horizontal: 19px !default;
 $padding-btn-vertical: 11px !default;
 $padding-btn-horizontal: 22px !default;
-$padding-base-vertical: .5rem !default;
-$padding-base-horizontal: .7rem !default;
-$padding-nav-link-vertical: .2rem !default;
-$padding-nav-link-horizontal: .7rem !default;
+$padding-base-vertical: 0.5rem !default;
+$padding-base-horizontal: 0.7rem !default;
+$padding-nav-link-vertical: 0.2rem !default;
+$padding-nav-link-horizontal: 0.7rem !default;
 $padding-round-horizontal: 23px !default;
 $padding-simple-vertical: 10px !default;
 $padding-simple-horizontal: 17px !default;
@@ -136,23 +146,22 @@ $margin-base-vertical: 15px !default;
 $margin-base-horizontal: 15px !default;
 $margin-bottom: 10px !default;
 $border: 1px solid !default;
-$border-radius-extra-small: .125rem !default;
-$border-radius-small: .1875rem !default;
-$border-radius-large: .25rem !default;
-$border-radius-extreme: .875rem !default;
+$border-radius-extra-small: 0.125rem !default;
+$border-radius-small: 0.1875rem !default;
+$border-radius-large: 0.25rem !default;
+$border-radius-extreme: 0.875rem !default;
 $border-radius-large-top: $border-radius-large $border-radius-large 0 0 !default;
-$border-radius-large-bottom: 0 0 $border-radius-large $border-radius-large
-  !default;
+$border-radius-large-bottom: 0 0 $border-radius-large $border-radius-large !default;
 $btn-round-radius: 30px !default;
 $height-base: 55px !default;
 $btn-icon-size: 3.5rem !default;
 $btn-icon-size-regular: 2.375rem !default;
-$btn-icon-font-size-regular: .9375rem !default;
-$btn-icon-font-size-small: .6875rem !default;
+$btn-icon-font-size-regular: 0.9375rem !default;
+$btn-icon-font-size-small: 0.6875rem !default;
 $btn-icon-size-small: 1.875rem !default;
 $btn-icon-font-size-lg: 1.325rem !default;
 $btn-icon-size-lg: 3.6rem !default;
-$btn-icon-top-padding: .3rem !default;
+$btn-icon-top-padding: 0.3rem !default;
 
 // Fonts
 $font-size-h1: 3.5em !default; // ~ 49px
@@ -164,8 +173,8 @@ $font-size-h6: 1em !default; // ~ 14px
 
 $font-paragraph: 1em !default;
 $font-size-navbar: 1em !default;
-$font-size-mini: .7142em !default;
-$font-size-small: .8571em !default;
+$font-size-mini: 0.7142em !default;
+$font-size-small: 0.8571em !default;
 $font-size-base: 14px !default;
 $font-size-large: 1em !default;
 $font-size-large-navbar: 20px !default;
@@ -184,19 +193,19 @@ $line-height: 1.35em !default;
 $line-height-lg: 54px !default;
 $border-radius-top: 10px 10px 0 0 !default;
 $border-radius-bottom: 0 0 10px 10px !default;
-$dropdown-shadow: 1px 2px 3px rgba(0, 0, 0, .125);
-$box-shadow-raised: 0 10px 25px 0 rgba(0, 0, 0, .3);
-$general-shadow: 0 12px 24px 0 rgba(0, 0, 0, .25);
-$light-shadow: 0 6px 24px 0 rgba(0, 0, 0, .25);
+$dropdown-shadow: 1px 2px 3px rgba(0, 0, 0, 0.125);
+$box-shadow-raised: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+$general-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.25);
+$light-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.25);
 $dropdown-coordinates: 29px -50px !default;
-$fast-transition-time: 150ms !default;
 $select-coordinates: 50% -40px !default;
 
 // Tranasitions and Timing
 $general-transition-time: 300ms !default;
 $slow-transition-time: 370ms !default;
+$fast-transition-time: 150ms !default;
 $transition-linear: linear !default;
-$transition-bezier: cubic-bezier(.34, 1.61, .7, 1) !default;
+$transition-bezier: cubic-bezier(0.34, 1.61, 0.7, 1);
 $transition-ease: ease 0s;
 
 //$navbar-padding-a:               9px 13px;
@@ -206,7 +215,7 @@ $navbar-margin-a-btn: 15px 0;
 $navbar-margin-a-btn-round: 16px 0;
 $navbar-padding-a-icons: 6px 15px;
 $navbar-margin-a-icons: 6px 3px;
-$navbar-padding-base: .5rem;
+$navbar-padding-base: 0.5rem;
 //$navbar-margin-brand:             5px  0px;
 
 $navbar-margin-brand-icons: 12px auto;
@@ -219,12 +228,12 @@ $height-icon-message: 40px;
 $width-icon-message: 40px;
 $height-icon-message-sm: 20px;
 $width-icon-message-sm: 20px;
-$white-navbar: rgba(#fff, .96);
-$primary-navbar: rgba(#34acdc, .98);
-$info-navbar: rgba(#5bcaff, .98);
-$success-navbar: rgba(#4cd964, .98);
-$warning-navbar: rgba(#ff9500, .98);
-$danger-navbar: rgba(#ff4c40, .98);
+$white-navbar: rgba(#fff, 0.96);
+$primary-navbar: rgba(#34acdc, 0.98);
+$info-navbar: rgba(#5bcaff, 0.98);
+$success-navbar: rgba(#4cd964, 0.98);
+$warning-navbar: rgba(#ff9500, 0.98);
+$danger-navbar: rgba(#ff4c40, 0.98);
 $topbar-x: topbar-x !default;
 $topbar-back: topbar-back !default;
 $bottombar-x: bottombar-x !default;
@@ -242,7 +251,7 @@ $social-linkedin-state-color: darken(#0077b5, 5%) !default;
 $zindex-navbar-fixed: 1030;
 
 // Side Nav
-$side-nav-transition: 250ms cubic-bezier(.470, .000, .745, .715);
+$side-nav-transition: 250ms cubic-bezier(0.47, 0, 0.745, 0.715);
 $side-nav-width: 255px;
 $side-nav-menu-background-color: #2e4261;
 $side-nav-header-bg-color: #2e4261;
@@ -250,8 +259,8 @@ $side-nav-header-bg-link-color: lighten($brand-primary, 25%);
 $side-nav-header-link-hover-color: white;
 $side-nav-header-color: white;
 $side-nav-header-padding: 1rem;
-$side-nav-menu-item-vertical-padding: .8rem;
-$side-nav-menu-item-horizontal-padding: .8rem;
+$side-nav-menu-item-vertical-padding: 0.8rem;
+$side-nav-menu-item-horizontal-padding: 0.8rem;
 $side-nav-menu-item-active-border-width: 2px;
 $side-nav-menu-right-border-color: transparent;
 $side-nav-text-color: darken(#0077b5, 5%);
@@ -260,8 +269,8 @@ $side-nav-menu-item-icon-color: #4d80b8;
 $side-nav-menu-item-color: lighten($brand-primary, 25%);
 $side-nav-menu-item-active-color: $white-color;
 $side-nav-menu-item-hover-color: $white-color;
-$side-nav-sub-menu-item-vertical-padding: .3rem;
-$side-nav-sub-menu-item-horizontal-padding: .8rem;
+$side-nav-sub-menu-item-vertical-padding: 0.3rem;
+$side-nav-sub-menu-item-horizontal-padding: 0.8rem;
 $side-nav-menu-footer-background-color: #2e4261;
 
 // Tooltips
@@ -277,6 +286,7 @@ $gradient-2: linear-gradient(180deg, #a4d0de 25%, #e3313a 100%);
 $gradient-3: linear-gradient(180deg, #a1bdcc 25%, #f4f8c1 100%);
 $gradient-4: linear-gradient(180deg, #fac043 25%, #e13b36 100%);
 $gradient-5: linear-gradient(180deg, #2ae374 25%, #f7f9bc 100%);
-$gradient-floor-fade: linear-gradient(to bottom,transparent 20%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.6) 90%) no-repeat scroll 0 0;
-$gradient-roof-fade: linear-gradient(to bottom, rgba(0,0,0,.6) 90%, rgba(0,0,0,.6) 40%, transparent 100%) no-repeat scroll 0 0;
-$gradient-white-to-alpha: linear-gradient(top, rgba(255, 255, 255, 1.00), rgba(255, 255, 255, .00));
+$gradient-floor-fade: linear-gradient( to bottom, transparent 20%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.6) 90%) no-repeat scroll 0 0;
+$gradient-roof-fade: linear-gradient( to bottom, rgba(0, 0, 0, 0.6) 90%, rgba(0, 0, 0, 0.6) 40%, transparent 100%) no-repeat scroll 0 0;
+$gradient-white-to-alpha: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+
