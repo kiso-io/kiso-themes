@@ -1,9 +1,9 @@
 
 <%= content_for :js_libs, "demo-sparklines" %>
 
-<div class="row">
+<div class="row equal-cols">
   <div class="col-12 col-md-6">
-    <div class="card card-tabbed overflow-visible">
+    <div class="card card-full-height card-tabbed overflow-visible">
       <div class="card-header">
         <h6>TASKS</h6>
         <ul class="nav nav-tabs nav-tabs-primary card-header-tabs" id="navTab1" role="tablist">
@@ -320,7 +320,7 @@
   </div> <!-- /col-12.col-md-6 -->
 
   <div class="col-12 col-md-6">
-    <div class="card card-tabbed overflow-visible">
+    <div class="card card-full-height card-tabbed overflow-visible">
       <div class="card-header">
         <h6>KPI SUMMARY</h6>
         <div class="dropdown">
@@ -359,16 +359,120 @@
             <div class="mr-auto d-flex align-items-center">
               <i class="ti-thumb-up m-0 mr-4 h4 text-muted"></i> Likes
             </div>
-            <span class="spark-bar-1" sparkBarHeight="40" sparkBarColor="black">45,34,44,23,56,67,54,34</span>
+            <span class="spark-bar-1" sparkBarHeight="40" sparkBarColor="gray">45,34,44,23,56,67,54,34</span>
           </li>
           <li class="list-group-item d-flex">
             <div class="mr-auto d-flex align-items-center">
               <i class="ti-truck m-0 mr-4 h4 text-muted"></i> Sales
             </div>
-            <span class="spark-bar-1" sparkBarHeight="40" sparkBarColor="green">12,23,19,18,12,2,33,12</span>
+            <span class="spark-bar-1" sparkBarHeight="40" sparkBarColor="orange">12,23,19,18,12,2,33,12</span>
           </li>
         </ul>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row equal-cols">
+  <div class="col-12 col-md-6">
+    <div class="card card-chat" style="height: 542px">
+      <div class="card-header">
+        <h6>CHAT</h6>
+      </div>
+      <div class="card-body" style="height: 423px">
+        <ol>
+          <li>
+            <div class="media small">
+              <div class="chat-user-avatar">
+                <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                <small><time>09:34am</time></small>
+              </div>
+              <div class="media-body">
+                <div class="d-flex"><strong class="chat-username">John McDowall</strong></div>
+                What time does the server upgrade kickoff?
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media small">
+              <div class="chat-user-avatar">
+                <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                <small><time>09:35am</time></small>
+              </div>
+              <div class="media-body">
+                <div class="d-flex"><strong class="chat-username">Hiro Protagonist</strong></div>
+                In about 10 minutes.
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media small">
+              <div class="chat-user-avatar">
+                <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                <small><time>09:35am</time></small>
+              </div>
+              <div class="media-body">
+                <div class="d-flex"><strong class="chat-username">John McDowall</strong></div>
+                Ok, great.
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media small">
+              <div class="chat-user-avatar">
+                <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                <small><time>09:44am</time></small>
+              </div>
+              <div class="media-body">
+                <div class="d-flex"><strong class="chat-username">Hiro Protagonist</strong></div>
+                You ready? Holding onto your butt?
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media small">
+              <div class="chat-user-avatar">
+                <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                <small><time>09:34am</time></small>
+              </div>
+              <div class="media-body">
+                <div class="d-flex"><strong class="chat-username">John McDowall</strong></div>
+                What time does the server upgrade kickoff?
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media small">
+              <div class="chat-user-avatar">
+                <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                <small><time>09:34am</time></small>
+              </div>
+              <div class="media-body">
+                <div class="d-flex"><strong class="chat-username">John McDowall</strong></div>
+                What time does the server upgrade kickoff?
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media small">
+              <div class="chat-user-avatar">
+                <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                <small><time>09:34am</time></small>
+              </div>
+              <div class="media-body">
+                <div class="d-flex"><strong class="chat-username">John McDowall</strong></div>
+                What time does the server upgrade kickoff?
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="card-footer">
+        <input type="text" class="form-control mr-3" placeholder="Enter your message" />
+        <button class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6">
   </div>
 </div>

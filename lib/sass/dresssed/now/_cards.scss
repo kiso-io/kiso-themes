@@ -14,10 +14,15 @@
   background-size: 100vh 100vh;
 
   width: 100%;
+
   overflow: hidden;
 
   &.card-grow {
     flex-grow: 1;
+  }
+
+  &.card-full-height {
+    height: 100%;
   }
 }
 
@@ -91,6 +96,16 @@
 
   p {
     line-height: 1.31;
+  }
+
+  .list-group-flush {
+    .list-group-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .list-group-item:last-of-type {
+      padding-bottom:0;
+    }
   }
 }
 
