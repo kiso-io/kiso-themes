@@ -4,7 +4,6 @@
     word-spacing: unset;
     white-space: nowrap;
     width: 100%;
-    margin-bottom: 0;
 
     td:first-of-type,
     th:first-of-type {
@@ -16,12 +15,15 @@
       padding-right: 1.25rem;
     }
 
-    &~.card-header {
-      table {
-        th {
-          border-top: none;
-        }
-      }
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
+
+  .card-header ~ .table {
+    th {
+      border-top: none;
     }
   }
 }
