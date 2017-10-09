@@ -37,3 +37,9 @@
 .badge-neutral {
   @include badge-variant($white-color);
 }
+
+@each $gray-color-name in map-keys($grays) {
+  .badge-gray-#{$gray-color-name} {
+    @include badge-variant(map-get($grays, $gray-color-name));
+  }
+}

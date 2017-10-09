@@ -1,12 +1,6 @@
-PATH
-  remote: ../..
-  specs:
-    dresssed (1.0.55)
-      jquery-rails
-      rails (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
+  remote: http://dresssed.com/gems/263834bde09a27b4f271aeede0e37ed5/
   specs:
     actioncable (5.1.0)
       actionpack (= 5.1.0)
@@ -66,6 +60,9 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    dresssed-ives (1.0.58)
+      jquery-rails
+      rails (>= 3.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -234,7 +231,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   devise
-  dresssed!
+  dresssed-ives!
   guard
   guard-livereload
   heroku_rails_deflate

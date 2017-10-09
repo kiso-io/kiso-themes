@@ -1,8 +1,8 @@
-@include form-control-placeholder($medium-gray, 1);
+@include form-control-placeholder($dark-gray, 1);
 
 .form-control {
   background-color: $transparent-bg;
-  border: 1px solid $light-gray;
+  border: 1px solid $dark-gray;
   border-radius: $btn-round-radius;
   color: $black-color;
   line-height: normal;
@@ -10,7 +10,7 @@
   @include box-shadow(none);
 
   .has-success & {
-    border-color: $light-gray;
+    border-color: $dark-gray;
   }
 
   &:focus {
@@ -156,7 +156,7 @@ select[multiple] {
 
 .input-group-addon {
   background-color: $white-bg;
-  border: 1px solid $light-gray;
+  border: 1px solid $dark-gray;
   border-radius: $btn-round-radius;
   color: $dark-background;
   padding: $padding-base-vertical - 1 0 $padding-base-vertical - 1 $padding-base-horizontal - 1;
@@ -201,7 +201,7 @@ select[multiple] {
 
 .input-group[disabled] {
   .input-group-addon {
-    background-color: $light-gray;
+    background-color: $dark-gray;
   }
 }
 .input-group .form-control:first-child,
@@ -219,7 +219,7 @@ select[multiple] {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: $light-gray;
+  background-color: $dark-gray;
   color: $default-color;
   cursor: not-allowed;
 }
@@ -229,7 +229,7 @@ fieldset[disabled] .form-control {
   padding: $padding-btn-vertical + 2 $padding-base-horizontal;
 }
 .input-group-btn .btn-default:not(.btn-fill) {
-  border-color: $medium-gray;
+  border-color: $dark-gray;
 }
 
 .input-group-btn:last-child > .btn {
@@ -240,7 +240,7 @@ textarea.form-control {
   padding: 10px 10px 0 0;
   resize: none;
   border: none;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $dark-gray;
   border-radius: 0;
   line-height: 2;
 

@@ -278,6 +278,12 @@ p {
   color: $opacity-gray-8;
 }
 
+@each $gray-color-name in map-keys($grays) {
+  .text-gray-#{$gray-color-name} {
+    color: map-get($grays, $gray-color-name)
+  }
+}
+
 .blockquote {
   border: 1px solid $default-color;
   border-left: none;

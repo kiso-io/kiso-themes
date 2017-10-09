@@ -25,8 +25,8 @@
               right: 42px;
               left: auto;
               border-color: rgba(238, 238, 242, 0) !important;
-              border-left-color: $pale-blue-bg !important;
-              border-top-color: $pale-blue-bg !important;
+              border-left-color: $card-chat-bg !important;
+              border-top-color: $card-chat-bg !important;
             }
           }
 
@@ -59,8 +59,9 @@
         }
 
         .media-body {
-          background-color: $pale-blue-bg;
+          background-color: $card-chat-bg;
           padding: 1rem;
+          border-radius: $border-radius-small;
 
           &:before {
             left: 42px;
@@ -71,9 +72,9 @@
             width: 0;
             position: absolute;
             pointer-events: none;
-            border-top-color: $pale-blue-bg;
+            border-top-color: $card-chat-bg;
             border-width: 8px;
-            border-right-color: $pale-blue-bg;
+            border-right-color: $card-chat-bg;
           }
         }
       }

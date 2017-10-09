@@ -19,11 +19,6 @@ $light-black: #444 !default;
 $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
 
-// Grays
-$light-gray: #e3e3e3 !default;
-$medium-gray: #ddd !default;
-$dark-gray: #9a9a9a !default;
-
 // Backgrounds
 $main-bg: #eef5fb !default;
 $dark-background: #555 !default;
@@ -99,6 +94,62 @@ $brand-warning: $warning-color !default;
 $brand-danger: $danger-color !default;
 $brand-inverse: $inverse-color !default;
 $link-disabled-color: #666 !default;
+
+// Grays
+$gray-100: mix($brand-primary, $white-color, 2%);
+$gray-200: mix($brand-primary, $white-color, 4%);
+$gray-300: mix($brand-primary, $white-color, 8%);
+$gray-400: mix(desaturate($brand-primary, 20%), $white-color, 16%);
+$gray-500: mix(desaturate($brand-primary, 20%), $white-color, 24%);
+$gray-600: mix(desaturate($brand-primary, 20%), $white-color, 32%);
+$gray-700: mix(desaturate($brand-primary, 20%), $white-color, 40%);
+$gray-800: mix(desaturate($brand-primary, 20%), $white-color, 48%);
+$gray-900: mix(desaturate($brand-primary, 20%), $white-color, 56%);
+
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+);
+
+$light-gray: $gray-200;
+$medium-gray: $gray-400;
+$dark-gray: $gray-600;
+
+// Colors
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800
+);
+
 
 // Lighter colors
 $light-blue: rgba($primary-color, 0.2);
@@ -290,3 +341,12 @@ $gradient-floor-fade: linear-gradient( to bottom, transparent 20%, rgba(0, 0, 0,
 $gradient-roof-fade: linear-gradient( to bottom, rgba(0, 0, 0, 0.6) 90%, rgba(0, 0, 0, 0.6) 40%, transparent 100%) no-repeat scroll 0 0;
 $gradient-white-to-alpha: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 
+
+// Card Acivity Feed
+$card-activity-feed-label-bg: $gray-400;
+$card-activity-feed-timeline-thread-bg: $gray-400;
+$card-activity-feed-item-icon-color: $gray-100;
+$card-activity-feed-item-icon-bg: $gray-800;
+
+// Card Chat
+$card-chat-bg: $gray-400;
