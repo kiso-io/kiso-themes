@@ -80,6 +80,12 @@
   h6 {
     margin: 0;
   }
+
+  &~.list-group-flush {
+    li:first-of-type {
+      border-top: 0;
+    }
+  }
 }
 
 .card-footer {
