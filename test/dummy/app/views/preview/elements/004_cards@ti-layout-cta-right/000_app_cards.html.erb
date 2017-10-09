@@ -798,3 +798,44 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header d-flex align-items-center">
+        <h6>Most Active Users</h6>
+        <div class="ml-auto btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-default active">Week</button>
+          <button type="button" class="btn btn-default">Month</button>
+          <button type="button" class="btn btn-default">Quarter</button>
+        </div>
+      </div>
+      <div class="table table-hover table-striped table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Installs</th>
+              <th>Last Active</th>
+              <th>Countries</th>
+              <th>Activity</th>
+            </tr>
+          </thead>
+          <% (1..10).each do |index| %>
+          <tr>
+            <td><%= index %></td>
+            <td>johnny@appleseed.com</td>
+            <td>Johnny Appleseed</td>
+            <td><%=sprintf('%.2f', (rand * 1000).round).gsub('.00','').reverse.scan(/(\d*\.\d{1,3}|\d{1,3})/).join(',').reverse %></td>
+            <td>Wed, 3rd Oct 2018</td>
+            <td>Canada, USA</td>
+            <td><span class="spark-bar-1" sparkbarcolor="#6886a7" style="width: 100px;"><%=(0..8).to_a.shuffle.join(', ') %></span></td>
+          </tr>
+        <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
