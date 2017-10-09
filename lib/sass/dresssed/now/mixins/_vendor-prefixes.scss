@@ -37,11 +37,7 @@
 }
 
 @mixin rotate-180() {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  transform: rotate(180deg);
 }
 
 @mixin transform-translate-x($value) {

@@ -1,7 +1,7 @@
 .timeline {
   display: flex;
   height: 100%;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .left-timeline {

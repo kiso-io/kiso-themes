@@ -104,9 +104,9 @@
   </div>
 </div>
 
-<div class="row is-flex">
+<div class="row equal-cols">
   <div class="col-sm-12 col-md-9 animate-fade-in-1000">
-    <div class="card">
+    <div class="card card-full-height">
       <div class="card-header d-flex align-items-center">
         <h6 class="mr-auto">SALES VS REFUNDS LAST 7 DAYS</h6>
 
@@ -130,13 +130,13 @@
   </div>
 
   <div class="col-sm-12 col-md-3 animate-fade-in-1000">
-    <div class="card card-grow d-flex">
-      <div class="card-body overflow-y-scroll">
+    <div class="card card-full-height d-flex">
+      <div class="card-body">
         <h6>SALES ACTIVITY</h6>
-        <div class="timeline" style="height: 390px;">
+        <div class="timeline" style="height: 450px">
           <ul class="left-timeline">
             <% types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}] %>
-            <% (1..5).each do |index|%>
+            <% (1..8).each do |index|%>
               <li class="timeline-item">
                 <% instance = types[Random.rand(types.length)] %>
                 <time class='<%= instance[:css_class]%>'>
@@ -207,7 +207,7 @@
         </ul>
       </div>
       <div class="tab-content">
-        <div class="tab-pane fade active show" style='height: 444px; overflow: scroll;' id='dashboard-recent-comments'>
+        <div class="tab-pane fade active show" style='height: 444px; overflow-y: auto;' id='dashboard-recent-comments'>
           <ul class="list-group list-group-flush">
             <% (1..5).each do |index|%>
               <li class='list-group-item'>
@@ -232,7 +232,7 @@
           </ul>
         </div>
         <div class="tab-pane fade" id="dashboard-recent-threads">
-          <div style="overflow: scroll; width: auto; height: 444px;">
+          <div style="overflow-y: auto; width: auto; height: 444px;">
             <ul class="list-group list-group-flush">
               <% (1..10).each do |index|%>
                 <li class="list-group-item">
