@@ -15,7 +15,7 @@ Dresssed.hookOnPageLoad = function( callback ) {
   if (typeof window.Turbolinks === 'object') {
     $(document).on('turbolinks:load', function() { callback(); });
   } else {
-    $(document).ready(function() { callback(); });
+    $(function() { callback(); });
   }
 }
 

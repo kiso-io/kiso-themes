@@ -1,8 +1,10 @@
 <% @js_libs = yield :js_libs %>
 
 <% if @js_libs.include? 'gmaps' %>
-  <%= javascript_include_tag "//maps.google.com/maps/api/js?sensor=true" %>
-  <%= javascript_include_tag "gmaps/gmaps" %>
+  <% content_for :javascript do %>
+    <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=AIzaSyB-cfYp0VsRHQZCPk6Q6RCAkiqTI22ICqY&libraries=places" %>
+    <%= javascript_include_tag "gmaps/gmaps" %>
+  <% end %>
 <% end %>
 
 <% if @js_libs.include? 'flot' %>
@@ -15,8 +17,10 @@
 <% end %>
 
 <% if @js_libs.include? 'chartjs' %>
-  <%= javascript_include_tag "chartjs/Chart.bundle.min" %>
-  <%= javascript_include_tag "chartjs/Chart.min" %>
+  <% content_for :javascript do %>
+    <%= javascript_include_tag "chartjs/Chart.bundle.min" %>
+    <%= javascript_include_tag "chartjs/Chart.min" %>
+  <% end %>
 <% end %>
 
 

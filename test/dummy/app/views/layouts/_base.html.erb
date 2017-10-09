@@ -24,7 +24,8 @@
     <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" %>
 
     <%= render 'layouts/external_js_libs' %>
-    <%= javascript_include_tag "application" %>
+    <%= yield :external_js_libs %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
 
     <%= yield :javascript %>
     <%= yield :head %>
