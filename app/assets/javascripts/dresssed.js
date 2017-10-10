@@ -10,6 +10,7 @@
 //= require dresssed/bootstrap_switch
 //= require dresssed/sheets
 //= require dresssed/gmaps
+//= require dresssed/jqvectormaps
 //= require dresssed/flot
 //= require dresssed/chartjs
 //= require dresssed/sparklines
