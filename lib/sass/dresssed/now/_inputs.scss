@@ -235,21 +235,14 @@ fieldset[disabled] .form-control {
 .input-group-btn:last-child > .btn {
   margin-left: 0;
 }
+
 textarea.form-control {
   max-width: 100%;
-  padding: 10px 10px 0 0;
+  padding: .5rem 1rem;
   resize: none;
-  border: none;
   border-bottom: 1px solid $dark-gray;
-  border-radius: 0;
-  line-height: 2;
-
-  &:focus,
-  &:active {
-    border-left: none;
-    border-top: none;
-    border-right: none;
-  }
+  border-radius: $border-radius-small;
+  line-height: 1.5;
 }
 
 .has-success,
