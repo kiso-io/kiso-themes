@@ -1,31 +1,29 @@
-<div id="main" class='devise login'>
+<div id="main" class="devise-1">
   <div class="container-fluid">
     <div class="row">
       <header class="text-center">
         <h1>My App</h1>
-        <p class="p0 m0">Unlock My Account</p>
+        <p class="p-0 m-0 text-uppercase">Unlock my Account</p>
       </header>
     </div>
-    <div class="row mt20">
-      <form accept-charset="UTF-8" action="#" class="form-horizontal col-xs-12 col-md-6 col-md-offset-3" id="new_user" method="post">
-        <div class="sheet form-sheet form-inputs">
-          <div class="sheet-inner">
-            <div class="form-group ">
-              <label class="form-label" for="user_email">Email</label>
-              <input autofocus="autofocus" class="" id="user_email" name="user[email]" type="email" value="">
+    <div class="row mt-5">
+      <div class="col-12 col-md-6 mr-auto ml-auto">
+        <div class="card">
+          <div class="card-body">
+            <div class="container">
+              <form accept-charset="UTF-8" action="#" class="form-horizontal" id="new_user" method="post" novalidate="novalidate">
+                <div class="form-group row">
+                  <label class="form-label" for="user_email">Your Login Email</label>
+                  <input autofocus="autofocus" class="form-control" id="user_email" name="user[email]" type="email" value="">
+                </div>
+                <div class="row d-flex align-items-center mt-5">
+                  <a href="#">Sign in</a>
+                  <input class="btn btn-primary ml-auto" name="commit" type="button" value="Unlock my Account">
+                </div>
+              </form>
             </div>
           </div>
         </div>
-        <div class="form-actions text-right">
-          <input class="btn btn-primary mr15" name="commit" type="submit" value="Unlock My Account">
-        </div>
-      </form>
-    </div>
-    <div class="row mt50">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 text-right">
-        <ul class="list-unstyled options">
-          <li class="col-xs-12"><a href="/users/sign_in">Sign in</a></li>
-        </ul>
       </div>
     </div>
   </div>
