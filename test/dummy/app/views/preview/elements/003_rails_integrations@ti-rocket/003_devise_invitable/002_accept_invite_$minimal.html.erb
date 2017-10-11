@@ -1,0 +1,35 @@
+<div id="main" class="devise-1">
+  <div class="container-fluid">
+    <div class="row">
+      <header class="text-center">
+        <h1><%= app_name %></h1>
+        <p class="p-0 m-0 text-uppercase">Accept Invite</p>
+      </header>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12 col-md-6 mr-auto ml-auto">
+        <div class="card">
+          <div class="card-body">
+            <div class="container">
+              <p class="text-center"><strong>You've been invited to <%= app_name %></strong></p>
+              <p class="text-center">Create a password to activate your invite</p>
+              <form accept-charset="UTF-8" action="#" class="form-horizontal" id="new_user" method="post" novalidate="novalidate">
+                <div class="form-group row">
+                  <label class="form-label" for="user_email">Password</label>
+                  <input autofocus="autofocus" class="form-control" id="user_email" name="user[email]" type="password" value="">
+                </div>
+                <div class="form-group row">
+                  <label class="form-label" for="user_email">Password confirmation</label>
+                  <input autofocus="autofocus" class="form-control" id="user_email" name="user[email]" type="password" value="">
+                </div>
+                <div class="row d-flex align-items-center mt-5">
+                  <input class="btn btn-primary ml-auto" name="commit" type="button" value="Accept Invite &rarr;">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
