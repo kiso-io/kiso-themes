@@ -1,6 +1,7 @@
 
 .card-metric {
   display: flex;
+  overflow: hidden;
   justify-content: space-between;
 
   .card-body {
