@@ -268,7 +268,7 @@
 
   &.btn-light {
     color: $black-color;
-    background-color: $light-gray;
+    background-color: theme-color('light');
   }
 
   &.btn-link {

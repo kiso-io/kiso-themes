@@ -51,7 +51,7 @@ $datepicker-color-old-new-days: rgba(255, 255, 255, 0.4) !default;
 $transparent-bg: transparent !default;
 
 // State colors
-$default-color: #6886a7 !default;
+$default-color: #9cc0e8 !default;
 $default-states-color: lighten($default-color, 6%) !default;
 $default-color-opacity: rgba(182, 182, 182, 0.6) !default;
 $primary-color: #4173a7 !default;
@@ -166,7 +166,7 @@ $theme-colors: (
   info: $info-color,
   warning: $warning-color,
   danger: $danger-color,
-  light: $light-blue,
+  light: #ebeef1,
   dark: $inverse-color
 );
 
