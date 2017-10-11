@@ -59,39 +59,39 @@
 
 @each $gray-color-name in map-keys($grays) {
   .bg-gray-#{$gray-color-name} {
-    background-color: map-get($grays, $gray-color-name);
+    background-color: map-get($grays, $gray-color-name) !important;
     @include color-yiq(map-get($grays, $gray-color-name));
   }
 }
 
 @each $theme-color-name in map-keys($theme-colors) {
   .bg-#{$theme-color-name}-light {
-    background-color: tint(map-get($theme-colors, $theme-color-name), 15%);
+    background-color: tint(map-get($theme-colors, $theme-color-name), 15%) !important;
     @include color-yiq(tint(map-get($theme-colors, $theme-color-name), 15%));
   }
 
   .bg-#{$theme-color-name}-lighter {
-    background-color: tint(map-get($theme-colors, $theme-color-name), 20%);
+    background-color: tint(map-get($theme-colors, $theme-color-name), 20%) !important;
     @include color-yiq(tint(map-get($theme-colors, $theme-color-name), 20%));
   }
 
   .bg-#{$theme-color-name}-lightest {
-    background-color: tint(map-get($theme-colors, $theme-color-name), 30%);
+    background-color: tint(map-get($theme-colors, $theme-color-name), 30%) !important;
     @include color-yiq(tint(map-get($theme-colors, $theme-color-name), 30%));
   }
 
   .bg-#{$theme-color-name}-dark {
-    background-color: shade(map-get($theme-colors, $theme-color-name), 15%);
+    background-color: shade(map-get($theme-colors, $theme-color-name), 15%) !important;
     @include color-yiq(tint(map-get($theme-colors, $theme-color-name), 15%));
   }
 
   .bg-#{$theme-color-name}-darker {
-    background-color: shade(map-get($theme-colors, $theme-color-name), 20%);
+    background-color: shade(map-get($theme-colors, $theme-color-name), 20%) !important;
     @include color-yiq(tint(map-get($theme-colors, $theme-color-name), 20%));
   }
 
   .bg-#{$theme-color-name}-darkest {
-    background-color: shade(map-get($theme-colors, $theme-color-name), 30%);
+    background-color: shade(map-get($theme-colors, $theme-color-name), 30%) !important;
     @include color-yiq(tint(map-get($theme-colors, $theme-color-name), 30%));
   }
 }
