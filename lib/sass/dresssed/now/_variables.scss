@@ -199,6 +199,7 @@ $margin-bottom: 10px !default;
 $border: 1px solid !default;
 $border-radius-extra-small: 0.125rem !default;
 $border-radius-small: 0.1875rem !default;
+$border-radius-base: 1rem !default;
 $border-radius-large: 0.25rem !default;
 $border-radius-extreme: 0.875rem !default;
 $border-radius-large-top: $border-radius-large $border-radius-large 0 0 !default;
@@ -350,3 +351,9 @@ $card-activity-feed-item-icon-bg: $gray-800;
 
 // Card Chat
 $card-chat-bg: $gray-400;
+
+$switch-width: 90px;
+$switch-height: 40px;
+$gray-light: $gray-700;
+$brand-secondary: $brand-primary;
+$inverse: $inverse-color;

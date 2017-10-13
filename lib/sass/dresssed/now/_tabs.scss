@@ -1,5 +1,36 @@
 
 .nav-tabs {
+  border-bottom: 1px solid $medium-gray;
+
+  > .nav-item {
+    > .nav-link {
+      background-color: transparent;
+      border-radius: 0;
+      border: none;
+      font-size: $font-size-small;
+      line-height: $line-height-general;
+      transition: none;
+
+      &.active {
+        color: $primary-color;
+        font-weight: bold;
+        border-bottom: 4px solid $primary-color;
+      }
+    }
+  }
+}
+
+.nav-pills {
+  > .nav-item {
+    > .nav-link {
+      &.active {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.rounded-nav-tabs {
   padding: $padding-large-vertical $padding-base-horizontal;
 
   border: 0;
@@ -10,7 +41,6 @@
       margin-right: 5px;
       padding: $padding-nav-link-vertical $padding-nav-link-horizontal;
 
-      color: $default-color;
       border: 1px solid $transparent-bg;
       border-radius: 30px;
       background-color: $transparent-bg;

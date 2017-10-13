@@ -9,7 +9,7 @@
   }
 
   Dresssed.hookOnPageLoad( function() {
-    Dresssed.jsLibIsActive('fastclick') && initFastClick.call(this)
+    Dresssed.jsLibIsActive('fastclick') && initFastclick.call(this)
   })
 
 })()

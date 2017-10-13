@@ -31,3 +31,63 @@
     }
   }
 }
+
+.plan-selector {
+
+  form {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+  }
+  .custom-radio .custom-control-input:checked ~ .custom-control-indicator {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M6.41 0l-.69.72-2.78 2.78-.81-.78-.72-.72-1.41 1.41.72.72 1.5 1.5.69.72.72-.72 3.5-3.5.72-.72-1.44-1.41z' fill='%23fff' transform='translate(0 1)' /%3E%3C/svg%3E");
+  }
+
+  .custom-control {
+    width: 100%;
+    padding-left: 0;
+    margin-right: 0;
+
+    input[type="radio"]:checked ~ .custom-control-description {
+      border: 1px solid $brand-primary-lightest;
+      background: $gray-200;
+
+      .price {
+        color: $primary-color;
+      }
+    }
+
+
+    .custom-control-indicator {
+      right: 1rem;
+      left: auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .custom-control-description {
+      align-items: center;
+      padding: 1rem;
+      cursor: pointer;
+      border-radius: $border-radius-small;
+      border: 1px solid transparent;
+
+      .details {
+        flex-grow: 1;
+      }
+
+      .price {
+        font-size: 1.7rem;
+        margin-right: 2rem;
+        color: $gray-900;
+        width: 8rem;
+      }
+
+      .plan-name {
+        font-weight: bold;
+        line-height: 1;
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@
 //= require dresssed/sheets
 //= require dresssed/gmaps
 //= require dresssed/jqvectormaps
+//= require dresssed/jasny
 //= require dresssed/flot
 //= require dresssed/chartjs
 //= require dresssed/sparklines
