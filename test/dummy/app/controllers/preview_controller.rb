@@ -87,7 +87,7 @@ class ElementFinder
     data[:children] = children = []
 
     Dir.foreach(path).sort {|el1, el2| el1 <=> el2}.each do |entry|
-      next if (entry == '..' || entry == '.' || entry == '.DS_Store')
+      next if (entry == '..' || entry == '.' || entry == '.DS_Store' || entry[0] == '_')
       full_path = File.join(path, entry)
 
       if File.directory?(full_path)
