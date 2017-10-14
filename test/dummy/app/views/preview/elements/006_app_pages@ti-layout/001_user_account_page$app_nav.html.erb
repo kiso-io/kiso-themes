@@ -250,7 +250,7 @@
             <div class="card-body">
               <h5>NOTIFICATIONS</h5>
               <ul class="list-unstyled">
-                <li class="d-flex align-items-center">
+                <li class="d-flex align-items-center mb-4">
                   <div class="mr-auto">
                     <h6>DIGESTS</h6>
                     <p class="text-muted small">Choose wheather daily, weekly or monthly digests are emailed to you.</p>
@@ -261,17 +261,52 @@
                     <option value="3">Monthly</option>
                   </select>
                 </li>
-                <li class="d-flex align-items-center">
+                <li class="d-flex align-items-center mb-4">
                   <div class="mr-auto">
                     <h6>SMS ALERTS</h6>
                     <p class="text-muted small">Choose whether to enable SMS alerts sent to you.</p>
                   </div>
-                  <label class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                  </label>
+                  <input type="checkbox" name="checkbox" class="bootstrap-switch" data-on-color="primary" checked/>
+                </li>
+                <li class="d-flex align-items-center mb-4">
+                  <div class="mr-auto">
+                    <h6>@ NOTIFICATIONS</h6>
+                    <p class="text-muted small">Recieve a notification when some @'s you.</p>
+                  </div>
+                  <input type="checkbox" name="checkbox" class="bootstrap-switch" data-on-color="primary" checked/>
+                </li>
+                <li class="d-flex align-items-center mb-4">
+                  <div class="mr-auto">
+                    <h6>PROJECT ARCHIVE NOTIFICATIONS</h6>
+                    <p class="text-muted small">Receive a notification when someone archives a project.</p>
+                  </div>
+                  <input type="checkbox" name="checkbox" class="bootstrap-switch" data-on-color="primary" checked/>
+                </li>
+                <li class="d-flex align-items-center mb-4">
+                  <div class="mr-auto">
+                    <h6>DEADLINE NOTIFICATIONS</h6>
+                    <p class="text-muted small">Receive a notification when a deadline is about to expire.</p>
+                  </div>
+                  <input type="checkbox" name="checkbox" class="bootstrap-switch" data-on-color="primary" checked/>
+                </li>
+                <li class="d-flex align-items-center mb-4">
+                  <div class="mr-auto">
+                    <h6>MICROMANAGEMENT NOTIFICATIONS</h6>
+                    <p class="text-muted small">Receive a notification when someone is about to micromanage the hell out of you.</p>
+                  </div>
+                  <input type="checkbox" name="checkbox" class="bootstrap-switch" data-on-color="primary" checked/>
+                </li>
+                <li class="d-flex align-items-center mb-4">
+                  <div class="mr-auto">
+                    <h6>MARKETING EMAILS</h6>
+                    <p class="text-muted small">Opt in to our fantastical marketing emails.</p>
+                  </div>
+                  <input type="checkbox" name="checkbox" class="bootstrap-switch" data-on-color="primary" checked/>
                 </li>
               </ul>
+              <div class="actions d-flex">
+                <button class="btn btn-success ml-auto">Save Changes</button>
+              </div>
             </div>
           </div>
         </div>
