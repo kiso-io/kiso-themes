@@ -69,7 +69,7 @@ class ElementFinder
   end
 
   def self.display_name(path)
-    path.to_s.gsub(/\$.\w+/, '').gsub(/\$app_nav/, '').gsub(/minimal/, '').gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/$.[\w_]+/, '').titleize
+    path.to_s.gsub(/\$.\w+/, '').gsub(/\$app_nav/, '').gsub(/minimal|fullpage/, '').gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/$.[\w_]+/, '').titleize
   end
 
   def self.find(path, parent_section=nil, name=nil)
