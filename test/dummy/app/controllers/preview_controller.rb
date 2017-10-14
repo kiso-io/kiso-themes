@@ -68,6 +68,10 @@ class ElementFinder
     @path = path
   end
 
+  def self.display_name(path)
+    path.to_s.gsub(/\$.\w+/, '').gsub(/\$app_nav/, '').gsub(/minimal/, '').gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/$.[\w_]+/, '').titleize
+  end
+
   def self.find(path, parent_section=nil, name=nil)
     section = path.gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, '')
 
@@ -76,7 +80,7 @@ class ElementFinder
       header_title: File.basename(path, '.html.erb').to_s.match(/header/) && File.basename(path, '.html.erb').to_s.match(/header_\w+/)[0].gsub(/header_/, ''),
       section: section,
       target_name:      File.basename(path, '.html.erb').to_s,
-      display_name:     File.basename(path, '.html.erb').to_s.gsub(/\$.\w+/, '').gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').titleize,
+      display_name:     display_name(File.basename(path, '.html.erb')),
       icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{path.match(/@([\w+-]*)/)[0][1..-1]}"
     }
 
@@ -95,7 +99,7 @@ class ElementFinder
           File.basename(entry, '.html.erb').to_s.match(/header_\w+/)[0].gsub(/header_/, '').gsub(/_/, ' '),
           section:          section + '/' + File.basename(entry, '.html.erb').to_s,
           target_name:      File.basename(entry, '.html.erb').to_s,
-          display_name:     File.basename(entry, '.html.erb').to_s.gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/\$.\w+/, '').gsub('fullpage', '').titleize,
+          display_name:     display_name(File.basename(entry, '.html.erb')),
           icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{entry.match(/@([\w+-]*)/)[0][1..-1]}"
         }
         children << childdata
