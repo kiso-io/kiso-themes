@@ -12,6 +12,7 @@
   background-color: $white-color;
 
   width: 100%;
+  overflow: hidden;
 
   &.card-grow {
     flex-grow: 1;
