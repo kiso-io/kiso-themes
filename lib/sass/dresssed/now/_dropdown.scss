@@ -1,7 +1,7 @@
 .dropdown-menu {
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .2);
   border: 0;
   border-radius: $border-radius-extra-small;
-  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .2);
 
   font-size: $font-size-base;
 
@@ -28,7 +28,7 @@
     width: 0;
     height: 0;
 
-    content: "";
+    content: '';
     vertical-align: middle;
 
     color: $white-color;
