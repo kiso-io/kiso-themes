@@ -273,6 +273,37 @@ textarea.form-control {
   }
 }
 
+.fileinput-avatar {
+  position: relative;
+  justify-content: center;
+
+  i {
+    color: white;
+  }
+
+  .fileinput-new.thumbnail {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  &.fileinput-exists {
+    .fileinput-new.thumbnail {
+      display: none;
+    }
+  }
+
+  .avatar-controls {
+    z-index: 1;
+  }
+
+  .fileinput-preview.fileinput-exists.avatar {
+    position: absolute;
+  }
+}
+
 
 .custom-switch {
   padding-left: $custom-control-gutter * 1.5;

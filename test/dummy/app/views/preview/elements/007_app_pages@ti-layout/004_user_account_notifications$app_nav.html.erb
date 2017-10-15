@@ -1,7 +1,7 @@
 <%= content_for :js_libs, "jasny" %>
 
 <div class="jumbotron bg-white d-flex align-items-center justify-content-center flex-column pb-0">
-  <%= random_avatar 128, 'rounded-circle shadow mb-3' %>
+  <%= render partial: 'preview/elements/006_app_pages@ti-layout/avatar_upload' %>
   <h2 class="m-0 mb-2">Phill McMurray</h2>
   <div class="badge badge-light">
     PRO ACCOUNT
@@ -14,10 +14,10 @@
       <a class="nav-link" id="plan-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-expanded="false">Plan</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" id="billing-tab" data-toggle="tab" href="#billing" role="tab" aria-controls="billing" aria-expanded="true">Billing</a>
+      <a class="nav-link" id="billing-tab" data-toggle="tab" href="#billing" role="tab" aria-controls="billing" aria-expanded="false">Billing</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-expanded="false">Notifications</a>
+      <a class="nav-link active" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-expanded="true">Notifications</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="support-tab" data-toggle="tab" href="#support" role="tab" aria-controls="support" aria-expanded="false">Support</a>
@@ -46,7 +46,7 @@
           </div>
         </div>
 
-        <div class="tab-pane fade show active" id="billing" role="tabpanel" aria-labelledby="billing-tab">
+        <div class="tab-pane fade" id="billing" role="tabpanel" aria-labelledby="billing-tab">
           <div class="card">
             <div class="card-body">
             <%= render partial: 'preview/elements/006_app_pages@ti-layout/billing' %>
@@ -55,7 +55,7 @@
         </div>
 
 
-        <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications">
+        <div class="tab-pane fade show active" id="notifications" role="tabpanel" aria-labelledby="notifications">
           <div class="card">
             <div class="card-body">
             <%= render partial: 'preview/elements/006_app_pages@ti-layout/notifications' %>
