@@ -1,11 +1,10 @@
 .dropdown-menu {
-  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .2);
+  @include transition(all $fast-transition-time $transition-linear);
   border: 0;
   border-radius: $border-radius-extra-small;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2);
 
   font-size: $font-size-base;
-
-  @include transition(all $fast-transition-time $transition-linear);
 
   &.dropdown-menu-right {
     right: 0;
@@ -18,32 +17,30 @@
   }
 
   &:before {
+    display: inline-block;
     position: absolute;
     top: -5px;
     right: auto;
     left: 13px;
-
-    display: inline-block;
+    border-right: 0.4em solid transparent;
+    border-bottom: 0.4em solid;
+    border-left: 0.4em solid transparent;
 
     width: 0;
     height: 0;
-
-    content: '';
     vertical-align: middle;
 
     color: $white-color;
-    border-right: .4em solid transparent;
-    border-bottom: .4em solid;
-    border-left: .4em solid transparent;
+
+    content: '';
   }
 
   .dropdown-item {
+    @include transition(all $fast-transition-time $transition-linear);
     padding-top: $padding-base-vertical;
     padding-bottom: $padding-base-vertical;
 
     font-size: $font-size-small;
-
-    @include transition(all $fast-transition-time $transition-linear);
 
     &:hover,
     &:focus {
@@ -89,23 +86,21 @@
   }
 
   .dropdown & {
+    @include opacity(0);
+    @include transform-translate-y(-25px);
+
+    visibility: hidden;
     @include media-breakpoint-up(lg) {
       // Needed so that transitions work correctly with Popper
       display: block;
     }
-
-    visibility: hidden;
-
-    @include opacity(0);
-    @include transform-translate-y(-25px);
   }
 
   .dropdown.show &,
   &.open {
-    visibility: visible;
-
     @include transform-translate-y(0px);
     @include opacity(1);
+    visibility: visible;
   }
 
   .navbar .dropdown.show & {
@@ -114,9 +109,8 @@
 }
 
 .button-dropdown {
-  padding-right: $padding-base-horizontal;
-
   cursor: pointer;
+  padding-right: $padding-base-horizontal;
 
   & .dropdown-toggle {
     display: block;
@@ -130,37 +124,40 @@
   }
 }
 
-
 .dropdown-hover:hover {
+
   > .dropdown-menu {
     display: block;
-    visibility: visible;
 
     transform: translate3d(0, 0px, 0);
+    visibility: visible;
 
     opacity: 1;
   }
 }
 
 .dropdown {
+
   .with-count {
+
     .badge {
       position: absolute;
-      z-index: 2;
       top: 2px;
-      right: .3rem;
+      right: 0.3rem;
+      z-index: 2;
+      border: 2px solid $brand-primary;
+      background: $white-color;
 
       padding: 0 4px;
 
       color: $navbar-light-active-color;
-      border: 2px solid $brand-primary;
-      background: $white-color;
     }
   }
 }
 
 .notifications,
 .user-nav {
+
   .dropdown-menu {
     padding: 0;
 
@@ -171,10 +168,10 @@
 
     .card {
       display: block;
-
-      width: 290px;
       margin: 0;
       padding: 0;
+
+      width: 290px;
 
       a {
         color: $brand-primary;
@@ -185,18 +182,21 @@
       border-radius: 0;
 
       .list-group-item {
-        color: $brand-primary;
         border-radius: 0;
+        color: $brand-primary;
       }
     }
   }
 }
 
 .navbar {
+
   .navbar-nav {
+
     .user-nav {
+
       a.nav-link.dropdown-toggle {
-        padding: .25rem .7rem;
+        padding: 0.25rem 0.7rem;
       }
     }
   }

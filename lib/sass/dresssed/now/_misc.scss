@@ -5,8 +5,8 @@ body {
 }
 
 body {
-  color: $black-color;
   background-color: $main-bg;
+  color: $black-color;
 
   font-family: $sans-serif-family;
   font-size: $font-size-base;
@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@include scrollbars(.15em, $brand-primary);
+@include scrollbars(0.15em, $brand-primary);
 
 .main {
   position: relative;
@@ -24,6 +24,7 @@ body {
 }
 
 /* Animations */
+
 .nav-pills .nav-link,
 .nav-item .nav-link,
 .navbar,
@@ -32,25 +33,26 @@ body {
 }
 
 //transition for dropdown caret
+
 .dropdown-toggle:after,
 .bootstrap-switch-label:before {
   @include transition(all $fast-transition-time $transition-ease);
 }
 
-.dropdown-toggle[aria-expanded="true"]:after {
+.dropdown-toggle[aria-expanded='true']:after {
   @include rotate-180();
 }
 
 .button-bar {
-  position: relative;
 
   display: block;
-
-  width: 22px;
-  height: 1px;
+  position: relative;
 
   border-radius: 1px;
   background: $white-bg;
+
+  width: 22px;
+  height: 1px;
 
   & + .button-bar {
     margin-top: 7px;
@@ -62,10 +64,10 @@ body {
 }
 
 .open {
-  visibility: visible;
 
   @include opacity(1);
   @include transform-translate-y(0);
+  visibility: visible;
 }
 
 .cover-image {
@@ -73,18 +75,22 @@ body {
 }
 
 .help-block {
-  opacity: .5;
-  font-size: 70%;
-  padding-left: 1.25rem;
+  opacity: 0.5;
   padding-top: 0.3rem;
+  padding-left: 1.25rem;
+  font-size: 70%;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 .separator {
-  width: 44px;
-  height: 2px;
   margin: 20px auto;
 
   background-color: $default-color;
+  width: 44px;
+  height: 2px;
 
   &.separator-primary {
     background-color: $primary-color;
@@ -112,26 +118,26 @@ body {
 }
 
 .inspect-mode {
-  position: fixed;
-  z-index: 1000;
-  right: 30px;
-  bottom: 20px;
 
   display: flex;
-  justify-content: center;
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
   align-items: center;
+  justify-content: center;
+  transition: all 350ms;
+  z-index: 1000;
+  border: 3px solid #f5f5f5;
+  border-radius: 30px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: #6d7379;
+
+  cursor: pointer;
 
   width: 50px;
   height: 50px;
 
-  cursor: pointer;
-  transition: all 350ms;
-
   color: #fff;
-  border: 3px solid #f5f5f5;
-  border-radius: 30px;
-  background-color: #6d7379;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
 
   font-size: 20px;
 
@@ -141,7 +147,7 @@ body {
   }
 
   &:hover {
-    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   }
 
   &.on {
@@ -152,59 +158,59 @@ body {
 }
 
 .inspect-target {
-  cursor: pointer !important;
 
   border: 4px solid red !important;
+  cursor: pointer !important;
 }
 
 .inspect-mode-bg {
+
+  display: flex;
   position: fixed;
-  z-index: 99999;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-
-  display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  z-index: 99999;
 
-  background-color: rgba( 0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .inspector-modal {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-  width: 60%;
-  max-height: 90%;
-  padding: 2rem;
 
   border-radius: 8px;
   background-color: #232527;
+  padding: 2rem;
+
+  width: 60%;
+  max-height: 90%;
 
   textarea {
     display: none;
   }
 
   pre {
-    overflow: scroll;
-
-    width: 100%;
 
     background-color: black;
+
+    width: 100%;
+    overflow: scroll;
   }
 
   code {
+    outline: none;
     width: 100%;
     min-height: 400px;
 
     white-space: pre;
 
     color: white;
-    outline: none;
 
     font-family: monospace;
   }

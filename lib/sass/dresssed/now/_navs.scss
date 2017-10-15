@@ -52,3 +52,21 @@
     }
   }
 }
+
+.navbar-centered {
+  justify-content: space-between;
+
+  .navbar-left {
+    flex: 2;
+  }
+
+  .navbar-center {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .navbar-right {
+    flex: 2;
+    justify-content: flex-end;
+  }
+}
