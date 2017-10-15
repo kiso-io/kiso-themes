@@ -89,8 +89,11 @@
   }
 
   .dropdown & {
-    // Needed so that transitions work correctly with Popper
-    display: block;
+    @include media-breakpoint-up(lg) {
+      // Needed so that transitions work correctly with Popper
+      display: block;
+    }
+
     visibility: hidden;
 
     @include opacity(0);
