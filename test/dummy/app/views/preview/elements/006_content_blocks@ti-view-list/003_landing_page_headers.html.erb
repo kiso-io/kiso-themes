@@ -1,4 +1,4 @@
-<% headers = Dir.entries(File.join(File.dirname(__FILE__), '_headers')).select { |f| !File.directory?(f)} %>
+<% headers = Dir.entries(File.join(File.dirname(__FILE__), '_headers')).select { |f| !File.directory?(f)}.sort_by { |s| s.scan(/\d+/).first.to_i } %>
 
 <% headers.each_with_index do |header, index| %>
 <div class="row">
