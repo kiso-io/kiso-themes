@@ -35,8 +35,12 @@ small {
   font-size: $font-size-large !important;
 }
 
-.leading-tight {
+.leading-tightest {
   line-height: 0.7 !important;
+}
+
+.leading-tight {
+  line-height: 0.8 !important;
 }
 
 .leading-normal {
@@ -47,7 +51,7 @@ small {
   line-height: 1.2 !important;
 }
 
-.leading-looser {
+.leading-loosest {
   line-height: 1.5 !important;
 }
 
@@ -281,6 +285,12 @@ p {
 @each $gray-color-name in map-keys($grays) {
   .text-gray-#{$gray-color-name} {
     color: map-get($grays, $gray-color-name)
+  }
+}
+
+@each $theme-color-name in map-keys($theme-colors) {
+  .text-hover-#{$theme-color-name}:hover {
+    color: map-get($theme-colors, $theme-color-name) !important;
   }
 }
 

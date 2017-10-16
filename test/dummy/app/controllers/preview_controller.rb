@@ -77,8 +77,8 @@ class ElementFinder
     basename = File.basename(path, '.html.erb')
 
     data = {
-      is_header: basename.to_s.match(/header/),
-      header_title: basename.to_s.match(/header/) && File.basename(path, '.html.erb').to_s.match(/header_[\w\W]+/)[0].gsub(/header_/, ''),
+      is_header: basename.to_s.match(/^\d{3}_header/),
+      header_title: basename.to_s.match(/^\d{3}_header/) && File.basename(path, '.html.erb').to_s.match(/^\d{3}_header_[\w\W]+/)[0].gsub(/^\d{3}_header_/, ''),
       section: section,
       target_name:      basename.to_s,
       display_name:     display_name(File.basename(path, '.html.erb')),
@@ -95,9 +95,9 @@ class ElementFinder
         children << find(full_path, section, entry)
       else
         childdata = {
-          is_header: !File.basename(entry, '.html.erb').to_s.match(/header/).nil?,
-          header_title: !File.basename(entry, '.html.erb').to_s.match(/header/).nil? &&
-          File.basename(entry, '.html.erb').to_s.match(/header_[\w\W]+/)[0].gsub(/header_/, '').gsub(/_/, ' '),
+          is_header: !File.basename(entry, '.html.erb').to_s.match(/^\d{3}_header/).nil?,
+          header_title: !File.basename(entry, '.html.erb').to_s.match(/^\d{3}_header/).nil? &&
+          File.basename(entry, '.html.erb').to_s.match(/^\d{3}_header_[\w\W]+/)[0].gsub(/^\d{3}_header_/, '').gsub(/_/, ' '),
           section:          section + '/' + File.basename(entry, '.html.erb').to_s,
           target_name:      File.basename(entry, '.html.erb').to_s,
           display_name:     display_name(File.basename(entry, '.html.erb')),
