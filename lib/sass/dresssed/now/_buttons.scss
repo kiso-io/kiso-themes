@@ -161,8 +161,9 @@
 .btn-lg {
   @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
 }
+
 .btn-sm {
-  @include btn-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $border-radius-small);
+  @include btn-size($padding-small-vertical, $padding-small-horizontal, $font-size-mini, $border-radius-small);
 }
 
 .btn-link {

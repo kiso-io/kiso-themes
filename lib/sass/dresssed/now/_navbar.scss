@@ -54,6 +54,10 @@
       &.btn-sm {
         padding: $padding-small-vertical $padding-small-horizontal;
       }
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: $padding-btn-vertical;
+      }
     }
 
     .nav-link:not(.btn) {

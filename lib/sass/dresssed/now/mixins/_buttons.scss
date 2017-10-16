@@ -12,19 +12,20 @@
   .show > &.dropdown-toggle,
   .show > &.dropdown-toggle:focus,
   .show > &.dropdown-toggle:hover {
-    color: $white-color;
-    background-color: $btn-states-color;
     box-shadow: none;
+    background-color: $btn-states-color;
+    color: $white-color;
   }
 
   &:hover {
-    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .17);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17);
   }
 
   &.disabled,
   &:disabled,
   &[disabled],
   fieldset[disabled] & {
+
     &,
     &:hover,
     &:focus,
@@ -36,107 +37,78 @@
     }
   }
 
-  &.btn-outline-danger {
-    color: $danger-states-color;
-    border: $border $danger-states-color;
-    background: transparent;
 
-    &:hover {
-      color: $white-color;
-      background: $danger-states-color;
-    }
-  }
+  @each $theme-color in map-keys($theme-colors) {
+    &.btn-outline-#{$theme-color} {
+      border: $border map-get($theme-colors, $theme-color);
+      background: transparent;
+      color: map-get($theme-colors, $theme-color);
+      line-height: calc(#{$line-height} - 2px);
 
-  &.btn-outline-info {
-    color: $info-states-color;
-    border: $border $info-states-color;
-    background: transparent;
-
-    &:hover {
-      color: $white-color;
-      background: $info-states-color;
-    }
-  }
-
-  &.btn-outline-success {
-    color: $success-states-color;
-    border: $border $success-states-color;
-    background: transparent;
-
-    &:hover {
-      color: $white-color;
-      background: $success-states-color;
-    }
-  }
-
-  &.btn-outline-warning {
-    color: $warning-states-color;
-    border: $border $warning-states-color;
-    background: transparent;
-
-    &:hover {
-      color: $white-color;
-      background: $warning-states-color;
-    }
-  }
-
-  &.btn-outline-primary {
-    color: $primary-states-color;
-    border: $border $primary-states-color;
-    background: transparent;
-
-    &:hover {
-      color: $white-color;
-      background: $primary-states-color;
-    }
-  }
-
-  &.btn-outline-default {
-    color: $default-states-color;
-    border: $border $default-states-color;
-    background: transparent;
-
-    &:hover {
-      color: $white-color;
-      background: $default-states-color;
-    }
-  }
-
-  &.btn-outline-dark {
-    color: $dark-states-color;
-    border: $border $dark-states-color;
-    background: transparent;
-
-    &:hover {
-      color: $white-color;
-      background: $dark-states-color;
+      &:hover {
+        @include color-yiq(map-get($theme-colors, $theme-color));
+        background: map-get($theme-colors, $theme-color);
+      }
     }
   }
 
   &.btn-outline-light {
-    color: $black-color;
-    border: $border $light-gray;
-    background: transparent;
-
-    &:hover {
-      color: $black-color;
-      background: $light-gray;
-    }
+    color: darken(map-get($theme-colors, 'light'), 20%);
   }
 
   &.btn-outline-link {
-    color: $black-color;
-    border: $border $light-gray;
-    background: transparent;
-
-    &:hover {
-      color: $black-color;
-      background: $light-gray;
-    }
+    @extend .btn-outline-light;
   }
 
   &.btn-border-2x {
     border-width: 2px;
+    line-height: calc(#{$line-height} - 4px);
+  }
+
+  &.btn-simple {
+    border-color: $btn-color;
+    color: $btn-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $btn-states-color;
+      box-shadow: none;
+      background-color: $transparent-bg;
+      color: $btn-states-color;
+    }
+  }
+
+  &.btn-dark {
+    background-color: $inverse-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white-color;
+    }
+  }
+
+  &.btn-light {
+    background-color: theme-color('light');
+    color: $black-color;
+  }
+
+  &.btn-link {
+    color: $btn-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none;
+      background-color: $transparent-bg;
+      text-decoration: none;
+      color: $btn-states-color;
+    }
+  }
+
+  &.btn-avatar {
+    padding: 3px 7px 3px 3px;
   }
 
   @if $btn-color == $white-color {
@@ -211,9 +183,9 @@
     .show > &.dropdown-toggle,
     .show > &.dropdown-toggle:focus,
     .show > &.dropdown-toggle:hover {
-      color: $primary-states-color;
-      background-color: $white-color;
       box-shadow: none;
+      background-color: $white-color;
+      color: $primary-states-color;
     }
 
     &:hover,
@@ -231,68 +203,22 @@
       right: 33px;
 
       margin-bottom: 0;
+      background: white;
       padding: 2px 4px;
 
-      color: $primary-states-color;
-      background: white;
-
       line-height: 1;
+
+      color: $primary-states-color;
     }
   } @else {
     color: $white-color;
   }
-
-  &.btn-simple {
-    color: $btn-color;
-    border-color: $btn-color;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $btn-states-color;
-      border-color: $btn-states-color;
-      background-color: $transparent-bg;
-      box-shadow: none;
-    }
-  }
-
-  &.btn-dark {
-    background-color: $inverse-color;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $white-color;
-    }
-  }
-
-  &.btn-light {
-    color: $black-color;
-    background-color: theme-color('light');
-  }
-
-  &.btn-link {
-    color: $btn-color;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $btn-states-color;
-      background-color: $transparent-bg;
-      box-shadow: none;
-      text-decoration: none;
-    }
-  }
-
-  &.btn-avatar {
-    padding: 3px 7px 3px 3px;
-  }
 }
 
 @mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border) {
-  padding: $padding-vertical $padding-horizontal;
 
   border-radius: $border;
+  padding: $padding-vertical $padding-horizontal;
 
   font-size: $font-size;
 

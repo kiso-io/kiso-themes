@@ -135,6 +135,7 @@ $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
 $colors: (
+  default: $default-color,
   blue: $blue,
   indigo: $indigo,
   purple: $purple,
@@ -160,13 +161,14 @@ $light-red: rgba($danger-color, 0.2);
 
 // Update the theme color map
 $theme-colors: (
+  default: $default-color,
   primary: $primary-color,
   secondary: $default-color,
   success: $success-color,
   info: $info-color,
   warning: $warning-color,
   danger: $danger-color,
-  light: #ebeef1,
+  light: $gray-400,
   dark: $inverse-color
 );
 
