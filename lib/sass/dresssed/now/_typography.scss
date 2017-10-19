@@ -70,10 +70,10 @@ pre {
 
 h1,
 .h1 {
-  margin-bottom: $margin-base-vertical * 2;
   line-height: 1.15;
-
   font-size: $font-size-h1;
+  letter-spacing: -2px;
+  font-weight: bold;
 
   small {
     opacity: 0.8;
@@ -85,23 +85,24 @@ h1,
 
 h2,
 .h2 {
-  margin-bottom: $margin-base-vertical * 2;
-
   font-size: $font-size-h2;
+  letter-spacing: -2px;
+  font-weight: bold;
 }
 
 h3,
 .h3 {
-  margin-bottom: $margin-base-vertical * 2;
   line-height: 1.4em;
+  letter-spacing: -1px;
+  font-weight: bold;
 
   font-size: $font-size-h3;
 }
 
 h4,
 .h4 {
-  margin-bottom: $margin-base-vertical;
   line-height: 1.45em;
+  letter-spacing: -1px;
 
   font-size: $font-size-h4;
 
@@ -113,8 +114,8 @@ h4,
 
 h5,
 .h5 {
-  margin-bottom: 15px;
   line-height: 1.4em;
+  letter-spacing: -1px;
 
   font-size: $font-size-h5;
 }
@@ -122,13 +123,15 @@ h5,
 h6,
 .h6 {
   text-transform: uppercase;
+  letter-spacing: -.5px;
 
   font-size: $font-size-h6;
   font-weight: $font-weight-bold;
 }
 
 p {
-  line-height: 1.61em;
+  line-height: 1.45em;
+  margin: $margin-base-vertical 0;
 
   .description &,
   &.description {
@@ -292,11 +295,14 @@ p {
   .text-hover-#{$theme-color-name}:hover {
     color: map-get($theme-colors, $theme-color-name) !important;
   }
+
+  .text-focus-#{$theme-color-name}:focus {
+    color: map-get($theme-colors, $theme-color-name) !important;
+  }
 }
 
 .blockquote {
   border: 1px solid $default-color;
-  border-left: none;
   padding: 20px;
   line-height: 1.8;
 
@@ -335,5 +341,16 @@ p {
     small {
       color: $opacity-8;
     }
+  }
+}
+
+.header-separator {
+  &:after {
+    content: '';
+    display: block;
+    width: 120px;
+    margin: 1rem auto 3rem auto;
+    height: 2px;
+    background: currentColor;
   }
 }

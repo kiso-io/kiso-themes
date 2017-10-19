@@ -234,3 +234,31 @@
     }
   }
 }
+
+
+.content-block-9 {
+  img {
+    padding: 2rem;
+    object-fit: contain;
+    position: relative;
+
+  }
+
+  .row > [class*='col-'] {
+    border-right: 1px solid $medium-gray;
+    border-bottom: 1px solid $medium-gray;
+
+    height: 190px;
+    justify-content: center;
+    align-items: center;
+
+
+    &:nth-child(4n) {
+      border-right: none;
+    }
+
+    &:nth-last-child(-n+4) {
+      border-bottom: none;
+    }
+  }
+}

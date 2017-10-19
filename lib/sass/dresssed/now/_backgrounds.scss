@@ -95,3 +95,9 @@
     @include color-yiq(tint(map-get($theme-colors, $theme-color-name), 30%));
   }
 }
+
+.bg-circle {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 1rem;
+}

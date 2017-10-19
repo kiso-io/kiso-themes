@@ -1,0 +1,9 @@
+.border {
+  border: 1px solid $gray-500 !important;
+}
+
+@each $color, $value in $grays {
+  .border-gray-#{$color} {
+    border-color: $value !important;
+  }
+}

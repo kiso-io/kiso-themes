@@ -234,6 +234,10 @@ fieldset[disabled] .form-control {
 
 .input-group-btn:last-child > .btn {
   margin-left: 0;
+  border-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-right: 1rem;
 }
 
 textarea.form-control {
