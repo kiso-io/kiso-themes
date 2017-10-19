@@ -216,6 +216,14 @@ body {
   }
 }
 
-.border-2x {
-  border-width: 2px !important;
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
+.flex-basis-100 {
+  flex-basis: 100px;
 }
