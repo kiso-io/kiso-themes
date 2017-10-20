@@ -21,6 +21,7 @@
 //= require dresssed/prism
 //= require dresssed/clipboard
 //= require dresssed/countdown
+//= require parallax/parallax
 
 //= require_tree ./dresssed/demo
 //= require dresssed/inspect_mode/inspect_mode
