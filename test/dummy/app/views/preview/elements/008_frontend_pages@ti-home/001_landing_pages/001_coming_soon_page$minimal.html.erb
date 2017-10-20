@@ -1,0 +1,41 @@
+<%= content_for :js_libs, "countdown" %>
+
+<main class="landing-2" style="background-image: url('<%= asset_path('dresssed/stock/us_landscape_2.jpg') %>')">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex align-items-center justify-content-center mt-5 flex-column">
+        <img src="<%= asset_path('dresssed/pyrrmid_64') %>" width="64" height="64" >
+        <h6 class="text-white mt-5">PYRMID</h6>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-7 ml-md-auto mr-md-auto text-center text-white text-shadow-light mt-3">
+      <h1 class="leading-tight">You'll never have to work again</h1>
+      <p class="lead font-weight-medium mt-5">PYRMID is the ultimate in trans-human enhancement. Neural lace interface of the finest quality.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-8 mr-md-auto ml-md-auto text-center text-white pt-5">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="countdown" data-countdownto="01/31/2018"></div>
+      </div>
+      <p class="text-shadow-light text-uppercase">Coming Soon &dash; Sign up to our mailing list to hear when we launch</p>
+      <div class="card">
+        <div class="card-body">
+          <form class="form-inline d-flex justify-content-center justify-content-xl-between flex-column flex-lg-row">
+            <label class="sr-only" for="inlineFormInputName2">Email</label>
+            <div class="flex-grow-2 input-group input-group-sm mb-2 mb-lg-0 mr-3">
+              <span class="input-group-addon" id="basic-addon1"><i class="ti-email"></i></span>
+              <input type="text" class="form-control" id="inlineFormInputName2" placeholder="Your Email">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Get Notified</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>

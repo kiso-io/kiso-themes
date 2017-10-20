@@ -34,14 +34,14 @@
   .form-group.form-group-no-border.input-lg,
   .input-group.form-group-no-border.input-lg{
     .input-group-addon{
-      padding: $padding-vertical 0 $padding-vertical $padding-horizontal;
+      padding: $padding-vertical - 1 0 $padding-vertical -1  $padding-horizontal;
     }
 
     .form-control{
-      padding: $padding-vertical $padding-horizontal;
+      padding: $padding-vertical - 1 $padding-horizontal - 1;
 
       & + .input-group-addon{
-        padding: $padding-vertical $padding-horizontal $padding-vertical 0;
+        padding: $padding-vertical - 1 $padding-horizontal $padding-vertical - 1 0;
       }
     }
   }
@@ -96,7 +96,7 @@
   .form-group,
   .input-group{
     .form-control{
-      padding: $padding-vertical $padding-horizontal $padding-vertical $padding-horizontal;
+      padding: $padding-vertical - 1 $padding-horizontal $padding-vertical - 1 $padding-horizontal;
 
       & + .input-group-addon{
         padding: $padding-vertical $padding-horizontal $padding-vertical 0;
@@ -104,16 +104,15 @@
 
       &:not(:first-child):not(:last-child) {
         border-left: 0;
-        border-right: 0;
       }
     }
 
     .input-group-addon{
-      padding: $padding-vertical 0 $padding-vertical $padding-horizontal;
+      padding: $padding-vertical - 1 0 $padding-vertical - 1 $padding-horizontal;
 
       & + .form-control,
       & ~ .form-control{
-        padding:$padding-vertical $padding-horizontal $padding-vertical $padding-horizontal;
+        padding:$padding-vertical - 2 $padding-horizontal $padding-vertical - 2 $padding-horizontal;
 
       }
     }

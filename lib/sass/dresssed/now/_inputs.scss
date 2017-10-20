@@ -226,7 +226,7 @@ fieldset[disabled] .form-control {
 
 .input-group-btn .btn {
   border-width: $border-thin;
-  padding: $padding-btn-vertical + 2 $padding-base-horizontal;
+  padding: calc( #{$padding-btn-vertical} + 2px ) $padding-base-horizontal;
 }
 .input-group-btn .btn-default:not(.btn-fill) {
   border-color: $dark-gray;

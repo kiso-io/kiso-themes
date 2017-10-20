@@ -1,3 +1,6 @@
+<%# Render the partial first, so it gets a chance to have its content_fors to
+    appear in the layout %>
+<% partial = render file: "preview/elements/#{@section}" %>
 <%= render :layout => "layouts/base" do %>
-  <%= render file: "preview/elements/#{@section}" %>
+  <%= partial %>
 <% end %>
