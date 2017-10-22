@@ -1,4 +1,4 @@
-<% headers = Dir.entries(File.join(File.dirname(__FILE__), '_headers')).select { |f| !File.directory?(f)}.sort_by { |s| s.scan(/\d+/).first.to_i } %>
+<% headers = Dir.entries(File.join(File.dirname(__FILE__), '_content_block_headers')).select { |f| !File.directory?(f)}.sort_by { |s| s.scan(/\d+/).first.to_i } %>
 
 <% headers.each_with_index do |header, index| %>
 <div class="row">
@@ -10,7 +10,7 @@
         </h6>
       </div>
       <div class="card-body">
-        <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_headers/#{header.gsub(/_/, '')}" %>
+        <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_headers/#{header.gsub(/_/, '')}" %>
       </div>
     </div>
   </div>
