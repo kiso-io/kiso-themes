@@ -131,7 +131,19 @@ module ApplicationHelper
             concat(render_children(attribute[:children], level + 1))
           end)
         else
-          concat(activatable_li_tag_with_link(content_tag(:span, attribute[:display_name].chomp), element_path(File.join(attribute[:section])), 'nav-item'))
+          opts = {
+            class: 'nav-item'
+          }
+
+          opts[:target] = "_blank" if attribute[:is_fullpage]
+
+          concat(
+            activatable_li_tag_with_link(
+              content_tag(:span, attribute[:display_name].chomp),
+              element_path(File.join(attribute[:section])),
+              opts
+            )
+          )
         end
       end
     end

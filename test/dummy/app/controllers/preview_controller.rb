@@ -1,12 +1,12 @@
 class PreviewController < ApplicationController
-
   layout :resolve_layout
 
   def index
     @body_class = 'theme-container'
 
     @themes = Dresssed::THEMES.map do |theme|
-      {theme: theme.titlecase, colors: Kernel.const_get("Dresssed::#{theme.titlecase}::COLORS")}
+      { theme: theme.titlecase,
+        colors: Kernel.const_get("Dresssed::#{theme.titlecase}::COLORS") }
     end
   end
 
@@ -72,17 +72,22 @@ class ElementFinder
     path.to_s.gsub(/\$.\w+/, '').gsub(/\$app_nav/, '').gsub(/minimal|fullpage/, '').gsub('_', ' ').gsub(/^\d{3} /, '').gsub(/@([\w+-]*)$/, '').gsub(/$.[\w_]+/, '').titleize
   end
 
+  def self.is_fullpage(path)
+    !path.match(/minimal|app_nav/).nil?
+  end
+
   def self.find(path, parent_section=nil, name=nil)
     section = path.gsub(File.join(Rails.root, 'app/views/preview/elements/').to_s, '')
     basename = File.basename(path, '.html.erb')
 
     data = {
-      is_header: basename.to_s.match(/^\d{3}_header/),
-      header_title: basename.to_s.match(/^\d{3}_header/) && File.basename(path, '.html.erb').to_s.match(/^\d{3}_header_[\w\W]+/)[0].gsub(/^\d{3}_header_/, ''),
-      section: section,
-      target_name:      basename.to_s,
-      display_name:     display_name(File.basename(path, '.html.erb')),
-      icon:             path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{path.match(/@([\w+-]*)/)[0][1..-1]}"
+      is_header:    basename.to_s.match(/^\d{3}_header/),
+      header_title: basename.to_s.match(/^\d{3}_header/) && basename.to_s.match(/^\d{3}_header_[\w\W]+/)[0].gsub(/^\d{3}_header_/, ''),
+      section:      section,
+      target_name:  basename.to_s,
+      is_fullpage:  is_fullpage(path),
+      display_name: display_name(File.basename(path, '.html.erb')),
+      icon:         path.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{path.match(/@([\w+-]*)/)[0][1..-1]}"
     }
 
     data[:children] = children = []
@@ -100,6 +105,7 @@ class ElementFinder
           File.basename(entry, '.html.erb').to_s.match(/^\d{3}_header_[\w\W]+/)[0].gsub(/^\d{3}_header_/, '').gsub(/_/, ' '),
           section:          section + '/' + File.basename(entry, '.html.erb').to_s,
           target_name:      File.basename(entry, '.html.erb').to_s,
+          is_fullpage:      is_fullpage(File.basename(entry, '.html.erb')),
           display_name:     display_name(File.basename(entry, '.html.erb')),
           icon:             entry.match(/@([\w+-]*)/).nil? ? 'fa-gift' : "#{entry.match(/@([\w+-]*)/)[0][1..-1]}"
         }

@@ -25,9 +25,9 @@ module DropdownHelper
   #     <%= link_to "Users", url %>
   #   <% end %>
   #
-  def activatable_li_tag_with_link(title, url, css_class = '')
-    css_class = current_page?(url) ? "active #{css_class}" : css_class
-    content_tag :li, link_to(title, url, class: 'nav-link'), class: css_class
+  def activatable_li_tag_with_link(title, url, options = {})
+    options[:class] = current_page?(url) ? "active #{options[:class]}" : options[:class]
+    content_tag :li, link_to(title, url, {class: 'nav-link', target: options[:target]}), options
   end
 
   def caret_tag
