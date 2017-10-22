@@ -1,10 +1,45 @@
-<div class="container-fluid">
-  <div class='row'>
-    <div class='col-xs-12 col-md-6 col-md-offset-3'>
+<nav class="navbar navbar-landing navbar-light navbar-expand-lg my-0">
+  <a href="javascript:" class="navbar-brand"><%= image_tag image_path("dresssed/pyrrmid_64.png"), width: 32, height: 32, class: "mr-2"%>PYRMID</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#standardLandingNavWithSignup" aria-controls="standardLandingNavWithSignup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="standardLandingNavWithSignup">
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="javascript:">HOME</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="javascript:">ABOUT</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="javascript:">TEAM</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="javascript:">CONTACT</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-sm btn-primary text-white" href="javascript:">SIGN UP</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<section class="bg-dark p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-white">
+        <h1>My App Terms Privacy Policy</h1>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-8 ml-md-auto mr-md-auto">
       <div class="alert">
         <strong>Warning!</strong> This Privacy policy is a template. It does not constitute legal advice or protection, and Dresssed is not acting in a legal advisory capacity. If in doubt, have a legal professional revue the text for your specific circumstances. By using the template you agree that it is fully suitable for your purposes
       </div>
-      <div class='well mt40 mb40'>
+      <div class="well mt40 mb40">
 
           <h1>Privacy Policy</h1>
 
@@ -54,7 +89,7 @@
 
           <p>We store and process your personal and transactional information, including certain payment information, on our computers in the United States and elsewhere in the world where My App facilities or our service providers are located, and we protect it by maintaining physical, electronic and procedural safeguards in compliance with applicable US federal and state regulations. We use computer safeguards such as firewalls and data encryption, we enforce physical access controls to our buildings and files, and we authorize access to personal information only for those employees who require it to fulfill their job responsibilities. Full credit card data is securely transferred and hosted off-site by a payment vendor in compliance with Payment Card Industry Data Security Standards (PCI DSS). This information is not accessible to My App staff.</p>
 
-          <p>We store our customers' personal information securely throughout the life of the customer's My App Account. My App will retain your personal information for a minimum of five years or as necessary to comply with our legal obligations or resolve disputes.</p>
+          <p>We store our customers" personal information securely throughout the life of the customer"s My App Account. My App will retain your personal information for a minimum of five years or as necessary to comply with our legal obligations or resolve disputes.</p>
 
           <h3>How we use the personal information we collect</h3>
 
@@ -93,7 +128,7 @@
           <li>Other third parties with your consent or direction to do so.</li>
           </ul>
 
-          <p>My App will not sell or rent any of your personal information to third parties for their marketing purposes and only shares your personal information with third parties as described in this policy. Before My App shares your information with any third party that is not acting as an agent to perform tasks on behalf of and under the instructions of My App, My App will first ensure that the third party either subscribes to the Principles, or is subject to the European Union's Directive on Data Protection, or enters into a written agreement with My App requiring that the third party will provide at least the same level of privacy protection as required by the Principles.</p>
+          <p>My App will not sell or rent any of your personal information to third parties for their marketing purposes and only shares your personal information with third parties as described in this policy. Before My App shares your information with any third party that is not acting as an agent to perform tasks on behalf of and under the instructions of My App, My App will first ensure that the third party either subscribes to the Principles, or is subject to the European Union"s Directive on Data Protection, or enters into a written agreement with My App requiring that the third party will provide at least the same level of privacy protection as required by the Principles.</p>
 
           <p>If you establish a My App account indirectly on a third party website or via a third party application, any information that you enter on that website or application (and not directly on a My App website) will be shared with the owner of the third party website or application and your information may be subject to their privacy policies.</p>
 
@@ -111,3 +146,12 @@
     </div>
   </div>
 </div>
+<section class="bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+          <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content/32" %>
+      </div>
+    </div>
+  </div>
+</section>
