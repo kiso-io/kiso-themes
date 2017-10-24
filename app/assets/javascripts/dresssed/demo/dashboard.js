@@ -43,7 +43,7 @@ if(window.Chart) {
       plot.draw();
 
       if (!Modernizr.touch) {
-        setTimeout(update, 24);
+        window.requestAnimationFrame(update);
       } else {
         setTimeout(update, 1000);
       }
