@@ -6,11 +6,17 @@
     <div class="card">
       <div class="card-header">
         <h6>
-          LANDING CONTENT BLOCK <%= index+1 %>
+          LANDING CONTENT BLOCK <%= block.match(/^_\d{1,3}/)[0].gsub(/_/, '') %>
         </h6>
       </div>
       <div class="card-body">
-        <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
+        <% unless block.match(/\!dark/).nil? %>
+          <section class="bg-dark">
+            <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
+          </section>
+        <% else %>
+          <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -98,38 +98,61 @@
   function initGmapsDemo() {
     dashboardGmap();
 
-    makeGmap('.gmap-satellite', 'satellite');
-    makeGmap('.gmap-terrain', 'terrain');
-    makeGmap('.gmap-hybrid', 'hybrid');
-    makeGmap('.gmap-default', 'roadmap');
-    createStreetview('#gmap-streetview', '55.8611768', '-4.2538145', 250, 9);
+    if($('.gmap-satellite').length) {
+      makeGmap('.gmap-satellite', 'satellite');
+    }
 
-    var overlayMap = makeGmap('.gmap-overlay', 'satellite')
-    drawMapOverlay(overlayMap, '55.855573', '-4.3728844','<div class="alert alert-danger">ZOMBIES ALERT</div>')
+    if($('.gmap-terrain').length) {
+      makeGmap('.gmap-terrain', 'terrain');
+    }
 
-    var markerMap = makeGmap('.gmap-markers', 'roadmap');
-    markerMap.addMarker({
-      lat: 55.855573,
-      lng: -4.3728844,
-      title: 'Zombies',
-      animation: google.maps.Animation.DROP,
-      click: function(e) {
-        alert('You clicked in this marker');
-      }
-    });
+    if($('.gmap-hybrid').length) {
+      makeGmap('.gmap-hybrid', 'hybrid');
+    }
 
+    if($('.gmap-roadmap').length) {
+      makeGmap('.gmap-roadmap', 'roadmap');
+    }
 
-    var polyMap = makeGmap('.gmap-polygons', 'roadmap', {zoom: 15, lat: '55.863340', lng:'-4.254116'});
-    var path = [[55.864894, -4.261562], [55.864581, -4.249031], [55.861907, -4.252507],	[55.862678, -4.262678]];
+    if($('.gmap-default').length) {
+      makeGmap('.gmap-default', 'roadmap');
+    }
 
-    polygon = polyMap.drawPolygon({
-      paths: path, // pre-defined polygon shape
-      strokeColor: '#BBD8E9',
-      strokeOpacity: 1,
-      strokeWeight: 3,
-      fillColor: '#BBD8E9',
-      fillOpacity: 0.6
-    });
+    if($('#gmap-streetview').length) {
+      createStreetview('#gmap-streetview', '55.8611768', '-4.2538145', 250, 9);
+    }
+
+    if($('.gmap-overlay').length) {
+      var overlayMap = makeGmap('.gmap-overlay', 'satellite')
+      drawMapOverlay(overlayMap, '55.855573', '-4.3728844','<div class="alert alert-danger">ZOMBIES ALERT</div>')
+    }
+
+    if($('.gmap-markers').length) {
+      var markerMap = makeGmap('.gmap-markers', 'roadmap');
+      markerMap.addMarker({
+        lat: 55.855573,
+        lng: -4.3728844,
+        title: 'Zombies',
+        animation: google.maps.Animation.DROP,
+        click: function(e) {
+          alert('You clicked in this marker');
+        }
+      });
+    }
+
+    if($('.gmap-polygons').length) {
+      var polyMap = makeGmap('.gmap-polygons', 'roadmap', {zoom: 15, lat: '55.863340', lng:'-4.254116'});
+      var path = [[55.864894, -4.261562], [55.864581, -4.249031], [55.861907, -4.252507],	[55.862678, -4.262678]];
+
+      polygon = polyMap.drawPolygon({
+        paths: path, // pre-defined polygon shape
+        strokeColor: '#BBD8E9',
+        strokeOpacity: 1,
+        strokeWeight: 3,
+        fillColor: '#BBD8E9',
+        fillOpacity: 0.6
+      });
+    }
   }
 
   Dresssed.hookOnPageLoad( function() {

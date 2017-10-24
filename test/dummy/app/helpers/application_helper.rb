@@ -1,6 +1,6 @@
 module ApplicationHelper
   def app_name
-    'My App'
+    'PYRMID'
   end
 
   def current_style
@@ -134,8 +134,6 @@ module ApplicationHelper
           opts = {
             class: 'nav-item'
           }
-
-          opts[:target] = "_blank" if attribute[:is_fullpage]
 
           concat(
             activatable_li_tag_with_link(

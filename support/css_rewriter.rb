@@ -1,3 +1,4 @@
+require 'fileutils'
 # Rewrite CSS files to make asset paths relative.
 class CssRewriter
   attr_reader :source
@@ -19,6 +20,7 @@ class CssRewriter
   end
 
   def self.compile(file, dir)
+    FileUtils.mkdir_p(dir)
     dest = File.join(dir, File.basename(file) + ".erb")
     read(file) >> dest
   end

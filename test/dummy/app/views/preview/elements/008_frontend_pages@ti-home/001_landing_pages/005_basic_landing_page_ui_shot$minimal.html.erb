@@ -1,0 +1,25 @@
+
+<%= content_for :js_libs, "parallax" %>
+<% @title = 'Welcome' %>
+
+<main class="landing-5">
+  <div class="parallax-window" data-parallax="scroll" data-speed="0.5" data-image-src="<%= asset_path('dresssed/stock/landscape_12.jpg') %>">
+    <%= render partial: 'preview/elements/006_content_blocks@ti-view-list/_content_block_headers/10' %>
+  </div>
+</main>
+
+<section class="pt-5 pb-5">
+  <%= render partial: 'preview/elements/006_content_blocks@ti-view-list/_content_block_general/16' %>
+</section>
+
+<section class="pt-5 pb-5 bg-dark">
+  <%= render partial: 'preview/elements/006_content_blocks@ti-view-list/_content_block_general/23' %>
+</section>
+
+<section class="pt-5 pb-5 bg-gray-300">
+  <%= render partial: 'preview/elements/006_content_blocks@ti-view-list/_content_block_general/18' %>
+</section>
+
+<section class="pt-5 pb-5 bg-dark">
+  <%= render partial: 'preview/elements/006_content_blocks@ti-view-list/_content_block_general/34' %>
+</section>

@@ -7,20 +7,14 @@
     <title><%= [@title, app_name].compact.join(" - ") %></title>
     <%= csrf_meta_tags %>
 
-    <!-- Le fonts -->
     <link href='//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,900' rel='stylesheet' type='text/css'>
 
-    <!-- Le styles -->
     <%= stylesheet_link_tag "styles/#{current_theme.downcase}/#{current_style}", :media => "all" %>
-
     <%= yield :styles %>
 
-    <!-- Le fav and touch icons -->
     <%= favicon_link_tag %>
     <%# favicon_link_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
 
-    <!-- Le javascript
-    ================================================== -->
     <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" %>
 
     <%= render 'layouts/external_js_libs' %>

@@ -10,6 +10,13 @@
 
     var sideNavContainer = $('.nav-side-container')
 
+    $('.SideNavToggle').on('click', function() {
+      $('body').toggleClass(
+        'show-sidebar'
+      )
+    })
+
+
 
     if (!Modernizr.touch && width > 992) {
       sideNavContainer.slimScroll({

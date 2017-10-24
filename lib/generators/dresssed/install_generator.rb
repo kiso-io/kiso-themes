@@ -11,10 +11,11 @@ module Dresssed
 
       def copy_layouts
         layouts_path = "app/views/layouts"
-        %w( _base _flashes _footer _navbar application home sidenav _sidenav _minimal _centered email ).each do |name|
+        layouts = Dir.glob(File.expand_path("../templates/layouts/*", __FILE__)).map { |lf| File.basename(lf, ".html.#{handler}")}
+        puts layouts.inspect
+        layouts.each do |name|
           copy_file "layouts/#{name}.html.#{handler}", "#{layouts_path}/#{name}.html.#{handler}"
         end
-        template "layouts/_user_nav.html.#{handler}", "#{layouts_path}/_user_nav.html.#{handler}"
       end
 
       def copy_stylesheet
@@ -53,7 +54,7 @@ module Dresssed
       end
 
       def require_dresssed_javascript
-        sentinel = "= require jquery_ujs"
+        sentinel = "= require turbolink"
         code = "= require dresssed"
 
         file = 'app/assets/javascripts/application.js'
