@@ -26,21 +26,21 @@
                   <p>Or sign in using your ...</p>
                 <% end -%>
 
-                <%= f.form_group :email, class: 'row' do |f| %>
+                <%= f.form_group :email, class: "row" do |f| %>
                   <%= f.label :email, class: "form-label" %>
-                  <%= f.email_field :email, autofocus: true, class: "" %>
+                  <%= f.email_field :email, autofocus: true, class: "form-control" %>
                   <%= f.error_messages %>
                 <% end %>
 
-                <%= f.form_group :password, class: 'row' do |f| %>
+                <%= f.form_group :password, class: "row" do |f| %>
                   <%= f.label :password, class: "form-label" %>
-                  <%= f.password_field :password %>
+                  <%= f.password_field :password, class: "form-control" %>
                   <%= f.error_messages %>
                 <% end %>
 
                 <% if devise_mapping.rememberable? %>
                   <div class="d-flex align-items-center">
-                    <%= f.check_box :remember_me %> Remember me
+                    <%= f.check_box :remember_me %>
                     <%= f.label :remember_me, class: "checkbox m-0 mr-auto" %>
                     <%= f.submit "Log in", class: "btn btn-primary" %>
                   </div>
@@ -53,19 +53,20 @@
     </div>
 
     <div class="row">
-      <div class="col-12 col-md-6">
-        <ul class="list-unstyled options">
-          <li class="col-12 col-md-6"><%= link_to "Sign up", new_user_registration(resource_name) %></li>
+      <div class="col-12 col-md-6 mr-md-auto ml-md-auto">
+        <ul class="list-unstyled options row">
+          <li class="col-12 col-md-6"><%= link_to "Sign up", new_registration_path(resource_name) %></li>
+
           <%- if devise_mapping.recoverable? %>
             <li class="col-12 col-md-6"><%= link_to "Forgot your password?", new_password_path(resource_name) %></li>
           <% end -%>
 
           <%- if devise_mapping.confirmable? %>
-            <li class="col-12 col-md-6"><%= link_to "Didn"t receive confirmation instructions?", new_confirmation_path(resource_name) %></li>
+            <li class="col-12 col-md-6"><%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %></li>
           <% end -%>
 
           <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) %>
-            <li class="col-12 col-md-6"><%= link_to "Didn"t receive unlock instructions?", new_unlock_path(resource_name) %></li>
+            <li class="col-12 col-md-6"><%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %></li>
           <% end -%>
 
         </ul>

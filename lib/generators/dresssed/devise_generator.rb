@@ -20,20 +20,12 @@ module Dresssed
         abort "ERROR: Devise is installed, but the Devise installation generator does not appear to have been run. Please run `be rails g devise:install` and re-run this generator" and return unless devise? && devise_config_present?
 
         code = <<-INJECTEDCODE.strip_heredoc
-        Rails.application.config.to_prepare do
-          Devise::SessionsController.layout "_minimal"
-          Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "_minimal" }
-          Devise::ConfirmationsController.layout "_minimal"
-          Devise::UnlocksController.layout "_minimal"
-          Devise::PasswordsController.layout "_minimal"
-          Devise::InvitationsController.layout '_minimal' if defined?(DeviseInvitable)
-          DeviseInvitable::RegistrationsController.layout "_minimal" if defined?(DeviseInvitable)
-
-          Devise::Mailer.layout "email"
-          Devise::Mailer.send(:include, EmailTemplateHelper)\n
-          Devise::Mailer.send(:helper, EmailTemplateHelper)\n
-        end\n
-\n
+          Rails.application.config.to_prepare do
+            Devise::Mailer.layout "email"
+            Devise::Mailer.send(:include, EmailTemplateHelper)\n
+            Devise::Mailer.send(:helper, EmailTemplateHelper)\n
+          end\n
+  \n
         INJECTEDCODE
 
         inject_into_file( "config/initializers/devise.rb", code, :before => /^end/)
