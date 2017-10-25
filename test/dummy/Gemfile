@@ -32,9 +32,7 @@ end
 
 group :development do
   gem 'sqlite3'
-  if ENV['DRESSSED_BUILD']
-    gem 'dresssed', :path => '../../'
-  end
+  gem 'dresssed', :path => '../../'
 end
 
 group :production do
