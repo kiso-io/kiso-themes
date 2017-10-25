@@ -1,23 +1,26 @@
 <% headers = Dir.entries(File.join(File.dirname(__FILE__), '_content_block_headers')).select { |f| !File.directory?(f)}.sort_by { |s| s.scan(/\d+/).first.to_i } %>
 
-<% headers.each_with_index do |header, index| %>
-<div class="row">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h6>
-          LANDING HEADER <%= index+1 %>
-        </h6>
-      </div>
-      <div class="card-body">
-        <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_headers/#{header.gsub(/_/, '')}" %>
+
+<div class="container-fluid">
+  <% headers.each_with_index do |header, index| %>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h6>
+              LANDING HEADER <%= index+1 %>
+            </h6>
+          </div>
+          <div class="card-body">
+            <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_headers/#{header.gsub(/_/, '')}" %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
+
+
+
+
+
 </div>
-<% end %>
-
-
-
-
-

@@ -27,6 +27,9 @@ class PreviewController < ApplicationController
       }
     end
 
+    @current_theme = cookies[:theme] || "Now"
+    @current_style = cookies[:style] || Kernel.const_get('Dresssed::Now::COLORS')[0]
+
     redirect_to element_path('001_dashboards@ti-dashboard/001_dashboard_1') and return if params[:section].nil?
 
     @section = params[:section]
@@ -47,7 +50,7 @@ class PreviewController < ApplicationController
     if @current_layout == '_minimal'
       render partial: "minimal"
     elsif @current_layout == '_app_nav'
-      render partial: "layouts/app_nav"
+      render file: "preview/elements/#{@section}", layout: "layouts/_app_nav"
     else
       @body_class = ' with-sidebar show-sidebar'
     end

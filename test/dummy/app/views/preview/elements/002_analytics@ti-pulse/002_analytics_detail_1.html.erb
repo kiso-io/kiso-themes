@@ -1,49 +1,52 @@
 <%= content_for :js_libs, "demo-dashboard chartjs" %>
 
-<div class="card card-metric card-metric-detail inspectable">
-  <!-- component-title: Metric Detail Card -->
-  <div class="card-header">
-    <h3>BOUNCE RATE</h3>
-    <div class="current-value flex-column flex-md-row">
-      <h2>32%</h2>
-      <p><i class="fa fa-chevron-down text-danger"></i> 10%</p>
+<div class="container-fluid">
+  <div class="card card-metric card-metric-detail inspectable">
+    <!-- component-title: Metric Detail Card -->
+    <div class="card-header">
+      <h3>BOUNCE RATE</h3>
+      <div class="current-value flex-column flex-md-row">
+        <h2>32%</h2>
+        <p><i class="fa fa-chevron-down text-danger"></i> 10%</p>
+      </div>
     </div>
-  </div>
-  <div class="card-body">
-    <div class="metric-detail-graph">
-      <canvas class='metric-random-graph detail-graph'></canvas>
-    </div>
-    <div class="metric-footer container-fluid">
-      <div class="row">
-        <div class="value col-12 col-md-3 pb-4 pb-md-0">
-          <h4>
-            12%
-            <small><i class="fa fa-chevron-down text-danger"></i> 1%</small>
-          </h4>
-          <h6 class="text-muted">3 MONTHS AGO</h6>
-        </div>
-        <div class="value col-12 col-md-3 pb-4 pb-md-0">
-          <h4>
-            45%
-            <small><i class="fa fa-chevron-up text-success"></i> 18%</small>
-          </h4>
-          <h6 class="text-muted">6 MONTHS AGO</h6>
-        </div>
-        <div class="value col-12 col-md-3 pb-4 pb-md-0">
-          <h4>
-            50%
-            <small><i class="fa fa-chevron-down text-danger"></i> 12%</small>
-          </h4>
-          <h6 class="text-muted">9 MONTHS AGO</h6>
-        </div>
-        <div class="value col-12 col-md-3 pb-4 pb-md-0">
-          <h4>
-            68%
-            <small><i class="fa fa-chevron-up text-success"></i> 20%</small>
-          </h4>
-          <h6 class="text-muted">12 MONTHS AGO</h6>
+    <div class="card-body">
+      <div class="metric-detail-graph">
+        <canvas class='metric-random-graph detail-graph'></canvas>
+      </div>
+      <div class="metric-footer container-fluid">
+        <div class="row">
+          <div class="value col-12 col-md-3 pb-4 pb-md-0">
+            <h4>
+              12%
+              <small><i class="fa fa-chevron-down text-danger"></i> 1%</small>
+            </h4>
+            <h6 class="text-muted">3 MONTHS AGO</h6>
+          </div>
+          <div class="value col-12 col-md-3 pb-4 pb-md-0">
+            <h4>
+              45%
+              <small><i class="fa fa-chevron-up text-success"></i> 18%</small>
+            </h4>
+            <h6 class="text-muted">6 MONTHS AGO</h6>
+          </div>
+          <div class="value col-12 col-md-3 pb-4 pb-md-0">
+            <h4>
+              50%
+              <small><i class="fa fa-chevron-down text-danger"></i> 12%</small>
+            </h4>
+            <h6 class="text-muted">9 MONTHS AGO</h6>
+          </div>
+          <div class="value col-12 col-md-3 pb-4 pb-md-0">
+            <h4>
+              68%
+              <small><i class="fa fa-chevron-up text-success"></i> 20%</small>
+            </h4>
+            <h6 class="text-muted">12 MONTHS AGO</h6>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

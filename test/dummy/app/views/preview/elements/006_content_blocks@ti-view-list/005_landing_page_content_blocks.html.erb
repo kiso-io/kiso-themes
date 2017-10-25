@@ -1,24 +1,26 @@
 <% content_blocks = Dir.entries(File.join(File.dirname(__FILE__), '_content_block_general')).select { |f| !File.directory?(f)}.sort_by { |s| s.scan(/\d+/).first.to_i } %>
 
-<% content_blocks.each_with_index do |block, index| %>
-<div class="row">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h6>
-          LANDING CONTENT BLOCK <%= block.match(/^_\d{1,3}/)[0].gsub(/_/, '') %>
-        </h6>
-      </div>
-      <div class="card-body">
-        <% unless block.match(/\!dark/).nil? %>
-          <section class="bg-dark">
-            <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
-          </section>
-        <% else %>
-          <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
-        <% end %>
+<div class="container-fluid">
+  <% content_blocks.each_with_index do |block, index| %>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h6>
+              LANDING CONTENT BLOCK <%= block.match(/^_\d{1,3}/)[0].gsub(/_/, '') %>
+            </h6>
+          </div>
+          <div class="card-body">
+            <% unless block.match(/\!dark/).nil? %>
+              <section class="bg-dark">
+                <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
+              </section>
+            <% else %>
+              <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
-<% end %>

@@ -18,6 +18,7 @@ def setup_bundler
 end
 
 require 'version_bumper'
+require 'page_rewriter'
 
 task :check_dressseddotcom_on_master do
   cd "../dresssed.com", verbose: false do
@@ -214,8 +215,6 @@ task :test => 'test:system'
 require 'fileutils'
 
 task :bake_app_pages do
-  require 'app_page_rewriter'
-
   app_page_targets = [
     '007_app_pages@ti-layout/',
   ]
@@ -269,7 +268,7 @@ task :bake_app_pages do
 
           sh "mkdir -p #{destination_dir}"
           sh "cp #{file} #{destination_file}"
-          AppPageRewriter.compile(destination_file, page_type)
+          PageRewriter.compile(destination_file, /preview\/elements\/007_app_pages@ti-layout\/#{page_type}\//, '')
         end
       end
     end
@@ -312,7 +311,7 @@ task :bake_pages do
 
       sh "mkdir -p #{File.dirname(destination)}"
       sh "cp #{file} #{destination}"
-      ContentBlockRewriter.compile(destination)
+      PageRewriter.compile(destination, /preview.+\/_content_block_(.+)\/(\d+)/, 'content_blocks/\1/\2')
     end
   end
 end
@@ -325,6 +324,7 @@ task :bake_layouts do
   layout_files.each do |raw_path|
     sh "mkdir -p #{File.dirname(raw_path)}"
     sh "cp #{raw_path} #{layout_destination_path}"
+    PageRewriter.compile(File.join(layout_destination_path, File.basename(raw_path)), /styles\/\#{current_theme.downcase}\/\#{current_style}/, 'application')
   end
 end
 
