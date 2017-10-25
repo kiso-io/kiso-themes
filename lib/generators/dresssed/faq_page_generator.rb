@@ -1,24 +1,15 @@
-
-require "generators/dresssed/handler_support"
+require "generators/dresssed/page_generator"
 
 module Dresssed
   module Generators
-    class FaqPageGenerator < Rails::Generators::Base
-      include HandlerSupport
-
-      source_root File.expand_path('../templates', __FILE__)
-
-      def create_controller
-        invoke :controller, [ 'faq' ], skip: true
-      end
-
+    class FaqPageGenerator < PageGenerator
       desc "Installs the Ives faq page into the your chosen directory."
 
-      def copy_faq_page
-        ['faq'].each do |page_name|
-          copy_file "views/#{page_name}.html.#{handler}",
-                    "app/views/faq/#{page_name}.html.#{handler}"
-        end
+      view_name "frontend_pages/faq_pages","faq_page"
+
+      def set_layout
+        controller_const_name = "#{name.camelize}Controller".constantize
+        inject_into_class File.join('app/controllers', class_path, "#{file_name}_controller.rb"), controller_const_name, "  layout '_base'\n"
       end
     end
   end

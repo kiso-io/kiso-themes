@@ -9,10 +9,11 @@ module Dresssed
       class_attribute :_view_name
       class_attribute :_view_type
 
-      argument :actions, type: :array, required: true, banner: "ACTION",
-                             desc: "The action, also the name of the view."
+      argument :actions, type: :array, required: true, banner: "ACTION", desc: "The action, also the name of the view."
 
-      argument :variant, type: :string, require: true, default: 1, banner: "VARIANT NUMBER (1,2 etc)", desc: "The page variant"
+      class_option :variant, :type => :string, :default => 1, :description => "The template variant (i.e. 1, 2 etc)"
+
+      hide!
 
       def create_controller
         invoke :controller, [name, actions], skip: false, skip_routes: false, helper: false, test_framework: false, assets: false, template_engine: false
@@ -21,7 +22,7 @@ module Dresssed
       def copy_view
         for action in actions do
           view_name = action
-          copy_file "views/#{_view_type}/#{_view_name}_#{variant}.html.#{handler}", "app/views/#{name.underscore}/#{action}.html.#{handler}"
+          copy_file "views/#{_view_type}/#{_view_name}_#{options.variant}.html.#{handler}", "app/views/#{name.underscore}/#{action}.html.#{handler}"
         end
       end
 
@@ -34,6 +35,3 @@ module Dresssed
     end
   end
 end
-
-# Hides this generator. It's only used as a base class.
-Rails::Generators.hide_namespace "dresssed:page"

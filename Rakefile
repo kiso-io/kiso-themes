@@ -212,27 +212,90 @@ end
 task :test => 'test:system'
 
 require 'fileutils'
+
+task :bake_app_pages do
+  require 'app_page_rewriter'
+
+  app_page_targets = [
+    '007_app_pages@ti-layout/',
+  ]
+
+  app_page_target_path = 'test/dummy/app/views/preview/elements'
+  app_page_destination_path = 'lib/generators/dresssed/templates/views/app_pages'
+
+  sh "rm -rf #{app_page_destination_path}"
+
+  app_page_targets.each do |target|
+    source_path = File.join( Dir.pwd, app_page_target_path, target, '/*' )
+    files = Dir.glob(source_path).select { |f| f != '.' && f != '..' && f != '.DS_Store' && !File.directory?(f) }
+
+    files.each do |raw_path|
+      file = raw_path.gsub(/\$/, "\\$")
+
+      destination = raw_path.gsub(/\d{1,3}_/, '').gsub(/\$minimal|\$app_nav/, '').gsub(/#{File.join(Dir.pwd, app_page_target_path)}/, '').gsub(/@[\w-]*/, '')
+      destination = File.join(Dir.pwd, app_page_destination_path, destination)
+
+      sh "mkdir -p #{File.dirname(destination)}"
+      sh "cp #{file} #{destination}"
+    end
+
+    directories = Dir.glob(source_path).select { |f| f != '.' && f != '..' && f != '.DS_Store' && File.directory?(f) }
+    directories.each do |raw_dir_path|
+
+      # Calculate what the destination directory is based on the parent folder name
+      destination_dir = File.join(Dir.pwd, app_page_destination_path, raw_dir_path.split('/').reverse[0])
+
+      # Create the destination diretory
+      sh "mkdir -p #{File.dirname(destination_dir)}"
+
+      # Now list all of the files in the target path
+      files = Dir.glob(File.join(raw_dir_path, '/**/*')).select { |f| f != '.' && f != '..' && f != '.DS_Store' }
+
+      files.each do |raw_path|
+        page_type = File.dirname(raw_path).split('/').reverse[0]
+
+        if File.directory?(raw_path)
+          sh "cp -R #{raw_path} #{File.join(destination_dir, raw_path.split('/').reverse[0])}"
+        else
+          file = raw_path.gsub(/\$/, "\\$")
+
+          destination_file = raw_path.gsub(/\d{1,3}_/, '')
+            .gsub(/\$minimal|\$app_nav/, '')
+            .gsub(/#{File.join(Dir.pwd, app_page_target_path)}\/app_pages/, '')
+            .gsub(/@[\w-]*/, '')
+            .gsub(/#{page_type}_/, '')
+
+          destination_file = File.join(Dir.pwd, app_page_destination_path, destination_file)
+
+          sh "mkdir -p #{destination_dir}"
+          sh "cp #{file} #{destination_file}"
+          AppPageRewriter.compile(destination_file, page_type)
+        end
+      end
+    end
+  end
+end
+
 task :bake_generatable_views do
+  Rake::Task["bake_app_pages"].invoke
+  Rake::Task["bake_pages"].invoke
+  Rake::Task["bake_content_blocks"].invoke
+  Rake::Task["bake_layouts"].invoke
+end
+
+task :bake_pages do
+  require 'content_block_rewriter'
+
   page_targets = [
     '001_dashboards@ti-dashboard',
     '002_analytics@ti-pulse',
-    '007_app_pages@ti-layout/_user_account',
-    '007_app_pages@ti-layout/',
     '008_frontend_pages@ti-home/001_landing_pages',
     '008_frontend_pages@ti-home/002_pricing_pages',
     '008_frontend_pages@ti-home/008_faq_pages',
     '008_frontend_pages@ti-home/009_legal_pages',
     '008_frontend_pages@ti-home/010_blog_pages',
+    '008_frontend_pages@ti-home/010_error_pages',
   ]
-
-  content_block_targets = [
-    '006_content_blocks@ti-view-list/_content_block_app_navs',
-    '006_content_blocks@ti-view-list/_content_block_basic',
-    '006_content_blocks@ti-view-list/_content_block_general',
-    '006_content_blocks@ti-view-list/_content_block_headers',
-    '006_content_blocks@ti-view-list/_content_block_landing_navs',
-  ]
-
 
   base_target_path = 'test/dummy/app/views/preview/elements'
   base_destination_path = 'lib/generators/dresssed/templates/views'
@@ -246,27 +309,51 @@ task :bake_generatable_views do
 
       destination = raw_path.gsub(/\d{1,3}_/, '').gsub(/\$minimal|\$app_nav/, '').gsub(/#{File.join(Dir.pwd, base_target_path)}/, '').gsub(/@[\w-]*/, '')
       destination = File.join(Dir.pwd, base_destination_path, destination)
-      puts "[SOURCE] " + file
-      puts "[DESTINATION] " + destination
-      puts ""
 
       sh "mkdir -p #{File.dirname(destination)}"
       sh "cp #{file} #{destination}"
+      ContentBlockRewriter.compile(destination)
     end
   end
+end
 
+task :bake_layouts do
   layout_destination_path = File.join(Dir.pwd, 'lib/generators/dresssed/templates/layouts')
   layout_path = File.join(Dir.pwd, 'test/dummy/app/views/layouts/*')
-
-  puts "LAYOUT PATH: #{layout_path}"
   layout_files = Dir.glob(layout_path).select { |f| f != '.' && f != '..' && f != '.DS_Store' && !File.directory?(f) }
 
-  puts "LAYOUTS: #{layout_files}"
-
   layout_files.each do |raw_path|
-    puts "[LAYOUT SOURCE] " + raw_path
-    puts "[LAYOUT DESTINATION] " + layout_destination_path
     sh "mkdir -p #{File.dirname(raw_path)}"
     sh "cp #{raw_path} #{layout_destination_path}"
   end
+end
+
+task :bake_content_blocks do
+  content_block_targets = [
+    '006_content_blocks@ti-view-list/_content_block_app_navs',
+    '006_content_blocks@ti-view-list/_content_block_basic',
+    '006_content_blocks@ti-view-list/_content_block_general',
+    '006_content_blocks@ti-view-list/_content_block_headers',
+    '006_content_blocks@ti-view-list/_content_block_landing_navs',
+  ]
+
+  base_target_path = 'test/dummy/app/views/preview/elements'
+
+  content_block_destination_path = File.join(Dir.pwd, 'app/views/content_blocks')
+
+  content_block_targets.each do |target|
+    path = File.join(Dir.pwd, base_target_path, target, '/**/*')
+    files = Dir.glob(path).select { |f| f != '.' && f != '..' && f != '.DS_Store' && !File.directory?(f) }
+
+    content_block_type_name = target.gsub(/006_content_blocks@ti-view-list\/_content_block_/, '')
+
+    files.each do |raw_path|
+      destination_file_name = raw_path
+      destination = File.join(content_block_destination_path, content_block_type_name, File.basename(raw_path))
+
+      sh "mkdir -p #{File.dirname(destination)}"
+      sh "cp #{raw_path} #{destination}"
+    end
+  end
+
 end

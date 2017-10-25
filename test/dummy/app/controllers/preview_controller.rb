@@ -47,7 +47,7 @@ class PreviewController < ApplicationController
     if @current_layout == '_minimal'
       render partial: "minimal"
     elsif @current_layout == '_app_nav'
-      render partial: "app_nav"
+      render partial: "layouts/app_nav"
     else
       @body_class = ' with-sidebar show-sidebar'
     end
