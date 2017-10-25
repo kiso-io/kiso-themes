@@ -1,48 +1,50 @@
 <%= content_for :js_libs, "demo-dashboard chartjs" %>
 
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-    <div class="row">
-    <% metric_names.each do |metric| %>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="card card-metric card-full-bleed">
-          <div class="card-body">
-            <canvas class='metric-graph metric-random-graph'></canvas>
-            <div class="metric-header">
-              <h6><%= metric[:name] %></h6>
-              <div class="metric-value"><%= random_value metric[:type] %></div>
-            </div>
-            <div class="metric-details">
-              <span>
-                <% direction = increase_or_decrease %>
-                <i class="fa <%=increase_or_decrease_chevron direction %> <%= direction == :increase ? 'text-success' : 'text-danger' %>"></i> <%= random_percent %> SINCE 30 Days Ago
-              </span>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+      <div class="row">
+      <% metric_names.each do |metric| %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="card card-metric card-full-bleed">
+            <div class="card-body">
+              <canvas class='metric-graph metric-random-graph'></canvas>
+              <div class="metric-header">
+                <h6><%= metric[:name] %></h6>
+                <div class="metric-value"><%= random_value metric[:type] %></div>
+              </div>
+              <div class="metric-details">
+                <span>
+                  <% direction = increase_or_decrease %>
+                  <i class="fa <%=increase_or_decrease_chevron direction %> <%= direction == :increase ? 'text-success' : 'text-danger' %>"></i> <%= random_percent %> SINCE 30 Days Ago
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-  </div>
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <div class="card card-default">
-      <h3 class="card-header">Sales Activity</h3>
-      <div class="card-body">
-        <ul class="left-timeline">
-            <% types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}] %>
-            <% (1..10).each do |index|%>
-              <li class="timeline-item">
-                <% instance = types[Random.rand(types.length)] %>
-                <time class='<%= instance[:css_class]%>'>
-                  <strong>$<%=Random.rand(120) %></strong>
-                </time>
-                <div class="activity-text">
-                  <strong>Internet Genie</strong>
-                  <small class="text-muted"><%=instance[:klass].upcase %> - <%=time_ago_in_words( DateTime.now-(index.minutes) ) %></small>
-                </header>
-              </li>
-            <% end %>
-        </ul>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      <div class="card card-default">
+        <h3 class="card-header">Sales Activity</h3>
+        <div class="card-body">
+          <ul class="left-timeline">
+              <% types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}] %>
+              <% (1..10).each do |index|%>
+                <li class="timeline-item">
+                  <% instance = types[Random.rand(types.length)] %>
+                  <time class='<%= instance[:css_class]%>'>
+                    <strong>$<%=Random.rand(120) %></strong>
+                  </time>
+                  <div class="activity-text">
+                    <strong>Internet Genie</strong>
+                    <small class="text-muted"><%=instance[:klass].upcase %> - <%=time_ago_in_words( DateTime.now-(index.minutes) ) %></small>
+                  </header>
+                </li>
+              <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

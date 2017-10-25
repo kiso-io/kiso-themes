@@ -1,9 +1,11 @@
 <%= render layout: "layouts/base" do %>
-  <%= render partial: 'layouts/dashboard_top_nav' %>
+  <%= render partial: "layouts/side_menu" %>
 
-  <div class="container pt-4">
-    <%= render "layouts/flashes" %>
-    <%= yield %>
+  <div class="main-content">
+    <%= render partial: 'layouts/dashboard_top_nav' %>
+    <div class="container pt-4">
+      <%= render "layouts/flashes" %>
+      <%= yield %>
+    </div>
   </div>
-</div>
 <% end %>
