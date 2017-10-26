@@ -1,7 +1,7 @@
 module Dresssed
   class Engine < ::Rails::Engine
     initializer 'dresssed.setup' do |app|
-      app.config.generators.templates << File.join(config.root, "lib/templates")
+      app.config.generators.templates.unshift File.join(config.root, "lib/templates")
 
       # Do not generate stylesheets in code generators, this is what this theme is for.
       app.config.app_generators.stylesheets = false

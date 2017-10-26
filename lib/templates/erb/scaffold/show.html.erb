@@ -1,25 +1,53 @@
 <%% @title = "Showing <%= singular_table_name %>" %>
 
+<%% content_for :description do %>
+  <p>Edit this template in <code>app/views/<%= controller_name %>/show.html.erb</code>.</p>
+  <%% end %>
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="form-horizontal">
-        <% attributes.each do |attribute| -%>
-        <div class="form-group">
-          <label class="col-md-2 form-label"><%= attribute.human_name %></label>
-          <div class="col-md-10 form-control uneditable-input">
-            <span>
-              <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
-            </span>
+    <div class="col-12 col-md-9">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-horizontal">
+            <% attributes.each do |attribute| -%>
+              <div class="form-group row">
+                <label class="col-12 col-md-2 form-label"><%= attribute.human_name %></label>
+                <div class="col-12 col-md-10 form-control uneditable-input">
+                  <span>
+                    <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+                  </span>
+                </div>
+              </div>
+
+            <% end -%>
+            <div class="d-flex">
+              <div class="ml-auto">
+                <%%= link_to fa_icon_tag("pencil") + ' Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), <%= Dresssed.key_value :class, "'btn btn-primary'" %> %>
+                <%%= link_to 'Back', <%= index_helper %>_path, <%= Dresssed.key_value :class, "'btn'" %> %>
+              </div>
+            </div>
           </div>
         </div>
-
-        <% end -%>
-        <div class="form-actions col-md-offset-2">
-          <%%= link_to fa_icon_tag("pencil") + ' Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), <%= Dresssed.key_value :class, "'btn btn-primary'" %> %>
-          <%%= link_to 'Back', <%= index_helper %>_path, <%= Dresssed.key_value :class, "'btn'" %> %>
-        </div>
       </div>
+    </div>
+
+    <div id="sidebar" class="col-md-3">
+      <ul class="nav nav-stacked nav-caret-left bg-gray-200 card small pb-2">
+        <li><h6 class="mt-3 ml-3">Sub Menu</h6></li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Vacation Days</a>
+        </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="#">Salaries</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Disciplinary Items</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Firings</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
