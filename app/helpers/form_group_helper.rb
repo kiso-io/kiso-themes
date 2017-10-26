@@ -37,7 +37,7 @@ module FormGroupHelper
     #    <%= f.error_messages %> <== helper method only accessible inside the control_group block.
     #  <% end %>
     def form_group(attribute, opts={}, &block)
-      css_error_class = opts[:css_error_class] || 'error'
+      css_error_class = opts[:css_error_class] || 'has-danger'
       builder = FormGroupBuilder.new(@template, attribute, self)
       @template.content_tag :div, @template.capture(builder, &block),
                             :class => "form-group #{opts[:class]} #{css_error_class if builder.has_errors?}"

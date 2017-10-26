@@ -94,18 +94,13 @@
   }
 
   .form-group,
-  .input-group{
+  .input-group {
     .form-control{
       padding: $padding-vertical - 1 $padding-horizontal $padding-vertical - 1 $padding-horizontal;
 
       & + .input-group-addon{
         padding: $padding-vertical $padding-horizontal $padding-vertical 0;
       }
-
-      &:not(:first-child):not(:last-child) {
-        border-left: 0;
-      }
-
     }
 
     .input-group-addon{
@@ -115,6 +110,15 @@
       & ~ .form-control{
         padding:$padding-vertical - 2 $padding-horizontal $padding-vertical - 2 $padding-horizontal;
 
+      }
+    }
+  }
+
+  .input-group {
+    .form-control {
+      &:not(:first-child):not(:last-child) {
+        border-left: 0;
+        border-right: 0;
       }
     }
   }

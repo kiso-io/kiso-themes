@@ -13935,7 +13935,7 @@ select[multiple] {
   display: inline-block;
   position: absolute;
   right: 15px;
-  bottom: 7px;
+  bottom: .5625rem;
   color: #73c16b;
   font-size: 16px;
 }
@@ -14026,21 +14026,22 @@ select[multiple] {
 .input-group .form-control + .input-group-addon {
   padding: 11px 19px 11px 0;
 }
-/* line 105, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/mixins/_inputs.scss */
-.form-group .form-control:not(:first-child):not(:last-child),
-.input-group .form-control:not(:first-child):not(:last-child) {
-  border-left: 0;
-}
-/* line 110, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/mixins/_inputs.scss */
+/* line 106, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/mixins/_inputs.scss */
 .form-group .input-group-addon,
 .input-group .input-group-addon {
   padding: 10px 0 10px 19px;
 }
-/* line 113, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/mixins/_inputs.scss */
+/* line 109, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/mixins/_inputs.scss */
 .form-group .input-group-addon + .form-control, .form-group .input-group-addon ~ .form-control,
 .input-group .input-group-addon + .form-control,
 .input-group .input-group-addon ~ .form-control {
   padding: 9px 19px 9px 19px;
+}
+
+/* line 119, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/mixins/_inputs.scss */
+.input-group .form-control:not(:first-child):not(:last-child) {
+  border-left: 0;
+  border-right: 0;
 }
 
 /* line 119, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
@@ -14202,14 +14203,19 @@ textarea.form-control {
 .form-group {
   position: relative;
 }
-
 /* line 264, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+.form-group .help-block {
+  position: absolute;
+  bottom: -1rem;
+}
+
+/* line 270, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .form-group.has-error,
 .form-group.has-danger {
   margin-bottom: 20px;
 }
 
-/* line 271, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 277, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .fileinput .fileinput-preview.fileinput-exists.avatar img {
   border-radius: 50%;
   display: block;
@@ -14217,18 +14223,18 @@ textarea.form-control {
   width: 128px;
 }
 
-/* line 281, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 287, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .fileinput-avatar {
   position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-/* line 285, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 291, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .fileinput-avatar i {
   color: white;
 }
-/* line 289, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 295, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .fileinput-avatar .fileinput-new.thumbnail {
   position: absolute;
   display: -webkit-box;
@@ -14242,29 +14248,29 @@ textarea.form-control {
           justify-content: center;
   overflow: visible;
 }
-/* line 298, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 304, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .fileinput-avatar.fileinput-exists .fileinput-new.thumbnail {
   display: none;
 }
-/* line 303, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 309, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .fileinput-avatar .avatar-controls {
   z-index: 1;
 }
-/* line 307, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 313, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .fileinput-avatar .fileinput-preview.fileinput-exists.avatar {
   position: absolute;
 }
 
-/* line 313, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 319, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .custom-switch {
   padding-left: 2.25rem;
 }
-/* line 315, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 321, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .custom-switch .custom-control-indicator {
   width: 1.75rem;
   border-radius: 0.5rem;
 }
-/* line 318, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 324, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .custom-switch .custom-control-indicator::before {
   position: absolute;
   top: 0.125rem;
@@ -14275,7 +14281,7 @@ textarea.form-control {
   background-color: #fff;
   border-radius: 1rem;
 }
-/* line 330, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
+/* line 336, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_inputs.scss */
 .custom-switch .custom-control-input:checked ~ .custom-control-indicator::before {
   -webkit-transform: translateX(0.75rem);
           transform: translateX(0.75rem);
@@ -16308,6 +16314,11 @@ body {
   border-bottom: none;
 }
 
+/* line 267, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_page_components.scss */
+.profile-header {
+  margin-top: -15px;
+}
+
 /* line 1, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_timelines.scss */
 .timeline {
   display: -webkit-box;
@@ -16517,7 +16528,7 @@ body {
 /* line 1, /Users/jmd/code/dresssed/dresssed/lib/sass/dresssed/now/_navbar.scss */
 .navbar {
   min-height: 53px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
