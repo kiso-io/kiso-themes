@@ -34,4 +34,23 @@ module IconsHelper
   def mdi_icon_tag(name)
     content_tag(:i, name, class: "material-icons")
   end
+
+  # Icon from Themify Icon set.
+  # Eg.:
+  #
+  #   <%= themify_icon_tag "alert" %>
+  #
+  def themify_icon_tag(name)
+    content_tag(:i, nil, class: "ti-#{name}")
+  end
+
+  # Provides a layer of indirection between the template
+  # and the actual Icon set being used.
+  # Eg.:
+  #
+  #   <%= theme_icon_tag "mdi-action-account-box" %>
+  #
+  def theme_icon_tag(name)
+    themify_icon(name)
+  end
 end
