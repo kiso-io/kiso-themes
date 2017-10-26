@@ -35,6 +35,11 @@
   }
 }
 
+.card.card-sheet,
+.card.nav-stacked {
+  overflow: visible;
+}
+
 .card-header {
   border-bottom: 0;
   background: transparent;

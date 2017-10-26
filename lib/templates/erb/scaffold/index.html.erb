@@ -30,10 +30,12 @@
                       <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
                     <% end -%>
                     <td class="actions text-right">
-                      <%%= link_to fa_icon_tag("eye"), <%= singular_table_name %>, <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Show'" %> %>
-                      <%%= link_to fa_icon_tag("pencil"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Edit'" %> %>
-                      <%%= link_to fa_icon_tag("trash-o"), <%= singular_table_name %>, <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Delete'" %>,
-                        <%= Gem::Version.new(Rails.version) >= Gem::Version.new("3.2.6") ? Dresssed.key_value(:data, '{ ' + Dresssed.key_value(:confirm, "'Are you sure?'") + ' }') : Dresssed.key_value(:confirm, "'Are you sure?'") %>, <%= Dresssed.key_value :method, ":delete" %> %>
+                      <div class="btn-group">
+                        <%%= link_to theme_icon_tag("eye"), <%= singular_table_name %>, <%= Dresssed.key_value "'data-toggle'", "'tooltip'" %>, <%= Dresssed.key_value :title, "'Show'" %>, class: "btn btn-link" %>
+                        <%%= link_to theme_icon_tag("pencil-alt"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), <%= Dresssed.key_value "'data-toggle'", "'tooltip'" %>, <%= Dresssed.key_value :title, "'Edit'" %>, class: "btn btn-link" %>
+                        <%%= link_to theme_icon_tag("trash"), <%= singular_table_name %>, <%= Dresssed.key_value "'data-toggle'", "'tooltip'" %>, <%= Dresssed.key_value :title, "'Delete'" %>,
+                        <%= Gem::Version.new(Rails.version) >= Gem::Version.new("3.2.6") ? Dresssed.key_value(:data, '{ ' + Dresssed.key_value(:confirm, "'Are you sure?'") + ' }') : Dresssed.key_value(:confirm, "'Are you sure?'") %>, <%= Dresssed.key_value :method, ":delete" %>, class: 'btn btn-link' %>
+                      </div>
                       </td>
                     </tr>
                     <%% end %>
