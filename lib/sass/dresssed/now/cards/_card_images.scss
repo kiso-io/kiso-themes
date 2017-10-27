@@ -24,23 +24,24 @@
   .card-header {
     position: relative;
 
-    padding: 0;
+    border-bottom: 0;
 
+    padding: 0;
 
     .card-title {
       position: absolute;
-      bottom: .8rem;
+      bottom: 0.8rem;
       left: 1rem;
 
       margin: 0;
 
-      color: white;
-
       line-height: 1.2;
+
+      color: white;
     }
 
     .card-label {
-      font-size: .6875rem;
+      font-size: 0.6875rem;
     }
 
     .card-label-top {
@@ -51,6 +52,7 @@
   }
 
   &.cover-image {
+
     .card-title {
       position: relative;
       bottom: inherit;
@@ -75,25 +77,26 @@
     }
 
     .cover-content:before {
-      position: absolute;
 
       display: block;
+      position: absolute;
+
+      background: rgba(0, 0, 0, 0.2);
 
       width: 100%;
       height: 100%;
 
-      content: "";
-
-      background: rgba(0,0,0,.2);
+      content: '';
     }
   }
 
   &.card-image-avatar {
+
     .card-header {
       display: flex;
+      align-items: center;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
 
       padding: 2rem;
 
