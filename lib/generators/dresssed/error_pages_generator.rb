@@ -3,7 +3,7 @@ require "generators/dresssed/handler_support"
 module Dresssed
   module Generators
     class ErrorPagesGenerator < Rails::Generators::Base
-      source_root File.expand_path('../templates/views/frontend_pages/error_pages', __FILE__)
+      source_root File.expand_path('../templates/error_pages', __FILE__)
 
       desc "Installs the Ives error pages into the /public directory."
 
