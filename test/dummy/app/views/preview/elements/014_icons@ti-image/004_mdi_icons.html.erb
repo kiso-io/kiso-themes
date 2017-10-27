@@ -1,12 +1,14 @@
 <div class="container-fluid">
   <div class="row">
-  <ul class="list-unstyled list-inline box-list">
-  <% MdiMetadata.all.each do |fa| %>
-    <li class='blue-400 text-blue-50'>
-      <span style='font-size: 48px;'><%= mdi_icon_tag fa %></span>
-      <p><%= fa %></p>
-    </li>
-  <% end %>
-  </ul>
+    <% MdiMetadata.all.each do |fa| %>
+      <div class='col-12 col-md-3'>
+        <div class='card' style="min-height: 190px;">
+          <div class="card-body d-flex flex-column align-items-center justify-content-center">
+            <span style='font-size: 48px;'><%= mdi_icon_tag fa %></span>
+            <p class="text-center"><%= fa %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

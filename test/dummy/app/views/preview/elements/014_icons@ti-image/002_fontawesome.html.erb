@@ -1,12 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-  <ul class="list-unstyled list-inline box-list">
     <% FontAwesomeMetadata.all.each do |fa| %>
-      <li class='blue-400 text-blue-50'>
-        <span style='font-size: 48px;'><%= fa_icon_tag fa.id %></span>
-        <p><%= fa.name %></p>
-      </li>
+
+      <div class='col-12 col-md-3'>
+        <div class='card'>
+          <div class="card-body d-flex flex-column align-items-center justify-content-center">
+            <span style='font-size: 48px;'><%= fa_icon_tag fa.id %></span>
+            <p><%= fa.name %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
   </div>
 </div>
