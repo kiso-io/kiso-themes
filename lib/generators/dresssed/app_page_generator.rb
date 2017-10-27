@@ -6,11 +6,8 @@ module Dresssed
       include HandlerSupport
 
       remove_hook_for :helper
-
       class_attribute :_page_type
-
       source_root File.expand_path('../templates', __FILE__)
-
       hide!
 
       def create_controller

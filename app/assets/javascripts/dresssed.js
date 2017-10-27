@@ -23,7 +23,15 @@
 //= require dresssed/countdown
 //= require parallax/parallax
 
-//= require_tree ./dresssed/demo
+//= require dresssed/demo/data_generator
+//= require dresssed/demo/chartjs
+//= require dresssed/demo/dashboard
+//= require dresssed/demo/easypiechart
+//= require dresssed/demo/flot
+//= require dresssed/demo/gmaps
+//= require dresssed/demo/jqvectormap
+//= require dresssed/demo/sparklines
+
 //= require dresssed/inspect_mode/inspect_mode
 
 

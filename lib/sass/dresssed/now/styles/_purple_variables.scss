@@ -16,7 +16,7 @@ $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
 
 // Backgrounds
-$main-bg: #eef5fb !default;
+$main-bg: #eef0fb !default;
 $dark-background: #555 !default;
 $smoke-bg: #f5f5f5 !default;
 $pale-blue-bg: #dae4f1 !default;
@@ -50,7 +50,7 @@ $transparent-bg: transparent !default;
 $default-color: #9cc0e8 !default;
 $default-states-color: lighten($default-color, 6%) !default;
 $default-color-opacity: rgba(182, 182, 182, 0.6) !default;
-$primary-color: #4173a7 !default;
+$primary-color: #414da7 !default;
 $primary-states-color: lighten($primary-color, 6%) !default;
 $primary-color-opacity: rgba(249, 99, 50, 0.3) !default;
 $primary-color-alert: rgba(249, 99, 50, 0.8) !default;
@@ -303,7 +303,7 @@ $zindex-navbar-fixed: 1030;
 // Side Nav
 $side-nav-transition: 250ms cubic-bezier(0.47, 0, 0.745, 0.715);
 $side-nav-width: 255px;
-$side-nav-menu-background-color: #2e4261;
+$side-nav-menu-background-color: #2e3b61;
 $side-nav-header-bg-color: #2e4261;
 $side-nav-header-bg-link-color: lighten($brand-primary, 25%);
 $side-nav-header-link-hover-color: white;

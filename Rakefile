@@ -54,11 +54,11 @@ task :compile_assets do
 
   themes.each do |theme|
     styles = Kernel.const_get("Dresssed::#{theme.capitalize}::COLORS")
-    css_files = FileList["test/dummy/public/assets/styles/#{theme}/{#{styles * ','}}.css"]
-    puts "🔎  Looking for files in: #{"test/dummy/public/assets/styles/#{theme}/{#{styles * ','}}.css"}"
+    css_files = FileList["test/dummy/public/assets/styles/#{theme.downcase}/{#{styles * ','}}.css"]
+    puts "🔎  Looking for files in: #{"test/dummy/public/assets/styles/#{theme.downcase}/{#{styles * ','}}.css"}"
     css_files.each do |file|
       puts "👷  Processing #{file}"
-      CssRewriter.compile(file, "app/assets/stylesheets/dresssed/#{theme}")
+      CssRewriter.compile(file, "app/assets/stylesheets/dresssed/#{theme.downcase}")
     end
   end
 

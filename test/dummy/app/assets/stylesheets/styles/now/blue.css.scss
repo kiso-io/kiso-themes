@@ -8,7 +8,12 @@
 
 @import 'bootstrap/mixins';
 @import 'dresssed/now/mixins';
-@import 'dresssed/now/variables';
+
+@import 'dresssed/now/styles/blue_variables';
+
+// You custom overrides should be placed in a separate
+// file and included here, like so:
+// @import 'my_dresssed_overrides';
 
 @import 'bootstrap/print';
 @import 'bootstrap/reboot';

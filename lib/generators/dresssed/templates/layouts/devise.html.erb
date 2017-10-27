@@ -1,3 +1,7 @@
 <%= render :layout => "layouts/base" do %>
-  <%= yield %>
+  <div class='row'>
+    <div id="content" class="col-12">
+      <%= yield %>
+    </div> <!-- /#content -->
+  </div>
 <% end %>
