@@ -6,18 +6,19 @@
   flex: 1;
   margin: 0;
   display: flex;
-  transition: all 800ms;
+  transition: all 800ms ease-in-out;
 
   > li {
     font-size: 12px;
     text-transform: uppercase;
-    transition: all 300ms;
+    transition: all 300ms ease-in-out;
     transform: translateY(25%);
 
     > .style-list {
       li {
         transition: all 300ms;
         width: 0;
+        visibility: hidden;
       }
     }
 
@@ -49,12 +50,13 @@
       > .style-list {
         display: flex;
         opacity: 1;
-        transition: all 800ms;
+        transition: all 800ms ease-in-out;
 
         li {
-          transition: all 300ms ease-in;
+          transition: all 300ms ease-in-out;
           transform: translateY(0);
-          width: auto;
+          width: 100%;
+          visibility: visible;
           height: auto;
           margin-right: 1rem;
           opacity: 1;
@@ -74,12 +76,14 @@
       > .style-list {
         display: flex;
         opacity: 1;
+
         transition: all 800ms;
 
         li {
           transition: all 800ms;
           opacity: 1;
           width: auto;
+          visibility: visible;
           margin-right: 1rem;
           transform: translateY(0);
         }
