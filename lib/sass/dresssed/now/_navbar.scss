@@ -11,8 +11,8 @@
   }
 
   &:not(.navbar-light) {
-    a {
-      &:not(.btn):not(.dropdown-item) {
+    .navbar-nav .nav-item > a {
+      &:not(.btn):not(.dropdown-item):not(.list-group-item) {
         color: $white-color;
       }
     }

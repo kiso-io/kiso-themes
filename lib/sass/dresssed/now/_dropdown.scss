@@ -191,6 +191,12 @@
       .list-group-item {
         border-radius: 0;
         color: $brand-primary;
+        border-left: none;
+        border-right: none;
+
+        &:first-of-type {
+          border-top: none;
+        }
       }
     }
   }
