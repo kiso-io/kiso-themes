@@ -17,7 +17,6 @@ def setup_bundler
   end
 end
 
-require 'version_bumper'
 require 'page_rewriter'
 
 task :check_dressseddotcom_on_master do
@@ -69,6 +68,7 @@ task :compile_assets do
 end
 
 task :release_version do
+  require 'version_bumper'
 
   puts "🚦  Checking if repo dresssed.com is on master..."
   Rake::Task["check_dressseddotcom_on_master"].invoke
@@ -108,46 +108,75 @@ task :deploy_demo do
   sh "rsync -cavtX --delete ./demo/localhost:4000/ deploy@192.241.204.175:/home/deploy/apps/dressseddotcom_production/shared/public/demos/ives/;"
 end
 
+task :bake_product_shots do
+  cd "test/dummy/product_shots" do
+    sh "rm -rf shots/"
+    sh "node build_product_shots.js"
+  end
+end
+
 task :make_demo do
   sh "rm -rf demo/"
+
+  Rake::Task["compile_assets"].invoke
+
   cd "test/dummy" do
     setup_bundler
     start_server
-    sh "wget --mirror -nv -p --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo http://localhost:4000; true"
+
+    Dresssed::THEMES.each do |theme|
+      styles = Kernel.const_get("Dresssed::#{theme.capitalize}::COLORS")
+      style = styles[0]
+      sh "wget --mirror --content-disposition -nv -p -q -nH --show-progress --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo/#{theme.downcase}/#{style} 'http://localhost:4000/preview/001_dashboards@ti-dashboard%2F001_dashboard_1?theme=#{theme.downcase}&style=#{style}'; true"
+    end
+
     stop_server
   end
 
-  cd "demo/localhost:4000" do
-    Dresssed::Ives::STYLES.each do |style|
-      sh "cp -R preview #{style.downcase}_preview"
-      cd "#{style.downcase}_preview" do
-        sh "perl -i -pe 's/white.self/#{style.downcase}.self/g' ./* "
-        sh "perl -i -pe 's{http://}{//}g' ./* "
-        sh "cp main.html index.html"
+  Dresssed::THEMES.each do |theme|
+    styles = Kernel.const_get("Dresssed::#{theme.capitalize}::COLORS")
+
+    cd "demo/#{theme}" do
+      styles[1..-1].each do |style|
+        # Copy the first style color folder to the destination color
+        sh "cp -R #{styles[0]} #{style.downcase}"
       end
-      sh "cp ../../app/assets/stylesheets/dresssed/#{style}.css.erb assets/styles/#{style}.self.css?body=1.css"
-      cd "assets/styles" do
-        sh "perl -i -pe 's,<%=\s?asset_path \",../,g' ./* "
-        sh "perl -i -pe 's,\" %>,,g' ./* "
+
+      styles.each do |style|
+        cd "#{style.downcase}/assets" do
+          sh "cp -R font-awesome/ styles/font-awesome"
+          sh "cp -R themify/ styles/themify"
+        end
+
+        cd "#{style.downcase}/preview" do
+          sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/#{styles[0]}\.self\-.*\"/#{style.downcase}.self.css\"/g'"
+
+          sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/data-image-src=\"\\/assets/data-image-src=\"\\/demos\\/#{theme.downcase}\\/#{style.downcase}\\/assets/g'"
+
+          # Remove the protocol scheme
+          # sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http:\/\//\/\//g'"
+        end
+
+        sh "cp ../../app/assets/stylesheets/dresssed/#{theme}/#{style}.css.erb #{style}/assets/styles/#{theme}/#{style}.self.css"
+        cd "#{style}/assets/styles/#{theme}" do
+          sh "perl -i -pe 's,<%=\s?asset_path \",../,g' ./* "
+          sh "perl -i -pe 's,\" %>,,g' ./* "
+        end
       end
-      sh "mkdir #{style.downcase}_preview/assets"
-      sh "cp ../../test/dummy/app/assets/flash/ZeroClipboard.swf #{style.downcase}_preview/assets/"
     end
-    sh "rm -rf preview"
   end
 
-  cd "demo/localhost:4000/assets/ionicons" do
-    sh 'for file in *.*\?*; do mv "$file" "${file%%\?*}"; done '
-  end
-
-  cd "demo/localhost:4000/assets/bootstrap" do
-    sh 'for file in *.*\?*; do mv "$file" "${file%%\?*}"; done '
-    sh 'mv glyphicons-halflings-regular.woff2.html glyphicons-halflings-regular.woff2'
-  end
-
-  cd "demo/localhost:4000/assets/mdiicons" do
-    sh 'mv MaterialIcons-Regular.woff2.html MaterialIcons-Regular.woff2'
-    sh 'mv MaterialIcons-Regular.eot? MaterialIcons-Regular.eot'
+  cd "demo" do
+    sh "for i in `find . -type f`; do mv $i `echo $i | cut -d? -f1`; done"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fbody=1//g'"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\.css\.css\"/\.css\"/g'"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3F.+$//g'"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3F-fvbane//g'"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fv=4.7.0.html//g'"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\?v=4.7.0//g'"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\?-fvbane//g'"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fv=4.7.0//g'"
+    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fv=2.0.0//g'"
   end
 end
 
@@ -156,7 +185,7 @@ def server_running?
 end
 
 def start_server(stop_at_exit=true)
-  sh "DRESSSED_BUILD=true bundle exec rails server thin -d -p 4000"
+  sh "bundle exec rails server thin -d -p 4000"
   sleep 0.1 until server_running?
   at_exit { stop_server(!:wait) } if stop_at_exit
 end

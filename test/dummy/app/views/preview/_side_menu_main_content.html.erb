@@ -12,8 +12,9 @@
     <% unless el[:is_header] %>
       <%=activatable_li_tag element_path(el[:target_name]), 'nav-item' do %>
         <% @is_active = (@section.downcase.include?(el[:target_name].downcase)) ? 'nav-link active' : 'nav-link ' %>
-        <%= link_to element_path(el[:target_name]), class: @is_active, 'aria-expanded': @section.downcase.include?(el[:target_name].downcase) do %>
+        <%= link_to element_path(el[:target_name].gsub(/\//,"-")), class: @is_active, 'aria-expanded': @section.downcase.include?(el[:target_name].downcase) do %>
           <i class="<%=el[:icon]%>"></i>
+          <%= el[:target_name]%>
           <span><%= el[:display_name].titleize.chomp %></span>
         <% end %>
       <% end %>

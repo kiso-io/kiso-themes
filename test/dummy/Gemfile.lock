@@ -67,7 +67,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-    dresssed-ives (1.0.58)
+    dresssed-ives (1.0.59)
       jquery-rails
       rails (>= 3.1)
     em-websocket (0.5.1)
@@ -258,4 +258,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.15.4
+   1.16.0

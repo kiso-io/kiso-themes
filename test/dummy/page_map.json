@@ -1,0 +1,690 @@
+{
+	"main": {
+		"order": 1,
+		"display_title": "Main",
+		"is_header": true
+	},
+	"dashboards": {
+		"order": 2,
+		"display_title": "Dashboards",
+		"display_icon": "ti-dashboard",
+		"children": {
+			"dashboard1": {
+				"order": 1,
+				"display_title": "Dashboard 1",
+				"preview_url": "001_dashboards@ti-dashboard/001_dashboard_1",
+				"snapshot_selector": "body"
+			}
+		}
+	},
+	"analytics": {
+		"order": 3,
+		"display_title": "Analytics",
+		"display_icon": "ti-pulse",
+		"children": {
+			"analyticsDashboard1": {
+				"order": 1,
+				"display_title": "Analytics Dashboard 1",
+				"preview_url": "002_analytics@ti-pulse/001_analytics_dashboard_1",
+				"snapshot_selector": "body"
+			},
+			"analyticsDetail1": {
+				"order": 2,
+				"display_title": "Analytics Detail 1",
+				"preview_url": "002_analytics@ti-pulse/002_analytics_detail_1",
+				"snapshot_selector": "body"
+			}
+		}
+	},
+	"rails": {
+		"order": 4,
+		"display_title": "Rails Integrations",
+		"display_icon": "ti-rocket",
+		"children": {
+			"scaffolding": {
+        "order": 1,
+        "display_title": "Scaffolding",
+				"children": {
+					"index": {
+						"order": 1,
+						"display_title": "index",
+						"preview_url": "003_rails_integrations@ti-rocket%2f001_scaffolding%2f001_index",
+						"snapshot_selector": "body"
+					},
+					"edit": {
+						"order": 2,
+						"display_title": "Edit",
+						"preview_url": "003_rails_integrations@ti-rocket/001_scaffolding/002_edit",
+						"snapshot_selector": "body"
+					},
+					"new": {
+						"order": 3,
+						"display_title": "New",
+						"preview_url": "003_rails_integrations@ti-rocket/001_scaffolding/003_new",
+						"snapshot_selector": "body"
+					},
+					"show": {
+						"order": 4,
+						"display_title": "Show",
+						"preview_url": "003_rails_integrations@ti-rocket/001_scaffolding/004_show",
+						"snapshot_selector": "body"
+					}
+				}
+			},
+			"devise": {
+        "order": 2,
+        "display_title": "Devise",
+				"children": {
+					"signin": {
+						"order": 1,
+						"display_title": "Sign In",
+						"preview_url": "003_rails_integrations@ti-rocket/002_Devise/002_sign_in_$minimal",
+						"snapshot_selector": "body"
+					},
+					"signup": {
+						"order": 2,
+						"display_title": "Sign Up",
+						"preview_url": "003_rails_integrations@ti-rocket/002_Devise/003_sign_up_$minimal",
+						"snapshot_selector": "body"
+					},
+					"changepassword": {
+						"order": 3,
+						"display_title": "Change Password",
+						"preview_url": "003_rails_integrations@ti-rocket/002_Devise/004_change_password_$minimal",
+						"snapshot_selector": "body"
+					},
+					"forgotpassword": {
+						"order": 4,
+						"display_title": "Forgot Password",
+						"preview_url": "003_rails_integrations@ti-rocket/002_Devise/004_forgot_password_$minimal",
+						"snapshot_selector": "body"
+					},
+					"unlockinstructions": {
+						"order": 5,
+						"display_title": "Unlock Instructions",
+						"preview_url": "003_rails_integrations@ti-rocket/002_Devise/005_unlock_instr_$minimal",
+						"snapshot_selector": "body"
+					},
+					"confirmationinstructions": {
+						"order": 6,
+						"display_title": "Confirmation Instructions",
+						"preview_url": "003_rails_integrations@ti-rocket/002_Devise/006_confirmation_instr_$minimal",
+						"snapshot_selector": "body"
+					},
+					"edituser": {
+						"order": 7,
+						"display_title": "Edit User",
+						"preview_url": "003_rails_integrations@ti-rocket/002_Devise/007_edit_user_$minimal",
+						"snapshot_selector": "body"
+					}
+				}
+			},
+			"deviseinvitable": {
+        "order": 3,
+        "display_title": "Devise Invitable",
+				"children": {
+					"requestinvite": {
+						"order": 1,
+						"display_title": "Request Invite",
+						"preview_url": "003_rails_integrations@ti-rocket/003_devise_invitable/001_request_invite_$minimal",
+						"snapshot_selector": "body"
+					},
+					"acceptinvite": {
+						"order": 2,
+						"display_title": "Accept Invite",
+						"preview_url": "003_rails_integrations@ti-rocket/003_devise_invitable/002_accept_invite_$minimal",
+						"snapshot_selector": "body"
+					}
+				}
+			}
+		}
+	},
+	"cards": {
+		"order": 4,
+		"display_title": "Cards",
+		"display_icon": "ti-layout-cta-right",
+		"children": {
+			"appcards": {
+				"order": 1,
+				"display_title": "App Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/000_app_cards",
+				"snapshot_selector": "body"
+			},
+			"minicards": {
+				"order": 2,
+				"display_title": "Mini Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/001_mini_cards",
+				"snapshot_selector": "body"
+			},
+			"imagecards": {
+				"order": 3,
+				"display_title": "Image Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/002_image_cards",
+				"snapshot_selector": "body"
+			},
+			"blockcolorcards": {
+				"order": 4,
+				"display_title": "Block Color Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/003_block_color_cards",
+				"snapshot_selector": "body"
+			},
+			"tabbedcards": {
+				"order": 5,
+				"display_title": "Tabbed Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/004_tabbed_cards",
+				"snapshot_selector": "body"
+			},
+			"tilecards": {
+				"order": 6,
+				"display_title": "Tile Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/005_tile_cards",
+				"snapshot_selector": "body"
+			},
+			"mapcards": {
+				"order": 7,
+				"display_title": "Map Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/006_map_cards",
+				"snapshot_selector": "body"
+			},
+			"vectormapcards": {
+				"order": 8,
+				"display_title": "Vector Map Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/007_vector_map_cards",
+				"snapshot_selector": "body"
+			},
+			"sheetcards": {
+				"order": 9,
+				"display_title": "Sheet Cards",
+				"preview_url": "004_cards@ti-layout-cta-right/008_sheet_cards",
+				"snapshot_selector": "body"
+			}
+		}
+	},
+	"pagesandcontentblocks": {
+		"order": 6,
+		"display_title": "Pages &amp; Content Blocks",
+		"is_header": true
+	},
+	"contentblocks": {
+		"order": 7,
+		"display_title": "Content Blocks",
+		"display_icon": "ti-view-list",
+		"children": {
+			"appnavbars": {
+				"order": 1,
+				"display_title": "App Nav Bars",
+				"preview_url": "006_content_blocks@ti-view-list/001_app_nav_bars",
+				"snapshot_selector": "body"
+			},
+			"landingpagenavbars": {
+				"order": 2,
+				"display_title": "Landing Page Navbars",
+				"preview_url": "006_content_blocks@ti-view-list/002_landing_page_navbars",
+				"snapshot_selector": "body"
+			},
+			"landingpageheaders": {
+				"order": 3,
+				"display_title": "Landing Page Headers",
+				"preview_url": "006_content_blocks@ti-view-list/003_landing_page_headers",
+				"snapshot_selector": "body"
+			},
+			"landingpagebasicblocks": {
+				"order": 4,
+				"display_title": "Landing Page Basic Blocks",
+				"preview_url": "006_content_blocks@ti-view-list/004_landing_page_basic_blocks",
+				"snapshot_selector": "body"
+			},
+			"Landing Page Content Blocks": {
+				"order": 5,
+				"display_title": "Landing Page Content Blocks",
+				"preview_url": "006_content_blocks@ti-view-list/005_landing_page_content_blocks",
+				"snapshot_selector": "body"
+			}
+		}
+	},
+	"apppages": {
+		"order": 8,
+		"display_title": "App Pages",
+		"display_icon": "ti-layout",
+		"children": {
+			"useraccount": {
+        "order": 1,
+        "display_title": "User Account",
+				"children": {
+					"useraccountprofile": {
+						"order": 1,
+						"display_title": "User Account Profile",
+						"preview_url": "007_app_pages@ti-layout/user_account/001_user_account_profile$app_nav",
+						"snapshot_selector": "body"
+					},
+					"useraccountplan": {
+						"order": 2,
+						"display_title": "User Account Plan",
+						"preview_url": "007_app_pages@ti-layout/user_account/002_user_account_plan$app_nav",
+						"snapshot_selector": "body"
+					},
+					"useraccountbilling": {
+						"order": 3,
+						"display_title": "User Account Billing",
+						"preview_url": "007_app_pages@ti-layout/user_account/003_user_account_billing$app_nav",
+						"snapshot_selector": "body"
+					},
+					"useraccountnotifications": {
+						"order": 4,
+						"display_title": "User Account Notifications",
+						"preview_url": "007_app_pages@ti-layout/user_account/004_user_account_notifications$app_nav",
+						"snapshot_selector": "body"
+					},
+					"useraccountsupport": {
+						"order": 5,
+						"display_title": "User Account Support",
+						"preview_url": "007_app_pages@ti-layout/user_account/005_user_account_support$app_nav",
+						"snapshot_selector": "body"
+					}
+				}
+			}
+		}
+	},
+	"frontendpages": {
+		"order": 9,
+		"display_title": "Frontend Pages",
+		"display_icon": "ti-home",
+		"children": {
+			"landingpages": {
+				"order": 1,
+				"display_title": "Landing Pages",
+				"children": {
+					"landingpage1": {
+						"order": 1,
+						"display_title": "Landing Page 1",
+						"preview_url": "008_frontend_pages@ti-home/001_landing_pages/001_landing_page_1$minimal",
+						"snapshot_selector": "body"
+					},
+					"landingpage2": {
+						"order": 2,
+						"display_title": "Landing Page 2",
+						"preview_url": "008_frontend_pages@ti-home/001_landing_pages/002_landing_page_2$minimal",
+						"snapshot_selector": "body"
+					},
+					"landingpage3": {
+						"order": 3,
+						"display_title": "Landing Page 3",
+						"preview_url": "008_frontend_pages@ti-home/001_landing_pages/003_landing_page_3$minimal",
+						"snapshot_selector": "body"
+					},
+					"landingpage4": {
+						"order": 4,
+						"display_title": "Landing Page 4",
+						"preview_url": "008_frontend_pages@ti-home/001_landing_pages/004_landing_page_4$minimal",
+						"snapshot_selector": "body"
+					},
+					"landingpage5": {
+						"order": 5,
+						"display_title": "Landing Page 5",
+						"preview_url": "008_frontend_pages@ti-home/001_landing_pages/005_landing_page_5$minimal",
+						"snapshot_selector": "body"
+					}
+				}
+			},
+			"pricingpages": {
+				"order": 2,
+				"display_title": "Pricing Pages",
+				"children": {
+					"pricingpage1": {
+						"order": 1,
+						"display_title": "Pricing Page 1",
+						"preview_url": "008_frontend_pages@ti-home/002_pricing_pages/001_pricing_page_1$minimal",
+						"snapshot_selector": "body"
+					},
+					"pricingpage2": {
+						"order": 2,
+						"display_title": "Pricing Page 2",
+						"preview_url": "008_frontend_pages@ti-home/002_pricing_pages/001_pricing_page_2$minimal",
+						"snapshot_selector": "body"
+					},
+					"pricingpage3": {
+						"order": 3,
+						"display_title": "Pricing Page 3",
+						"preview_url": "008_frontend_pages@ti-home/002_pricing_pages/001_pricing_page_3$minimal",
+						"snapshot_selector": "body"
+					}
+				}
+			},
+			"faqpages": {
+				"order": 3,
+				"display_title": "FAQ Pages",
+				"children": {
+					"faqpage1": {
+						"order": 1,
+						"display_title": "FAQ Page 1",
+						"preview_url": "008_frontend_pages@ti-home/008_faq_pages/001_faq_page_1$minimal",
+						"snapshot_selector": "body"
+					},
+					"faqpage2": {
+						"order": 2,
+						"display_title": "FAQ Page 2",
+						"preview_url": "008_frontend_pages@ti-home/008_faq_pages/002_faq_page_2$minimal",
+						"snapshot_selector": "body"
+					}
+				}
+			},
+			"legalpages": {
+				"order": 4,
+				"display_title": "Legal Pages",
+				"children": {
+					"legalpage1": {
+						"order": 1,
+						"display_title": "Terms of Service Page",
+						"preview_url": "008_frontend_pages@ti-home/009_legal_pages/001_terms_of_service_page$minimal",
+						"snapshot_selector": "body"
+					},
+					"legalpage2": {
+						"order": 2,
+						"display_title": "Privacy Page",
+						"preview_url": "008_frontend_pages@ti-home/009_legal_pages/002_privacy_page$minimal",
+						"snapshot_selector": "body"
+					}
+				}
+			},
+			"blogpages": {
+				"order": 5,
+				"display_title": "Blog Pages",
+				"children": {
+					"blogpage1": {
+						"order": 1,
+						"display_title": "Blog Post 1",
+						"preview_url": "008_frontend_pages@ti-home/010_blog_pages/001_blog_post_1$minimal",
+						"snapshot_selector": "body"
+					},
+					"blogpage2": {
+						"order": 2,
+						"display_title": "Blog Post 2",
+						"preview_url": "008_frontend_pages@ti-home/010_blog_pages/002_blog_archive_1$minimal",
+						"snapshot_selector": "body"
+					}
+				}
+			},
+			"errorpages": {
+				"order": 6,
+				"display_title": "Error Pages",
+				"children": {
+					"errorpage1": {
+						"order": 1,
+						"display_title": "403",
+						"preview_url": "008_frontend_pages@ti-home/010_error_pages/403$minimal",
+						"snapshot_selector": "body"
+					},
+					"errorpage2": {
+						"order": 2,
+						"display_title": "404",
+						"preview_url": "008_frontend_pages@ti-home/010_error_pages/404$minimal",
+						"snapshot_selector": "body"
+					},
+					"errorpage3": {
+						"order": 3,
+						"display_title": "422",
+						"preview_url": "008_frontend_pages@ti-home/010_error_pages/422$minimal",
+						"snapshot_selector": "body"
+					},
+					"errorpage4": {
+						"order": 4,
+						"display_title": "500",
+						"preview_url": "008_frontend_pages@ti-home/010_error_pages/500$minimal",
+						"snapshot_selector": "body"
+					}
+				}
+			}
+		}
+	},
+	"uielements": {
+		"order": 10,
+		"display_title": "UI Elements",
+		"display_icon": "ti-layers-alt",
+		"children": {
+			"tables": {
+				"order": 1,
+				"display_title": "Tables",
+				"preview_url": "010_UI_elements@ti-layers-alt/tables",
+				"snapshot_selector": "body"
+			},
+			"navbars": {
+				"order": 2,
+				"display_title": "Navbars",
+				"preview_url": "",
+				"snapshot_selector": "body"
+			},
+			"navsandabs": {
+				"order": 3,
+				"display_title": "Navs &amp; Tabs",
+				"preview_url": "010_UI_elements@ti-layers-alt/navs_&_tabs",
+				"snapshot_selector": "body"
+			},
+			"alerts": {
+				"order": 4,
+				"display_title": "Alerts",
+				"preview_url": "010_UI_elements@ti-layers-alt/alerts",
+				"snapshot_selector": "body"
+			},
+			"breadcrumbs": {
+				"order": 5,
+				"display_title": "Breadcrumbs",
+				"preview_url": "010_UI_elements@ti-layers-alt/breadcrumbs",
+				"snapshot_selector": "body"
+			},
+			"images": {
+				"order": 6,
+				"display_title": "Images",
+				"preview_url": "010_UI_elements@ti-layers-alt/images",
+				"snapshot_selector": "body"
+			},
+			"jumbotron": {
+				"order": 7,
+				"display_title": "Jumbotron",
+				"preview_url": "010_UI_elements@ti-layers-alt/jumbotron",
+				"snapshot_selector": "body"
+			},
+			"listgroup": {
+				"order": 8,
+				"display_title": "Listgroups",
+				"preview_url": "010_UI_elements@ti-layers-alt/list_groups",
+				"snapshot_selector": "body"
+			},
+			"mediaobject": {
+				"order": 9,
+				"display_title": "Media Object",
+				"preview_url": "010_UI_elements@ti-layers-alt/media_object",
+				"snapshot_selector": "body"
+			},
+			"typography": {
+				"order": 10,
+				"display_title": "Typography",
+				"preview_url": "010_UI_elements@ti-layers-alt/001_typography",
+				"snapshot_selector": "body"
+			},
+			"colorlibrary": {
+				"order": 11,
+				"display_title": "Color Library",
+				"preview_url": "010_UI_elements@ti-layers-alt/007_color_library@ti-palette",
+				"snapshot_selector": "body"
+			},
+			"loaders": {
+				"order": 12,
+				"display_title": "Loaders",
+				"preview_url": "010_UI_elements@ti-layers-alt/010_loaders@ti-world",
+				"snapshot_selector": "body"
+			}
+		}
+	},
+	"forms": {
+		"order": 11,
+		"display_title": "Forms",
+		"display_icon": "ti-comment-alt",
+		"children": {
+			"progressbars": {
+				"order": 4,
+				"display_title": "Progress Bars",
+				"preview_url": "011_forms@ti-comment-alt/progress_bars",
+				"snapshot_selector": "body"
+			},
+			"pagination": {
+				"order": 4,
+				"display_title": "Pagination",
+				"preview_url": "011_forms@ti-comment-alt/pagination",
+				"snapshot_selector": "body"
+			},
+			"badges": {
+				"order": 4,
+				"display_title": "Badges",
+				"preview_url": "011_forms@ti-comment-alt/badges",
+				"snapshot_selector": "body"
+			},
+			"buttongtoups": {
+				"order": 4,
+				"display_title": "Button Groups",
+				"preview_url": "011_forms@ti-comment-alt/button_groups",
+				"snapshot_selector": "body"
+			},
+			"buttons": {
+				"order": 4,
+				"display_title": "Buttons",
+				"preview_url": "011_forms@ti-comment-alt/buttons",
+				"snapshot_selector": "body"
+			},
+			"checkboxes": {
+				"order": 4,
+				"display_title": "Checkboxes",
+				"preview_url": "011_forms@ti-comment-alt/checkboxes",
+				"snapshot_selector": "body"
+			},
+			"dropdowns": {
+				"order": 4,
+				"display_title": "Dropdowns",
+				"preview_url": "011_forms@ti-comment-alt/dropdowns",
+				"snapshot_selector": "body"
+			},
+			"inputgroups": {
+				"order": 4,
+				"display_title": "Input Groups",
+				"preview_url": "011_forms@ti-comment-alt/input_groups",
+				"snapshot_selector": "body"
+			},
+			"basicforms": {
+				"order": 4,
+				"display_title": "Basic Forms",
+				"preview_url": "011_forms@ti-comment-alt/001_basic_forms",
+				"snapshot_selector": "body"
+			},
+			"switches": {
+				"order": 4,
+				"display_title": "Switches",
+				"preview_url": "011_forms@ti-comment-alt/002_switches",
+				"snapshot_selector": "body"
+			}
+		}
+	},
+	"components": {
+		"order": 12,
+		"display_title": "Components",
+		"display_icon": "ti-panel",
+		"children": {
+			"tooltips": {
+				"order": 1,
+				"display_title": "Tooltips",
+				"preview_url": "012_components@ti-panel/tooltip",
+				"snapshot_selector": "body"
+			},
+			"accordion": {
+				"order": 2,
+				"display_title": "Accordion",
+				"preview_url": "012_components@ti-panel/accordion",
+				"snapshot_selector": "body"
+			},
+			"carousel": {
+				"order": 3,
+				"display_title": "Carousel",
+				"preview_url": "012_components@ti-panel/carousel",
+				"snapshot_selector": "body"
+			},
+			"dropdowns": {
+				"order": 4,
+				"display_title": "Dropdowns",
+				"preview_url": "012_components@ti-panel/dropdowns",
+				"snapshot_selector": "body"
+			},
+			"modals": {
+				"order": 5,
+				"display_title": "Modal Dialogs",
+				"preview_url": "012_components@ti-panel/modal_dialogs",
+				"snapshot_selector": "body"
+			},
+			"popover": {
+				"order": 6,
+				"display_title": "Popovers",
+				"preview_url": "012_components@ti-panel/popover",
+				"snapshot_selector": "body"
+			},
+			"scrollspy": {
+				"order": 7,
+				"display_title": "Scrollspy",
+				"preview_url": "012_components@ti-panel/scrollspy",
+				"snapshot_selector": "body"
+			}
+		}
+	},
+	"charts": {
+		"order": 13,
+		"display_title": "Charts",
+		"display_icon": "ti-bar-chart",
+		"children": {
+			"chartjs": {
+				"order": 1,
+				"display_title": "ChartJS",
+				"preview_url": "013_charts@ti-bar-chart/001_chart_js",
+				"snapshot_selector": "body"
+			},
+			"flot": {
+				"order": 2,
+				"display_title": "Flot",
+				"preview_url": "013_charts@ti-bar-chart/002_flot",
+				"snapshot_selector": "body"
+			},
+			"sparklines": {
+				"order": 3,
+				"display_title": "Sparklines",
+				"preview_url": "013_charts@ti-bar-chart/003_sparklines",
+				"snapshot_selector": "body"
+			},
+			"easypiechart": {
+				"order": 4,
+				"display_title": "Easy Pie Chart",
+				"preview_url": "013_charts@ti-bar-chart/004_easy_pie_chart",
+				"snapshot_selector": "body"
+			}
+		}
+	},
+	"icons": {
+		"order": 14,
+		"display_title": "Icons",
+		"display_icon": "ti-image",
+		"children": {
+			"fontawesome": {
+				"order": 1,
+				"display_title": "Font Awesome",
+				"preview_url": "014_icons@ti-image/002_fontawesome",
+				"snapshot_selector": "body"
+			},
+			"ionicons": {
+				"order": 2,
+				"display_title": "Ionicons",
+				"preview_url": "014_icons@ti-image/003_ionicons",
+				"snapshot_selector": "body"
+			},
+			"mdiicons": {
+				"order": 3,
+				"display_title": "MDI Icons",
+				"preview_url": "014_icons@ti-image/004_mdi_icons",
+				"snapshot_selector": "body"
+			}
+		}
+	}
+}

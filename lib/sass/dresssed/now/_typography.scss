@@ -9,7 +9,6 @@ textarea {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: $sans-serif-family;
   font-weight: $font-weight-normal;
   line-height: 1.1;
   color: inherit;
@@ -385,4 +384,13 @@ i.display-4 {
   font-size: 2.5rem;
   font-weight: 300;
   line-height: 1.1;
+}
+
+i.h1,
+i.h2,
+i.h3,
+i.h4,
+i.h5,
+i.h6 {
+  font-family: 'themify';
 }

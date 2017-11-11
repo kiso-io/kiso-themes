@@ -7,7 +7,7 @@ Dummy::Application.routes.draw do
   get '/javascript' => 'home#javascript'
 
   get 'preview/main' => 'preview#main'
-  get 'preview/:section' => 'preview#main', as: :element
+  get 'preview/(*section)' => 'preview#main', as: :element
 
   get 'styles/:style', to: 'preview#styles', as: :switch_style
   get 'styles/theme/:theme', to: 'preview#themes', as: :switch_theme
