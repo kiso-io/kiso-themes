@@ -146,6 +146,7 @@ task :make_demo do
         cd "#{style.downcase}/assets" do
           sh "cp -R font-awesome/ styles/font-awesome"
           sh "cp -R themify/ styles/themify"
+          sh "cp -R ionicons/ styles/ionicons"
         end
 
         cd "#{style.downcase}/preview" do
@@ -154,7 +155,7 @@ task :make_demo do
           sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/data-image-src=\"\\/assets/data-image-src=\"\\/demos\\/#{theme.downcase}\\/#{style.downcase}\\/assets/g'"
 
           # Remove the protocol scheme
-          # sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http:\/\//\/\//g'"
+          sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http:\\/\\//\\/\\//g'"
         end
 
         sh "cp ../../app/assets/stylesheets/rrt/#{theme}/#{style}.css.erb #{style}/assets/styles/#{theme}/#{style}.self.css"
