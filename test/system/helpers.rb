@@ -2,7 +2,7 @@
 
 def create_app
   stop_server
-  test_dir = '/tmp/dresssed-ives-install-test'
+  test_dir = '/tmp/rrt-ives-install-test'
   rm_rf test_dir
   mkdir_p test_dir
   cd test_dir
@@ -12,18 +12,18 @@ def create_app
 end
 
 def install_theme
-  add_gem 'dresssed-ives', :path => File.expand_path("../../..", __FILE__)
+  add_gem 'rrt-ives', :path => File.expand_path("../../..", __FILE__)
   sh 'bundle install'
   sh 'spring stop'
-  sh 'bin/rails generate dresssed:install -f'
+  sh 'bin/rails generate rrt:install -f'
 end
 
 def generate_views
   sh 'rails generate scaffold contact name:string phone:string email:string'
   sh 'rake db:migrate'
   rm_rf 'public/index.html'
-  sh 'rails generate dresssed:landing1 home index'
-  sh 'rails generate dresssed:pricing home pricing'
+  sh 'rails generate rrt:landing1 home index'
+  sh 'rails generate rrt:pricing home pricing'
   add_route "get '/pricing' => 'home#pricing'"
   add_route "root :to => 'home#index'"
 end

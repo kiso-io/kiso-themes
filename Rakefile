@@ -7,7 +7,7 @@ rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
 
-Bundler::GemHelper.install_tasks name: 'dresssed'
+Bundler::GemHelper.install_tasks name: 'rrt'
 
 def setup_bundler
   begin
@@ -19,11 +19,11 @@ end
 
 require 'page_rewriter'
 
-task :check_dressseddotcom_on_master do
-  cd "../dresssed.com", verbose: false do
+task :check_rrtdotcom_on_master do
+  cd "../rrt.com", verbose: false do
     branch_name = `git rev-parse --abbrev-ref HEAD`.chomp
     if branch_name != 'master'
-      puts "🚨  CANNOT RELEASE: dresssed.com is not on master"
+      puts "🚨  CANNOT RELEASE: rrt.com is not on master"
       exit
     end
   end
@@ -45,19 +45,19 @@ task :compile_assets do
     sh "DRESSSED_BUILD=true bundle exec rake non_digested"
   end
 
-  mkdir_p "app/assets/stylesheets/dresssed"
+  mkdir_p "app/assets/stylesheets/rrt"
 
-  puts "Processing CSS files to app/assets/stylesheets/dresssed"
+  puts "Processing CSS files to app/assets/stylesheets/rrt"
 
-  themes = Dresssed::THEMES
+  themes = RRT::THEMES
 
   themes.each do |theme|
-    styles = Kernel.const_get("Dresssed::#{theme.capitalize}::COLORS")
+    styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
     css_files = FileList["test/dummy/public/assets/styles/#{theme.downcase}/{#{styles * ','}}.css"]
     puts "🔎  Looking for files in: #{"test/dummy/public/assets/styles/#{theme.downcase}/{#{styles * ','}}.css"}"
     css_files.each do |file|
       puts "👷  Processing #{file}"
-      CssRewriter.compile(file, "app/assets/stylesheets/dresssed/#{theme.downcase}")
+      CssRewriter.compile(file, "app/assets/stylesheets/rrt/#{theme.downcase}")
     end
   end
 
@@ -70,8 +70,8 @@ end
 task :release_version do
   require 'version_bumper'
 
-  puts "🚦  Checking if repo dresssed.com is on master..."
-  Rake::Task["check_dressseddotcom_on_master"].invoke
+  puts "🚦  Checking if repo rrt.com is on master..."
+  Rake::Task["check_rrtdotcom_on_master"].invoke
 
   puts "👷  Cleaning out pkg directory"
   cd "pkg", verbose: false do
@@ -88,11 +88,11 @@ task :release_version do
 
   puts "📖  Generating changelog..."
   sh "git changelog"
-  sh "cp VERSION ../dresssed.com/db/themes/ives/ && cp CHANGELOG ../dresssed.com/db/themes/ives/"
+  sh "cp VERSION ../rrt.com/db/themes/ives/ && cp CHANGELOG ../rrt.com/db/themes/ives/"
 
-  puts "🚚  Pushing release to dresssed.com"
-  cd "../dresssed.com", verbose: false do
-    sh "bundle exec rake gems:push gem=../dresssed-ives/pkg/dresssed-ives-#{latest_version}.gem"
+  puts "🚚  Pushing release to rrt.com"
+  cd "../rrt.com", verbose: false do
+    sh "bundle exec rake gems:push gem=../rrt-ives/pkg/rrt-ives-#{latest_version}.gem"
 
     puts system('test -z "$(git ls-files --others)"')
 
@@ -105,7 +105,7 @@ task :release_version do
 end
 
 task :deploy_demo do
-  sh "rsync -cavtX --delete ./demo/localhost:4000/ deploy@192.241.204.175:/home/deploy/apps/dressseddotcom_production/shared/public/demos/ives/;"
+  sh "rsync -cavtX --delete ./demo/localhost:4000/ deploy@192.241.204.175:/home/deploy/apps/rrtdotcom_production/shared/public/demos/ives/;"
 end
 
 task :bake_product_shots do
@@ -124,8 +124,8 @@ task :make_demo do
     setup_bundler
     start_server
 
-    Dresssed::THEMES.each do |theme|
-      styles = Kernel.const_get("Dresssed::#{theme.capitalize}::COLORS")
+    RRT::THEMES.each do |theme|
+      styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
       style = styles[0]
       sh "wget --mirror --content-disposition -nv -p -q -nH --show-progress --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo/#{theme.downcase}/#{style} 'http://localhost:4000/preview/001_dashboards@ti-dashboard%2F001_dashboard_1?theme=#{theme.downcase}&style=#{style}'; true"
     end
@@ -133,8 +133,8 @@ task :make_demo do
     stop_server
   end
 
-  Dresssed::THEMES.each do |theme|
-    styles = Kernel.const_get("Dresssed::#{theme.capitalize}::COLORS")
+  RRT::THEMES.each do |theme|
+    styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
 
     cd "demo/#{theme}" do
       styles[1..-1].each do |style|
@@ -157,7 +157,7 @@ task :make_demo do
           # sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http:\/\//\/\//g'"
         end
 
-        sh "cp ../../app/assets/stylesheets/dresssed/#{theme}/#{style}.css.erb #{style}/assets/styles/#{theme}/#{style}.self.css"
+        sh "cp ../../app/assets/stylesheets/rrt/#{theme}/#{style}.css.erb #{style}/assets/styles/#{theme}/#{style}.self.css"
         cd "#{style}/assets/styles/#{theme}" do
           sh "perl -i -pe 's,<%=\s?asset_path \",../,g' ./* "
           sh "perl -i -pe 's,\" %>,,g' ./* "
@@ -210,7 +210,7 @@ end
 
 RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Dresssed'
+  rdoc.title    = 'RRT'
   rdoc.options << '--line-numbers'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
@@ -249,7 +249,7 @@ task :bake_app_pages do
   ]
 
   app_page_target_path = 'test/dummy/app/views/preview/elements'
-  app_page_destination_path = 'lib/generators/dresssed/templates/views/app_pages'
+  app_page_destination_path = 'lib/generators/rrt/templates/views/app_pages'
 
   sh "rm -rf #{app_page_destination_path}"
 
@@ -326,7 +326,7 @@ task :bake_pages do
   ]
 
   base_target_path = 'test/dummy/app/views/preview/elements'
-  base_destination_path = 'lib/generators/dresssed/templates/views'
+  base_destination_path = 'lib/generators/rrt/templates/views'
 
   page_targets.each do |target|
     path = File.join(Dir.pwd, base_target_path, target, '/**/*')
@@ -346,7 +346,7 @@ task :bake_pages do
 end
 
 task :bake_layouts do
-  layout_destination_path = File.join(Dir.pwd, 'lib/generators/dresssed/templates/layouts')
+  layout_destination_path = File.join(Dir.pwd, 'lib/generators/rrt/templates/layouts')
   layout_path = File.join(Dir.pwd, 'test/dummy/app/views/layouts/*')
   layout_files = Dir.glob(layout_path).select { |f| f != '.' && f != '..' && f != '.DS_Store' && !File.directory?(f) }
 

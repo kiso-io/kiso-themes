@@ -13,17 +13,17 @@ task :erb do
   curl "/pricing"
   curl "/contacts"
   curl "/contacts/new"
-  curl "/assets/dresssed.css"
-  curl "/assets/dresssed.js"
+  curl "/assets/rrt.css"
+  curl "/assets/rrt.js"
 end
 
 task :customize => :erb do
-  sh 'bin/rails generate dresssed:customize -f'
-  rm 'app/assets/stylesheets/dresssed.css'
+  sh 'bin/rails generate rrt:customize -f'
+  rm 'app/assets/stylesheets/rrt.css'
   sh 'bundle install'
   restart_server
 
-  curl "/assets/dresssed.css"
+  curl "/assets/rrt.css"
 end
 
 task :haml do
@@ -52,15 +52,15 @@ task :without_default_files do
   generate_views
   start_server
 
-  curl "/assets/dresssed.css"
-  curl "/assets/dresssed.js"
+  curl "/assets/rrt.css"
+  curl "/assets/rrt.js"
 
   # With application.js.coffee
-  sh 'bin/rails destroy dresssed:install -f'
+  sh 'bin/rails destroy rrt:install -f'
   sh "touch app/assets/javascripts/application.js.coffee"
-  sh 'bin/rails generate dresssed:install -f'
+  sh 'bin/rails generate rrt:install -f'
 
-  curl "/assets/dresssed.js"
+  curl "/assets/rrt.js"
 end
 
 task :default => [:erb, :customize, :haml, :without_default_files]
