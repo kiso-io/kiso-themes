@@ -34,6 +34,8 @@ module RRT
 				end
 
         app.config.assets.precompile += [
+          'modernizr/modernizr.2.8.3.min.js',
+
           'gmaps/gmaps.js',
           'flot/flot-chart',
           'flot/flot-chart-resize',

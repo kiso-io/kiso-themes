@@ -20,8 +20,6 @@
     <%= favicon_link_tag %>
     <%# favicon_link_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
 
-    <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" %>
-
     <%= render 'layouts/external_js_libs' %>
     <%= yield :external_js_libs %>
     <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>

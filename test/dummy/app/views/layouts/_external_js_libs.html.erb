@@ -1,5 +1,9 @@
 <% @js_libs = yield :js_libs %>
 
+<% content_for :external_js_libs do %>
+  <%= javascript_include_tag "modernizr/modernizr.2.8.3.min" %>
+<% end %>
+
 <% if @js_libs.include? 'gmaps' %>
   <% content_for :javascript do %>
     <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=AIzaSyB-cfYp0VsRHQZCPk6Q6RCAkiqTI22ICqY&libraries=places" %>
