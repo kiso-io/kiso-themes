@@ -1,0 +1,34 @@
+.devise-1 {
+  header {
+    min-height: 35%;
+    width: 100%;
+    background-color: $brand-primary;
+
+    padding: 8%;
+    color: white;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+    }
+  }
+
+  .options {
+    font-size: 0.8em;
+
+    a {
+      background-color: lighten($brand-primary, 60%);
+      text-align: center;
+      display: block;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+  }
+}

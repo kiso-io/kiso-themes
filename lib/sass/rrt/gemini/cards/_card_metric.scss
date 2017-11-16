@@ -1,0 +1,133 @@
+
+.card-metric {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+
+  .card-body {
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h6 {
+    padding: 1rem 0 0 1rem;
+    margin: 0;
+    letter-spacing: 2.5px;
+  }
+
+  .metric-header {
+    flex-grow: 1;
+    z-index: 5;
+  }
+
+  .metric-details {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: .75rem;
+    padding: .75rem 0 0.4125rem 1rem;
+    z-index: 5;
+
+    span {
+      background-color: $opacity-7;
+      border-radius: 4px;
+      border: 1px solid #e9f4fb;
+      padding: .75rem;
+    }
+  }
+
+  .metric-value {
+    padding: 0.5rem 1rem;
+    font-size: 46px;
+    line-height: 1;
+    font-weight: 100;
+  }
+
+  .metric-graph {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+
+.card-metric-detail {
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .current-value {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: .7rem;
+
+      border: $border;
+      border-color: $light-gray;
+      border-radius: $border-radius-small;
+
+      h2 {
+        margin: 0;
+        line-height: 1;
+      }
+
+      p {
+        color: $dark-gray;
+        padding: 0 0 0 1rem;
+        margin: 0;
+        line-height: 1;
+      }
+    }
+  }
+
+  .card-body {
+    height: auto;
+  }
+
+  .metric-detail-graph {
+    position: relative;
+    display: block;
+    height: 400px;
+  }
+
+  .metric-footer {
+    border: $border;
+    border-color: $light-gray;
+    border-radius: $border-radius-small;
+    padding: 1rem;
+
+    margin: 3rem 0 3rem 0;
+
+    .value {
+      text-align: center;
+      h4{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+
+        small {
+          padding-left: 1rem;
+          color: $dark-gray;
+        }
+      }
+
+      h6 {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

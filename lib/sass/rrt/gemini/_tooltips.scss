@@ -1,0 +1,27 @@
+
+.tooltip {
+  &.bs-tooltip-right .arrow:before {
+    border-right-color: $tooltip-bg;
+  }
+
+  &.bs-tooltip-top .arrow:before {
+    border-top-color: $tooltip-bg;
+  }
+
+  &.bs-tooltip-bottom .arrow:before {
+    border-bottom-color: $tooltip-bg;
+  }
+
+  &.bs-tooltip-left .arrow:before {
+    border-left-color: $tooltip-bg;
+  }
+}
+
+.tooltip-inner {
+  padding: $padding-base-vertical 0;
+  min-width: 100px;
+  background-color: $tooltip-bg;
+  font-size: $font-size-small;
+  color: inherit;
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .2);
+}

@@ -73,11 +73,15 @@ if(window.Chart) {
           data = Array.apply(null, Array(31)).map(function() { return Math.floor(Math.random() * 100 % 100); })
         }
 
+        var bodyStyles = window.getComputedStyle(document.body);
+        var metricChartFillColor = bodyStyles.getPropertyValue('--metric-chart-fill-color');
+        var metricChartBorderColor = bodyStyles.getPropertyValue('--metric-chart-border-color');
+
         var graphData = {
           datasets: [{
             fill: true,
-            backgroundColor: '#e9f4fb',
-            borderColor: '#c9e3f5',
+            backgroundColor: metricChartFillColor,
+            borderColor: metricChartBorderColor,
             borderWidth: 4,
             pointRadius: 0,
             data: data
@@ -130,14 +134,19 @@ if(window.Chart) {
   function salesVsRefunds() {
     var chartLinesCon  = jQuery('.sales-vs-refunds');
 
+    var bodyStyles = window.getComputedStyle(document.body);
+    var metricChartFillColor = bodyStyles.getPropertyValue('--metric-chart-fill-color');
+    var metricChartFillColorAlt = bodyStyles.getPropertyValue('--metric-chart-fill-color-alternate');
+    var metricChartBorderColor = bodyStyles.getPropertyValue('--metric-chart-border-color');
+
     var chartLinesBarsRadarData = {
       labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
       datasets: [
         {
         label: 'Refunds',
         fill: true,
-        backgroundColor: '#81A2D0',
-        borderColor: 'rgba(66,165,245,1)',
+        backgroundColor: metricChartBorderColor,
+        borderColor: metricChartFillColor,
         pointBackgroundColor: 'rgba(66,165,245,1)',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
@@ -147,9 +156,9 @@ if(window.Chart) {
       {
         label: 'Sales',
         fill: true,
-        backgroundColor: '#e9f4fb',
-        borderColor: '#A3D9FE',
-        pointBackgroundColor: '#A3D9FE',
+        backgroundColor: metricChartFillColorAlt,
+        borderColor: metricChartBorderColor,
+        pointBackgroundColor: metricChartFillColorAlt,
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(66,165,245,1)',

@@ -1,0 +1,190 @@
+.modal-content {
+  border: none;
+  border-radius: $border-radius-small;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, .5);
+
+  .modal-header {
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 0;
+    padding-left: 24px;
+
+    border-bottom: none;
+
+    & button {
+      position: absolute;
+      top: 30px;
+      right: 27px;
+
+      outline: 0;
+    }
+
+    .title {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-body {
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+
+    line-height: 1.9;
+  }
+
+  .modal-footer {
+    justify-content: space-between;
+
+    padding-right: 24px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+
+    border-top: none;
+
+    button {
+      width: auto;
+      margin: 0;
+      padding-right: 16px;
+      padding-left: 16px;
+
+      &.pull-left {
+        position: relative;
+        left: -5px;
+
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .modal-body + .modal-footer {
+    padding-top: 0;
+  }
+}
+
+.modal-backdrop {
+  background: rgba(0,0,0,.3);
+}
+
+.modal {
+  &.modal-mini {
+    p {
+      text-align: center;
+    }
+
+    .modal-dialog {
+      max-width: 255px;
+      margin: 0 auto;
+    }
+
+    .modal-profile {
+      width: 70px;
+      height: 70px;
+
+      text-align: center;
+
+      border-radius: 50%;
+      background-color: $white-color;
+      box-shadow: 0 5px 50px 0 rgba(0, 0, 0, .3);
+
+      line-height: 5.9;
+
+      i {
+        color: $primary-color;
+      }
+
+      &[class*="modal-profile-"] {
+        i {
+          color: $white-color;
+        }
+      }
+
+      &.modal-profile-primary {
+        background-color: $primary-color;
+      }
+
+      &.modal-profile-danger {
+        background-color: $danger-color;
+      }
+
+      &.modal-profile-warning {
+        background-color: $warning-color;
+      }
+
+      &.modal-profile-success {
+        background-color: $success-color;
+      }
+
+      &.modal-profile-info {
+        background-color: $info-color;
+      }
+    }
+
+    .modal-footer {
+      button {
+        text-transform: uppercase;
+
+        &:first-child {
+          opacity: .5;
+        }
+      }
+    }
+  }
+
+  &.modal-default {
+    @include modal-colors($white-color, $black-color);
+  }
+
+  &.modal-primary {
+    @include modal-colors($primary-color, $white-color);
+  }
+
+  &.modal-danger {
+    @include modal-colors($danger-color, $white-color);
+  }
+
+  &.modal-warning {
+    @include modal-colors($warning-color, $white-color);
+  }
+
+  &.modal-success {
+    @include modal-colors($success-color, $white-color);
+  }
+
+  &.modal-info {
+    @include modal-colors($info-color, $white-color);
+  }
+
+  &.show.modal-mini .modal-dialog {
+    transform: translate(0,30%);
+  }
+
+  .modal-header .close {
+    color: $danger-color;
+    text-shadow: none;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}
+
+.modal-example {
+  position: relative;
+  z-index: 1;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+
+  display: block;
+
+  .modal-dialog {
+    margin: 3rem auto !important;
+
+    transform: translate(0, 0%) !important;
+  }
+}

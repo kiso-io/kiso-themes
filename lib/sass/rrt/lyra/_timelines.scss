@@ -1,0 +1,54 @@
+.timeline {
+  display: flex;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.left-timeline {
+  padding: 15px 15px 0 15px;
+  list-style: none;
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    border-left: 2px solid $brand-primary-lighter;
+
+    &:last-child {
+      border-color: transparent;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 6px;
+      background: #ffffff;
+      border: 1px solid #67a8e4;
+    }
+
+    time {
+      position: relative;
+      top: -5px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .activity-text {
+      position: relative;
+      top: -3px;
+
+      small {
+        display: block;
+      }
+    }
+  }
+
+
+}
+
+

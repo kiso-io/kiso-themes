@@ -1,0 +1,228 @@
+@mixin btn-styles($btn-color, $btn-states-color) {
+  background-color: $btn-color;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:active:focus,
+  &:active:hover,
+  &.active:focus,
+  &.active:hover,
+  .show > &.dropdown-toggle,
+  .show > &.dropdown-toggle:focus,
+  .show > &.dropdown-toggle:hover {
+    box-shadow: none;
+    background-color: $btn-states-color;
+    color: $white-color;
+  }
+
+  &:hover {
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17);
+  }
+
+  &.disabled,
+  &:disabled,
+  &[disabled],
+  fieldset[disabled] & {
+
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      border-color: $btn-color;
+      background-color: $btn-color;
+    }
+  }
+
+
+  @each $theme-color in map-keys($theme-colors) {
+    &.btn-outline-#{$theme-color} {
+      border: $border map-get($theme-colors, $theme-color);
+      background: transparent;
+      color: map-get($theme-colors, $theme-color);
+      line-height: calc(#{$line-height} - 2px);
+
+      &:hover {
+        @include color-yiq(map-get($theme-colors, $theme-color));
+        background: map-get($theme-colors, $theme-color);
+      }
+    }
+  }
+
+  &.btn-outline-light {
+    color: darken(map-get($theme-colors, 'light'), 20%);
+  }
+
+  &.btn-outline-link {
+    @extend .btn-outline-light;
+  }
+
+  &.btn-border-2x {
+    border-width: 2px;
+    line-height: calc(#{$line-height} - 4px);
+  }
+
+  &.btn-simple {
+    border-color: $btn-color;
+    color: $btn-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $btn-states-color;
+      box-shadow: none;
+      background-color: $transparent-bg;
+      color: $btn-states-color;
+    }
+  }
+
+  &.btn-dark {
+    background-color: $inverse-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white-color;
+    }
+  }
+
+  &.btn-light {
+    background-color: theme-color('light');
+    color: $black-color;
+  }
+
+  &.btn-link {
+    color: $btn-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none;
+      background-color: $transparent-bg;
+      text-decoration: none;
+      color: $btn-states-color;
+    }
+  }
+
+  &.btn-avatar {
+    padding: 3px 7px 3px 3px;
+  }
+
+  @if $btn-color == $white-color {
+    color: $primary-color;
+
+    &.btn-danger {
+      color: $danger-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $danger-states-color;
+      }
+    }
+
+    &.btn-info {
+      color: $info-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $info-states-color;
+      }
+    }
+
+    &.btn-warning {
+      color: $warning-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $warning-states-color;
+      }
+    }
+
+    &.btn-success {
+      color: $success-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $success-states-color;
+      }
+    }
+
+    &.btn-default {
+      color: $default-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $default-states-color;
+      }
+    }
+
+    &.btn-inverse {
+      color: $inverse-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $inverse-states-color;
+      }
+    }
+
+    &.active,
+    &:active,
+    &:active:focus,
+    &:active:hover,
+    &.active:focus,
+    &.active:hover,
+    .show > &.dropdown-toggle,
+    .show > &.dropdown-toggle:focus,
+    .show > &.dropdown-toggle:hover {
+      box-shadow: none;
+      background-color: $white-color;
+      color: $primary-states-color;
+    }
+
+    &:hover,
+    &:focus {
+      color: $primary-states-color;
+
+      &:not(.nav-link) {
+        box-shadow: none;
+      }
+    }
+
+    .badge {
+      position: absolute;
+      top: 5px;
+      right: 33px;
+
+      margin-bottom: 0;
+      background: white;
+      padding: 2px 4px;
+
+      line-height: 1;
+
+      color: $primary-states-color;
+    }
+  } @else {
+    color: $white-color;
+  }
+}
+
+@mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border) {
+
+  border-radius: $border;
+  padding: $padding-vertical $padding-horizontal;
+
+  font-size: $font-size;
+
+  &.btn-simple {
+    padding: $padding-vertical - 1 $padding-horizontal - 1;
+  }
+}

@@ -1,0 +1,396 @@
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $sans-serif-family;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: $font-weight-normal;
+  line-height: 1.1;
+  color: inherit;
+}
+
+small {
+  font-size: 70%;
+}
+
+.font-size-mini {
+  font-size: $font-size-mini !important;
+}
+
+.font-size-small {
+  font-size: $font-size-small !important;
+}
+
+.font-size-base {
+  font-size: $font-size-base !important;
+}
+
+.font-size-large {
+  font-size: $font-size-large !important;
+}
+
+.leading-tightest {
+  line-height: 0.7 !important;
+}
+
+.leading-tight {
+  line-height: 0.8 !important;
+}
+
+.leading-normal {
+  line-height: 1 !important;
+}
+
+.leading-loose {
+  line-height: 1.2 !important;
+}
+
+.leading-loosest {
+  line-height: 1.5 !important;
+}
+
+a {
+  color: $primary-color;
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+}
+
+pre {
+  font-size: 100%;
+}
+
+h1,
+.h1 {
+  line-height: 1.15;
+  font-size: $font-size-h1;
+  letter-spacing: -2px;
+  font-weight: bold;
+
+  small {
+    opacity: 0.8;
+    text-transform: uppercase;
+
+    font-weight: $font-weight-bold;
+  }
+}
+
+h2,
+.h2 {
+  font-size: $font-size-h2;
+  letter-spacing: -2px;
+  font-weight: bold;
+}
+
+h3,
+.h3 {
+  line-height: 1.4em;
+  letter-spacing: -1px;
+  font-weight: bold;
+
+  font-size: $font-size-h3;
+}
+
+h4,
+.h4 {
+  line-height: 1.45em;
+  letter-spacing: -1px;
+
+  font-size: $font-size-h4;
+
+  & + .category,
+  &.title + .category {
+    margin-top: -10px;
+  }
+}
+
+h5,
+.h5 {
+  line-height: 1.4em;
+  letter-spacing: -1px;
+
+  font-size: $font-size-h5;
+}
+
+h6,
+.h6 {
+  text-transform: uppercase;
+  letter-spacing: -.5px;
+
+  font-size: $font-size-h6;
+  font-weight: $font-weight-bold;
+}
+
+p {
+  line-height: 1.45em;
+  margin: $margin-base-vertical 0;
+
+  .description &,
+  &.description {
+    font-size: 1.14em;
+  }
+}
+
+.title {
+  font-weight: $font-weight-bold;
+
+  &.title-up {
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+
+      color: $black-color;
+    }
+  }
+
+  & + .category {
+    margin-top: -25px;
+  }
+}
+
+.description,
+.card-description,
+.footer-big p {
+  color: $dark-gray;
+
+  font-weight: $font-weight-light;
+}
+
+.category {
+  text-transform: uppercase;
+
+  color: $dark-gray;
+
+  font-weight: $font-weight-bold;
+}
+
+.text-primary {
+  color: $brand-primary !important;
+}
+
+.text-brand-primary-light {
+  color: $brand-primary-light !important;
+}
+
+.text-brand-primary-lighter {
+  color: $brand-primary-lighter !important;
+}
+
+.text-brand-primary-lightest {
+  color: $brand-primary-lightest !important;
+}
+
+.text-brand-primary-dark {
+  color: $brand-primary-dark !important;
+}
+
+.text-brand-primary-darker {
+  color: $brand-primary-darker !important;
+}
+
+.text-brand-primary-darkest {
+  color: $brand-primary-darkest !important;
+}
+
+.text-info {
+  color: $brand-info !important;
+}
+
+.text-success {
+  color: $brand-success !important;
+}
+
+.text-warning {
+  color: $brand-warning !important;
+}
+
+.text-danger {
+  color: $brand-danger !important;
+}
+
+.text-black {
+  color: $light-black;
+}
+
+.text-opacity-1 {
+  color: $opacity-1;
+}
+
+.text-opacity-2 {
+  color: $opacity-2;
+}
+
+.text-opacity-3 {
+  color: $opacity-3;
+}
+
+.text-opacity-4 {
+  color: $opacity-5;
+}
+
+.text-opacity-5 {
+  color: $opacity-5;
+}
+
+.text-opacity-6 {
+  color: $opacity-6;
+}
+
+.text-opacity-7 {
+  color: $opacity-7;
+}
+
+.text-opacity-8 {
+  color: $opacity-8;
+}
+
+.text-opacity-gray-1 {
+  color: $opacity-gray-1;
+}
+
+.text-opacity-gray-2 {
+  color: $opacity-gray-2;
+}
+
+.text-opacity-gray-3 {
+  color: $opacity-gray-3;
+}
+
+.text-opacity-gray-4 {
+  color: $opacity-gray-5;
+}
+
+.text-opacity-gray-5 {
+  color: $opacity-gray-5;
+}
+
+.text-opacity-gray-6 {
+  color: $opacity-gray-6;
+}
+
+.text-opacity-gray-7 {
+  color: $opacity-gray-7;
+}
+
+.text-opacity-gray-8 {
+  color: $opacity-gray-8;
+}
+
+@each $gray-color-name in map-keys($grays) {
+  .text-gray-#{$gray-color-name} {
+    color: map-get($grays, $gray-color-name)
+  }
+}
+
+@each $theme-color-name in map-keys($theme-colors) {
+  .text-hover-#{$theme-color-name}:hover {
+    color: map-get($theme-colors, $theme-color-name) !important;
+  }
+
+  .text-focus-#{$theme-color-name}:focus {
+    color: map-get($theme-colors, $theme-color-name) !important;
+  }
+}
+
+.blockquote {
+  border: 1px solid $default-color;
+  padding: 20px;
+  line-height: 1.8;
+
+  font-size: $font-size-blockquote;
+
+  small {
+    text-transform: uppercase;
+
+    color: $default-color;
+
+    font-size: $font-size-small;
+  }
+
+  &.blockquote-primary {
+    border-color: $primary-color;
+    color: $primary-color;
+
+    small {
+      color: $primary-color;
+    }
+  }
+
+  &.blockquote-danger {
+    border-color: $danger-color;
+    color: $danger-color;
+
+    small {
+      color: $danger-color;
+    }
+  }
+
+  &.blockquote-white {
+    border-color: $opacity-8;
+    color: $white-color;
+
+    small {
+      color: $opacity-8;
+    }
+  }
+}
+
+.header-separator {
+  &:after {
+    content: '';
+    display: block;
+    width: 120px;
+    margin: 1rem auto 3rem auto;
+    height: 2px;
+    background: currentColor;
+  }
+}
+
+.text-shadow-light {
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.13);
+}
+
+.font-weight-medium {
+  font-weight: 400;
+}
+
+i.display-1 {
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+i.display-2 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+i.display-3 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+i.display-4 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+i.h1,
+i.h2,
+i.h3,
+i.h4,
+i.h5,
+i.h6 {
+  font-family: 'themify';
+}

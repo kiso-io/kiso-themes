@@ -1,0 +1,18 @@
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table-striped {
+  tbody tr:nth-of-type(odd) {
+    background-color: $gray-200;
+  }
+}
+
+.table-hover {
+  tbody {
+    tr:hover {
+      background-color: $gray-400;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.landing-2 {
+  background-size: cover;
+  padding-bottom: 5rem;
+  width: 100vw;
+  min-height: 100vh;
+
+  .countdown {
+    margin: 0px auto 40px auto;
+    font-size: 0;
+
+    .countDownWrap {
+      display: inline-block;
+
+      margin: 0 15px 20px;
+      border-right: 2px solid #f39c12;
+      border-left: 2px solid #f39c12;
+      background: rgba(133, 214, 222, 0.1);
+      width: 140px;
+    }
+
+    .digits {
+      display: block;
+      color: $white-color;
+      font-size: 60px;
+      font-weight: 300;
+    }
+
+    .digits-label {
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      color: $white-color;
+      font-size: 1rem;
+    }
+  }
+}

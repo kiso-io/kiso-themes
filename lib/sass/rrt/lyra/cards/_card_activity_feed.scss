@@ -1,0 +1,84 @@
+.card-activity-feed {
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: $card-activity-feed-timeline-thread-bg;
+      left: calc(2rem - 2px);
+      margin: 0;
+      border-radius: 2px;
+    }
+
+    .card-activity-feed-label {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 1rem;
+      padding: $padding-base-vertical / 2 $padding-base-horizontal / 2;
+      background: $card-activity-feed-label-bg;
+      border-radius: $border-radius-small;
+      min-width: 100px;
+      text-align: center;
+
+      &.card-activity-feed-label-end {
+        display: block;
+        content: '';
+        width: 10px;
+        left: 25px;
+        top: 0;
+        min-width: inherit;
+      }
+    }
+
+    .card-activity-feed-item {
+      position: relative;
+      margin-bottom: 2rem;
+
+      .card-activity-feed-item-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        position: absolute;
+        background: $card-activity-feed-item-icon-bg;
+        color: $card-activity-feed-item-icon-color;
+        border-radius: 50%;
+        left: 1rem;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          padding: 8px;
+          line-height: 30px;
+        }
+      }
+
+      .card-activity-feed-item-body {
+        margin: 1rem 0 1rem 4rem;
+
+        h6 {
+          align-items: center;
+        }
+      }
+    }
+
+    .card-activity-feed-item-body {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 -1px 2px rgba(0,0,0,.1);
+      background-color: #fdfcfc;
+      padding: .8rem;
+    }
+
+    .card-activity-feed-item-footer {
+
+      padding-top: 1rem;
+    }
+  }
+}

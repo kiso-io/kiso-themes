@@ -1,13 +1,21 @@
 module RRT
   VERSION = File.read(File.expand_path('../../../VERSION', __FILE__))
 
-  THEMES = ['Orion', 'Carbon']
+  THEMES = ['Orion', 'Gemini', 'Auriga', 'Lyra']
 
   module Orion
     COLORS = ['blue', 'purple'].freeze
   end
 
-  module Carbon
+  module Gemini
+    COLORS = ["blue"]
+  end
+
+  module Auriga
+    COLORS = ["black"]
+  end
+
+  module Lyra
     COLORS = ["black"]
   end
 end

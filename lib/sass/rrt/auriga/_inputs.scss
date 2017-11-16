@@ -1,0 +1,339 @@
+@include form-control-placeholder($dark-gray, 1);
+
+.form-control {
+  background-color: $transparent-bg;
+  border: 1px solid $dark-gray;
+  border-radius: $btn-round-radius;
+  color: $black-color;
+  line-height: normal;
+  @include transition-input-focus-color();
+  @include box-shadow(none);
+
+  .has-success & {
+    border-color: $dark-gray;
+  }
+
+  &:focus {
+    border: 1px solid $primary-color;
+    @include box-shadow(none);
+    outline: 0 !important;
+    color: $black-color;
+
+    & + .input-group-addon,
+    & ~ .input-group-addon {
+      border: 1px solid $primary-color;
+      border-left: none;
+      background-color: $transparent-bg;
+    }
+  }
+
+  .has-success &,
+  .has-error &,
+  .has-success &:focus,
+  .has-error &:focus {
+    @include box-shadow(none);
+  }
+
+  .has-success &:focus {
+    border-color: lighten($success-color, 5%);
+  }
+
+  .has-danger &,
+  .has-success & {
+    &.form-control-success,
+    &.form-control-danger {
+      background-image: none;
+    }
+  }
+
+  .has-danger & {
+    border-color: lighten($danger-color, 30%);
+    color: $danger-color;
+    background-color: rgba(222, 222, 222, .1);
+
+    &:focus {
+      background-color: $white-color;
+    }
+  }
+
+  & + .form-control-feedback {
+    border-radius: $border-radius-large;
+    font-size: $font-size-base;
+    margin-top: 0;
+    position: absolute;
+    left: 18px;
+    bottom: -20px;
+    vertical-align: middle;
+  }
+
+  .open & {
+    border-radius: $border-radius-large $border-radius-large 0 0;
+    border-bottom-color: transparent;
+  }
+
+  & + .input-group-addon {
+    background-color: $white-bg;
+  }
+
+}
+
+select[multiple] {
+  border-radius: 0;
+  padding: 10px 9px 10px 9px;
+}
+
+.has-success,
+.has-danger {
+  &:after {
+    font-family: 'themify';
+    content: "\e64c";
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    bottom: .5625rem;
+    color: $success-color;
+    font-size: 16px;
+  }
+
+  &.input-lg {
+    &:after {
+      font-size: 13px;
+      top: 13px;
+    }
+  }
+}
+
+.has-danger,
+.has-error {
+  &:after {
+    content: "\e6c5";
+    color: $danger-color;
+  }
+}
+
+@include input-lg-padding($padding-large-vertical, $padding-input-horizontal);
+@include input-base-padding($padding-input-vertical, $padding-input-horizontal);
+
+.form-group.form-group-no-border,
+.input-group.form-group-no-border {
+  .form-control,
+  .form-control + .input-group-addon {
+    background-color: $opacity-gray-3;
+    border: medium none;
+    &:focus,
+    &:active,
+    &:active {
+      border: medium none;
+      background-color: $opacity-gray-5;
+    }
+  }
+
+  .form-control {
+    &:focus {
+      & + .input-group-addon {
+        background-color: $opacity-gray-5;
+      }
+    }
+  }
+
+  .input-group-addon {
+    background-color: $opacity-gray-3;
+    border: none;
+  }
+}
+
+.has-error {
+  .form-control-feedback,
+  .control-label {
+    color: $danger-color;
+  }
+}
+.has-success {
+  .form-control-feedback,
+  .control-label {
+    color: $success-color;
+  }
+}
+
+.input-group-addon {
+  background-color: transparent;
+  border: 1px solid $dark-gray;
+  border-radius: $btn-round-radius;
+  color: $dark-background;
+  padding: $padding-base-vertical - 1 0 $padding-base-vertical - 1 $padding-base-horizontal - 1;
+
+  @include transition-input-focus-color();
+
+  .has-success &,
+  .has-danger & {
+    background-color: $white-color;
+  }
+  .has-danger .form-control:focus + & {
+    color: $danger-color;
+  }
+  .has-success .form-control:focus + & {
+    color: $success-color;
+  }
+
+  & + .form-control,
+  & ~ .form-control {
+    @include input-size($padding-base-vertical - 1, $padding-base-horizontal);
+    padding-left: 18px;
+  }
+
+  i {
+    width: 17px;
+  }
+}
+
+.input-group-focus {
+  .input-group-addon {
+    background-color: $white-bg;
+    border-color: $primary-color;
+  }
+
+  &.form-group-no-border {
+    .input-group-addon {
+      background-color: $opacity-gray-5;
+    }
+  }
+}
+
+
+.input-group[disabled] {
+  .input-group-addon {
+    background-color: $dark-gray;
+  }
+}
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-right: 0 none;
+}
+.input-group .form-control:last-child:not(:first-child),
+.input-group-addon:last-child,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child) {
+  border-left: 0 none;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: $dark-gray;
+  color: $default-color;
+  cursor: not-allowed;
+}
+
+.input-group-btn .btn {
+  border-width: $border-thin;
+  padding: calc( #{$padding-btn-vertical} + 2px ) $padding-base-horizontal;
+}
+.input-group-btn .btn-default:not(.btn-fill) {
+  border-color: $dark-gray;
+}
+
+.input-group-btn:last-child > .btn {
+  margin-left: 0;
+  border-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-right: 1rem;
+}
+
+textarea.form-control {
+  max-width: 100%;
+  padding: .5rem 1rem;
+  resize: none;
+  border-bottom: 1px solid $dark-gray;
+  border-radius: $border-radius-small;
+  line-height: 1.5;
+}
+
+.has-success,
+.has-danger {
+  &.form-group .form-control,
+  &.form-group.form-group-no-border .form-control {
+    padding-right: $padding-input-horizontal + 21;
+  }
+}
+
+.form-group {
+  position: relative;
+
+  .help-block {
+    position: absolute;
+    bottom: -1rem;
+  }
+}
+
+.form-group.has-error,
+.form-group.has-danger {
+  margin-bottom: 20px;
+}
+
+.fileinput {
+  .fileinput-preview.fileinput-exists.avatar {
+    img {
+      @extend .shadow;
+      border-radius: 50%;
+      display: block;
+      height: 128px;
+      width: 128px;
+    }
+  }
+}
+
+.fileinput-avatar {
+  position: relative;
+  justify-content: center;
+
+  i {
+    color: white;
+  }
+
+  .fileinput-new.thumbnail {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  &.fileinput-exists {
+    .fileinput-new.thumbnail {
+      display: none;
+    }
+  }
+
+  .avatar-controls {
+    z-index: 1;
+  }
+
+  .fileinput-preview.fileinput-exists.avatar {
+    position: absolute;
+  }
+}
+
+
+.custom-switch {
+  padding-left: $custom-control-gutter * 1.5;
+  .custom-control-indicator {
+    width: $custom-control-indicator-size * 1.75;
+    border-radius: $custom-control-indicator-size / 2;
+    &::before {
+      position: absolute;
+      top: $custom-control-indicator-size * .125;
+      left: $custom-control-indicator-size * .124;
+      width: $custom-control-indicator-size * .75;
+      height: $custom-control-indicator-size * .75;
+      content: "";
+      background-color: #fff;
+      border-radius: $custom-control-indicator-size;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-indicator::before {
+    transform: translateX($custom-control-indicator-size * .75);
+  }
+}

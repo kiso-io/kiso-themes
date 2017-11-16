@@ -355,3 +355,10 @@ $switch-height: 40px;
 $gray-light: $gray-700;
 $brand-secondary: $brand-primary;
 $inverse: $inverse-color;
+
+
+:root {
+  --metric-chart-fill-color: #384975;
+  --metric-chart-fill-color-alternate: #6881B4;
+  --metric-chart-border-color: #5A6C96;
+}
