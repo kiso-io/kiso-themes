@@ -1,4 +1,5 @@
 require 'fileutils'
+
 # Rewrite CSS files to make asset paths relative.
 class CssRewriter
   attr_reader :source
@@ -8,7 +9,10 @@ class CssRewriter
   end
 
   def compile
-    @source.gsub(/url\("?\/assets\/([^\)]+?)"?\)/, 'url(<%= asset_path "\1" %>)')
+    source = @source.gsub(/url\("?\/assets\/([^\)]+?)"?\)/, 'url(<%= asset_path "\1" %>)')
+
+    # Remove the asset hash fingerprint
+    source.gsub(/-([0-9a-f]{5,})/, "")
   end
 
   def >>(file)

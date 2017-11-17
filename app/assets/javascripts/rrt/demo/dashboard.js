@@ -73,9 +73,8 @@ if(window.Chart) {
           data = Array.apply(null, Array(31)).map(function() { return Math.floor(Math.random() * 100 % 100); })
         }
 
-        var bodyStyles = window.getComputedStyle(document.body);
-        var metricChartFillColor = bodyStyles.getPropertyValue('--metric-chart-fill-color');
-        var metricChartBorderColor = bodyStyles.getPropertyValue('--metric-chart-border-color');
+        var metricChartFillColor = RRT.getRootCssVariable('--metric-chart-fill-color');
+        var metricChartBorderColor = RRT.getRootCssVariable('--metric-chart-border-color');
 
         var graphData = {
           datasets: [{
@@ -134,10 +133,9 @@ if(window.Chart) {
   function salesVsRefunds() {
     var chartLinesCon  = jQuery('.sales-vs-refunds');
 
-    var bodyStyles = window.getComputedStyle(document.body);
-    var metricChartFillColor = bodyStyles.getPropertyValue('--metric-chart-fill-color');
-    var metricChartFillColorAlt = bodyStyles.getPropertyValue('--metric-chart-fill-color-alternate');
-    var metricChartBorderColor = bodyStyles.getPropertyValue('--metric-chart-border-color');
+    var metricChartFillColor = RRT.getRootCssVariable('--metric-chart-fill-color');
+    var metricChartFillColorAlt = RRT.getRootCssVariable('--metric-chart-fill-color-alternate');
+    var metricChartBorderColor = RRT.getRootCssVariable('--metric-chart-border-color');
 
     var chartLinesBarsRadarData = {
       labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],

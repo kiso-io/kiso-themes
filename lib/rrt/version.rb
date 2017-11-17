@@ -16,6 +16,6 @@ module RRT
   end
 
   module Lyra
-    COLORS = ["black"]
+    COLORS = ["charcoal"]
   end
 end

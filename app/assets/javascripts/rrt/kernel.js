@@ -23,6 +23,15 @@ RRT.jsLibIsActive = function( jsLibName ) {
   return $.inArray(jsLibName, RRT.jsLibs()) >= 0
 }
 
+RRT.getRootCssVariable = function( varName ) {
+  return RRT.getCssVariable( 'body', varName )
+}
+
+RRT.getCssVariable = function( el, varName ) {
+  var elStyles = window.getComputedStyle(document.querySelector(el));
+  return elStyles.getPropertyValue(varName);
+}
+
 RRT.debounce = function (func, wait, immediate) {
 	var timeout;
 	return function() {
