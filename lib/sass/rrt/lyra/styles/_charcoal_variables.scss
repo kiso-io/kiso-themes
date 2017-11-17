@@ -16,7 +16,7 @@ $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
 
 // Backgrounds
-$main-bg: #ededed !default;
+$main-bg: #fff !default;
 $dark-background: #555 !default;
 $smoke-bg: #f5f5f5 !default;
 $pale-blue-bg: #dae4f1 !default;
@@ -357,3 +357,4 @@ $brand-secondary: $brand-primary;
 $inverse: $inverse-color;
 
 $navbar-background: transparent;
+$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);

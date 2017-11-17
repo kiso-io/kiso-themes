@@ -1,0 +1,158 @@
+.card {
+  @include transition(all $general-transition-time $transition-linear);
+  display: inline-block;
+
+  position: relative;
+
+  margin-bottom: 20px;
+
+  border: 0;
+  border-radius: $border-radius-small;
+  box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  background-color: $card-bg;
+
+  width: 100%;
+  overflow: hidden;
+
+  &.card-grow {
+    flex-grow: 1;
+  }
+
+  &.card-full-height {
+    height: 100%;
+  }
+
+  i{
+    &.h1,
+    &.h2,
+    &.h3,
+    &.h4,
+    &.h5,
+    &.h6,
+    &.h7 {
+      letter-spacing: inherit;
+    }
+  }
+}
+
+.card.card-sheet,
+.card.card-sheet-down,
+.card.nav-stacked {
+  overflow: visible;
+}
+
+.card-header {
+  border-bottom: 0;
+  background: $card-header-bg;
+  padding: 1.25rem;
+
+  border-bottom: 1px solid $card-header-border-color;
+
+  h3 {
+    margin: 0;
+  }
+
+  .btn.btn-icon {
+    height: 1.675rem;
+    background: transparent;
+  }
+
+  .nav-tabs {
+    padding: 0;
+    border-bottom: none;
+
+    .nav-item {
+
+      .nav-link {
+        &:hover {
+        }
+      }
+
+      &:last-of-type {
+
+        .nav-link {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .nav-pills-round .nav-item .nav-link {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-pills-round .nav-item:last-of-type .nav-link {
+    margin-right: 0;
+  }
+
+  .nav-pills-round .nav-item i {
+    line-height: 36px;
+  }
+
+  h6 {
+    margin: 0;
+  }
+
+  &~.list-group-flush {
+    li:first-of-type {
+      border-top: 0;
+    }
+  }
+}
+
+.card-footer {
+  border-top: none;
+
+  font-size: $font-size-mini;
+}
+
+.card-full-bleed {
+
+  .card-body {
+    padding: 0;
+  }
+}
+
+.card-flat {
+  box-shadow: none;
+}
+
+.card-body {
+
+  p {
+    line-height: 1.31;
+  }
+
+  .list-group-flush {
+    .list-group-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .list-group-item:last-of-type {
+      padding-bottom:0;
+    }
+  }
+}
+
+.card-tabbed {
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .card-header-tabs {
+      margin: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+
+      h6 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+.navbar {
+  min-height: 53px;
+  margin-bottom: $margin-base-vertical;
+  padding-top: $navbar-padding-base;
+  padding-bottom: $navbar-padding-base;
+
+  background-color: $navbar-background;
+
+  box-shadow: $navbar-box-shadow;
+
+  a {
+    vertical-align: middle;
+  }
+
+  &:not(.navbar-light) {
+    .navbar-nav .nav-item > a {
+      &:not(.btn):not(.dropdown-item):not(.list-group-item) {
+        color: $white-color;
+      }
+    }
+  }
+
+  p {
+    display: inline-block;
+
+    margin: 0;
+
+    line-height: 21px;
+  }
+
+  .navbar-nav {
+    align-items: center;
+
+    &.navbar-logo {
+      position: absolute;
+      top: -4px;
+      right: 0;
+      left: 0;
+
+      width: 49px;
+      margin: 0 auto;
+    }
+
+    [class^="ti-"],
+    [class*=" ti-"] {
+      font-size: 1rem;
+    }
+
+    .nav-link.btn {
+      padding: $padding-btn-vertical $padding-btn-horizontal;
+
+      &.btn-lg {
+        padding: $padding-large-vertical $padding-large-horizontal;
+      }
+
+      &.btn-sm {
+        padding: $padding-small-vertical $padding-small-horizontal;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: $padding-btn-vertical;
+      }
+    }
+
+    .nav-link:not(.btn) {
+      display: flex;
+      align-items: center;
+
+      padding: $padding-base-horizontal;
+
+      cursor: pointer;
+      text-transform: uppercase;
+
+      font-size: $font-size-mini;
+      line-height: $line-height-nav-link;
+
+      i.fa + p,
+      i.now-ui-icons + p {
+        margin-left: 5px;
+      }
+
+      i.fa,
+      i.now-ui-icons {
+        position: relative;
+        top: 2px;
+
+        width: 21px;
+
+        text-align: center;
+
+        font-size: 18px;
+      }
+
+      i.now-ui-icons {
+        top: 4px;
+
+        font-size: 16px;
+      }
+
+      &.profile-photo {
+        .profile-photo-small {
+          width: 27px;
+          height: 27px;
+        }
+      }
+
+      &.disabled {
+        opacity: .5;
+        color: $white-color;
+      }
+    }
+
+    .nav-item.active .nav-link:not(.btn),
+    .nav-item .nav-link:not(.btn):focus,
+    .nav-item .nav-link:not(.btn):hover,
+    .nav-item .nav-link:not(.btn):active {
+      border-radius: $border-radius-small;
+      background-color: $opacity-2;
+    }
+
+    .nav-item {
+      .btn-group {
+        .btn.active {
+          color: $navbar-light-active-color;
+
+          @include hover-focus {
+            color: $navbar-light-active-color;
+          }
+        }
+      }
+    }
+
+    .form-control {
+      border-color: $white-color;
+
+      @include form-control-placeholder($white-color, $opacity-1);
+    }
+
+    .input-group-addon {
+      color: $white-color;
+      border-color: $white-color;
+      background-color: transparent;
+    }
+
+    .input-group-focus > .input-group-addon {
+      background-color: $white-color;
+    }
+  }
+
+  .logo-container {
+    overflow: hidden;
+
+    width: 27px;
+    height: 27px;
+    margin: 0 auto;
+
+    border: 1px solid transparent;
+    border-radius: 50%;
+  }
+
+  .navbar-brand {
+    padding-top: $padding-base-vertical;
+    padding-bottom: $padding-base-vertical;
+
+    text-transform: uppercase;
+
+    font-weight: bold;
+    font-size: $font-size-large;
+    line-height: $line-height-nav-link;
+  }
+
+  .navbar-toggler {
+    cursor: pointer;
+
+    outline: 0;
+
+    &.navbar-toggler-left {
+      position: relative;
+      left: 0;
+
+      padding-left: 0;
+    }
+
+    &:hover {
+      & .navbar-toggler-bar.bar2 {
+        width: 22px;
+      }
+    }
+  }
+
+  .button-dropdown {
+    .navbar-toggler-bar:nth-child(2) {
+      width: 17px;
+    }
+  }
+
+  &.navbar-transparent {
+    padding-top: 20px;
+
+    color: $white-color;
+    background-color: $transparent-bg !important;
+    box-shadow: none;
+  }
+
+  &.bg-white:not(.navbar-transparent) {
+    a:not(.dropdown-item) {
+      color: $default-color;
+
+      &.disabled {
+        opacity: .5;
+        color: $default-color;
+      }
+    }
+
+    .button-bar {
+      background: $default-color;
+    }
+
+    .nav-item.active .nav-link:not(.btn),
+    .nav-item .nav-link:not(.btn):focus,
+    .nav-item .nav-link:not(.btn):hover,
+    .nav-item .nav-link:not(.btn):active {
+      background-color: $opacity-gray-3;
+    }
+
+    .logo-container {
+      border: 1px solid $default-color;
+    }
+  }
+}
+
+.user-nav {
+  .dropdown-toggle {
+    padding: 0;
+  }
+}

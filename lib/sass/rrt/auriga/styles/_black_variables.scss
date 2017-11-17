@@ -16,7 +16,7 @@ $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
 
 // Backgrounds
-$main-bg: #141a2e !default;
+$main-bg: #151b31;
 $dark-background: #555 !default;
 $smoke-bg: #f5f5f5 !default;
 $pale-blue-bg: #dae4f1 !default;
@@ -353,8 +353,6 @@ $card-activity-feed-item-icon-bg: $gray-800;
 // Card Chat
 $card-chat-bg: $gray-400;
 
-$switch-width: 90px;
-$switch-height: 40px;
 $gray-light: $gray-700;
 $brand-secondary: $brand-primary;
 $inverse: $inverse-color;
@@ -370,3 +368,9 @@ $metric-details-border: transparent;
 $metric-details-text: $black-color;
 
 $navbar-background: #242a3d;
+$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+
+$card-header-bg: #2e364f;
+$card-bg: #1b2238;
+
+$card-header-border-color: transparent;

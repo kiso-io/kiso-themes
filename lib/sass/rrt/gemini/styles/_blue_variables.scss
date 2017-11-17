@@ -16,7 +16,7 @@ $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
 
 // Backgrounds
-$main-bg: #e1ebef !default;
+$main-bg: #eefbf9 !default;
 $dark-background: #555 !default;
 $smoke-bg: #f5f5f5 !default;
 $pale-blue-bg: #dae4f1 !default;
@@ -364,4 +364,7 @@ $gray-light: $gray-700;
 $brand-secondary: $brand-primary;
 $inverse: $inverse-color;
 
-$navbar-background: #629896;
+$navbar-background: #6d8fa2;
+$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+
+$card-bg: #f3ffff;

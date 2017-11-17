@@ -9,8 +9,9 @@
 @import 'bootstrap/variables';
 
 @import 'bootstrap/mixins';
-@import 'rrt/lyra/mixins';
+@import 'rrt/_core/mixins';
 
+@import 'rrt/_core/variables';
 @import 'rrt/lyra/styles/charcoal_variables';
 
 // You custom overrides should be placed in a separate
@@ -49,67 +50,67 @@
 @import 'bootstrap/carousel';
 @import 'bootstrap/utilities';
 
-@import 'rrt/lyra/simple_animations';
-@import 'rrt/lyra/buttons';
-@import 'rrt/lyra/borders';
-@import 'rrt/lyra/grid';
-@import 'rrt/lyra/backgrounds';
-@import 'rrt/lyra/inputs';
-@import 'rrt/lyra/tables';
-@import 'rrt/lyra/checkboxes-radio';
-@import 'rrt/lyra/progress';
-@import 'rrt/lyra/badges';
-@import 'rrt/lyra/navs';
-@import 'rrt/lyra/pagination';
-@import 'rrt/lyra/typography';
-@import 'rrt/lyra/misc';
-@import 'rrt/lyra/pills';
-@import 'rrt/lyra/page_components';
-@import 'rrt/lyra/timelines';
+@import 'rrt/_core/simple_animations';
+@import 'rrt/_core/buttons';
+@import 'rrt/_core/borders';
+@import 'rrt/_core/grid';
+@import 'rrt/_core/backgrounds';
+@import 'rrt/_core/inputs';
+@import 'rrt/_core/tables';
+@import 'rrt/_core/checkboxes-radio';
+@import 'rrt/_core/progress';
+@import 'rrt/_core/badges';
+@import 'rrt/_core/navs';
+@import 'rrt/_core/pagination';
+@import 'rrt/_core/typography';
+@import 'rrt/_core/misc';
+@import 'rrt/_core/pills';
+@import 'rrt/_core/page_components';
+@import 'rrt/_core/timelines';
 
-@import 'rrt/lyra/social-buttons';
-@import 'rrt/lyra/tabs';
-@import 'rrt/lyra/navbar';
-@import 'rrt/lyra/dropdown';
-@import 'rrt/lyra/alerts';
-@import 'rrt/lyra/images';
-@import 'rrt/lyra/popover';
-@import 'rrt/lyra/tooltips';
-@import 'rrt/lyra/modals';
-@import 'rrt/lyra/carousel';
-@import 'rrt/lyra/accordion';
-@import 'rrt/lyra/cards';
-@import 'rrt/lyra/cards/cards_mini';
-@import 'rrt/lyra/cards/card_metric';
-@import 'rrt/lyra/cards/card_images';
-@import 'rrt/lyra/cards/card_tiles';
-@import 'rrt/lyra/cards/card_items';
-@import 'rrt/lyra/cards/card_chat';
-@import 'rrt/lyra/cards/card_activity_feed';
-@import 'rrt/lyra/cards/card_table';
-@import 'rrt/lyra/cards/card_sheet';
-@import 'rrt/lyra/footers';
-@import 'rrt/lyra/sidenav';
+@import 'rrt/_core/social-buttons';
+@import 'rrt/_core/tabs';
+@import 'rrt/_core/navbar';
+@import 'rrt/_core/dropdown';
+@import 'rrt/_core/alerts';
+@import 'rrt/_core/images';
+@import 'rrt/_core/popover';
+@import 'rrt/_core/tooltips';
+@import 'rrt/_core/modals';
+@import 'rrt/_core/carousel';
+@import 'rrt/_core/accordion';
+@import 'rrt/_core/cards';
+@import 'rrt/_core/cards/cards_mini';
+@import 'rrt/_core/cards/card_metric';
+@import 'rrt/_core/cards/card_images';
+@import 'rrt/_core/cards/card_tiles';
+@import 'rrt/_core/cards/card_items';
+@import 'rrt/_core/cards/card_chat';
+@import 'rrt/_core/cards/card_activity_feed';
+@import 'rrt/_core/cards/card_table';
+@import 'rrt/_core/cards/card_sheet';
+@import 'rrt/_core/footers';
+@import 'rrt/_core/sidenav';
 
-@import 'rrt/lyra/responsive';
+@import 'rrt/_core/responsive';
 
-@import 'rrt/lyra/plugins/easy_pie_chart';
-@import 'rrt/lyra/plugins/jquery_sparklines';
-@import 'rrt/lyra/plugins/plugin-bootstrap-switch';
-@import 'rrt/lyra/plugins/jqvectormap';
-@import 'rrt/lyra/plugins/jasny_bootstrap';
+@import 'rrt/_core/plugins/easy_pie_chart';
+@import 'rrt/_core/plugins/jquery_sparklines';
+@import 'rrt/_core/plugins/plugin-bootstrap-switch';
+@import 'rrt/_core/plugins/jqvectormap';
+@import 'rrt/_core/plugins/jasny_bootstrap';
 
-@import 'rrt/lyra/devise/1';
+@import 'rrt/_core/devise/1';
 
-@import 'rrt/lyra/pricing_tables';
+@import 'rrt/_core/pricing_tables';
 
-@import 'rrt/lyra/landing_headers';
-@import 'rrt/lyra/landing_pages/landing_1';
-@import 'rrt/lyra/landing_pages/landing_2';
-@import 'rrt/lyra/landing_pages/landing_3';
-@import 'rrt/lyra/landing_pages/landing_4';
-@import 'rrt/lyra/landing_pages/landing_5';
+@import 'rrt/_core/landing_headers';
+@import 'rrt/_core/landing_pages/landing_1';
+@import 'rrt/_core/landing_pages/landing_2';
+@import 'rrt/_core/landing_pages/landing_3';
+@import 'rrt/_core/landing_pages/landing_4';
+@import 'rrt/_core/landing_pages/landing_5';
 
-@import 'rrt/lyra/blog';
+@import 'rrt/_core/blog';
 
 @import 'prism/twilight';

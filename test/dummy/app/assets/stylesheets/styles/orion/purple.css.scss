@@ -8,8 +8,9 @@
 @import 'bootstrap/variables';
 
 @import 'bootstrap/mixins';
-@import 'rrt/orion/mixins';
+@import 'rrt/_core/mixins';
 
+@import 'rrt/_core/variables';
 @import 'rrt/orion/styles/purple_variables';
 
 // You custom overrides should be placed in a separate
@@ -48,67 +49,67 @@
 @import 'bootstrap/carousel';
 @import 'bootstrap/utilities';
 
-@import 'rrt/orion/simple_animations';
-@import 'rrt/orion/buttons';
-@import 'rrt/orion/borders';
-@import 'rrt/orion/grid';
-@import 'rrt/orion/backgrounds';
-@import 'rrt/orion/inputs';
-@import 'rrt/orion/tables';
-@import 'rrt/orion/checkboxes-radio';
-@import 'rrt/orion/progress';
-@import 'rrt/orion/badges';
-@import 'rrt/orion/navs';
-@import 'rrt/orion/pagination';
-@import 'rrt/orion/typography';
-@import 'rrt/orion/misc';
-@import 'rrt/orion/pills';
-@import 'rrt/orion/page_components';
-@import 'rrt/orion/timelines';
+@import 'rrt/_core/simple_animations';
+@import 'rrt/_core/buttons';
+@import 'rrt/_core/borders';
+@import 'rrt/_core/grid';
+@import 'rrt/_core/backgrounds';
+@import 'rrt/_core/inputs';
+@import 'rrt/_core/tables';
+@import 'rrt/_core/checkboxes-radio';
+@import 'rrt/_core/progress';
+@import 'rrt/_core/badges';
+@import 'rrt/_core/navs';
+@import 'rrt/_core/pagination';
+@import 'rrt/_core/typography';
+@import 'rrt/_core/misc';
+@import 'rrt/_core/pills';
+@import 'rrt/_core/page_components';
+@import 'rrt/_core/timelines';
 
-@import 'rrt/orion/social-buttons';
-@import 'rrt/orion/tabs';
-@import 'rrt/orion/navbar';
-@import 'rrt/orion/dropdown';
-@import 'rrt/orion/alerts';
-@import 'rrt/orion/images';
-@import 'rrt/orion/popover';
-@import 'rrt/orion/tooltips';
-@import 'rrt/orion/modals';
-@import 'rrt/orion/carousel';
-@import 'rrt/orion/accordion';
-@import 'rrt/orion/cards';
-@import 'rrt/orion/cards/cards_mini';
-@import 'rrt/orion/cards/card_metric';
-@import 'rrt/orion/cards/card_images';
-@import 'rrt/orion/cards/card_tiles';
-@import 'rrt/orion/cards/card_items';
-@import 'rrt/orion/cards/card_chat';
-@import 'rrt/orion/cards/card_activity_feed';
-@import 'rrt/orion/cards/card_table';
-@import 'rrt/orion/cards/card_sheet';
-@import 'rrt/orion/footers';
-@import 'rrt/orion/sidenav';
+@import 'rrt/_core/social-buttons';
+@import 'rrt/_core/tabs';
+@import 'rrt/_core/navbar';
+@import 'rrt/_core/dropdown';
+@import 'rrt/_core/alerts';
+@import 'rrt/_core/images';
+@import 'rrt/_core/popover';
+@import 'rrt/_core/tooltips';
+@import 'rrt/_core/modals';
+@import 'rrt/_core/carousel';
+@import 'rrt/_core/accordion';
+@import 'rrt/_core/cards';
+@import 'rrt/_core/cards/cards_mini';
+@import 'rrt/_core/cards/card_metric';
+@import 'rrt/_core/cards/card_images';
+@import 'rrt/_core/cards/card_tiles';
+@import 'rrt/_core/cards/card_items';
+@import 'rrt/_core/cards/card_chat';
+@import 'rrt/_core/cards/card_activity_feed';
+@import 'rrt/_core/cards/card_table';
+@import 'rrt/_core/cards/card_sheet';
+@import 'rrt/_core/footers';
+@import 'rrt/_core/sidenav';
 
-@import 'rrt/orion/responsive';
+@import 'rrt/_core/responsive';
 
-@import 'rrt/orion/plugins/easy_pie_chart';
-@import 'rrt/orion/plugins/jquery_sparklines';
-@import 'rrt/orion/plugins/plugin-bootstrap-switch';
-@import 'rrt/orion/plugins/jqvectormap';
-@import 'rrt/orion/plugins/jasny_bootstrap';
+@import 'rrt/_core/plugins/easy_pie_chart';
+@import 'rrt/_core/plugins/jquery_sparklines';
+@import 'rrt/_core/plugins/plugin-bootstrap-switch';
+@import 'rrt/_core/plugins/jqvectormap';
+@import 'rrt/_core/plugins/jasny_bootstrap';
 
-@import 'rrt/orion/devise/1';
+@import 'rrt/_core/devise/1';
 
-@import 'rrt/orion/pricing_tables';
+@import 'rrt/_core/pricing_tables';
 
-@import 'rrt/orion/landing_headers';
-@import 'rrt/orion/landing_pages/landing_1';
-@import 'rrt/orion/landing_pages/landing_2';
-@import 'rrt/orion/landing_pages/landing_3';
-@import 'rrt/orion/landing_pages/landing_4';
-@import 'rrt/orion/landing_pages/landing_5';
+@import 'rrt/_core/landing_headers';
+@import 'rrt/_core/landing_pages/landing_1';
+@import 'rrt/_core/landing_pages/landing_2';
+@import 'rrt/_core/landing_pages/landing_3';
+@import 'rrt/_core/landing_pages/landing_4';
+@import 'rrt/_core/landing_pages/landing_5';
 
-@import 'rrt/orion/blog';
+@import 'rrt/_core/blog';
 
 @import 'prism/twilight';

@@ -1,9 +1,0 @@
-.equal-cols {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.equal-cols > [class*='col-'] {
-  display: flex;
-  flex-direction: column;
-}
