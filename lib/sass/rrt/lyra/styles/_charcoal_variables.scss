@@ -1,4 +1,4 @@
-$sans-serif-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+$sans-serif-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 
 // Border thicknesses
 $none: 0 !default;
@@ -14,12 +14,15 @@ $black-bg: rgba(30, 30, 30, 0.97) !default;
 $light-black: #444 !default;
 $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
+$dark-color: $black-color;
 
 // Backgrounds
-$main-bg: #fff !default;
+$main-bg: #fbfbfc;
 $dark-background: #555 !default;
 $smoke-bg: #f5f5f5 !default;
 $pale-blue-bg: #dae4f1 !default;
+
+$text-color: #707070;
 
 // Opacities
 $opacity-1: rgba(255, 255, 255, 0.1) !default;
@@ -71,11 +74,6 @@ $danger-states-color: lighten($danger-color, 6%) !default;
 $danger-color-opacity: rgba(202, 37, 37, 0.3) !default;
 $danger-color-alert: rgb(216, 96, 96) !default;
 
-// Inverse Colors
-$inverse-color: #283d52 !default;
-$inverse-states-color: lighten($inverse-color, 6%) !default;
-$dark-states-color: lighten($inverse-color, 6%) !default;
-
 // Brand colors
 $brand-primary: $primary-color !default;
 $brand-primary-light: tint($brand-primary, 10%);
@@ -88,7 +86,6 @@ $brand-info: $info-color !default;
 $brand-success: $success-color !default;
 $brand-warning: $warning-color !default;
 $brand-danger: $danger-color !default;
-$brand-inverse: $inverse-color !default;
 $link-disabled-color: #666 !default;
 
 // Grays
@@ -165,12 +162,12 @@ $theme-colors: (
   warning: $warning-color,
   danger: $danger-color,
   light: $gray-400,
-  dark: $inverse-color
+  dark: $dark-color
 );
 
 // Padding
 $padding-input-vertical: 11px !default;
-$padding-input-horizontal: 19px !default;
+$padding-input-horizontal: 11px;
 $padding-btn-vertical: .7rem !default;
 $padding-btn-horizontal: 1rem !default;
 $padding-base-vertical: 0.7rem !default;
@@ -306,19 +303,19 @@ $side-nav-width: 255px;
 $side-nav-menu-background-color: #efefef;
 $side-nav-header-bg-color: #efefef;
 $side-nav-header-bg-link-color: lighten($brand-primary, 25%);
-$side-nav-header-link-hover-color: white;
-$side-nav-header-color: white;
+$side-nav-header-link-hover-color: #707070;
+$side-nav-header-color: #707070;
 $side-nav-header-padding: 1rem;
 $side-nav-menu-item-vertical-padding: 0.8rem;
 $side-nav-menu-item-horizontal-padding: 0.8rem;
-$side-nav-menu-item-active-border-width: 2px;
+$side-nav-menu-item-active-border-width: 0px;
 $side-nav-menu-right-border-color: transparent;
 $side-nav-text-color: darken(#0077b5, 5%);
-$side-nav-menu-item-background-color: #395379;
-$side-nav-menu-item-icon-color: #4d80b8;
-$side-nav-menu-item-color: lighten($brand-primary, 25%);
-$side-nav-menu-item-active-color: $white-color;
-$side-nav-menu-item-hover-color: $white-color;
+$side-nav-menu-item-background-color: transparent;
+$side-nav-menu-item-icon-color: #8b8f94;
+$side-nav-menu-item-color: #5e6267;
+$side-nav-menu-item-active-color: #707070;
+$side-nav-menu-item-hover-color: #707070;
 $side-nav-sub-menu-item-vertical-padding: 0.3rem;
 $side-nav-sub-menu-item-horizontal-padding: 0.8rem;
 $side-nav-menu-footer-background-color: #2e4261;
@@ -354,7 +351,14 @@ $switch-width: 90px;
 $switch-height: 40px;
 $gray-light: $gray-700;
 $brand-secondary: $brand-primary;
-$inverse: $inverse-color;
 
 $navbar-background: transparent;
-$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+$navbar-box-shadow: 0 0 10px 4px rgba(0, 0, 0, .045);
+
+$card-border-radius: $border-radius-extra-small;
+$card-outer-shadow:  0 1px 2px rgba(0,0,0,.075);
+
+$navbar-navlink-color: #707070;
+$navbar-navlink-hover-bg: $gray-300;
+
+$form-input-radius: 2px;

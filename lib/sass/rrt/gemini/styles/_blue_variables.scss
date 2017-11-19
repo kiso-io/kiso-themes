@@ -14,6 +14,7 @@ $black-bg: rgba(30, 30, 30, 0.97) !default;
 $light-black: #444 !default;
 $black-color: #2c2c2c !default;
 $black-hr: #444 !default;
+$dark-color: $black-color;
 
 // Backgrounds
 $main-bg: #eefbf9 !default;
@@ -76,11 +77,6 @@ $danger-states-color: lighten($danger-color, 6%) !default;
 $danger-color-opacity: rgba(202, 37, 37, 0.3) !default;
 $danger-color-alert: rgb(216, 96, 96) !default;
 
-// Inverse Colors
-$inverse-color: #284852 !default;
-$inverse-states-color: lighten($inverse-color, 6%) !default;
-$dark-states-color: lighten($inverse-color, 6%) !default;
-
 // Brand colors
 $brand-primary: $primary-color !default;
 $brand-primary-light: tint($brand-primary, 10%);
@@ -94,7 +90,6 @@ $brand-info: $info-color !default;
 $brand-success: $success-color !default;
 $brand-warning: $warning-color !default;
 $brand-danger: $danger-color !default;
-$brand-inverse: $inverse-color !default;
 $link-disabled-color: #666 !default;
 
 // Grays
@@ -171,7 +166,7 @@ $theme-colors: (
   warning: $warning-color,
   danger: $danger-color,
   light: $gray-400,
-  dark: $inverse-color
+  dark: $dark-color
 );
 
 // Padding
@@ -362,9 +357,14 @@ $switch-width: 90px;
 $switch-height: 40px;
 $gray-light: $gray-700;
 $brand-secondary: $brand-primary;
-$inverse: $inverse-color;
 
 $navbar-background: #6d8fa2;
 $navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
 
 $card-bg: #f3ffff;
+$card-border-radius: $border-radius-small;
+$card-outer-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+
+$navbar-navlink-color: $white-color;
+$navbar-navlink-hover-bg: $opacity-2;
+$form-input-radius: $btn-round-radius;

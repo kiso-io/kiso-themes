@@ -15,7 +15,7 @@
   &:not(.navbar-light) {
     .navbar-nav .nav-item > a {
       &:not(.btn):not(.dropdown-item):not(.list-group-item) {
-        color: $white-color;
+        color: $navbar-navlink-color;
       }
     }
   }
@@ -115,7 +115,7 @@
     .nav-item .nav-link:not(.btn):hover,
     .nav-item .nav-link:not(.btn):active {
       border-radius: $border-radius-small;
-      background-color: $opacity-2;
+      background-color: $navbar-navlink-hover-bg;
     }
 
     .nav-item {

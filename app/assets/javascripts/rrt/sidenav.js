@@ -7,6 +7,7 @@
 
   function initSidenav() {
     var width = document.body.clientWidth;
+    var sideNavTrackColor = RRT.getRootCssVariable('--sidenav-track-color');
 
     var sideNavContainer = $('.nav-side-container')
 
@@ -16,12 +17,10 @@
       )
     })
 
-
-
     if (!Modernizr.touch && width > 992) {
       sideNavContainer.slimScroll({
         height: getSideNavHeight(),
-        color: '#cdcdcd',
+        color: sideNavTrackColor,
         size: '4px',
         opacity: 0.9,
         wheelStep: 15,
@@ -51,7 +50,7 @@
         sideNavContainer.slimScroll({ destroy: 'true' });
         sideNavContainer.slimScroll({
           height: getSideNavHeight(),
-          color: '#cdcdcd',
+          color: sideNavTrackColor,
           size: '4px',
           opacity: 0.9,
           wheelStep: 15,

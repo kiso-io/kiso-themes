@@ -2,7 +2,7 @@
 .alert{
   border: 0;
   border-radius: 0;
-  color: $inverse-color;
+  color: $dark-color;
   padding-top: .9rem;
   padding-bottom: .9rem;
   position: relative;
@@ -89,12 +89,12 @@
 
   &.alert-dark {
     color: $white-color;
-    background-color: $inverse-color;
+    background-color: $dark-color;
 
     &.alert-outline {
       background: transparent;
-      color: $inverse-color;
-      border: 1px solid $inverse-color;
+      color: $dark-color;
+      border: 1px solid $dark-color;
     }
   }
 
@@ -104,12 +104,12 @@
 
     &.alert-outline {
       background: transparent;
-      color: $inverse-color;
-      border: 1px solid $inverse-color;
+      color: $dark-color;
+      border: 1px solid $dark-color;
     }
 
     .close {
-      color: $inverse-color;
+      color: $dark-color;
     }
   }
 

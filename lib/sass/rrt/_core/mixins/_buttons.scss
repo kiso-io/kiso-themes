@@ -80,7 +80,7 @@
   }
 
   &.btn-dark {
-    background-color: $inverse-color;
+    background-color: $dark-color;
 
     &:hover,
     &:focus,
@@ -164,13 +164,13 @@
       }
     }
 
-    &.btn-inverse {
-      color: $inverse-color;
+    &.btn-dark {
+      color: $dark-color;
 
       &:hover,
       &:focus,
       &:active {
-        color: $inverse-states-color;
+        color: lighten($dark-color, 20%);
       }
     }
 
