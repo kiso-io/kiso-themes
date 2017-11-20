@@ -3,15 +3,6 @@
 
   i {
     color: $brand-primary-lighter;
-
-    &:before {
-      background: $gradient-1;
-      -webkit-background-clip: text;
-              background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-              text-fill-color: transparent;
-    }
   }
 
   &.card-mini-split {
