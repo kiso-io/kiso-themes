@@ -53,22 +53,27 @@ $transparent-bg: transparent !default;
 $default-color: #9cc0e8 !default;
 $default-states-color: lighten($default-color, 6%) !default;
 $default-color-opacity: rgba(182, 182, 182, 0.6) !default;
+
 $primary-color: #4173a7 !default;
 $primary-states-color: lighten($primary-color, 6%) !default;
 $primary-color-opacity: rgba(249, 99, 50, 0.3) !default;
 $primary-color-alert: rgba(249, 99, 50, 0.8) !default;
+
 $success-color: #73c16b !default;
 $success-states-color: lighten($success-color, 6%) !default;
 $success-color-opacity: rgba(48, 167, 42, 0.3) !default;
 $success-color-alert: rgb(107, 195, 103) !default;
+
 $info-color: #5cc6d2 !default;
 $info-states-color: lighten($info-color, 6%) !default;
 $info-color-opacity: rgba(36, 144, 220, 0.3) !default;
 $info-color-alert: rgba(143, 188, 220, 0.8) !default;
+
 $warning-color: #e08e45 !default;
 $warning-states-color: lighten($warning-color, 6%) !default;
 $warning-color-opacity: rgba(255, 143, 26, 0.3) !default;
 $warning-color-alert: rgb(228, 169, 62) !default;
+
 $danger-color: #c55e5e !default;
 $danger-states-color: lighten($danger-color, 6%) !default;
 $danger-color-opacity: rgba(202, 37, 37, 0.3) !default;
@@ -82,6 +87,7 @@ $brand-primary-lightest: tint($brand-primary, 38%);
 $brand-primary-dark: shade($brand-primary, 10%);
 $brand-primary-darker: shade($brand-primary, 25%);
 $brand-primary-darkest: shade($brand-primary, 38%);
+
 $brand-info: $info-color !default;
 $brand-success: $success-color !default;
 $brand-warning: $warning-color !default;
