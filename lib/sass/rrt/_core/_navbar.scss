@@ -234,3 +234,11 @@
     padding: 0;
   }
 }
+
+.navbar-toggler {
+  border-color: $brand-primary;
+}
+
+.navbar-toggler-icon {
+  background-image: $navbar-toggle;
+}
