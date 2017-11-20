@@ -14,7 +14,7 @@
   .show > &.dropdown-toggle:hover {
     box-shadow: none;
     background-color: $btn-states-color;
-    color: $white-color;
+    @include color-yiq($btn-states-color);
   }
 
   &:hover {
@@ -81,6 +81,7 @@
 
   &.btn-dark {
     background-color: $dark-color;
+    @include color-yiq($dark-color);
 
     &:hover,
     &:focus,
@@ -111,108 +112,7 @@
     padding: 3px 7px 3px 3px;
   }
 
-  @if $btn-color == $white-color {
-    color: $primary-color;
-
-    &.btn-danger {
-      color: $danger-color;
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: $danger-states-color;
-      }
-    }
-
-    &.btn-info {
-      color: $info-color;
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: $info-states-color;
-      }
-    }
-
-    &.btn-warning {
-      color: $warning-color;
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: $warning-states-color;
-      }
-    }
-
-    &.btn-success {
-      color: $success-color;
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: $success-states-color;
-      }
-    }
-
-    &.btn-default {
-      color: $default-color;
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: $default-states-color;
-      }
-    }
-
-    &.btn-dark {
-      color: $dark-color;
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: lighten($dark-color, 20%);
-      }
-    }
-
-    &.active,
-    &:active,
-    &:active:focus,
-    &:active:hover,
-    &.active:focus,
-    &.active:hover,
-    .show > &.dropdown-toggle,
-    .show > &.dropdown-toggle:focus,
-    .show > &.dropdown-toggle:hover {
-      box-shadow: none;
-      background-color: $white-color;
-      color: $primary-states-color;
-    }
-
-    &:hover,
-    &:focus {
-      color: $primary-states-color;
-
-      &:not(.nav-link) {
-        box-shadow: none;
-      }
-    }
-
-    .badge {
-      position: absolute;
-      top: 5px;
-      right: 33px;
-
-      margin-bottom: 0;
-      background: white;
-      padding: 2px 4px;
-
-      line-height: 1;
-
-      color: $primary-states-color;
-    }
-  } @else {
-    color: $white-color;
-  }
+  @include color-yiq($btn-color);
 }
 
 @mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border) {
