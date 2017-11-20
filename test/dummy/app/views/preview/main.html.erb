@@ -3,9 +3,9 @@
 <div class='main-content'>
   <%= render partial: 'layouts/dashboard_top_nav' %>
 
-  <div class='page-header inspectable'>
+  <div class='page-header flex-column flex-md-row inspectable'>
     <!-- component-title: Page Header -->
-    <div class="d-flex mr-auto align-items-center">
+    <div class="d-flex flex-column flex-md-row mr-md-auto align-items-center">
       <h4 class=''><%= raw @title.gsub('_', ' ').titleize %></h4>
 
       <% if @breadcrumbs.length > 0 %>

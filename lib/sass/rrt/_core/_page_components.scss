@@ -1,6 +1,7 @@
 .page-header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   padding: $padding-base-vertical*3 1rem;
 
@@ -9,14 +10,16 @@
   }
 
   h4 ~ ol {
-    &:before {
-      position: absolute;
-      display: block;
-      content: '';
-      height: 2.2rem;
-      top: .4rem;
-      left: 1rem;
-      border-right: 1px solid $text-muted;
+    @include media-breakpoint-up(sm) {
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 2.2rem;
+        top: .4rem;
+        left: 1rem;
+        border-right: 1px solid $text-muted;
+      }
     }
   }
 
