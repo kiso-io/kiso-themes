@@ -140,8 +140,10 @@
 
     <div class="col-sm-12 col-md-3 animate-fade-in-1000">
       <div class="card card-full-height d-flex">
-        <div class="card-body">
+        <div class="card-header">
           <h6>SALES ACTIVITY</h6>
+        </div>
+        <div class="card-body">
           <div class="timeline" style="height: 450px">
             <ul class="left-timeline">
               <% types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}] %>
@@ -167,8 +169,10 @@
   <div class="row is-flex">
     <div class="col-sm-12 col-md-5 animate-fade-in-1000">
       <div class="card card-default">
-        <div class="card-body">
+        <div class="card-header">
           <h6>MASTER SERVER</h6>
+        </div>
+        <div class="card-body">
           <div class='flot-realtime' style="height: 315px; width: 100%; display: block;"></div>
         </div>
         <div class="card-footer">
@@ -202,16 +206,14 @@
     </div>
     <div class="col-sm-12 col-md-7 animate-fade-in-1000">
       <div class="card card-default">
-        <div class="card-header">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <h6>RECENT ACTIVITY</h6>
           <ul class="nav nav-tabs nav-tabs-xs">
-            <li class="mr-auto d-flex align-items-center">
-            <h6>RECENT ACTIVITY</h6>
+            <li class="nav-item">
+              <a class="nav-link active" href="#dashboard-recent-comments" data-toggle="tab">Comments</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" href="#dashboard-recent-comments" data-toggle="tab">Comments</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#dashboard-recent-threads" data-toggle="tab">Forum threads</a>
+              <a class="nav-link" href="#dashboard-recent-threads" data-toggle="tab">Forum threads</a>
             </li>
           </ul>
         </div>
@@ -267,8 +269,10 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="card card-default">
-        <div class="card-body">
+        <div class="card-header">
           <h6>MOST ACTIVE USERS</h6>
+        </div>
+        <div class="card-body">
           <div class="table-responsive">
             <table class="table table-hover table-striped">
               <thead>
@@ -402,8 +406,10 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="card card-default">
-        <div class="card-body">
+        <div class="card-header">
           <h6>ONLINE USERS</h6>
+        </div>
+        <div class="card-body">
           <div id="gmapDemo" style="height: 400px; width: 100%;"></div>
         </div>
       </div>

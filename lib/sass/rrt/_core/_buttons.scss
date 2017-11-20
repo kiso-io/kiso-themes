@@ -10,7 +10,7 @@
   padding: $padding-btn-vertical $padding-btn-horizontal;
   cursor: pointer;
 
-  @include btn-styles($default-color, $default-states-color);
+  @include btn-styles($gray-400, $gray-700);
 
   &:hover,
   &:focus {
@@ -49,6 +49,7 @@
     font-size: $btn-icon-font-size-regular;
     overflow: hidden;
     line-height: 1;
+    color: $brand-primary;
 
     &.btn-simple {
       padding: 0;
