@@ -1,32 +1,6 @@
 class PreviewController < ApplicationController
   layout :resolve_layout
 
-
-  ## DEVISE FAKING SHIT ##########################################################
-  if respond_to?(:helper_method)
-    helpers = %w(resource scope_name resource_name signed_in_resource
-                 resource_class resource_params devise_mapping)
-    helper_method(*helpers)
-  end
-
-  # Gets the actual resource stored in the instance variable
-  def resource
-    User.new
-  end
-
-  # Proxy to devise map name
-  def resource_name
-    "User"
-  end
-  alias :scope_name :resource_name
-
-  # Proxy to devise map class
-  def resource_class
-    "User"
-  end
-
-  ## END DEVISE FAKING SHIT ############################################################
-
   def index
     @body_class = 'theme-container'
 
@@ -42,14 +16,12 @@ class PreviewController < ApplicationController
     if params[:style]
       cookies[:style] = {
         value: params[:style],
-        path: 'preview/main'
       }
     end
 
     if params[:theme]
       cookies[:theme] = {
         value: params[:theme],
-        path: 'preview/main'
       }
     end
 

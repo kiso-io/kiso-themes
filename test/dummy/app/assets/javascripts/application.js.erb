@@ -17,6 +17,7 @@
 var THEMES = <%= RRT::THEMES %>;
 
 function setThemeMenuItemActive(themeName, styleName) {
+  console.log('ACTIVE THEME:', themeName, styleName)
   $('.theme-list').children().map(function(i, themeEl) {
     $(themeEl).removeClass('active');
     $(themeEl)
@@ -36,6 +37,7 @@ function setThemeMenuItemActive(themeName, styleName) {
         .children()
         .map(function(i, styleEl) {
           $(styleEl).removeClass('active');
+          console.log(styleEl, styleEl.dataset['color'])
 
           if (
             styleEl.dataset['color'].toLowerCase() === styleName.toLowerCase()
@@ -54,7 +56,10 @@ $(document).ready(function() {
     });
   }
 
-  setThemeMenuItemActive(THEMES[0], 'blue')
+  var selectedTheme = getCookie('theme') || THEMES[0];
+  var selectedStyle = getCookie('style') || 'blue';
+
+  setThemeMenuItemActive(selectedTheme, selectedStyle)
 
   $('.size-mobile').on('click', function() {
     sizeiframe(320, true);
@@ -118,7 +123,7 @@ function sizeiframe(size) {
 function setCookie(key, value) {
   var expires = new Date();
   expires.setTime(expires.getTime() + 1 * 24 * 60 * 60 * 1000);
-  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+  document.cookie = key + '=' + value.toLowerCase() + ';expires=' + expires.toUTCString();
 }
 
 function getCookie(key) {
