@@ -23,23 +23,19 @@
       }
 
       .d-flex {
-        padding: 1.25rem;
+        padding: 1.5rem;
 
         background: $opacity-gray-4;
       }
 
       &.bg-dark {
         .d-flex {
-          padding: 1.25rem;
-
           background: $opacity-gray-1;
         }
       }
 
       &.bg-primary {
         .d-flex {
-          padding: 1.25rem;
-
           background: $opacity-gray-1;
         }
       }
