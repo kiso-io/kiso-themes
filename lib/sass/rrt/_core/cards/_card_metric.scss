@@ -29,8 +29,9 @@
     z-index: 5;
 
     span {
-      background-color: $opacity-7;
-      border-radius: 4px;
+      background-color: $metric-card-detail-bg;
+      color: $metric-card-detail-color;
+      border-radius: $metric-card-detail-border-radius;
       border: 1px solid #e9f4fb;
       padding: .75rem;
     }
