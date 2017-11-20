@@ -323,7 +323,8 @@ $side-nav-sub-menu-item-horizontal-padding: 0.8rem;
 $side-nav-menu-footer-background-color: #2e4261;
 
 // Tooltips
-$tooltip-bg: lighten($brand-primary, 25%);
+$tooltip-bg: lighten(#242a3d, 25%);
+$tooltip-color: white;
 
 // Timelines
 $left-timeline-item-background-color: #fff;

@@ -1,5 +1,6 @@
 
 .tooltip {
+
   &.bs-tooltip-right .arrow:before {
     border-right-color: $tooltip-bg;
   }
@@ -22,6 +23,6 @@
   min-width: 100px;
   background-color: $tooltip-bg;
   font-size: $font-size-small;
-  color: inherit;
+  color: $tooltip-color;
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .2);
 }

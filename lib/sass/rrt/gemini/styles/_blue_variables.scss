@@ -78,7 +78,7 @@ $danger-color-opacity: rgba(202, 37, 37, 0.3) !default;
 $danger-color-alert: rgb(216, 96, 96) !default;
 
 // Brand colors
-$brand-primary: $primary-color !default;
+$brand-primary: $primary-color;
 $brand-primary-light: tint($brand-primary, 10%);
 $brand-primary-lighter: tint($brand-primary, 25%);
 $brand-primary-lightest: tint($brand-primary, 38%);
@@ -328,6 +328,7 @@ $side-nav-menu-footer-background-color: #2e4261;
 
 // Tooltips
 $tooltip-bg: lighten($brand-primary, 25%);
+$tooltip-color: white;
 
 // Timelines
 $left-timeline-item-background-color: #fff;
