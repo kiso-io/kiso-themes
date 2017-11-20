@@ -12,7 +12,7 @@ module RRT
   end
 
   module Auriga
-    COLORS = ["black"]
+    COLORS = ["blue"]
   end
 
   module Lyra

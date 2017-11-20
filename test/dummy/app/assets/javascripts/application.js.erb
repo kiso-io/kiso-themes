@@ -17,7 +17,6 @@
 var THEMES = <%= RRT::THEMES %>;
 
 function setThemeMenuItemActive(themeName, styleName) {
-  console.log('ACTIVE THEME:', themeName, styleName)
   $('.theme-list').children().map(function(i, themeEl) {
     $(themeEl).removeClass('active');
     $(themeEl)
