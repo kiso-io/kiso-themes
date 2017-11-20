@@ -3,26 +3,68 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3>Basic Progress Bar</h3>
-          <div class="card-body">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          <h6>Basic Progress Bar</h6>
+        </div>
+        <div class="card-body">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h6>Contextual Progress Bars</h6>
+        </div>
+        <div class="card-body">
+          <span class="progress-badge">Primary</span>
+          <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="progress-value">60%</span>
             </div>
-            <br>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <span class="progress-badge">Danger</span>
+          <div class="progress">
+            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="progress-value">60%</span>
             </div>
-            <br>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <span class="progress-badge">Warning</span>
+          <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="progress-value">60%</span>
             </div>
-            <br>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <span class="progress-badge">Success</span>
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="progress-value">60%</span>
             </div>
-            <br>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <span class="progress-badge">Info</span>
+          <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="progress-value">60%</span>
             </div>
           </div>
         </div>
@@ -34,35 +76,53 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3>Contextual Progress Bars</h3>
-          <div class="card-body">
+          <h6>Contextual Progress Bars</h6>
+        </div>
+        <div class="card-body">
+          <div class="progress-container">
+            <span class="progress-badge">Default</span>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+                <span class="progress-value">25%</span>
+              </div>
+            </div>
+          </div>
+          <div class="progress-container progress-primary">
             <span class="progress-badge">Primary</span>
             <div class="progress">
-              <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                 <span class="progress-value">60%</span>
               </div>
             </div>
+          </div>
+          <div class="progress-container progress-danger">
             <span class="progress-badge">Danger</span>
             <div class="progress">
-              <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                 <span class="progress-value">60%</span>
               </div>
             </div>
+          </div>
+          <div class="progress-container progress-warning">
             <span class="progress-badge">Warning</span>
             <div class="progress">
-              <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                 <span class="progress-value">60%</span>
               </div>
             </div>
+          </div>
+          <div class="progress-container progress-success">
             <span class="progress-badge">Success</span>
             <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                 <span class="progress-value">60%</span>
               </div>
             </div>
+          </div>
+          <div class="progress-container progress-info">
             <span class="progress-badge">Info</span>
             <div class="progress">
-              <div class="progress-bar bg-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
                 <span class="progress-value">60%</span>
               </div>
             </div>
@@ -72,97 +132,37 @@
     </div>
   </div>
 
+
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3>Contextual Progress Bars</h3>
-          <div class="card-body">
-            <div class="progress-container">
-              <span class="progress-badge">Default</span>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-                  <span class="progress-value">25%</span>
-                </div>
-              </div>
-            </div>
-            <div class="progress-container progress-primary">
-              <span class="progress-badge">Primary</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                  <span class="progress-value">60%</span>
-                </div>
-              </div>
-            </div>
-            <div class="progress-container progress-danger">
-              <span class="progress-badge">Danger</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                  <span class="progress-value">60%</span>
-                </div>
-              </div>
-            </div>
-            <div class="progress-container progress-warning">
-              <span class="progress-badge">Warning</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                  <span class="progress-value">60%</span>
-                </div>
-              </div>
-            </div>
-            <div class="progress-container progress-success">
-              <span class="progress-badge">Success</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                  <span class="progress-value">60%</span>
-                </div>
-              </div>
-            </div>
-            <div class="progress-container progress-info">
-              <span class="progress-badge">Info</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                  <span class="progress-value">60%</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h6>Striped Progress Bar</h6>
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="card-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
 
+          <br>
 
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-header">
-          <h3>Striped Progress Bar</h3>
-          <div class="card-body">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
 
-            <br>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
 
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
 
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
       </div>
