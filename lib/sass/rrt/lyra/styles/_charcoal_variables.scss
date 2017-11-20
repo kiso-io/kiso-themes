@@ -363,3 +363,9 @@ $navbar-navlink-color: #707070;
 $navbar-navlink-hover-bg: $gray-300;
 
 $form-input-radius: 2px;
+
+:root {
+  --metric-chart-fill-color: #c8c8c8;
+  --metric-chart-fill-color-alternate: #bdbdbd;
+  --metric-chart-border-color: #aeaeae;
+}

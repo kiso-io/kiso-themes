@@ -9,18 +9,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
           <ul class="navbar-nav mr-auto theme-list mr-auto">
+
             <% @themes.each do |theme| %>
-            <li data-theme='<%=theme[:theme]%>' >
-              <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color='<%=theme[:colors][0] %>' ><%= theme[:theme] %></a>
-              <ul class='style-list list-unstyled list-inline'>
-                <% theme[:colors].each do |color| %>
-                <li data-theme='<%=theme[:theme]%>' data-color="<%= color %>">
-                  <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color="<%= color %>"><%= color %></a>
-                </li>
-                <% end %>
-              </ul>
-            </li>
+              <li data-theme='<%=theme[:theme]%>' >
+                <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color='<%=theme[:colors][0] %>' ><%= theme[:theme] %></a>
+                <ul class='style-list list-unstyled list-inline'>
+
+                  <% theme[:colors].each do |color| %>
+                    <li data-theme='<%=theme[:theme]%>' data-color="<%= color %>">
+                      <a href="#" class="UpdateIframe" data-theme='<%=theme[:theme]%>' data-color="<%= color %>"><%= color %></a>
+                    </li>
+                  <% end %>
+
+                </ul>
+              </li>
             <% end %>
+
           </ul>
 
           <ul class="list-unstyled my-2 my-lg-0">
