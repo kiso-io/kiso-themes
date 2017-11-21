@@ -13,7 +13,12 @@ module RRT
   end
 
   module Gemini
-    COLORS = ["blue"]
+    COLORS = [
+      "blue",
+      "ocean",
+      "amber",
+      "granite"
+    ]
   end
 
   module Auriga
