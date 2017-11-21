@@ -31,6 +31,11 @@ module RRT
   end
 
   module Lyra
-    COLORS = ["charcoal"]
+    COLORS = [
+      "charcoal",
+      "lime",
+      "raspberry",
+      "azure"
+    ]
   end
 end

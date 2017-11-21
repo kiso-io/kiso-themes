@@ -1,0 +1,62 @@
+$sans-serif-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+
+// Whites
+$white-color: #fff ;
+$white-bg: #fff ;
+
+// Blacks
+$black-bg: rgba(30, 30, 30, 0.97) ;
+$light-black: #444 ;
+$black-color: #2c2c2c ;
+$black-hr: #444 ;
+$dark-color: $black-color;
+
+// Backgrounds
+$main-bg: #fbfbfc;
+$dark-background: #555;
+
+@include theme-colors((
+ text-color: #707070,
+ brand-default: #707070,
+ brand-primary: #8d4c4c,
+ brand-success: #00c884,
+ brand-info: #00bdd6,
+ brand-warning: #ffc200,
+ brand-danger: #ff5551,
+ brand-light: $gray-400,
+ brand-dark: $dark-color,
+
+ sidenav-menu-bg: #efefef,
+ sidenav-header-color: #010101,
+ sidenav-header-bg: #efefef,
+ sidenav-header-link: #707070,
+ sidenav-header-link-hover: #323232,
+ sidenav-color: #c35f90,
+ sidenav-menu-item-bg: #6c3c3c,
+ sidenav-menu-item-color: #e172b5,
+ sidenav-menu-item-icon: #92667d,
+
+ tooltip-bg: #707070,
+ tooltip-color: white
+));
+
+
+$navbar-background: transparent;
+$navbar-box-shadow: 0 0 10px 4px rgba(0, 0, 0, .045);
+
+$card-border-radius: $border-radius-extra-small;
+$card-outer-shadow:  0 1px 2px rgba(0,0,0,.075);
+
+$navbar-navlink-color: #707070;
+$navbar-navlink-hover-bg: $gray-300;
+
+$form-input-radius: 2px;
+
+:root {
+  --metric-chart-fill-color: #c8c8c8;
+  --metric-chart-fill-color-alternate: #bdbdbd;
+  --metric-chart-border-color: #aeaeae;
+}
+
+$navbar-toggle: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
