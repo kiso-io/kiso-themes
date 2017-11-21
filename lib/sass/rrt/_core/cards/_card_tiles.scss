@@ -3,22 +3,25 @@
 
   &:hover {
     background-position: 100vh;
-    }
+  }
 
   .card-header {
-    padding-bottom: .625rem;
-    }
+    padding-bottom: 0.625rem;
+    justify-content: center;
+  }
 
   .card-body {
-    padding-top: .625rem;
+    padding-top: 0.625rem;
+
     small {
       color: $text-muted;
-      }
-    }
-
-  &.card-tile-hero-split {
-    .card-body {
-      background: $gray-300;
-      }
     }
   }
+
+  &.card-tile-hero-split {
+
+    .card-body {
+      background: $gray-300;
+    }
+  }
+}
