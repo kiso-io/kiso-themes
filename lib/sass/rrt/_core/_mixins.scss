@@ -1,8 +1,11 @@
-//Utilities
+// Theming
+@import "mixins/theme";
+
+// Utilities
 @import "mixins/transparency";
 @import "mixins/colors";
 
-//Components
+// Components
 @import "mixins/buttons";
 @import "mixins/vendor-prefixes";
 @import "mixins/inputs";

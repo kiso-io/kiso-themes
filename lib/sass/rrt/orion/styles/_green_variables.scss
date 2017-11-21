@@ -1,30 +1,25 @@
 $sans-serif-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
 
-// Border thicknesses
-$none: 0 !default;
-$border-thin: 1px !default;
-$border-thick: 2px !default;
-
 // Whites
-$white-color: #fdfcfc !default;
-$white-bg: #fff !default;
+$white-color: #fdfcfc ;
+$white-bg: #fff ;
 
 // Blacks
-$black-bg: rgba(30, 30, 30, 0.97) !default;
-$light-black: #444 !default;
-$black-color: #2c2c2c !default;
-$black-hr: #444 !default;
+$black-bg: rgba(30, 30, 30, 0.97) ;
+$light-black: #444 ;
+$black-color: #2c2c2c ;
+$black-hr: #444 ;
 $dark-color: #283d52;
 
 // Backgrounds
-$main-bg: #eef5fb !default;
-$dark-background: #555 !default;
-$smoke-bg: #f5f5f5 !default;
+$main-bg: #eef5fb ;
+$dark-background: #555 ;
+$smoke-bg: #f5f5f5 ;
 
 @include theme-colors((
  text-color: #2c2c2c,
  brand-default: #4173a7,
- brand-primary: #4173a7,
+ brand-primary: #419ca7,
  brand-success: #73c16b,
  brand-info: #5cc6d2,
  brand-warning: #e08e45,
@@ -32,26 +27,18 @@ $smoke-bg: #f5f5f5 !default;
  brand-light: $gray-400,
  brand-dark: $dark-color,
 
- sidenav-menu-bg: #2e4261,
- sidenav-header-color: white,
- sidenav-header-bg: #2e4261,
- sidenav-header-link: lighten(#4173a7, 25%),
- sidenav-header-link-hover: white,
- sidenav-color: lighten(#4173a7, 25%),
- sidenav-menu-item-bg: #395379,
- sidenav-menu-item-color: lighten(#4173a7, 25%),
- sidenav-menu-item-icon: #4d80b8,
+ sidenav-menu-bg: #2e4f61,
+ sidenav-header-bg: #2e4f61,
+ sidenav-header-link: #93ced5,
+ sidenav-color: #93ced5,
+ sidenav-menu-item-bg: #396579,
+ sidenav-menu-item-icon: #4db8a1,
 
- tooltip-bg: lighten($brand-primary, 25%),
+ tooltip-bg: lighten(#71b5bd, 5%),
  tooltip-color: white
 ));
 
-// Card Chat
-$card-chat-bg: $gray-400;
-
-$card-border-radius: $border-radius-small;
-
-$navbar-background: #4173a7;
+$navbar-background: #71b5bd;
 $navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
 
 $card-outer-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
@@ -61,5 +48,3 @@ $navbar-navlink-hover-bg: $opacity-2;
 $form-input-radius: $btn-round-radius;
 
 $navbar-toggle: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
-
-$button-default-bg: $gray-300;

@@ -1,0 +1,162 @@
+@mixin theme-colors($styles) {
+
+  $brand-default: map-get($styles, brand-default);
+  $brand-primary: map-get($styles, brand-primary);
+  $brand-success: map-get($styles, brand-success);
+  $brand-info:    map-get($styles, brand-info);
+  $brand-warning: map-get($styles, brand-warning);
+  $brand-danger:  map-get($styles, brand-danger);
+  $brand-light:   map-get($styles, brand-light);
+  $brand-dark:    map-get($styles, brand-dark);
+
+  // Text color
+  $text-color: map-get($styles, text-color) !global;
+
+  // State colors
+  $default-color: $brand-default !global;
+  $default-states-color: lighten($brand-default, 6%) !global;
+  $default-color-opacity: rgba($brand-default, 0.6) !global;
+
+  $primary-color: $brand-primary !global;
+  $primary-states-color: lighten($brand-primary, 6%) !global;
+  $primary-color-opacity: rgba($brand-primary, 0.3) !global;
+  $primary-color-alert: rgba($brand-primary, 0.8) !global;
+
+  $success-color: $brand-success !global;
+  $success-states-color: lighten($brand-success, 6%) !global;
+  $success-color-opacity: rgba($brand-success, 0.3) !global;
+  $success-color-alert: rgba($brand-success, .8) !global;
+
+  $info-color: $brand-info !global;
+  $info-states-color: lighten($brand-info, 6%) !global;
+  $info-color-opacity: rgba($brand-info, 0.3) !global;
+  $info-color-alert: rgba($brand-info, 0.8) !global;
+
+  $warning-color: $brand-warning !global;
+  $warning-states-color: lighten($brand-warning, 6%)  !global;
+  $warning-color-opacity: rgba($brand-warning, 0.3)  !global;
+  $warning-color-alert: rgba($brand-warning, .8)  !global;
+
+  $danger-color: $brand-danger !global;
+  $danger-states-color: lighten($brand-danger, 6%)  !global;
+  $danger-color-opacity: rgba($brand-danger, 0.3)  !global;
+  $danger-color-alert: rgba($brand-danger, .8)  !global;
+
+  $brand-primary: $primary-color  !global;
+  $brand-primary-light: tint($brand-primary, 10%) !global;
+  $brand-primary-lighter: tint($brand-primary, 25%) !global;
+  $brand-primary-lightest: tint($brand-primary, 38%) !global;
+  $brand-primary-dark: shade($brand-primary, 10%) !global;
+  $brand-primary-darker: shade($brand-primary, 25%) !global;
+  $brand-primary-darkest: shade($brand-primary, 38%) !global;
+
+  $brand-info: $info-color  !global;
+  $brand-success: $success-color  !global;
+  $brand-warning: $warning-color  !global;
+  $brand-danger: $danger-color  !global;
+  $link-disabled-color: #666  !global;
+
+  // Grays
+  $gray-100: mix($brand-primary, $white-color, 2%) !global;
+  $gray-200: mix($brand-primary, $white-color, 4%) !global;
+  $gray-300: mix($brand-primary, $white-color, 8%) !global;
+  $gray-400: mix(desaturate($brand-primary, 20%), $white-color, 16%) !global;
+  $gray-500: mix(desaturate($brand-primary, 20%), $white-color, 24%) !global;
+  $gray-600: mix(desaturate($brand-primary, 20%), $white-color, 32%) !global;
+  $gray-700: mix(desaturate($brand-primary, 20%), $white-color, 40%) !global;
+  $gray-800: mix(desaturate($brand-primary, 20%), $white-color, 48%) !global;
+  $gray-900: mix(desaturate($brand-primary, 20%), $white-color, 56%) !global;
+
+  $grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+  );
+
+  $light-gray: $gray-200 !global;
+  $medium-gray: $gray-400 !global;
+  $dark-gray: $gray-900 !global;
+
+  // Colors
+  $blue:    #007bff  !global;
+  $indigo:  #6610f2  !global;
+  $purple:  #6f42c1  !global;
+  $pink:    #e83e8c  !global;
+  $red:     #dc3545  !global;
+  $orange:  #fd7e14  !global;
+  $yellow:  #ffc107  !global;
+  $green:   #28a745  !global;
+  $teal:    #20c997  !global;
+  $cyan:    #17a2b8  !global;
+
+  $colors: (
+    default: $default-color,
+    blue: $blue,
+    indigo: $indigo,
+    purple: $purple,
+    pink: $pink,
+    red: $red,
+    orange: $orange,
+    yellow: $yellow,
+    green: $green,
+    teal: $teal,
+    cyan: $cyan,
+    white: $white,
+    gray: $gray-600,
+    gray-dark: $gray-800
+  ) !global;
+
+
+  // Lighter colors
+  $light-blue: rgba($primary-color, 0.2) !global;
+  $light-azure: rgba($info-color, 0.2) !global;
+  $light-green: rgba($success-color, 0.2) !global;
+  $light-orange: rgba($warning-color, 0.2) !global;
+  $light-red: rgba($danger-color, 0.2) !global;
+
+  // Update the theme color map
+  $theme-colors: (
+    default: $default-color,
+    primary: $primary-color,
+    secondary: $default-color,
+    success: $success-color,
+    info: $info-color,
+    warning: $warning-color,
+    danger: $danger-color,
+    light: $gray-400,
+    dark: $dark-color
+  ) !global;
+
+  $navbar-background: $brand-primary !global;
+
+  // Side Nav
+  $side-nav-menu-background-color: map-get($styles, sidenav-menu-bg) !global;
+  $side-nav-header-bg-color: map-get($styles, sidenav-header-bg) !global;
+  $side-nav-menu-item-color: map-get($styles, sidenav-color) !global;
+  $side-nav-menu-item-background-color: map-get($styles, sidenav-menu-item-bg) !global;
+  $side-nav-menu-item-icon-color: map-get($styles, sidenav-menu-item-icon) !global;
+  $side-nav-header-bg-link-color: map-get($styles, sidenav-header-link) !global;
+
+  @if(map-has-key($styles, sidenav-menu-item-color)) {
+    $side-nav-menu-item-color: map-get($styles, sidenav-menu-item-color) !global;
+  }
+
+  @if(map-has-key($styles, sidenav-header-color)) {
+    $side-nav-header-color: map-get($styles, sidenav-header-color) !global;
+  }
+
+  @if(map-has-key($styles, sidenav-header-link-hover)) {
+    $side-nav-header-link-hover-color: map-get($styles, sidenav-header-link-hover) !global;
+  }
+
+  // Tooltips
+  $tooltip-bg: map-get($styles, tooltip-bg) !global;
+  $tooltip-color: map-get($styles, tooltip-color) !global;
+
+}

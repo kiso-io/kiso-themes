@@ -1,0 +1,50 @@
+$sans-serif-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+
+// Whites
+$white-color: #fdfcfc ;
+$white-bg: #fff ;
+
+// Blacks
+$black-bg: rgba(30, 30, 30, 0.97) ;
+$light-black: #444 ;
+$black-color: #2c2c2c ;
+$black-hr: #444 ;
+$dark-color: #283d52;
+
+// Backgrounds
+$main-bg: #eef5fb ;
+$dark-background: #555 ;
+$smoke-bg: #f5f5f5 ;
+$pale-blue-bg: #dae4f1 ;
+
+@include theme-colors((
+ brand-default: lighten(#a78241, 10%),
+ brand-primary: #a78241,
+ brand-success: #73c16b,
+ brand-info: #5cc6d2,
+ brand-warning: #e08e45,
+ brand-danger: #c55e5e,
+ brand-light: $gray-400,
+ brand-dark: $dark-color,
+
+ sidenav-menu-bg: #27241e,
+ sidenav-header-bg: #27241e,
+ sidenav-header-link: #f0d593,
+ sidenav-color: #998b71,
+ sidenav-menu-item-bg: #443f36,
+ sidenav-menu-item-icon: #575043,
+
+ tooltip-bg: lighten(#a78241, 10%),
+ tooltip-color: white
+));
+
+
+$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+
+$card-outer-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+
+$navbar-navlink-color: $white-color;
+$navbar-navlink-hover-bg: $opacity-2;
+$form-input-radius: $btn-round-radius;
+
+$navbar-toggle: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");

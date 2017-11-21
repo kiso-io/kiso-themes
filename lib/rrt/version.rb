@@ -4,7 +4,12 @@ module RRT
   THEMES = ['Orion', 'Gemini', 'Auriga', 'Lyra']
 
   module Orion
-    COLORS = ['blue', 'purple'].freeze
+    COLORS = [
+              'blue',
+              'purple',
+              'orange',
+              'green'
+             ].freeze
   end
 
   module Gemini
