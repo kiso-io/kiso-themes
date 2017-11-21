@@ -1,5 +1,8 @@
 .dropdown-menu {
   @include transition(all $fast-transition-time $transition-linear);
+
+  background-color: $dropdown-bg;
+
   border: 0;
   border-radius: $border-radius-extra-small;
   box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2);
@@ -30,7 +33,7 @@
     height: 0;
     vertical-align: middle;
 
-    color: $white-color;
+    color: $dropdown-bg;
 
     content: '';
   }
@@ -40,11 +43,17 @@
     padding-top: $padding-base-vertical;
     padding-bottom: $padding-base-vertical;
 
+    color: $dropdown-item-color;
+
     font-size: $font-size-small;
 
     &:hover,
     &:focus {
       background-color: $opacity-gray-3;
+    }
+
+    .card {
+      border: none;
     }
   }
 

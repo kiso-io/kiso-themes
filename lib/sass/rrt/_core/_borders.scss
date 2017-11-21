@@ -2,7 +2,16 @@
   border: 1px solid $gray-500 !important;
 }
 
+.no-border {
+  border: none !important;
+}
+
+.no-border-radius {
+  border-radius: 0 !important;
+}
+
 @each $color, $value in $grays {
+
   .border-gray-#{$color} {
     border-color: $value !important;
   }
@@ -11,12 +20,15 @@
 .border-bottom {
   border-bottom: 1px solid $gray-500;
 }
+
 .border-left {
   border-left: 1px solid $gray-500;
 }
+
 .border-top {
   border-top: 1px solid $gray-500;
 }
+
 .border-right {
   border-right: 1px solid $gray-500;
 }

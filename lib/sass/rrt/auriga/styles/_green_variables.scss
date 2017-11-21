@@ -42,8 +42,10 @@ $dark-background: #555 !default;
  tooltip-color: white,
 
  button-default-bg: #3f4453,
- button-default-state-bg: lighten(#3f4453, 10%)
+ button-default-state-bg: lighten(#3f4453, 10%),
 
+ dropdown-bg: #2f364d,
+ dropdown-item-color: #52ef80
 ));
 
 :root {

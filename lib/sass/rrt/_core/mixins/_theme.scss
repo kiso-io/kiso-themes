@@ -169,4 +169,16 @@
     $button-default-state-bg: map-get($styles, button-default-state-bg) !global;
   }
 
+
+  // Dropdowns
+
+  @if(map-has-key($styles, dropdown-bg)) {
+    $dropdown-bg: map-get($styles, dropdown-bg) !global;
+  }
+
+  @if(map-has-key($styles, dropdown-item-color)) {
+    $dropdown-item-color: map-get($styles, dropdown-item-color) !global;
+  }
+
+
 }
