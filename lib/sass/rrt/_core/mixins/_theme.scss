@@ -159,4 +159,14 @@
   $tooltip-bg: map-get($styles, tooltip-bg) !global;
   $tooltip-color: map-get($styles, tooltip-color) !global;
 
+  // Buttons
+
+  @if(map-has-key($styles, button-default-bg)) {
+    $button-default-bg: map-get($styles, button-default-bg) !global;
+  }
+
+  @if(map-has-key($styles, button-default-state-bg)) {
+    $button-default-state-bg: map-get($styles, button-default-state-bg) !global;
+  }
+
 }

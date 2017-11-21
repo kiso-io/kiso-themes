@@ -39,7 +39,10 @@ $dark-background: #555 !default;
  sidenav-menu-item-icon: #94599f,
 
  tooltip-bg: lighten(#242a3d, 25%),
- tooltip-color: white
+ tooltip-color: white,
+
+ button-default-bg: #3f4453,
+ button-default-state-bg: lighten(#3f4453, 10%)
 ));
 
 :root {
