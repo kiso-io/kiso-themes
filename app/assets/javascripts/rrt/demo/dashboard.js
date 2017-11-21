@@ -23,6 +23,11 @@ if(window.Chart) {
       series: {
         shadowSize: 0
       },
+      colors: [
+        RRT.getRootCssVariable('--metric-chart-fill-color'),
+        RRT.getRootCssVariable('--metric-chart-fill-color-1'),
+        RRT.getRootCssVariable('--metric-chart-fill-color-2')
+      ],
       lines: {
         fill: true,
         fillColor: {

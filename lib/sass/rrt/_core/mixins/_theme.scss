@@ -11,11 +11,11 @@
 
   // Root Vars for JS
   :root {
-    --metric-chart-fill-color:   #{tint($brand-primary, 60%)};
-    --metric-chart-fill-color-1: #{tint($brand-primary, 65%)};
-    --metric-chart-fill-color-2: #{tint($brand-primary, 70%)};
-    --metric-chart-fill-color-3: #{tint($brand-primary, 75%)};
-    --metric-chart-fill-color-4: #{tint($brand-primary, 80%)};
+    --metric-chart-fill-color:   #{rgba(tint($brand-primary, 60%), .4)};
+    --metric-chart-fill-color-1: #{rgba(tint($brand-primary, 65%), .4)};
+    --metric-chart-fill-color-2: #{rgba(tint($brand-primary, 70%), .4)};
+    --metric-chart-fill-color-3: #{rgba(tint($brand-primary, 75%), .4)};
+    --metric-chart-fill-color-4: #{rgba(tint($brand-primary, 80%), .4)};
 
     --metric-chart-border-color: #{tint($brand-primary, 50%)};
 
