@@ -23,7 +23,7 @@ $dark-background: #555 !default;
 @include theme-colors((
  text-color: #95a0bd,
  brand-default: #242a3d,
- brand-primary: #2aa2ef,
+ brand-primary: #c770c9,
  brand-success: #73c16b,
  brand-info: #5cc6d2,
  brand-warning: #e08e45,
@@ -34,9 +34,9 @@ $dark-background: #555 !default;
  sidenav-menu-bg: #1e253d,
  sidenav-header-bg: #1e253d,
  sidenav-header-link: lighten(#95a0bd, 25%),
- sidenav-color: #9ccbf9,
- sidenav-menu-item-bg: #296dcf,
- sidenav-menu-item-icon: #2e547e,
+ sidenav-color: #f99cf5,
+ sidenav-menu-item-bg: #a542a4,
+ sidenav-menu-item-icon: #94599f,
 
  tooltip-bg: lighten(#242a3d, 25%),
  tooltip-color: white

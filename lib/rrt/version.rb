@@ -22,7 +22,12 @@ module RRT
   end
 
   module Auriga
-    COLORS = ["blue"]
+    COLORS = [
+      "blue",
+      "green",
+      "red",
+      "yellow"
+    ]
   end
 
   module Lyra
