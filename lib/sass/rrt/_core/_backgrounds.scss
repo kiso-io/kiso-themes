@@ -54,7 +54,7 @@
 }
 
 .bg-neutral {
-  background-image: $smoke-bg !important;
+  background-image: $gray-300 !important;
 }
 
 @each $gray-color-name in map-keys($grays) {
