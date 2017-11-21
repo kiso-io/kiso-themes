@@ -48,13 +48,6 @@ $dark-background: #555 !default;
  dropdown-item-color: #c770c9
 ));
 
-:root {
-  --metric-chart-fill-color: #384975;
-  --metric-chart-fill-color-alternate: #6881B4;
-  --metric-chart-border-color: #5A6C96;
-  --sidenav-track-color: #242a3d;
-}
-
 $metric-details-background: rgba(255,255,255,0.4);
 $metric-details-border: transparent;
 $metric-details-text: $black-color;

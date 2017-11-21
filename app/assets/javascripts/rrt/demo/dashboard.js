@@ -134,7 +134,7 @@ if(window.Chart) {
     var chartLinesCon  = jQuery('.sales-vs-refunds');
 
     var metricChartFillColor = RRT.getRootCssVariable('--metric-chart-fill-color');
-    var metricChartFillColorAlt = RRT.getRootCssVariable('--metric-chart-fill-color-alternate');
+    var metricChartFillColorAlt = RRT.getRootCssVariable('--metric-chart-fill-color-1');
     var metricChartBorderColor = RRT.getRootCssVariable('--metric-chart-border-color');
 
     var chartLinesBarsRadarData = {

@@ -9,6 +9,20 @@
   $brand-light:   map-get($styles, brand-light);
   $brand-dark:    map-get($styles, brand-dark);
 
+  // Root Vars for JS
+  :root {
+    --metric-chart-fill-color:   #{tint($brand-primary, 60%)};
+    --metric-chart-fill-color-1: #{tint($brand-primary, 65%)};
+    --metric-chart-fill-color-2: #{tint($brand-primary, 70%)};
+    --metric-chart-fill-color-3: #{tint($brand-primary, 75%)};
+    --metric-chart-fill-color-4: #{tint($brand-primary, 80%)};
+
+    --metric-chart-border-color: #{tint($brand-primary, 50%)};
+
+    --sidenav-track-color: #{rgba(tint($brand-primary, 20%), .5)};
+  }
+
+
   // Text color
   $text-color: map-get($styles, text-color) !global;
 
