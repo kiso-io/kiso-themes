@@ -1,133 +1,148 @@
-.pagination{
-  .page-item .page-link{
+.pagination {
+
+  .page-item .page-link {
+    transition: all 0.3s;
+    margin: 0 3px;
     border: 0;
     border-radius: 30px !important;
-    transition: all .3s;
-    padding: 0px 11px;
-    margin: 0 3px;
-    min-width: 30px;
-    text-align: center;
-    height: 30px;
-    line-height: 30px;
-    color: $black-color;
     cursor: pointer;
+    padding: 0px 11px;
+    min-width: 30px;
+    height: 30px;
+    text-align: center;
     text-transform: uppercase;
+    line-height: 30px;
+    color: $pagination-color;
+    background-color: $pagination-bg;
 
     &:hover,
-    &:focus{
-      color: $black-color;
-      background-color: $opacity-gray-3;
+    &:focus {
       border: none;
+      background-color: $pagination-hover-bg;
+      color: $pagination-hover-color;
     }
   }
 
   .arrow-margin-left,
-  .arrow-margin-right{
+  .arrow-margin-right {
     position: absolute;
   }
 
-  .arrow-margin-right{
+  .arrow-margin-right {
     right: 0;
   }
 
-  .arrow-margin-left{
+  .arrow-margin-left {
     left: 0;
   }
 
-  .page-item.active > .page-link{
-    color: $light-gray;
+  .page-item.active > .page-link {
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    color: $light-gray;
 
     &,
     &:focus,
-    &:hover{
-      background-color: $default-color;
+    &:hover {
       border-color: $default-color;
+      background-color: $default-color;
       color: $white-color;
     }
   }
 
-  .page-item.disabled > .page-link{
-    background-color: rgba(255,255,255, .2);
-    color: $dark-gray;
+  .page-item.disabled > .page-link {
+    background-color: $pagination-disabled-bg;
+    color: $pagination-disabled-color;
+    cursor: not-allowed;
   }
 
   // Colors
-  &.pagination-info{
-    .page-item.active > .page-link{
+
+  &.pagination-info {
+
+    .page-item.active > .page-link {
+
       &,
       &:focus,
-      &:hover{
-        background-color: $brand-info;
+      &:hover {
         border-color: $brand-info;
+        background-color: $brand-info;
       }
     }
   }
 
-  &.pagination-success{
-    .page-item.active > .page-link{
+  &.pagination-success {
+
+    .page-item.active > .page-link {
+
       &,
       &:focus,
-      &:hover{
-        background-color: $brand-success;
+      &:hover {
         border-color: $brand-success;
+        background-color: $brand-success;
       }
     }
   }
 
-  &.pagination-primary{
-    .page-item.active > .page-link{
+  &.pagination-primary {
+
+    .page-item.active > .page-link {
+
       &,
       &:focus,
-      &:hover{
-        background-color: $brand-primary;
+      &:hover {
         border-color: $brand-primary;
+        background-color: $brand-primary;
       }
     }
   }
 
-  &.pagination-warning{
-    .page-item.active > .page-link{
+  &.pagination-warning {
+
+    .page-item.active > .page-link {
+
       &,
       &:focus,
-      &:hover{
-        background-color: $brand-warning;
+      &:hover {
         border-color: $brand-warning;
+        background-color: $brand-warning;
       }
     }
   }
 
-  &.pagination-danger{
-    .page-item.active > .page-link{
+  &.pagination-danger {
+
+    .page-item.active > .page-link {
+
       &,
       &:focus,
-      &:hover{
-        background-color: $brand-danger;
+      &:hover {
         border-color: $brand-danger;
+        background-color: $brand-danger;
       }
     }
   }
 
-  &.pagination-neutral{
-    .page-item > .page-link{
+  &.pagination-neutral {
+
+    .page-item > .page-link {
       color: $white-color;
 
       &:focus,
-      &:hover{
+      &:hover {
         background-color: $opacity-2;
         color: $white-color;
       }
     }
 
-    .page-item.active > .page-link{
+    .page-item.active > .page-link {
+
       &,
       &:focus,
-      &:hover{
-        background-color: $white-bg;
+      &:hover {
         border-color: $white-bg;
+        background-color: $white-bg;
         color: $brand-primary;
       }
     }
   }
-
 }

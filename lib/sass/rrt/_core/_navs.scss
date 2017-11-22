@@ -74,13 +74,19 @@
 }
 
 .navbar-landing {
+  background: transparent;
 
   &.navbar {
     box-shadow: none;
+    background: $landing-nav-bg;
+    color: $landing-nav-brand-color;
+
+    &:not(.navbar-light) .navbar-nav .nav-item > a:not(.btn):not(.dropdown-item):not(.list-group-item) {
+      color: $landing-nav-color;
+    }
   }
 
   .nav.navbar-nav {
-
     .nav-item {
       padding: $padding-base-horizontal;
 

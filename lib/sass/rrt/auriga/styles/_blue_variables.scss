@@ -75,3 +75,15 @@ $form-input-radius: $btn-round-radius;
 
 $navbar-toggle: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
 
+$landing-nav-bg: transparent;
+$landing-nav-color: $white-color;
+$landing-nav-brand-color: $white-color;
+
+$pagination-color: $white-color;
+$pagination-bg: $default-color;
+$pagination-hover-color: $white-color;
+$pagination-hover-bg: $opacity-gray-3;
+$pagination-disabled-bg: #212d35;
+$pagination-disabled-color: #445062;
+
+$progress-bar-bg: #30374b;

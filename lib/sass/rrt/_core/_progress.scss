@@ -1,5 +1,9 @@
+.progress {
+  background-color: $progress-bar-bg;
+}
+
 .progress-bar {
-  background-color: $primary-color;
+  background-color: $progress-bar-color;
 }
 
 .progress-container {
@@ -23,7 +27,7 @@
     margin-top: 14px;
 
     border-radius: 0;
-    background: $opacity-gray-8;
+    background: $progress-bar-bg;
     box-shadow: none;
 
     .progress-bar {
