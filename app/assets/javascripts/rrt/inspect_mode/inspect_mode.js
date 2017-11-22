@@ -41,8 +41,10 @@ $(document).ready(function() {
 
           componentNameRe = /<!-- component-title: ([\w\s]*) -->/g
           componentName = componentNameRe.exec(rawHtml)
-        
-          $('.inspector-component-name').text(componentName[1])
+
+          componentName = componentName ? componentName[1] : "Component Markup"
+
+          $('.inspector-component-name').text(componentName)
 
           rawHtml = rawHtml.trim().replace(/<!--[\s\S]*?-->/g, '')
 

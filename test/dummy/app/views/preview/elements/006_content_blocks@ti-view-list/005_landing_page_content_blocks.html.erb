@@ -12,11 +12,13 @@
           </div>
           <div class="card-body">
             <% unless block.match(/\!dark/).nil? %>
-              <section class="bg-dark">
+              <section class="bg-dark inspectable">
                 <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
               </section>
             <% else %>
-              <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
+              <div class="inspectable">
+                <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_general/#{block.gsub(/_/, '')}" %>
+              </div>
             <% end %>
           </div>
         </div>

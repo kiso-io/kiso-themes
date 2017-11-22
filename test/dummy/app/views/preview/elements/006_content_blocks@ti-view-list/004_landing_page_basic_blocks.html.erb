@@ -10,7 +10,9 @@
               LANDING BASIC BLOCK <%= index+1 %>
             </h6>
           </div>
-          <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_basic/#{block.gsub(/_/, '')}" %>
+          <div class="inspectable">
+            <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_basic/#{block.gsub(/_/, '')}" %>
+          </div>
         </div>
       </div>
     </div>
@@ -22,7 +24,7 @@
               LANDING BASIC BLOCK <%= index+1 %>
             </h6>
           </div>
-          <div class="bg-dark text-white">
+          <div class="bg-dark text-white inspectable">
             <%= render partial: "preview/elements/006_content_blocks@ti-view-list/_content_block_basic/#{block.gsub(/_/, '')}" %>
           </div>
         </div>
