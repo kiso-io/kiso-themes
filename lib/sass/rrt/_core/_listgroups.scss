@@ -1,5 +1,16 @@
-.list-group {
-  .list-group-item {
-    background: $card-bg;
-  }
+.list-group-item {
+  background: $card-bg;
+  border: $listgroup-item-border-color;
+}
+
+.list-group-item.active {
+    color: #fff;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+}
+
+.list-group-item.disabled,
+.list-group-item:disabled {
+  color: $listgroup-item-disabled-color;
+  background-color: $listgroup-item-disabled-bg;
 }

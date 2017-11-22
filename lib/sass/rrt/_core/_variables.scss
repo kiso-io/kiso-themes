@@ -400,3 +400,6 @@ $progress-bar-bg: $gray-400;
 $progress-bar-color: $brand-primary;
 
 $card-sheet-bg: $white-color;
+$listgroup-item-border-color: 1px solid rgba(228, 228, 228, 0.23) !default;
+$listgroup-item-disabled-color: rgba($gray-400, .5);
+$listgroup-item-disabled-bg: rgba($gray-300, .2);
