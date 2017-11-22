@@ -192,7 +192,8 @@ body {
   max-height: 90%;
 
   textarea {
-    display: none;
+    position: absolute;
+    left: -999999999999999999px;
   }
 
   pre {
