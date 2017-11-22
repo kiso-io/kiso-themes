@@ -6,15 +6,15 @@
     &.active {
 
       .nav-link {
-        background-color: $white-color;
+        background-color: $nav-stacked-active-link-bg;
       }
     }
 
     > .nav-link {
-      box-shadow: inset 0 1px 1px $gray-300;
+      box-shadow: inset 0 1px 1px $nav-stacked-link-border-color;
 
       &:hover {
-        background-color: $white-color;
+        background-color: $nav-stacked-link-hover-bg;
       }
     }
   }
@@ -25,10 +25,10 @@
       display: inline-block;
       position: relative;
       float: left;
-      margin-top: 4px;
+      margin-top: 3px;
       margin-left: -1rem;
       border-top: 1rem solid transparent;
-      border-right: 1rem solid #cbdcde;
+      border-right: 1rem solid darken($nav-stacked-chevron-bg, 10%);
       border-bottom: 1rem solid transparent;
       width: 0;
       height: 0;
@@ -41,10 +41,10 @@
       display: inline-block;
       position: relative;
       float: left;
-      margin-top: -32px;
+      margin-top: -33px;
       margin-left: calc(-1rem + 1px);
       border-top: 1rem solid transparent;
-      border-right: 1rem solid $white-color;
+      border-right: 1rem solid $nav-stacked-chevron-bg;
       border-bottom: 1rem solid transparent;
       width: 0;
       height: 0;
