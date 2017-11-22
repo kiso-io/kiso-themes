@@ -30,7 +30,7 @@
 
     a {
       background-color: tint($brand-primary, 60%);
-      @include color-yiq(tint($brand-primary, 60%));
+      color: color-yiq(tint($brand-primary, 60%));
       text-align: center;
       display: block;
       padding: 10px 0;

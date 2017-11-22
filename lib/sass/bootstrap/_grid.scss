@@ -16,7 +16,6 @@
 
 @if $enable-grid-classes {
   .container-fluid {
-    width: 100%;
     @include make-container();
   }
 }
@@ -50,23 +49,4 @@
 
 @if $enable-grid-classes {
   @include make-grid-columns();
-}
-
-.row.is-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-.row.is-flex > [class*='col-'] {
-  display: flex;
-  flex-direction: column;
-}
-
-.row.is-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.row.is-flex > [class*='col-'] {
-  display: flex;
-  flex-direction: column;
 }

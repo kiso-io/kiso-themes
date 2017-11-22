@@ -14,7 +14,7 @@
   .show > &.dropdown-toggle:hover {
     box-shadow: none;
     background-color: $btn-states-color;
-    @include color-yiq($btn-states-color);
+    color: color-yiq($btn-states-color);
   }
 
   &:hover {
@@ -46,7 +46,7 @@
       line-height: calc(#{$line-height} - 2px);
 
       &:hover {
-        @include color-yiq(map-get($theme-colors, $theme-color));
+        color: color-yiq(map-get($theme-colors, $theme-color));
         background: map-get($theme-colors, $theme-color);
       }
     }
@@ -81,7 +81,7 @@
 
   &.btn-dark {
     background-color: $dark-color;
-    @include color-yiq($dark-color);
+    color: color-yiq($dark-color);
 
     &:hover,
     &:focus,
@@ -96,7 +96,7 @@
   }
 
   &.btn-link {
-    @include color-yiq($btn-color);
+    color: color-yiq($btn-color);
 
     &:hover,
     &:focus,
@@ -104,7 +104,7 @@
       box-shadow: none;
       background-color: $transparent-bg;
       text-decoration: none;
-      @include color-yiq($btn-states-color);
+      color: color-yiq($btn-states-color);
     }
   }
 
@@ -112,7 +112,7 @@
     padding: 3px 7px 3px 3px;
   }
 
-  @include color-yiq($btn-color);
+  color: color-yiq($btn-color);
 }
 
 @mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border) {
