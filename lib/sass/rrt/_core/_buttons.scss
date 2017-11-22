@@ -1,16 +1,17 @@
 .btn,
 .navbar .navbar-nav > a.btn {
-  border-width: $border-thick;
-  font-weight: $font-weight-normal;
-  font-size: $font-size-small;
-  line-height: $line-height;
-  margin: 0;
-  border: none;
-  border-radius: $border-radius-small;
-  padding: $padding-btn-vertical $padding-btn-horizontal;
-  cursor: pointer;
 
   @include btn-styles($button-default-bg, $button-default-state-bg);
+  margin: 0;
+  border: none;
+  border-width: $border-thick;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+  padding: $padding-btn-vertical $padding-btn-horizontal;
+  line-height: $line-height;
+  white-space: normal;
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
 
   &:hover,
   &:focus {
@@ -29,6 +30,7 @@
     background-color: transparent;
 
     &.dropdown-toggle {
+
       &:hover {
         background-color: transparent;
       }
@@ -39,25 +41,23 @@
     }
   }
 
-
-
   &.btn-icon {
-    height: $btn-icon-size-regular;
-    min-width: $btn-icon-size-regular;
-    width: $btn-icon-size-regular;
     padding: 0;
-    font-size: $btn-icon-font-size-regular;
+    width: $btn-icon-size-regular;
+    min-width: $btn-icon-size-regular;
+    height: $btn-icon-size-regular;
     overflow: hidden;
     line-height: 1;
+    font-size: $btn-icon-font-size-regular;
 
     &.btn-simple {
       padding: 0;
     }
 
     &.btn-sm {
-      height: $btn-icon-size-small;
-      min-width: $btn-icon-size-small;
       width: $btn-icon-size-small;
+      min-width: $btn-icon-size-small;
+      height: $btn-icon-size-small;
 
       i {
         font-size: $btn-icon-font-size-small;
@@ -65,9 +65,9 @@
     }
 
     &.btn-lg {
-      height: $btn-icon-size-lg;
-      min-width: $btn-icon-size-lg;
       width: $btn-icon-size-lg;
+      min-width: $btn-icon-size-lg;
+      height: $btn-icon-size-lg;
 
       i.now-ui-icons,
       i.fa {
@@ -81,8 +81,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-12px, -12px);
-      line-height: 1.5626rem;
       width: 25px;
+      line-height: 1.5626rem;
     }
   }
 
@@ -98,30 +98,37 @@
 
 // Apply the mixin to the buttons
 // .btn-default { @include btn-styles($default-color, $default-states-color); }
+
 .btn-primary {
   @include btn-styles($primary-color, $primary-states-color);
 }
+
 .btn-success {
   @include btn-styles($success-color, $success-states-color);
 }
+
 .btn-info {
   @include btn-styles($info-color, $info-states-color);
 }
+
 .btn-warning {
   @include btn-styles($warning-color, $warning-states-color);
 }
+
 .btn-danger {
   @include btn-styles($danger-color, $danger-states-color);
 }
+
 .btn-neutral {
   @include btn-styles($white-color, $white-color);
 }
 
 .btn {
+
   &:disabled,
   &[disabled],
   &.disabled {
-    @include opacity(.5);
+    @include opacity(0.5);
   }
 }
 
@@ -138,16 +145,18 @@
 .btn-simple {
   border: $border;
   border-color: $default-color;
-  padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
   background-color: $transparent-bg;
+  padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
 }
 
 .btn-simple,
 .btn-link {
+
   &.disabled,
   &:disabled,
   &[disabled],
   fieldset[disabled] & {
+
     &,
     &:hover,
     &:focus,
@@ -169,22 +178,25 @@
 
 .btn-link {
   border: $none;
-  padding: $padding-base-vertical $padding-base-horizontal;
   background-color: $transparent-bg;
+  padding: $padding-base-vertical $padding-base-horizontal;
 }
 
 .btn-wd {
   min-width: 140px;
 }
+
 .btn-group.select {
   width: 100%;
 }
+
 .btn-group.select .btn {
   text-align: left;
 }
+
 .btn-group.select .caret {
   position: absolute;
   top: 50%;
-  margin-top: -1px;
   right: 8px;
+  margin-top: -1px;
 }

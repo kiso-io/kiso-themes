@@ -4,7 +4,12 @@
     width: 100%;
     background-color: $brand-primary;
 
-    padding: 18vh;
+    padding: 4rem 0;
+
+    @media (min-width: 576px) {
+      padding: 18vh;
+    }
+
     color: white;
     position: relative;
     background-repeat: no-repeat;
