@@ -4,7 +4,7 @@
     width: 100%;
     background-color: $brand-primary;
 
-    padding: 8%;
+    padding: 18vh;
     color: white;
     position: relative;
     background-repeat: no-repeat;
@@ -24,7 +24,8 @@
     font-size: 0.8em;
 
     a {
-      background-color: lighten($brand-primary, 60%);
+      background-color: tint($brand-primary, 60%);
+      @include color-yiq(tint($brand-primary, 60%));
       text-align: center;
       display: block;
       padding: 10px 0;
