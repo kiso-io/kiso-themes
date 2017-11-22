@@ -133,7 +133,7 @@
     .form-control {
       border-color: $white-color;
 
-      @include form-control-placeholder($white-color, $opacity-1);
+      @include form-control-placeholder($white-color);
     }
 
     .input-group-addon {

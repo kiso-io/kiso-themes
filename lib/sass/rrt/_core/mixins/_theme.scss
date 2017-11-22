@@ -194,5 +194,46 @@
     $dropdown-item-color: map-get($styles, dropdown-item-color) !global;
   }
 
+  // Forms
+  @if(map-has-key($styles, form-input-placeholder)) {
+    $form-input-placeholder: map-get($styles, form-input-placeholder) !global;
+  }
+
+  @if(map-has-key($styles, form-input-focus-border)) {
+    $form-input-focus-border: map-get($styles, form-input-focus-border) !global;
+  }
+
+  @if(map-has-key($styles, form-input-color)) {
+    $form-input-color: map-get($styles, form-input-color) !global;
+  }
+
+  @if(map-has-key($styles, form-input-focus-color)) {
+    $form-input-focus-color: map-get($styles, form-input-focus-color) !global;
+  }
+
+  @if(map-has-key($styles, form-input-focus-bg)) {
+    $form-input-focus-bg: map-get($styles, form-input-focus-bg) !global;
+  }
+
+  @if(map-has-key($styles, form-input-has-danger-focus-bg)) {
+    $form-input-has-danger-focus-bg: map-get($styles, form-input-has-danger-focus-bg) !global;
+  }
+
+  @if(map-has-key($styles, checkbox-check)) {
+    $checkbox-check: map-get($styles, checkbox-check) !global;
+  }
+
+  @if(map-has-key($styles, form-input-bg)) {
+    $form-input-bg: map-get($styles, form-input-bg) !global;
+  }
+
+  @if(map-has-key($styles, form-input-disabled-bg)) {
+    $form-input-disabled-bg: map-get($styles, form-input-disabled-bg) !global;
+  }
+
+  // Input Groups
+  @if(map-has-key($styles, input-group-focus-bg)) {
+    $input-group-focus-bg: map-get($styles, input-group-focus-bg) !global;
+  }
 
 }

@@ -375,3 +375,16 @@ $button-default-color: $brand-primary;
 
 $dropdown-bg: white;
 $dropdown-item-color: black;
+
+$form-input-focus-background: transparent;
+$form-input-placeholder: lighten($primary-color, 10%);
+$form-input-color: $brand-primary;
+$form-input-has-danger-focus-bg: transparent;
+$form-input-bg: transparent;
+$form-input-disabled-bg: $light-gray;
+
+$checkbox-check: $brand-primary;
+
+$input-group-focus-bg: transparent;
+
+

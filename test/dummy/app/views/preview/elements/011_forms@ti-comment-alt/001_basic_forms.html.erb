@@ -2,7 +2,9 @@
   <div class='row'>
     <div class='col-12'>
       <div class="card card-default">
-        <h3 class="card-header">Basic Forms</h3>
+        <div class="card-header">
+          <h6>Basic Forms</h6>
+        </div>
         <div class="card-body">
           <form>
             <fieldset>
@@ -32,7 +34,7 @@
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <h3 class="card-header">Forms Controls</h3>
+        <h6 class="card-header">Forms Controls</h6>
         <div class="card-body">
           <form>
             <div class="form-group">
@@ -70,30 +72,33 @@
   </div>
 
   <div class="card">
+    <h6 class="card-header">Form Control Sizing</h6>
     <div class="card-body">
-      <h3 class="card-header">Form Control Sizing</h3>
       <form action="">
         <div class="form-group">
-
           <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
         </div>
         <div class="form-group">
-
           <input class="form-control" type="text" placeholder="Default input">
         </div>
         <div class="form-group">
-
           <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
         </div>
-        <select class="form-control form-control-lg">
-          <option>Large select</option>
-        </select>
-        <select class="form-control">
-          <option>Default select</option>
-        </select>
-        <select class="form-control form-control-sm">
-          <option>Small select</option>
-        </select>
+        <div class="form-group">
+          <select class="form-control form-control-lg">
+            <option>Large select</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="form-control">
+            <option>Default select</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="form-control form-control-sm">
+            <option>Small select</option>
+          </select>
+        </div>
       </form>
     </div>
 
@@ -101,7 +106,7 @@
 
   <div class="card card-default">
     <div class="card-header">
-      <h3 class="card-title">Inline Forms</h3>
+      <h6 class="card-title">Inline Forms</h6>
     </div>
     <div class="card-body">
       <form class="form-inline" role="form">
@@ -132,7 +137,7 @@
 
   <div class="card">
     <div class="card-header">
-      <h3>Horizontal Forms</h3>
+      <h6>Horizontal Forms</h6>
     </div>
     <div class="card-body">
       <div class="container">
@@ -198,7 +203,7 @@
     <div class='col-sm-12'>
       <div class="card card-default">
         <div class="card-header">
-          <h3 class="card-title">Grid Forms</h3>
+          <h6 class="card-title">Grid Forms</h6>
         </div>
         <div class="card-body">
           <form>
@@ -252,21 +257,7 @@
     <div class='col-sm-12'>
       <div class="card card-default">
         <div class="card-header">
-          <h3 class="card-title">Focus State</h3>
-        </div>
-        <div class="card-body">
-          <form role="form">
-            <input class="form-control" id="focusedInput" type="text" value="Demonstrative focus state">
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class='row'>
-    <div class='col-sm-12'>
-      <div class="card card-default">
-        <div class="card-header">
-          <h3 class="card-title">Disabled Forms</h3>
+          <h6 class="card-title">Disabled Forms</h6>
         </div>
         <div class="card-body">
           <form role="form">
@@ -293,7 +284,7 @@
       </div>
       <div class="card card-default">
         <div class="card-header">
-          <h3 class="card-title">Custom File Input</h3>
+          <h6 class="card-title">Custom File Input</h6>
         </div>
         <div class="card-body">
           <label class="custom-file">
@@ -302,29 +293,13 @@
           </label>
         </div>
       </div>
-      <div class="card card-default">
-        <div class="card-header">
-          <h3 class="card-title">Custom Avatar File Input</h3>
-        </div>
-        <div class="card-body">
-          <div class="avatar-uploader">
-            <div class="inner">
-              <%= random_avatar 200, "thumbnail" %>
-              <span class="icon-wrapper">
-                <i class='fa fa-cloud-upload fa-fw'></i>
-              </span>
-              <input type="file" name="avatar">
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <div class='row'>
     <div class='col-sm-12'>
       <div class="card card-default">
         <div class="card-header">
-          <h3 class="card-title">Validation States</h3>
+          <h6 class="card-title">Validation States</h6>
         </div>
         <div class="card-body">
           <div class="form-group">
@@ -334,30 +309,6 @@
           <div class="form-group">
             <label class="control-label" for="inputError1">Input with error</label>
             <input type="text" class="form-control is-invalid" id="inputError1">
-          </div>
-          <div class="has-success">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" id="checkboxSuccess" value="option1">
-                Checkbox with success
-              </label>
-            </div>
-          </div>
-          <div class="has-warning">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" id="checkboxWarning" value="option1">
-                Checkbox with warning
-              </label>
-            </div>
-          </div>
-          <div class="has-error">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" id="checkboxError" value="option1">
-                Checkbox with error
-              </label>
-            </div>
           </div>
           <hr>
             <legend>With Optional Icons</legend>

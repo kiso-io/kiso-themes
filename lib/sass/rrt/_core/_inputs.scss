@@ -1,11 +1,12 @@
-@include form-control-placeholder($dark-gray, 1);
+@include form-control-placeholder($form-input-placeholder);
 
 .form-control {
   background-color: $transparent-bg;
   border: 1px solid $dark-gray;
   border-radius: $form-input-radius;
-  color: $black-color;
+  color: $form-input-color;
   line-height: normal;
+
   @include transition-input-focus-color();
   @include box-shadow(none);
 
@@ -17,7 +18,9 @@
     border: 1px solid $primary-color;
     @include box-shadow(none);
     outline: 0 !important;
-    color: $black-color;
+    color: $form-input-color;
+
+    background-color: $form-input-focus-background;
 
     & + .input-group-addon,
     & ~ .input-group-addon {
@@ -52,7 +55,7 @@
     background-color: rgba(222, 222, 222, .1);
 
     &:focus {
-      background-color: $white-color;
+      background-color: $form-input-has-danger-focus-bg;
     }
   }
 
@@ -70,11 +73,6 @@
     border-radius: $border-radius-large $border-radius-large 0 0;
     border-bottom-color: transparent;
   }
-
-  & + .input-group-addon {
-    background-color: $white-bg;
-  }
-
 }
 
 select[multiple] {
@@ -155,92 +153,14 @@ select[multiple] {
   }
 }
 
-.input-group-addon {
-  background-color: transparent;
-  border: 1px solid $dark-gray;
-  border-radius: $form-input-radius;
-  color: $dark-background;
-  padding: $padding-base-vertical - 1 0 $padding-base-vertical - 1 $padding-base-horizontal - 1;
-
-  @include transition-input-focus-color();
-
-  .has-success &,
-  .has-danger & {
-    background-color: $white-color;
-  }
-  .has-danger .form-control:focus + & {
-    color: $danger-color;
-  }
-  .has-success .form-control:focus + & {
-    color: $success-color;
-  }
-
-  & + .form-control,
-  & ~ .form-control {
-    @include input-size($padding-base-vertical - 1, $padding-base-horizontal);
-    padding-left: 18px;
-  }
-
-  i {
-    width: 17px;
-  }
-}
-
-.input-group-focus {
-  .input-group-addon {
-    background-color: $white-bg;
-    border-color: $primary-color;
-  }
-
-  &.form-group-no-border {
-    .input-group-addon {
-      background-color: $opacity-gray-5;
-    }
-  }
-}
-
-
-.input-group[disabled] {
-  .input-group-addon {
-    background-color: $dark-gray;
-  }
-}
-.input-group .form-control:first-child,
-.input-group-addon:first-child,
-.input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
-  border-right: 0 none;
-}
-.input-group .form-control:last-child:not(:first-child),
-.input-group-addon:last-child,
-.input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child) {
-  border-left: 0 none;
-}
-
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: $light-gray;
+  background-color: $form-input-disabled-bg;
   color: $default-color;
   cursor: not-allowed;
 }
 
-.input-group-btn .btn {
-  border-width: $border-thin;
-  padding: calc( #{$padding-btn-vertical} + 2px ) $padding-base-horizontal;
-}
-.input-group-btn .btn-default:not(.btn-fill) {
-  border-color: $dark-gray;
-}
-
-.input-group-btn:last-child > .btn {
-  margin-left: 0;
-  border-radius: $form-input-radius;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-right: 1rem;
-}
 
 textarea.form-control {
   max-width: 100%;
@@ -338,3 +258,5 @@ textarea.form-control {
     transform: translateX($custom-control-indicator-size * .75);
   }
 }
+
+@import 'input_groups';
