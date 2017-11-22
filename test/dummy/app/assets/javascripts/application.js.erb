@@ -36,7 +36,6 @@ function setThemeMenuItemActive(themeName, styleName) {
         .children()
         .map(function(i, styleEl) {
           $(styleEl).removeClass('active');
-          console.log(styleEl, styleEl.dataset['color'])
 
           if (
             styleEl.dataset['color'].toLowerCase() === styleName.toLowerCase()
