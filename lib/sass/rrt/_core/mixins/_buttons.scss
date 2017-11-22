@@ -96,7 +96,7 @@
   }
 
   &.btn-link {
-    color: $btn-color;
+    @include color-yiq($btn-color);
 
     &:hover,
     &:focus,
@@ -104,7 +104,7 @@
       box-shadow: none;
       background-color: $transparent-bg;
       text-decoration: none;
-      color: $btn-states-color;
+      @include color-yiq($btn-states-color);
     }
   }
 
