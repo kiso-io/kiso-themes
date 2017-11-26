@@ -105,7 +105,7 @@ task :release_version do
 end
 
 task :deploy_demo do
-  sh "rsync -cavtX --delete ./demo/localhost:4000/ deploy@192.241.204.175:/home/deploy/apps/rrtdotcom_production/shared/public/demos/ives/;"
+  sh "rsync -cavtX --delete ./demo deployer@rapidrailsthemes.com:/home/deployer/apps/rrtdotcom/shared/public/demos;"
 end
 
 task :bake_product_shots do
@@ -115,54 +115,38 @@ task :bake_product_shots do
   end
 end
 
-task :make_demo do
-  sh "rm -rf demo/"
-
-  Rake::Task["compile_assets"].invoke
-
-  cd "test/dummy" do
-    setup_bundler
-    start_server
-
-    RRT::THEMES.each do |theme|
-      styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
-      style = styles[0]
-      sh "wget --mirror --content-disposition -nv -p -q -nH --show-progress --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo/#{theme.downcase}/#{style} 'http://localhost:4000/preview/001_dashboards@ti-dashboard%2F001_dashboard_1?theme=#{theme.downcase}&style=#{style}'; true"
-    end
-
-    stop_server
-  end
-
+task :fix_stylesheets do
   RRT::THEMES.each do |theme|
     styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
 
-    cd "demo/#{theme}" do
-      styles[1..-1].each do |style|
-        # Copy the first style color folder to the destination color
-        sh "cp -R #{styles[0]} #{style.downcase}"
+    styles.each do |style|
+      cd "demo/#{theme.downcase}/#{style.downcase}/assets/styles/#{theme.downcase}" do
+        sh "mv #{style.downcase}.self* #{style.downcase}.self.css"
+
+        # Remove the protocol scheme
+        sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
+      end
+      cd "demo/#{theme.downcase}/#{style.downcase}/preview" do
+        sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/#{style.downcase}\.self\-.*\"/#{style.downcase}.self.css\"/g'"
+      end
+    end
+  end
+end
+
+task :clean_demo do
+  RRT::THEMES.each do |theme|
+    styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
+
+    styles.each do |style|
+      cd "demo/#{theme.downcase}/#{style.downcase}/preview" do
+        # Remove the protocol scheme
+        sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
+
+        sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/data-image-src=\"\\/assets/data-image-src=\"\\/demos\\/#{theme.downcase}\\/#{style.downcase}\\/assets/g'"
       end
 
-      styles.each do |style|
-        cd "#{style.downcase}/assets" do
-          sh "cp -R font-awesome/ styles/font-awesome"
-          sh "cp -R themify/ styles/themify"
-          sh "cp -R ionicons/ styles/ionicons"
-        end
-
-        cd "#{style.downcase}/preview" do
-          sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/#{styles[0]}\.self\-.*\"/#{style.downcase}.self.css\"/g'"
-
-          sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/data-image-src=\"\\/assets/data-image-src=\"\\/demos\\/#{theme.downcase}\\/#{style.downcase}\\/assets/g'"
-
-          # Remove the protocol scheme
-          sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http:\\/\\//\\/\\//g'"
-        end
-
-        sh "cp ../../app/assets/stylesheets/rrt/#{theme}/#{style}.css.erb #{style}/assets/styles/#{theme}/#{style}.self.css"
-        cd "#{style}/assets/styles/#{theme}" do
-          sh "perl -i -pe 's,<%=\s?asset_path \",../,g' ./* "
-          sh "perl -i -pe 's,\" %>,,g' ./* "
-        end
+      cd "demo/#{theme.downcase}/#{style.downcase}/assets/styles/#{theme.downcase}" do
+        sh "mv #{style.downcase}.self* #{style.downcase}.self.css"
       end
     end
   end
@@ -179,6 +163,29 @@ task :make_demo do
     sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fv=4.7.0//g'"
     sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fv=2.0.0//g'"
   end
+end
+
+task :make_demo do
+  sh "rm -rf demo/"
+
+  Rake::Task["compile_assets"].invoke
+
+  cd "test/dummy" do
+    setup_bundler
+    start_server
+
+    RRT::THEMES.each do |theme|
+      styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
+      styles.each do |style|
+        sh "wget --mirror --content-disposition -nv -p -q -nH --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo/#{theme.downcase}/#{style} 'http://localhost:4000/preview/001_dashboards@ti-dashboard%2F001_dashboard_1?theme=#{theme.downcase}&style=#{style}'; true"
+      end
+    end
+
+    stop_server
+  end
+
+  Rake::Task["clean_demo"].invoke
+  Rake::Task["fix_stylesheets"].invoke
 end
 
 def server_running?
