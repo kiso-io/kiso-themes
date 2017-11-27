@@ -10,7 +10,6 @@ module RRT
       class_attribute :_view_type
 
       argument :actions, type: :array, required: true, banner: "ACTION", desc: "The action, also the name of the view."
-
       class_option :variant, :type => :string, :default => 1, :description => "The template variant (i.e. 1, 2 etc)"
 
       hide!

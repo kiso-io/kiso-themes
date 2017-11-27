@@ -1,22 +1,28 @@
+require 'pathname'
 require "generators/rrt/handler_support"
 require_relative "../../../support/page_rewriter"
 
 module RRT
   module Generators
     class ContentBlocksGenerator < Rails::Generators::Base
-      source_root File.expand_path('../../../../app/views', __FILE__)
-
-      namespace "rrt:content_blocks"
+      include HandlerSupport
 
       desc "Copies the bundled content blocks into your views directory."
+      source_root File.expand_path('../../../../app/views', __FILE__)
+      namespace "rrt:content_blocks"
 
       def copy_content_blocks
-        directory 'content_blocks', Rails.root.join('app/views/content_blocks'), recursive:true
         layouts_path = "app/views/content_blocks"
-        layouts = Dir.glob(File.expand_path("../../../../app/views/content_blocks/**/*", __FILE__)).map { |lf| File.basename(lf, ".html.#{handler}")}
-        puts layouts.inspect
+        source_path = "../../../../app/views/content_blocks"
+        target_full_base_path = Pathname.new(File.expand_path(source_path, __FILE__))
+        layouts = Dir.glob(File.expand_path("#{source_path}/**/*", __FILE__)).select { |lf|
+          lf.end_with? handler
+        }.map { |lf|
+          Pathname.new(lf).relative_path_from(target_full_base_path).to_s
+        }
+
         layouts.each do |name|
-          #copy_file "../../../../app/views/content_blocks/#{name}.html.#{handler}", "#{layouts_path}/#{name}.html.#{handler}"
+          copy_file File.join(source_path, name), "#{layouts_path}/#{name}"
         end
       end
     end
