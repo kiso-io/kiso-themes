@@ -1,0 +1,20 @@
+%nav.navbar.navbar-landing.navbar-light.navbar-expand-lg.my-0
+  %a.navbar-brand{href: "javascript:"}
+    = image_tag image_path('rrt/pyrrmid_64.png'), width: 32, height: 32, class: 'mr-2'
+    PYRMID
+  %button.navbar-toggler{"aria-controls" => "standardLandingNavbarWithSignupSignin", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#standardLandingNavbarWithSignupSignin", "data-toggle" => "collapse", type: "button"}
+    %span.navbar-toggler-icon
+  #standardLandingNavbarWithSignupSignin.collapse.navbar-collapse
+    %ul.nav.navbar-nav.ml-auto
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} HOME
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} ABOUT
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} TEAM
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} CONTACT
+      %li.nav-item
+        %a.btn.btn-sm.btn-outline-primary{href: "javascript:"} SIGN IN
+      %li.nav-item
+        %a.btn.btn-sm.btn-primary.text-white{href: "javascript:"} SIGN UP

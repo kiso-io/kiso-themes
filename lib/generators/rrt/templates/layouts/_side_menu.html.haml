@@ -1,0 +1,42 @@
+%nav.nav-side-menu.navbar-dark.navbar-expand-lg
+  = render partial: 'layouts/side_menu_header'
+  #menu-content.navbar-collapse.collapse
+    .nav-side-container
+      %ul.navbar-nav.flex-column
+        = render partial: 'layouts/side_menu_main_content'
+        %li.nav-item
+          %a.nav-link{"aria-expanded" => "false", href: "#"}
+            = theme_icon_tag "layout-menu-v"
+            %span Multi-Level Menu
+            %span.fa.arrow
+          %ul.nav-item.nav-second-level.collapse{"aria-expanded" => "false"}
+            %li.nav-item
+              %a.nav-link{href: "#"} Second Level Item
+            %li.nav-item
+              %a.nav-link{href: "#"} Second Level Item
+            %li.nav-item
+              %a.nav-link{"aria-expanded" => "false", href: "#"}
+                %span Third Level
+                %span.fa.arrow
+              %ul.nav-item.nav-third-level.collapse
+                %li.nav-item
+                  %a.nav-link{href: "#"} Third Level Item
+                %li.nav-item
+                  %a.nav-link{href: "#"} Third Level Item
+                %li.nav-item
+                  %a.nav-link{href: "#"} Third Level Item
+                %li.nav-item
+                  %a.nav-link{"aria-expanded" => "false", href: "#"}
+                    %span Fourth Level
+                    %span.fa.arrow
+                  %ul.nav-item.nav-fourth-level.collapse{"aria-expanded" => "false"}
+                    %li.nav-item
+                      %a.nav-link{href: "#"} Fourth Level Item
+                    %li.nav-item
+                      %a.nav-link{href: "#"} Fourth Level Item
+                    %li.nav-item
+                      %a.nav-link{href: "#"} Fourth Level Item
+                    %li.nav-item
+                      %a.active{href: "#"} Fourth Level Item
+              / /.nav-third-level
+          / /.nav-second-level

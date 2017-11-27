@@ -1,0 +1,16 @@
+.navbar-header
+  .profile
+    = random_avatar 60, "rounded-circle profile-image"
+    .profile-body
+      %h6 Fill Murray
+      .user-links
+        %a.btn.btn-link{"data-original-title" => "Profile", "data-placement" => "bottom", "data-toggle" => "tooltip", href: "#"}
+          = theme_icon_tag "user"
+        %a.btn.btn-link{"data-original-title" => "Messages", "data-placement" => "bottom", "data-toggle" => "tooltip", href: "#"}
+          = theme_icon_tag "email"
+        %a.btn.btn-link{"data-original-title" => "Settings", "data-placement" => "bottom", "data-toggle" => "tooltip", href: "#"}
+          = theme_icon_tag "settings"
+        %a.btn.btn-link{"data-original-title" => "Logout", "data-placement" => "bottom", "data-toggle" => "tooltip", href: "#"}
+          = theme_icon_tag "power-off"
+  %button.navbar-toggler.collapsed{"aria-controls" => "menu-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#menu-content", "data-toggle" => "collapse", type: "button"}
+    %span.navbar-toggler-icon

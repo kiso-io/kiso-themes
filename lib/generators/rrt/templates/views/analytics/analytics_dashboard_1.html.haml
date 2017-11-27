@@ -1,0 +1,36 @@
+= content_for :js_libs, "modernizr demo-dashboard chartjs"
+.container-fluid
+  .row
+    .col-xs-12.col-sm-12.col-md-9.col-lg-9
+      .row
+        - metric_names.each do |metric|
+          .col-xs-12.col-sm-12.col-md-6.col-lg-6
+            .card.card-metric.card-full-bleed
+              .card-body
+                %canvas.metric-graph.metric-random-graph
+                .metric-header
+                  %h6= metric[:name]
+                  .metric-value= random_value metric[:type]
+                .metric-details
+                  %span
+                    - direction = increase_or_decrease
+                    %i{class: "fa #{increase_or_decrease_chevron direction} #{direction == :increase ? 'text-success' : 'text-danger'}"}
+                    = random_percent
+                    SINCE 30 Days Ago
+    .col-xs-12.col-sm-12.col-md-3.col-lg-3
+      .card.card-default
+        %h3.card-header Sales Activity
+        .card-body
+          %ul.left-timeline
+            - types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}]
+            - (1..10).each do |index|
+              %li.timeline-item
+                - instance = types[Random.rand(types.length)]
+                %time{class: "#{instance[:css_class]}"}
+                  %strong
+                    $#{Random.rand(120)}
+                .activity-text
+                  %strong Internet Genie
+                  %small.text-muted
+                    = instance[:klass].upcase
+                    \- #{time_ago_in_words( DateTime.now-(index.minutes) )}

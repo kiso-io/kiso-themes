@@ -1,0 +1,81 @@
+= render :layout => "layouts/base" do
+  %nav.navbar.navbar-expand-lg.bg-primary
+    %a.navbar-brand{href: "javascript:"}= app_name
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", type: "button"}
+      %span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto
+        %li.nav-item
+          %a.nav-link{href: "#"} Servers
+        %li.nav-item
+          %a.nav-link.disabled{href: "#"} Disabled
+      %ul.nav.navbar-nav
+        %li.nav-item.dropdown
+          %a#dropdownSearchButton.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+            = theme_icon_tag "search"
+          %ul.dropdown-menu.dropdown-menu-right{"aria-labelledby" => "dropdownSearchButton"}
+            %li
+              %form.form-inline{role: "search"}
+                .input-group.my-0
+                  %input#searchbox.form-control{placeholder: "Search", type: "text"}/
+        %li.nav-item.dropdown
+          %a#dropdownMenuButton.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+            = theme_icon_tag "settings"
+            %span.caret.caret-light
+          %ul.dropdown-menu.dropdown-menu-right{"aria-labelledby" => "dropdownMenuButton"}
+            %li
+              %a.dropdown-item{href: "#"} Site management
+            %li
+              %a.dropdown-item{href: "#"} User management
+            %li
+              %a.dropdown-item{href: "#"} Settings
+        %li.nav-item.dropdown.notifications
+          %a.nav-link.with-count{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+            = theme_icon_tag "bell"
+            %span.badge.badge-sm 2
+            %span.d-none.d-xs-block Notifications
+          %ul.dropdown-menu.dropdown-menu-right
+            %li.dropdown-item
+              .card
+                .card-header.text-center.text-primary
+                  %strong
+                    You have
+                    = succeed "notifications" do
+                      %span 2
+                .card-body
+                  .list-group
+                    %a.list-group-item{href: "#"}
+                      .media
+                        %img.d-flex.mr-3.rounded-circle{alt: "3", height: "32", src: "/assets/rrt/stock/3-9b9d225ea3cf9c9f07cea81d16c455fb6248b9ccf19717395fbcc184411f0a89.jpg", width: "32"}/
+                        .media-body
+                          %p My name is Inigo Montoya.
+                          %small.text-muted.d-block 10 minutes ago
+                    %a.media.list-group-item{href: ""}
+                      %span.media-body
+                        %div
+                          %p You've reached your space quota!
+                          .progress.progress-sm.m0
+                            .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "100", role: "progressbar", style: "width: 100%;"}
+                              %span.sr-only 100% Complete
+                        %small.text-muted 12 hours ago
+                .card-footer
+                  %a.pull-right{href: "#"}
+                    = theme_icon_tag "settings"
+                  %a{href: "#"} View all Notifications
+        %li.nav-item.dropdown.user-nav
+          %a.nav-link{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+            %img.avatar.rounded-circle{alt: "4", height: "34", src: "/assets/rrt/stock/4-36a07a4eb7045e8049c3529147e6f1383c0956e0e586e07927e356c18b6b7920.jpg", width: "34"}/
+            %span.caret.caret-light
+          %ul.dropdown-menu.dropdown-menu-right{role: "menu"}
+            %li.dropdown-item.text-center
+              .card
+                .card-body
+                  %img.avatar.img-rounded{alt: "2", height: "120", src: "/assets/rrt/stock/2-625f1b778bfa549542025e4c5c195a903aa82a0a0c72bdc85bc949fdca9aa5fb.jpg", width: "120"}/
+                  %p.m0.p0.d-block Fill Murray
+                  %p.small.m0.p0 Premium Account
+                .card-footer.d-flex.justify-content-between
+                  %div
+                    %a.btn.btn-neutral{href: "003_app_pages@fa-laptop%2F006_user_profile"} Edit Profile
+                  %div
+                    %a.btn.btn-neutral{href: "#"} Log Out
+  = yield

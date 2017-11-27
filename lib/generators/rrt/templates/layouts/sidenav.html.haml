@@ -1,0 +1,19 @@
+= render layout: "layouts/base" do
+  = render partial: "layouts/side_menu"
+  .main-content
+    = render partial: 'layouts/dashboard_top_nav'
+    - if content_for?(:description) || content_for?(:actions)
+      .scaffold.page-header
+        .container-fluid
+          .row.equal-cols
+            .col-12.col-md-10.d-flex.align-items-center
+              - if content_for?(:description)
+                %h2.m0= @title
+                = yield :description
+            .col-12.col-md-2.d-flex.align-items-center
+              - if content_for?(:actions)
+                = yield :actions
+      / /.page-header
+    .container.pt-4
+      = render "layouts/flashes"
+      = yield

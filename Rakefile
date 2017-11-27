@@ -20,10 +20,10 @@ end
 require 'page_rewriter'
 
 task :check_rrtdotcom_on_master do
-  cd "../rrt.com", verbose: false do
+  cd "../rrtdotcom", verbose: false do
     branch_name = `git rev-parse --abbrev-ref HEAD`.chomp
     if branch_name != 'master'
-      puts "🚨  CANNOT RELEASE: rrt.com is not on master"
+      puts "🚨  CANNOT RELEASE: rrtdotcom is not on master"
       exit
     end
   end
@@ -39,10 +39,10 @@ task :compile_assets do
   cd "test/dummy", verbose: false do
     setup_bundler
     puts "💥  Clobbering the old assets..."
-    sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
+    sh "bundle exec rake assets:clobber"
     puts "👷  Precompiling assets..."
-    sh "DRESSSED_BUILD=true bundle exec rake assets:precompile"
-    sh "DRESSSED_BUILD=true bundle exec rake non_digested"
+    sh "bundle exec rake assets:precompile"
+    sh "bundle exec rake non_digested"
   end
 
   mkdir_p "app/assets/stylesheets/rrt"
@@ -251,6 +251,13 @@ task :test => 'test:system'
 
 require 'fileutils'
 
+task :bake_generatable_views do
+  Rake::Task["bake_app_pages"].invoke
+  Rake::Task["bake_pages"].invoke
+  Rake::Task["bake_content_blocks"].invoke
+  Rake::Task["bake_layouts"].invoke
+end
+
 task :bake_app_pages do
   app_page_targets = [
     '007_app_pages@ti-layout/',
@@ -310,13 +317,6 @@ task :bake_app_pages do
       end
     end
   end
-end
-
-task :bake_generatable_views do
-  Rake::Task["bake_app_pages"].invoke
-  Rake::Task["bake_pages"].invoke
-  Rake::Task["bake_content_blocks"].invoke
-  Rake::Task["bake_layouts"].invoke
 end
 
 task :bake_pages do
@@ -393,4 +393,32 @@ task :bake_content_blocks do
     end
   end
 
+end
+
+task :cook_haml do
+  target_erb_dirs = [
+    'lib/generators/rrt/templates/layouts',
+    'app/views/content_blocks/app_navs',
+    'app/views/content_blocks/basic',
+    'app/views/content_blocks/general',
+    'app/views/content_blocks/headers',
+    'app/views/content_blocks/landing_navs',
+    'lib/generators/rrt/templates/views/analytics',
+    'lib/generators/rrt/templates/views/app_pages/user_account',
+    'lib/generators/rrt/templates/views/app_pages/user_account/_user_account',
+    'lib/generators/rrt/templates/views/dashboards',
+    'lib/generators/rrt/templates/views/emails',
+    'lib/generators/rrt/templates/views/frontend_pages/blog_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/error_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/faq_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/landing_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/legal_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/pricing_pages',
+  ]
+
+  target_erb_dirs.each do |target_erb_dir|
+    cd target_erb_dir do
+      sh 'find . -name \'*erb\' | xargs ruby -e \'ARGV.each { |i| puts "html2haml -r #{i} #{i.sub(/erb$/, "haml")}"}\' | bash'
+    end
+  end
 end

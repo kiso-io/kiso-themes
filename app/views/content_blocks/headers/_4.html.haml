@@ -1,0 +1,52 @@
+%body
+  %header.landing-header-1{style: "background-image: url(#{image_path('rrt/stock/landscape_13.jpg')})"}
+    .container
+      .row
+        .col-12
+          %nav.navbar.navbar-landing.navbar-dark.navbar-centered.navbar-expand-lg.my-3
+            %a.navbar-brand.d-lg-none{href: "javascript:"}
+              = image_tag image_path('rrt/pyrrmid_64.png'), width: 32, height: 32, class: 'mr-2'
+              PYRMID
+            %button.navbar-toggler{"aria-controls" => "standardLandingNavbarWithCenteredBrand", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#standardLandingNavbarWithCenteredBrand", "data-toggle" => "collapse", type: "button"}
+              %span.navbar-toggler-icon
+            #standardLandingNavbarWithCenteredBrand.collapse.navbar-collapse.text-white
+              %ul.nav.navbar-nav.navbar-left
+                %li.nav-item
+                  %a.nav-link{href: "javascript:"} HOME
+                %li.nav-item
+                  %a.nav-link{href: "javascript:"} ABOUT
+                %li.nav-item
+                  %a.nav-link{href: "javascript:"} TEAM
+                %li.nav-item
+                  %a.nav-link{href: "javascript:"} CONTACT
+              %a.navbar-brand.navbar-center.text-center.d-none.d-sm-none.d-md-none.d-lg-block{href: "javascript:"}
+                = image_tag image_path('rrt/pyrrmid_64.png'), width: 32, height: 32, class: 'mr-2'
+                PYRMID
+              %ul.nav.navbar-nav.navbar-right
+                %li.nav-item
+                  %a.btn.btn-sm.btn-outline-light.text-white.text-hover-dark{href: "javascript:"} SIGN IN
+    .container.header-caption
+      .row
+        .col-7.mr-auto.ml-auto.text-center
+          .text-white
+            %h1.mt-5.font-weight-bold.leading-tight WELCOME TO THE NEW THING
+            %p.lead Lorem ea sit vel laudantium numquam vel officiis impedit aliquam! Perspiciatis maiores veniam perspiciatis rem debitis.
+    .container
+      .row
+        .col-10.ml-auto.mr-auto.mt-5
+          .card
+            .card-body
+              %form.form-inline.d-flex.justify-content-center.justify-content-xl-between.flex-column.flex-lg-row
+                %label.sr-only{for: "inlineFormInputName2"} Email
+                .input-group.input-group-sm.mb-2.mb-lg-0
+                  %span#basic-addon1.input-group-addon= theme_icon_tag "email"
+                  %input#inlineFormInputName2.form-control{placeholder: "Your Email", type: "text"}/
+                %label.sr-only{for: "inlineFormInputGroupUsername2"} Password
+                .input-group.input-group-sm.mb-2.mb-lg-0
+                  %span#basic-addon1.input-group-addon= theme_icon_tag "key"
+                  %input#inlineFormInputGroupUsername2.form-control{placeholder: "Choose a Password", type: "password"}/
+                %label.sr-only{for: "inlineFormInputGroupUsername2"} Confirm Password
+                .input-group.input-group-sm.mb-2.mb-lg-0
+                  %span#basic-addon1.input-group-addon= theme_icon_tag "key"
+                  %input#inlineFormInputGroupUsername2.form-control{placeholder: "Confirm Password", type: "password"}/
+                %button.btn.btn-primary{type: "submit"} Sign up

@@ -1,0 +1,16 @@
+%nav{class: "navbar navbar-landing navbar-light navbar-expand-lg my-0 #{local_assigns.fetch(:nav_class, '')}"}
+  %a.navbar-brand{href: "javascript:"}
+    = image_tag image_path('rrt/pyrrmid_64.png'), width: 32, height: 32, class: 'mr-2'
+    = app_name
+  %button.navbar-toggler{"aria-controls" => "standardNavbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#standardNavbar", "data-toggle" => "collapse", type: "button"}
+    %span.navbar-toggler-icon
+  #standardNavbar.collapse.navbar-collapse
+    %ul.nav.navbar-nav.ml-auto
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} HOME
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} ABOUT
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} TEAM
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} CONTACT

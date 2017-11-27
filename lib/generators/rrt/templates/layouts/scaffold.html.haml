@@ -1,0 +1,15 @@
+= render "layouts/app_nav" do
+  .page-header.bg-white.d-flex.align-items-center.mb-3
+    .container
+      .row.align-items-center
+        .col-12.col-md-6
+          %h2.m-0.tracking-tighter= @title
+          = yield :description
+        .col-12.col-md-6
+          = yield :actions
+  / /.page-header
+  .container
+    .row
+      .col-12
+        = render "layouts/flashes"
+  = yield

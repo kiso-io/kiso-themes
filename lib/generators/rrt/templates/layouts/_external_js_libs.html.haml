@@ -1,0 +1,18 @@
+- @js_libs = yield :js_libs
+- if @js_libs.include? 'modernizr'
+  - content_for :javascript do
+    = javascript_include_tag "modernizr/modernizr.2.8.3.min"
+- if @js_libs.include? 'gmaps'
+  - content_for :javascript do
+    = javascript_include_tag "//maps.googleapis.com/maps/api/js?key=AIzaSyB-cfYp0VsRHQZCPk6Q6RCAkiqTI22ICqY&libraries=places"
+    = javascript_include_tag "gmaps/gmaps"
+- if @js_libs.include? 'flot'
+  - content_for :javascript do
+    = javascript_include_tag "flot/flot-chart"
+    = javascript_include_tag "flot/flot-chart-resize"
+    = javascript_include_tag "flot/flot-chart-time"
+    = javascript_include_tag "flot/flot-chart-stack"
+- if @js_libs.include? 'chartjs'
+  - content_for :javascript do
+    = javascript_include_tag "chartjs/Chart.bundle.min"
+    = javascript_include_tag "chartjs/Chart.min"
