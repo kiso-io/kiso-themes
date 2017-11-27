@@ -422,3 +422,31 @@ task :cook_haml do
     end
   end
 end
+
+task :cook_slim do
+  target_erb_dirs = [
+    'lib/generators/rrt/templates/layouts',
+    'app/views/content_blocks/app_navs',
+    'app/views/content_blocks/basic',
+    'app/views/content_blocks/general',
+    'app/views/content_blocks/headers',
+    'app/views/content_blocks/landing_navs',
+    'lib/generators/rrt/templates/views/analytics',
+    'lib/generators/rrt/templates/views/app_pages/user_account',
+    'lib/generators/rrt/templates/views/app_pages/user_account/_user_account',
+    'lib/generators/rrt/templates/views/dashboards',
+    'lib/generators/rrt/templates/views/emails',
+    'lib/generators/rrt/templates/views/frontend_pages/blog_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/error_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/faq_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/landing_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/legal_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/pricing_pages',
+  ]
+
+  target_erb_dirs.each do |target_erb_dir|
+    cd target_erb_dir do
+      sh 'find . -name \'*haml\' | xargs ruby -e \'ARGV.each { |i| puts "haml2slim #{i} #{i.sub(/haml$/, "slim")}"}\' | bash'
+    end
+  end
+end

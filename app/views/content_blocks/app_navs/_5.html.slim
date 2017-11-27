@@ -1,0 +1,30 @@
+nav.navbar.navbar-dark.navbar-expand-lg.bg-primary.my-0
+  a.navbar-brand href: "javascript:"  MY APP
+  button.navbar-toggler aria-controls="standardBasicAppUsernameNavbar" aria-expanded="false" aria-label=("Toggle navigation") data-target="#standardBasicAppUsernameNavbar" data-toggle="collapse", type: "button" 
+    span.navbar-toggler-icon
+  #standardBasicAppUsernameNavbar.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link href: "#"  Dashboard
+      li.nav-item
+        a.nav-link href: "#"  Orders
+      li.nav-item
+        a.nav-link href: "#"  Reports
+    ul.nav.navbar-nav
+      li.nav-item.dropdown.user-nav
+        a.nav-link aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" 
+          p.mr-1 Fill McMurray
+          span.dropdown-toggle.mr-2
+          = random_avatar 34, "d-flex rounded-circle"
+        ul.dropdown-menu.dropdown-menu-right role: "menu" 
+          li.dropdown-item.text-center
+            .card
+              .card-body
+                = random_avatar 120, "rounded-circle"
+                p.m0.p0.d-block Fill Murray
+                p.small.m0.p0 Premium Account
+              .card-footer.d-flex.justify-content-between
+                div
+                  a.btn.btn-neutral href: "003_app_pages@fa-laptop%2F006_user_profile"  Edit Profile
+                div
+                  a.btn.btn-neutral href: "#"  Log Out

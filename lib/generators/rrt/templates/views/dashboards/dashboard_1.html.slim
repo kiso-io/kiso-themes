@@ -1,0 +1,321 @@
+= content_for :js_libs, "modernizr gmaps flot chartjs demo-dashboard demo-gmaps"
+.container-fluid
+  .row
+    .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
+      .card.card-mini.inspectable
+        /! component-title: Mini Card
+        .card-body
+          .media
+            .d-flex.align-self-center.mr-3
+              span
+                = theme_icon_tag "world", class: "display-4"
+            .media-body.text-right
+              h4.m-0.counter data-from="0" data-refresh-interval="80" data-speed="5000" data-to="100"  0
+              h6.m-0.text-muted Page Hits
+    .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
+      .card.card-mini.inspectable
+        /! component-title: Mini Card
+        .card-body
+          .media
+            .d-flex.align-self-center.mr-3
+              span
+                = theme_icon_tag "shopping-cart", class: "display-4"
+            .media-body.text-right
+              h4.m-0.counter data-from="0" data-refresh-interval="80" data-speed="500" data-to="1231"  0
+              h6.m-0.text-muted Total Sales
+    .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
+      .card.card-mini.inspectable
+        /! component-title: Mini Card
+        .card-body
+          .media
+            .d-flex.align-self-center.mr-3
+              span
+                = theme_icon_tag "money", class: "display-4"
+            .media-body.text-right
+              h4.m-0.cash-counter data-from="0" data-refresh-interval="80" data-speed="500" data-to="151231"  0
+              h6.m-0.text-muted Total Revenue
+    .col-lg-3.col-md-6.col-sm-12.animate-drop-fade
+      .card.card-mini.inspectable
+        /! component-title: Mini Card
+        .card-body
+          .media
+            .d-flex.align-self-center.mr-3
+              span
+                = theme_icon_tag "user", class: "display-4"
+            .media-body.text-right
+              h4.m-0.counter data-from="0" data-refresh-interval="50" data-speed="500" data-to="23312"  0
+              h6.m-0.text-muted Total Users
+  .row
+    .col-xs-12.col-sm-12.col-md-6.col-lg-6
+      .card.card-metric.card-full-bleed
+        .card-body
+          canvas.metric-graph.metric-random-graph
+          .metric-header
+            h6 New Subscribers
+            .metric-value 123
+          .metric-details
+            span
+              i.fa.fa-chevron-up.text-success
+              | 12% SINCE 30 Days Ago
+    .col-xs-12.col-sm-12.col-md-6.col-lg-6
+      .card.card-full-bleed.card-metric
+        .card-body
+          canvas.metric-graph.metric-random-graph
+          .metric-header
+            h6 Revenue
+            .metric-value $123,231,678
+          .metric-details
+            span
+              i.fa.fa-chevron-down.text-danger
+              | 22% SINCE 30 Days Ago
+  .row.equal-cols
+    .col-sm-12.col-md-9.animate-fade-in-1000
+      .card.card-full-height
+        .card-header.d-flex.align-items-center
+          h6.mr-auto SALES VS REFUNDS LAST 7 DAYS
+          .d-flex
+            .dropdown
+              button#salesAndRefundButton.nav-link.btn.btn-icon.btn-neutral aria-expanded="false" aria-haspopup="true" data-toggle="dropdown", type: "button" 
+                = theme_icon_tag "more"
+              .dropdown-menu.dropdown-menu-right aria-badgeledby="salesAndRefundButton" 
+                a.dropdown-item href: "#"  Action
+                a.dropdown-item href: "#"  Another action
+                a.dropdown-item href: "#"  Something else here
+        .card-body
+          canvas.sales-vs-refunds
+    .col-sm-12.col-md-3.animate-fade-in-1000
+      .card.card-full-height.d-flex
+        .card-body
+          h6 SALES ACTIVITY
+          .timeline style: "height: 450px" 
+            ul.left-timeline
+              - types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}]
+              - (1..8).each do |index|
+                li.timeline-item
+                  - instance = types[Random.rand(types.length)]
+                  time class: "#{instance[:css_class]}" 
+                    strong
+                      | $#{Random.rand(120)}
+                  .activity-text
+                    strong Internet Genie
+                    small.text-muted
+                      = instance[:klass].upcase
+                      | \- #{time_ago_in_words( DateTime.now-(index.minutes) )}
+    .row.is-flex
+      .col-sm-12.col-md-5.animate-fade-in-1000
+        .card.card-default
+          .card-body
+            h6 MASTER SERVER
+            .flot-realtime style: "height: 315px; width: 100%; display: block;" 
+          .card-footer
+            .row
+              .col-xs-12.col-sm-12.col-md-12.col-lg-12
+                .server-status-details.clearfix
+                  h5.text-center Memory Stats
+                  .row.stat-list.text-center
+                    dl.col-xs-6.col-sm-6.col-md-3
+                      dt In use
+                      dd 2.5 GB
+                    dl.col-xs-6.col-sm-6.col-md-3
+                      dt Total
+                      dd 4 GB
+                    dl.col-xs-6.col-sm-6.col-md-3
+                      dt Available
+                      dd 500 MB
+                    dl.col-xs-6.col-sm-6.col-md-3
+                      dt Swap
+                      dd 360 MB
+      .col-sm-12.col-md-7.animate-fade-in-1000
+        .card.card-default
+          .card-header
+            ul.nav.nav-tabs.nav-tabs-xs
+              li.mr-auto.d-flex.align-items-center
+                h6 RECENT ACTIVITY
+              li.nav-item
+                a.nav-link.active data-toggle="tab", href: "#dashboard-recent-comments"  Comments
+              li.nav-item
+                a.nav-link data-toggle="tab", href: "#dashboard-recent-threads"  Forum threads
+          .tab-content
+            #dashboard-recent-comments.tab-pane.fade.active.show style: "height: 444px; overflow-y: auto;" 
+              ul.list-group.list-group-flush
+                - (1..5).each do |index|
+                  li.list-group-item
+                    .media
+                      a.d-flex.mr-3 href: "#" 
+                        = random_avatar 40, "rounded-circle"
+                      .media-body
+                        strong
+                          a href: "#", title: ""  Fill Murray
+                          | commented on
+                          a href: "#", title: ""  Article Name
+                        p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae atque, dolore quo voluptatum sed voluptas incidunt aspernatur natus iste dolor neque porro quos illo quia iusto minima, nesciunt animi architecto.
+                        ul.nav.small
+                          li.nav-item
+                            a.mr-3.btn.btn-circle.btn-primary href: "#" 
+                              = theme_icon_tag "pencil-alt"
+                              | Edit
+                          li.nav-item
+                            a.btn.btn-circle.btn-secondary href: "#" 
+                              = theme_icon_tag "close"
+                              | Remove
+                          li.ml-auto
+                            span.text-muted
+                              = index
+                              | hour ago
+            #dashboard-recent-threads.tab-pane.fade
+              div style: "overflow-y: auto; width: auto; height: 444px;" 
+                ul.list-group.list-group-flush
+                  - (1..10).each do |index|
+                    li.list-group-item
+                      .media
+                        a.d-flex.mr-3 href: "#" 
+                          = random_avatar 40, "rounded-circle"
+                        .media-body
+                          h6.media-header
+                            a href: "#", title: ""  Lorem ipsum dolor sit amet
+                          .small.d-flex
+                            | Started by
+                            a href: "#", title: ""  Fill Murray
+                            | in
+                            a href: "#", title: ""  Forum name
+                            span.ml-auto 3h ago
+    .row
+      .col-sm-12
+        .card.card-default
+          .card-body
+            h6 MOST ACTIVE USERS
+            .table-responsive
+              table.table.table-hover.table-striped
+                thead
+                  tr
+                    th #
+                    th Full Name
+                    th Location
+                    th Status
+                    th Action
+                tbody
+                  tr
+                    td 1
+                    td
+                      strong Fred Berlin
+                    td Vancouver, Canada
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 2
+                    td Octavius Belt
+                    td London, United Kingdom
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 3
+                    td
+                      strong Cash Money
+                    td New York City, USA
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 4
+                    td
+                      strong Bailey Bingface
+                    td Liberia
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 5
+                    td
+                      strong Altus Zombo
+                    td Monrovia
+                    td
+                      span.badge.badge-danger Suspended
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 6
+                    td
+                      strong Leslie Taket
+                    td Dublin, Ireland
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 7
+                    td
+                      strong Leslie Taket
+                    td Dublin, Ireland
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 8
+                    td
+                      strong Leslie Taket
+                    td Dublin, Ireland
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 9
+                    td
+                      strong Leslie Taket
+                    td Dublin, Ireland
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+                  tr
+                    td 10
+                    td
+                      strong Leslie Taket
+                    td Dublin, Ireland
+                    td
+                      span.badge.badge-success Active
+                    td
+                      .btn-group.btn-group-xs
+                        a.btn.btn-neutral data-original-title="Delete" data-toggle="tooltip" = theme_icon_tag "trash"
+                        a.btn.btn-neutral data-original-title="Edit" data-toggle="tooltip" 
+                          = theme_icon_tag "pencil-alt"
+    .row
+      .col-sm-12
+        .card.card-default
+          .card-body
+            h6 ONLINE USERS
+            #gmapDemo style: "height: 400px; width: 100%;" 

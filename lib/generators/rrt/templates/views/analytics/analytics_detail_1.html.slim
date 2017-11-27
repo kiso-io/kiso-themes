@@ -1,0 +1,44 @@
+= content_for :js_libs, "modernizr demo-dashboard chartjs"
+.container-fluid
+  .card.card-metric.card-metric-detail.inspectable
+    /! component-title: Metric Detail Card
+    .card-header
+      h3 BOUNCE RATE
+      .current-value.flex-column.flex-md-row
+        h2 32%
+        p
+          i.fa.fa-chevron-down.text-danger
+          | 10%
+    .card-body
+      .metric-detail-graph
+        canvas.metric-random-graph.detail-graph
+      .metric-footer.container-fluid
+        .row
+          .value.col-12.col-md-3.pb-4.pb-md-0
+            h4
+              | 12%
+              small
+                i.fa.fa-chevron-down.text-danger
+                | 1%
+            h6.text-muted 3 MONTHS AGO
+          .value.col-12.col-md-3.pb-4.pb-md-0
+            h4
+              | 45%
+              small
+                i.fa.fa-chevron-up.text-success
+                | 18%
+            h6.text-muted 6 MONTHS AGO
+          .value.col-12.col-md-3.pb-4.pb-md-0
+            h4
+              | 50%
+              small
+                i.fa.fa-chevron-down.text-danger
+                | 12%
+            h6.text-muted 9 MONTHS AGO
+          .value.col-12.col-md-3.pb-4.pb-md-0
+            h4
+              | 68%
+              small
+                i.fa.fa-chevron-up.text-success
+                | 20%
+            h6.text-muted 12 MONTHS AGO
