@@ -2,10 +2,10 @@ require "generators/rrt/page_generator"
 
 module RRT
   module Generators
-    class DashboardPageGenerator < PageGenerator
+    class DashboardPagesGenerator < PageGenerator
       view_name "dashboards","dashboard"
 
-      namespace "rrt:dashboard_page"
+      namespace "rrt:dashboard_pages"
     end
   end
 end
