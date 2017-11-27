@@ -3,7 +3,7 @@ require "generators/rrt/page_generator"
 module RRT
   module Generators
     class FaqPagesGenerator < PageGenerator
-      desc "Installs the Ives faq page into the your chosen directory."
+      desc "Installs the Rapid Rails Themes faq page into the your chosen directory."
 
       namespace "rrt:faq_pages"
       view_name "frontend_pages/faq_pages","faq_page"
