@@ -7,6 +7,8 @@ module RRT
 
       source_root File.expand_path('../templates', __FILE__)
 
+      namespace "rrt:install"
+
       desc "Installs the RRT theme in your application."
 
       def copy_layouts

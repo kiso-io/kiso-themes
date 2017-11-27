@@ -6,6 +6,8 @@ module RRT
     class UserAccountPagesGenerator < AppPageGenerator
       desc "Installs the User pages under the /user route"
 
+      namespace "rrt:user_account_pages"
+
       page_type('user_account')
 
       def setup_routing

@@ -7,6 +7,7 @@ module RRT
 
       source_root File.expand_path('../templates', __FILE__)
 
+      namespace "rrt:devise"
       desc "Copy RRT's custom Devise layouts and Email templates to your project."
 
       def copy_layouts

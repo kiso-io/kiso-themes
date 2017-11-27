@@ -5,6 +5,7 @@ module RRT
     class LegalPagesGenerator < Rails::Generators::Base
       include HandlerSupport
 
+      namespace "rrt:legal_pages"
       desc "Installs the RRT legal pages into the your chosen directory."
 
       source_root File.expand_path('../templates/', __FILE__)

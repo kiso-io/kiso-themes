@@ -5,6 +5,7 @@ module RRT
     class ErrorPagesGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates/error_pages', __FILE__)
 
+      namespace "rrt:error_pages"
       desc "Installs the Ives error pages into the /public directory."
 
       def copy_stylesheet

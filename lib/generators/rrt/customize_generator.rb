@@ -6,6 +6,8 @@ module RRT
     class CustomizeGenerator < Rails::Generators::Base
       source_root File.expand_path('../../../../', __FILE__)
 
+      namespace "rrt:customize"
+
       desc "Installs required files to fully customize your RRT theme."
 
       class_option :theme_name, :type => :string, required: true, :description => "The name of the theme you wish to generate a customize stylesheet for"
