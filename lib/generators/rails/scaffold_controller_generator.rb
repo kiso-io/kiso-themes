@@ -18,7 +18,6 @@ module Rails
 
 
       def create_controller_files
-        puts "GOD DAMMMMMMMMMMMMMMMMMMMMMmmmmm"
         template_file = options.api? ? "api_controller.rb" : "controller.rb"
         template template_file, File.join("app/controllers", controller_class_path, "#{controller_file_name}_controller.rb")
       end

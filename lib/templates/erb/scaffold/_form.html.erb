@@ -1,5 +1,5 @@
 <%- if defined?(SimpleForm) -%>
-<%%= simple_form_for(@<%= singular_table_name %>, <%= Dresssed.key_value :wrapper, ":horizontal_form" %>, <%= Dresssed.key_value :html, '{ ' + Dresssed.key_value(:class, "'form-horizontal'") + ' }' %>) do |f| %>
+<%%= simple_form_for(@<%= singular_table_name %>, <%= RRT.key_value :wrapper, ":horizontal_form" %>, <%= RRT.key_value :html, '{ ' + RRT.key_value(:class, "'form-horizontal'") + ' }' %>) do |f| %>
   <%%= f.error_notification %>
 
   <div class="form-inputs">
@@ -11,22 +11,22 @@
   <div class="d-flex">
     <div class="ml-auto">
       <%%= f.button :submit %>
-      <%%= f.button :cancel, <%= Dresssed.key_value :to, "#{index_helper}_path" %> %>
+      <%%= f.button :cancel, <%= RRT.key_value :to, "#{index_helper}_path" %> %>
     </div>
   </div>
 <%% end %>
 
 <%- else -%>
 
-<%%= form_for(@<%= singular_table_name %>, <%= Dresssed.key_value :html, '{ ' + Dresssed.key_value(:class, "'form-horizontal'") + ' }' %>) do |f| %>
+<%%= form_for(@<%= singular_table_name %>, <%= RRT.key_value :html, '{ ' + RRT.key_value(:class, "'form-horizontal'") + ' }' %>) do |f| %>
   <%%= f.error_notification %>
 
   <div class="form-inputs">
   <%- attributes.each do |attribute| -%>
     <%%= f.form_group :<%= attribute.name %>, class: 'row' do |f| %>
-      <%%= f.label :<%= attribute.name %>, <%= Dresssed.key_value :class, "'control-label col-md-2'" %> %>
+      <%%= f.label :<%= attribute.name %>, <%= RRT.key_value :class, "'control-label col-md-2'" %> %>
       <div class='col-12 col-md-10'>
-        <%%= f.<%= attribute.field_type %> :<%= attribute.name %>, <%= Dresssed.key_value :class, "'form-control'" %> %>
+        <%%= f.<%= attribute.field_type %> :<%= attribute.name %>, <%= RRT.key_value :class, "'form-control'" %> %>
         <%%= f.error_messages %>
       </div>
     <%% end %>
@@ -36,8 +36,8 @@
 
   <div class="d-flex">
     <div class="ml-auto">
-      <%%= f.submit <%= Dresssed.key_value :class, "'btn btn-primary'" %> %>
-      <%%= link_to "Cancel", <%= index_helper %>_path, <%= Dresssed.key_value :class, "'btn btn-outline-default'" %> %>
+      <%%= f.submit <%= RRT.key_value :class, "'btn btn-primary'" %> %>
+      <%%= link_to "Cancel", <%= index_helper %>_path, <%= RRT.key_value :class, "'btn btn-outline-default'" %> %>
     </div>
   </div>
 <%% end %>
