@@ -2,7 +2,7 @@ require "generators/rrt/page_generator"
 
 module RRT
   module Generators
-    class AppPageGenerator < Rails::Generators::NamedBase
+    class AppPagesGenerator < Rails::Generators::NamedBase
       include HandlerSupport
 
       remove_hook_for :helper

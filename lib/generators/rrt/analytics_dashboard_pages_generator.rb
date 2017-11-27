@@ -2,10 +2,10 @@ require "generators/rrt/page_generator"
 
 module RRT
   module Generators
-    class AnalyticsDashboardPageGenerator < PageGenerator
+    class AnalyticsDashboardPagesGenerator < PageGenerator
       view_name "analytics", "analytics_dashboard"
 
-      namespace "rrt:analytics_dashboard_page"
+      namespace "rrt:analytics_dashboard_pages"
 
       def set_layout
         controller_const_name = "#{name.camelize}Controller".constantize

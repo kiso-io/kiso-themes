@@ -10,6 +10,7 @@
     </div>
     <div class="row mt-5">
       <div class="col-12 col-md-6 mr-auto ml-auto">
+        <%= render partial: "layouts/flashes" %>
         <div class="card">
           <div class="card-body">
             <div class="container">
@@ -40,8 +41,10 @@
 
                 <% if devise_mapping.rememberable? %>
                   <div class="d-flex align-items-center">
-                    <%= f.check_box :remember_me %>
-                    <%= f.label :remember_me, class: "checkbox m-0 mr-auto" %>
+                    <div class="checkbox m-0 mr-auto">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me, class: "checkbox m-0 mr-auto" %>
+                    </div>
                     <%= f.submit "Log in", class: "btn btn-primary" %>
                   </div>
                 <% end %>

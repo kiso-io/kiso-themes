@@ -1,9 +1,9 @@
 
-require "generators/rrt/app_page_generator"
+require "generators/rrt/app_pages_generator"
 
 module RRT
   module Generators
-    class UserAccountPagesGenerator < AppPageGenerator
+    class UserAccountPagesGenerator < AppPagesGenerator
       desc "Installs the User pages under the /user route"
 
       namespace "rrt:user_account_pages"
@@ -23,7 +23,7 @@ module RRT
         controller_const_name = "#{name.camelize}Controller".constantize
         target_controller_file_name = File.join('app/controllers', class_path, "#{file_name}_controller.rb")
 
-        ["index", "billing", "plan", "profile", "support", "notificaitons"].each do |method_name|
+        ["index", "billing", "plan", "profile", "support", "notifications"].each do |method_name|
           inject_into_file( target_controller_file_name, build_method(method_name), before: /^end/ )
         end
       end

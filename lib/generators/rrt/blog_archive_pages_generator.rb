@@ -2,10 +2,10 @@ require "generators/rrt/page_generator"
 
 module RRT
   module Generators
-    class BlogPostPageGenerator < PageGenerator
-      view_name "frontend_pages/blog_pages", "blog_post"
+    class BlogArchivePagesGenerator < PageGenerator
+      view_name "frontend_pages/blog_pages", "blog_archive"
 
-      namespace "rrt:blog_post_page"
+      namespace "rrt:blog_archive_pages"
 
       def set_layout
         controller_const_name = "#{name.camelize}Controller".constantize
