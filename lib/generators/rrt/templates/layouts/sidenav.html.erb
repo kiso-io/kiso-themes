@@ -3,6 +3,27 @@
 
   <div class="main-content">
     <%= render partial: 'layouts/dashboard_top_nav' %>
+
+    <% if content_for?(:description) || content_for?(:actions) %>
+      <div class="scaffold page-header">
+        <div class='container-fluid'>
+          <div class="row equal-cols">
+            <div class="col-12 col-md-10 d-flex align-items-center">
+              <% if content_for?(:description) %>
+                <h2 class='m0'><%= @title %></h2>
+                <%= yield :description %>
+              <% end %>
+            </div>
+            <div class="col-12 col-md-2 d-flex align-items-center">
+              <% if content_for?(:actions) %>
+                <%= yield :actions %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.page-header -->
+    <% end %>
+
     <div class="container pt-4">
       <%= render "layouts/flashes" %>
       <%= yield %>
