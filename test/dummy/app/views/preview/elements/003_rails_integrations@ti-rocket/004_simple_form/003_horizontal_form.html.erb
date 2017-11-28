@@ -1,0 +1,146 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h6>
+            Basic Forms
+          </h6>
+        </div>
+        <div class="card-body">
+          <form novalidate="novalidate" class="simple_form new_user" id="new_user" enctype="multipart/form-data" action="/" accept-charset="UTF-8" method="get">
+            <input name="utf8" type="hidden" value="✓">
+            <div class="alert alert-danger">Please review the problems below:</div>
+            <div class="form-group row email optional user_email">
+              <label class="col-sm-3 col-form-label email optional" for="user_email">Email</label>
+              <div class="col-sm-9">
+                <input class="form-control is-invalid string email optional" aria-invalid="true" placeholder="Email" type="email" name="user[email]" id="user_email"><span class="invalid-feedback">is invalid</span></div>
+            </div>
+            <div class="form-group row password optional user_password">
+              <label class="col-sm-3 col-form-label password optional" for="user_password">Password</label>
+              <div class="col-sm-9">
+                <input class="form-control is-invalid password optional" aria-invalid="true" placeholder="Password" type="password" name="user[password]" id="user_password"><span class="invalid-feedback">is invalid</span></div>
+            </div>
+            <div class="form-group row file optional user_file">
+              <div class="col-sm-9 offset-sm-3">
+                <label class="custom-file">
+                  <input type="file" id="file2" class="custom-file-input">
+                  <span class="custom-file-control"></span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group row boolean optional user_active">
+              <div class="col-sm-9 offset-sm-3">
+                <div class="form-check checkbox">
+                  <input value="0" type="hidden" name="user[active]">
+                  <input class="form-check-input boolean optional" aria-invalid="true" type="checkbox" value="1" name="user[active]" id="user_active">
+                  <label class="boolean optional form-check-label" for="user_active">
+                    Active</label>
+              </div><span class="invalid-feedback">is invalid</span></div>
+            </div>
+            <div class="form-group row check_boxes optional user_choices">
+              <label class="col-sm-3 col-form-label check_boxes optional">Choices</label>
+              <div class="col-sm-9">
+                <input type="hidden" name="user[choices][]" value="">
+                <div class="checkbox form-check">
+                  <input class="form-check-input is-invalid check_boxes optional" aria-invalid="true" type="checkbox" value="Option one is this and that—be sure to include why it's great" name="user[choices][]" id="user_choices_option_one_is_this_and_thatbe_sure_to_include_why_its_great">
+                  <label for="user_choices_option_one_is_this_and_thatbe_sure_to_include_why_its_great">
+                    Option one is this and that—be sure to include why it's great</label>
+                </div>
+                <div class="checkbox form-check">
+                  <input class="form-check-input is-invalid check_boxes optional" aria-invalid="true" type="checkbox" value="Option two can be something else and selecting it will deselect option one" name="user[choices][]" id="user_choices_option_two_can_be_something_else_and_selecting_it_will_deselect_option_one">
+                  <label for="user_choices_option_two_can_be_something_else_and_selecting_it_will_deselect_option_one">
+                    Option two can be something else and selecting it will deselect option one</label>
+              </div><span class="invalid-feedback">is invalid</span></div>
+            </div>
+            <div class="form-group row radio_buttons optional user_sex">
+              <label class="col-sm-3 col-form-label radio_buttons optional">Sex</label>
+              <div class="col-sm-9">
+                <input type="hidden" name="user[sex]" value="">
+                <div class="radio form-check checkbox checkbox-circle">
+                  <input class="form-check-input is-invalid radio_buttons optional" aria-invalid="true" type="radio" value="Male" name="user[sex]" id="user_sex_male">
+                  <label for="user_sex_male">
+                    Male</label>
+                </div>
+                <div class="radio form-check checkbox checkbox-circle">
+                  <input class="form-check-input is-invalid radio_buttons optional" aria-invalid="true" type="radio" value="Female" name="user[sex]" id="user_sex_female">
+                  <label for="user_sex_female">
+                    Female</label>
+              </div><span class="invalid-feedback">is invalid</span></div>
+            </div>
+            <div class="form-group row date optional user_created_at">
+              <label class="col-sm-3 col-form-label date optional" for="user_created_at_1i">Created at</label>
+              <div class="col-sm-9">
+                <div class="multi-select d-flex">
+                  <select id="user_created_at_1i" name="user[created_at(1i)]" class="form-control is-invalid date optional" aria-invalid="true">
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017" selected="selected">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                  </select>
+                  <select id="user_created_at_2i" name="user[created_at(2i)]" class="form-control is-invalid date optional" aria-invalid="true">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11" selected="selected">November</option>
+                    <option value="12">December</option>
+                  </select>
+                  <select id="user_created_at_3i" name="user[created_at(3i)]" class="form-control is-invalid date optional" aria-invalid="true">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28" selected="selected">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+              </div><span class="invalid-feedback">is invalid</span></div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <input type="submit" name="commit" value="Create User" class="btn btn-default ml-auto" data-disable-with="Create User">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

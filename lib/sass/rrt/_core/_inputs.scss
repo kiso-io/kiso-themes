@@ -260,3 +260,11 @@ textarea.form-control {
 }
 
 @import 'input_groups';
+
+.multi-select .form-control {
+    flex: auto
+}
+
+.multi-select .form-control+.form-control {
+    margin-left: 10px
+}
