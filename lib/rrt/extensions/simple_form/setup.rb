@@ -52,22 +52,22 @@ SimpleForm.setup do |config|
   # Vertical forms
   config.wrappers :vertical_form, **wrapper_options do |b|
     basic_input.call(b)
-    b.use :label, class: label_class
     b.use :input, **input_options, class: 'form-control'
+    b.use :label, class: label_class
     error_and_hint.call(b)
   end
 
   config.wrappers :vertical_file_input, **wrapper_options do |b|
     basic_input.call(b, :file)
-    b.use :label, class: label_class
     b.use :input, **input_options, class: 'form-control-file'
+    b.use :label, class: label_class
     error_and_hint.call(b)
   end
 
   config.wrappers :vertical_boolean, **wrapper_options, class: 'form-check checkbox' do |b|
     basic_input.call(b, :boolean)
-    b.use :label, class: 'form-check-label'
     b.use :input, class: 'form-check-input'
+    b.use :label, class: 'form-check-label'
     error_and_hint.call(b)
   end
 
