@@ -6,7 +6,7 @@
 
 <% if @js_libs.include? 'gmaps' %>
   <% content_for :javascript do %>
-    <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=AIzaSyB-cfYp0VsRHQZCPk6Q6RCAkiqTI22ICqY&libraries=places" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyB-cfYp0VsRHQZCPk6Q6RCAkiqTI22ICqY&libraries=places" %>
     <%= javascript_include_tag "gmaps/gmaps" %>
   <% end %>
 <% end %>

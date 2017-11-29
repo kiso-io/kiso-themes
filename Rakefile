@@ -124,7 +124,7 @@ task :fix_stylesheets do
         sh "mv #{style.downcase}.self* #{style.downcase}.self.css"
 
         # Remove the protocol scheme
-        sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
+        # sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
       end
       cd "demo/#{theme.downcase}/#{style.downcase}/preview" do
         sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/#{style.downcase}\.self\-.*\"/#{style.downcase}.self.css\"/g'"
@@ -140,7 +140,7 @@ task :clean_demo do
     styles.each do |style|
       cd "demo/#{theme.downcase}/#{style.downcase}/preview" do
         # Remove the protocol scheme
-        sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
+        #sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
 
         sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/data-image-src=\"\\/assets/data-image-src=\"\\/demos\\/#{theme.downcase}\\/#{style.downcase}\\/assets/g'"
       end
@@ -177,6 +177,7 @@ task :make_demo do
     RRT::THEMES.each do |theme|
       styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
       styles.each do |style|
+        puts "\nCOMPILING DEMO FOR #{theme.capitalize} - #{style.capitalize}"
         sh "wget --mirror --content-disposition -nv -p -q -nH --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo/#{theme.downcase}/#{style} 'http://localhost:4000/preview/001_dashboards@ti-dashboard%2F001_dashboard_1?theme=#{theme.downcase}&style=#{style}'; true"
       end
     end

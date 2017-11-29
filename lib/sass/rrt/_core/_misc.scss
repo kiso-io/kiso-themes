@@ -1,6 +1,8 @@
 html,
 body {
-  width: 100%;
+  /* Weirdly, if 100% is used for width instead of 100vw, then mobile
+     safari will not calculate the widths correctly inside an iframe */
+  width: 100vw;
   height: 100%;
 }
 
