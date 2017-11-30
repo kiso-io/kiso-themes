@@ -1,1 +1,1 @@
-//= require countTo/countTo
+//= require vendor/countTo/countTo

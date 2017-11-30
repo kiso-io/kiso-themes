@@ -127,7 +127,7 @@ task :fix_stylesheets do
         # sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
       end
       cd "demo/#{theme.downcase}/#{style.downcase}/preview" do
-        sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/#{style.downcase}\.self\-.*\"/#{style.downcase}.self.css\"/g'"
+        sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/#{style.downcase}\.self\-.*\"/#{style.downcase}.self.css\"/g'"
       end
     end
   end
@@ -142,7 +142,7 @@ task :clean_demo do
         # Remove the protocol scheme
         #sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
 
-        sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/data-image-src=\"\\/assets/data-image-src=\"\\/demos\\/#{theme.downcase}\\/#{style.downcase}\\/assets/g'"
+        sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/data-image-src=\"\\/assets/data-image-src=\"\\/demos\\/#{theme.downcase}\\/#{style.downcase}\\/assets/g'"
       end
 
       cd "demo/#{theme.downcase}/#{style.downcase}/assets/styles/#{theme.downcase}" do
@@ -153,15 +153,15 @@ task :clean_demo do
 
   cd "demo" do
     sh "for i in `find . -type f`; do mv $i `echo $i | cut -d? -f1`; done"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fbody=1//g'"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\.css\.css\"/\.css\"/g'"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3F.+$//g'"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3F-fvbane//g'"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fv=4.7.0.html//g'"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\?v=4.7.0//g'"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\?-fvbane//g'"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fv=4.7.0//g'"
-    sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/\%3Fv=2.0.0//g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\%3Fbody=1//g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\.css\.css\"/\.css\"/g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\%3F.+$//g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\%3F-fvbane//g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\%3Fv=4.7.0.html//g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\?v=4.7.0//g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\?-fvbane//g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\%3Fv=4.7.0//g'"
+    sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/\%3Fv=2.0.0//g'"
   end
 end
 

@@ -1,4 +1,4 @@
-//= require parallax/parallax
+//= require vendor/parallax/parallax
 
 (function() {
 

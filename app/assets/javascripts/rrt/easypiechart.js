@@ -1,4 +1,4 @@
-//= require easypiechart/jquery.easypiechart
+//= require vendor/easypiechart/jquery.easypiechart
 
 (function() {
 

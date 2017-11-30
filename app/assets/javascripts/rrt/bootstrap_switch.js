@@ -1,4 +1,4 @@
-//= require bootstrap_switch/bootstrap_switch
+//= require vendor/bootstrap_switch/bootstrap_switch
 
 (function() {
 

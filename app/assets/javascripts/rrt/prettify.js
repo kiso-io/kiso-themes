@@ -1,4 +1,4 @@
-//= require prettify/prettify
+//= require vendor/prettify/prettify
 
 (function() {
   function initPrettify() {

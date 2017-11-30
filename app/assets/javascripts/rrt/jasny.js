@@ -1,4 +1,4 @@
-//= require jasny/jasny_bootstrap
+//= require vendor/jasny/jasny_bootstrap
 
 (function() {
 

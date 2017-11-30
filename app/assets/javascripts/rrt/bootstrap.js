@@ -1,4 +1,4 @@
-//= require bootstrap/bootstrap
+//= require vendor/bootstrap/bootstrap
 
 (function() {
 

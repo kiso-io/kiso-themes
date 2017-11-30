@@ -21,7 +21,7 @@
 //= require rrt/prism
 //= require rrt/clipboard
 //= require rrt/countdown
-//= require parallax/parallax
+//= require rrt/parallax
 
 //= require rrt/demo/data_generator
 //= require rrt/demo/chartjs

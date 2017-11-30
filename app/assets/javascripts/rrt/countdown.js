@@ -1,5 +1,4 @@
-
-//= require countdown/countdown
+//= require vendor/countdown/countdown
 
 (function() {
 

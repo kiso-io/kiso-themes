@@ -1,4 +1,4 @@
-//= require clipboardjs/clipboard
+//= require vendor/clipboardjs/clipboard
 
 (function() {
 

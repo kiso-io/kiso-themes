@@ -1,4 +1,4 @@
-//= require fastclick/fastclick
+//= require vendor/fastclick/fastclick
 
 (function() {
 

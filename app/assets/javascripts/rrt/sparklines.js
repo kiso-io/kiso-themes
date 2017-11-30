@@ -1,1 +1,1 @@
-//= require sparklines/jquery.sparkline
+//= require vendor/sparklines/jquery.sparkline

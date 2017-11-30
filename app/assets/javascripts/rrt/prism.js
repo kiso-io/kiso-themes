@@ -1,4 +1,4 @@
-//= require prism/prism
+//= require vendor/prism/prism
 
 (function() {
   function initPrism() {

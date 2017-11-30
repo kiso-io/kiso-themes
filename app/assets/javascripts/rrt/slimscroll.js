@@ -1,1 +1,1 @@
-//= require slimscroll/slimscroll
+//= require vendor/slimscroll/slimscroll

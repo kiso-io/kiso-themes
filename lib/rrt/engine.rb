@@ -34,22 +34,22 @@ module RRT
 				end
 
         app.config.assets.precompile += [
-          'modernizr/modernizr.2.8.3.min.js',
+          'vendor/modernizr/modernizr.2.8.3.min.js',
 
-          'gmaps/gmaps.js',
-          'flot/flot-chart',
-          'flot/flot-chart-resize',
-          'flot/flot-chart-time',
-          'flot/flot-chart-stack',
+          'vendor/gmaps/gmaps.js',
+          'vendor/flot/flot-chart',
+          'vendor/flot/flot-chart-resize',
+          'vendor/flot/flot-chart-time',
+          'vendor/flot/flot-chart-stack',
 
-          'rickshaw/d3',
-          'rickshaw/rickshaw',
+          'vendor/rickshaw/d3',
+          'vendor/rickshaw/rickshaw',
 
-          'chartjs/Chart.bundle.min',
-          'chartjs/Chart.min',
+          'vendor/chartjs/Chart.bundle.min',
+          'vendor/chartjs/Chart.min',
 
-          'morris/raphael',
-          'morris/morris.min'
+          'vendor/morris/raphael',
+          'vendor/morris/morris.min'
         ]
     end
 

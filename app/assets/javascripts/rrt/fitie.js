@@ -1,4 +1,4 @@
-//= require fitie/fitie
+//= require vendor/fitie/fitie
 
 (function() {
 

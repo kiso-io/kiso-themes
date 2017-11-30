@@ -1,4 +1,4 @@
-//= require metis_menu/metis_menu
+//= require vendor/metis_menu/metis_menu
 
 (function() {
   function initMetisMenu() {
