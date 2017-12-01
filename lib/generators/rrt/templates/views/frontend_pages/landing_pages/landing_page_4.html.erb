@@ -1,11 +1,12 @@
 
-<%= content_for :js_libs, "parallax" %>
+<%= content_for :js_libs, "modernizr parallax" %>
 
 <main class="landing-4">
 <div class="parallax-window" data-parallax="scroll" data-speed="0.5" data-image-src="<%= asset_path('rrt/stock/landscape_12.jpg') %>">
+  <img src="<%= asset_path('rrt/stock/landscape_12.jpg') %>" style="display: none;">
 
   <div class="container">
-    <nav class="navbar navbar-landing navbar-dark navbar-expand-lg">
+    <nav class="navbar navbar-landing  navbar-expand-lg">
       <a href="javascript:" class="navbar-brand"><%= image_tag image_path('rrt/pyrrmid_64.png'), width: 32, height: 32, class: 'mr-2'%>PYRMID</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#standardNavbar" aria-controls="standardNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

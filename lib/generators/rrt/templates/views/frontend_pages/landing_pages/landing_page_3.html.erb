@@ -1,12 +1,13 @@
 
-<%= content_for :js_libs, "parallax" %>
+<%= content_for :js_libs, "modernizr parallax" %>
 
 <main class="landing-3">
 <div class="parallax-window" data-parallax="scroll" data-speed="0.5" data-image-src="<%= asset_path('rrt/stock/us_landscape_2.jpg') %>">
 
+  <img src="<%= asset_path('rrt/stock/us_landscape_2.jpg') %>" style="display: none;">
   <div class="container">
     <div class="text-white">
-      <%= render partial: 'content_blocks/landing_navs/1', locals: { nav_class: 'navbar-dark' } %>
+      <%= render partial: 'content_blocks/landing_navs/1', locals: { nav_class: '' } %>
     </div>
 
     <div class="row">

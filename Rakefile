@@ -350,6 +350,7 @@ task :bake_pages do
       sh "mkdir -p #{File.dirname(destination)}"
       sh "cp #{file} #{destination}"
       PageRewriter.compile(destination, /preview.+\/_content_block_(.+)\/(\d+)/, 'content_blocks/\1/\2')
+      PageRewriter.compile(destination, /preview\/elements\/001_dashboards@ti-dashboard/, 'dashboards')
     end
   end
 end

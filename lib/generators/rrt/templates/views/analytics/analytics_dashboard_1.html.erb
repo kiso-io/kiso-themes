@@ -6,7 +6,8 @@
       <div class="row">
       <% metric_names.each do |metric| %>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <div class="card card-metric card-full-bleed">
+          <div class="card card-metric card-full-bleed inspectable">
+            <!-- component-title: Metric Card -->
             <div class="card-body">
               <canvas class='metric-graph metric-random-graph'></canvas>
               <div class="metric-header">
@@ -26,8 +27,11 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-      <div class="card card-default">
-        <h3 class="card-header">Sales Activity</h3>
+      <div class="card card-default inspectable">
+        <!-- component-title: Timeline -->
+        <div class="card-header">
+          <h6>Sales Activity</h6>
+        </div>
         <div class="card-body">
           <ul class="left-timeline">
               <% types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}] %>

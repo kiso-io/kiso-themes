@@ -13,8 +13,8 @@ module RRT
 
       def copy_layouts
         layouts_path = "app/views/layouts"
-        layouts = Dir.glob(File.expand_path("../templates/layouts/*", __FILE__)).map { |lf| File.basename(lf, ".html.#{handler}")}
-        puts layouts.inspect
+        layouts = Dir.glob(File.expand_path("../templates/layouts/*", __FILE__)).select{ |lf| lf.end_with?(handler) }.map { |lf| File.basename(lf, ".html.#{handler}")}
+
         layouts.each do |name|
           copy_file "layouts/#{name}.html.#{handler}", "#{layouts_path}/#{name}.html.#{handler}"
         end

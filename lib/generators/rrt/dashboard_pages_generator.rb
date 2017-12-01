@@ -1,4 +1,5 @@
 require "generators/rrt/page_generator"
+require_relative "../../../support/page_rewriter"
 
 module RRT
   module Generators
@@ -10,6 +11,20 @@ module RRT
       def set_layout
         controller_const_name = "#{name.camelize}Controller".constantize
         inject_into_class File.join('app/controllers', class_path, "#{file_name}_controller.rb"), controller_const_name, "  layout 'sidenav'\n"
+      end
+
+      def copy_partials
+        source_view_path="views/#{_view_type}/"
+        partials = Dir.glob(File.expand_path("../templates/views/#{_view_type}/*", __FILE__)).select{ |lf| File.basename(lf).start_with?("_") && lf.end_with?(handler) }.map { |lf| File.basename(lf, ".html.#{handler}")}
+
+        partials.each do |partial|
+          destination = "app/views/#{name.underscore}/#{partial}.html.#{handler}"
+          copy_file "views/#{_view_type}/#{partial}.html.#{handler}", destination
+        end
+
+        for action in actions do
+          PageRewriter.compile("app/views/#{name.underscore}/#{action}.html.#{handler}", /dashboards/, "#{name.underscore}")
+        end
       end
 
       def set_body_class_for_sidenav
