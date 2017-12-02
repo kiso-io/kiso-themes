@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     =
   s.description = "RRT Themes"
 
-  s.files = Dir["{app,config,db,lib,psd}/**/*"] +
+  s.files = Dir["{app,config,db,lib,support}/**/*"] +
             Dir["*.gemspec"] +
             ["CHANGELOG", "LICENSE", "Rakefile", "README.rdoc"]
 
