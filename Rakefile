@@ -3,6 +3,7 @@ $: << "support"
 
 begin
   require 'bundler'
+  require 'version_bumper'
 rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
@@ -68,7 +69,7 @@ task :compile_assets do
 end
 
 task :release_version do
-  require 'version_bumper'
+  setup_bundler
 
   puts "🚦  Checking if repo rrt.com is on master..."
   Rake::Task["check_rrtdotcom_on_master"].invoke
@@ -78,30 +79,29 @@ task :release_version do
     sh "rm -rf *"
   end
 
-  puts "🚧  Building release..."
-  Rake::Task["build"].invoke
-
   puts "🎉  Bumping version number..."
   sh "rake bump:revision"
+
+  puts "🚧  Building release..."
+  Rake::Task["build"].invoke
 
   latest_version = File.read('./VERSION')
 
   puts "📖  Generating changelog..."
   sh "git changelog"
-  sh "cp VERSION ../rrt.com/db/themes/ives/ && cp CHANGELOG ../rrt.com/db/themes/ives/"
 
   puts "🚚  Pushing release to rrt.com"
-  cd "../rrt.com", verbose: false do
-    sh "bundle exec rake gems:push gem=../rrt-ives/pkg/rrt-ives-#{latest_version}.gem"
+  cd "../rrtdotcom", verbose: false do
+    sh "bundle exec rake gems:push gem=../rrt/pkg/rrt-#{latest_version}.gem"
 
     puts system('test -z "$(git ls-files --others)"')
 
-    sh "git add . && git commit -m 'Ives #{latest_version}' && git push"
-    sh "bundle exec cap production deploy"
+    sh "git add . && git commit -m 'RRT Gem #{latest_version}' && git push"
+    sh "bin/deploy"
   end
 
   puts "🐱  Tagging and pushing latest version"
-  sh "git add . && git commit -m 'Ives #{latest_version}' && git tag #{latest_version} && git push"
+  sh "git add . && git commit -m 'RRT Gem #{latest_version}' && git tag #{latest_version} && git push"
 end
 
 task :deploy_demo do
