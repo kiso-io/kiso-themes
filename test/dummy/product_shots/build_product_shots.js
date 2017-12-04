@@ -135,7 +135,7 @@ const sharp = require('sharp');
 
         await snapshotElement(previewUrl, selector, displayTitle, outputPath, fileName)
 
-        let filePath = path.join(outputPath, fileName)
+        let filePath = path.join(outputPath, fileName+"_source.jpg")
 
         console.log(`Resizing shot: ${filePath}`)
         await sharp(filePath)
