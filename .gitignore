@@ -13,4 +13,5 @@ test/dummy/public/assets
 bin
 demo/*
 .tern-port
-product_shots/shots
+test/dummy/product_shots/shots
+test/dummy/product_shots/node_modules

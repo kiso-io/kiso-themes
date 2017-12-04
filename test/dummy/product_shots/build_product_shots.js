@@ -73,7 +73,7 @@ const sharp = require('sharp');
     var targetUrl = `http://localhost:4000/preview/main?theme=${theme}&style=${style}`;
     console.log(`Changing theme to ${theme} - ${style}`)
 
-    await page.goto(targetUrl, { waitUntil: 'networkidle' });
+    await page.goto(targetUrl, { waitUntil: 'networkidle2' });
   }
 
   async function generateHeroShots(theme, style, outputPath) {
@@ -112,7 +112,7 @@ const sharp = require('sharp');
     var targetUrl = 'http://localhost:4000/' + url;
     console.log(`Snapshotting ${displayTitle} - ${targetUrl}`)
 
-    await page.goto(targetUrl, { waitUntil: 'networkidle' });
+    await page.goto(targetUrl, { waitUntil: 'networkidle2' });
     await page.evaluate("$(window).off('resize'); $('.nav-side-container').slimScroll({destroy: true}); $('.nav-side-container').css('overflow', 'visible').css('height', '100%'); $('.inspect-mode').remove()")
 
     const filePath = path.join(outputPath, fileName+'_source.jpg');
