@@ -40,11 +40,9 @@ module RRT
         # Plain JS
         if File.file?(file)
           inject_into_file file, "\n//= require jquery\n", { :before => "//#{sentinel}" }
-          inject_into_file file, "//= require jquery_ujs\n", { :before => "//#{sentinel}" }
         # CoffeeScript
         elsif File.file?("#{file}.coffee")
           inject_into_file "#{file}.coffee", "\n#require jquery\n", { :before => "##{sentinel}" }
-          inject_into_file "#{file}.coffee", "#require jquery_ujs\n", { :before => "##{sentinel}" }
         # No main JS file
         else
           say_status :warning, "Can't find #{file}. " +
