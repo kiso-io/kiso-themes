@@ -14,7 +14,17 @@ module RRT
       class_option :style_name, :type => :string, required: true, :description => "The name of the theme style you wish to generate a customize stylesheet for"
 
       def copy_stylesheet
-        copy_file "test/dummy/app/assets/stylesheets/styles/#{options.theme_name}/#{options.style_name}.css.scss", "app/assets/stylesheets/rrt.css.scss"
+        unless File.directory?(File.expand_path("../../../../lib/generators/rrt/templates/customizations/styles/#{options.theme_name}", __FILE__))
+          raise Thor::Error, "You asked to customize theme '#{options.theme_name}', but it doesn't exist."
+          return
+        end
+
+        unless File.exists?(File.expand_path("../../../../lib/generators/rrt/templates/customizations/styles/#{options.theme_name}/#{options.style_name}.css.scss", __FILE__))
+          raise Thor::Error, "You asked to customize theme #{options.theme_name}'s '#{options.style_name}.css.scss', but it doesn't exist."
+          return
+        end
+
+        copy_file "lib/generators/rrt/templates/customizations/styles/#{options.theme_name}/#{options.style_name}.css.scss", "app/assets/stylesheets/rrt.css.scss"
         copy_file "lib/sass/rrt/#{options.theme_name}/styles/_#{options.style_name}_variables.scss", "app/assets/stylesheets/_#{options.style_name}_variables.scss"
         copy_file "app/assets/javascripts/rrt.js", "app/assets/javascripts/rrt.js"
 

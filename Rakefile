@@ -452,3 +452,10 @@ task :cook_slim do
     end
   end
 end
+
+task :bake_customizations do
+  customization_destination_path = File.join(Dir.pwd, 'lib/generators/rrt/templates/customizations')
+  customization_path = File.join(Dir.pwd, 'test/dummy/app/assets/stylesheets/styles')
+
+  sh "cp -R #{customization_path} #{customization_destination_path}"
+end
