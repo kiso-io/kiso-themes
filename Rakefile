@@ -63,7 +63,7 @@ task :compile_assets do
   end
 
   cd "test/dummy", verbose: false do
-    sh "DRESSSED_BUILD=true bundle exec rake assets:clobber"
+    sh "bundle exec rake assets:clobber"
   end
 
 end

@@ -4,7 +4,7 @@
   %p Edit this template in app/views/<%= controller_name %>/index.html.haml.
 
 - content_for :actions do
-  = link_to new_<%= singular_table_name %>_path, <%= Dresssed.key_value :class, "'btn btn-primary btn-large pull-right'" %> do
+  = link_to new_<%= singular_table_name %>_path, <%= RRT.key_value :class, "'btn btn-primary btn-large pull-right'" %> do
     = fa_icon_tag "plus"
     Add <%= human_name %>
 
@@ -27,9 +27,9 @@
     %td= <%= singular_table_name %>.<%= attribute.name %>
         <% end -%>
       %td.actions
-                = link_to fa_icon_tag("eye-open"), <%= singular_table_name %>, <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Show'" %>
-                = link_to fa_icon_tag("pencil"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Edit'" %>
-                = link_to fa_icon_tag("trash"), <%= singular_table_name %>, <%= Dresssed.key_value :rel, "'tooltip'" %>, <%= Dresssed.key_value :title, "'Delete'" %>, <%= Gem::Version.new(Rails.version) >= Gem::Version.new("3.2.6") ? Dresssed.key_value(:data, '{ ' + Dresssed.key_value(:confirm, "'Are you sure?'") + ' }') : Dresssed.key_value(:confirm, "'Are you sure?'") %>, <%= Dresssed.key_value :method, ":delete" %>
+                = link_to fa_icon_tag("eye-open"), <%= singular_table_name %>, <%= RRT.key_value :rel, "'tooltip'" %>, <%= RRT.key_value :title, "'Show'" %>
+                = link_to fa_icon_tag("pencil"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), <%= RRT.key_value :rel, "'tooltip'" %>, <%= RRT.key_value :title, "'Edit'" %>
+                = link_to fa_icon_tag("trash"), <%= singular_table_name %>, <%= RRT.key_value :rel, "'tooltip'" %>, <%= RRT.key_value :title, "'Delete'" %>, <%= Gem::Version.new(Rails.version) >= Gem::Version.new("3.2.6") ? RRT.key_value(:data, '{ ' + RRT.key_value(:confirm, "'Are you sure?'") + ' }') : RRT.key_value(:confirm, "'Are you sure?'") %>, <%= RRT.key_value :method, ":delete" %>
 
       <% if defined?(WillPaginate) -%>
       -# Remove the trailing if condition if you're using pagination.
