@@ -393,8 +393,8 @@ $pagination-color: $black-color;
 $pagination-bg: $default-color;
 $pagination-hover-color: $black-color;
 $pagination-hover-bg: $opacity-gray-3;
-$pagination-diabled-bg: $dark-gray;
-$pagination-disabled-color: $light-gray;
+$pagination-disabled-bg: $dark-gray;
+$pagination-disabled-color: tint($dark-gray, 30%);
 
 $progress-bar-bg: $gray-400;
 $progress-bar-color: $brand-primary;
