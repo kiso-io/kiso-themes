@@ -1,39 +1,42 @@
 <%= render partial: "side_menu" %>
 
+<% @section_content = render file: "preview/elements/#{@section}" %>
+
 <div class='main-content'>
   <%= render partial: 'layouts/dashboard_top_nav' %>
+  <% unless content_for?(:no_page_header) %>
+    <div class='page-header flex-column flex-md-row inspectable'>
+      <!-- component-title: Page Header -->
+      <div class="d-flex flex-column flex-md-row mr-md-auto align-items-center">
+        <h4 class=''><%= raw @title.gsub('_', ' ').titleize %></h4>
 
-  <div class='page-header flex-column flex-md-row inspectable'>
-    <!-- component-title: Page Header -->
-    <div class="d-flex flex-column flex-md-row mr-md-auto align-items-center">
-      <h4 class=''><%= raw @title.gsub('_', ' ').titleize %></h4>
+        <% if @breadcrumbs.length > 0 %>
+          <ol class="breadcrumb-1 text-right text-muted">
+            <% @breadcrumbs.each do |crumb| %>
+              <li class="breadcrumb-item"><%=crumb%></li>
+            <% end %>
+          </ol>
+        <% end %>
+      </div>
 
-      <% if @breadcrumbs.length > 0 %>
-        <ol class="breadcrumb-1 text-right text-muted">
-          <% @breadcrumbs.each do |crumb| %>
-            <li class="breadcrumb-item"><%=crumb%></li>
-          <% end %>
-        </ol>
-      <% end %>
-    </div>
-
-    <div class="page-header-actions">
-      <div class="dropdown">
-        <button class="nav-link btn btn-icon " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= theme_icon_tag "settings" %>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+      <div class="page-header-actions">
+        <div class="dropdown">
+          <button class="nav-link btn btn-icon " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= theme_icon_tag "settings" %>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
         </div>
       </div>
-    </div>
 
-  </div>
+    </div>
+  <% end %>
 
   <div class='animate-fade-in-500'>
-    <%= render file: "preview/elements/#{@section}" %>
+    <%= @section_content %>
   </div>
 
   <button class='inspect-mode d-none d-md-block d-lg-block'>
