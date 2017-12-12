@@ -1,4 +1,9 @@
 
+1.0.9 / 2017-12-11
+==================
+
+  * Default simple_form scaffolding to horizontal forms. Have dashboard generator set body classes for sidenavs
+
 1.0.8 / 2017-12-11
 ==================
 
