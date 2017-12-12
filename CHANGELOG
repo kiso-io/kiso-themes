@@ -1,4 +1,9 @@
 
+1.0.10 / 2017-12-11
+==================
+
+  * Have the dashboard generator handle non-crud (index, edit, etc) style action names
+
 1.0.9 / 2017-12-11
 ==================
 
