@@ -9,6 +9,13 @@
   .nav-side-menu {
     transition: $side-nav-transition;
   }
+
+  @include media-breakpoint-down(md) {
+    .nav-side-menu {
+      transition: $side-nav-transition;
+      transform: translateX(0) translateY(0) translateZ(0);
+    }
+  }
 }
 
 .show-sidebar {
