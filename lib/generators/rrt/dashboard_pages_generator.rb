@@ -31,7 +31,7 @@ module RRT
         controller_const_name = "#{name.camelize}Controller".constantize
         inject_into_file "app/controllers/#{file_name}_controller.rb", after: "def index"  do
 <<-RUBY
-        \n    @body_class = "show-sidebar"
+        \n    @body_class = "with-sidebar show-sidebar"
 RUBY
         end
       end
