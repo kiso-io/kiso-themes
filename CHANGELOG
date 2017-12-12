@@ -1,4 +1,9 @@
 
+1.0.8 / 2017-12-11
+==================
+
+  * Tweak sidenav breakpoints so that it still shows when it's been toggled, and the screen is resized.
+
 1.0.7 / 2017-12-11
 ==================
 

@@ -26603,6 +26603,15 @@ img {
   -webkit-transition: 250ms cubic-bezier(0.47, 0, 0.745, 0.715);
   transition: 250ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
+@media (max-width: 991px) {
+  
+  .with-sidebar .nav-side-menu {
+    -webkit-transition: 250ms cubic-bezier(0.47, 0, 0.745, 0.715);
+    transition: 250ms cubic-bezier(0.47, 0, 0.745, 0.715);
+    -webkit-transform: translateX(0) translateY(0) translateZ(0);
+            transform: translateX(0) translateY(0) translateZ(0);
+  }
+}
 
 .show-sidebar .nav-side-menu {
   -webkit-transition: 250ms cubic-bezier(0.47, 0, 0.745, 0.715);
