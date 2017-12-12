@@ -22,17 +22,14 @@ module RRT
           copy_file "views/#{_view_type}/#{partial}.html.#{handler}", destination
         end
 
+        controller_const_name = "#{name.camelize}Controller".constantize
         for action in actions do
           PageRewriter.compile("app/views/#{name.underscore}/#{action}.html.#{handler}", /dashboards/, "#{name.underscore}")
-        end
-      end
-
-      def set_body_class_for_sidenav
-        controller_const_name = "#{name.camelize}Controller".constantize
-        inject_into_file "app/controllers/#{file_name}_controller.rb", after: "def index"  do
-<<-RUBY
-        \n    @body_class = "with-sidebar show-sidebar"
-RUBY
+          inject_into_file "app/controllers/#{file_name}_controller.rb", after: "def #{action}"  do
+  <<-RUBY
+          \n    @body_class = "with-sidebar show-sidebar"
+  RUBY
+          end
         end
       end
     end
