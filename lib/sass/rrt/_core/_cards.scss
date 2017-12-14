@@ -103,6 +103,10 @@
     li:first-of-type {
       border-top: 0;
     }
+
+    li:last-of-type {
+      padding-bottom: 0;
+    }
   }
 }
 
