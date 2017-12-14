@@ -1,4 +1,14 @@
 
+1.0.11 / 2017-12-14
+==================
+
+  * Dashboard 2 update. Flush listgroups inside cards
+  * Update Dashboard 2
+  * Tweak Orion -light to be #fff
+  * Tweak the Lyra background color and navbar bg color to have better contrast.
+  * Make the background utility classes use the theme-color map to get the `light` value. Update Auriga to have a more natural bg-light value.
+  * Change Dashboard 3 to use bg-light instead of bg-white
+
 1.0.10 / 2017-12-11
 ==================
 
