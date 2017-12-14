@@ -66,6 +66,9 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise_invitable (1.7.2)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -234,6 +237,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   devise
+  devise_invitable
   guard
   guard-livereload
   heroku_rails_deflate
