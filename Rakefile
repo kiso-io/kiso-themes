@@ -145,9 +145,9 @@ task :clean_demo do
         sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/data-image-src=\"\\/assets/data-image-src=\"\\/demos\\/#{theme.downcase}\\/#{style.downcase}\\/assets/g'"
       end
 
-      cd "demo/#{theme.downcase}/#{style.downcase}/assets/styles/#{theme.downcase}" do
-        sh "mv #{style.downcase}.self* #{style.downcase}.self.css"
-      end
+      # cd "demo/#{theme.downcase}/#{style.downcase}/assets/styles/#{theme.downcase}" do
+      #   sh "mv #{style.downcase}.self* #{style.downcase}.self.css"
+      # end
     end
   end
 

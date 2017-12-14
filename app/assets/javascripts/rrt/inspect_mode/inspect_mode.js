@@ -3,12 +3,20 @@ window.INSPECT_MODE = false;
 $(document).ready(function() {
   var clipboard = new Clipboard('.copy-to-clipboard');
 
+  function removeHandlers() {
+    var _inspectable = this
+
+    $(_inspectable)
+      .off('mouseenter')
+      .off('mouseleave')
+      .off('click')
+  }
+
   $('.inspect-mode').on('click', function() {
     window.INSPECT_MODE = !window.INSPECT_MODE;
+    var inspectables = $('.inspectable');
 
     if(window.INSPECT_MODE) {
-      var inspectables = $('.inspectable');
-
       $(this).addClass('on')
 
       inspectables.each(function () {
@@ -54,6 +62,7 @@ $(document).ready(function() {
       })
     } else {
       $(this).removeClass('on')
+      inspectables.each(removeHandlers)
     }
   })
 
