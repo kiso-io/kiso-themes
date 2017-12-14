@@ -136,7 +136,37 @@
 						"snapshot_selector": "body"
 					}
 				}
-			}
+			},
+      "devisemailers": {
+        "order": 4,
+        "display_title": "Devise Mailers",
+        "children": {
+					"confirmation": {
+						"order": 1,
+						"display_title": "Confirmation",
+						"preview_url": "003_rails_integrations@ti-rocket/004_devise_mailers/001_confirmation",
+						"snapshot_selector": "body"
+					},
+					"reset_password": {
+						"order": 2,
+						"display_title": "Reset Password",
+						"preview_url": "003_rails_integrations@ti-rocket/004_devise_mailers/002_reset_password",
+						"snapshot_selector": "body"
+					},
+					"invitation_instructions": {
+						"order": 3,
+						"display_title": "Invitation Instructions",
+						"preview_url": "003_rails_integrations@ti-rocket/004_devise_mailers/003_invitation_instructions",
+						"snapshot_selector": "body"
+					},
+					"unlock_account": {
+						"order": 4,
+						"display_title": "Unlock Account",
+						"preview_url": "003_rails_integrations@ti-rocket/004_devise_mailers/004_unlock_account",
+						"snapshot_selector": "body"
+					}
+        }
+      }
 		}
 	},
 	"cards": {
