@@ -12,7 +12,7 @@
     Chart.defaults.global.elements.point.radius         = 5;
     Chart.defaults.global.elements.point.hoverRadius    = 7;
     Chart.defaults.global.tooltips.cornerRadius         = 3;
-    Chart.defaults.global.legend.labels.boxWidth        = 12;
+    Chart.defaults.global.legend.labels.boxWidth        = 6;
   }
 
   function lineCharts(el, type) {
@@ -91,6 +91,8 @@
     roundChart('.demo-pie', 'pie')
     roundChart('.demo-polar', 'polarArea')
     roundChart('.demo-doughnut', 'doughnut')
+
+    lineCharts('[data-chartjs-line-demo]', 'line');
   }
 
   RRT.hookOnPageLoad( function() {
