@@ -13,7 +13,7 @@ $black-hr: #444 ;
 $dark-color: $black-color;
 
 // Backgrounds
-$main-bg: #fbfbfc;
+$main-bg: #f7f7f8;
 $dark-background: #555;
 
 @include theme-colors((
@@ -42,7 +42,7 @@ $dark-background: #555;
 ));
 
 
-$navbar-background: transparent;
+$navbar-background: #fff;
 $navbar-box-shadow: 0 0 10px 4px rgba(0, 0, 0, .045);
 
 $card-border-radius: $border-radius-extra-small;
