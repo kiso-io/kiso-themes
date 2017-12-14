@@ -1,0 +1,148 @@
+<% content_for :js_libs, "modernizr gmaps flot chartjs demo-dashboard demo-chartjs demo-sparklines" %>
+<% content_for :no_page_header, true %>
+
+<section class="bg-white px-3 mb-3 d-flex flex-column">
+  <header class="d-flex pt-4 pb-3 align-items-center">
+    <h3 class="mr-auto">International Order Shipping</h3>
+    <button class="btn btn-icon btn-outline-primary" href="javascript:"> <i class="ti-settings "></i> </button>
+  </header>
+  <div class="row">
+    <ul class="nav nav-tabs p-0 inspectable" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+          role="tab" aria-controls="home" aria-expanded="true" aria-selected="true">Reports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
+          role="tab" aria-controls="profile" aria-selected="false">Analytics</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
+          role="tab" aria-controls="profile" aria-selected="false">Invoices</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <p class="m-0"><strong>Subject Compliance Summary</strong></p>
+          <p class="small m-0 text-uppercase text-muted">Period: Nov 1 - Dec 1</p>
+          <div class="mt-3 py-4">
+            <canvas class="sales-vs-refunds" style="display: block; height: 300px; width: 600px;"></canvas>
+          </div>
+        </div>
+        <div class="card-footer d-flex align-items-center">
+          <h6 class='m-0 mr-auto'>Subject Compliance Report</h6>
+          <a class="btn btn-circle btn-outline-dark" href="">View Report</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <p class="m-0"><strong>Subject Compliance Summary</strong></p>
+          <p class="small m-0 text-uppercase text-muted">Period: Nov 1 - Dec 1</p>
+          <div class="mt-3 py-4">
+            <canvas class="sales-vs-refunds-bars" style="display: block; height: 300px; width: 600px;"></canvas>
+          </div>
+        </div>
+        <div class="card-footer d-flex align-items-center">
+          <h6 class='m-0 mr-auto'>Subject Compliance Report</h6>
+          <a class="btn btn-circle btn-outline-dark" href="">View Report</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <p class="m-0"><strong>Subject Compliance Summary</strong></p>
+          <p class="small m-0 text-uppercase text-muted">Period: Nov 1 - Dec 1</p>
+          <div class="mt-3 py-4">
+            <canvas class="demo-pie" style="display: block; height: 300px; width: 600px;"></canvas>
+          </div>
+        </div>
+        <div class="card-footer d-flex align-items-center">
+          <h6 class='m-0 mr-auto'>Subject Compliance Report</h6>
+          <a class="btn btn-circle btn-outline-dark" href="javascript:">View Report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-tabbed inspectable">
+        <div class="card-header">
+          <h6>BIG CHART</h6>
+          <div class="dropdown">
+            <button class="nav-link btn btn-icon " type="button" id="salesAndRefundButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= theme_icon_tag "more" %>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="salesAndRefundButton" x-placement="bottom-end" style="position: absolute; top: 26px; left: -148px; will-change: top, left;">
+              <a class="dropdown-item" href="#">Refresh</a>
+              <a class="dropdown-item" href="#">Share</a>
+              <a class="dropdown-item" href="#">Remove</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="container-fluid">
+            <div class="row equal-cols">
+              <div class="col-12 col-md-8 d-flex align-self-center">
+                <canvas data-chartjs-line-demo="true"></canvas>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="card card-mini inspectable">
+                  <!-- component-title: Mini Card -->
+                  <div class="card-body">
+                    <div class="media">
+                      <div class="d-flex align-self-center mr-3">
+                        <span class="spark-bar-1" sparkbarcolor="#6886a7" style="width: 80px;"><%=(0..8).to_a.shuffle.join(', ') %></span>
+                      </div>
+                      <div class="media-body text-right">
+                        <h6 class="m-0 pt-2 text-muted">Page Hits</h6>
+                        <h4 class="m-0 counter" data-from="0" data-to="100" data-speed="5000" data-refresh-interval="80">192</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-mini inspectable">
+                  <!-- component-title: Mini Card -->
+                  <div class="card-body">
+                    <div class="media">
+                      <div class="d-flex align-self-center mr-3">
+                        <span class="spark-bar-1" sparkbarcolor="#6886a7" style="width: 80px;"><%=(0..8).to_a.shuffle.join(', ') %></span>
+                      </div>
+                      <div class="media-body text-right">
+                        <h6 class="m-0 pt-2 text-muted">Return Visitors</h6>
+                        <h4 class="m-0 counter" data-from="0" data-to="100" data-speed="5000" data-refresh-interval="80">192</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-mini inspectable">
+                  <!-- component-title: Mini Card -->
+                  <div class="card-body">
+                    <div class="media">
+                      <div class="d-flex align-self-center mr-3">
+                        <span class="spark-bar-1" sparkbarcolor="#6886a7" style="width: 80px;"><%=(0..8).to_a.shuffle.join(', ') %></span>
+                      </div>
+                      <div class="media-body text-right">
+                        <h6 class="m-0 pt-2 text-muted">Cancellations</h6>
+                        <h4 class="m-0 counter" data-from="0" data-to="100" data-speed="5000" data-refresh-interval="80">192</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

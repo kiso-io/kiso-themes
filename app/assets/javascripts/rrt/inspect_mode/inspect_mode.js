@@ -35,6 +35,8 @@ $(document).ready(function() {
           $('.inspector-component-name').text(componentName)
 
           rawHtml = rawHtml.trim().replace(/<!--[\s\S]*?-->/g, '')
+          rawHtml = rawHtml.replace(/inspectable/, '')
+          rawHtml = rawHtml.replace(/inspect-target/, '')
 
           code = style_html(rawHtml, {
             'indent_size': 2,

@@ -1,0 +1,424 @@
+<%= content_for :js_libs, "modernizr gmaps flot chartjs demo-dashboard demo-chartjs demo-sparklines" %>
+
+<div class="container-fluid">
+  <div class="row equal-rows">
+    <div class="col-12 col-md-4 mb-3">
+      <div class="card card-full-height">
+        <div class="card-header">
+          <h6>SALES VS REFUNDS</h6>
+        </div>
+        <div class="card-body">
+          <canvas class="demo-radar" style="display: block; height: 200px; width: 100%;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4 mb-3">
+      <div class="card card-full-height">
+        <div class="card-header">
+          <h6>KPIS</h6>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex">
+            <div class="mr-auto d-flex align-items-center">
+              <%= theme_icon_tag "user", class: "m-0 mr-4 h4 text-muted" %> Page Visits
+            </div>
+            <span class="spark-bar-1" sparkBarHeight="40" sparkBarColor="green">12,23,19,18,12,2,33,12</span>
+          </li>
+          <li class="list-group-item d-flex">
+            <div class="mr-auto d-flex align-items-center">
+              <%= theme_icon_tag "power-off", class: "m-0 mr-4 h4 text-muted" %> Logins
+            </div>
+            <span class="spark-bar-1" sparkBarHeight="40" sparkBarColor="red">100,23,231,18,12,2,33,12</span>
+          </li>
+          <li class="list-group-item d-flex">
+            <div class="mr-auto d-flex align-items-center">
+              <%= theme_icon_tag "heart", class: "m-0 mr-4 h4 text-muted" %> Subscribes
+            </div>
+            <span class="spark-bar-1" sparkBarHeight="40" sparkBarColor="lightblue">1,3,9,8,2,2,3,1</span>
+          </li>
+          <li class="list-group-item d-flex">
+            <div class="mr-auto d-flex align-items-center">
+              <%= theme_icon_tag "thumb-up", class: "m-0 mr-4 h4 text-muted" %> Likes
+            </div>
+            <span class="spark-bar-1" sparkBarHeight="40" sparkBarColor="gray">45,34,44,23,56,67,54,34</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4 d-flex flex-column justify-content-between mb-3">
+      <div class="card card-tile-hero inspectable">
+        <div class="card-header text-center">
+          <i class="ti-headphone display-3 text-brand-primary-lightest"></i>
+        </div>
+        <div class="card-body text-center">
+          <small>UNIQUE STREAMS</small>
+          <h3 class="m-0 leading-normal">2,985</h3>
+        </div>
+      </div>
+      <div class="card card-tile-hero mb-0 inspectable">
+        <div class="card-header text-center">
+          <i class="ti-video-clapper display-3 text-brand-primary-lightest"></i>
+        </div>
+        <div class="card-body text-center">
+          <small>UNIQUE VIDEOS</small>
+          <h3 class="m-0 leading-normal">1,192,123</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-tabbed inspectable">
+        <div class="card-header">
+          <h6>System Logs</h6>
+          <ul class="nav nav-tabs nav-tabs-primary card-header-tabs"
+            id="navTab1" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#navTab11" role="tab" aria-controls="navTab11"
+                aria-expanded="true" aria-selected="false">Warning</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#navTab12" role="tab" aria-controls="navTab12"
+                aria-expanded="false" aria-selected="false">Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#navTab13" role="tab"
+                aria-controls="navTab13" aria-expanded="false" aria-selected="true">Alert</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" data-toggle="tab" href="#navTab14" role="tab"
+                aria-controls="navTab14" aria-expanded="false">Disabled</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade active show" id="navTab11" role="tabpanel" aria-labelledby="navTab11">
+              <table class="table table-sm font-size-small">
+                <thead>
+                  <tr>
+                    <td>Time</td>
+                    <td>Message</td>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">cache miss witd id type: 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">Client: <private>, UID: 0, EUID: 0, GID: 0, EGID: 0</private></pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">cert[2]: AnchorTrusted =(leaf)[force]&gt; 0</pre>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="tab-pane fade" id="navTab12" role="tabpanel" aria-labelledby="navTab12">
+              <table class="table table-sm font-size-small">
+                <thead>
+                  <tr>
+                    <td>Time</td>
+                    <td>Message</td>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">cache miss witd id type: 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">Client: <private>, UID: 0, EUID: 0, GID: 0, EGID: 0</private></pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">cert[2]: AnchorTrusted =(leaf)[force]&gt; 0</pre>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="tab-pane fade" id="navTab13" role="tabpanel" aria-labelledby="navTab13">
+              <table class="table table-sm font-size-small">
+                <thead>
+                  <tr>
+                    <td>Time</td>
+                    <td>Message</td>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">cache miss witd id type: 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">Client: <private>, UID: 0, EUID: 0, GID: 0, EGID: 0</private></pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">cert[2]: AnchorTrusted =(leaf)[force]&gt; 0</pre>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="tab-pane fade" id="navTab14" role="tabpanel" aria-labelledby="navTab14">
+              <table class="table table-sm font-size-small">
+                <thead>
+                  <tr>
+                    <td>Time</td>
+                    <td>Message</td>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">cache miss witd id type: 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">Client: <private>, UID: 0, EUID: 0, GID: 0, EGID: 0</private></pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>18/09/17 23:51</td>
+                  <td>
+                    <pre class="my-0">cert[2]: AnchorTrusted =(leaf)[force]&gt; 0</pre>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row equal-cols">
+    <div class="col-12 col-md-6">
+      <div class="card card-chat card-full-height inspectable">
+        <div class="card-header">
+          <h6>CHAT</h6>
+        </div>
+        <div class="card-body" style="height: 423px">
+          <ol>
+            <li>
+              <div class="media small">
+                <div class="chat-user-avatar">
+                  <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                  <small>
+                    <time>09:34am</time>
+                  </small>
+                </div>
+                <div class="media-body">
+                  <div class="d-flex">
+                    <strong class="chat-username">John McDowall</strong>
+                </div>What time does the server upgrade kickoff?</div>
+              </div>
+            </li>
+            <li>
+              <div class="media small">
+                <div class="chat-user-avatar">
+                  <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                  <small>
+                    <time>09:35am</time>
+                  </small>
+                </div>
+                <div class="media-body">
+                  <div class="d-flex">
+                    <strong class="chat-username">Hiro Protagonist</strong>
+                </div>In about 10 minutes.</div>
+              </div>
+            </li>
+            <li>
+              <div class="media small">
+                <div class="chat-user-avatar">
+                  <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                  <small>
+                    <time>09:35am</time>
+                  </small>
+                </div>
+                <div class="media-body">
+                  <div class="d-flex">
+                    <strong class="chat-username">John McDowall</strong>
+                </div>Ok, great.</div>
+              </div>
+            </li>
+            <li>
+              <div class="media small">
+                <div class="chat-user-avatar">
+                  <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                  <small>
+                    <time>09:44am</time>
+                  </small>
+                </div>
+                <div class="media-body">
+                  <div class="d-flex">
+                    <strong class="chat-username">Hiro Protagonist</strong>
+                </div>You ready? Holding onto your butt?</div>
+              </div>
+            </li>
+            <li>
+              <div class="media small">
+                <div class="chat-user-avatar">
+                  <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                  <small>
+                    <time>09:34am</time>
+                  </small>
+                </div>
+                <div class="media-body">
+                  <div class="d-flex">
+                    <strong class="chat-username">John McDowall</strong>
+                </div>What time does the server upgrade kickoff?</div>
+              </div>
+            </li>
+            <li>
+              <div class="media small">
+                <div class="chat-user-avatar">
+                  <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                  <small>
+                    <time>09:34am</time>
+                  </small>
+                </div>
+                <div class="media-body">
+                  <div class="d-flex">
+                    <strong class="chat-username">John McDowall</strong>
+                </div>What time does the server upgrade kickoff?</div>
+              </div>
+            </li>
+            <li>
+              <div class="media small">
+                <div class="chat-user-avatar">
+                  <img class="d-flex" src="//fillmurray.com/42/42" alt="Generic placeholder image">
+                  <small>
+                    <time>09:34am</time>
+                  </small>
+                </div>
+                <div class="media-body">
+                  <div class="d-flex">
+                    <strong class="chat-username">John McDowall</strong>
+                </div>What time does the server upgrade kickoff?</div>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="card-footer">
+          <input type="text" class="form-control mr-3" placeholder="Enter your message">
+          <button class="btn btn-primary">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="card card-full-height card-activity-feed inspectable">
+        <div class="card-header">
+          <h6>ACTIVITY FEED</h6>
+        </div>
+        <div class="card-body overflow-y-scroll" style="height: 485px">
+          <ol>
+            <li class="card-activity-feed-label">
+              <time class="small">Today</time>
+            </li>
+            <li class="card-activity-feed-item">
+              <div class="card-activity-feed-item-icon">
+                <i class="ti-folder bg-blue"></i>
+              </div>
+              <div class="card-activity-feed-item-body">
+                <h6 class="d-flex">Fill archived a project
+                  <time class="ml-auto small">
+                    <i class="ti-time "></i>11:48</time>
+                </h6>
+                <p class="small">The project
+                  <strong>Boring Corporate Project</strong>was archived. It can be viewed
+                  <a href="#">here</a>.</p>
+              </div>
+            </li>
+            <li class="card-activity-feed-item">
+              <div class="card-activity-feed-item-icon">
+                <i class="ti-cloud-up bg-blue"></i>
+              </div>
+              <div class="card-activity-feed-item-body">
+                <h6 class="d-flex">Zomoko uploaded a file
+                  <time class="ml-auto small">
+                    <i class="ti-time "></i>11:48</time>
+                </h6>
+                <p class="small">She uploaded the file `catface.jpg` and left 1 comment on it.</p>
+                <img
+                src="//placekitten.com/42/42" class="img-thumbnail">
+                <div class="card-activity-feed-item-footer text-right">
+                  <a href="#" class="btn btn-primary btn-sm">Read the comment</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+              </div>
+            </li>
+            <li class="card-activity-feed-label">
+              <time class="small">Yesterday</time>
+            </li>
+            <li class="card-activity-feed-item">
+              <div class="card-activity-feed-item-icon">
+                <i class="ti-folder bg-blue"></i>
+              </div>
+              <div class="card-activity-feed-item-body">
+                <h6 class="d-flex">Fill archived a project
+                  <time class="ml-auto small">
+                    <i class="ti-time "></i>11:48</time>
+                </h6>
+                <p class="small">The project
+                  <strong>Boring Corporate Project</strong>was archived. It can be viewed
+                  <a href="#">here</a>.</p>
+              </div>
+            </li>
+            <li class="card-activity-feed-item">
+              <div class="card-activity-feed-item-icon">
+                <i class="ti-user bg-blue"></i>
+              </div>
+              <div class="card-activity-feed-item-body">
+                <h6 class="d-flex">Fill archived a project
+                  <time class="ml-auto small">
+                    <i class="ti-time "></i>11:48</time>
+                </h6>
+                <p class="small">The project
+                  <strong>Boring Corporate Project</strong>was archived. It can be viewed
+                  <a href="#">here</a>.</p>
+              </div>
+            </li>
+            <li class="card-activity-feed-label card-activity-feed-label-end"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
