@@ -37,6 +37,11 @@
   background-image: none !important;
 }
 
+.bg-light {
+  background-color: map-get($theme-colors, $light) !important;
+  background-image: none !important;
+}
+
 .bg-gradient-1 {
   background-image: $gradient-1 !important;
 }
