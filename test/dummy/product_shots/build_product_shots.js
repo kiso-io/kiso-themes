@@ -78,34 +78,48 @@ const sharp = require('sharp');
 
   async function generateHeroShots(theme, style, outputPath) {
     var targetUrl = `preview/001_dashboards@ti-dashboard/001_dashboard_1`;
-    console.log(`Generating hero shots ${theme} - ${style}`)
+    var targetUrls = [
+      `preview/001_dashboards@ti-dashboard/001_dashboard_1`,
+      `preview/001_dashboards@ti-dashboard/002_dashboard_2`,
+      `preview/001_dashboards@ti-dashboard/003_dashboard_3`,
+      `preview/001_dashboards@ti-dashboard/004_dashboard_4`,
+    ];
 
-    await snapshotElement(targetUrl, 'body', 'hero_shot', outputPath, 'hero_shot')
+    var counter = 1;
 
-    let filePath = path.join(outputPath, 'hero_shot_source.jpg')
+    for(var targetUrl of targetUrls) {
+      console.log(`Generating hero shots ${theme} - ${style}`)
 
-    console.log(`Resizing shot: ${filePath}`)
-    await sharp(filePath)
-          .resize(2800, 920)
-          .crop(sharp.gravity.north)
-          .toFile( path.join(outputPath, `hero_shot@2x.jpg`))
+      await snapshotElement(targetUrl, 'body', 'hero_shot', outputPath, `hero_shot_${counter}`)
 
-    await sharp(filePath)
-          .resize(1400, 460)
-          .crop(sharp.gravity.north)
-          .toFile( path.join(outputPath, `hero_shot.jpg`))
+      let filePath = path.join(outputPath, `hero_shot_${counter}_source.jpg`)
 
-    await sharp(filePath)
-          .resize(760, 356)
-          .crop(sharp.gravity.north)
-          .toFile( path.join(outputPath, `shot@2x.jpg`))
+      console.log(`Resizing shot: ${filePath}`)
+      await sharp(filePath)
+            .resize(2800, 920)
+            .crop(sharp.gravity.north)
+            .toFile( path.join(outputPath, `hero_shot_${counter}@2x.jpg`))
 
-    await sharp(filePath)
-          .resize(380, 178)
-          .crop(sharp.gravity.north)
-          .toFile( path.join(outputPath, `shot.jpg`))
+      await sharp(filePath)
+            .resize(1400, 460)
+            .crop(sharp.gravity.north)
+            .toFile( path.join(outputPath, `hero_shot_${counter}.jpg`))
 
-    fs.unlinkSync( path.join(outputPath, `hero_shot_source.jpg`))
+      await sharp(filePath)
+            .resize(760, 356)
+            .crop(sharp.gravity.north)
+            .toFile( path.join(outputPath, `shot_${counter}@2x.jpg`))
+
+      await sharp(filePath)
+            .resize(380, 178)
+            .crop(sharp.gravity.north)
+            .toFile( path.join(outputPath, `shot_${counter}.jpg`))
+
+      fs.unlinkSync( path.join(outputPath, `hero_shot_${counter}_source.jpg`))
+
+      counter = counter + 1
+    }
+
   }
 
   async function snapshotElement(url, selector, displayTitle, outputPath, fileName) {
