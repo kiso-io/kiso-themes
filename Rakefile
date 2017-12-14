@@ -120,12 +120,12 @@ task :fix_stylesheets do
     styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
 
     styles.each do |style|
-      cd "demo/#{theme.downcase}/#{style.downcase}/assets/styles/#{theme.downcase}" do
-        sh "mv #{style.downcase}.self* #{style.downcase}.self.css"
+      # cd "demo/#{theme.downcase}/#{style.downcase}/assets/styles/#{theme.downcase}" do
+      #   # sh "mv #{style.downcase}.self* #{style.downcase}.self.css"
 
-        # Remove the protocol scheme
-        # sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
-      end
+      #   # Remove the protocol scheme
+      #   # sh "export LC_ALL=C; find . -type f -print0 | xargs -0 sed -i '' 's/http\:\\/\\//\\/\\//g'"
+      # end
       cd "demo/#{theme.downcase}/#{style.downcase}/preview" do
         sh "export LC_ALL=C; find . -type f -iregex '.*[css|html]' -print0 | xargs -0 sed -i '' 's/#{style.downcase}\.self\-.*\"/#{style.downcase}.self.css\"/g'"
       end
