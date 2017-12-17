@@ -21,7 +21,7 @@ module RRT
       def copy_view
         for action in actions do
           view_name = action
-          copy_file "views/#{_view_type}/#{_view_name}_#{options.variant}.html.#{handler}", "app/views/#{name.underscore}/#{action}.html.#{handler}"
+          copy_file "views/#{_view_type}/#{_view_name}_#{options.variant}.html.#{handler}", "app/views/#{name.downcase.underscore}/#{action}.html.#{handler}"
         end
       end
 

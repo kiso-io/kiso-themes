@@ -11,12 +11,12 @@ module RRT
       page_type('user_account')
 
       def setup_routing
-        route "get '/user' => '#{name}#profile'"
-        route "get '/user/billing' => '#{name}#billing'"
-        route "get '/user/plan' => '#{name}#plan'"
-        route "get '/user/profile' => '#{name}#profile'"
-        route "get '/user/support' => '#{name}#support'"
-        route "get '/user/notifications' => '#{name}#notifications'"
+        route "get '/user' => '#{name.downcase}#profile'"
+        route "get '/user/billing' => '#{name.downcase}#billing'"
+        route "get '/user/plan' => '#{name.downcase}#plan'"
+        route "get '/user/profile' => '#{name.downcase}#profile'"
+        route "get '/user/support' => '#{name.downcase}#support'"
+        route "get '/user/notifications' => '#{name.downcase}#notifications'"
       end
 
       def create_controller_methods
@@ -30,14 +30,14 @@ module RRT
 
       def set_partial_path
         controller_const_name = "#{name.camelize}Controller".constantize
-        inject_into_class File.join('app/controllers', class_path, "#{file_name}_controller.rb"), controller_const_name, "  prepend_view_path(File.join(Rails.root, 'app/views/#{name}/'))\n"
+        inject_into_class File.join('app/controllers', class_path, "#{file_name}_controller.rb"), controller_const_name, "  prepend_view_path(File.join(Rails.root, 'app/views/#{name.downcase}/'))\n"
       end
 
       protected
 
         def build_method( name )
         code = <<END
-  def #{name}
+  def #{name.downcase}
   end
 
 END
