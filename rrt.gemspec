@@ -28,12 +28,14 @@ Gem::Specification.new do |s|
   s.post_install_message = <<-DOC
     All done!
 
-    Any questions? Email john@rapidrailsthemes.com
+    Any questions? Log into your account and submit an issue via
+    the support area.
 
-    Need help? Check out the FAQ first: https://rapidrailsthemes.com/faq
+    Need help? Check out the Documentation first:
+    https://rapidrailsthemes.com/docs
 
-    Still need help? Go to your order receipt page and send me the information
-    requested on the right hand side and send to john@rapidrailsthemes.com.
+    and then the FAQ:
+    https://rapidrailsthemes.com/faq
 
   DOC
 end
