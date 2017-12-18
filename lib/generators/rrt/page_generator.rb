@@ -6,8 +6,8 @@ module RRT
       include HandlerSupport
 
       remove_hook_for :helper
-      class_attribute :_view_name
-      class_attribute :_view_type
+      class_attribute :_view_name, instance_writer: false
+      class_attribute :_view_type, instance_writer: false
 
       argument :actions, type: :array, required: true, banner: "ACTION", desc: "The action, also the name of the view."
       class_option :variant, :type => :string, :default => 1, :description => "The template variant (i.e. 1, 2 etc)"

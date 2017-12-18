@@ -8,7 +8,7 @@ module RRT
 
       namespace "rrt:user_account_pages"
 
-      page_type('user_account')
+      set_page_type('user_account')
 
       def setup_routing
         route "get '/user' => '#{name.downcase}#profile'"

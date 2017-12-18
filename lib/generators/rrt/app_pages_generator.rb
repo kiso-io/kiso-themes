@@ -6,7 +6,7 @@ module RRT
       include HandlerSupport
 
       remove_hook_for :helper
-      class_attribute :_page_type
+      class_attribute :app_page_type, instance_writer: false
       source_root File.expand_path('../templates', __FILE__)
       hide!
 
@@ -15,7 +15,7 @@ module RRT
       end
 
       def copy_view
-        directory( "views/app_pages/#{_page_type}", "app/views/#{name.underscore}/", { recursive: true, exclude_pattern: /\.(#{unsupported_handlers.join('|')})/ } )
+        directory( "views/app_pages/#{app_page_type}", "app/views/#{name.underscore}/", { recursive: true, exclude_pattern: /\.(#{unsupported_handlers.join('|')})/ } )
       end
 
       def set_layout
@@ -23,8 +23,8 @@ module RRT
         inject_into_class File.join('app/controllers', class_path, "#{file_name}_controller.rb"), controller_const_name, "  layout 'application'\n"
       end
 
-      def self.page_type(page_type)
-        self._page_type = page_type
+      def self.set_page_type(page_type)
+        self.app_page_type = page_type
         source_root File.expand_path('../templates', __FILE__)
       end
     end
