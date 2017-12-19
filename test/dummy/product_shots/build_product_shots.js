@@ -4,6 +4,18 @@ const fs = require('fs');
 const rimraf = require('rimraf-promise');
 const mkdirp = require('mkdirp-promise');
 const sharp = require('sharp');
+const kue = require('kue');
+const ip = require('ip');
+
+var RENDER_JOBS = kue.createQueue();
+var renderJobCount = 0;
+
+
+function getHostIp() {
+  return ip.address();
+}
+
+const HOST=`${getHostIp()}:4000`
 
 async function screenshotDOMElement(page, opts = {}) {
   const padding = 'padding' in opts ? opts.padding : 0;
@@ -59,8 +71,7 @@ async function screenshotDOMElement(page, opts = {}) {
 }
 
 async function snapshotElement(page, url, selector, displayTitle, outputPath, fileName) {
-  var targetUrl = 'http://localhost:4000/' + url;
-  console.log(`Snapshotting ${displayTitle} - ${targetUrl}`)
+  var targetUrl = `http://${HOST}/` + url;
 
   await page.goto(targetUrl, { waitUntil: 'networkidle2' });
   await page.evaluate("$(window).off('resize'); $('.nav-side-container').slimScroll({destroy: true}); $('.nav-side-container').css('overflow', 'visible').css('height', '100%'); $('.inspect-mode').remove()")
@@ -74,50 +85,7 @@ async function snapshotElement(page, url, selector, displayTitle, outputPath, fi
   });
 }
 
-async function resizeScreenshot(targetFilePath, fileName, destinationFilePath) {
-  console.log(`Resizing shot: ${targetFilePath}`)
-  await sharp(targetFilePath)
-    .resize(700, null)
-    .toFile( path.join(destinationFilePath, `${fileName}@2x.jpg`))
-
-  await sharp(targetFilePath)
-    .resize(350, null)
-    .toFile( path.join(destinationFilePath, `${fileName}.jpg`))
-
-  fs.unlinkSync( targetFilePath )
-}
-
-function resizeHeroShot(outputPath, counter) {
-  let filePath = path.join(outputPath, `hero_shot_${counter}_source.jpg`)
-
-  var resizer = async function() {
-    console.log(`Resizing Hero Shot: ${filePath}`)
-    await sharp(filePath)
-      .resize(2800, 920)
-      .crop(sharp.gravity.north)
-      .toFile( path.join(outputPath, `hero_shot_${counter}@2x.jpg`))
-
-    await sharp(filePath)
-      .resize(1400, 460)
-      .crop(sharp.gravity.north)
-      .toFile( path.join(outputPath, `hero_shot_${counter}.jpg`))
-
-    await sharp(filePath)
-      .resize(760, 356)
-      .crop(sharp.gravity.north)
-      .toFile( path.join(outputPath, `shot_${counter}@2x.jpg`))
-
-    await sharp(filePath)
-      .resize(380, 178)
-      .crop(sharp.gravity.north)
-      .toFile( path.join(outputPath, `shot_${counter}.jpg`))
-
-    fs.unlinkSync( path.join(outputPath, `hero_shot_${counter}_source.jpg`))
-  }.bind(this)
-  resizer();
-}
-
-async function generateHeroShots(page, theme, style, outputPath) {
+async function generateHeroShots(theme, style, outputPath) {
   var targetUrls = [
     `preview/001_dashboards@ti-dashboard/001_dashboard_1`,
     `preview/001_dashboards@ti-dashboard/002_dashboard_2`,
@@ -125,18 +93,80 @@ async function generateHeroShots(page, theme, style, outputPath) {
     `preview/001_dashboards@ti-dashboard/004_dashboard_4`,
   ];
 
-  var counter = 1;
-
   for(var counter=0; counter < targetUrls.length; counter++) {
-    console.log(`Generating hero shots ${theme} - ${style}`)
     var themeString = `?theme=${theme}&style=${style}`
 
-    await snapshotElement(page, targetUrls[counter]+themeString, 'body', 'hero_shot', outputPath, `hero_shot_${counter+1}`)
-    resizeHeroShot(outputPath, counter+1)
+    await createRenderJob( theme, style, targetUrls[counter]+themeString, 'body', 'hero_shot', outputPath, `hero_shot_${counter+1}`, {
+      inputFile: path.join(outputPath, `hero_shot_${counter+1}_source.jpg`),
+      stack: {
+        [path.join(outputPath, `hero_shot_${counter+1}@2x.jpg`)]: {
+          resizeX: 2800,
+          resizeY: 920,
+          crop: sharp.gravity.north
+        },
+        [path.join(outputPath, `hero_shot_${counter+1}.jpg`)]:{
+          resizeX: 1400,
+          resizeY: 460,
+          crop: sharp.gravity.north
+        },
+        [path.join(outputPath, `shot_${counter+1}@2x.jpg`)]:{
+          resizeX: 760,
+          resizeY: 356,
+          crop: sharp.gravity.north
+        },
+        [path.join(outputPath, `shot_${counter+1}.jpg`)]:{
+          resizeX: 380,
+          resizeY: 178,
+          crop: sharp.gravity.north
+        }
+      }
+    })
   }
 }
 
-async function processMapping(page, obj, theme, style, parentName = '') {
+async function createRenderJob(theme, style, url, selector, displayTitle, outputPath, fileName, resizeStack) {
+  var job = RENDER_JOBS.create('renderjob', {
+    theme: theme,
+    style: style,
+    targetUrl: url,
+    selector: selector,
+    displayTitle: displayTitle,
+    title: displayTitle,
+    outputPath: outputPath,
+    fileName: fileName,
+    resizeStack: resizeStack
+  }).attempts(3).removeOnComplete( true )
+
+  job.on('complete',  function(result) {
+    console.log(`[ COMPLETING ] ${renderJobCount} jobs remaining...`)
+
+    if( renderJobCount === 0 ) {
+      console.log("Shutting down...")
+      process.exit();
+    }
+  }).on('failed', function(errorMessage){
+    console.log('Job failed: ', errorMessage);
+  })
+
+  job.save()
+
+  renderJobCount += 1;
+}
+
+async function resizeJob(resizeStack) {
+  var keys = Object.keys(resizeStack.stack)
+
+  for(outputFile of keys) {
+    await sharp(resizeStack.inputFile)
+    .resize(resizeStack.stack[outputFile].resizeX, resizeStack.stack[outputFile].resizeY)
+    .crop(resizeStack.stack[outputFile].crop)
+    .toFile( outputFile )
+  }
+
+  fs.unlinkSync( resizeStack.inputFile )
+}
+
+async function processMapping(obj, theme, style, parentName = '') {
   for(let key of Object.keys(obj)) {
     if( obj[key].hasOwnProperty('preview_url')) {
       let previewUrl = 'preview/' + obj[key].preview_url;
@@ -148,20 +178,31 @@ async function processMapping(page, obj, theme, style, parentName = '') {
 
       var themeString = `?theme=${theme}&style=${style}`
 
-      await snapshotElement(page, previewUrl+themeString, selector, displayTitle, outputPath, fileName)
-      await resizeScreenshot(filePath, fileName, outputPath);
+      await createRenderJob( theme, style, previewUrl+themeString, selector, displayTitle, outputPath, fileName, {
+        inputFile: filePath,
+        stack: {
+          [path.join(outputPath, `${fileName}@2x.jpg`)]: {
+            resizeX: 750,
+            resizeY: null,
+            crop: null
+          },
+          [path.join(outputPath, `${fileName}.jpg`)]:{
+            resizeX: 375,
+            resizeY: null,
+            crop: null
+          }
+        }
+      })
     }
 
     if( obj[key].hasOwnProperty('children')) {
-      await processMapping(page, obj[key].children, theme, style, parentName !== "" ? parentName + "_"+ key : key)
+      await processMapping(obj[key].children, theme, style, parentName !== "" ? parentName + "_"+ key : key)
     }
   }
 }
 
 
 (async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
   const pageMap = await JSON.parse(fs.readFileSync(path.join(__dirname, '../page_map.json'), 'utf8'))
 
   const themes = {
@@ -171,18 +212,37 @@ async function processMapping(page, obj, theme, style, parentName = '') {
     lyra:   ['charcoal', 'lime', 'raspberry', 'azure']
   }
 
-  page.setViewport({width: 1400, height: 1600, deviceScaleFactor: 2});
 
   for(let theme of Object.keys(themes)) {
     for(let style of themes[theme]) {
       const shotDir = path.join(__dirname, 'shots', theme, style)
       await rimraf(shotDir)
       await mkdirp(shotDir)
-      await generateHeroShots(page,theme, style, shotDir);
-      await processMapping(page, pageMap, theme, style);
+      await generateHeroShots(theme, style, shotDir);
+      //await processMapping(pageMap, theme, style);
     }
   }
 
-  console.log('closing browser')
-  browser.close();
+  console.log(`[ INITIALIZING ]  There are ${renderJobCount} jobs to process...`)
+
+  RENDER_JOBS.process('renderjob', 8, async function processRenderJobs(renderJob, done) {
+    const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://localhost:3000' });
+    const page = await browser.newPage();
+    await page.setViewport({width: 1400, height: 1600, deviceScaleFactor: 2});
+
+    renderJob.log(`[ PROCESSING ] Snapshotting ${renderJob.data.theme} - ${renderJob.data.style}: ${renderJob.data.displayTitle}`)
+    await snapshotElement(page, renderJob.data.targetUrl, renderJob.data.selector, renderJob.data.displayTitle, renderJob.data.outputPath, renderJob.data.fileName).catch(function(err){
+      throw new Error( 'bad things happen' );
+    });
+
+    renderJob.log(`[ PROCESSING ] Resizing ${renderJob.data.theme} - ${renderJob.data.style}: ${renderJob.data.displayTitle}`)
+    await resizeJob(renderJob.data.resizeStack);
+    renderJob.log(`[ PROCESSING ] Resizing done.`)
+
+    await browser.close();
+    renderJobCount -= 1
+    done && done()
+  })
 })();
+
+

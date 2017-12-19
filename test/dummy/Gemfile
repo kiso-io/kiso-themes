@@ -16,6 +16,9 @@ gem 'simple_form', '~> 3.5.0'
 gem 'guard'
 gem 'guard-livereload'
 
+gem 'rack-cache'
+gem 'puma'
+
 gem 'pg', :group => :production
 gem 'thin', group: :production
 gem 'rails_12factor', group: :production
