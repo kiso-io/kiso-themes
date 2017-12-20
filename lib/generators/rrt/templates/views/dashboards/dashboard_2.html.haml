@@ -1,0 +1,306 @@
+= content_for :js_libs, "modernizr gmaps flot chartjs demo-dashboard demo-chartjs demo-sparklines demo-easypiechart"
+.container-fluid
+  .row.equal-rows
+    .col-12.col-md-4.mb-3
+      .card.d-flex.card-full-height
+        .card-header
+          %h6 STORAGE QUOTA
+        .card-body.d-flex.align-items-center.justify-content-center
+          .quota-alert
+            .js-pie-chart.pie-chart{"data-bar-color" => "red", "data-line-width" => "4", "data-percent" => "90", "data-size" => "120", "data-track-color" => "#e9e9e9"}
+              .pie-chart-value
+                %span 90%
+            %p Your storage is almost full
+    .col-12.col-md-4.mb-3
+      .card.card-full-height.m-0
+        .card-header
+          %h6 KPIS
+        %ul.list-group.list-group-flush
+          %li.list-group-item.d-flex.align-items-center
+            .mr-auto.d-flex.align-items-center
+              = theme_icon_tag "user", class: "m-0 mr-4 h4 text-muted"
+              Page Visits
+            %span.spark-bar-1{sparkbarcolor: "green", sparkbarheight: "40"} 12,23,19,18,12,2,33,12
+          %li.list-group-item.d-flex.align-items-center
+            .mr-auto.d-flex.align-items-center
+              = theme_icon_tag "power-off", class: "m-0 mr-4 h4 text-muted"
+              Logins
+            %span.spark-bar-1{sparkbarcolor: "red", sparkbarheight: "40"} 100,23,231,18,12,2,33,12
+          %li.list-group-item.d-flex.align-items-center
+            .mr-auto.d-flex.align-items-center
+              = theme_icon_tag "heart", class: "m-0 mr-4 h4 text-muted"
+              Subscribes
+            %span.spark-bar-1{sparkbarcolor: "lightblue", sparkbarheight: "40"} 1,3,9,8,2,2,3,1
+          %li.list-group-item.d-flex.align-items-center
+            .mr-auto.d-flex.align-items-center
+              = theme_icon_tag "thumb-up", class: "m-0 mr-4 h4 text-muted"
+              Likes
+            %span.spark-bar-1{sparkbarcolor: "gray", sparkbarheight: "40"} 45,34,44,23,56,67,54,34
+          %li.list-group-item.d-flex.align-items-center
+            .mr-auto.d-flex.align-items-center
+              = theme_icon_tag "pulse", class: "m-0 mr-4 h4 text-muted"
+              Shocks
+            %span.spark-bar-1{sparkbarcolor: "orange", sparkbarheight: "40"} 5,4,4,3,6,7,4,4
+    .col-12.col-md-4.d-flex.flex-column.justify-content-between.mb-3
+      .card.card-tile-hero.inspectable
+        .card-header.text-center
+          %i.ti-headphone.display-3.text-brand-primary-lightest
+        .card-body.text-center
+          %small UNIQUE STREAMS
+          %h3.m-0.leading-normal 2,985
+      .card.card-tile-hero.mb-0.inspectable
+        .card-header.text-center
+          %i.ti-video-clapper.display-3.text-brand-primary-lightest
+        .card-body.text-center
+          %small UNIQUE VIDEOS
+          %h3.m-0.leading-normal 1,192,123
+  .row
+    .col-12
+      .card.card-tabbed.inspectable
+        .card-header
+          %h6 System Logs
+          %ul#navTab1.nav.nav-tabs.nav-tabs-primary.card-header-tabs{role: "tablist"}
+            %li.nav-item
+              %a.nav-link.active{"aria-controls" => "navTab11", "aria-expanded" => "true", "aria-selected" => "false", "data-toggle" => "tab", href: "#navTab11", role: "tab"} Warning
+            %li.nav-item
+              %a.nav-link{"aria-controls" => "navTab12", "aria-expanded" => "false", "aria-selected" => "false", "data-toggle" => "tab", href: "#navTab12", role: "tab"} Info
+            %li.nav-item
+              %a.nav-link{"aria-controls" => "navTab13", "aria-expanded" => "false", "aria-selected" => "true", "data-toggle" => "tab", href: "#navTab13", role: "tab"} Alert
+            %li.nav-item
+              %a.nav-link.disabled{"aria-controls" => "navTab14", "aria-expanded" => "false", "data-toggle" => "tab", href: "#navTab14", role: "tab"} Disabled
+        .card-body
+          #myTabContent.tab-content
+            #navTab11.tab-pane.fade.active.show{"aria-labelledby" => "navTab11", role: "tabpanel"}
+              %table.table.table-sm.font-size-small
+                %thead
+                  %tr
+                    %td Time
+                    %td Message
+                %tbody
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0 cache miss witd id type: 1
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0
+                        Client:
+                        %private , UID: 0, EUID: 0, GID: 0, EGID: 0
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0 cert[2]: AnchorTrusted =(leaf)[force]&gt; 0
+            #navTab12.tab-pane.fade{"aria-labelledby" => "navTab12", role: "tabpanel"}
+              %table.table.table-sm.font-size-small
+                %thead
+                  %tr
+                    %td Time
+                    %td Message
+                %tbody
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0 cache miss witd id type: 1
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0
+                        Client:
+                        %private , UID: 0, EUID: 0, GID: 0, EGID: 0
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0 cert[2]: AnchorTrusted =(leaf)[force]&gt; 0
+            #navTab13.tab-pane.fade{"aria-labelledby" => "navTab13", role: "tabpanel"}
+              %table.table.table-sm.font-size-small
+                %thead
+                  %tr
+                    %td Time
+                    %td Message
+                %tbody
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0 cache miss witd id type: 1
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0
+                        Client:
+                        %private , UID: 0, EUID: 0, GID: 0, EGID: 0
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0 cert[2]: AnchorTrusted =(leaf)[force]&gt; 0
+            #navTab14.tab-pane.fade{"aria-labelledby" => "navTab14", role: "tabpanel"}
+              %table.table.table-sm.font-size-small
+                %thead
+                  %tr
+                    %td Time
+                    %td Message
+                %tbody
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0 cache miss witd id type: 1
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0
+                        Client:
+                        %private , UID: 0, EUID: 0, GID: 0, EGID: 0
+                  %tr
+                    %td 18/09/17 23:51
+                    %td
+                      %pre.my-0 cert[2]: AnchorTrusted =(leaf)[force]&gt; 0
+  .row.equal-cols
+    .col-12.col-md-6
+      .card.card-chat.card-full-height.inspectable
+        .card-header
+          %h6 CHAT
+        .card-body{style: "height: 423px"}
+          %ol
+            %li
+              .media.small
+                .chat-user-avatar
+                  %img.d-flex{alt: "Generic placeholder image", src: "//fillmurray.com/42/42"}/
+                  %small
+                    %time 09:34am
+                .media-body
+                  .d-flex>
+                    %strong.chat-username John McDowall
+                  What time does the server upgrade kickoff?
+            %li
+              .media.small
+                .chat-user-avatar
+                  %img.d-flex{alt: "Generic placeholder image", src: "//fillmurray.com/42/42"}/
+                  %small
+                    %time 09:35am
+                .media-body
+                  .d-flex>
+                    %strong.chat-username Hiro Protagonist
+                  In about 10 minutes.
+            %li
+              .media.small
+                .chat-user-avatar
+                  %img.d-flex{alt: "Generic placeholder image", src: "//fillmurray.com/42/42"}/
+                  %small
+                    %time 09:35am
+                .media-body
+                  .d-flex>
+                    %strong.chat-username John McDowall
+                  Ok, great.
+            %li
+              .media.small
+                .chat-user-avatar
+                  %img.d-flex{alt: "Generic placeholder image", src: "//fillmurray.com/42/42"}/
+                  %small
+                    %time 09:44am
+                .media-body
+                  .d-flex>
+                    %strong.chat-username Hiro Protagonist
+                  You ready? Holding onto your butt?
+            %li
+              .media.small
+                .chat-user-avatar
+                  %img.d-flex{alt: "Generic placeholder image", src: "//fillmurray.com/42/42"}/
+                  %small
+                    %time 09:34am
+                .media-body
+                  .d-flex>
+                    %strong.chat-username John McDowall
+                  What time does the server upgrade kickoff?
+            %li
+              .media.small
+                .chat-user-avatar
+                  %img.d-flex{alt: "Generic placeholder image", src: "//fillmurray.com/42/42"}/
+                  %small
+                    %time 09:34am
+                .media-body
+                  .d-flex>
+                    %strong.chat-username John McDowall
+                  What time does the server upgrade kickoff?
+            %li
+              .media.small
+                .chat-user-avatar
+                  %img.d-flex{alt: "Generic placeholder image", src: "//fillmurray.com/42/42"}/
+                  %small
+                    %time 09:34am
+                .media-body
+                  .d-flex>
+                    %strong.chat-username John McDowall
+                  What time does the server upgrade kickoff?
+        .card-footer
+          %input.form-control.mr-3{placeholder: "Enter your message", type: "text"}/
+          %button.btn.btn-primary Send
+    .col-12.col-md-6
+      .card.card-full-height.card-activity-feed.inspectable
+        .card-header
+          %h6 ACTIVITY FEED
+        .card-body.overflow-y-scroll{style: "height: 485px"}
+          %ol
+            %li.card-activity-feed-label
+              %time.small Today
+            %li.card-activity-feed-item
+              .card-activity-feed-item-icon
+                %i.ti-folder.bg-blue
+              .card-activity-feed-item-body
+                %h6.d-flex
+                  Fill archived a project
+                  %time.ml-auto.small
+                    %i.ti-time>
+                    11:48
+                %p.small
+                  The project
+                  = succeed "was" do
+                    %strong Boring Corporate Project
+                  = succeed "." do
+                    %a{href: "#"} here
+            %li.card-activity-feed-item
+              .card-activity-feed-item-icon
+                %i.ti-cloud-up.bg-blue
+              .card-activity-feed-item-body
+                %h6.d-flex
+                  Zomoko uploaded a file
+                  %time.ml-auto.small
+                    %i.ti-time>
+                    11:48
+                %p.small She uploaded the file `catface.jpg` and left 1 comment on it.
+                %img.img-thumbnail{src: "//placekitten.com/42/42"}/
+                .card-activity-feed-item-footer.text-right
+                  %a.btn.btn-primary.btn-sm{href: "#"} Read the comment
+                  %a.btn.btn-danger.btn-sm{href: "#"} Delete
+            %li.card-activity-feed-label
+              %time.small Yesterday
+            %li.card-activity-feed-item
+              .card-activity-feed-item-icon
+                %i.ti-folder.bg-blue
+              .card-activity-feed-item-body
+                %h6.d-flex
+                  Fill archived a project
+                  %time.ml-auto.small
+                    %i.ti-time>
+                    11:48
+                %p.small
+                  The project
+                  = succeed "was" do
+                    %strong Boring Corporate Project
+                  = succeed "." do
+                    %a{href: "#"} here
+            %li.card-activity-feed-item
+              .card-activity-feed-item-icon
+                %i.ti-user.bg-blue
+              .card-activity-feed-item-body
+                %h6.d-flex
+                  Fill archived a project
+                  %time.ml-auto.small
+                    %i.ti-time>
+                    11:48
+                %p.small
+                  The project
+                  = succeed "was" do
+                    %strong Boring Corporate Project
+                  = succeed "." do
+                    %a{href: "#"} here
+            %li.card-activity-feed-label.card-activity-feed-label-end

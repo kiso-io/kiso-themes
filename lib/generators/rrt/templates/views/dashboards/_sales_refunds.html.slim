@@ -1,0 +1,36 @@
+.row.equal-cols
+  .col-12.col-md-9.animate-fade-in-1000
+    .card.card-full-height.inspectable
+      /! component-title: Graph
+      .card-header.d-flex.align-items-center
+        h6.mr-auto SALES VS REFUNDS LAST 7 DAYS
+        .d-flex
+          .dropdown
+            button#salesAndRefundButton.nav-link.btn.btn-icon aria-expanded="false" aria-haspopup="true" data-toggle="dropdown", type: "button" 
+              = theme_icon_tag "more"
+            .dropdown-menu.dropdown-menu-right aria-badgeledby="salesAndRefundButton" 
+              a.dropdown-item href: "#"  Action
+              a.dropdown-item href: "#"  Another action
+              a.dropdown-item href: "#"  Something else here
+      .card-body.position-relative
+        canvas.sales-vs-refunds
+  .col-12.col-md-3.animate-fade-in-1000
+    .card.card-full-height.d-flex.inspectable
+      /! component-title: Timeline Card
+      .card-header
+        h6 SALES ACTIVITY
+      .card-body
+        .timeline style: "height: 450px" 
+          ul.left-timeline
+            - types = [ { klass: 'refund', css_class: 'badge badge-danger'},  { klass: 'purchase', css_class: 'badge badge-success'}, { klass: 'cancellation', css_class: 'badge badge-light'}]
+            - (1..8).each do |index|
+              li.timeline-item
+                - instance = types[Random.rand(types.length)]
+                time class: "#{instance[:css_class]}" 
+                  strong
+                    | $#{Random.rand(120)}
+                .activity-text
+                  strong Internet Genie
+                  small.text-muted
+                    = instance[:klass].upcase
+                    | \- #{time_ago_in_words( DateTime.now-(index.minutes) )}

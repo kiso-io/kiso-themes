@@ -1,0 +1,34 @@
+%h5 BILLING DETAILS
+.d-flex.align-items-center.mb-4
+  %img{src: "#{asset_path('rrt/creditcards/visa.png')}"}/
+  %p.m-0.ml-3
+    %strong Visa
+    card ending in 1234.
+  %button.btn.btn-outline-primary.ml-auto Update Card
+%table.table.table-responsive-sm
+  %thead
+    %th Invoice Period
+    %th Amount
+    %th
+  %tbody
+    %tr
+      %td
+        %a{href: "javascript:"} January 2017
+      %td
+        $9.00 USD
+      %td.text-right
+        %a{href: "#"} Download
+    %tr
+      %td
+        %a{href: "javascript:"} February 2017
+      %td
+        $9.00 USD
+      %td.text-right
+        %a{href: "javascript:"} Download
+    %tr
+      %td
+        %a{href: "javascript:"} March 2017
+      %td
+        $9.00 USD
+      %td.text-right
+        %a{href: "javascript:"} Download

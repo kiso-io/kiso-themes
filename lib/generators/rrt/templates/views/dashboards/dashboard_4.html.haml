@@ -1,0 +1,77 @@
+- content_for :no_page_header, true
+- content_for :js_libs, "modernizr gmaps flot chartjs demo-dashboard demo-chartjs demo-sparklines"
+%section.bg-light.px-3.pt-5.pb-3.mb-3.d-flex.flex-column
+  .container-fluid
+    .row.equal-cols
+      .col-12.col-md-3
+        %h4.leading-normal.m-0.p-0 Welcome back, Elliot.
+        %p.leading-normal.small Today is going to be a great day!
+        %ul.m-0.p-0.mb-5.small
+          %li You have 5 new followers.
+          %li 132 people have liked your posts.
+          %li Network maintenance is happening at 5pm today.
+        %a.btn.btn-primary.mb-3{href: "javascript:"} Go to Timeline →
+        %a.btn.btn-info{href: "javascript:"} See activity feed →
+      .col-12.col-md-6
+        .card.card-full-height
+          .card-body
+            %canvas{"data-chartjs-line-demo" => ""}
+      .col-12.col-md-3.d-flex.flex-column.justify-items-between
+        .card.card-mini.card-mini-solid-icon
+          .card-body
+            .media
+              .media-body.text-left
+                %h6.m-0.text-muted Page Hits
+                %h4.m-0.counter{"data-from" => "0", "data-refresh-interval" => "80", "data-speed" => "5000", "data-to" => "100"} 192
+              .d-flex.align-self-center.text-primary.ml-3
+                %span
+                  %i.display-4.ti-world
+        .card.card-mini.card-mini-solid-icon
+          .card-body
+            .media
+              .media-body.text-left
+                %h6.m-0.text-muted Ecoin Transfers
+                %h4.m-0.counter{"data-from" => "0", "data-refresh-interval" => "80", "data-speed" => "5000", "data-to" => "22000"} 22,000
+              .d-flex.align-self-center.text-primary.ml-3
+                %span
+                  %i.display-4.ti-pulse
+        .card.card-mini.card-mini-solid-icon
+          .card-body
+            .media
+              .media-body.text-left
+                %h6.m-0.text-muted Transactions
+                %h4.m-0.counter{"data-from" => "0", "data-refresh-interval" => "80", "data-speed" => "5000", "data-to" => "1383"} 22,000
+              .d-flex.align-self-center.text-primary.ml-3
+                %span
+                  %i.display-4.ti-package
+.container-fluid
+  .row
+    .col-12
+      .card.inspectable
+        .card-header.d-flex.align-items-center
+          %h6 Most Active Users
+          .ml-auto.btn-group{"aria-label" => "Basic example", role: "group"}
+            %button.btn.btn-default.active{type: "button"} Week
+            %button.btn.btn-default{type: "button"} Month
+            %button.btn.btn-default{type: "button"} Quarter
+        .table-responsive
+          %table.table.table-hover.table-striped
+            %thead
+              %tr
+                %th Rank
+                %th Email
+                %th Name
+                %th Installs
+                %th Last Active
+                %th Countries
+                %th Activity
+            - (1..10).each do |index|
+              %tr
+                %td= index
+                %td johnny@appleseed.com
+                %td Johnny Appleseed
+                %td= sprintf('%.2f', (rand * 1000).round).gsub('.00','').reverse.scan(/(\d*\.\d{1,3}|\d{1,3})/).join(',').reverse
+                %td Wed, 3rd Oct 2018
+                %td Canada, USA
+                %td
+                  %span.spark-bar-1{sparkbarcolor: "#6886a7", style: "width: 100px;"}= (0..8).to_a.shuffle.join(', ')

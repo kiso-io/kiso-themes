@@ -419,8 +419,17 @@ task :cook_haml do
   ]
 
   target_erb_dirs.each do |target_erb_dir|
-    cd target_erb_dir do
-      sh 'find . -name \'*erb\' | xargs ruby -e \'ARGV.each { |i| puts "html2haml -r #{i} #{i.sub(/erb$/, "haml")}"}\' | bash'
+    existing_haml_candidates = Dir["#{target_erb_dir}/**/*.haml"].map { |f| f.gsub(/.haml$/, "")}
+    erb_candidates = Dir["#{target_erb_dir}/**/*.erb"].map { |f| f.gsub(/.erb$/, "")}
+    missing_haml_files = (erb_candidates - existing_haml_candidates).map { |f| "#{f}.erb"}
+
+    if missing_haml_files.length > 0
+      cd target_erb_dir do
+        missing_haml_files.each do |missing_haml_file|
+          puts "Converting: #{missing_haml_file}"
+          sh "html2haml -r #{File.expand_path(missing_haml_file, __dir__)} #{File.expand_path(missing_haml_file.sub(/erb$/, 'haml'), __dir__)}"
+        end
+      end
     end
   end
 end
@@ -440,15 +449,20 @@ task :cook_slim do
     'lib/generators/rrt/templates/views/emails',
     'lib/generators/rrt/templates/views/frontend_pages/blog_pages',
     'lib/generators/rrt/templates/views/frontend_pages/error_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/faq_pages',
+    'lib/generators/rrt/templates/views/frontend_pages/faq_pagea',
     'lib/generators/rrt/templates/views/frontend_pages/landing_pages',
     'lib/generators/rrt/templates/views/frontend_pages/legal_pages',
     'lib/generators/rrt/templates/views/frontend_pages/pricing_pages',
   ]
 
   target_erb_dirs.each do |target_erb_dir|
+    existing_haml_candidates = Dir["#{target_erb_dir}/**/*.haml"]
+
     cd target_erb_dir do
-      sh 'find . -name \'*haml\' | xargs ruby -e \'ARGV.each { |i| puts "haml2slim #{i} #{i.sub(/haml$/, "slim")}"}\' | bash'
+      existing_haml_candidates.each do |missing_slim_file|
+        puts "Converting: #{missing_slim_file}"
+        sh "haml2slim #{File.expand_path(missing_slim_file, __dir__)} #{File.expand_path(missing_slim_file.sub(/haml$/, 'slim'), __dir__)}"
+      end
     end
   end
 end

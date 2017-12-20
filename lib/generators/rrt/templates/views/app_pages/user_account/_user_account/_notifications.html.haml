@@ -1,0 +1,42 @@
+%h5 NOTIFICATIONS
+%ul.list-unstyled
+  %li.d-flex.align-items-center.mb-4
+    .mr-auto
+      %h6 DIGESTS
+      %p.text-muted.small Choose wheather daily, weekly or monthly digests are emailed to you.
+    %select.custom-select.small
+      %option{value: "1"} Daily
+      %option{value: "2"} Weekly
+      %option{value: "3"} Monthly
+  %li.d-flex.align-items-center.mb-4
+    .mr-auto
+      %h6 SMS ALERTS
+      %p.text-muted.small Choose whether to enable SMS alerts sent to you.
+    %input.bootstrap-switch{checked: "checked", "data-on-color" => "primary", name: "checkbox", type: "checkbox"}/
+  %li.d-flex.align-items-center.mb-4
+    .mr-auto
+      %h6 @ NOTIFICATIONS
+      %p.text-muted.small Recieve a notification when some @'s you.
+    %input.bootstrap-switch{checked: "checked", "data-on-color" => "primary", name: "checkbox", type: "checkbox"}/
+  %li.d-flex.align-items-center.mb-4
+    .mr-auto
+      %h6 PROJECT ARCHIVE NOTIFICATIONS
+      %p.text-muted.small Receive a notification when someone archives a project.
+    %input.bootstrap-switch{checked: "checked", "data-on-color" => "primary", name: "checkbox", type: "checkbox"}/
+  %li.d-flex.align-items-center.mb-4
+    .mr-auto
+      %h6 DEADLINE NOTIFICATIONS
+      %p.text-muted.small Receive a notification when a deadline is about to expire.
+    %input.bootstrap-switch{checked: "checked", "data-on-color" => "primary", name: "checkbox", type: "checkbox"}/
+  %li.d-flex.align-items-center.mb-4
+    .mr-auto
+      %h6 MICROMANAGEMENT NOTIFICATIONS
+      %p.text-muted.small Receive a notification when someone is about to micromanage the hell out of you.
+    %input.bootstrap-switch{checked: "checked", "data-on-color" => "primary", name: "checkbox", type: "checkbox"}/
+  %li.d-flex.align-items-center.mb-4
+    .mr-auto
+      %h6 MARKETING EMAILS
+      %p.text-muted.small Opt in to our fantastical marketing emails.
+    %input.bootstrap-switch{checked: "checked", "data-on-color" => "primary", name: "checkbox", type: "checkbox"}/
+.actions.d-flex
+  %button.btn.btn-success.ml-auto Save Changes

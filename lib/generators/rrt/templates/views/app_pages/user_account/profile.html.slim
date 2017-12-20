@@ -1,0 +1,41 @@
+= content_for :js_libs, "modernizr jasny"
+.profile-header.jumbotron.d-flex.align-items-center.justify-content-center.flex-column.pb-0
+  = render partial: '_user_account/avatar_upload'
+  h2.m-0.mb-2 Phill McMurray
+  .badge.badge-light
+    | PRO ACCOUNT
+  ul#myTab.nav.nav-tabs.mt-5 role: "tablist" 
+    li.nav-item
+      a#profile-tab.nav-link.active aria-controls="home" aria-expanded="true" data-toggle="tab", href: "#home", role: "tab"  Profile
+    li.nav-item
+      a#plan-tab.nav-link aria-controls="profile" aria-expanded="false" data-toggle="tab", href: "#profile", role: "tab"  Plan
+    li.nav-item
+      a#billing-tab.nav-link aria-controls="billing" aria-expanded="false" data-toggle="tab", href: "#billing", role: "tab"  Billing
+    li.nav-item
+      a#notifications-tab.nav-link aria-controls="notifications" aria-expanded="false" data-toggle="tab", href: "#notifications", role: "tab"  Notifications
+    li.nav-item
+      a#support-tab.nav-link aria-controls="support" aria-expanded="false" data-toggle="tab", href: "#support", role: "tab"  Support
+.container
+  .row
+    .col-12.col-md-8.mr-auto.ml-auto
+      #myTabContent.tab-content.pt-2.pb-2
+        #home.tab-pane.fade.show.active aria-labelledby="profile-tab", role: "tabpanel" 
+          .card
+            .card-body
+              = render partial: '_user_account/profile'
+        #billing.tab-pane.fade aria-labelledby="billing-tab", role: "tabpanel" 
+          .card
+            .card-body
+              = render partial: '_user_account/billing'
+        #profile.tab-pane.fade aria-labelledby="plan-tab", role: "tabpanel" 
+          .card
+            .card-body
+              = render partial: '_user_account/plan'
+        #notifications.tab-pane.fade aria-labelledby="notifications", role: "tabpanel" 
+          .card
+            .card-body
+              = render partial: '_user_account/notifications'
+        #support.tab-pane.fade aria-labelledby="support", role: "tabpanel" 
+          .card
+            .card-body
+              = render partial: '_user_account/support'

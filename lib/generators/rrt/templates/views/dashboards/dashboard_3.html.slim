@@ -1,0 +1,96 @@
+body
+  - content_for :js_libs, "modernizr gmaps flot chartjs demo-dashboard demo-chartjs demo-sparklines"
+  - content_for :no_page_header, true
+  section.bg-light.px-3.mb-3.d-flex.flex-column
+    header.d-flex.pt-4.pb-3.align-items-center
+      h3.mr-auto International Order Shipping
+      button.btn.btn-icon.btn-outline-primary href: "javascript:" 
+        i.ti-settings
+    .row
+      ul#myTab.nav.nav-tabs.p-0.inspectable role: "tablist" 
+        li.nav-item
+          a#home-tab.nav-link.active aria-controls="home" aria-expanded="true" aria-selected="true" data-toggle="tab", href: "#home", role: "tab"  Reports
+        li.nav-item
+          a#profile-tab.nav-link aria-controls="profile" aria-selected="false" data-toggle="tab", href: "#profile", role: "tab"  Analytics
+        li.nav-item.dropdown
+          a#profile-tab.nav-link aria-controls="profile" aria-selected="false" data-toggle="tab", href: "#profile", role: "tab"  Invoices
+  .container-fluid
+    .row
+      .col-12.col-md-4
+        .card
+          .card-body
+            p.m-0
+              strong Subject Compliance Summary
+            p.small.m-0.text-uppercase.text-muted Period: Nov 1 - Dec 1
+            .mt-3.py-4
+              canvas.sales-vs-refunds style: "display: block; height: 300px; width: 600px;" 
+          .card-footer.d-flex.align-items-center
+            h6.m-0.mr-auto Subject Compliance Report
+            a.btn.btn-circle.btn-outline-dark href: ""  View Report
+      .col-12.col-md-4
+        .card
+          .card-body
+            p.m-0
+              strong Subject Compliance Summary
+            p.small.m-0.text-uppercase.text-muted Period: Nov 1 - Dec 1
+            .mt-3.py-4
+              canvas.sales-vs-refunds-bars style: "display: block; height: 300px; width: 600px;" 
+          .card-footer.d-flex.align-items-center
+            h6.m-0.mr-auto Subject Compliance Report
+            a.btn.btn-circle.btn-outline-dark href: ""  View Report
+      .col-12.col-md-4
+        .card
+          .card-body
+            p.m-0
+              strong Subject Compliance Summary
+            p.small.m-0.text-uppercase.text-muted Period: Nov 1 - Dec 1
+            .mt-3.py-4
+              canvas.demo-pie style: "display: block; height: 300px; width: 600px;" 
+          .card-footer.d-flex.align-items-center
+            h6.m-0.mr-auto Subject Compliance Report
+            a.btn.btn-circle.btn-outline-dark href: "javascript:"  View Report
+    .row
+      .col-12
+        .card.card-tabbed.inspectable
+          .card-header
+            h6 BIG CHART
+            .dropdown
+              button#salesAndRefundButton.nav-link.btn.btn-icon aria-expanded="false" aria-haspopup="true" data-toggle="dropdown", type: "button" 
+                = theme_icon_tag "more"
+              .dropdown-menu.dropdown-menu-right aria-labelledby="salesAndRefundButton", style: "position: absolute; top: 26px; left: -148px; will-change: top, left;" x-placement="bottom-end" 
+                a.dropdown-item href: "#"  Refresh
+                a.dropdown-item href: "#"  Share
+                a.dropdown-item href: "#"  Remove
+          .card-body
+            .container-fluid
+              .row.equal-cols
+                .col-12.col-md-8.d-flex.align-self-center
+                  canvas data-chartjs-line-demo="true" 
+                .col-12.col-md-4
+                  .card.card-mini.inspectable
+                    /! component-title: Mini Card
+                    .card-body
+                      .media
+                        .d-flex.align-self-center.mr-3
+                          span.spark-bar-1 sparkbarcolor: "#6886a7", style: "width: 80px;" = (0..8).to_a.shuffle.join(', ')
+                        .media-body.text-right
+                          h6.m-0.pt-2.text-muted Page Hits
+                          h4.m-0.counter data-from="0" data-refresh-interval="80" data-speed="5000" data-to="100"  192
+                  .card.card-mini.inspectable
+                    /! component-title: Mini Card
+                    .card-body
+                      .media
+                        .d-flex.align-self-center.mr-3
+                          span.spark-bar-1 sparkbarcolor: "#6886a7", style: "width: 80px;" = (0..8).to_a.shuffle.join(', ')
+                        .media-body.text-right
+                          h6.m-0.pt-2.text-muted Return Visitors
+                          h4.m-0.counter data-from="0" data-refresh-interval="80" data-speed="5000" data-to="100"  192
+                  .card.card-mini.inspectable
+                    /! component-title: Mini Card
+                    .card-body
+                      .media
+                        .d-flex.align-self-center.mr-3
+                          span.spark-bar-1 sparkbarcolor: "#6886a7", style: "width: 80px;" = (0..8).to_a.shuffle.join(', ')
+                        .media-body.text-right
+                          h6.m-0.pt-2.text-muted Cancellations
+                          h4.m-0.counter data-from="0" data-refresh-interval="80" data-speed="5000" data-to="100"  192

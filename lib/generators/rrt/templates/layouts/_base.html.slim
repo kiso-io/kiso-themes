@@ -1,20 +1,20 @@
-doctype html
-html
-  body
-    = html_tag :lang => "en" do
-      meta charset: "utf-8" /
-      meta content: "ie=edge" http-equiv="x-ua-compatible" /
-      meta content: "width=device-width, initial-scale=1, shrink-to-fit=no", name: "viewport" /
-      meta content: "no-cache", name: "turbolinks-cache-control" /
-      title= [@title, app_name].compact.join(" - ")
-      = csrf_meta_tags
-      link href: "//fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,900", rel: "stylesheet", type: "text/css" /
-      = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'
-      = yield :styles
-      = favicon_link_tag
-      = render 'layouts/external_js_libs'
-      = yield :external_js_libs
-      = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
-      = yield :javascript
-      = yield :head
-      = yield
+doctype 5
+= html_tag :lang => "en" do
+  head
+    meta charset: "utf-8" /
+    meta content: "ie=edge" http-equiv="x-ua-compatible" /
+    meta content: "width=device-width, initial-scale=1, shrink-to-fit=no", name: "viewport" /
+    meta content: "no-cache", name: "turbolinks-cache-control" /
+    title= [@title, app_name].compact.join(" - ")
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'
+    = yield :styles
+    = favicon_link_tag
+    = render 'layouts/external_js_libs'
+    = yield :external_js_libs
+    = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
+    = yield :javascript
+    = yield :head
+    = yield
+  body class=@body_class data-js-libs=("bootstrap fitie metis forms sidenav prism clipboard bs-switch #{yield :js_libs}") 
+    = yield

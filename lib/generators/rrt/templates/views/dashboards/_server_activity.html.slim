@@ -1,0 +1,80 @@
+.row.is-flex
+  .col-12.col-md-5.animate-fade-in-1000
+    .card.card-default.inspectable
+      /! component-title: Flot Realtime Graph
+      .card-header
+        h6 MASTER SERVER
+      .card-body
+        .flot-realtime style: "height: 315px; width: 100%; display: block;" 
+      .card-footer
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .server-status-details.clearfix
+              h5.text-center Memory Stats
+              .row.stat-list.text-center
+                dl.col-xs-6.col-sm-6.col-md-3
+                  dt In use
+                  dd 2.5 GB
+                dl.col-xs-6.col-sm-6.col-md-3
+                  dt Total
+                  dd 4 GB
+                dl.col-xs-6.col-sm-6.col-md-3
+                  dt Available
+                  dd 500 MB
+                dl.col-xs-6.col-sm-6.col-md-3
+                  dt Swap
+                  dd 360 MB
+  .col-12.col-md-7.animate-fade-in-1000
+    .card.card-default.inspectable
+      /! component-title: Tabbed Card
+      .card-header.d-flex.align-items-center.justify-content-between
+        h6 RECENT ACTIVITY
+        ul.nav.nav-tabs.nav-tabs-xs
+          li.nav-item
+            a.nav-link.active data-toggle="tab", href: "#dashboard-recent-comments"  Comments
+          li.nav-item
+            a.nav-link data-toggle="tab", href: "#dashboard-recent-threads"  Forum threads
+      .tab-content
+        #dashboard-recent-comments.tab-pane.fade.active.show style: "height: 444px; overflow-y: auto;" 
+          ul.list-group.list-group-flush
+            - (1..5).each do |index|
+              li.list-group-item
+                .media
+                  a.d-flex.mr-3 href: "#" 
+                    = random_avatar 40, "rounded-circle"
+                  .media-body
+                    strong
+                      a href: "#", title: ""  Fill Murray
+                      | commented on
+                      a href: "#", title: ""  Article Name
+                    p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae atque, dolore quo voluptatum sed voluptas incidunt aspernatur natus iste dolor neque porro quos illo quia iusto minima, nesciunt animi architecto.
+                    ul.nav.small
+                      li.nav-item
+                        a.mr-3.btn.btn-circle.btn-primary href: "#" 
+                          = theme_icon_tag "pencil-alt"
+                          | Edit
+                      li.nav-item
+                        a.btn.btn-circle.btn-secondary href: "#" 
+                          = theme_icon_tag "close"
+                          | Remove
+                      li.ml-auto
+                        span.text-muted
+                          = index
+                          | hour ago
+        #dashboard-recent-threads.tab-pane.fade
+          div style: "overflow-y: auto; width: auto; height: 444px;" 
+            ul.list-group.list-group-flush
+              - (1..10).each do |index|
+                li.list-group-item
+                  .media
+                    a.d-flex.mr-3 href: "#" 
+                      = random_avatar 40, "rounded-circle"
+                    .media-body
+                      h6.media-header
+                        a href: "#", title: ""  Lorem ipsum dolor sit amet
+                      .small.d-flex
+                        | Started by
+                        a href: "#", title: ""  Fill Murray
+                        | in
+                        a href: "#", title: ""  Forum name
+                        span.ml-auto 3h ago

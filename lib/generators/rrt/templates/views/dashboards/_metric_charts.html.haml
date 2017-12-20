@@ -1,0 +1,25 @@
+.row
+  .col-12.col-md-6.col-lg-6
+    .card.card-metric.card-full-bleed.inspectable
+      / component-title: Metric Graph
+      .card-body
+        %canvas.metric-graph.metric-random-graph
+        .metric-header
+          %h6 New Subscribers
+          .metric-value 123
+        .metric-details
+          %span
+            %i.fa.fa-chevron-up.text-success
+            12% SINCE 30 Days Ago
+  .col-12.col-md-6.col-lg-6
+    .card.card-full-bleed.card-metric.inspectable
+      / component-title: Metric Graph
+      .card-body
+        %canvas.metric-graph.metric-random-graph
+        .metric-header
+          %h6 Revenue
+          .metric-value $123,231,678
+        .metric-details
+          %span
+            %i.fa.fa-chevron-down.text-danger
+            22% SINCE 30 Days Ago
