@@ -92,7 +92,7 @@ task :release_version do
 
   puts "🚚  Pushing release to rrt.com"
   cd "../rrtdotcom", verbose: false do
-    sh "bundle exec rake gems:push gem=../rrt/pkg/rrt-#{latest_version}.gem"
+    sh "bin/rails gems:push gem=../rrt/pkg/rrt-#{latest_version}.gem"
 
     puts system('test -z "$(git ls-files --others)"')
 
