@@ -90,20 +90,25 @@ task :release_version do
   puts "📖  Generating changelog..."
   sh "git changelog"
 
+  Rake::Task["commit_release_to_rrt_dot_com"].invoke
+
+  puts "🐱  Tagging and pushing latest version"
+  sh "git add . && git commit -m 'RRT Gem #{latest_version}' && git tag #{latest_version} && git push"
+end
+
+task :commit_release_to_rrt_dot_com do
   puts "🚚  Pushing release to rrt.com"
+
+  latest_version = File.read('./VERSION')
   cd "../rrtdotcom", verbose: false do
     Bundler.with_clean_env do
-      sh "bin/rails gems:push gem=../rrt/pkg/rrt-#{latest_version}.gem"
-
+      Bundler.clean_system "rake gems:push gem=../rrt/pkg/rrt-#{latest_version}.gem"
       puts system('test -z "$(git ls-files --others)"')
 
       sh "git add . && git commit -m 'RRT Gem #{latest_version}' && git push"
       sh "bin/deploy"
     end
   end
-
-  puts "🐱  Tagging and pushing latest version"
-  sh "git add . && git commit -m 'RRT Gem #{latest_version}' && git tag #{latest_version} && git push"
 end
 
 task :deploy_demo do
