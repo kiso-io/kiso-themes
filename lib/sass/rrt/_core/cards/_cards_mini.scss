@@ -1,6 +1,12 @@
 .card-mini {
   display: block;
 
+  .card-body {
+    .media {
+      flex-wrap: wrap;
+    }
+  }
+
   i {
     color: $brand-primary-lighter;
   }
