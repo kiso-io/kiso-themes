@@ -9,6 +9,7 @@ const ip = require('ip');
 
 var RENDER_JOBS = kue.createQueue();
 var renderJobCount = 0;
+var checkFileJobCount = 0;
 
 
 function getHostIp() {
@@ -124,6 +125,19 @@ async function generateHeroShots(theme, style, outputPath) {
   }
 }
 
+async function createFileCheckJob(outputPath, renderJob) {
+  var checkFileJob = RENDER_JOBS.create('checkfilejob', {
+    outputPath: outputPath,
+    title: outputPath,
+    renderJob: renderJob
+  }).removeOnComplete(true);
+
+  checkFileJob.save();
+  console.log(`[ CHECK     ] Created checkfilejob for: ${outputPath}`)
+
+  checkFileJobCount +=1;
+}
+
 async function createRenderJob(theme, style, url, selector, displayTitle, outputPath, fileName, resizeStack) {
   var job = RENDER_JOBS.create('renderjob', {
     theme: theme,
@@ -138,12 +152,7 @@ async function createRenderJob(theme, style, url, selector, displayTitle, output
   }).attempts(3).removeOnComplete( true )
 
   job.on('complete',  function(result) {
-    console.log(`[ COMPLETING ] ${renderJobCount} jobs remaining...`)
-
-    if( renderJobCount === 0 ) {
-      console.log("Shutting down...")
-      process.exit();
-    }
+    console.log(`[ COMPLETING RENDERJOB ] ${renderJobCount} jobs remaining...`)
   }).on('failed', function(errorMessage){
     console.log('Job failed: ', errorMessage);
   })
@@ -153,14 +162,18 @@ async function createRenderJob(theme, style, url, selector, displayTitle, output
   renderJobCount += 1;
 }
 
-async function resizeJob(resizeStack) {
+async function resizeJob(renderJob, resizeStack) {
   var keys = Object.keys(resizeStack.stack)
 
   for(outputFile of keys) {
-    await sharp(resizeStack.inputFile)
-    .resize(resizeStack.stack[outputFile].resizeX, resizeStack.stack[outputFile].resizeY)
-    .crop(resizeStack.stack[outputFile].crop)
-    .toFile( outputFile )
+    if(outputFile !== '/Users/jmd/code/rrt/rrt/test/dummy/product_shots/shots/lyra/azure/shot_1.jpg') {
+      await sharp(resizeStack.inputFile)
+        .resize(resizeStack.stack[outputFile].resizeX, resizeStack.stack[outputFile].resizeY)
+        .crop(resizeStack.stack[outputFile].crop)
+        .toFile( outputFile )
+    }
+
+    await createFileCheckJob(outputFile, renderJob.data);
   }
 
   fs.unlinkSync( resizeStack.inputFile )
@@ -202,6 +215,57 @@ async function processMapping(obj, theme, style, parentName = '') {
 }
 
 
+async function processRenderJobs(renderJob, done) {
+  const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://localhost:3000' });
+  const page = await browser.newPage();
+  await page.setViewport({width: 1400, height: 1600, deviceScaleFactor: 2});
+
+  renderJob.log(`[ PROCESSING ] Snapshotting ${renderJob.data.theme} - ${renderJob.data.style}: ${renderJob.data.displayTitle}`)
+  await snapshotElement(page, renderJob.data.targetUrl, renderJob.data.selector, renderJob.data.displayTitle, renderJob.data.outputPath, renderJob.data.fileName).catch(function(err){
+    renderJob.log(`[ ERROR    ] ${err}`)
+    console.log(`[ ERROR    ] ${err}`)
+    return done && done(err)
+  });
+
+  renderJob.log(`[ PROCESSING ] Resizing ${renderJob.data.theme} - ${renderJob.data.style}: ${renderJob.data.displayTitle}`)
+  await resizeJob(renderJob, renderJob.data.resizeStack).catch(function(err) {
+    renderJob.log(`[ ERROR    ] ${err}`)
+    console.log(`[ ERROR    ] ${err}`)
+    return done && done(err)
+  });
+
+  renderJob.log(`[ PROCESSING ] Resizing done.`)
+
+  await browser.close();
+  renderJobCount -= 1
+  done && done()
+}
+
+async function processCheckFileJobs(checkFileJob, done) {
+  var rjOutputPath = checkFileJob.data.outputPath;
+  var rjRenderJob  = checkFileJob.data.checkFileJob;
+
+  if( !fs.existsSync(rjOutputPath) ) {
+    console.log(`[ CHECKING ]  FILE NOT FOUND - REQUEUE: ${rjOutputPath}`)
+    await createRenderJob(
+      rjRenderJob.theme,
+      rjRenderJob.style,
+      rjRenderJob.targetUrl,
+      rjRenderJob.selector,
+      rjRenderJob.title,
+      rjRenderJob.outputPath,
+      rjRenderJob.fileName,
+      rjRenderJob.resizeStack
+    );
+    renderJobCount += 1;
+  } else {
+    console.log(`[ CHECKING ]  FILE EXISTS: ${rjOutputPath}`)
+    checkFileJobCount -= 1;
+  }
+
+  done && done();
+}
+
 (async () => {
   const pageMap = await JSON.parse(fs.readFileSync(path.join(__dirname, '../page_map.json'), 'utf8'))
 
@@ -225,24 +289,27 @@ async function processMapping(obj, theme, style, parentName = '') {
 
   console.log(`[ INITIALIZING ]  There are ${renderJobCount} jobs to process...`)
 
-  RENDER_JOBS.process('renderjob', 8, async function processRenderJobs(renderJob, done) {
-    const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://localhost:3000' });
-    const page = await browser.newPage();
-    await page.setViewport({width: 1400, height: 1600, deviceScaleFactor: 2});
+  RENDER_JOBS.process('renderjob', 5, processRenderJobs);
 
-    renderJob.log(`[ PROCESSING ] Snapshotting ${renderJob.data.theme} - ${renderJob.data.style}: ${renderJob.data.displayTitle}`)
-    await snapshotElement(page, renderJob.data.targetUrl, renderJob.data.selector, renderJob.data.displayTitle, renderJob.data.outputPath, renderJob.data.fileName).catch(function(err){
-      throw new Error( 'bad things happen' );
-    });
+  RENDER_JOBS.process('checkfilejob', 1, processCheckFileJobs);
 
-    renderJob.log(`[ PROCESSING ] Resizing ${renderJob.data.theme} - ${renderJob.data.style}: ${renderJob.data.displayTitle}`)
-    await resizeJob(renderJob.data.resizeStack);
-    renderJob.log(`[ PROCESSING ] Resizing done.`)
 
-    await browser.close();
-    renderJobCount -= 1
-    done && done()
-  })
+  function checkForShutdown() {
+    RENDER_JOBS.activeCount(function(err, total) {
+      console.log(`Checking for shutdown : ${renderJobCount} - ${total}`)
+      if( renderJobCount === 0 && total === 0) {
+        console.log("Shutting down...")
+        RENDER_JOBS.shutdown( 2000, function(err) {
+          process.exit( 0 );
+        });
+      }
+      setInterval(checkForShutdown, 30000);
+    })
+
+  }
+
+  checkForShutdown();
+
 })();
 
 
