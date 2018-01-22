@@ -1,4 +1,13 @@
 
+1.0.17 / 2018-01-22
+==================
+
+  * Upgrade to BS 4 stable and remove source maps
+  * Update Metis Menu for BS4 stable
+  * Update Popper.js
+  * Customize Jasny Bootstrap to not have Transitions as it clashes with BS 4 transition code
+  * Remove double yield in haml template
+
 1.0.16 / 2017-12-19
 ==================
 
