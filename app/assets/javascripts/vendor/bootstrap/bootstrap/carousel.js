@@ -503,4 +503,3 @@ var Carousel = function ($) {
 
   return Carousel;
 }($);
-//# sourceMappingURL=carousel.js.map

@@ -579,4 +579,3 @@ var Modal = function ($) {
 
   return Modal;
 }($);
-//# sourceMappingURL=modal.js.map

@@ -173,4 +173,3 @@ var Alert = function ($) {
 
   return Alert;
 }($);
-//# sourceMappingURL=alert.js.map

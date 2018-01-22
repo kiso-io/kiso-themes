@@ -468,4 +468,3 @@ var Dropdown = function ($) {
 
   return Dropdown;
 }($, Popper);
-//# sourceMappingURL=dropdown.js.map
