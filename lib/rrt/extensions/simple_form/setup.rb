@@ -2,7 +2,7 @@ require_relative './required_component'
 
 SimpleForm::Inputs::Base.prepend Module.new {
   def merge_wrapper_options(options, wrapper_options)
-    if wrapper_options&.key?(:error_class)
+    if wrapper_options.key?(:error_class)
       wrapper_options = wrapper_options.dup
       error_class = wrapper_options.delete(:error_class)
       wrapper_options[:class] = "#{wrapper_options[:class]} #{error_class}" if has_errors?
