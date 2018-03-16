@@ -252,7 +252,6 @@ DEPENDENCIES
   rack-cache
   rails (= 5.1.0)
   rails_12factor
-  rake (= 10.4.2)
   rrt!
   sass-rails
   simple_form (~> 3.5.0)
@@ -262,4 +261,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
