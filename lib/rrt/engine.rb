@@ -1,3 +1,7 @@
+# require kaminari early so we can override it's views
+
+require 'kaminari'
+
 module RRT
   class Engine < ::Rails::Engine
     initializer 'rrt.setup' do |app|
