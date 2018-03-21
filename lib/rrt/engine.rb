@@ -1,6 +1,7 @@
 # require kaminari early so we can override it's views
-
-require 'kaminari'
+if Gem::Specification::find_all_by_name('kaminari').any?
+  require 'kaminari'
+end
 
 module RRT
   class Engine < ::Rails::Engine
