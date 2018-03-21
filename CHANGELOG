@@ -1,4 +1,9 @@
 
+1.0.20 / 2018-03-21
+==================
+
+  * Properly check for kaminari before requiring
+
 1.0.19 / 2018-03-21
 ==================
 
