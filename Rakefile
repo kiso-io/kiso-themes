@@ -102,7 +102,7 @@ task :commit_release_to_rrt_dot_com do
   latest_version = File.read('./VERSION')
   cd "../rrtdotcom", verbose: false do
     Bundler.with_clean_env do
-      Bundler.clean_system "rake gems:push gem=../rrt/pkg/rrt-#{latest_version}.gem"
+      Bundler.clean_system "bundle exec rake gems:push gem=../rrt/pkg/rrt-#{latest_version}.gem"
       puts system('test -z "$(git ls-files --others)"')
 
       sh "git add . && git commit -m 'RRT Gem #{latest_version}' && git push"
