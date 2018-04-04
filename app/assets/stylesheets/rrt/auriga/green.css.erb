@@ -21568,7 +21568,7 @@ fieldset[disabled] .btn-link.active {
   background-color: transparent;
 }
 
-.form-control:focus + .input-group-addon, .form-control:focus ~ .input-group-addon {
+.form-control:focus + .input-group-prepend, .form-control:focus ~ .input-group-prepend, .form-control:focus + .input-group-append, .form-control:focus ~ .input-group-append {
   border: 1px solid #52ef80;
   border-left: none;
   background-color: transparent;
@@ -21641,8 +21641,10 @@ select[multiple] {
   color: #c55e5e;
 }
 
-.form-group.form-group-no-border.input-lg .input-group-addon,
-.input-group.form-group-no-border.input-lg .input-group-addon {
+.form-group.form-group-no-border.input-lg .input-group-prepend,
+.form-group.form-group-no-border.input-lg .input-group-append,
+.input-group.form-group-no-border.input-lg .input-group-prepend,
+.input-group.form-group-no-border.input-lg .input-group-append {
   padding: 14px 0 15px -1 19px;
 }
 
@@ -21651,8 +21653,9 @@ select[multiple] {
   padding: 14px 18px;
 }
 
-.form-group.form-group-no-border.input-lg .form-control + .input-group-addon,
-.input-group.form-group-no-border.input-lg .form-control + .input-group-addon {
+.form-group.form-group-no-border.input-lg .form-control + .input-group-prepend, .form-group.form-group-no-border.input-lg .form-control + .input-group-append,
+.input-group.form-group-no-border.input-lg .form-control + .input-group-prepend,
+.input-group.form-group-no-border.input-lg .form-control + .input-group-append {
   padding: 14px 19px 14px 0;
 }
 
@@ -21661,18 +21664,23 @@ select[multiple] {
   padding: 14px 18px;
 }
 
-.form-group.input-lg .form-control + .input-group-addon,
-.input-group.input-lg .form-control + .input-group-addon {
+.form-group.input-lg .form-control + .input-group-prepend, .form-group.input-lg .form-control + .input-group-append,
+.input-group.input-lg .form-control + .input-group-prepend,
+.input-group.input-lg .form-control + .input-group-append {
   padding: 14px 18px 14px 0;
 }
 
-.form-group.input-lg .input-group-addon,
-.input-group.input-lg .input-group-addon {
+.form-group.input-lg .input-group-prepend,
+.form-group.input-lg .input-group-append,
+.input-group.input-lg .input-group-prepend,
+.input-group.input-lg .input-group-append {
   padding: 14px 0 15px 18px;
 }
 
-.form-group.input-lg .input-group-addon + .form-control,
-.input-group.input-lg .input-group-addon + .form-control {
+.form-group.input-lg .input-group-prepend + .form-control,
+.form-group.input-lg .input-group-append + .form-control,
+.input-group.input-lg .input-group-prepend + .form-control,
+.input-group.input-lg .input-group-append + .form-control {
   padding: 15px 18px 15px 16px;
 }
 
@@ -21681,13 +21689,16 @@ select[multiple] {
   padding: 11px 19px;
 }
 
-.form-group.form-group-no-border .form-control + .input-group-addon,
-.input-group.form-group-no-border .form-control + .input-group-addon {
+.form-group.form-group-no-border .form-control + .input-group-prepend, .form-group.form-group-no-border .form-control + .input-group-append,
+.input-group.form-group-no-border .form-control + .input-group-prepend,
+.input-group.form-group-no-border .form-control + .input-group-append {
   padding: 11px 19px 11px 0;
 }
 
-.form-group.form-group-no-border .input-group-addon,
-.input-group.form-group-no-border .input-group-addon {
+.form-group.form-group-no-border .input-group-prepend,
+.form-group.form-group-no-border .input-group-append,
+.input-group.form-group-no-border .input-group-prepend,
+.input-group.form-group-no-border .input-group-append {
   padding: 11px 0 11px 19px;
 }
 
@@ -21695,29 +21706,9 @@ select[multiple] {
   font-size: inherit;
 }
 
-.input-group-addon:not(:first-of-type) {
-  border-left: 0;
-}
-
 .form-group .form-control,
 .input-group .form-control {
   padding: 10px 19px 10px 19px;
-}
-
-.form-group .form-control + .input-group-addon,
-.input-group .form-control + .input-group-addon {
-  padding: 11px 19px 11px 0;
-}
-
-.form-group .input-group-addon,
-.input-group .input-group-addon {
-  padding: 10px 0 10px 19px;
-}
-
-.form-group .input-group-addon + .form-control, .form-group .input-group-addon ~ .form-control,
-.input-group .input-group-addon + .form-control,
-.input-group .input-group-addon ~ .form-control {
-  padding: 9px 19px 9px 19px;
 }
 
 .input-group .form-control:not(:first-child):not(:last-child) {
@@ -21726,34 +21717,45 @@ select[multiple] {
 }
 
 .form-group.form-group-no-border .form-control,
-.form-group.form-group-no-border .form-control + .input-group-addon,
+.form-group.form-group-no-border .form-control + .input-group-prepend,
+.form-group.form-group-no-border .form-control + .input-group-append,
 .input-group.form-group-no-border .form-control,
-.input-group.form-group-no-border .form-control + .input-group-addon {
+.input-group.form-group-no-border .form-control + .input-group-prepend,
+.input-group.form-group-no-border .form-control + .input-group-append {
   background-color: rgba(200, 208, 218, 0.3);
   border: medium none;
 }
 
 .form-group.form-group-no-border .form-control:focus, .form-group.form-group-no-border .form-control:active, .form-group.form-group-no-border .form-control:active,
-.form-group.form-group-no-border .form-control + .input-group-addon:focus,
-.form-group.form-group-no-border .form-control + .input-group-addon:active,
-.form-group.form-group-no-border .form-control + .input-group-addon:active,
+.form-group.form-group-no-border .form-control + .input-group-prepend:focus,
+.form-group.form-group-no-border .form-control + .input-group-prepend:active,
+.form-group.form-group-no-border .form-control + .input-group-prepend:active,
+.form-group.form-group-no-border .form-control + .input-group-append:focus,
+.form-group.form-group-no-border .form-control + .input-group-append:active,
+.form-group.form-group-no-border .form-control + .input-group-append:active,
 .input-group.form-group-no-border .form-control:focus,
 .input-group.form-group-no-border .form-control:active,
 .input-group.form-group-no-border .form-control:active,
-.input-group.form-group-no-border .form-control + .input-group-addon:focus,
-.input-group.form-group-no-border .form-control + .input-group-addon:active,
-.input-group.form-group-no-border .form-control + .input-group-addon:active {
+.input-group.form-group-no-border .form-control + .input-group-prepend:focus,
+.input-group.form-group-no-border .form-control + .input-group-prepend:active,
+.input-group.form-group-no-border .form-control + .input-group-prepend:active,
+.input-group.form-group-no-border .form-control + .input-group-append:focus,
+.input-group.form-group-no-border .form-control + .input-group-append:active,
+.input-group.form-group-no-border .form-control + .input-group-append:active {
   border: medium none;
   background-color: rgba(200, 208, 218, 0.5);
 }
 
-.form-group.form-group-no-border .form-control:focus + .input-group-addon,
-.input-group.form-group-no-border .form-control:focus + .input-group-addon {
+.form-group.form-group-no-border .form-control:focus + .input-group-prepend, .form-group.form-group-no-border .form-control:focus + .input-group-append,
+.input-group.form-group-no-border .form-control:focus + .input-group-prepend,
+.input-group.form-group-no-border .form-control:focus + .input-group-append {
   background-color: rgba(200, 208, 218, 0.5);
 }
 
-.form-group.form-group-no-border .input-group-addon,
-.input-group.form-group-no-border .input-group-addon {
+.form-group.form-group-no-border .input-group-prepend,
+.form-group.form-group-no-border .input-group-append,
+.input-group.form-group-no-border .input-group-prepend,
+.input-group.form-group-no-border .input-group-append {
   background-color: rgba(200, 208, 218, 0.3);
   border: none;
 }
@@ -21874,65 +21876,92 @@ textarea.form-control {
           transform: translateX(0.75rem);
 }
 
-.input-group-addon {
+.has-success .input-group-prepend, .has-danger .input-group-prepend,
+.has-success .input-group-append, .has-danger .input-group-append {
+  background-color: #fdfcfc;
+}
+
+.has-danger .form-control:focus + .input-group-prepend, .has-danger .form-control:focus + .input-group-append {
+  color: #c55e5e;
+}
+
+.has-success .form-control:focus + .input-group-prepend, .has-success .form-control:focus + .input-group-append {
+  color: #73c16b;
+}
+
+.input-group-prepend + .form-control, .input-group-prepend ~ .form-control, .input-group-append + .form-control, .input-group-append ~ .form-control {
+  padding: calc(0.7rem - 1px) 0.7rem;
+}
+
+.input-group-prepend i, .input-group-append i {
+  width: 17px;
+}
+
+.input-group-prepend .input-group-text, .input-group-append .input-group-text {
   -webkit-transition: color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
   transition: color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
   border: 1px solid #a8eabb;
   border-radius: 30px;
   background-color: transparent;
-  padding: -0.3rem 0 -0.3rem -0.3rem;
+  padding: calc(0.7rem - 1px) 0.7rem calc(0.7rem - 1px) 0.7rem;
   color: #555;
 }
 
-.has-success .input-group-addon, .has-danger .input-group-addon {
-  background-color: #fdfcfc;
+.input-group-prepend .input-group-text + .input-group-text, .input-group-append .input-group-text + .input-group-text {
+  border-left: 0;
+  border-right: 0;
 }
 
-.has-danger .form-control:focus + .input-group-addon {
-  color: #c55e5e;
+.input-group-prepend .btn, .input-group-append .btn {
+  border: 1px solid #a8eabb;
 }
 
-.has-success .form-control:focus + .input-group-addon {
-  color: #73c16b;
-}
-
-.input-group-addon + .form-control, .input-group-addon ~ .form-control {
-  padding: -0.3rem 0.7rem;
-  padding-left: 18px;
-}
-
-.input-group-addon i {
-  width: 17px;
-}
-
-.form-control + .input-group-addon {
-  background-color: transparent;
-}
-
-.input-group-focus .input-group-addon {
+.input-group-focus .input-group-prepend .input-group-text,
+.input-group-focus .input-group-append .input-group-text {
   border-color: #52ef80;
   color: #52ef80;
   background-color: transparent;
 }
 
-.input-group-focus.form-group-no-border .input-group-addon {
+.input-group-focus .input-group-prepend .btn,
+.input-group-focus .input-group-append .btn {
+  border-color: #52ef80;
+}
+
+.form-control + .input-group-prepend,
+.form-control + .input-group-append {
+  background-color: transparent;
+}
+
+.input-group-focus .input-group-append,
+.input-group-focus .input-group-prepend {
+  border-color: #52ef80;
   color: #52ef80;
   background-color: transparent;
 }
 
-.input-group[disabled] .input-group-addon {
+.input-group-focus.form-group-no-border .input-group-prepend,
+.input-group-focus.form-group-no-border .input-group-append {
+  color: #52ef80;
+  background-color: transparent;
+}
+
+.input-group[disabled] .input-group-prepend,
+.input-group[disabled] .input-group-append {
   background-color: #a8eabb;
 }
 
 .input-group .form-control:first-child,
-.input-group-addon:first-child,
+.input-group-append:first-child,
+.input-group-prepend:first-child,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
   border-right: 0 none;
 }
 
 .input-group .form-control:last-child:not(:first-child),
-.input-group-addon:last-child,
+.input-group-prepend:last-child,
+.input-group-append:last-child,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child) {
   border-left: 0 none;
@@ -24836,13 +24865,15 @@ body {
   color: #fdfcfc;
 }
 
-.navbar .navbar-nav .input-group-addon {
+.navbar .navbar-nav .input-group-prepend,
+.navbar .navbar-nav .input-group-append {
   color: #fdfcfc;
   border-color: #fdfcfc;
   background-color: transparent;
 }
 
-.navbar .navbar-nav .input-group-focus > .input-group-addon {
+.navbar .navbar-nav .input-group-focus > .input-group-prepend,
+.navbar .navbar-nav .input-group-focus > .input-group-append {
   background-color: #fdfcfc;
 }
 
