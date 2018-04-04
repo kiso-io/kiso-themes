@@ -33,14 +33,16 @@
   .form-group.form-group-no-border.input-lg,
   .input-group.form-group-no-border.input-lg {
 
-    .input-group-addon {
+    .input-group-prepend,
+    .input-group-append {
       padding: $padding-vertical - 1 0 $padding-vertical -1 $padding-horizontal;
     }
 
     .form-control {
       padding: $padding-vertical - 1 $padding-horizontal - 1;
 
-      & + .input-group-addon {
+      & + .input-group-prepend,
+      & + .input-group-append {
         padding: $padding-vertical - 1 $padding-horizontal $padding-vertical - 1 0;
       }
     }
@@ -52,12 +54,14 @@
     .form-control {
       padding: $padding-vertical - 1 $padding-horizontal - 1;
 
-      & + .input-group-addon {
+      & + .input-group-prepend,
+      & + .input-group-append {
         padding: $padding-vertical - 1 $padding-horizontal - 1 $padding-vertical - 1 0;
       }
     }
 
-    .input-group-addon {
+    .input-group-prepend,
+    .input-group-append {
       padding: $padding-vertical - 1 0 $padding-vertical $padding-horizontal - 1;
 
       & + .form-control {
@@ -75,12 +79,14 @@
     .form-control {
       padding: $padding-vertical $padding-horizontal;
 
-      & + .input-group-addon {
+      & + .input-group-prepend,
+      & + .input-group-append {
         padding: $padding-vertical $padding-horizontal $padding-vertical 0;
       }
     }
 
-    .input-group-addon {
+    .input-group-prepend,
+    .input-group-append {
       padding: $padding-vertical 0 $padding-vertical $padding-horizontal;
     }
   }
@@ -89,28 +95,11 @@
     font-size: inherit;
   }
 
-  .input-group-addon:not(:first-of-type) {
-    border-left: 0;
-  }
-
   .form-group,
   .input-group {
 
     .form-control {
       padding: $padding-vertical - 1 $padding-horizontal $padding-vertical - 1 $padding-horizontal;
-
-      & + .input-group-addon {
-        padding: $padding-vertical $padding-horizontal $padding-vertical 0;
-      }
-    }
-
-    .input-group-addon {
-      padding: $padding-vertical - 1 0 $padding-vertical - 1 $padding-horizontal;
-
-      & + .form-control,
-      & ~ .form-control {
-        padding: $padding-vertical - 2 $padding-horizontal $padding-vertical - 2 $padding-horizontal;
-      }
     }
   }
 

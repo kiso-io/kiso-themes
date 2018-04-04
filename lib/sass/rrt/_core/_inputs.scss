@@ -22,8 +22,10 @@
 
     background-color: $form-input-focus-background;
 
-    & + .input-group-addon,
-    & ~ .input-group-addon {
+    & + .input-group-prepend,
+    & ~ .input-group-prepend,
+    & + .input-group-append,
+    & ~ .input-group-append, {
       border: 1px solid $primary-color;
       border-left: none;
       background-color: $transparent-bg;
@@ -115,7 +117,8 @@ select[multiple] {
 .form-group.form-group-no-border,
 .input-group.form-group-no-border {
   .form-control,
-  .form-control + .input-group-addon {
+  .form-control + .input-group-prepend,
+  .form-control + .input-group-append {
     background-color: $opacity-gray-3;
     border: medium none;
     &:focus,
@@ -128,13 +131,15 @@ select[multiple] {
 
   .form-control {
     &:focus {
-      & + .input-group-addon {
+      & + .input-group-prepend,
+      & + .input-group-append {
         background-color: $opacity-gray-5;
       }
     }
   }
 
-  .input-group-addon {
+  .input-group-prepend,
+  .input-group-append {
     background-color: $opacity-gray-3;
     border: none;
   }

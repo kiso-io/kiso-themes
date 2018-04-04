@@ -28,17 +28,20 @@
             %p.text-center Get started in minutes, sign up now
             %label.sr-only{for: "inlineFormInputName2"} Email
             .input-group.input-group-sm.mb-2
-              %span#basic-addon1.input-group-addon= theme_icon_tag "email"
+              %span#basic-addon1.input-group-prepend
+                .input-group-text= theme_icon_tag "email"
               %input#inlineFormInputName2.form-control{placeholder: "Your Email", type: "text"}/
             %label.sr-only{for: "inlineFormInputGroupUsername2"} Password
             .mb-2.mb-sm-0
               .input-group.input-group-sm.mb-2
-                %span#basic-addon1.input-group-addon= theme_icon_tag "key"
+                %span#basic-addon1.input-group-prepend
+                  .input-group-text= theme_icon_tag "key"
                 %input#inlineFormInputGroupUsername2.form-control{placeholder: "Choose a Password", type: "password"}/
             %label.sr-only{for: "inlineFormInputGroupUsername2"} Confirm Password
             .mb-2.mb-sm-0
               .input-group.input-group-sm.mb-2
-                %span#basic-addon1.input-group-addon= theme_icon_tag "key"
+                %span#basic-addon1.input-group-prepend
+                  .input-group-text= theme_icon_tag "key"
                 %input#inlineFormInputGroupUsername2.form-control{placeholder: "Confirm Password", type: "password"}/
             %button.btn.btn-primary.ml-auto{type: "button"} Sign Up
 %section.mt-5.pt-5.mb-5.pb-5

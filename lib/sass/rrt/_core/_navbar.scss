@@ -136,13 +136,15 @@
       @include form-control-placeholder($white-color);
     }
 
-    .input-group-addon {
+    .input-group-prepend,
+    .input-group-append {
       color: $white-color;
       border-color: $white-color;
       background-color: transparent;
     }
 
-    .input-group-focus > .input-group-addon {
+    .input-group-focus > .input-group-prepend,
+    .input-group-focus > .input-group-append {
       background-color: $white-color;
     }
   }
