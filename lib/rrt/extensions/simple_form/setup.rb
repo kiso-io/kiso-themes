@@ -14,7 +14,7 @@ SimpleForm::Inputs::Base.prepend Module.new {
 SimpleForm.setup do |config|
   config.error_notification_class = 'alert alert-danger'
   config.button_class = 'btn btn-default'
-  config.boolean_label_class = 'form-check-label'
+  config.boolean_label_class = 'custom-control-label'
   config.boolean_style = :inline
   config.item_wrapper_tag = :div
   config.item_wrapper_class = 'form-check'
@@ -52,29 +52,29 @@ SimpleForm.setup do |config|
   # Vertical forms
   config.wrappers :vertical_form, **wrapper_options do |b|
     basic_input.call(b)
-    b.use :input, **input_options, class: 'form-control'
     b.use :label, class: label_class
+    b.use :input, **input_options, class: 'form-control'
     error_and_hint.call(b)
   end
 
   config.wrappers :vertical_file_input, **wrapper_options do |b|
     basic_input.call(b, :file)
+    b.use :label, class: label_class
     b.use :input, **input_options, class: 'form-control-file'
-    b.use :label, class: label_class
     error_and_hint.call(b)
   end
 
-  config.wrappers :vertical_boolean, **wrapper_options, class: 'form-check checkbox' do |b|
+  config.wrappers :vertical_boolean, **wrapper_options, class: 'custom-control custom-checkbox' do |b|
     basic_input.call(b, :boolean)
-    b.use :input, class: 'form-check-input'
-    b.use :label, class: 'form-check-label'
+    b.use :input, class: 'custom-control-input'
+    b.use :label, class: 'custom-control-label'
     error_and_hint.call(b)
   end
 
-  config.wrappers :vertical_radio_and_checkboxes, **wrapper_options do |b|
+  config.wrappers :vertical_radio_and_checkboxes, **wrapper_options, class: 'custom-control custom-radio' do |b|
     basic_input.call(b, :boolean)
-    b.use :label, class: label_class
-    b.use :input, **input_options, class: 'form-check-input'
+    b.use :input, **input_options, class: 'custom-control-input'
+    b.use :label, class: 'custom-control-label'
     error_and_hint.call(b)
   end
 
@@ -100,9 +100,9 @@ SimpleForm.setup do |config|
   config.wrappers :horizontal_boolean, **horizontal_options do |b|
     basic_input.call(b, :boolean)
     b.wrapper class: "#{horizontal_right_class} #{horizontal_right_offset_class}" do |wr|
-      wr.wrapper class: 'form-check checkbox' do |ba|
-        ba.use :input, class: 'form-check-input'
-        ba.use :label, class: 'form-check-label'
+      wr.wrapper class: 'custom-control custom-checkbox' do |ba|
+        ba.use :input, class: 'custom-control-input'
+        ba.use :label, class: 'custom-control-label'
       end
       error_and_hint.call(wr)
     end
@@ -111,9 +111,9 @@ SimpleForm.setup do |config|
   config.wrappers :horizontal_radio_and_checkboxes, **horizontal_options do |b|
     basic_input.call(b, :boolean)
     b.wrapper class: "#{horizontal_right_class} #{horizontal_right_offset_class}" do |wr|
-      wr.use :label, class: horizontal_label_class
-      wr.wrapper class: horizontal_right_class do |ba|
-        ba.use :input, **input_options, class: 'form-check-input'
+      wr.use :label, class: "#{horizontal_label_class}"
+      wr.wrapper class: horizontal_right_class, class: 'custom-control custom-radio' do |ba|
+        ba.use :input, **input_options, class: 'custom-control-input'
         error_and_hint.call(ba)
       end
     end
