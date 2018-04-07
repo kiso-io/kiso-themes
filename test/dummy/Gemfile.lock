@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    rrt (1.0.23)
+    rrt (1.0.24)
       jquery-rails
       rails (>= 3.1)
 
