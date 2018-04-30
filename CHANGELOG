@@ -1,4 +1,10 @@
 
+1.0.25 / 2018-04-30
+==================
+
+  * Change Header content blocks 4, 5 and 8 to use  instead of .
+  * Fix the Pyrrmid assets when deployed on Heroku.
+
 1.0.24 / 2018-04-06
 ==================
 
