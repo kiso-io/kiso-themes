@@ -37,14 +37,17 @@
             %form{action: ""}
               .form-row
                 .input-group.input-group-sm.mb-2.col-md-12
-                  %span#basic-addon1.input-group-addon= theme_icon_tag "email"
+                  %span#basic-addon1.input-group-prepend
+                    .input-group-text= theme_icon_tag "email"
                   %input#inlineFormInputName2.form-control{placeholder: "Your Email", type: "text"}/
               .form-row
                 .input-group.input-group-sm.col-md-6
-                  %span#basic-addon1.input-group-addon= theme_icon_tag "key"
+                  %span#basic-addon1.input-group-prepend
+                    .input-group-text= theme_icon_tag "key"
                   %input#inputEmail4.form-control{placeholder: "Password", type: "password"}/
                 .input-group.input-group-sm.col-md-6
-                  %span#basic-addon1.input-group-addon= theme_icon_tag "key"
+                  %span#basic-addon1.input-group-prepend
+                    .input-group-text= theme_icon_tag "key"
                   %input#inputPassword4.form-control{placeholder: "Confirm Password", type: "password"}/
               .form-row
                 .col-md-12

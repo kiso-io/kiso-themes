@@ -39,14 +39,17 @@
               %form.form-inline.d-flex.justify-content-center.justify-content-xl-between.flex-column.flex-lg-row
                 %label.sr-only{for: "inlineFormInputName2"} Email
                 .input-group.input-group-sm.mb-2.mb-lg-0
-                  %span#basic-addon1.input-group-addon= theme_icon_tag "email"
+                  %span#basic-addon1.input-group-prepend
+                    .input-group-text= theme_icon_tag "email"
                   %input#inlineFormInputName2.form-control{placeholder: "Your Email", type: "text"}/
                 %label.sr-only{for: "inlineFormInputGroupUsername2"} Password
                 .input-group.input-group-sm.mb-2.mb-lg-0
-                  %span#basic-addon1.input-group-addon= theme_icon_tag "key"
+                  %span#basic-addon1.input-group-prepend
+                    .input-group-text= theme_icon_tag "key"
                   %input#inlineFormInputGroupUsername2.form-control{placeholder: "Choose a Password", type: "password"}/
                 %label.sr-only{for: "inlineFormInputGroupUsername2"} Confirm Password
                 .input-group.input-group-sm.mb-2.mb-lg-0
-                  %span#basic-addon1.input-group-addon= theme_icon_tag "key"
+                  %span#basic-addon1.input-group-prepend
+                    .input-group-text= theme_icon_tag "key"
                   %input#inlineFormInputGroupUsername2.form-control{placeholder: "Confirm Password", type: "password"}/
                 %button.btn.btn-primary{type: "submit"} Sign up
