@@ -34,6 +34,5 @@
 
 //= require rrt/inspect_mode/inspect_mode
 
-
 Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
 
