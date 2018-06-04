@@ -1,4 +1,9 @@
 
+1.0.28/ 2018-06-03
+==================
+
+  * Tweak the default HTML and BODY element heights, and remove width setting
+
 1.0.27 / 2018-06-02
 ==================
 
