@@ -53,6 +53,13 @@ $(document).ready(function() {
     $('#menu-content').slimScroll({
       destroy: 'true'
     });
+
+    $('#sg-viewport').load(function(){
+      console.log("here")
+      $('#sg-viewport').contents().find('head')
+        .append($("<style type='text/css'>body{width: 1px;min-width: 100%;*width: 100%;}</style>"));
+    })
+
   }
 
   var selectedTheme = getCookie('theme') || THEMES[0];
