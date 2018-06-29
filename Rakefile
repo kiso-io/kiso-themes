@@ -480,3 +480,30 @@ task :bake_customizations do
 
   sh "cp -R #{customization_path} #{customization_destination_path}"
 end
+
+task :cook_devise_haml do
+  target_erb_dirs = [
+    'app/views/devise/erb',
+  ]
+
+  target_erb_dirs.each do |target_erb_dir|
+    erb_candidates = Dir["#{target_erb_dir}/**/*.erb"]
+
+    cd target_erb_dir do
+      erb_candidates.each do |missing_haml_file|
+        puts "Converting: #{missing_haml_file}"
+        sh "html2haml -r #{File.expand_path(missing_haml_file, __dir__)} #{File.expand_path(missing_haml_file.gsub(/erb/, 'haml'), __dir__)}"
+      end
+    end
+  end
+end
+
+
+task :check_haml_syntax do
+  haml_candidates = Dir["./**/*.haml"]
+
+  haml_candidates.each do |missing_haml_file|
+    puts "Checking: #{missing_haml_file}"
+    sh "haml -c #{File.expand_path(missing_haml_file, __dir__)}"
+  end
+end
