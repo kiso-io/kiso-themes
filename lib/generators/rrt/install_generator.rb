@@ -51,16 +51,16 @@ module RRT
       end
 
       def require_rrt_javascript
-        sentinel = "= require turbolinks"
-        code = "= require rrt"
+        sentinel = "= require_tree ."
+        code = "= require rrt\n\n"
 
         file = 'app/assets/javascripts/application.js'
         # Plain JS
         if File.file?(file)
-          inject_into_file file, "\n//#{code}", { :after => "//#{sentinel}" }
+          inject_into_file file, "\n//#{code}", { :before => "//#{sentinel}" }
         # CoffeeScript
         elsif File.file?("#{file}.coffee")
-          inject_into_file "#{file}.coffee", "\n##{code}", { :after => "##{sentinel}" }
+          inject_into_file "#{file}.coffee", "\n##{code}", { :before => "##{sentinel}" }
         # No main JS file
         else
           say_status :warning, "Can't find #{file}. " +
