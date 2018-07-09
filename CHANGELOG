@@ -1,4 +1,11 @@
 
+1.0.29 / 2018-07-09
+==================
+
+  * Add sass-rails as runtime dependency for when people are using Rails project
+  templates
+  * Regenerate HAML devise views
+
 1.0.28/ 2018-06-03
 ==================
 
