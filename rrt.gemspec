@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'rails', '>= 3.1'
   s.add_runtime_dependency 'jquery-rails'
+  s.add_runtime_dependency 'sass-rails'
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "version_bumper"
