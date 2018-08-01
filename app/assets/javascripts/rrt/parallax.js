@@ -3,6 +3,7 @@
 (function() {
 
   function initParallax() {
+    $('[data-parallax="scroll"]').parallax();
   }
 
   RRT.hookOnPageLoad( function() {

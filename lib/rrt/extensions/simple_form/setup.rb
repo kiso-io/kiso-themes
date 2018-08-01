@@ -110,12 +110,10 @@ SimpleForm.setup do |config|
 
   config.wrappers :horizontal_radio_and_checkboxes, **horizontal_options do |b|
     basic_input.call(b, :boolean)
-    b.wrapper class: "#{horizontal_right_class} #{horizontal_right_offset_class}" do |wr|
-      wr.use :label, class: "#{horizontal_label_class}"
-      wr.wrapper class: "{horizontal_right_class} custom-control custom-radio" do |ba|
-        ba.use :input, **input_options, class: 'custom-control-input'
-        error_and_hint.call(ba)
-      end
+    b.use :label, class: horizontal_label_class
+    b.wrapper class: horizontal_right_class do |ba|
+      ba.use :input, **input_options, class: 'form-check-input'
+      error_and_hint.call(ba)
     end
   end
 

@@ -231,3 +231,10 @@ fieldset[disabled] {
     }
   }
 }
+
+.form-horizontal {
+  .form-check {
+    padding:0;
+    padding-top: calc(#{$input-padding-y} + #{$input-border-width});
+  }
+}
