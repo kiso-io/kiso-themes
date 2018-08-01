@@ -1,4 +1,9 @@
 
+1.0.31 / 2018-07-31
+==================
+
+  * Make it so Parallax.js is re-initialized for Turbolinks on page change. Fixed up the simple_form horizontal checkbox rendering.
+
 1.0.30 / 2018-07-25
 ==================
 
