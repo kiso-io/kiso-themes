@@ -1,3 +1,22 @@
+.input-group {
+  .form-control {
+    height: auto;
+  }
+
+}
+
+.input-group-sm {
+  .form-control {
+    height: $input-height-sm;
+  }
+}
+
+.input-group-lg {
+  .form-control {
+    height: $input-height-lg;
+  }
+}
+
 .input-group-prepend,
 .input-group-append {
 

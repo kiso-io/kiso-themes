@@ -26,9 +26,12 @@
     & ~ .input-group-prepend,
     & + .input-group-append,
     & ~ .input-group-append, {
-      border: 1px solid $primary-color;
       border-left: none;
       background-color: $transparent-bg;
+
+      .input-group-text {
+        border: 1px solid $primary-color;
+      }
     }
   }
 
