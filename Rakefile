@@ -80,7 +80,7 @@ task :release_version do
   end
 
   puts "🎉  Bumping version number..."
-  sh "rake bump:revision"
+  sh "rake bump:minor"
 
   puts "🚧  Building release..."
   Rake::Task["build"].invoke
