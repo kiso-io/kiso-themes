@@ -1,3 +1,4 @@
+//= require ./bootstrap/index
 //= require ./bootstrap/util
 //= require ./bootstrap/alert
 //= require ./bootstrap/button
