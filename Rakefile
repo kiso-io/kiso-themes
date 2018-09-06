@@ -112,7 +112,7 @@ task :commit_release_to_rrt_dot_com do
 end
 
 task :deploy_demo do
-  sh "rsync -cavtX --delete ./demo deployer@rapidrailsthemes.com:/home/deployer/apps/rrtdotcom/shared/public/demos;"
+  sh "rsync -cavtX --delete ./demo/* deployer@rapidrailsthemes.com:/home/deployer/apps/rrtdotcom/shared/public/demos;"
 end
 
 task :bake_product_shots do
@@ -186,6 +186,7 @@ task :make_demo do
       styles.each do |style|
         puts "\nCOMPILING DEMO FOR #{theme.capitalize} - #{style.capitalize}"
         sh "wget --mirror --content-disposition -nv -p -q -nH --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo/#{theme.downcase}/#{style} 'http://localhost:4000/preview/001_dashboards@ti-dashboard%2F001_dashboard_1?theme=#{theme.downcase}&style=#{style}'; true"
+        #sh "httrack 'http://localhost:4000/preview/001_dashboards@ti-dashboard%2F001_dashboard_1?theme=#{theme.downcase}&style=#{style}' --path '../../demo/#{theme.downcase}/#{style}' --verbose"
       end
     end
 
@@ -201,7 +202,7 @@ def server_running?
 end
 
 def start_server(stop_at_exit=true)
-  sh "bundle exec rails server thin -d -p 4000"
+  sh "bundle exec rails server thin -P tmp/pids/server.pid -d -p 4000"
   sleep 0.1 until server_running?
   at_exit { stop_server(!:wait) } if stop_at_exit
 end
