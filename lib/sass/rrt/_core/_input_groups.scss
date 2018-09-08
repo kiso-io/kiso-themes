@@ -33,13 +33,9 @@
     color: $success-color;
   }
 
-  & + .form-control,
-  & ~ .form-control {
-    @include input-size(calc(#{$padding-base-vertical} - 1px), $padding-base-horizontal);
-  }
 
   i {
-    width: 17px;
+    width: 1rem;
   }
 
   .input-group-text {
@@ -47,7 +43,6 @@
     border: 1px solid $dark-gray;
     border-radius: $form-input-radius;
     background-color: transparent;
-    padding: calc(#{$padding-base-vertical} - 1px) $padding-base-horizontal calc(#{$padding-base-vertical} - 1px) $padding-base-horizontal;
     color: $dark-background;
   }
 

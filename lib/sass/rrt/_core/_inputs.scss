@@ -1,6 +1,7 @@
 @include form-control-placeholder($form-input-placeholder);
 
-.form-control {
+.form-control,
+.custom-select {
   background-color: $transparent-bg;
   border: 1px solid $dark-gray;
   border-radius: $form-input-radius;

@@ -99,7 +99,7 @@
   .input-group {
 
     .form-control {
-      padding: $padding-vertical - 1 $padding-horizontal $padding-vertical - 1 $padding-horizontal;
+      padding: calc(#{$padding-base-vertical} - 1px) $padding-base-horizontal calc($padding-base-vertical - 1px) $padding-base-horizontal;
     }
   }
 
