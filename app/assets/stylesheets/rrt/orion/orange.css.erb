@@ -22056,7 +22056,7 @@ fieldset[disabled] .btn-link.active {
   color: #5c8dbf;
 }
 
-.form-control {
+.form-control, .custom-select {
   background-color: transparent;
   border: 1px solid #c0b4a0;
   border-radius: 30px;
@@ -22068,11 +22068,12 @@ fieldset[disabled] .btn-link.active {
           box-shadow: none;
 }
 
-.has-success .form-control {
+.has-success .form-control,
+.has-success .custom-select {
   border-color: #c0b4a0;
 }
 
-.form-control:focus {
+.form-control:focus, .custom-select:focus {
   border: 1px solid #a78241;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -22081,39 +22082,39 @@ fieldset[disabled] .btn-link.active {
   background-color: transparent;
 }
 
-.form-control:focus + .input-group-prepend, .form-control:focus ~ .input-group-prepend, .form-control:focus + .input-group-append, .form-control:focus ~ .input-group-append {
+.form-control:focus + .input-group-prepend, .form-control:focus ~ .input-group-prepend, .form-control:focus + .input-group-append, .form-control:focus ~ .input-group-append, .custom-select:focus + .input-group-prepend, .custom-select:focus ~ .input-group-prepend, .custom-select:focus + .input-group-append, .custom-select:focus ~ .input-group-append {
   border-left: none;
   background-color: transparent;
 }
 
-.form-control:focus + .input-group-prepend .input-group-text, .form-control:focus ~ .input-group-prepend .input-group-text, .form-control:focus + .input-group-append .input-group-text, .form-control:focus ~ .input-group-append .input-group-text {
+.form-control:focus + .input-group-prepend .input-group-text, .form-control:focus ~ .input-group-prepend .input-group-text, .form-control:focus + .input-group-append .input-group-text, .form-control:focus ~ .input-group-append .input-group-text, .custom-select:focus + .input-group-prepend .input-group-text, .custom-select:focus ~ .input-group-prepend .input-group-text, .custom-select:focus + .input-group-append .input-group-text, .custom-select:focus ~ .input-group-append .input-group-text {
   border: 1px solid #a78241;
 }
 
-.has-success .form-control, .has-error .form-control, .has-success .form-control:focus, .has-error .form-control:focus {
+.has-success .form-control, .has-error .form-control, .has-success .form-control:focus, .has-error .form-control:focus, .has-success .custom-select, .has-error .custom-select, .has-success .custom-select:focus, .has-error .custom-select:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.has-success .form-control:focus {
+.has-success .form-control:focus, .has-success .custom-select:focus {
   border-color: #84c97d;
 }
 
-.has-danger .form-control.form-control-success, .has-danger .form-control.form-control-danger, .has-success .form-control.form-control-success, .has-success .form-control.form-control-danger {
+.has-danger .form-control.form-control-success, .has-danger .form-control.form-control-danger, .has-success .form-control.form-control-success, .has-success .form-control.form-control-danger, .has-danger .custom-select.form-control-success, .has-danger .custom-select.form-control-danger, .has-success .custom-select.form-control-success, .has-success .custom-select.form-control-danger {
   background-image: none;
 }
 
-.has-danger .form-control {
+.has-danger .form-control, .has-danger .custom-select {
   border-color: #eecece;
   color: #c55e5e;
   background-color: rgba(222, 222, 222, 0.1);
 }
 
-.has-danger .form-control:focus {
+.has-danger .form-control:focus, .has-danger .custom-select:focus {
   background-color: transparent;
 }
 
-.form-control + .form-controlk {
+.form-control + .form-controlk, .custom-select + .form-controlk {
   border-radius: 0.25rem;
   font-size: 1rem;
   margin-top: 0;
@@ -22123,7 +22124,7 @@ fieldset[disabled] .btn-link.active {
   vertical-align: middle;
 }
 
-.open .form-control {
+.open .form-control, .open .custom-select {
   border-radius: 0.25rem 0.25rem 0 0;
   border-bottom-color: transparent;
 }
@@ -22224,7 +22225,7 @@ select[multiple] {
 
 .form-group .form-control,
 .input-group .form-control {
-  padding: 10px 19px 10px 19px;
+  padding: calc(0.7rem - 1px) 0.7rem calc($padding-base-vertical - 1px) 0.7rem;
 }
 
 .input-group .form-control:not(:first-child):not(:last-child) {
@@ -22417,12 +22418,8 @@ textarea.form-control {
   color: #73c16b;
 }
 
-.input-group-prepend + .form-control, .input-group-prepend ~ .form-control, .input-group-append + .form-control, .input-group-append ~ .form-control {
-  padding: calc(0.7rem - 1px) 0.7rem;
-}
-
 .input-group-prepend i, .input-group-append i {
-  width: 17px;
+  width: 1rem;
 }
 
 .input-group-prepend .input-group-text, .input-group-append .input-group-text {
@@ -22431,7 +22428,6 @@ textarea.form-control {
   border: 1px solid #c0b4a0;
   border-radius: 30px;
   background-color: transparent;
-  padding: calc(0.7rem - 1px) 0.7rem calc(0.7rem - 1px) 0.7rem;
   color: #555;
 }
 
