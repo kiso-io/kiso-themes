@@ -3,6 +3,8 @@ if Gem::Specification::find_all_by_name('kaminari').any?
   require 'kaminari'
 end
 
+require 'sass-rails'
+
 module RRT
   class Engine < ::Rails::Engine
     initializer 'rrt.setup' do |app|
