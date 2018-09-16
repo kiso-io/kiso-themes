@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    rrt (1.2.0)
+    rrt (1.2.1)
       jquery-rails
       rails (>= 3.1)
       sass-rails
@@ -265,4 +265,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.16.3
+   1.16.4

@@ -1,5 +1,10 @@
 
-1.1.1 / 2018-09-07
+1.2.1 / 2018-09-15
+==================
+
+  * Added a require 'sass-rails' to the engine to force the dependency to be loaded always
+
+1.2.0 / 2018-09-07
 ==================
 
   * Fixup custom-select. Unify input group sizes with form controls
