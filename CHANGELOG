@@ -1,4 +1,10 @@
 
+1.2.2 / 2018-09-22
+==================
+
+  * Improve I18n handling for form helpers
+  * Fix the CSS asset url re-writer
+
 1.2.1 / 2018-09-15
 ==================
 
