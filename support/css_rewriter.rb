@@ -12,7 +12,7 @@ class CssRewriter
     source = @source.gsub(/url\("?\/assets\/([^\)]+?)"?\)/, 'url(<%= asset_path "\1" %>)')
 
     # Remove the asset hash fingerprint
-    source = source.gsub(/-([0-9a-f]{5,})/, "")
+    source = source.gsub(/-([0-9a-f]{20,})/, "")
 
     # Remove comment lines
     source = source.gsub(/\/\*.*\*\/$/, "")
