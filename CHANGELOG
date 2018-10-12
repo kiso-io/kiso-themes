@@ -1,4 +1,9 @@
 
+1.2.3 / 2018-10-11
+==================
+
+  * Fix Popper.js config to render tooltips and dropdown menus with animations correctly.
+
 1.2.2 / 2018-09-22
 ==================
 
