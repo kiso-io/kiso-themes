@@ -17,7 +17,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@include scrollbars(0.15em, $brand-primary);
+@if($style-scrollbar == true) {
+  @include scrollbars($scrollbar-width, $scrollbar-foreground, $scrollbar-background);
+}
 
 .main {
   position: relative;

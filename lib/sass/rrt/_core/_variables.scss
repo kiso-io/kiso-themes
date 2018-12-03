@@ -413,3 +413,9 @@ $nav-stacked-link-hover-bg: $gray-400;
 $nav-stacked-chevron-bg: $white-color;
 
 $plan-selector-active-bg: $gray-200;
+
+$style-scrollbar: true !default;
+$scrollbar-width: 0.15em !default;
+$scrollbar-foreground: $brand-primary !default;
+$scrollbar-background: mix($brand-primary, white, 50%) !default;
+
