@@ -169,7 +169,7 @@ SimpleForm.setup do |config|
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
 
-  config.wrappers :custom_file, tag: 'div', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
+  config.wrappers :custom_file, tag: 'div', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid', **horizontal_options do |b|
     b.use :html5
     b.use :placeholder
     b.optional :maxlength
@@ -177,7 +177,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
     b.use :label, class: 'form-control-label'
     b.wrapper :custom_file_wrapper, tag: 'div', class: 'custom-file' do |ba|
-      ba.use :input, class: 'custom-file-input', error_class: 'is-invalid', valid_class: 'is-valid'
+      ba.use :input, **input_options, class: 'custom-file-input'
       ba.use :label, class: 'custom-file-label'
       ba.use :full_error, wrap_with: { tag: 'div', class: 'invalid-feedback' }
     end
