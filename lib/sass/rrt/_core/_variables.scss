@@ -1,4 +1,4 @@
-$sans-serif-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+$sans-serif-family: "Work Sans", "Helvetica Neue", Arial, sans-serif;
 
 // Border thicknesses
 $none: 0 !default;
@@ -121,16 +121,16 @@ $medium-gray: $gray-400;
 $dark-gray: $gray-900;
 
 // Colors
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
 
 $colors: (
   default: $default-color,
@@ -148,7 +148,6 @@ $colors: (
   gray: $gray-600,
   gray-dark: $gray-800
 );
-
 
 // Lighter colors
 $light-blue: rgba($primary-color, 0.2);
@@ -173,7 +172,7 @@ $theme-colors: (
 // Padding
 $padding-input-vertical: 11px !default;
 $padding-input-horizontal: 19px !default;
-$padding-btn-vertical: .7rem !default;
+$padding-btn-vertical: 0.7rem !default;
 $padding-btn-horizontal: 1rem !default;
 $padding-base-vertical: 0.7rem !default;
 $padding-base-horizontal: 0.7rem !default;
@@ -336,10 +335,21 @@ $gradient-2: linear-gradient(180deg, #a4d0de 25%, #e3313a 100%);
 $gradient-3: linear-gradient(180deg, #a1bdcc 25%, #f4f8c1 100%);
 $gradient-4: linear-gradient(180deg, #fac043 25%, #e13b36 100%);
 $gradient-5: linear-gradient(180deg, #2ae374 25%, #f7f9bc 100%);
-$gradient-floor-fade: linear-gradient( to bottom, transparent 20%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.6) 90%) no-repeat scroll 0 0;
-$gradient-roof-fade: linear-gradient( to bottom, rgba(0, 0, 0, 0.6) 90%, rgba(0, 0, 0, 0.6) 40%, transparent 100%) no-repeat scroll 0 0;
+$gradient-floor-fade: linear-gradient(
+    to bottom,
+    transparent 20%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.6) 90%
+  )
+  no-repeat scroll 0 0;
+$gradient-roof-fade: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 90%,
+    rgba(0, 0, 0, 0.6) 40%,
+    transparent 100%
+  )
+  no-repeat scroll 0 0;
 $gradient-white-to-alpha: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-
 
 // Card Acivity Feed
 $card-activity-feed-label-bg: $gray-400;
@@ -354,7 +364,7 @@ $switch-width: 90px;
 $switch-height: 40px;
 $gray-light: $gray-700;
 
-$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
 
 $card-header-bg: transparent !default;
 $card-header-border-color: $medium-gray !default;
@@ -393,16 +403,17 @@ $pagination-color: $black-color;
 $pagination-bg: $default-color;
 $pagination-hover-color: $black-color;
 $pagination-hover-bg: $opacity-gray-3;
-$pagination-disabled-bg: $dark-gray;
-$pagination-disabled-color: tint($dark-gray, 30%);
+
+$pagination-disabled-bg: #e0e7ef;
+$pagination-disabled-color: #4e5763;
 
 $progress-bar-bg: $gray-400;
 $progress-bar-color: $brand-primary;
 
 $card-sheet-bg: $white-color;
 $listgroup-item-border-color: 1px solid rgba(228, 228, 228, 0.23) !default;
-$listgroup-item-disabled-color: rgba($gray-400, .5);
-$listgroup-item-disabled-bg: rgba($gray-300, .2);
+$listgroup-item-disabled-color: rgba($gray-400, 0.5);
+$listgroup-item-disabled-bg: rgba($gray-300, 0.2);
 
 $scaffold-page-header-bg: $white-color;
 $scaffold-page-header-color: $text-color;
@@ -418,4 +429,3 @@ $style-scrollbar: true !default;
 $scrollbar-width: 0.15em !default;
 $scrollbar-foreground: $brand-primary !default;
 $scrollbar-background: mix($brand-primary, white, 50%) !default;
-

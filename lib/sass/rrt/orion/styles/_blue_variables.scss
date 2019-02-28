@@ -1,4 +1,4 @@
-$sans-serif-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+$sans-serif-family: "Work Sans", "Helvetica Neue", Arial, sans-serif;
 
 // Border thicknesses
 $none: 0 !default;
@@ -20,30 +20,30 @@ $dark-color: #283d52;
 $main-bg: #eef5fb !default;
 $dark-background: #555 !default;
 
-@include theme-colors((
- text-color: #2c2c2c,
- brand-default: #4173a7,
- brand-primary: #4173a7,
- brand-success: #73c16b,
- brand-info: #5cc6d2,
- brand-warning: #e08e45,
- brand-danger: #c55e5e,
- brand-light: #fff,
- brand-dark: $dark-color,
-
- sidenav-menu-bg: #2e4261,
- sidenav-header-color: white,
- sidenav-header-bg: #2e4261,
- sidenav-header-link: lighten(#4173a7, 25%),
- sidenav-header-link-hover: white,
- sidenav-color: lighten(#4173a7, 25%),
- sidenav-menu-item-bg: #395379,
- sidenav-menu-item-color: lighten(#4173a7, 25%),
- sidenav-menu-item-icon: #4d80b8,
-
- tooltip-bg: lighten($brand-primary, 25%),
- tooltip-color: white
-));
+@include theme-colors(
+  (
+    text-color: #2c2c2c,
+    brand-default: #4173a7,
+    brand-primary: #4173a7,
+    brand-success: #73c16b,
+    brand-info: #5cc6d2,
+    brand-warning: #e08e45,
+    brand-danger: #c55e5e,
+    brand-light: #fff,
+    brand-dark: $dark-color,
+    sidenav-menu-bg: #2e4261,
+    sidenav-header-color: white,
+    sidenav-header-bg: #2e4261,
+    sidenav-header-link: lighten(#4173a7, 25%),
+    sidenav-header-link-hover: white,
+    sidenav-color: lighten(#4173a7, 25%),
+    sidenav-menu-item-bg: #395379,
+    sidenav-menu-item-color: lighten(#4173a7, 25%),
+    sidenav-menu-item-icon: #4d80b8,
+    tooltip-bg: lighten($brand-primary, 25%),
+    tooltip-color: white
+  )
+);
 
 // Card Chat
 $card-chat-bg: $gray-400;
@@ -51,7 +51,7 @@ $card-chat-bg: $gray-400;
 $card-border-radius: $border-radius-small;
 
 $navbar-background: #4173a7;
-$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
 
 $card-outer-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 
@@ -59,6 +59,13 @@ $navbar-navlink-color: $white-color;
 $navbar-navlink-hover-bg: $opacity-2;
 $form-input-radius: $btn-round-radius;
 
-$navbar-toggle: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-toggle: str-replace(
+  url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"),
+  "#",
+  "%23"
+);
 
 $button-default-bg: $gray-300;
+
+$pagination-disabled-bg: #e0e7ef;
+$pagination-disabled-color: #4e5763;

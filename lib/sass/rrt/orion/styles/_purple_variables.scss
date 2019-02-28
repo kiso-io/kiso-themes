@@ -1,4 +1,4 @@
-$sans-serif-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+$sans-serif-family: "Work Sans", "Helvetica Neue", Arial, sans-serif;
 
 // Whites
 $white-color: #fdfcfc !default;
@@ -15,30 +15,30 @@ $dark-color: $black-color;
 $main-bg: #eef0fb !default;
 $dark-background: #555 !default;
 
-@include theme-colors((
- text-color: #2c2c2c,
- brand-default: #414da7,
- brand-primary: #414da7,
- brand-success: #73c16b,
- brand-info: #5cc6d2,
- brand-warning: #e08e45,
- brand-danger: #c55e5e,
- brand-light: #fff,
- brand-dark: $dark-color,
-
- sidenav-menu-bg: #2e3b61,
- sidenav-header-bg: #2e3b61,
- sidenav-header-link: lighten(#2e3b61, 25%),
- sidenav-color: #6f84c2,
- sidenav-menu-item-bg: #3b4b7d,
- sidenav-menu-item-icon: #4d80b8,
-
- tooltip-bg: lighten(#2e3b61, 25%) ,
- tooltip-color: white
-));
+@include theme-colors(
+  (
+    text-color: #2c2c2c,
+    brand-default: #414da7,
+    brand-primary: #414da7,
+    brand-success: #73c16b,
+    brand-info: #5cc6d2,
+    brand-warning: #e08e45,
+    brand-danger: #c55e5e,
+    brand-light: #fff,
+    brand-dark: $dark-color,
+    sidenav-menu-bg: #2e3b61,
+    sidenav-header-bg: #2e3b61,
+    sidenav-header-link: lighten(#2e3b61, 25%),
+    sidenav-color: #6f84c2,
+    sidenav-menu-item-bg: #3b4b7d,
+    sidenav-menu-item-icon: #4d80b8,
+    tooltip-bg: lighten(#2e3b61, 25%),
+    tooltip-color: white
+  )
+);
 
 $navbar-background: #414da7;
-$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+$navbar-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
 
 $card-border-radius: $border-radius-small;
 $card-outer-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
@@ -47,4 +47,11 @@ $navbar-navlink-color: $white-color;
 $navbar-navlink-hover-bg: $opacity-2;
 $form-input-radius: $btn-round-radius;
 
-$navbar-toggle: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-toggle: str-replace(
+  url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"),
+  "#",
+  "%23"
+);
+
+$pagination-disabled-bg: #e0e7ef;
+$pagination-disabled-color: #4e5763;
