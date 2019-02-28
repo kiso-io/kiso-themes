@@ -1,4 +1,9 @@
 
+1.2.8 / 2019-02-28
+==================
+
+  * Update Kaminari templates to make 'gap' item not appear selectable. Add first page and last page links
+
 1.2.7 / 2019-02-28
 ==================
 
