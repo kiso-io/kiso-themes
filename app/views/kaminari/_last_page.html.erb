@@ -1,0 +1,15 @@
+<%# Link to the "Last" page
+  - available local variables
+    url:           url to the last page
+    current_page:  a page object for the currently displayed page
+    total_pages:   total number of pages
+    per_page:      number of items to fetch per page
+    remote:        data-remote
+-%>
+<li class="last  <% if current_page.last? %>disabled<%end%>">
+  <% if current_page.last?%>
+    <a href="#" onclick="return false;"><%=t('views.pagination.last').html_safe%></a>
+  <% else %>
+    <%= link_to t('views.pagination.last').html_safe, url, remote: remote %>
+  <% end %>
+</li>
