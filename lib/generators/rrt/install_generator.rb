@@ -25,6 +25,7 @@ module RRT
       end
 
       def add_jquery_to_gemfile
+        return if rails6?
         return unless Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
         say_status :info, "Adding jQuery back into the Gemfile"
         gem "jquery-rails"
@@ -32,6 +33,7 @@ module RRT
       end
 
       def add_jquery_require_to_app_js
+        return if rails6?
         return unless Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
         sentinel = "= require rails-ujs"
 
@@ -51,6 +53,7 @@ module RRT
       end
 
       def require_rrt_javascript
+        return if rails6?
         sentinel = "= require_tree ."
         code = "= require rrt\n\n"
 
@@ -68,11 +71,82 @@ module RRT
         end
       end
 
+      def install_for_rails6
+        return unless rails6?
+
+        say "Configuring for Rails 6..."
+
+        # Nothing needs to happen yet for Styles as Sprockets is still used
+        # in Rails 6 for handling styles and images etc.
+
+        vendor_libs = %w{
+          webpack-merge
+          jquery
+          popper.js
+          bootstrap@4.3.1
+          bootstrap-switch
+          chartjs
+          clipboard
+          jquery-countdown
+          jquery-countto
+          cd-easypiechart
+          fastclick
+          object-fit-images
+          flot
+          gmaps.core
+          jasny-bootstrap
+          jqvmap
+          jvectormap@2.0.4
+          metismenu@2.7.2
+          modernizr
+          parallax.js
+          code-prettify
+          prismjs
+          jquery-slimscroll
+          sparklines
+        }
+
+        # Add jquery to the package.json
+        system("yarn add #{vendor_libs.join(' ')}")
+
+
+        # Copy the pack index file
+        directory "rails6", "app/javascript/rrt"
+
+        # Add jQuery to application pack
+        inject_into_file 'app/javascript/packs/application.js', "\n#{new_requires}\n", { before: 'require("@rails/ujs").start()'}
+
+        # Add RRT import to application pack
+        append_to_file 'app/javascript/packs/application.js', "\nrequire(\"rrt\")\n"
+
+        # Change layout javascript_include to javascript_pack
+        gsub_file "app/views/layouts/_base.html.#{handler}", "javascript_include_tag", "javascript_pack_tag"
+
+        # Add jQuery symbols as provide plugins in Webpack
+        inject_into_file 'config/webpack/environment.js', after: "const { environment } = require('@rails/webpacker')" do <<-JS
+
+const webpack = require('webpack')
+environment.plugins.prepend('Provide',
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    jquery: 'jquery',
+    Popper: ['popper.js', 'default'], // for Bootstrap 4
+
+    // Include Clipboard.js with a rename since it conflicts with
+    // Chrome's own upcoming Clipboard API.
+    ClipboardJS: 'clipboard'
+  })
+)
+        JS
+        end
+      end
+
       def add_app_name_to_application_helper
         sentinel = "module ApplicationHelper\n"
         code = <<END
   def app_name
-    "My App"
+    Rails.application.class.module_parent_name
   end
 END
 
@@ -95,6 +169,10 @@ END
           defined?(Devise)
         end
 
+        def rails6?
+          Gem::Version.new(::Rails.version) >= Gem::Version.new("6.0.0.rc1") && Gem::Version.new(::Rails.version) < Gem::Version.new("7.0.0")
+        end
+
         # Can't fully cutomize theme under Windows because of less.rb dep on therubyracer.
         def can_customize?
           RUBY_PLATFORM !~ /mswin|mingw/
@@ -103,6 +181,33 @@ END
         def readme_template(file)
           source = File.binread(find_in_source_paths(file))
           log ERB.new(source, nil, '-', '@output_buffer').result(binding)
+        end
+
+        def new_requires
+          <<-JS
+window.$ = window.jQuery = require("jquery")
+// ***** START: ADDED BY RRT *****
+require("bootstrap")
+require("metismenu/dist/cjs")
+require("jquery-slimscroll")
+require('bootstrap-switch')
+require('chartjs')
+require('jquery-countdown')
+require('jquery-countto')
+require('cd-easypiechart')
+require('fastclick')
+require('object-fit-images')
+require('flot/source/jquery.canvaswrapper');
+require('flot/source/jquery.flot');
+require('gmaps.core')
+require('jasny-bootstrap')
+require('jvectormap')
+require('parallax.js')
+require('code-prettify')
+require('prismjs')
+require('sparklines')
+// ***** END: ADDED BY RRT *****
+          JS
         end
     end
   end

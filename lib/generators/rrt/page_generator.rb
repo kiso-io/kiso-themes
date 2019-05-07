@@ -16,6 +16,7 @@ module RRT
 
       def create_controller
         invoke :controller, [name, actions], skip: false, skip_routes: false, helper: false, test_framework: false, assets: false, template_engine: false
+        Rails.autoloaders.main.reload
       end
 
       def copy_view
