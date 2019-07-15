@@ -246,3 +246,15 @@
 .navbar-toggler-icon {
   background-image: $navbar-toggle;
 }
+
+@include media-breakpoint-down(md) {
+  .navbar-toggler {
+      padding: 0 .5rem;
+      height: 2em;
+  }
+
+  .navbar-toggler-icon {
+    height: 1em;
+    width: 1em;
+  }
+}
