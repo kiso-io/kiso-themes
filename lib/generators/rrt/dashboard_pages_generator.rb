@@ -9,7 +9,7 @@ module RRT
       namespace "rrt:dashboard_pages"
 
       def set_layout
-        controller_const_name = "#{name.camelize}Controller".constantize
+        controller_const_name = "#{name.camelize}Controller"
         inject_into_class File.join('app/controllers', class_path, "#{file_name}_controller.rb"), controller_const_name, "  layout 'sidenav'\n"
       end
 
@@ -22,7 +22,7 @@ module RRT
           copy_file "views/#{_view_type}/#{partial}.html.#{handler}", destination
         end
 
-        controller_const_name = "#{name.camelize}Controller".constantize
+        controller_const_name = "#{name.camelize}Controller"
         for action in actions do
           PageRewriter.compile("app/views/#{name.underscore}/#{action}.html.#{handler}", /dashboards/, "#{name.underscore}")
           inject_into_file "app/controllers/#{file_name}_controller.rb", after: "def #{action}"  do

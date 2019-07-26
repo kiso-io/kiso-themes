@@ -20,7 +20,7 @@ module RRT
       end
 
       def create_controller_methods
-        controller_const_name = "#{name.camelize}Controller".constantize
+        controller_const_name = "#{name.camelize}Controller"
         target_controller_file_name = File.join('app/controllers', class_path, "#{file_name}_controller.rb")
 
         ["index", "billing", "plan", "profile", "support", "notifications"].each do |method_name|
@@ -29,7 +29,7 @@ module RRT
       end
 
       def set_partial_path
-        controller_const_name = "#{name.camelize}Controller".constantize
+        controller_const_name = "#{name.camelize}Controller"
         inject_into_class File.join('app/controllers', class_path, "#{file_name}_controller.rb"), controller_const_name, "  prepend_view_path(File.join(Rails.root, 'app/views/#{name.downcase}/'))\n"
       end
 
