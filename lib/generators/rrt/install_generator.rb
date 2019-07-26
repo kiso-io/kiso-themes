@@ -188,7 +188,7 @@ END
 window.$ = window.jQuery = require("jquery")
 // ***** START: ADDED BY RRT *****
 require("bootstrap")
-require("metismenu/dist/cjs")
+require("metismenu/dist/metisMenu")
 require("jquery-slimscroll")
 require('bootstrap-switch')
 require('chartjs')
