@@ -109,7 +109,6 @@ module RRT
         # Add jquery to the package.json
         system("yarn add #{vendor_libs.join(' ')}")
 
-
         # Copy the pack index file
         directory "rails6", "app/javascript/rrt"
 
