@@ -1,7 +1,8 @@
 window.INSPECT_MODE = false;
 
 $(document).ready(function() {
-  var clipboard = new ClipboardJS('.copy-to-clipboard');
+  var Klipboard = typeof window.ClipboardJS !== 'undefined' ? ClipboardJS : Clipboard;
+  var clipboard = new Klipboard('.copy-to-clipboard');
 
   function removeHandlers() {
     var _inspectable = this
