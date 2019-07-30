@@ -1,0 +1,38 @@
+===============================================================================
+
+You're ready to customize your theme!
+
+The theme can now be fully customized in:
+
+  app/assets/stylesheets/kiso_themes.css.scss
+
+Some setup you must do manually if you haven't yet:
+
+  * Ensure `gem 'sass-rails'` has been added to your Gemfile, and is
+    not in the `assets` group.
+
+  * Port any changes you made to kiso_themes.css.scss. Remove
+    app/assets/stylesheets/kiso_themes.css.
+
+  * Ensure app/assets/stylesheets/kiso_themes.css.scss is loaded in
+    application.css with `require kiso_themes`.
+
+    NOTE: There must NOT be a `require_tree .` in the application.css,
+    as this can load things in a random order, and you may get errors
+    about variables not being defined.
+
+  * Lastly, restart your server if it's already running.
+
+We really appreciate your business here at Rapid Rails Themes,
+thanks for buying!
+
+
+
+*** Having problems? ***
+
+Log into your rapidrailsthemes.com account, go to the Support page and tell
+us everything.
+
+And we'll do our very best to help you!
+
+===============================================================================

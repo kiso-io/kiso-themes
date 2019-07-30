@@ -8,7 +8,7 @@ rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
 
-Bundler::GemHelper.install_tasks name: 'rrt'
+Bundler::GemHelper.install_tasks name: 'kiso_themes'
 
 def setup_bundler
   begin
@@ -20,11 +20,11 @@ end
 
 require 'page_rewriter'
 
-task :check_rrtdotcom_on_master do
-  cd "../rrtdotcom", verbose: false do
+task :check_kisodotio_on_master do
+  cd "../kisodotio", verbose: false do
     branch_name = `git rev-parse --abbrev-ref HEAD`.chomp
     if branch_name != 'master'
-      puts "🚨  CANNOT RELEASE: rrtdotcom is not on master"
+      puts "🚨  CANNOT RELEASE: kiso_themesdotcom is not on master"
       exit
     end
   end
@@ -46,19 +46,19 @@ task :compile_assets do
     sh "bundle exec rake non_digested"
   end
 
-  mkdir_p "app/assets/stylesheets/rrt"
+  mkdir_p "app/assets/stylesheets/kiso_themes"
 
-  puts "Processing CSS files to app/assets/stylesheets/rrt"
+  puts "Processing CSS files to app/assets/stylesheets/kiso_themes"
 
-  themes = RRT::THEMES
+  themes = KisoThemes::THEMES
 
   themes.each do |theme|
-    styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
+    styles = Kernel.const_get("KisoThemes::#{theme.capitalize}::COLORS")
     css_files = FileList["test/dummy/public/assets/styles/#{theme.downcase}/{#{styles * ','}}.css"]
     puts "🔎  Looking for files in: #{"test/dummy/public/assets/styles/#{theme.downcase}/{#{styles * ','}}.css"}"
     css_files.each do |file|
       puts "👷  Processing #{file}"
-      CssRewriter.compile(file, "app/assets/stylesheets/rrt/#{theme.downcase}")
+      CssRewriter.compile(file, "app/assets/stylesheets/kiso_themes/#{theme.downcase}")
     end
   end
 
@@ -71,8 +71,8 @@ end
 task :release_version do
   setup_bundler
 
-  puts "🚦  Checking if repo rrt.com is on master..."
-  Rake::Task["check_rrtdotcom_on_master"].invoke
+  puts "🚦  Checking if repo kisodotio is on master..."
+  Rake::Task["check_kisodotio_on_master"].invoke
 
   puts "👷  Cleaning out pkg directory"
   cd "pkg", verbose: false do
@@ -90,29 +90,29 @@ task :release_version do
   puts "📖  Generating changelog..."
   sh "git changelog"
 
-  Rake::Task["commit_release_to_rrt_dot_com"].invoke
+  Rake::Task["commit_release_to_kisodotio"].invoke
 
   puts "🐱  Tagging and pushing latest version"
-  sh "git add . && git commit -m 'RRT Gem #{latest_version}' && git tag #{latest_version} && git push"
+  sh "git add . && git commit -m 'KisoThemes Gem #{latest_version}' && git tag #{latest_version} && git push"
 end
 
-task :commit_release_to_rrt_dot_com do
-  puts "🚚  Pushing release to rrt.com"
+task :commit_release_to_kisodotio do
+  puts "🚚  Pushing release to kiso_themes.com"
 
   latest_version = File.read('./VERSION')
-  cd "../rrtdotcom", verbose: false do
+  cd "../kisodotio", verbose: false do
     Bundler.with_clean_env do
-      Bundler.clean_system "bundle exec rake gems:push gem=../rrt/pkg/rrt-#{latest_version}.gem"
+      Bundler.clean_system "bundle exec rake gems:push gem=../kiso_themes/pkg/kiso_themes-#{latest_version}.gem"
       puts system('test -z "$(git ls-files --others)"')
 
-      sh "git add . && git commit -m 'RRT Gem #{latest_version}' && git push"
+      sh "git add . && git commit -m 'KisoThemes Gem #{latest_version}' && git push"
       sh "bin/deploy"
     end
   end
 end
 
 task :deploy_demo do
-  sh "rsync -cavtX --delete ./demo/* deployer@rapidrailsthemes.com:/home/deployer/apps/rrtdotcom/shared/public/demos;"
+  sh "rsync -cavtX --delete ./demo/* deployer@rapidrailsthemes.com:/home/deployer/apps/kiso_themesdotcom/shared/public/demos;"
 end
 
 task :bake_product_shots do
@@ -123,8 +123,8 @@ task :bake_product_shots do
 end
 
 task :fix_stylesheets do
-  RRT::THEMES.each do |theme|
-    styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
+  KisoThemes::THEMES.each do |theme|
+    styles = Kernel.const_get("KisoThemes::#{theme.capitalize}::COLORS")
 
     styles.each do |style|
       # cd "demo/#{theme.downcase}/#{style.downcase}/assets/styles/#{theme.downcase}" do
@@ -141,8 +141,8 @@ task :fix_stylesheets do
 end
 
 task :clean_demo do
-  RRT::THEMES.each do |theme|
-    styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
+  KisoThemes::THEMES.each do |theme|
+    styles = Kernel.const_get("KisoThemes::#{theme.capitalize}::COLORS")
 
     styles.each do |style|
       cd "demo/#{theme.downcase}/#{style.downcase}/preview" do
@@ -181,8 +181,8 @@ task :make_demo do
     setup_bundler
     start_server
 
-    RRT::THEMES.each do |theme|
-      styles = Kernel.const_get("RRT::#{theme.capitalize}::COLORS")
+    KisoThemes::THEMES.each do |theme|
+      styles = Kernel.const_get("KisoThemes::#{theme.capitalize}::COLORS")
       styles.each do |style|
         puts "\nCOMPILING DEMO FOR #{theme.capitalize} - #{style.capitalize}"
         sh "wget --mirror --content-disposition -nv -p -q -nH --html-extension --page-requisites --no-use-server-timestamps --convert-links -P ../../demo/#{theme.downcase}/#{style} 'http://localhost:4000/preview/001_dashboards@ti-dashboard%2F001_dashboard_1?theme=#{theme.downcase}&style=#{style}'; true"
@@ -227,7 +227,7 @@ end
 
 RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'RRT'
+  rdoc.title    = 'KisoThemes'
   rdoc.options << '--line-numbers'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
@@ -254,6 +254,13 @@ namespace :test do
       ruby "#{$0} -f #{file}"
     end
   end
+
+  desc "Run plugins tests"
+  task :plugins do
+    setup_bundler
+    # Run in another sell to get a clean env
+    ruby "#{$0} -f test/system/plugins.rake"
+  end
 end
 
 task :test => 'test:system'
@@ -273,7 +280,7 @@ task :bake_app_pages do
   ]
 
   app_page_target_path = 'test/dummy/app/views/preview/elements'
-  app_page_destination_path = 'lib/generators/rrt/templates/views/app_pages'
+  app_page_destination_path = 'lib/generators/kiso_themes/templates/views/app_pages'
 
   sh "rm -rf #{app_page_destination_path}"
 
@@ -343,7 +350,7 @@ task :bake_pages do
   ]
 
   base_target_path = 'test/dummy/app/views/preview/elements'
-  base_destination_path = 'lib/generators/rrt/templates/views'
+  base_destination_path = 'lib/generators/kiso_themes/templates/views'
 
   page_targets.each do |target|
     path = File.join(Dir.pwd, base_target_path, target, '/**/*')
@@ -364,7 +371,7 @@ task :bake_pages do
 end
 
 task :bake_layouts do
-  layout_destination_path = File.join(Dir.pwd, 'lib/generators/rrt/templates/layouts')
+  layout_destination_path = File.join(Dir.pwd, 'lib/generators/kiso_themes/templates/layouts')
   layout_path = File.join(Dir.pwd, 'test/dummy/app/views/layouts/*')
   layout_files = Dir.glob(layout_path).select { |f| f != '.' && f != '..' && f != '.DS_Store' && !File.directory?(f) }
 
@@ -407,23 +414,23 @@ end
 
 task :cook_haml do
   target_erb_dirs = [
-    'lib/generators/rrt/templates/layouts',
+    'lib/generators/kiso_themes/templates/layouts',
     'app/views/content_blocks/app_navs',
     'app/views/content_blocks/basic',
     'app/views/content_blocks/general',
     'app/views/content_blocks/headers',
     'app/views/content_blocks/landing_navs',
-    'lib/generators/rrt/templates/views/analytics',
-    'lib/generators/rrt/templates/views/app_pages/user_account',
-    'lib/generators/rrt/templates/views/app_pages/user_account/_user_account',
-    'lib/generators/rrt/templates/views/dashboards',
-    'lib/generators/rrt/templates/views/emails',
-    'lib/generators/rrt/templates/views/frontend_pages/blog_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/error_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/faq_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/landing_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/legal_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/pricing_pages',
+    'lib/generators/kiso_themes/templates/views/analytics',
+    'lib/generators/kiso_themes/templates/views/app_pages/user_account',
+    'lib/generators/kiso_themes/templates/views/app_pages/user_account/_user_account',
+    'lib/generators/kiso_themes/templates/views/dashboards',
+    'lib/generators/kiso_themes/templates/views/emails',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/blog_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/error_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/faq_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/landing_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/legal_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/pricing_pages',
   ]
 
   target_erb_dirs.each do |target_erb_dir|
@@ -444,23 +451,23 @@ end
 
 task :cook_slim do
   target_erb_dirs = [
-    'lib/generators/rrt/templates/layouts',
+    'lib/generators/kiso_themes/templates/layouts',
     'app/views/content_blocks/app_navs',
     'app/views/content_blocks/basic',
     'app/views/content_blocks/general',
     'app/views/content_blocks/headers',
     'app/views/content_blocks/landing_navs',
-    'lib/generators/rrt/templates/views/analytics',
-    'lib/generators/rrt/templates/views/app_pages/user_account',
-    'lib/generators/rrt/templates/views/app_pages/user_account/_user_account',
-    'lib/generators/rrt/templates/views/dashboards',
-    'lib/generators/rrt/templates/views/emails',
-    'lib/generators/rrt/templates/views/frontend_pages/blog_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/error_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/faq_pagea',
-    'lib/generators/rrt/templates/views/frontend_pages/landing_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/legal_pages',
-    'lib/generators/rrt/templates/views/frontend_pages/pricing_pages',
+    'lib/generators/kiso_themes/templates/views/analytics',
+    'lib/generators/kiso_themes/templates/views/app_pages/user_account',
+    'lib/generators/kiso_themes/templates/views/app_pages/user_account/_user_account',
+    'lib/generators/kiso_themes/templates/views/dashboards',
+    'lib/generators/kiso_themes/templates/views/emails',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/blog_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/error_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/faq_pagea',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/landing_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/legal_pages',
+    'lib/generators/kiso_themes/templates/views/frontend_pages/pricing_pages',
   ]
 
   target_erb_dirs.each do |target_erb_dir|
@@ -476,7 +483,7 @@ task :cook_slim do
 end
 
 task :bake_customizations do
-  customization_destination_path = File.join(Dir.pwd, 'lib/generators/rrt/templates/customizations')
+  customization_destination_path = File.join(Dir.pwd, 'lib/generators/kiso_themes/templates/customizations')
   customization_path = File.join(Dir.pwd, 'test/dummy/app/assets/stylesheets/styles')
 
   sh "cp -R #{customization_path} #{customization_destination_path}"

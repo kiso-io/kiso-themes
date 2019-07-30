@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rrt (1.2.9)
+    kiso_themes (1.2.9)
       jquery-rails
       rails (>= 3.1)
       sass-rails
@@ -157,7 +157,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   byebug
-  rrt!
+  kiso_themes!
   sqlite3
   version_bumper
 

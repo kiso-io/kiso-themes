@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class StylesheetsTest < ActionDispatch::IntegrationTest
-  RRT::Ives::STYLES.each do |style|
+  KisoThemes::Ives::STYLES.each do |style|
     test "#{style}.css" do
       get "/assets/styles/#{style}.css"
 

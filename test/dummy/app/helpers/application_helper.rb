@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def current_style
-    cookies[:style] || Kernel.const_get('RRT::Orion::COLORS')[0]
+    cookies[:style] || Kernel.const_get('KisoThemes::Orion::COLORS')[0]
   end
 
   def current_theme

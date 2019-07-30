@@ -23,8 +23,8 @@
             <% end -%>
             <div class="d-flex">
               <div class="ml-auto">
-                <%%= link_to fa_icon_tag("pencil") + ' Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), <%= RRT.key_value :class, "'btn btn-primary'" %> %>
-                <%%= link_to 'Back', <%= index_helper %>_path, <%= RRT.key_value :class, "'btn'" %> %>
+                <%%= link_to fa_icon_tag("pencil") + ' Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), <%= KisoThemes.key_value :class, "'btn btn-primary'" %> %>
+                <%%= link_to 'Back', <%= index_helper %>_path, <%= KisoThemes.key_value :class, "'btn'" %> %>
               </div>
             </div>
           </div>

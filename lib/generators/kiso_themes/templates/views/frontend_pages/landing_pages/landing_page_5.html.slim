@@ -1,0 +1,13 @@
+= content_for :js_libs, "parallax"
+- @title = 'Welcome'
+main.landing-5
+  .parallax-window data-image-src="#{asset_path('kiso_themes/stock/landscape_12.jpg')}" data-parallax="scroll" data-speed="0.5" 
+    = render partial: 'content_blocks/headers/10'
+section.pt-5.pb-5
+  = render partial: 'content_blocks/general/16'
+section.pt-5.pb-5.bg-dark
+  = render partial: 'content_blocks/general/23'
+section.pt-5.pb-5.bg-gray-300
+  = render partial: 'content_blocks/general/18'
+section.pt-5.pb-5.bg-dark
+  = render partial: 'content_blocks/general/34'

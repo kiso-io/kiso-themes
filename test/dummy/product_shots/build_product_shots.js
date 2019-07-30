@@ -166,7 +166,7 @@ async function resizeJob(renderJob, resizeStack) {
   var keys = Object.keys(resizeStack.stack)
 
   for(outputFile of keys) {
-    if(outputFile !== '/Users/jmd/code/rrt/rrt/test/dummy/product_shots/shots/lyra/azure/shot_1.jpg') {
+    if(outputFile !== '/Users/jmd/code/kiso_themes/kiso_themes/test/dummy/product_shots/shots/lyra/azure/shot_1.jpg') {
       await sharp(resizeStack.inputFile)
         .resize(resizeStack.stack[outputFile].resizeX, resizeStack.stack[outputFile].resizeY)
         .crop(resizeStack.stack[outputFile].crop)

@@ -9,7 +9,7 @@ module HtmlHelper
 
   def random_avatar size=64, css_class
     value = (rand() * 4 + 1).to_i
-    image_tag "rrt/stock/#{value}.jpg", class: css_class, width: size, height: size, 'data-turbolinks-permanent': true
+    image_tag "kiso_themes/stock/#{value}.jpg", class: css_class, width: size, height: size, 'data-turbolinks-permanent': true
   end
 
   def random_landscape width='100%', css_class=''
@@ -18,7 +18,7 @@ module HtmlHelper
 
   def random_landscape_name
     value = (rand() * 10 + 1).to_i
-    "rrt/stock/landscape_#{value}.jpg"
+    "kiso_themes/stock/landscape_#{value}.jpg"
   end
 
   def code_block(&block)

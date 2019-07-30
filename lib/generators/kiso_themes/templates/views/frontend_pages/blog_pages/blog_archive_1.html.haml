@@ -1,0 +1,80 @@
+%body
+  = content_for :js_libs, "parallax prettify"
+  %main
+    .parallax-window{"data-image-src" => "#{asset_path("kiso_themes/stock/landscape_3.jpg")}", "data-parallax" => "scroll", "data-speed" => "0.5"}
+      .container
+        %nav.navbar.navbar-landing.navbar-dark.navbar-expand-lg
+          %a.navbar-brand{href: "javascript:"}
+            = image_tag image_path("kiso_themes/pyrrmid_64.png"), width: 32, height: 32, class: "mr-2"
+            PYRMID
+          %button.navbar-toggler{"aria-controls" => "standardNavbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#standardNavbar", "data-toggle" => "collapse", type: "button"}
+            %span.navbar-toggler-icon
+          #standardNavbar.collapse.navbar-collapse
+            %ul.nav.navbar-nav.ml-auto
+              %li.nav-item
+                %a.nav-link{href: "javascript:"} HOME
+              %li.nav-item
+                %a.nav-link{href: "javascript:"} ABOUT
+              %li.nav-item
+                %a.nav-link{href: "javascript:"} TEAM
+              %li.nav-item
+                %a.nav-link{href: "javascript:"} CONTACT
+        %header.text-center.text-white
+          .container
+            %h2 Your App
+            %h2.h4 Our Blog
+  %article.blog-1.blog-archive.py-5
+    .col-12.col-md-8.mr-md-auto.ml-md-auto
+      %ol.list-unstyled
+        %li
+          %h2.leading-normal.mb-3 Ventolin makes me march around like Justin Brown
+          .article-meta.color-grey-50
+            = random_avatar 40, "d-flex rounded mr-3"
+            .media-body.d-flex.align-items-center
+              %p.m-0.media-heading
+                %a{href: "#"} by John McDowall
+                in
+                %a{href: "#"} Rails, Front-end, Magic
+                •
+                %time 14th May 2015
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aut dolor laudantium repellat veniam consectetur voluptate excepturi voluptatum doloremque nesciunt! Accusantium, eos, vel. Ratione vero, non magnam cum qui facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %a{href: "javascript:"} Read more →
+        %li
+          %h2.leading-normal.mb-3 Ventolin makes me march around like Justin Brown
+          .article-meta.color-grey-50
+            = random_avatar 40, "d-flex rounded mr-3"
+            .media-body.d-flex.align-items-center
+              %p.m-0.media-heading
+                %a{href: "#"} by John McDowall
+                in
+                %a{href: "#"} Rails, Front-end, Magic
+                •
+                %time 14th May 2015
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aut dolor laudantium repellat veniam consectetur voluptate excepturi voluptatum doloremque nesciunt! Accusantium, eos, vel. Ratione vero, non magnam cum qui facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %a{href: "javascript:"} Read more →
+        %li
+          %h2.leading-normal.mb-3 Ventolin makes me march around like Justin Brown
+          .article-meta.color-grey-50
+            = random_avatar 40, "d-flex rounded mr-3"
+            .media-body.d-flex.align-items-center
+              %p.m-0.media-heading
+                %a{href: "#"} by John McDowall
+                in
+                %a{href: "#"} Rails, Front-end, Magic
+                •
+                %time 14th May 2015
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aut dolor laudantium repellat veniam consectetur voluptate excepturi voluptatum doloremque nesciunt! Accusantium, eos, vel. Ratione vero, non magnam cum qui facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %a{href: "javascript:"} Read more →
+        %li
+          %h2.leading-normal.mb-3 Ventolin makes me march around like Justin Brown
+          .article-meta.color-grey-50
+            = random_avatar 40, "d-flex rounded mr-3"
+            .media-body.d-flex.align-items-center
+              %p.m-0.media-heading
+                %a{href: "#"} by John McDowall
+                in
+                %a{href: "#"} Rails, Front-end, Magic
+                •
+                %time 14th May 2015
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aut dolor laudantium repellat veniam consectetur voluptate excepturi voluptatum doloremque nesciunt! Accusantium, eos, vel. Ratione vero, non magnam cum qui facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %a{href: "javascript:"} Read more →

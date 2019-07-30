@@ -13,17 +13,18 @@ task :erb do
   curl "/pricing"
   curl "/contacts"
   curl "/contacts/new"
-  curl "/assets/rrt.css"
-  curl "/assets/rrt.js"
+  curl "/dashboard"
+  curl "/assets/kiso_themes.css"
+  curl "/assets/kiso_themes.js"
 end
 
 task :customize => :erb do
-  sh 'bin/rails generate rrt:customize -f'
-  rm 'app/assets/stylesheets/rrt.css'
+  sh 'bin/rails generate kiso_themes:customize -f --theme-name=orion --style-name=blue'
+  rm 'app/assets/stylesheets/kiso_themes.css'
   sh 'bundle install'
   restart_server
 
-  curl "/assets/rrt.css"
+  curl "/assets/kiso_themes.css"
 end
 
 task :haml do
@@ -42,25 +43,4 @@ task :haml do
   curl "/contacts/new"
 end
 
-task :without_default_files do
-  create_app
-  # Remove default files
-  rm 'app/helpers/application_helper.rb'
-  rm 'app/assets/javascripts/application.js'
-  rm 'app/assets/stylesheets/application.css'
-  install_theme
-  generate_views
-  start_server
-
-  curl "/assets/rrt.css"
-  curl "/assets/rrt.js"
-
-  # With application.js.coffee
-  sh 'bin/rails destroy rrt:install -f'
-  sh "touch app/assets/javascripts/application.js.coffee"
-  sh 'bin/rails generate rrt:install -f'
-
-  curl "/assets/rrt.js"
-end
-
-task :default => [:erb, :customize, :haml, :without_default_files]
+task :default => [:erb, :customize, :haml]

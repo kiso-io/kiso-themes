@@ -1,0 +1,168 @@
+body
+  = content_for :js_libs, "parallax prettify"
+  main
+    .parallax-window data-image-src="#{asset_path("kiso_themes/stock/landscape_3.jpg")}" data-parallax="scroll" data-speed="0.5" 
+      .container
+        nav.navbar.navbar-landing.navbar-dark.navbar-expand-lg
+          a.navbar-brand href: "javascript:" 
+            = image_tag image_path("kiso_themes/pyrrmid_64.png"), width: 32, height: 32, class: "mr-2"
+            | PYRMID
+          button.navbar-toggler aria-controls="standardNavbar" aria-expanded="false" aria-label=("Toggle navigation") data-target="#standardNavbar" data-toggle="collapse", type: "button" 
+            span.navbar-toggler-icon
+          #standardNavbar.collapse.navbar-collapse
+            ul.nav.navbar-nav.ml-auto
+              li.nav-item
+                a.nav-link href: "javascript:"  HOME
+              li.nav-item
+                a.nav-link href: "javascript:"  ABOUT
+              li.nav-item
+                a.nav-link href: "javascript:"  TEAM
+              li.nav-item
+                a.nav-link href: "javascript:"  CONTACT
+        header.text-center.text-white
+          .container
+            h1 A Night to Remember
+            h2.h4 How we made $122,000 at Blackjack
+  article.blog-1.blog-post
+    .container.py-5
+      .row
+        .col-12.col-md-3.text-muted
+          aside.small.text-center.mt-3
+            em By John McDowall
+            p.m-0
+              | Published
+              time 14th May 2015
+            hr.nub/
+            dl
+              dt Tags
+              dd
+                ul.list-unstyled
+                  li Rails
+                  li Site News
+                  li Front-end
+        .col-12.col-md-8
+          h1 How it all got started
+          p Old Houses are products of accretion. Over the course of many years they gather new extensions, tweaked facades, upgraded central or under-floor heating systems, alarm systems, downstairs washrooms and nursereys. And usually, once one project is completled, you"ll bask in the glow of it for a while until it"s forgotten about and the next one embarked upon. Just like Software.
+          h2 Cats in the laundry basket
+          p The house I live in is big and old, over 80 years. It"s been split up so that a couple live through the back portion, my wife and I live in the front half, and there"s a basement apartment. Sound travels in funny ways in old houses. Sound travels in funny ways in old houses.
+          .py-3
+            = random_landscape
+          h3 Rain always comes
+          p You see there are the remenants of what were ducts for the purposes of a forced air central heating system, all through the house. The air vents are now sealed, but the ornamentation on the baseboard that gives away their purpose is still there. The ducts lie embedded within the walls still. Long forgotten about, these heating ducts were probably installed at great expense at the time, for what was felt to be the ultimate in home comfort: hot air blown into the rooms from a central heater!
+          p At some point, the old air heater was pulled out, radiators were found and installed, and a fancy Swedish boiler system now silently and efficiently pumps hot water around the piping and heats the house. And the ducts remain, in the walls. Now sealed up and silent. Except for when they carry sound in funny ways. Old houses are like that.
+          p Occasionally, we are treated to the sounds of someone somewhere else in the house enjoying vigorous, short lived coitus, the echoes of it carried inside the bones of the house, inside these long forgoten about ducts that serve no purpose. Should the ducts be ripped out? That would be very costly, and damaging to the house. So they stay. Silently embedded within the walls.
+          .table-responsive
+            = code_block do
+              | function decodeEscape(charsetPart) {
+              | var cc0 = charsetPart.charCodeAt(0);
+              | if (cc0 !== 92 /* \\ */) {
+              | return cc0;
+              | }
+              
+              | var c1 = charsetPart.charAt(1);
+              | var cc0 = escapeCharToCodeUnit[c1];
+              
+              | if (cc0) {
+              | return cc0;
+              | } else if ("0" &lt;= c1 &amp;&amp; c1 &lt;= "7") {
+              | return parseInt(charsetPart.substring(1), 8);
+              | } else if (c1 === "u" || c1 === "x") {
+              | return parseInt(charsetPart.substring(2), 16);
+              | } else {
+              | return charsetPart.charCodeAt(1);
+              | }
+              | }
+          p Much like the infastructure portions of almost every software design that"s ever been written. Look at your codebase. Is there something in there, some remnant of infrastructure that was built with the greatest of hopes and expectations, only to be roundly replaced when you understood the problem better?
+          p Removing that code might be too hard now, because nobody writes perfect software. Some brittle tests somewhere might flare up, or a method call somewhere might explode.
+          p And yet that code sits there, inside your digital walls.
+          p Software Design is like building houses. The construction continues long after the thing is "finished", and you end up living with the choices you make for a long time, usually forever.
+          p And sometimes, in the night, you hear odd noises carried by those old ducts.
+          section.row.post-footer.bg-white.rounded.py-4
+            .col-12
+              .media.color-grey-50
+                = random_avatar 40, "rounded d-flex mr-3"
+                .media-body.d-flex.justify-content-between
+                  div
+                    p.m-0.media-heading
+                      | Published
+                      time 14th May 2015
+                    a href: "#"  by John McDowall
+                    | in
+                    a href: "#"  Rails, Front-end, Magic
+                  span.social
+                    p.m-0.text-muted.small
+                      | Share this article
+                    .social-links
+                      a.social-icon data-message=("Message about this post") data-platform="twitter" data-url="http://writertheme.com/post", href: "#" 
+                        i.fa.fa-twitter
+                      a.social-icon data-message=("Message about this post") data-platform="facebook" data-url="http://writertheme.com/post", href: "#" 
+                        i.fa.fa-facebook-official
+                      a.social-icon data-platform="mail", href: "mailto:test@example.com" 
+                        i.fa.fa-envelope
+          section.comments.row
+            .col-12
+              hr/
+              h3 4 Comments
+              .media.mb-5
+                = random_avatar 42, 'rounded mr-3 d-flex '
+                .media-body
+                  .d-flex.justify-content-between
+                    h5.mt-0
+                      a href: "javascript:"  Hiro Protagonist
+                    time.text-muted 5h ago
+                  p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  a.pt-4 href: "javascript:"  Reply
+                  .media.mt-3
+                    = random_avatar 42, 'rounded mr-3 d-flex '
+                    .media-body
+                      .d-flex.justify-content-between
+                        h5.mt-0
+                          a href: "javascript:"  Mr Montezuma
+                        time.text-muted 5h ago
+                      p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                      a.pt-4 href: "javascript:"  Reply
+              .media.mb-5
+                = random_avatar 42, 'rounded mr-3 d-flex '
+                .media-body
+                  .d-flex.justify-content-between
+                    h5.mt-0
+                      a href: "javascript:"  Hiro Protagonist
+                    time.text-muted 5h ago
+                  p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  a.pt-4 href: "javascript:"  Reply
+                  .media.mt-3
+                    = random_avatar 42, 'rounded mr-3 d-flex '
+                    .media-body
+                      .d-flex.justify-content-between
+                        h5.mt-0
+                          a href: "javascript:"  Mr Montezuma
+                        time.text-muted 5h ago
+                      p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                      a.pt-4 href: "javascript:"  Reply
+              .card
+                .card-body
+                  form.form action: "#", method: "post", novalidate: "" 
+                    .row
+                      .col-xs-12.col-sm-12.col-md-12 style: "visibility: visible;" 
+                        .form-group
+                          label.control-label for: "contact-message"  Join the discussion
+                          .controls
+                            textarea.form-control.requiredField data-error-empty=("Please enter comment"), name: "comments", placeholder: "Please be civil.", rows: "3" 
+                            span.help-block.text-muted * required
+                        .row
+                          .col-xs-12.col-sm-6.col-md-6
+                            .form-group
+                              label.control-label Name
+                              .controls
+                                input.form-control.requiredField data-error-empty=("Please enter name"), name: "contactName", placeholder: "Name", type: "text" /
+                                span.help-block.text-muted * required
+                          .col-xs-12.col-sm-6.col-md-6
+                            .form-group
+                              label.control-label for: "contact-mail"  Email
+                              .controls
+                                input.form-control.requiredField data-error-empty=("Please enter email") data-error-invalid=("Invalid email address"), name: "email", placeholder: "Email", type: "email" /
+                                span.help-block.text-muted * required
+                        .row
+                          .col-xs-12.col-sm-12.col-md-12
+                            .form-group
+                              button.w-100.btn.btn-primary data-error-message="Error!" data-ok-message=("Comment Sent") data-sending-message="Sending...", name: "submit", type: "button"  Send Comment

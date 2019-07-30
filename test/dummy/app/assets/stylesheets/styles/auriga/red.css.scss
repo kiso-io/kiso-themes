@@ -1,4 +1,4 @@
-@import "rrt/auriga/font_family";
+@import "kiso_themes/auriga/font_family";
 @import "vendor/font_awesome/font-awesome";
 @import "vendor/ionicons/ionicons";
 @import "vendor/mdiicons/icons-material-design";
@@ -8,14 +8,14 @@
 @import "vendor/bootstrap/variables";
 
 @import "vendor/bootstrap/mixins";
-@import "rrt/_core/mixins";
+@import "kiso_themes/_core/mixins";
 
-@import "rrt/_core/variables";
-@import "rrt/auriga/styles/red_variables";
+@import "kiso_themes/_core/variables";
+@import "kiso_themes/auriga/styles/red_variables";
 
 // You custom overrides should be placed in a separate
 // file and included here, like so:
-// @import 'my_rrt_overrides';
+// @import 'my_kiso_themes_overrides';
 
 @import "vendor/bootstrap/root";
 @import "vendor/bootstrap/reboot";
@@ -52,71 +52,71 @@
 @import "vendor/bootstrap/utilities";
 @import "vendor/bootstrap/print";
 
-@import "rrt/_core/simple_animations";
-@import "rrt/_core/buttons";
-@import "rrt/_core/borders";
-@import "rrt/_core/grid";
-@import "rrt/_core/backgrounds";
-@import "rrt/_core/breadcrumbs";
-@import "rrt/_core/inputs";
-@import "rrt/auriga/tables";
-@import "rrt/_core/checkboxes-radio";
-@import "rrt/_core/progress";
-@import "rrt/_core/badges";
-@import "rrt/_core/navs";
-@import "rrt/_core/listgroups";
-@import "rrt/_core/pagination";
-@import "rrt/_core/typography";
-@import "rrt/_core/misc";
-@import "rrt/_core/pills";
-@import "rrt/_core/page_components";
-@import "rrt/_core/timelines";
-@import "rrt/_core/loaders";
-@import "rrt/_core/scaffold";
+@import "kiso_themes/_core/simple_animations";
+@import "kiso_themes/_core/buttons";
+@import "kiso_themes/_core/borders";
+@import "kiso_themes/_core/grid";
+@import "kiso_themes/_core/backgrounds";
+@import "kiso_themes/_core/breadcrumbs";
+@import "kiso_themes/_core/inputs";
+@import "kiso_themes/auriga/tables";
+@import "kiso_themes/_core/checkboxes-radio";
+@import "kiso_themes/_core/progress";
+@import "kiso_themes/_core/badges";
+@import "kiso_themes/_core/navs";
+@import "kiso_themes/_core/listgroups";
+@import "kiso_themes/_core/pagination";
+@import "kiso_themes/_core/typography";
+@import "kiso_themes/_core/misc";
+@import "kiso_themes/_core/pills";
+@import "kiso_themes/_core/page_components";
+@import "kiso_themes/_core/timelines";
+@import "kiso_themes/_core/loaders";
+@import "kiso_themes/_core/scaffold";
 
-@import "rrt/_core/tabs";
-@import "rrt/_core/navbar";
-@import "rrt/_core/dropdown";
-@import "rrt/_core/alerts";
-@import "rrt/_core/images";
-@import "rrt/_core/popover";
-@import "rrt/_core/tooltips";
-@import "rrt/_core/modals";
-@import "rrt/_core/carousel";
-@import "rrt/_core/accordion";
-@import "rrt/_core/cards";
-@import "rrt/_core/cards/cards_mini";
-@import "rrt/_core/cards/card_metric";
-@import "rrt/_core/cards/card_images";
-@import "rrt/_core/cards/card_tiles";
-@import "rrt/_core/cards/card_items";
-@import "rrt/_core/cards/card_chat";
-@import "rrt/_core/cards/card_activity_feed";
-@import "rrt/_core/cards/card_table";
-@import "rrt/_core/cards/card_sheet";
-@import "rrt/auriga/cards";
-@import "rrt/_core/footers";
-@import "rrt/_core/sidenav";
+@import "kiso_themes/_core/tabs";
+@import "kiso_themes/_core/navbar";
+@import "kiso_themes/_core/dropdown";
+@import "kiso_themes/_core/alerts";
+@import "kiso_themes/_core/images";
+@import "kiso_themes/_core/popover";
+@import "kiso_themes/_core/tooltips";
+@import "kiso_themes/_core/modals";
+@import "kiso_themes/_core/carousel";
+@import "kiso_themes/_core/accordion";
+@import "kiso_themes/_core/cards";
+@import "kiso_themes/_core/cards/cards_mini";
+@import "kiso_themes/_core/cards/card_metric";
+@import "kiso_themes/_core/cards/card_images";
+@import "kiso_themes/_core/cards/card_tiles";
+@import "kiso_themes/_core/cards/card_items";
+@import "kiso_themes/_core/cards/card_chat";
+@import "kiso_themes/_core/cards/card_activity_feed";
+@import "kiso_themes/_core/cards/card_table";
+@import "kiso_themes/_core/cards/card_sheet";
+@import "kiso_themes/auriga/cards";
+@import "kiso_themes/_core/footers";
+@import "kiso_themes/_core/sidenav";
 
-@import "rrt/_core/responsive";
+@import "kiso_themes/_core/responsive";
 
-@import "rrt/_core/plugins/easy_pie_chart";
-@import "rrt/_core/plugins/jquery_sparklines";
-@import "rrt/_core/plugins/plugin-bootstrap-switch";
-@import "rrt/_core/plugins/jqvectormap";
-@import "rrt/_core/plugins/jasny_bootstrap";
+@import "kiso_themes/_core/plugins/easy_pie_chart";
+@import "kiso_themes/_core/plugins/jquery_sparklines";
+@import "kiso_themes/_core/plugins/plugin-bootstrap-switch";
+@import "kiso_themes/_core/plugins/jqvectormap";
+@import "kiso_themes/_core/plugins/jasny_bootstrap";
 
-@import "rrt/_core/devise/1";
+@import "kiso_themes/_core/devise/1";
 
-@import "rrt/_core/pricing_tables";
+@import "kiso_themes/_core/pricing_tables";
 
-@import "rrt/_core/landing_headers";
-@import "rrt/_core/landing_pages/landing_1";
-@import "rrt/_core/landing_pages/landing_2";
-@import "rrt/_core/landing_pages/landing_3";
-@import "rrt/_core/landing_pages/landing_4";
-@import "rrt/_core/landing_pages/landing_5";
+@import "kiso_themes/_core/landing_headers";
+@import "kiso_themes/_core/landing_pages/landing_1";
+@import "kiso_themes/_core/landing_pages/landing_2";
+@import "kiso_themes/_core/landing_pages/landing_3";
+@import "kiso_themes/_core/landing_pages/landing_4";
+@import "kiso_themes/_core/landing_pages/landing_5";
 
-@import "rrt/_core/blog";
+@import "kiso_themes/_core/blog";
 
 @import "vendor/prism/twilight";

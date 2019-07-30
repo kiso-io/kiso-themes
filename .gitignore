@@ -3,8 +3,8 @@ snippets.txt
 .bundle/
 log/*.log
 pkg/
-app/assets/stylesheets/rrt/*.css
-app/assets/stylesheets/rrt/*.css.erb
+app/assets/stylesheets/kiso_themes/*.css
+app/assets/stylesheets/kiso_themes/*.css.erb
 test/dummy/db/*.sqlite3
 test/dummy/log/*.log
 test/dummy/tmp/

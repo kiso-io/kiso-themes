@@ -4,9 +4,9 @@ class PreviewController < ApplicationController
   def index
     @body_class = 'theme-container'
 
-    @themes = RRT::THEMES.map do |theme|
+    @themes = KisoThemes::THEMES.map do |theme|
       { theme: theme.titlecase,
-        colors: Kernel.const_get("RRT::#{theme.titlecase}::COLORS") }
+        colors: Kernel.const_get("KisoThemes::#{theme.titlecase}::COLORS") }
     end
   end
 
@@ -26,7 +26,7 @@ class PreviewController < ApplicationController
     end
 
     @current_theme = cookies[:theme] || "Orion"
-    @current_style = cookies[:style] || Kernel.const_get('RRT::Orion::COLORS')[0]
+    @current_style = cookies[:style] || Kernel.const_get('KisoThemes::Orion::COLORS')[0]
 
     redirect_to element_path('001_dashboards@ti-dashboard/001_dashboard_1') and return if params[:section].nil?
 

@@ -1,0 +1,31 @@
+/*
+ * Pick one style by placing the `=` sign in front the the style you want. ** Just one, now. **
+ *
+ *= require kiso_themes/orion/blue
+ *  require kiso_themes/orion/purple
+ *  require kiso_themes/orion/green
+ *  require kiso_themes/orion/orange
+ *
+ *
+ *  require kiso_themes/auriga/blue
+ *  require kiso_themes/auriga/green
+ *  require kiso_themes/auriga/red
+ *  require kiso_themes/auriga/yellow
+ *
+ *  require kiso_themes/gemini/blue
+ *  require kiso_themes/gemini/amber
+ *  require kiso_themes/gemini/granite
+ *  require kiso_themes/gemini/ocean
+ *
+ *  require kiso_themes/lyra/azure
+ *  require kiso_themes/lyra/charcoal
+ *  require kiso_themes/lyra/lime
+ *  require kiso_themes/lyra/raspberry
+ *
+ * To fully customize your theme, run: `rails generate kiso_themes:customize`.
+ *
+ *
+ * NOTE: DO NOT PLACE ANY CUSTOM CSS IN THIS FILE - IT COULD BE OVERWRITTEN IN FUTURE
+ * UPDATES!
+ */
+

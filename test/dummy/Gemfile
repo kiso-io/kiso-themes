@@ -35,6 +35,6 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'rrt', :path => '../../'
+  gem 'kiso_themes', :path => '../../'
 end
 

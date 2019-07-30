@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class JavascriptsTest < ActionDispatch::IntegrationTest
-  test "rrt.js" do
-    get "/assets/rrt.js"
+  test "kiso_themes.js" do
+    get "/assets/kiso_themes.js"
   
     assert_response :success
   end

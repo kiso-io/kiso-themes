@@ -2,29 +2,31 @@
 
 def create_app
   stop_server
-  test_dir = '/tmp/rrt-ives-install-test'
+  test_dir = '/tmp/kiso_themes-install-test'
   rm_rf test_dir
   mkdir_p test_dir
   cd test_dir
-  sh 'rails new testapp'
+  sh 'rails new testapp --quiet --no-rc'
   cd 'testapp'
-  add_gem 'thin'
+  sh 'rake db:drop db:create'
 end
 
 def install_theme
-  add_gem 'rrt-ives', :path => File.expand_path("../../..", __FILE__)
-  sh 'bundle install'
+  add_gem 'kiso_themes', :path => File.expand_path("../../..", __FILE__)
+  sh 'bundle install --quiet -j4'
   sh 'spring stop'
-  sh 'bin/rails generate rrt:install -f'
+  sh 'bin/rails generate kiso_themes:install -f'
 end
 
 def generate_views
   sh 'rails generate scaffold contact name:string phone:string email:string'
   sh 'rake db:migrate'
   rm_rf 'public/index.html'
-  sh 'rails generate rrt:landing1 home index'
-  sh 'rails generate rrt:pricing home pricing'
-  add_route "get '/pricing' => 'home#pricing'"
+  sh 'rails generate kiso_themes:landing_pages home index --variant=1'
+  sh 'rails generate kiso_themes:pricing_pages pricing index --variant=1'
+  sh 'rails generate kiso_themes:dashboard_pages dashboard index'
+  add_route "get '/pricing' => 'pricing#index'"
+  add_route "get '/dashboard' => 'dashboard#index'"
   add_route "root :to => 'home#index'"
 end
 
@@ -54,7 +56,9 @@ end
 $PORT = 3111
 
 def curl(path)
-  sh "curl -f http://localhost:#{$PORT}#{path}"
+  puts "cURLing #{path}"
+  path = "http://localhost:#{$PORT}#{path}"
+  `curl -s -o /dev/null -I -w "%{http_code}" #{path}` == 200
 end
 
 def server_running?
@@ -62,7 +66,7 @@ def server_running?
 end
 
 def start_server(stop_at_exit=true)
-  sh "rails server thin -d -p#{$PORT}"
+  sh "bin/rails s -d -p#{$PORT} "
   sleep 0.1 until server_running?
   at_exit { stop_server(!:wait) } if stop_at_exit
 end
