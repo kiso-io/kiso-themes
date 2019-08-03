@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
             ['VERSION', 'CHANGELOG', 'LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_runtime_dependency 'jquery-rails'
-  s.add_runtime_dependency 'rails', '>= 3.1'
-  s.add_runtime_dependency 'sass-rails'
+  s.add_runtime_dependency 'rails', '>= 6.0.0.rc1'
+  s.add_runtime_dependency 'sass-rails', '>= 6.0.0.beta3'
 
   s.add_development_dependency 'aws-sdk'
   s.add_development_dependency 'byebug'
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.post_install_message = <<-DOC
     All done!
 
-    Any questions? Log into your account at https://kiso.io 
+    Any questions? Log into your account at https://kiso.io
     and submit an issue via the support area.
 
     Need help? Check out the Documentation first:
