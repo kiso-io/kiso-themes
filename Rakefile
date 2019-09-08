@@ -97,16 +97,15 @@ task :release_version do
 end
 
 task :commit_release_to_kisodotio do
-  puts "🚚  Pushing release to kiso_themes.com"
+  puts "🚚  Pushing release to kiso.io"
 
   latest_version = File.read('./VERSION')
-  cd "../kisodotio", verbose: false do
+  cd "../kiso_io", verbose: false do
     Bundler.with_clean_env do
       Bundler.clean_system "bundle exec rake gems:push gem=../kiso_themes/pkg/kiso_themes-#{latest_version}.gem"
       puts system('test -z "$(git ls-files --others)"')
 
       sh "git add . && git commit -m 'KisoThemes Gem #{latest_version}' && git push"
-      sh "bin/deploy"
     end
   end
 end

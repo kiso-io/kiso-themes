@@ -143,11 +143,7 @@ environment.plugins.prepend('Provide',
 
       def add_app_name_to_application_helper
         sentinel = "module ApplicationHelper\n"
-        code = <<END
-  def app_name
-    Rails.application.class.module_parent_name
-  end
-END
+        code = app_name_helper_code
 
         file = 'app/helpers/application_helper.rb'
         create_file file, "module ApplicationHelper\nend" unless File.file?(file)
@@ -166,6 +162,21 @@ END
       protected
         def devise?
           defined?(Devise)
+        end
+
+        def app_name_helper_code
+        rails6 = <<END
+  def app_name
+    Rails.application.class.module_parent_name
+  end
+END
+        rails5 = <<END
+  def app_name
+    Rails.application.class.parent_name
+  end
+END
+
+          rails6? ? rails6 : rails5
         end
 
         def rails6?

@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
             ['VERSION', 'CHANGELOG', 'LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_runtime_dependency 'jquery-rails'
-  s.add_runtime_dependency 'rails', '>= 6.0.0.rc1'
+  s.add_runtime_dependency 'rails', '>= 5.2.3'
   s.add_runtime_dependency 'sass-rails', '>= 6.0.0.beta3'
 
   s.add_development_dependency 'aws-sdk'
