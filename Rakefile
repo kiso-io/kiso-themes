@@ -21,7 +21,7 @@ end
 require 'page_rewriter'
 
 task :check_kisodotio_on_master do
-  cd "../kisodotio", verbose: false do
+  cd "../kiso_io", verbose: false do
     branch_name = `git rev-parse --abbrev-ref HEAD`.chomp
     if branch_name != 'master'
       puts "🚨  CANNOT RELEASE: kiso_themesdotcom is not on master"
