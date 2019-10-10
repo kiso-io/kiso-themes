@@ -99,7 +99,7 @@ module KisoThemes
           jvectormap@2.0.4
           metismenu@2.7.2
           modernizr
-          parallax.js
+          jquery-parallax.js
           code-prettify
           prismjs
           jquery-slimscroll
@@ -113,7 +113,8 @@ module KisoThemes
         directory "rails6", "app/javascript/kiso_themes"
 
         # Add jQuery to application pack
-        inject_into_file 'app/javascript/packs/application.js', "\n#{new_requires}\n", { before: 'require("@rails/ujs").start()'}
+        inject_into_file 'app/javascript/packs/application.js', "\n#{jquery_requires}\n", { before: 'require("@rails/ujs").start()'}
+        inject_into_file 'app/javascript/packs/application.js', "\n#{new_requires}\n", { after: 'require("channels")'}
 
         # Add KisoThemes import to application pack
         append_to_file 'app/javascript/packs/application.js', "\nrequire(\"kiso_themes\")\n"
@@ -193,9 +194,16 @@ END
           log ERB.new(source, nil, '-', '@output_buffer').result(binding)
         end
 
+        def jquery_requires
+          <<-JS
+// ***** START: ADDED BY KisoThemes *****
+window.$ = window.jQuery = require("jquery")
+// ***** END: ADDED BY KisoThemes *****
+          JS
+        end
+
         def new_requires
           <<-JS
-window.$ = window.jQuery = require("jquery")
 // ***** START: ADDED BY KisoThemes *****
 require("bootstrap")
 require("metismenu/dist/metisMenu")
@@ -212,7 +220,7 @@ require('flot/source/jquery.flot');
 require('gmaps.core')
 require('jasny-bootstrap')
 require('jvectormap')
-require('parallax.js')
+require('jquery-parallax.js')
 require('code-prettify')
 require('prismjs')
 require('sparklines')
