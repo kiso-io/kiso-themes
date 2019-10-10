@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'jquery-rails'
   s.add_runtime_dependency 'rails', '>= 5.2.3'
-  s.add_runtime_dependency 'sass-rails', '>= 6.0.0.beta3'
+  s.add_runtime_dependency 'sass-rails', '>= 5.1.0'
 
   s.add_development_dependency 'aws-sdk'
   s.add_development_dependency 'byebug'
