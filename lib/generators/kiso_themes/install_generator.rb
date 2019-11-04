@@ -11,6 +11,8 @@ module KisoThemes
 
       desc "Installs the KisoThemes theme in your application."
 
+      class_option :use_webpacker, type: :boolean, required: false, default: false, desc: "Install theme using Webpacker support"
+
       def copy_layouts
         layouts_path = "app/views/layouts"
         layouts = Dir.glob(File.expand_path("../templates/layouts/*", __FILE__)).select{ |lf| lf.end_with?(handler) }.map { |lf| File.basename(lf, ".html.#{handler}")}
@@ -25,7 +27,7 @@ module KisoThemes
       end
 
       def add_jquery_to_gemfile
-        return if rails6?
+        return if rails6? || force_webpacker?
         return unless Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
         say_status :info, "Adding jQuery back into the Gemfile"
         gem "jquery-rails"
@@ -33,7 +35,7 @@ module KisoThemes
       end
 
       def add_jquery_require_to_app_js
-        return if rails6?
+        return if rails6? || force_webpacker?
         return unless Gem::Version.new(::Rails.version) >= Gem::Version.new("5.1.0.rc1")
         sentinel = "= require rails-ujs"
 
@@ -53,7 +55,7 @@ module KisoThemes
       end
 
       def require_kiso_themes_javascript
-        return if rails6?
+        return if rails6? || force_webpacker?
         sentinel = "= require_tree ."
         code = "= require kiso_themes\n\n"
 
@@ -72,9 +74,9 @@ module KisoThemes
       end
 
       def install_for_rails6
-        return unless rails6?
+        return unless rails6? || force_webpacker?
 
-        say "Configuring for Rails 6..."
+        say "Configuring for Webpacker..."
 
         # Nothing needs to happen yet for Styles as Sprockets is still used
         # in Rails 6 for handling styles and images etc.
@@ -113,8 +115,13 @@ module KisoThemes
         directory "rails6", "app/javascript/kiso_themes"
 
         # Add jQuery to application pack
-        inject_into_file 'app/javascript/packs/application.js', "\n#{jquery_requires}\n", { before: 'require("@rails/ujs").start()'}
-        inject_into_file 'app/javascript/packs/application.js', "\n#{new_requires}\n", { after: 'require("channels")'}
+        if force_webpacker?
+          prepend_to_file 'app/javascript/packs/application.js', "\n#{jquery_requires}\n"
+          append_to_file 'app/javascript/packs/application.js', "\n#{new_requires}\n"
+        else
+          inject_into_file 'app/javascript/packs/application.js', "\n#{jquery_requires}\n", { before: 'require("@rails/ujs").start()'}
+          inject_into_file 'app/javascript/packs/application.js', "\n#{new_requires}\n", { after: 'require("channels")'}
+        end
 
         # Add KisoThemes import to application pack
         append_to_file 'app/javascript/packs/application.js', "\nrequire(\"kiso_themes\")\n"
@@ -182,6 +189,10 @@ END
 
         def rails6?
           Gem::Version.new(::Rails.version) >= Gem::Version.new("6.0.0.rc1") && Gem::Version.new(::Rails.version) < Gem::Version.new("7.0.0")
+        end
+
+        def force_webpacker?
+          options.use_webpacker?
         end
 
         # Can't fully cutomize theme under Windows because of less.rb dep on therubyracer.
