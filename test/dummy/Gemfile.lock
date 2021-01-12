@@ -12,7 +12,7 @@ GIT
 PATH
   remote: ../..
   specs:
-    kiso_themes (1.0.5)
+    kiso_themes (1.0.2)
       jquery-rails
       rails (>= 5.2.3)
       sass-rails (>= 5.1.0)
