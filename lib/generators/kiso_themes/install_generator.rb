@@ -85,7 +85,7 @@ module KisoThemes
           webpack-merge
           jquery
           popper.js
-          bootstrap@4.3.1
+          bootstrap@4.6.0
           bootstrap-switch
           chartjs
           clipboard
@@ -115,13 +115,8 @@ module KisoThemes
         directory "rails6", "app/javascript/kiso_themes"
 
         # Add jQuery to application pack
-        if force_webpacker?
-          prepend_to_file 'app/javascript/packs/application.js', "\n#{jquery_requires}\n"
-          append_to_file 'app/javascript/packs/application.js', "\n#{new_requires}\n"
-        else
-          inject_into_file 'app/javascript/packs/application.js', "\n#{jquery_requires}\n", { before: 'require("@rails/ujs").start()'}
-          inject_into_file 'app/javascript/packs/application.js', "\n#{new_requires}\n", { after: 'require("channels")'}
-        end
+        prepend_to_file 'app/javascript/packs/application.js', "\n#{jquery_requires}\n"
+        append_to_file 'app/javascript/packs/application.js', "\n#{new_requires}\n"
 
         # Add KisoThemes import to application pack
         append_to_file 'app/javascript/packs/application.js', "\nrequire(\"kiso_themes\")\n"
@@ -203,6 +198,14 @@ END
         def readme_template(file)
           source = File.binread(find_in_source_paths(file))
           log ERB.new(source, nil, '-', '@output_buffer').result(binding)
+        end
+
+        def kiso_theme_requires
+          <<-JS
+// ***** START: ADDED BY KisoThemes *****
+require("kiso_themes")
+// ***** END: ADDED BY KisoThemes *****
+          JS
         end
 
         def jquery_requires
